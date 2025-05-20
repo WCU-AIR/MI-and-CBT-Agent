@@ -1,2 +1,2 @@
 # LearningBuddy
-Learning buddy to treat medical residents how to treat patients with MDD
+Learning buddy to teach medical residents how to treat patients with MDD
