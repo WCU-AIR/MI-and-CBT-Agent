@@ -1,3 +1,5 @@
+import os
+import random
 
 def read_file(filepath):
     try:
@@ -13,6 +15,14 @@ def read_file(filepath):
 def load_patient_profile(filepath: str) -> str:
     return read_file(filepath)
 
+def load_random_case_profile(directory='Patient_Profiles'):
+    files = [f for f in os.listdir(directory)]
+    if not files:
+        raise FileNotFoundError("No patient profiles found in the directory.")
+
+    random_file = random.choice(files)
+    full_path = os.path.join(directory, random_file)
+    return load_patient_profile(full_path)
 
 def load_prompt(prompt_name: str) -> str:
 
