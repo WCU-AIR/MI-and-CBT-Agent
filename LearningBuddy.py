@@ -29,7 +29,7 @@ class LearningBuddy:
         self.api_key = SecretStr(api_key)
         self.llm_mini = ChatOpenAI(model="gpt-4o-mini", temperature=0, api_key=self.api_key)
         self.llm_mini_virtualPatient = ChatOpenAI(model="gpt-4o-mini", temperature=1, api_key=self.api_key)
-        self.llm_feedback = ChatOpenAI(model="gpt-4o", temperature=0.2, api_key=self.api_key)
+        self.llm_feedback = ChatOpenAI(model="gpt-4.1", temperature=0.2, api_key=self.api_key)
         self.graph = self._build_graph()
         logging.info("LearningBuddy initialized.")
 
