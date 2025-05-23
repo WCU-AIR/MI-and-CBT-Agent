@@ -138,118 +138,145 @@ class LearningBuddy:
             "chatlog": [m.model_dump() for m in messages]
         }
 
+
+
+
     def _phase_4_feedback(self, state):
         logging.info("Starting feedback evaluation phase.")
-        evaluation_context = load_context('feedback_criteria')
-        base_instruction_prompt = load_prompt('Feedback')
-        chatlog = state["chatlog"]
-        case_study = state["case_study"]
-        clinical_summary = state["clinical_summary"]
+
+        case_study = state.get("case_study")
+        clinical_summary = state.get("clinical_summary")
+        chatlog = state.get("chatlog")
+
+        # Ensure required data exists
+        if not case_study:
+            raise ValueError("Case study content is missing from state.")
+        if not clinical_summary:
+            raise ValueError("Clinical summary is missing from state.")
+        if not chatlog:
+            raise ValueError("Chatlog is empty or missing from state.")
+
+        try:
+            evaluation_context = load_context('Feedback Criteria') or ""
+            base_instruction_prompt = load_prompt('Feedback') or ""
+        except Exception as e:
+            logging.exception("Failed to load feedback prompt/context")
+            raise RuntimeError(f"Error loading prompts or context: {e}")
 
         strict_feedback_prompt = f"""
-{base_instruction_prompt}
+    {base_instruction_prompt}
 
-{evaluation_context}
+    {evaluation_context}
 
-IMPORTANT INSTRUCTIONS FOR STRICT EVALUATION:
+    IMPORTANT INSTRUCTIONS FOR STRICT EVALUATION:
 
-You are a highly experienced clinical supervisor conducting a thorough evaluation of a therapy session. 
-Your feedback must be:
+    You are a highly experienced clinical supervisor conducting a thorough evaluation of a therapy session. 
+    Your feedback must be:
 
-1. **CRITICALLY ANALYTICAL**: Do not sugarcoat issues. Be direct about what went wrong and why.
+    1. **CRITICALLY ANALYTICAL**: Do not sugarcoat issues. Be direct about what went wrong and why.
 
-2. **SPECIFIC AND DETAILED**: 
-   - Quote exact phrases from the session that were problematic
-   - Explain WHY each issue is problematic from a clinical perspective
-   - Provide specific alternative phrasings the therapist should have used
+    2. **SPECIFIC AND DETAILED**: 
+    - Quote exact phrases from the session that were problematic
+    - Explain WHY each issue is problematic from a clinical perspective
+    - Provide specific alternative phrasings the therapist should have used
 
-3. **COMPREHENSIVE EVALUATION**: Rate the following aspects on a scale of 1-10 and explain your rating:
-   - Therapeutic rapport building
-   - Clinical assessment skills
-   - Intervention techniques used
-   - Professional boundaries
-   - Missed opportunities for deeper exploration
-   - Handling of sensitive topics
-   - Overall session effectiveness
+    3. **COMPREHENSIVE EVALUATION**: Rate the following aspects on a scale of 1–10 and explain your rating:
+    - Therapeutic rapport building
+    - Clinical assessment skills
+    - Intervention techniques used
+    - Professional boundaries
+    - Missed opportunities for deeper exploration
+    - Handling of sensitive topics
+    - Overall session effectiveness
 
-4. **IDENTIFY CRITICAL ERRORS**:
-   - Any breaches of therapeutic boundaries
-   - Leading questions that could bias the patient
-   - Missed red flags or warning signs
-   - Inadequate exploration of presenting problems
-   - Poor timing of interventions
-   - Lack of empathy or validation where needed
+    4. **IDENTIFY CRITICAL ERRORS**:
+    - Any breaches of therapeutic boundaries
+    - Leading questions that could bias the patient
+    - Missed red flags or warning signs
+    - Inadequate exploration of presenting problems
+    - Poor timing of interventions
+    - Lack of empathy or validation where needed
 
-5. **LEARNING OBJECTIVES**: Based on this session, identify:
-   - Top 3 critical skills the therapist needs to develop immediately
-   - Specific training or reading recommendations
-   - Practice exercises to improve weak areas
+    5. **LEARNING OBJECTIVES**: Based on this session, identify:
+    - Top 3 critical skills the therapist needs to develop immediately
+    - Specific training or reading recommendations
+    - Practice exercises to improve weak areas
 
-6. **COMPARISON TO BEST PRACTICES**:
-   - Compare what was done vs. what an experienced therapist would have done
-   - Reference specific therapeutic models or techniques that should have been used
+    6. **COMPARISON TO BEST PRACTICES**:
+    - Compare what was done vs. what an experienced therapist would have done
+    - Reference specific therapeutic models or techniques that should have been used
 
-Patient Profile for Reference:
-{case_study}
+    Patient Profile for Reference:
+    {case_study}
 
-Clinical Summary:
-{clinical_summary}
+    Clinical Summary:
+    {clinical_summary}
 
-Remember: The goal is to help the trainee become an excellent therapist. Being strict and thorough now prevents harm to real patients later. Do not praise mediocre performance.
+    Remember: The goal is to help the trainee become an excellent therapist. Being strict and thorough now prevents harm to real patients later. Do not praise mediocre performance.
 
-Format your feedback with clear sections and use markdown formatting for emphasis on critical points.
-"""
+    Format your feedback with clear sections and use markdown formatting for emphasis on critical points.
+    """
 
+        # Normalize chat messages
         normalized_chatlog = []
         for m in chatlog:
-            role = m.get("role") or ("user" if m.get("type") == "human" else "assistant" if m.get("type") == "ai" else m.get("type"))
+            role = m.get("role") or m.get("type")
             if role:
                 normalized_chatlog.append({**m, "role": role})
 
-        conversation_messages = []
-        for m in normalized_chatlog:
-            if m["role"] in ["user", "assistant"] and m.get("content"):
-                if not (m["role"] == "user" and m["content"] == case_study):
-                    conversation_messages.append(m)
+        # Filter out system messages and case study repeats
+        conversation_messages = [
+            m for m in normalized_chatlog
+            if m["role"] in ["user", "assistant"] and m.get("content") and m["content"].strip() != case_study.strip()
+        ]
 
+        # Build messages for the feedback LLM
         messages = [
             SystemMessage(content=strict_feedback_prompt),
             HumanMessage(content="Here is the therapy session transcript to evaluate:")
         ]
 
         for m in conversation_messages:
-            if m["role"] == "user":
-                messages.append(HumanMessage(content=f"THERAPIST: {m['content']}"))
-            else:
-                messages.append(AIMessage(content=f"PATIENT: {m['content']}"))
+            prefix = "THERAPIST: " if m["role"] == "user" else "PATIENT: "
+            content = prefix + m["content"]
+            msg_cls = HumanMessage if m["role"] == "user" else AIMessage
+            messages.append(msg_cls(content=content))
 
         messages.append(HumanMessage(content="""
-Now provide your comprehensive, strict evaluation of this therapy session. 
-Be thorough, critical, and specific in identifying areas for improvement.
-Remember to structure your feedback clearly with all the sections mentioned in the instructions.
-"""))
+    Now provide your comprehensive, strict evaluation of this therapy session. 
+    Be thorough, critical, and specific in identifying areas for improvement.
+    Structure your feedback using all the sections mentioned.
+    """))
 
-        response = self.llm_feedback.invoke(messages)
+        # Call LLM to generate feedback
+        try:
+            response = self.llm_feedback.invoke(messages)
+            feedback_text = response.content.strip()
+        except Exception as e:
+            logging.exception("LLM feedback generation failed")
+            raise RuntimeError(f"Failed to generate feedback: {e}")
+
         num_exchanges = len(conversation_messages) // 2
-
         session_feedback = f"""
-## SESSION STATISTICS
-- Total Exchanges: {num_exchanges}
-- Session Completeness: {'Incomplete - ended prematurely' if num_exchanges < 5 else 'Complete'}
+    ## SESSION STATISTICS
+    - Total Exchanges: {num_exchanges}
+    - Session Completeness: {'Incomplete - ended prematurely' if num_exchanges < 5 else 'Complete'}
 
-## DETAILED CLINICAL EVALUATION
+    ## DETAILED CLINICAL EVALUATION
 
-{response.content}
+    {feedback_text}
 
----
-*Note: This feedback is intentionally strict and critical to accelerate your learning.*
-"""
+    ---
+    *Note: This feedback is intentionally strict and critical to accelerate your learning.*
+    """
 
         logging.info("Feedback evaluation complete.")
         return {
             **state,
             "feedback": session_feedback
         }
+
+
 
     def _analyze_conversation_quality(self, messages: List[Dict]):
         therapist_messages = [m for m in messages if m.get("role") == "user"]

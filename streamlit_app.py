@@ -468,11 +468,7 @@ if feature == "💬 Therapy Session":
             
             # Generate patient response if typing
             if st.session_state.typing and st.session_state.roleplay_messages:
-                with chat_container:
-                    st.chat_message("user").markdown(st.session_state.roleplay_messages[-1]["content"])
-                    
-                    # Show typing indicator
-                    with st.chat_message("assistant"):
+                with chat_container:                    
                         with st.empty():
                             # Calculate realistic delay
                             delay = calculate_response_delay(st.session_state.roleplay_messages[-1]["content"])
