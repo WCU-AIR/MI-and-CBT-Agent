@@ -168,53 +168,12 @@ class LearningBuddy:
 
     {evaluation_context}
 
-    IMPORTANT INSTRUCTIONS FOR STRICT EVALUATION:
-
-    You are a highly experienced clinical supervisor conducting a thorough evaluation of a therapy session. 
-    Your feedback must be:
-
-    1. **CRITICALLY ANALYTICAL**: Do not sugarcoat issues. Be direct about what went wrong and why.
-
-    2. **SPECIFIC AND DETAILED**: 
-    - Quote exact phrases from the session that were problematic
-    - Explain WHY each issue is problematic from a clinical perspective
-    - Provide specific alternative phrasings the therapist should have used
-
-    3. **COMPREHENSIVE EVALUATION**: Rate the following aspects on a scale of 1–10 and explain your rating:
-    - Therapeutic rapport building
-    - Clinical assessment skills
-    - Intervention techniques used
-    - Professional boundaries
-    - Missed opportunities for deeper exploration
-    - Handling of sensitive topics
-    - Overall session effectiveness
-
-    4. **IDENTIFY CRITICAL ERRORS**:
-    - Any breaches of therapeutic boundaries
-    - Leading questions that could bias the patient
-    - Missed red flags or warning signs
-    - Inadequate exploration of presenting problems
-    - Poor timing of interventions
-    - Lack of empathy or validation where needed
-
-    5. **LEARNING OBJECTIVES**: Based on this session, identify:
-    - Top 3 critical skills the therapist needs to develop immediately
-    - Specific training or reading recommendations
-    - Practice exercises to improve weak areas
-
-    6. **COMPARISON TO BEST PRACTICES**:
-    - Compare what was done vs. what an experienced therapist would have done
-    - Reference specific therapeutic models or techniques that should have been used
-
     Patient Profile for Reference:
     {case_study}
 
     Clinical Summary:
     {clinical_summary}
 
-    Remember: The goal is to help the trainee become an excellent therapist. Being strict and thorough now prevents harm to real patients later. Do not praise mediocre performance.
-
-    Format your feedback with clear sections and use markdown formatting for emphasis on critical points.
     """
 
         # Normalize chat messages
@@ -258,17 +217,17 @@ class LearningBuddy:
 
         num_exchanges = len(conversation_messages) // 2
         session_feedback = f"""
-    ## SESSION STATISTICS
-    - Total Exchanges: {num_exchanges}
-    - Session Completeness: {'Incomplete - ended prematurely' if num_exchanges < 5 else 'Complete'}
+                            ## SESSION STATISTICS
+                            - Total Exchanges: {num_exchanges}
+                            - Session Completeness: {'Incomplete - ended prematurely' if num_exchanges < 5 else 'Complete'}
 
-    ## DETAILED CLINICAL EVALUATION
+                            ## DETAILED CLINICAL EVALUATION
 
-    {feedback_text}
+                            {feedback_text}
 
-    ---
-    *Note: This feedback is intentionally strict and critical to accelerate your learning.*
-    """
+                            ---
+                            *Note: This feedback is intentionally strict and critical to accelerate your learning.*
+                            """
 
         logging.info("Feedback evaluation complete.")
         return {
