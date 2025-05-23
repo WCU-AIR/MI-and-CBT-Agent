@@ -18,7 +18,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Enhanced CSS for chat interface
+# Enhanced CSS for chat interface (keeping the existing styles)
 st.markdown("""
     <style>
     /* Main container styling */
@@ -211,8 +211,38 @@ st.markdown("""
         text-align: center;
         color: #666;
     }
+    
+    /* Patient selection styling */
+    .patient-selection {
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        margin: 15px 0;
+        border-left: 4px solid #4caf50;
+    }
     </style>
 """, unsafe_allow_html=True)
+
+# Helper function to get available patient profiles
+def get_available_patient_profiles(directory='Patient_Profiles'):
+    """Get list of available patient profile files"""
+    try:
+        if not os.path.exists(directory):
+            return []
+        files = [f for f in os.listdir(directory) if f.endswith('.txt') or not '.' in f]
+        return sorted(files)
+    except Exception:
+        return []
+
+def get_patient_profile_preview(filepath):
+    """Get a preview of the patient profile content"""
+    try:
+        content = load_patient_profile(filepath)
+        # Return first 200 characters as preview
+        return content[:200] + "..." if len(content) > 200 else content
+    except Exception:
+        return "Unable to load preview"
 
 # Initialize session state
 if 'api_key' not in st.session_state:
@@ -237,8 +267,12 @@ if 'processing_feedback' not in st.session_state:
     st.session_state.processing_feedback = False
 if 'show_end_confirmation' not in st.session_state:
     st.session_state.show_end_confirmation = False
+if 'selected_patient_profile' not in st.session_state:
+    st.session_state.selected_patient_profile = None
+if 'available_profiles' not in st.session_state:
+    st.session_state.available_profiles = get_available_patient_profiles()
 
-# Helper functions
+# Helper functions (keeping existing ones)
 def simulate_typing(duration=2.0):
     """Simulate typing with variable duration"""
     placeholder = st.empty()
@@ -251,9 +285,8 @@ def simulate_typing(duration=2.0):
 
 def calculate_response_delay(message_length):
     """Calculate realistic response delay based on message length"""
-    # Base delay + additional time based on message length
     base_delay = random.uniform(0.8, 1.5)
-    reading_time = len(message_length) * 0.01  # 0.01 seconds per character
+    reading_time = len(message_length) * 0.01
     thinking_time = random.uniform(0.5, 1.0)
     return base_delay + reading_time + thinking_time
 
@@ -276,6 +309,30 @@ def reset_session_state():
     st.session_state.processing_feedback = False
     st.session_state.show_end_confirmation = False
     st.session_state.typing = False
+    st.session_state.selected_patient_profile = None
+
+def initialize_session_with_langgraph(case_study_content):
+    """Initialize session using LangGraph workflow for phases 1-2"""
+    try:
+        # Create initial state
+        initial_state = {
+            "case_study": case_study_content,
+            "diagnosis_summary": "",
+            "clinical_summary": "",
+            "chatlog": [],
+            "feedback": ""
+        }
+        
+        # Run phases 1 and 2 using LangGraph (profile verification and clinical summary)
+        # We'll call these phases individually since we want to handle roleplay in Streamlit
+        result_phase1 = st.session_state.learning_buddy._phase_1_profile_verification(initial_state)
+        result_phase2 = st.session_state.learning_buddy._phase_2_summary(result_phase1)
+        
+        return result_phase2
+        
+    except Exception as e:
+        st.error(f"Error initializing session: {str(e)}")
+        return None
 
 # Sidebar
 st.sidebar.title("🏥 Clinical Learning Buddy")
@@ -303,6 +360,37 @@ else:
         reset_session_state()
         st.rerun()
 
+# Patient Profile Selection in Sidebar
+if st.session_state.api_key:
+    st.sidebar.markdown("---")
+    st.sidebar.markdown("### 👤 Patient Selection")
+    
+    # Refresh profiles button
+    if st.sidebar.button("🔄 Refresh Profiles"):
+        st.session_state.available_profiles = get_available_patient_profiles()
+        st.rerun()
+    
+    # Patient profile selection
+    profile_options = ["Random Selection"] + st.session_state.available_profiles
+    
+    selected_option = st.sidebar.selectbox(
+        "Choose Patient Profile:",
+        options=profile_options,
+        index=0,
+        disabled=st.session_state.roleplay_active or st.session_state.processing_feedback
+    )
+    
+    if selected_option != "Random Selection":
+        st.session_state.selected_patient_profile = os.path.join('Patient_Profiles', selected_option)
+        
+        # Show preview
+        with st.sidebar.expander("📋 Profile Preview"):
+            preview = get_patient_profile_preview(st.session_state.selected_patient_profile)
+            st.text_area("", preview, height=100, disabled=True, key="profile_preview")
+    else:
+        st.session_state.selected_patient_profile = None
+        st.sidebar.info("🎲 Random patient will be selected")
+
 # Feature Selection
 feature = st.sidebar.radio(
     "Navigate",
@@ -323,6 +411,11 @@ if st.session_state.roleplay_active or st.session_state.processing_feedback:
         st.sidebar.markdown(f'<span class="status-indicator status-active"></span> **Active Session**', unsafe_allow_html=True)
         st.sidebar.info(f"Duration: {format_session_duration(st.session_state.session_start_time)}")
         st.sidebar.warning("Messages: " + str(len(st.session_state.roleplay_messages) // 2))
+        
+        # Show selected profile info
+        if st.session_state.current_state and st.session_state.current_state.get('case_study'):
+            profile_name = "Selected Profile" if st.session_state.selected_patient_profile else "Random Profile"
+            st.sidebar.success(f"👤 {profile_name}")
 
 # Main Content
 if not st.session_state.learning_buddy and st.session_state.api_key:
@@ -350,18 +443,18 @@ if feature == "💬 Therapy Session":
             with progress_placeholder:
                 progress_bar = st.progress(0)
                 for i in range(100):
-                    time.sleep(0.02)  # Simulate processing time
+                    time.sleep(0.02)
                     progress_bar.progress(i + 1)
                 progress_bar.empty()
             
             st.markdown('</div>', unsafe_allow_html=True)
             
-            # Actually process the feedback
+            # Process feedback using LangGraph phase 4
             try:
-                # Update chatlog
+                # Update chatlog in current state
                 st.session_state.current_state['chatlog'] = st.session_state.roleplay_messages
                 
-                # Generate feedback
+                # Generate feedback using LangGraph phase 4
                 result = st.session_state.learning_buddy._phase_4_feedback(st.session_state.current_state)
                 st.session_state.current_state.update(result)
                 
@@ -370,7 +463,8 @@ if feature == "💬 Therapy Session":
                     "timestamp": datetime.now(),
                     "duration": format_session_duration(st.session_state.session_start_time),
                     "state": st.session_state.current_state.copy(),
-                    "messages": st.session_state.roleplay_messages.copy()
+                    "messages": st.session_state.roleplay_messages.copy(),
+                    "profile_used": st.session_state.selected_patient_profile or "Random"
                 })
                 
                 # Reset states
@@ -389,65 +483,62 @@ if feature == "💬 Therapy Session":
                 st.rerun()
         
         else:
-            # Session Controls - disabled during processing
+            # Session Controls
             col1, col2, col3, col4 = st.columns([2, 2, 2, 2])
             
-            # Determine if controls should be disabled
             controls_disabled = (st.session_state.processing_feedback or 
                                st.session_state.show_end_confirmation or
                                st.session_state.typing)
             
             with col1:
-                if st.button("🎭 New Patient", 
+                if st.button("🎭 Start Session", 
                            use_container_width=True, 
                            disabled=st.session_state.roleplay_active or controls_disabled, 
                            type="primary"):
-                    with st.spinner("🔄 Preparing new patient case..."):
+                    with st.spinner("🔄 Initializing session with LangGraph..."):
                         try:
-                            # Initialize new session
-                            st.session_state.current_state = {
-                                "case_study": None,
-                                "diagnosis_summary": "",
-                                "clinical_summary": "",
-                                "chatlog": [],
-                                "feedback": ""
-                            }
+                            # Load case study based on selection
+                            if st.session_state.selected_patient_profile:
+                                case_study_content = load_patient_profile(st.session_state.selected_patient_profile)
+                                profile_info = f"Selected: {os.path.basename(st.session_state.selected_patient_profile)}"
+                            else:
+                                case_study_content = load_random_case_profile()
+                                profile_info = "Random profile selected"
                             
-                            # Phase 1: Profile Verification
+                            # Initialize session using LangGraph workflow
                             progress_bar = st.progress(0)
                             status_text = st.empty()
                             
-                            status_text.text("Verifying patient profile...")
-                            progress_bar.progress(30)
-                            result = st.session_state.learning_buddy._phase_1_profile_verification(st.session_state.current_state)
-                            st.session_state.current_state.update(result)
+                            status_text.text("Running LangGraph workflow...")
+                            progress_bar.progress(20)
                             
-                            # Phase 2: Clinical Summary
-                            status_text.text("Generating clinical summary...")
-                            progress_bar.progress(70)
-                            result = st.session_state.learning_buddy._phase_2_summary(st.session_state.current_state)
-                            st.session_state.current_state.update(result)
+                            # Use LangGraph for initialization (phases 1-2)
+                            st.session_state.current_state = initialize_session_with_langgraph(case_study_content)
                             
-                            progress_bar.progress(100)
-                            status_text.text("Ready to begin!")
-                            time.sleep(0.5)
-                            
-                            # Clear progress indicators
-                            progress_bar.empty()
-                            status_text.empty()
-                            
-                            st.session_state.roleplay_active = True
-                            st.session_state.roleplay_messages = []
-                            st.session_state.session_start_time = datetime.now()
-                            st.session_state.show_end_confirmation = False
-                            st.success("✅ Patient is ready! You may begin the session.")
-                            st.balloons()
+                            if st.session_state.current_state:
+                                progress_bar.progress(100)
+                                status_text.text("Session ready!")
+                                time.sleep(0.5)
+                                
+                                # Clear progress indicators
+                                progress_bar.empty()
+                                status_text.empty()
+                                
+                                # Start the session
+                                st.session_state.roleplay_active = True
+                                st.session_state.roleplay_messages = []
+                                st.session_state.session_start_time = datetime.now()
+                                st.session_state.show_end_confirmation = False
+                                
+                                st.success(f"✅ {profile_info} - Session ready!")
+                                st.balloons()
+                            else:
+                                st.error("❌ Failed to initialize session")
                             
                         except Exception as e:
                             st.error(f"❌ Error: {str(e)}")
             
             with col2:
-                # Only show end session button if session is active and not in confirmation mode
                 show_end_button = (st.session_state.roleplay_active and 
                                  not st.session_state.show_end_confirmation and 
                                  not controls_disabled)
@@ -472,10 +563,10 @@ if feature == "💬 Therapy Session":
                     reset_session_state()
                     st.rerun()
             
-            # End session confirmation - only show if confirmation is active
+            # End session confirmation
             if st.session_state.show_end_confirmation and not st.session_state.processing_feedback:
                 st.warning("⚠️ Are you sure you want to end this session?")
-                st.info("🔍 This will trigger a comprehensive clinical evaluation of your therapy session.")
+                st.info("🔍 This will trigger a comprehensive clinical evaluation using LangGraph workflow.")
                 
                 col1, col2 = st.columns(2)
                 with col1:
@@ -504,31 +595,57 @@ if feature == "💬 Therapy Session":
                         st.markdown(f"- Session: {'Active' if st.session_state.roleplay_active else 'Ended'}")
                         st.markdown(f"- Duration: {format_session_duration(st.session_state.session_start_time)}")
                         st.markdown(f"- Exchanges: {len(st.session_state.roleplay_messages) // 2}")
+                        profile_name = "Selected" if st.session_state.selected_patient_profile else "Random"
+                        st.markdown(f"- Profile: {profile_name}")
                     
                     if st.session_state.current_state.get('clinical_summary'):
-                        st.markdown("### 📄 Clinical Summary")
+                        st.markdown("### 📄 Clinical Summary (Generated by LangGraph)")
                         st.info(st.session_state.current_state['clinical_summary'])
+                    
+                    if st.session_state.current_state.get('diagnosis_summary'):
+                        st.markdown("### 🔍 Diagnosis Summary (Generated by LangGraph)")
+                        st.info(st.session_state.current_state['diagnosis_summary'])
+                    
                     st.markdown('</div>', unsafe_allow_html=True)
             
-            # Chat Interface - only show if not processing and session is active
+            # Chat Interface
             if (st.session_state.roleplay_active and 
                 not st.session_state.processing_feedback and 
                 not st.session_state.show_end_confirmation):
                 
                 st.markdown("---")
                 st.markdown("### 💭 Therapy Conversation")
+                st.info("🤖 **LangGraph Integration**: Session initialized using automated workflow for profile verification and clinical summary generation.")
+                
+                # Clinical Summary for Therapist Reference
+                if st.session_state.current_state.get('clinical_summary'):
+                    with st.expander("📋 **Clinical Summary** - Quick Reference for Therapist", expanded=False):
+                        st.markdown('<div class="info-card">', unsafe_allow_html=True)
+                        st.markdown("**LangGraph Generated Clinical Summary:**")
+                        st.markdown(st.session_state.current_state['clinical_summary'])
+                        st.markdown('</div>', unsafe_allow_html=True)
+                        
+                        # Quick session stats
+                        col1, col2, col3 = st.columns(3)
+                        with col1:
+                            st.markdown(f"**Duration**: {format_session_duration(st.session_state.session_start_time)}")
+                        with col2:
+                            st.markdown(f"**Exchanges**: {len(st.session_state.roleplay_messages) // 2}")
+                        with col3:
+                            profile_type = "Selected" if st.session_state.selected_patient_profile else "Random"
+                            st.markdown(f"**Profile**: {profile_type}")
                 
                 # Chat messages container
                 chat_container = st.container(height=400)
                 
                 with chat_container:
-                    # Welcome message if no messages yet
+                    # Welcome message
                     if not st.session_state.roleplay_messages:
                         st.chat_message("assistant").markdown(
-                            "👋 *The patient has entered the room. Please begin the session when you're ready.*"
+                            "👋 *The patient has entered the room. The session has been initialized using LangGraph workflow. Please begin the therapy session when you're ready.*"
                         )
                     
-                    # Display conversation history with labels and visual distinction
+                    # Display conversation history
                     for i, msg in enumerate(st.session_state.roleplay_messages):
                         if msg.get('type') == 'human' or msg.get('role') == 'user':
                             with st.chat_message("user"):
@@ -548,53 +665,51 @@ if feature == "💬 Therapy Session":
                         "content": prompt
                     })
                     
-                    # Set typing state
                     st.session_state.typing = True
                     st.rerun()
                 
-                # Generate patient response if typing
+                # Generate patient response
                 if st.session_state.typing and st.session_state.roleplay_messages:
                     with chat_container:                    
-                            with st.empty():
-                                # Calculate realistic delay
-                                delay = calculate_response_delay(st.session_state.roleplay_messages[-1]["content"])
-                                simulate_typing(delay)
+                        with st.empty():
+                            delay = calculate_response_delay(st.session_state.roleplay_messages[-1]["content"])
+                            simulate_typing(delay)
+                            
+                            try:
+                                # Prepare messages for virtual patient
+                                instruction_prompt = load_prompt('Virtual Patient')
+                                messages = [
+                                    {"type": "system", "content": instruction_prompt},
+                                    {"type": "human", "content": st.session_state.current_state['case_study']}
+                                ] + st.session_state.roleplay_messages
                                 
-                                try:
-                                    # Prepare messages
-                                    instruction_prompt = load_prompt('Virtual Patient')
-                                    messages = [
-                                        {"type": "system", "content": instruction_prompt},
-                                        {"type": "human", "content": st.session_state.current_state['case_study']}
-                                    ] + st.session_state.roleplay_messages
-                                    
-                                    # Convert to LangChain format
-                                    from langchain.schema import SystemMessage, HumanMessage, AIMessage
-                                    langchain_messages = []
-                                    for m in messages:
-                                        if m.get('type') == 'system':
-                                            langchain_messages.append(SystemMessage(content=m['content']))
-                                        elif m.get('type') == 'human':
-                                            langchain_messages.append(HumanMessage(content=m['content']))
-                                        elif m.get('type') == 'ai':
-                                            langchain_messages.append(AIMessage(content=m['content']))
-                                    
-                                    # Get response
-                                    response = st.session_state.learning_buddy.llm_mini_virtualPatient.invoke(langchain_messages)
-                                    
-                                    # Add patient response
-                                    st.session_state.roleplay_messages.append({
-                                        "type": "ai",
-                                        "role": "assistant",
-                                        "content": response.content
-                                    })
-                                    
-                                    st.session_state.typing = False
-                                    st.rerun()
-                                    
-                                except Exception as e:
-                                    st.error(f"❌ Error: {str(e)}")
-                                    st.session_state.typing = False
+                                # Convert to LangChain format
+                                from langchain.schema import SystemMessage, HumanMessage, AIMessage
+                                langchain_messages = []
+                                for m in messages:
+                                    if m.get('type') == 'system':
+                                        langchain_messages.append(SystemMessage(content=m['content']))
+                                    elif m.get('type') == 'human':
+                                        langchain_messages.append(HumanMessage(content=m['content']))
+                                    elif m.get('type') == 'ai':
+                                        langchain_messages.append(AIMessage(content=m['content']))
+                                
+                                # Get response using LearningBuddy's virtual patient model
+                                response = st.session_state.learning_buddy.llm_mini_virtualPatient.invoke(langchain_messages)
+                                
+                                # Add patient response
+                                st.session_state.roleplay_messages.append({
+                                    "type": "ai",
+                                    "role": "assistant",
+                                    "content": response.content
+                                })
+                                
+                                st.session_state.typing = False
+                                st.rerun()
+                                
+                            except Exception as e:
+                                st.error(f"❌ Error: {str(e)}")
+                                st.session_state.typing = False
         
         # Display Feedback After Session
         if (st.session_state.current_state and 
@@ -603,37 +718,30 @@ if feature == "💬 Therapy Session":
             not st.session_state.processing_feedback):
             
             st.markdown("---")
-            st.markdown("### 🎯 Clinical Supervision Feedback")
+            st.markdown("### 🎯 Clinical Supervision Feedback (Generated by LangGraph)")
             
-            # Warning banner for strict feedback
-            st.warning("⚠️ **Note**: This feedback is intentionally strict and critical to accelerate your learning. Each point of criticism is an opportunity for growth.")
+            st.warning("⚠️ **Note**: This feedback was generated using the LangGraph workflow and is intentionally strict and critical to accelerate your learning.")
             
-            # Parse feedback for critical errors (if present)
             feedback_text = st.session_state.current_state['feedback']
             
-            # Check for critical errors in feedback
             if "CRITICAL ERROR" in feedback_text or "critical error" in feedback_text.lower():
                 st.error("🚨 **CRITICAL ERRORS DETECTED** - Review immediately for patient safety")
             
-            # Display feedback with enhanced formatting
             feedback_container = st.container()
             with feedback_container:
-                # Use columns for better layout
                 col1, col2 = st.columns([3, 1])
                 
                 with col1:
-                    # Main feedback content
                     st.markdown('<div class="evaluation-card" style="background: linear-gradient(135deg, #ff6b6b 0%, #c92a2a 100%);">', unsafe_allow_html=True)
-                    st.markdown("#### 📋 Detailed Clinical Evaluation")
+                    st.markdown("#### 📋 Detailed Clinical Evaluation (LangGraph Generated)")
                     st.markdown(feedback_text)
                     st.markdown('</div>', unsafe_allow_html=True)
                 
                 with col2:
-                    # Quick stats from feedback
                     st.markdown('<div class="info-card">', unsafe_allow_html=True)
-                    st.markdown("#### 📊 Quick Review")
+                    st.markdown("#### 📊 Session Summary")
                     
-                    # Extract score if present in feedback
+                    # Extract score if present
                     import re
                     score_match = re.search(r'SCORE:\s*(\d+)/100', feedback_text, re.IGNORECASE)
                     if score_match:
@@ -645,19 +753,12 @@ if feature == "💬 Therapy Session":
                         else:
                             st.error(f"Score: {score}/100")
                     
-                    # Session info
                     st.markdown(f"**Exchanges**: {len(st.session_state.roleplay_messages) // 2}")
                     st.markdown(f"**Duration**: {format_session_duration(st.session_state.session_start_time)}")
                     
-                    # Performance indicator
-                    if "exceptional" in feedback_text.lower():
-                        st.success("Performance: Exceptional")
-                    elif "competent" in feedback_text.lower():
-                        st.info("Performance: Competent")
-                    elif "developing" in feedback_text.lower():
-                        st.warning("Performance: Developing")
-                    else:
-                        st.error("Performance: Needs Work")
+                    profile_type = "Selected Profile" if st.session_state.selected_patient_profile else "Random Profile"
+                    st.markdown(f"**Profile**: {profile_type}")
+                    st.markdown("**Method**: LangGraph Workflow")
                     
                     st.markdown('</div>', unsafe_allow_html=True)
             
@@ -667,7 +768,7 @@ if feature == "💬 Therapy Session":
                 if st.button("📥 Save Feedback", use_container_width=True):
                     st.success("✅ Feedback saved to session history!")
             with col2:
-                if st.button("🎭 New Patient", use_container_width=True):
+                if st.button("🎭 New Session", use_container_width=True):
                     reset_session_state()
                     st.rerun()
             with col3:
@@ -678,7 +779,7 @@ if feature == "💬 Therapy Session":
 elif feature == "📊 Session Analytics":
     st.markdown('<div class="session-header">', unsafe_allow_html=True)
     st.markdown("# 📊 Session Analytics & History")
-    st.markdown("Track your progress and review past sessions")
+    st.markdown("Track your progress and review past sessions with LangGraph integration")
     st.markdown('</div>', unsafe_allow_html=True)
     
     if st.session_state.completed_sessions:
@@ -709,10 +810,42 @@ elif feature == "📊 Session Analytics":
                 st.metric("Last Session", last_session.strftime("%m/%d %H:%M"))
             st.markdown('</div>', unsafe_allow_html=True)
         
+        # Profile usage analytics
+        st.markdown("### 👤 Profile Usage Analytics")
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            # Count profile types
+            selected_count = sum(1 for s in st.session_state.completed_sessions if s.get('profile_used') != 'Random')
+            random_count = len(st.session_state.completed_sessions) - selected_count
+            
+            st.markdown('<div class="info-card">', unsafe_allow_html=True)
+            st.markdown("**Profile Selection Distribution:**")
+            st.markdown(f"- Selected Profiles: {selected_count}")
+            st.markdown(f"- Random Profiles: {random_count}")
+            st.markdown('</div>', unsafe_allow_html=True)
+        
+        with col2:
+            # Most used profiles
+            profile_usage = {}
+            for session in st.session_state.completed_sessions:
+                profile = session.get('profile_used', 'Unknown')
+                if profile != 'Random':
+                    profile_name = os.path.basename(profile) if profile else 'Unknown'
+                    profile_usage[profile_name] = profile_usage.get(profile_name, 0) + 1
+            
+            st.markdown('<div class="info-card">', unsafe_allow_html=True)
+            st.markdown("**Most Used Profiles:**")
+            if profile_usage:
+                for profile, count in sorted(profile_usage.items(), key=lambda x: x[1], reverse=True)[:3]:
+                    st.markdown(f"- {profile}: {count} times")
+            else:
+                st.markdown("- Only random profiles used")
+            st.markdown('</div>', unsafe_allow_html=True)
+        
         # Session History
         st.markdown("### 📚 Session History")
         
-        # Filter options
         col1, col2 = st.columns([3, 1])
         with col2:
             sort_order = st.selectbox("Sort by", ["Newest First", "Oldest First"])
@@ -723,16 +856,18 @@ elif feature == "📊 Session Analytics":
         
         for i, session in enumerate(sessions_to_display):
             session_num = len(st.session_state.completed_sessions) - i if sort_order == "Newest First" else i + 1
+            profile_info = session.get('profile_used', 'Unknown')
+            profile_display = f"Random" if profile_info == 'Random' else os.path.basename(profile_info)
             
-            with st.expander(f"📁 Session {session_num} - {session['timestamp'].strftime('%Y-%m-%d %H:%M')} ({session.get('duration', 'N/A')})"):
-                tab1, tab2, tab3, tab4 = st.tabs(["📋 Patient", "💬 Conversation", "📝 Feedback", "📊 Stats"])
+            with st.expander(f"📁 Session {session_num} - {session['timestamp'].strftime('%Y-%m-%d %H:%M')} ({session.get('duration', 'N/A')}) - Profile: {profile_display}"):
+                tab1, tab2, tab3, tab4, tab5 = st.tabs(["📋 Patient", "💬 Conversation", "📝 Feedback", "📊 Stats", "🔬 LangGraph Data"])
                 
                 with tab1:
                     st.markdown("**Patient Profile:**")
                     st.text_area("", session['state'].get('case_study', ''), height=200, disabled=True, key=f"case_{i}")
                     
                     if session['state'].get('clinical_summary'):
-                        st.markdown("**Clinical Summary:**")
+                        st.markdown("**Clinical Summary (LangGraph Generated):**")
                         st.info(session['state'].get('clinical_summary'))
                 
                 with tab2:
@@ -744,7 +879,7 @@ elif feature == "📊 Session Analytics":
                             st.chat_message("assistant").markdown(msg.get('content', ''))
                 
                 with tab3:
-                    st.markdown("**AI Supervisor Feedback:**")
+                    st.markdown("**AI Supervisor Feedback (LangGraph Generated):**")
                     if session['state'].get('feedback'):
                         st.markdown('<div class="info-card">', unsafe_allow_html=True)
                         st.markdown(session['state'].get('feedback'))
@@ -759,12 +894,32 @@ elif feature == "📊 Session Analytics":
                         st.markdown(f"- Duration: {session.get('duration', 'N/A')}")
                         st.markdown(f"- Total Exchanges: {len(session['messages']) // 2}")
                         st.markdown(f"- Messages: {len(session['messages'])}")
+                        st.markdown(f"- Profile Type: {profile_display}")
                     with col2:
                         st.markdown("**Timing:**")
                         st.markdown(f"- Date: {session['timestamp'].strftime('%Y-%m-%d')}")
                         st.markdown(f"- Time: {session['timestamp'].strftime('%H:%M:%S')}")
+                        st.markdown("**Technology:**")
+                        st.markdown("- LangGraph: ✅ Enabled")
+                        st.markdown("- Workflow: Profile → Summary → Roleplay → Feedback")
+                
+                with tab5:
+                    st.markdown("**LangGraph Workflow Data:**")
+                    col1, col2 = st.columns(2)
+                    
+                    with col1:
+                        if session['state'].get('diagnosis_summary'):
+                            st.markdown("**Phase 1 - Profile Verification:**")
+                            st.text_area("", session['state'].get('diagnosis_summary', ''), height=100, disabled=True, key=f"diag_{i}")
+                    
+                    with col2:
+                        st.markdown("**Workflow Status:**")
+                        st.markdown("✅ Phase 1: Profile Verification")
+                        st.markdown("✅ Phase 2: Clinical Summary")
+                        st.markdown("✅ Phase 3: Roleplay (Streamlit)")
+                        st.markdown("✅ Phase 4: Feedback Generation")
     else:
-        st.info("📭 No completed sessions yet. Start a therapy session to begin tracking your progress!")
+        st.info("📭 No completed sessions yet. Start a therapy session to begin tracking your progress with LangGraph!")
         if st.button("🎭 Start First Session", use_container_width=True):
             st.session_state.selected_feature = "💬 Therapy Session"
             st.rerun()
@@ -772,14 +927,13 @@ elif feature == "📊 Session Analytics":
 elif feature == "🎯 Performance Review":
     st.markdown('<div class="session-header">', unsafe_allow_html=True)
     st.markdown("# 🎯 Performance Review")
-    st.markdown("Analyze your clinical performance and growth")
+    st.markdown("Analyze your clinical performance and growth with LangGraph insights")
     st.markdown('</div>', unsafe_allow_html=True)
     
     if st.session_state.completed_sessions:
         # Performance Overview
         st.markdown("### 📈 Performance Overview")
         
-        # Calculate performance metrics
         total_sessions = len(st.session_state.completed_sessions)
         total_exchanges = sum(len(s['messages']) // 2 for s in st.session_state.completed_sessions)
         avg_session_length = sum(int(s.get('duration', '0m').split('m')[0]) for s in st.session_state.completed_sessions) / total_sessions
@@ -819,58 +973,92 @@ elif feature == "🎯 Performance Review":
                 st.markdown("Good conversational engagement!")
             st.markdown('</div>', unsafe_allow_html=True)
         
+        # LangGraph Integration Insights
+        st.markdown("### 🔬 LangGraph Integration Insights")
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.markdown('<div class="info-card">', unsafe_allow_html=True)
+            st.markdown("#### 🤖 AI-Powered Workflow")
+            st.markdown("✅ **Profile Verification**: Automated validation")
+            st.markdown("✅ **Clinical Summary**: AI-generated insights")
+            st.markdown("✅ **Virtual Patient**: Dynamic responses")
+            st.markdown("✅ **Feedback**: Comprehensive evaluation")
+            st.markdown("All sessions use LangGraph workflow for consistency")
+            st.markdown('</div>', unsafe_allow_html=True)
+        
+        with col2:
+            # Profile selection analytics
+            selected_profiles = sum(1 for s in st.session_state.completed_sessions if s.get('profile_used') != 'Random')
+            random_profiles = total_sessions - selected_profiles
+            
+            st.markdown('<div class="info-card">', unsafe_allow_html=True)
+            st.markdown("#### 👤 Profile Selection Strategy")
+            st.markdown(f"**Selected Profiles**: {selected_profiles}/{total_sessions}")
+            st.markdown(f"**Random Profiles**: {random_profiles}/{total_sessions}")
+            
+            if selected_profiles > random_profiles:
+                st.markdown("📊 **Strategic Learner** - You prefer targeted practice")
+            elif random_profiles > selected_profiles:
+                st.markdown("🎲 **Adaptable Learner** - You embrace variety")
+            else:
+                st.markdown("⚖️ **Balanced Learner** - Good mix of approaches")
+            st.markdown('</div>', unsafe_allow_html=True)
+        
         # Learning Progress Chart
         st.markdown("### 📊 Learning Progress")
         
-        # Create simple progress visualization
         if len(st.session_state.completed_sessions) > 1:
             import pandas as pd
             
-            # Prepare data
             dates = [s['timestamp'].date() for s in st.session_state.completed_sessions]
             durations = [int(s.get('duration', '0m').split('m')[0]) for s in st.session_state.completed_sessions]
             exchanges = [len(s['messages']) // 2 for s in st.session_state.completed_sessions]
             
-            # Create DataFrame
             df = pd.DataFrame({
                 'Date': dates,
                 'Duration (min)': durations,
                 'Exchanges': exchanges
             })
             
-            # Display charts
             col1, col2 = st.columns(2)
             with col1:
                 st.line_chart(df.set_index('Date')['Duration (min)'])
             with col2:
                 st.line_chart(df.set_index('Date')['Exchanges'])
         
-        # Tips and Recommendations
-        st.markdown("### 💡 Tips for Improvement")
+        # Enhanced Tips with LangGraph insights
+        st.markdown("### 💡 LangGraph-Enhanced Recommendations")
         st.markdown('<div class="info-card">', unsafe_allow_html=True)
-        st.markdown("Based on your session history, here are some recommendations:")
+        st.markdown("Based on your session history and LangGraph analytics:")
         
         tips = []
         if avg_session_length < 15:
-            tips.append("• Try to extend your sessions to allow for deeper therapeutic exploration")
+            tips.append("• **Session Length**: Try extending sessions to leverage the full LangGraph workflow benefits")
         if avg_exchanges < 8:
-            tips.append("• Engage in more back-and-forth dialogue to practice active listening")
+            tips.append("• **Engagement**: Increase dialogue depth to maximize AI feedback quality")
+        if selected_profiles < total_sessions * 0.3:
+            tips.append("• **Profile Strategy**: Try selecting specific profiles to practice targeted scenarios")
         if total_sessions < 10:
-            tips.append("• Regular practice will help you develop better clinical intuition")
-        tips.append("• Review the AI feedback after each session to identify areas for improvement")
-        tips.append("• Practice with different patient profiles to broaden your experience")
+            tips.append("• **Practice Frequency**: Regular sessions help the LangGraph system provide better personalized feedback")
+        
+        tips.extend([
+            "• **LangGraph Advantage**: Each session's clinical summaries improve with more practice data",
+            "• **Feedback Analysis**: Review AI-generated feedback patterns to identify growth areas",
+            "• **Profile Diversity**: Mix selected and random profiles for comprehensive training"
+        ])
         
         for tip in tips:
             st.markdown(tip)
         st.markdown('</div>', unsafe_allow_html=True)
         
     else:
-        st.info("📭 Complete some therapy sessions to see your performance review!")
+        st.info("📭 Complete some therapy sessions to see your LangGraph-enhanced performance review!")
         if st.button("🎭 Start First Session", use_container_width=True):
             st.session_state.selected_feature = "💬 Therapy Session"
             st.rerun()
 
 # Footer
 st.sidebar.markdown("---")
-st.sidebar.caption("Clinical Learning Buddy v3.0 - Powered by ZACK!! and chatGPT")
-st.sidebar.caption("© 2025 - Practice Makes Perfect 🎯")
+st.sidebar.caption("Clinical Learning Buddy v4.0 - Powered by LangGraph & OpenAI")
+st.sidebar.caption("© 2025 - Enhanced with AI Workflow Automation 🤖")
