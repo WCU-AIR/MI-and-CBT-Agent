@@ -201,6 +201,16 @@ st.markdown("""
             box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
         }
     }
+    
+    /* Processing overlay */
+    .processing-overlay {
+        background: rgba(0,0,0,0.1);
+        padding: 20px;
+        border-radius: 10px;
+        border: 2px dashed #ccc;
+        text-align: center;
+        color: #666;
+    }
     </style>
 """, unsafe_allow_html=True)
 
@@ -223,6 +233,10 @@ if 'typing' not in st.session_state:
     st.session_state.typing = False
 if 'session_start_time' not in st.session_state:
     st.session_state.session_start_time = None
+if 'processing_feedback' not in st.session_state:
+    st.session_state.processing_feedback = False
+if 'show_end_confirmation' not in st.session_state:
+    st.session_state.show_end_confirmation = False
 
 # Helper functions
 def simulate_typing(duration=2.0):
@@ -252,6 +266,17 @@ def format_session_duration(start_time):
     seconds = int(duration.total_seconds() % 60)
     return f"{minutes}m {seconds}s"
 
+def reset_session_state():
+    """Reset all session-related state variables"""
+    st.session_state.roleplay_active = False
+    st.session_state.roleplay_messages = []
+    st.session_state.current_state = None
+    st.session_state.phase_results = {}
+    st.session_state.session_start_time = None
+    st.session_state.processing_feedback = False
+    st.session_state.show_end_confirmation = False
+    st.session_state.typing = False
+
 # Sidebar
 st.sidebar.title("🏥 Clinical Learning Buddy")
 st.sidebar.markdown("---")
@@ -272,25 +297,32 @@ if not st.session_state.api_key:
             st.rerun()
 else:
     st.sidebar.success("✅ API Key configured")
-    if st.sidebar.button("🔑 Change API Key"):
+    if st.sidebar.button("🔑 Change API Key", disabled=st.session_state.processing_feedback):
         st.session_state.api_key = None
         st.session_state.learning_buddy = None
+        reset_session_state()
         st.rerun()
 
 # Feature Selection
 feature = st.sidebar.radio(
     "Navigate",
     ["💬 Therapy Session", "📊 Session Analytics", "🎯 Performance Review"],
-    index=0
+    index=0,
+    disabled=st.session_state.processing_feedback
 )
 
 # Session Status in Sidebar
-if st.session_state.roleplay_active:
+if st.session_state.roleplay_active or st.session_state.processing_feedback:
     st.sidebar.markdown("---")
     st.sidebar.markdown("### 📍 Session Status")
-    st.sidebar.markdown(f'<span class="status-indicator status-active"></span> **Active Session**', unsafe_allow_html=True)
-    st.sidebar.info(f"Duration: {format_session_duration(st.session_state.session_start_time)}")
-    st.sidebar.warning("Messages: " + str(len(st.session_state.roleplay_messages) // 2))
+    
+    if st.session_state.processing_feedback:
+        st.sidebar.markdown('<span class="status-indicator" style="background-color: orange;"></span> **Processing Feedback**', unsafe_allow_html=True)
+        st.sidebar.warning("⏳ Generating evaluation...")
+    elif st.session_state.roleplay_active:
+        st.sidebar.markdown(f'<span class="status-indicator status-active"></span> **Active Session**', unsafe_allow_html=True)
+        st.sidebar.info(f"Duration: {format_session_duration(st.session_state.session_start_time)}")
+        st.sidebar.warning("Messages: " + str(len(st.session_state.roleplay_messages) // 2))
 
 # Main Content
 if not st.session_state.learning_buddy and st.session_state.api_key:
@@ -306,212 +338,270 @@ if feature == "💬 Therapy Session":
     if not st.session_state.api_key:
         st.error("🔐 Please enter your OpenAI API key in the sidebar to continue.")
     else:
-        # Session Controls
-        col1, col2, col3, col4 = st.columns([2, 2, 2, 2])
-        
-        with col1:
-            if st.button("🎭 New Patient", use_container_width=True, disabled=st.session_state.roleplay_active, type="primary"):
-                with st.spinner("🔄 Preparing new patient case..."):
-                    try:
-                        # Initialize new session
-                        st.session_state.current_state = {
-                            "case_study": None,
-                            "diagnosis_summary": "",
-                            "clinical_summary": "",
-                            "chatlog": [],
-                            "feedback": ""
-                        }
-                        
-                        # Phase 1: Profile Verification
-                        progress_bar = st.progress(0)
-                        status_text = st.empty()
-                        
-                        status_text.text("Verifying patient profile...")
-                        progress_bar.progress(30)
-                        result = st.session_state.learning_buddy._phase_1_profile_verification(st.session_state.current_state)
-                        st.session_state.current_state.update(result)
-                        
-                        # Phase 2: Clinical Summary
-                        status_text.text("Generating clinical summary...")
-                        progress_bar.progress(70)
-                        result = st.session_state.learning_buddy._phase_2_summary(st.session_state.current_state)
-                        st.session_state.current_state.update(result)
-                        
-                        progress_bar.progress(100)
-                        status_text.text("Ready to begin!")
-                        time.sleep(0.5)
-                        
-                        # Clear progress indicators
-                        progress_bar.empty()
-                        status_text.empty()
-                        
-                        st.session_state.roleplay_active = True
-                        st.session_state.roleplay_messages = []
-                        st.session_state.session_start_time = datetime.now()
-                        st.success("✅ Patient is ready! You may begin the session.")
-                        st.balloons()
-                        
-                    except Exception as e:
-                        st.error(f"❌ Error: {str(e)}")
-        
-        with col2:
-            if st.button("🏁 End Session", use_container_width=True, disabled=not st.session_state.roleplay_active, type="secondary"):
-                if st.session_state.roleplay_active:
-                    # Add confirmation dialog
-                    st.session_state.show_end_confirmation = True
-        
-        with col3:
-            if st.button("📋 Patient Info", use_container_width=True, disabled=not st.session_state.current_state):
-                st.session_state.show_patient_info = not getattr(st.session_state, 'show_patient_info', False)
-        
-        with col4:
-            if st.button("🔄 Reset All", use_container_width=True):
-                st.session_state.roleplay_active = False
-                st.session_state.roleplay_messages = []
-                st.session_state.current_state = None
-                st.session_state.phase_results = {}
-                st.session_state.session_start_time = None
-                st.rerun()
-        
-        # End session confirmation
-        if getattr(st.session_state, 'show_end_confirmation', False):
-            st.warning("⚠️ Are you sure you want to end this session?")
-            col1, col2 = st.columns(2)
-            with col1:
-                if st.button("✅ Yes, End Session", use_container_width=True):
-                    with st.spinner("🤔 Generating comprehensive feedback..."):
-                        simulate_typing(3.0)  # Simulate processing time
-                        try:
-                            # Update chatlog
-                            st.session_state.current_state['chatlog'] = st.session_state.roleplay_messages
-                            
-                            # Show additional processing message for strict evaluation
-                            st.info("🔍 Conducting thorough clinical evaluation...")
-                            time.sleep(1.5)
-                            
-                            # Generate feedback
-                            result = st.session_state.learning_buddy._phase_4_feedback(st.session_state.current_state)
-                            st.session_state.current_state.update(result)
-                            
-                            # Save session
-                            st.session_state.completed_sessions.append({
-                                "timestamp": datetime.now(),
-                                "duration": format_session_duration(st.session_state.session_start_time),
-                                "state": st.session_state.current_state.copy(),
-                                "messages": st.session_state.roleplay_messages.copy()
-                            })
-                            
-                            st.session_state.roleplay_active = False
-                            st.session_state.show_end_confirmation = False
-                            st.success("✅ Session completed successfully!")
-                            st.info("📊 Check the feedback below and visit Session Analytics for detailed review.")
-                        except Exception as e:
-                            st.error(f"❌ Error generating feedback: {str(e)}")
-            with col2:
-                if st.button("❌ Continue Session", use_container_width=True):
-                    st.session_state.show_end_confirmation = False
-                    st.rerun()
-        
-        # Patient Information Display
-        if st.session_state.current_state and getattr(st.session_state, 'show_patient_info', False):
-            with st.container():
-                st.markdown('<div class="info-card">', unsafe_allow_html=True)
-                st.markdown("### 📋 Patient Information")
-                col1, col2 = st.columns([3, 1])
-                with col1:
-                    st.text_area("Case Details", st.session_state.current_state.get('case_study', ''), height=150, disabled=True)
-                with col2:
-                    st.markdown("**Quick Stats:**")
-                    st.markdown(f"- Session: {'Active' if st.session_state.roleplay_active else 'Ended'}")
-                    st.markdown(f"- Duration: {format_session_duration(st.session_state.session_start_time)}")
-                    st.markdown(f"- Exchanges: {len(st.session_state.roleplay_messages) // 2}")
+        # Show processing overlay when feedback is being generated
+        if st.session_state.processing_feedback:
+            st.markdown('<div class="processing-overlay">', unsafe_allow_html=True)
+            st.markdown("### 🤔 Generating Comprehensive Clinical Evaluation...")
+            st.markdown("Please wait while the AI supervisor analyzes your therapy session and provides detailed feedback.")
+            st.markdown("This process may take a few moments for thorough evaluation.")
+            
+            # Show progress bar
+            progress_placeholder = st.empty()
+            with progress_placeholder:
+                progress_bar = st.progress(0)
+                for i in range(100):
+                    time.sleep(0.02)  # Simulate processing time
+                    progress_bar.progress(i + 1)
+                progress_bar.empty()
+            
+            st.markdown('</div>', unsafe_allow_html=True)
+            
+            # Actually process the feedback
+            try:
+                # Update chatlog
+                st.session_state.current_state['chatlog'] = st.session_state.roleplay_messages
                 
-                if st.session_state.current_state.get('clinical_summary'):
-                    st.markdown("### 📄 Clinical Summary")
-                    st.info(st.session_state.current_state['clinical_summary'])
-                st.markdown('</div>', unsafe_allow_html=True)
-        
-        # Chat Interface
-        if st.session_state.roleplay_active:
-            st.markdown("---")
-            st.markdown("### 💭 Therapy Conversation")
-            
-            # Chat messages container
-            chat_container = st.container(height=400)
-            
-            with chat_container:
-                # Welcome message if no messages yet
-                if not st.session_state.roleplay_messages:
-                    st.chat_message("assistant").markdown(
-                        "👋 *The patient has entered the room. Please begin the session when you're ready.*"
-                    )
+                # Generate feedback
+                result = st.session_state.learning_buddy._phase_4_feedback(st.session_state.current_state)
+                st.session_state.current_state.update(result)
                 
-                # Display conversation history
-                for i, msg in enumerate(st.session_state.roleplay_messages):
-                    if msg.get('type') == 'human' or msg.get('role') == 'user':
-                        st.chat_message("user").markdown(msg.get("content", ""))
-                    elif msg.get('type') == 'ai' or msg.get('role') == 'assistant':
-                        st.chat_message("assistant").markdown(msg.get("content", ""))
-            
-            # Chat input
-            if prompt := st.chat_input("Type your response as therapist...", disabled=st.session_state.typing):
-                # Add therapist message
-                st.session_state.roleplay_messages.append({
-                    "type": "human",
-                    "role": "user",
-                    "content": prompt
+                # Save session
+                st.session_state.completed_sessions.append({
+                    "timestamp": datetime.now(),
+                    "duration": format_session_duration(st.session_state.session_start_time),
+                    "state": st.session_state.current_state.copy(),
+                    "messages": st.session_state.roleplay_messages.copy()
                 })
                 
-                # Set typing state
-                st.session_state.typing = True
+                # Reset states
+                st.session_state.roleplay_active = False
+                st.session_state.processing_feedback = False
+                st.session_state.show_end_confirmation = False
+                
+                st.success("✅ Session completed successfully!")
+                st.info("📊 Check the feedback below and visit Session Analytics for detailed review.")
                 st.rerun()
+                
+            except Exception as e:
+                st.error(f"❌ Error generating feedback: {str(e)}")
+                st.session_state.processing_feedback = False
+                st.session_state.show_end_confirmation = False
+                st.rerun()
+        
+        else:
+            # Session Controls - disabled during processing
+            col1, col2, col3, col4 = st.columns([2, 2, 2, 2])
             
-            # Generate patient response if typing
-            if st.session_state.typing and st.session_state.roleplay_messages:
-                with chat_container:                    
-                        with st.empty():
-                            # Calculate realistic delay
-                            delay = calculate_response_delay(st.session_state.roleplay_messages[-1]["content"])
-                            simulate_typing(delay)
+            # Determine if controls should be disabled
+            controls_disabled = (st.session_state.processing_feedback or 
+                               st.session_state.show_end_confirmation or
+                               st.session_state.typing)
+            
+            with col1:
+                if st.button("🎭 New Patient", 
+                           use_container_width=True, 
+                           disabled=st.session_state.roleplay_active or controls_disabled, 
+                           type="primary"):
+                    with st.spinner("🔄 Preparing new patient case..."):
+                        try:
+                            # Initialize new session
+                            st.session_state.current_state = {
+                                "case_study": None,
+                                "diagnosis_summary": "",
+                                "clinical_summary": "",
+                                "chatlog": [],
+                                "feedback": ""
+                            }
                             
-                            try:
-                                # Prepare messages
-                                instruction_prompt = load_prompt('Virtual Patient')
-                                messages = [
-                                    {"type": "system", "content": instruction_prompt},
-                                    {"type": "human", "content": st.session_state.current_state['case_study']}
-                                ] + st.session_state.roleplay_messages
+                            # Phase 1: Profile Verification
+                            progress_bar = st.progress(0)
+                            status_text = st.empty()
+                            
+                            status_text.text("Verifying patient profile...")
+                            progress_bar.progress(30)
+                            result = st.session_state.learning_buddy._phase_1_profile_verification(st.session_state.current_state)
+                            st.session_state.current_state.update(result)
+                            
+                            # Phase 2: Clinical Summary
+                            status_text.text("Generating clinical summary...")
+                            progress_bar.progress(70)
+                            result = st.session_state.learning_buddy._phase_2_summary(st.session_state.current_state)
+                            st.session_state.current_state.update(result)
+                            
+                            progress_bar.progress(100)
+                            status_text.text("Ready to begin!")
+                            time.sleep(0.5)
+                            
+                            # Clear progress indicators
+                            progress_bar.empty()
+                            status_text.empty()
+                            
+                            st.session_state.roleplay_active = True
+                            st.session_state.roleplay_messages = []
+                            st.session_state.session_start_time = datetime.now()
+                            st.session_state.show_end_confirmation = False
+                            st.success("✅ Patient is ready! You may begin the session.")
+                            st.balloons()
+                            
+                        except Exception as e:
+                            st.error(f"❌ Error: {str(e)}")
+            
+            with col2:
+                # Only show end session button if session is active and not in confirmation mode
+                show_end_button = (st.session_state.roleplay_active and 
+                                 not st.session_state.show_end_confirmation and 
+                                 not controls_disabled)
+                
+                if st.button("🏁 End Session", 
+                           use_container_width=True, 
+                           disabled=not show_end_button, 
+                           type="secondary"):
+                    st.session_state.show_end_confirmation = True
+                    st.rerun()
+            
+            with col3:
+                if st.button("📋 Patient Info", 
+                           use_container_width=True, 
+                           disabled=not st.session_state.current_state or controls_disabled):
+                    st.session_state.show_patient_info = not getattr(st.session_state, 'show_patient_info', False)
+            
+            with col4:
+                if st.button("🔄 Reset All", 
+                           use_container_width=True,
+                           disabled=controls_disabled):
+                    reset_session_state()
+                    st.rerun()
+            
+            # End session confirmation - only show if confirmation is active
+            if st.session_state.show_end_confirmation and not st.session_state.processing_feedback:
+                st.warning("⚠️ Are you sure you want to end this session?")
+                st.info("🔍 This will trigger a comprehensive clinical evaluation of your therapy session.")
+                
+                col1, col2 = st.columns(2)
+                with col1:
+                    if st.button("✅ Yes, End Session", use_container_width=True, type="primary"):
+                        st.session_state.processing_feedback = True
+                        st.session_state.show_end_confirmation = False
+                        st.rerun()
+                with col2:
+                    if st.button("❌ Continue Session", use_container_width=True):
+                        st.session_state.show_end_confirmation = False
+                        st.rerun()
+            
+            # Patient Information Display
+            if (st.session_state.current_state and 
+                getattr(st.session_state, 'show_patient_info', False) and 
+                not st.session_state.processing_feedback):
+                
+                with st.container():
+                    st.markdown('<div class="info-card">', unsafe_allow_html=True)
+                    st.markdown("### 📋 Patient Information")
+                    col1, col2 = st.columns([3, 1])
+                    with col1:
+                        st.text_area("Case Details", st.session_state.current_state.get('case_study', ''), height=150, disabled=True)
+                    with col2:
+                        st.markdown("**Quick Stats:**")
+                        st.markdown(f"- Session: {'Active' if st.session_state.roleplay_active else 'Ended'}")
+                        st.markdown(f"- Duration: {format_session_duration(st.session_state.session_start_time)}")
+                        st.markdown(f"- Exchanges: {len(st.session_state.roleplay_messages) // 2}")
+                    
+                    if st.session_state.current_state.get('clinical_summary'):
+                        st.markdown("### 📄 Clinical Summary")
+                        st.info(st.session_state.current_state['clinical_summary'])
+                    st.markdown('</div>', unsafe_allow_html=True)
+            
+            # Chat Interface - only show if not processing and session is active
+            if (st.session_state.roleplay_active and 
+                not st.session_state.processing_feedback and 
+                not st.session_state.show_end_confirmation):
+                
+                st.markdown("---")
+                st.markdown("### 💭 Therapy Conversation")
+                
+                # Chat messages container
+                chat_container = st.container(height=400)
+                
+                with chat_container:
+                    # Welcome message if no messages yet
+                    if not st.session_state.roleplay_messages:
+                        st.chat_message("assistant").markdown(
+                            "👋 *The patient has entered the room. Please begin the session when you're ready.*"
+                        )
+                    
+                    # Display conversation history with labels and visual distinction
+                    for i, msg in enumerate(st.session_state.roleplay_messages):
+                        if msg.get('type') == 'human' or msg.get('role') == 'user':
+                            with st.chat_message("user"):
+                                st.markdown("**Therapist:**")
+                                st.markdown(msg.get("content", ""))
+                        elif msg.get('type') == 'ai' or msg.get('role') == 'assistant':
+                            with st.chat_message("assistant"):
+                                st.markdown("**Patient:**")
+                                st.markdown(msg.get("content", ""))
+                
+                # Chat input
+                if prompt := st.chat_input("Type your response as therapist...", disabled=st.session_state.typing):
+                    # Add therapist message
+                    st.session_state.roleplay_messages.append({
+                        "type": "human",
+                        "role": "user",
+                        "content": prompt
+                    })
+                    
+                    # Set typing state
+                    st.session_state.typing = True
+                    st.rerun()
+                
+                # Generate patient response if typing
+                if st.session_state.typing and st.session_state.roleplay_messages:
+                    with chat_container:                    
+                            with st.empty():
+                                # Calculate realistic delay
+                                delay = calculate_response_delay(st.session_state.roleplay_messages[-1]["content"])
+                                simulate_typing(delay)
                                 
-                                # Convert to LangChain format
-                                from langchain.schema import SystemMessage, HumanMessage, AIMessage
-                                langchain_messages = []
-                                for m in messages:
-                                    if m.get('type') == 'system':
-                                        langchain_messages.append(SystemMessage(content=m['content']))
-                                    elif m.get('type') == 'human':
-                                        langchain_messages.append(HumanMessage(content=m['content']))
-                                    elif m.get('type') == 'ai':
-                                        langchain_messages.append(AIMessage(content=m['content']))
-                                
-                                # Get response
-                                response = st.session_state.learning_buddy.llm_mini_virtualPatient.invoke(langchain_messages)
-                                
-                                # Add patient response
-                                st.session_state.roleplay_messages.append({
-                                    "type": "ai",
-                                    "role": "assistant",
-                                    "content": response.content
-                                })
-                                
-                                st.session_state.typing = False
-                                st.rerun()
-                                
-                            except Exception as e:
-                                st.error(f"❌ Error: {str(e)}")
-                                st.session_state.typing = False
+                                try:
+                                    # Prepare messages
+                                    instruction_prompt = load_prompt('Virtual Patient')
+                                    messages = [
+                                        {"type": "system", "content": instruction_prompt},
+                                        {"type": "human", "content": st.session_state.current_state['case_study']}
+                                    ] + st.session_state.roleplay_messages
+                                    
+                                    # Convert to LangChain format
+                                    from langchain.schema import SystemMessage, HumanMessage, AIMessage
+                                    langchain_messages = []
+                                    for m in messages:
+                                        if m.get('type') == 'system':
+                                            langchain_messages.append(SystemMessage(content=m['content']))
+                                        elif m.get('type') == 'human':
+                                            langchain_messages.append(HumanMessage(content=m['content']))
+                                        elif m.get('type') == 'ai':
+                                            langchain_messages.append(AIMessage(content=m['content']))
+                                    
+                                    # Get response
+                                    response = st.session_state.learning_buddy.llm_mini_virtualPatient.invoke(langchain_messages)
+                                    
+                                    # Add patient response
+                                    st.session_state.roleplay_messages.append({
+                                        "type": "ai",
+                                        "role": "assistant",
+                                        "content": response.content
+                                    })
+                                    
+                                    st.session_state.typing = False
+                                    st.rerun()
+                                    
+                                except Exception as e:
+                                    st.error(f"❌ Error: {str(e)}")
+                                    st.session_state.typing = False
         
         # Display Feedback After Session
-        if st.session_state.current_state and st.session_state.current_state.get('feedback') and not st.session_state.roleplay_active:
+        if (st.session_state.current_state and 
+            st.session_state.current_state.get('feedback') and 
+            not st.session_state.roleplay_active and 
+            not st.session_state.processing_feedback):
+            
             st.markdown("---")
             st.markdown("### 🎯 Clinical Supervision Feedback")
             
@@ -578,7 +668,7 @@ if feature == "💬 Therapy Session":
                     st.success("✅ Feedback saved to session history!")
             with col2:
                 if st.button("🎭 New Patient", use_container_width=True):
-                    st.session_state.current_state = None
+                    reset_session_state()
                     st.rerun()
             with col3:
                 if st.button("📊 View Analytics", use_container_width=True):
