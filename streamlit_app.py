@@ -1053,7 +1053,7 @@ elif feature == "🎯 Performance Review":
         st.markdown('</div>', unsafe_allow_html=True)
         
     else:
-        st.info("📭 Complete some therapy sessions to see your LangGraph-enhanced performance review!")
+        st.info("📭 Complete some therapy sessions to see your consolidated performance review!")
         if st.button("🎭 Start First Session", use_container_width=True):
             st.session_state.selected_feature = "💬 Therapy Session"
             st.rerun()
@@ -1061,4 +1061,4 @@ elif feature == "🎯 Performance Review":
 # Footer
 st.sidebar.markdown("---")
 st.sidebar.caption("Clinical Learning Buddy v4.0 - Powered by LangGraph & OpenAI")
-st.sidebar.caption("© 2025 - Enhanced with AI Workflow Automation 🤖")
+st.sidebar.caption("© 2025 - Add something cool here?")
