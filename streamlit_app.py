@@ -292,7 +292,6 @@ if 'show_end_confirmation' not in st.session_state:
 
 # Sidebar Configuration
 st.sidebar.title("🏥 Clinical Learning Buddy")
-st.sidebar.markdown('<div class="langgraph-branding">⚡ Powered by LangGraph Workflow</div>', unsafe_allow_html=True)
 st.sidebar.markdown("---")
 
 # API Key Management
@@ -714,7 +713,7 @@ if feature == "💬 Therapy Session":
             st.markdown("### 🎯 LangGraph Clinical Supervision Feedback")
             st.markdown('<div class="langgraph-status">🔬 AI-Generated via LangGraph Workflow</div>', unsafe_allow_html=True)
             
-            st.warning("⚠️ **Note**: This feedback was generated using LangGraph workflow with DSM-5 guidelines. It is intentionally strict and critical to accelerate learning.")
+            st.warning("⚠️ **Note**: This feedback was generated using workflow with DSM-5 guidelines. It is intentionally strict and critical to accelerate learning.")
             
             feedback_text = st.session_state.session_data['feedback']
             
@@ -757,7 +756,6 @@ if feature == "💬 Therapy Session":
                         
                         profile_type = "Selected" if st.session_state.selected_patient_profile else "Random"
                         st.markdown(f"**Profile**: {profile_type}")
-                        st.markdown("**Engine**: LangGraph Workflow")
                     
                     st.markdown('</div>', unsafe_allow_html=True)
             
@@ -765,7 +763,7 @@ if feature == "💬 Therapy Session":
             col1, col2, col3 = st.columns(3)
             with col1:
                 if st.button("📥 Save Feedback", use_container_width=True):
-                    st.success("✅ Feedback saved via LangGraph!")
+                    st.success("✅ Feedback saved!")
             with col2:
                 if st.button("🎭 New Session", use_container_width=True):
                     if st.session_state.learning_buddy:
@@ -780,8 +778,8 @@ if feature == "💬 Therapy Session":
 elif feature == "📊 Session Analytics":
     st.markdown('<div class="session-header">', unsafe_allow_html=True)
     st.markdown("# 📊 Session Analytics & History")
-    st.markdown("Track your progress with LangGraph-powered insights")
-    st.markdown('<div class="phase-indicator">🔬 LangGraph Workflow Analytics</div>', unsafe_allow_html=True)
+    st.markdown("Track your progress with AI-powered insights")
+    st.markdown('<div class="phase-indicator">🔬 AI Workflow Analytics</div>', unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
     
     if st.session_state.completed_sessions:
@@ -820,7 +818,7 @@ elif feature == "📊 Session Analytics":
             st.markdown('</div>', unsafe_allow_html=True)
         
         # LangGraph Analytics
-        st.markdown("### 🔬 LangGraph Workflow Analytics")
+        st.markdown("### 🔬 Workflow Analytics")
         col1, col2 = st.columns(2)
         
         with col1:
@@ -967,7 +965,7 @@ elif feature == "🎯 Performance Review":
     
     if st.session_state.completed_sessions:
         # Performance Overview
-        st.markdown("### 📈 LangGraph Performance Overview")
+        st.markdown("### 📈 Performance Overview")
         
         total_sessions = len(st.session_state.completed_sessions)
         total_exchanges = sum(
@@ -1018,7 +1016,7 @@ elif feature == "🎯 Performance Review":
             st.markdown('</div>', unsafe_allow_html=True)
         
         # LangGraph Workflow Insights
-        st.markdown("### 🔬 LangGraph Workflow Performance")
+        st.markdown("### 🔬 Workflow Performance")
         col1, col2 = st.columns(2)
         
         with col1:
@@ -1059,7 +1057,7 @@ elif feature == "🎯 Performance Review":
             st.markdown('</div>', unsafe_allow_html=True)
         
         # Learning Progress Visualization
-        st.markdown("### 📊 LangGraph Learning Progress")
+        st.markdown("### 📊 Learning Progress")
         
         if len(st.session_state.completed_sessions) > 1:
             import pandas as pd
@@ -1086,14 +1084,14 @@ elif feature == "🎯 Performance Review":
                 st.line_chart(df.set_index('Date')['Exchanges'])
         
         # Enhanced LangGraph Recommendations
-        st.markdown("### 💡 LangGraph-Enhanced Recommendations")
+        st.markdown("### 💡 Recommendations")
         st.markdown('<div class="workflow-indicator">', unsafe_allow_html=True)
-        st.markdown("**Personalized insights based on your LangGraph session data:**")
+        st.markdown("**Personalized insights based on your session data:**")
         
         recommendations = []
         
         if avg_duration < 15:
-            recommendations.append("⏱️ **Session Duration**: Extend sessions to fully leverage LangGraph's 4-phase workflow benefits")
+            recommendations.append("⏱️ **Session Duration**: Extend sessions to fully leverage application benefits")
         
         if avg_exchanges < 8:
             recommendations.append("💬 **Engagement Depth**: Increase dialogue exchanges to maximize AI feedback quality")
@@ -1102,34 +1100,30 @@ elif feature == "🎯 Performance Review":
             recommendations.append("🎯 **Profile Strategy**: Try more selected profiles to practice targeted clinical scenarios")
         
         if total_sessions < 10:
-            recommendations.append("🔄 **Practice Frequency**: Regular sessions help LangGraph provide increasingly personalized feedback")
+            recommendations.append("🔄 **Practice Frequency**: Regular sessions help us provide increasingly personalized feedback")
         
         # Success rate recommendations
         if success_rate < 90:
-            recommendations.append("🔧 **Workflow Optimization**: Review session endings to ensure full LangGraph workflow completion")
+            recommendations.append("🔧 **Workflow Optimization**: Review session endings to ensure full workflow completion")
         
-        # Always include LangGraph-specific recommendations
-        recommendations.extend([
-            "🔬 **LangGraph Advantage**: Each session's AI analysis improves with more diverse practice data",
-            "📊 **Feedback Patterns**: Review AI-generated feedback trends to identify consistent growth areas",
-            "🎭 **Virtual Patient Variety**: Mix profile types to train against diverse clinical presentations",
-            "📈 **Progress Tracking**: Use session analytics to monitor improvement over time"
-        ])
+        # # Always include LangGraph-specific recommendations
+        # recommendations.extend([
+        #     "🔬 **LangGraph Advantage**: Each session's AI analysis improves with more diverse practice data",
+        #     "📊 **Feedback Patterns**: Review AI-generated feedback trends to identify consistent growth areas",
+        #     "🎭 **Virtual Patient Variety**: Mix profile types to train against diverse clinical presentations",
+        #     "📈 **Progress Tracking**: Use session analytics to monitor improvement over time"
+        # ])
         
         for recommendation in recommendations:
             st.markdown(recommendation)
-        
-        st.markdown("---")
-        st.markdown("**🎯 Next Steps**: Focus on consistency and depth. LangGraph workflows provide the most value when sessions are thorough and regular.")
-        st.markdown('</div>', unsafe_allow_html=True)
+            st.markdown('</div>', unsafe_allow_html=True)
         
     else:
-        st.info("📭 Complete some LangGraph therapy sessions to see your comprehensive performance review!")
+        st.info("📭 Complete some  therapy sessions to see your comprehensive performance review!")
         if st.button("🎭 Start First Session", use_container_width=True):
             st.session_state.selected_feature = "💬 Therapy Session"
             st.rerun()
 
 # Footer
 st.sidebar.markdown("---")
-st.sidebar.caption("Clinical Learning Buddy v5.0 - Powered by LangGraph Workflows & OpenAI GPT-4o-mini")
-st.sidebar.markdown('<div class="langgraph-branding">🔬 Full LangGraph Integration</div>', unsafe_allow_html=True)
+st.sidebar.caption("Clinical Learning Buddy v27m742nr")

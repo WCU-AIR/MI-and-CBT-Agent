@@ -36,11 +36,9 @@ class InterviewState(TypedDict):
 class LearningBuddy:
     def __init__(self, api_key: str):
         self.api_key = SecretStr(api_key)
-        self.llm_mini = ChatOpenAI(model="gpt-4o-mini", temperature=0, api_key=self.api_key)
+        self.llm_mini = ChatOpenAI(model="gpt-4o", temperature=0, api_key=self.api_key)
         self.llm_mini_virtualPatient = ChatOpenAI(model="gpt-4o-mini", temperature=1, api_key=self.api_key)
-        self.llm_feedback = ChatOpenAI(model="gpt-4o-mini", temperature=0.2, api_key=self.api_key)
-        
-        # Create three separate workflows to avoid recursion
+        self.llm_feedback = ChatOpenAI(model="gpt-4.1", temperature=0.1, api_key=self.api_key)
         self.init_graph = self._build_init_workflow()
         self.message_graph = self._build_message_workflow()
         self.feedback_graph = self._build_feedback_workflow()
@@ -56,8 +54,6 @@ class LearningBuddy:
         workflow.add_node("verify_profile", RunnableLambda(self._phase_1_profile_verification))
         workflow.add_node("generate_summary", RunnableLambda(self._phase_2_summary))
         workflow.add_node("setup_roleplay", RunnableLambda(self._phase_3_roleplay_setup))
-
-        # Linear workflow - no conditionals
         workflow.set_entry_point("initialize")
         workflow.add_edge("initialize", "verify_profile")
         workflow.add_edge("verify_profile", "generate_summary")
@@ -73,8 +69,6 @@ class LearningBuddy:
         
         workflow.add_node("process_input", RunnableLambda(self._process_user_input))
         workflow.add_node("generate_response", RunnableLambda(self._generate_ai_response))
-
-        # Linear workflow - no conditionals
         workflow.set_entry_point("process_input")
         workflow.add_edge("process_input", "generate_response")
         workflow.add_edge("generate_response", END)
@@ -139,8 +133,6 @@ class LearningBuddy:
         try:
             # Create state for message processing
             message_state = {**self.current_state, "user_input": user_input}
-            
-            # Run message processing workflow
             result = self.message_graph.invoke(message_state)
             self.current_state = result
             
@@ -160,7 +152,6 @@ class LearningBuddy:
             return {"error": "No active session"}
         
         try:
-            # Run feedback workflow
             result = self.feedback_graph.invoke(self.current_state)
             self.current_state = result
             
