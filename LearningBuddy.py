@@ -321,8 +321,7 @@ class LearningBuddy:
         
         try:
             chatlog = state.get("chatlog", [])
-            
-            # Convert to LangChain format
+
             langchain_messages = []
             for msg in chatlog:
                 if msg.get('type') == 'system':
@@ -399,7 +398,6 @@ Clinical Summary:
             m["content"].strip() != case_study.strip()
         ]
 
-        # Build messages for feedback LLM
         messages = [
             SystemMessage(content=strict_feedback_prompt),
             HumanMessage(content="Here is the therapy session transcript to evaluate:")

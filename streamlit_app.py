@@ -658,14 +658,27 @@ if feature == "💬 Therapy Session":
                 
                 # Display chat history
                 for msg in st.session_state.chat_messages:
-                    if msg.get('role') == 'user':
-                        with st.chat_message("user"):
-                            st.markdown("**Therapist:**")
-                            st.markdown(msg.get("content", ""))
-                    elif msg.get('role') == 'assistant':
-                        with st.chat_message("assistant"):
-                            st.markdown("**Patient:**")
-                            st.markdown(msg.get("content", ""))
+                    role = msg.get('role')
+                    content = msg.get('content', '')
+                    
+                    if role == 'user':  # Therapist (Right side)
+                        st.markdown(f"""
+                        <div style="display: flex; justify-content: flex-end; margin-bottom: 10px;">
+                            <div style="background-color: #e3f2fd; padding: 12px 18px; border-radius: 15px; max-width: 70%; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align: right;">
+                                <strong>Therapist:</strong><br>{content}
+                            </div>
+                        </div>
+                        """, unsafe_allow_html=True)
+                    
+                    elif role == 'assistant':  # Patient (Left side)
+                        st.markdown(f"""
+                        <div style="display: flex; justify-content: flex-start; margin-bottom: 10px;">
+                            <div style="background-color: #f3e5f5; padding: 12px 18px; border-radius: 15px; max-width: 70%; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align: left;">
+                                <strong>Patient:</strong><br>{content}
+                            </div>
+                        </div>
+                        """, unsafe_allow_html=True)
+
             
             # Chat Input
             if prompt := st.chat_input("Type your response as therapist..."):
@@ -868,7 +881,7 @@ elif feature == "📊 Session Analytics":
             session_metadata = langgraph_data.get('session_metadata', {})
             duration = session_metadata.get('session_duration_minutes', 0)
             
-            with st.expander(f"🔬 LangGraph Session {session_num} - {session['timestamp'].strftime('%Y-%m-%d %H:%M')} ({duration:.1f}m) - {profile_display}"):
+            with st.expander(f"🔬 Chat Session {session_num} - {session['timestamp'].strftime('%Y-%m-%d %H:%M')} ({duration:.1f}m) - {profile_display}"):
                 tab1, tab2, tab3, tab4, tab5 = st.tabs(["📋 Patient Data", "💬 Conversation", "📝 Feedback", "📊 Metrics", "🔬 LangGraph Details"])
                 
                 with tab1:
