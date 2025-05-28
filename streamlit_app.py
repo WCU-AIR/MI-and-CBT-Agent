@@ -535,7 +535,7 @@ if feature == "💬 Therapy Session":
         if st.session_state.processing_phase == "evaluate_session":
             st.markdown('<div class="processing-overlay">', unsafe_allow_html=True)
             st.markdown("### 🎯 Running AI Feedback Evaluation...")
-            st.markdown("AI supervisor analyzing session using comprehensive clinical criteria")
+            st.markdown("AI supervisor analyzing session using comprehensive clinical criteria. This may take a moment(Around 3-5 minutes).")
             
             progress_placeholder = st.empty()
             with progress_placeholder:
@@ -939,7 +939,7 @@ elif feature == "📊 Session Analytics":
                     col1, col2 = st.columns(2)
                     
                     with col1:
-                        st.markdown("**Workflow Phases:**")
+                        st.markdown("**Workflow Phases:**+")
                         st.markdown("✅ Phase 1: Profile Verification")
                         st.markdown("✅ Phase 2: Clinical Summary Generation")
                         st.markdown("✅ Phase 3: Interactive Roleplay")
@@ -989,7 +989,7 @@ elif feature == "🎯 Performance Review":
         
         with col1:
             st.markdown('<div class="workflow-indicator">', unsafe_allow_html=True)
-            st.markdown("#### 🎓 LangGraph Experience Level")
+            st.markdown("#### 🎓 Experience Level")
             if total_sessions < 5:
                 st.markdown("**Beginner** - Getting familiar with workflow!")
             elif total_sessions < 15:
