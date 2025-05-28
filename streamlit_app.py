@@ -361,12 +361,12 @@ feature = st.sidebar.radio(
 # LangGraph Session Status
 if st.session_state.session_data or st.session_state.processing_phase:
     st.sidebar.markdown("---")
-    st.sidebar.markdown("### 🔄 LangGraph Status")
+    st.sidebar.markdown("### 🔄 System Status")
     
     if st.session_state.processing_phase:
         phase_name = get_phase_display_name(st.session_state.processing_phase)
         st.sidebar.markdown(f'<span class="status-indicator status-processing"></span> **{phase_name}**', unsafe_allow_html=True)
-        st.sidebar.warning("⏳ LangGraph workflow running...")
+        st.sidebar.warning("⏳ Core workflows running...")
     elif st.session_state.session_data:
         current_phase = st.session_state.session_data.get('current_phase', 'unknown')
         phase_name = get_phase_display_name(current_phase)
@@ -400,7 +400,6 @@ if feature == "💬 Therapy Session":
     st.markdown('<div class="session-header">', unsafe_allow_html=True)
     st.markdown("# 💬 Virtual Therapy Session")
     st.markdown("Practice clinical skills with AI-powered patient simulations")
-    st.markdown('<div class="phase-indicator">🔬 LangGraph Workflow Integration</div>', unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
     
     if not st.session_state.api_key:
@@ -455,7 +454,7 @@ if feature == "💬 Therapy Session":
         # Process session initialization
         if st.session_state.processing_phase == "initialize_node":
             st.markdown('<div class="processing-overlay">', unsafe_allow_html=True)
-            st.markdown("### 🔄 Initializing LangGraph Workflow...")
+            st.markdown("### 🔄 Initializing AI-centric Workflow...")
             st.markdown("Running through automated phases: Profile Verification → Clinical Summary → Roleplay Setup")
             
             # Show progress
@@ -465,7 +464,7 @@ if feature == "💬 Therapy Session":
                 status_text = st.empty()
                 
                 # Phase indicators
-                status_text.text("🔄 Starting LangGraph workflow...")
+                status_text.text("🔄 Starting workflow...")
                 progress_bar.progress(10)
                 time.sleep(0.5)
                 
@@ -481,7 +480,6 @@ if feature == "💬 Therapy Session":
                 progress_bar.progress(90)
                 time.sleep(0.3)
                 
-                # Actually run the LangGraph workflow
                 try:
                     session_result = st.session_state.learning_buddy.start_session(
                         case_study=None,
@@ -502,11 +500,11 @@ if feature == "💬 Therapy Session":
                         st.session_state.chat_messages = []
                         st.session_state.processing_phase = None
                         
-                        st.success("✅ LangGraph workflow completed successfully!")
+                        st.success("✅ Initial setup completed successfully!")
                         st.balloons()
                         
                 except Exception as e:
-                    st.error(f"❌ LangGraph workflow error: {str(e)}")
+                    st.error(f"❌ System error encountered: {str(e)}")
                     st.session_state.processing_phase = None
                 
                 # Clear progress indicators
@@ -520,7 +518,7 @@ if feature == "💬 Therapy Session":
         # End session confirmation
         if st.session_state.show_end_confirmation and not st.session_state.processing_phase:
             st.warning("⚠️ Are you sure you want to end this session?")
-            st.info("🔍 This will trigger LangGraph feedback evaluation workflow.")
+            st.info("🔍 This will trigger AI feedback evaluation workflow.")
             
             col1, col2 = st.columns(2)
             with col1:
@@ -536,7 +534,7 @@ if feature == "💬 Therapy Session":
         # Process session ending
         if st.session_state.processing_phase == "evaluate_session":
             st.markdown('<div class="processing-overlay">', unsafe_allow_html=True)
-            st.markdown("### 🎯 Running LangGraph Feedback Evaluation...")
+            st.markdown("### 🎯 Running AI Feedback Evaluation...")
             st.markdown("AI supervisor analyzing session using comprehensive clinical criteria")
             
             progress_placeholder = st.empty()
@@ -570,11 +568,11 @@ if feature == "💬 Therapy Session":
                     st.session_state.session_active = False
                     st.session_state.processing_phase = None
                     
-                    st.success("✅ LangGraph feedback evaluation completed!")
+                    st.success("✅ AI feedback evaluation completed!")
                     st.info("📊 Check the feedback below and visit Session Analytics for detailed review.")
                 
             except Exception as e:
-                st.error(f"❌ LangGraph feedback error: {str(e)}")
+                st.error(f"❌ AI feedback error: {str(e)}")
                 st.session_state.processing_phase = None
             
             time.sleep(1)
@@ -587,7 +585,7 @@ if feature == "💬 Therapy Session":
             
             with st.container():
                 st.markdown('<div class="workflow-indicator">', unsafe_allow_html=True)
-                st.markdown("### 📋 LangGraph Session Information")
+                st.markdown("### 📋 Session Information")
                 
                 col1, col2 = st.columns([3, 1])
                 with col1:
@@ -597,7 +595,7 @@ if feature == "💬 Therapy Session":
                 with col2:
                     if st.session_state.learning_buddy:
                         session_stats = st.session_state.learning_buddy.get_session_statistics()
-                        st.markdown("**LangGraph Stats:**")
+                        st.markdown("**System Stats:**")
                         st.markdown(f"- Phase: {get_phase_display_name(session_stats.get('current_phase', 'unknown'))}")
                         st.markdown(f"- Active: {'Yes' if session_stats.get('session_active') else 'No'}")
                         st.markdown(f"- Exchanges: {session_stats.get('total_exchanges', 0)}")
@@ -625,8 +623,7 @@ if feature == "💬 Therapy Session":
             not st.session_state.show_end_confirmation):
             
             st.markdown("---")
-            st.markdown("### 💭 LangGraph-Powered Therapy Conversation")
-            st.markdown('<div class="langgraph-status">🔬 Real-time AI Patient via LangGraph Workflow</div>', unsafe_allow_html=True)
+            st.markdown("### 💭 AI-Powered Therapy Conversation")
             
             # Clinical Summary Reference
             if st.session_state.session_data.get('clinical_summary'):
@@ -656,7 +653,7 @@ if feature == "💬 Therapy Session":
                 # Welcome message
                 if not st.session_state.chat_messages:
                     st.chat_message("assistant").markdown(
-                        "👋 *Patient simulation ready. LangGraph workflow has completed initialization phases. The session is now active and ready for therapeutic interaction.*"
+                        "👋 *Patient simulation ready. The session is now active and ready for therapeutic interaction.*"
                     )
                 
                 # Display chat history
@@ -679,7 +676,7 @@ if feature == "💬 Therapy Session":
                 })
                 
                 # Send message through LangGraph
-                with st.spinner("🔄 LangGraph processing response..."):
+                with st.spinner("🔄 System processing response..."):
                     try:
                         response = st.session_state.learning_buddy.send_message(prompt)
                         
@@ -710,9 +707,7 @@ if feature == "💬 Therapy Session":
             not st.session_state.processing_phase):
             
             st.markdown("---")
-            st.markdown("### 🎯 LangGraph Clinical Supervision Feedback")
-            st.markdown('<div class="langgraph-status">🔬 AI-Generated via LangGraph Workflow</div>', unsafe_allow_html=True)
-            
+            st.markdown("### 🎯 AI Clinical Supervision Feedback")            
             st.warning("⚠️ **Note**: This feedback was generated using workflow with DSM-5 guidelines. It is intentionally strict and critical to accelerate learning.")
             
             feedback_text = st.session_state.session_data['feedback']
@@ -726,13 +721,13 @@ if feature == "💬 Therapy Session":
                 
                 with col1:
                     st.markdown('<div class="evaluation-card">', unsafe_allow_html=True)
-                    st.markdown("#### 📋 LangGraph Clinical Evaluation")
+                    st.markdown("#### 📋 AI Clinical Evaluation")
                     st.markdown(feedback_text)
                     st.markdown('</div>', unsafe_allow_html=True)
                 
                 with col2:
                     st.markdown('<div class="workflow-indicator">', unsafe_allow_html=True)
-                    st.markdown("#### 🔬 LangGraph Summary")
+                    st.markdown("#### 🔬 AI Generated Summary")
                     
                     # Extract score if present
                     import re
@@ -854,7 +849,7 @@ elif feature == "📊 Session Analytics":
             st.markdown('</div>', unsafe_allow_html=True)
         
         # Session History
-        st.markdown("### 📚 LangGraph Session History")
+        st.markdown("### 📚 Session History")
         
         col1, col2 = st.columns([3, 1])
         with col2:
@@ -877,7 +872,7 @@ elif feature == "📊 Session Analytics":
                 tab1, tab2, tab3, tab4, tab5 = st.tabs(["📋 Patient Data", "💬 Conversation", "📝 Feedback", "📊 Metrics", "🔬 LangGraph Details"])
                 
                 with tab1:
-                    st.markdown("**Patient Profile (LangGraph Verified):**")
+                    st.markdown("**Patient Profile (Verified):**")
                     case_study = langgraph_data.get('case_study', '')
                     st.text_area("Case Study Content", case_study, height=200, disabled=True, key=f"case_{i}", label_visibility="collapsed")
                     
@@ -887,7 +882,7 @@ elif feature == "📊 Session Analytics":
                         st.info(clinical_summary)
                 
                 with tab2:
-                    st.markdown("**LangGraph Therapy Conversation:**")
+                    st.markdown("**AI Therapy Conversation:**")
                     chatlog = langgraph_data.get('chatlog', [])
                     conversation_messages = [m for m in chatlog if m.get('role') in ['user', 'assistant']]
                     
@@ -898,7 +893,7 @@ elif feature == "📊 Session Analytics":
                             st.chat_message("assistant").markdown(f"**Patient:** {msg.get('content', '')}")
                 
                 with tab3:
-                    st.markdown("**LangGraph AI Supervisor Feedback:**")
+                    st.markdown("**AI Supervisor Feedback:**")
                     feedback = langgraph_data.get('feedback', '')
                     if feedback:
                         st.markdown('<div class="info-card">', unsafe_allow_html=True)
