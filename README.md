@@ -1,4 +1,4 @@
-# LearningBuddy
+# LearningBuddy - 29 May Update
 
 Learning buddy to teach medical residents how to treat patients with MDD
 
@@ -7,9 +7,6 @@ Learning buddy to teach medical residents how to treat patients with MDD
 # Create virtual environment
 
 python -m venv myenv
-
-# Activate it (Windows)
-
 myenv\Scripts\activate
 
 # Install packages
