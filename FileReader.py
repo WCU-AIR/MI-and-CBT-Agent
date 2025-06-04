@@ -34,6 +34,8 @@ def load_prompt(prompt_name: str) -> str:
         filepath = 'Prompts/patient_profile_verification_prompt.txt'
     elif prompt_name == 'Feedback':
         filepath = 'Prompts/feedback_agent_prompt.txt'
+    elif prompt_name == 'STACER Prompt':
+        filepath = 'Prompts/STACER_form_prompt.txt'
     else:
         filepath = ''
 
@@ -43,6 +45,10 @@ def load_context(context_name: str) -> str:
 
     if context_name == 'Feedback Criteria':
         filepath = 'Context/feedback_criteria.txt'
+    elif context_name == 'COD STACER':
+        filepath = 'Context/COD_STACER.txt'
+    elif context_name == 'FOD STACER':
+        filepath = 'Context/FOD_STACER.txt'
     else:
         filepath = ''
 

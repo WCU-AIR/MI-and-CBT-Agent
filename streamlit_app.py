@@ -7,6 +7,9 @@ import time
 from typing import Optional, Dict, List, Any
 from LearningBuddy import LearningBuddy
 from FileReader import load_prompt, load_context, load_patient_profile, load_random_case_profile
+from Voice import *
+import base64
+import markdown2
 
 # Streamlit App Configuration
 st.set_page_config(
@@ -289,6 +292,8 @@ if 'show_patient_info' not in st.session_state:
     st.session_state.show_patient_info = False
 if 'show_end_confirmation' not in st.session_state:
     st.session_state.show_end_confirmation = False
+if "muted" not in st.session_state:
+    st.session_state.muted = False
 
 # Sidebar Configuration
 st.sidebar.title("🏥 Clinical Learning Buddy")
@@ -679,7 +684,9 @@ if feature == "💬 Therapy Session":
                         </div>
                         """, unsafe_allow_html=True)
 
-            
+            # Mute Toggle
+            st.session_state.muted = st.toggle("🔇 Mute audio", value=st.session_state.get("muted", False))
+
             # Chat Input
             if prompt := st.chat_input("Type your response as therapist..."):
                 # Add user message to display
@@ -703,6 +710,14 @@ if feature == "💬 Therapy Session":
                                     "role": "assistant", 
                                     "content": ai_response
                                 })
+                                #Use Text To Speach to play the user's response
+                                print(st.session_state.muted)
+                                if not st.session_state.muted:
+                                    try:
+                                        audio_bytes = text_to_speech(ai_response, st.session_state.learning_buddy.voice)
+                                        st.session_state.latest_audio = audio_bytes  # Save audio here
+                                    except Exception as e:
+                                        st.warning(f"⚠️ Audio playback error: {e}")
                             
                             # Update session data
                             st.session_state.session_data = st.session_state.learning_buddy.get_session_state()
@@ -712,76 +727,124 @@ if feature == "💬 Therapy Session":
                         st.error(f"❌ LangGraph communication error: {str(e)}")
                 
                 st.rerun()
-        
+
+            #Audio Playback
+            if 'latest_audio' in st.session_state:
+                audio_base64 = base64.b64encode(st.session_state.latest_audio).decode('utf-8')
+                audio_html = f'''
+                <audio autoplay>
+                  <source src="data:audio/mp3;base64,{audio_base64}" type="audio/mpeg">
+                </audio>
+                '''
+                st.markdown(audio_html, unsafe_allow_html=True)
+
+                del st.session_state['latest_audio']
+
+
+
         # Display Feedback After Session
-        if (st.session_state.session_data and 
-            st.session_state.session_data.get('feedback') and 
-            not st.session_state.session_active and 
-            not st.session_state.processing_phase):
-            
-            st.markdown("---")
-            st.markdown("### 🎯 AI Clinical Supervision Feedback")            
-            st.warning("⚠️ **Note**: This feedback was generated using workflow with DSM-5 guidelines. It is intentionally strict and critical to accelerate learning.")
-            
-            feedback_text = st.session_state.session_data['feedback']
-            
-            if "CRITICAL ERROR" in feedback_text or "critical error" in feedback_text.lower():
-                st.error("🚨 **CRITICAL ERRORS DETECTED** - Review immediately for patient safety")
-            
-            feedback_container = st.container()
-            with feedback_container:
-                col1, col2 = st.columns([3, 1])
-                
+        if (st.session_state.session_data and
+                st.session_state.session_data.get('feedback') and
+                st.session_state.session_data.get('COD_STACER') and
+                st.session_state.session_data.get('FOD_STACER') and
+                not st.session_state.session_active and
+                not st.session_state.processing_phase):
+            # Use tabs for Feedback and STACER form
+            tab1, tab2, tab3 = st.tabs(["📝 AI Feedback", "📄 FOD STACER Form", "📄 COD STACER Form"])
+
+            # Tab 1: Feedback
+            with tab1:
+                st.markdown("---")
+                st.markdown("### 🎯 AI Clinical Supervision Feedback")
+                st.warning(
+                    "⚠️ **Note**: This feedback was generated using workflow with DSM-5 guidelines. It is intentionally strict and critical to accelerate learning.")
+
+                feedback_text = st.session_state.session_data['feedback']
+
+                if "CRITICAL ERROR" in feedback_text or "critical error" in feedback_text.lower():
+                    st.error("🚨 **CRITICAL ERRORS DETECTED** - Review immediately for patient safety")
+
+                feedback_container = st.container()
+                with feedback_container:
+                    col1, col2 = st.columns([3, 1])
+
+                    with col1:
+                        st.markdown('<div class="evaluation-card">', unsafe_allow_html=True)
+                        st.markdown("#### 📋 AI Clinical Evaluation")
+                        st.markdown(feedback_text)
+                        st.markdown('</div>', unsafe_allow_html=True)
+
+                    with col2:
+                        st.markdown('<div class="workflow-indicator">', unsafe_allow_html=True)
+                        st.markdown("#### 🔬 AI Generated Summary")
+
+                        import re
+
+                        score_match = re.search(r'SCORE:\s*(\d+)/100', feedback_text, re.IGNORECASE)
+                        if score_match:
+                            score = int(score_match.group(1))
+                            if score >= 80:
+                                st.success(f"Score: {score}/100")
+                            elif score >= 70:
+                                st.warning(f"Score: {score}/100")
+                            else:
+                                st.error(f"Score: {score}/100")
+
+                        if st.session_state.learning_buddy:
+                            session_stats = st.session_state.learning_buddy.get_session_statistics()
+                            st.markdown(f"**Exchanges**: {session_stats.get('total_exchanges', 0)}")
+
+                            session_metadata = st.session_state.session_data.get('session_metadata', {})
+                            if session_metadata.get('session_duration_minutes'):
+                                st.markdown(f"**Duration**: {session_metadata['session_duration_minutes']:.1f} min")
+
+                            profile_type = "Selected" if st.session_state.selected_patient_profile else "Random"
+                            st.markdown(f"**Profile**: {profile_type}")
+
+                        st.markdown('</div>', unsafe_allow_html=True)
+
+                col1, col2, col3 = st.columns(3)
                 with col1:
-                    st.markdown('<div class="evaluation-card">', unsafe_allow_html=True)
-                    st.markdown("#### 📋 AI Clinical Evaluation")
-                    st.markdown(feedback_text)
-                    st.markdown('</div>', unsafe_allow_html=True)
-                
+                    if st.button("📥 Save Feedback", use_container_width=True):
+                        st.success("✅ Feedback saved!")
                 with col2:
-                    st.markdown('<div class="workflow-indicator">', unsafe_allow_html=True)
-                    st.markdown("#### 🔬 AI Generated Summary")
-                    
-                    # Extract score if present
-                    import re
-                    score_match = re.search(r'SCORE:\s*(\d+)/100', feedback_text, re.IGNORECASE)
-                    if score_match:
-                        score = int(score_match.group(1))
-                        if score >= 80:
-                            st.success(f"Score: {score}/100")
-                        elif score >= 70:
-                            st.warning(f"Score: {score}/100")
-                        else:
-                            st.error(f"Score: {score}/100")
-                    
-                    if st.session_state.learning_buddy:
-                        session_stats = st.session_state.learning_buddy.get_session_statistics()
-                        st.markdown(f"**Exchanges**: {session_stats.get('total_exchanges', 0)}")
-                        
-                        session_metadata = st.session_state.session_data.get('session_metadata', {})
-                        if session_metadata.get('session_duration_minutes'):
-                            st.markdown(f"**Duration**: {session_metadata['session_duration_minutes']:.1f} min")
-                        
-                        profile_type = "Selected" if st.session_state.selected_patient_profile else "Random"
-                        st.markdown(f"**Profile**: {profile_type}")
-                    
-                    st.markdown('</div>', unsafe_allow_html=True)
-            
-            # Action buttons
-            col1, col2, col3 = st.columns(3)
-            with col1:
-                if st.button("📥 Save Feedback", use_container_width=True):
-                    st.success("✅ Feedback saved!")
-            with col2:
-                if st.button("🎭 New Session", use_container_width=True):
-                    if st.session_state.learning_buddy:
-                        st.session_state.learning_buddy.reset_session()
-                    reset_session_state()
-                    st.rerun()
-            with col3:
-                if st.button("📊 View Analytics", use_container_width=True):
-                    st.session_state.selected_feature = "📊 Session Analytics"
-                    st.rerun()
+                    if st.button("🎭 New Session", use_container_width=True):
+                        if st.session_state.learning_buddy:
+                            st.session_state.learning_buddy.reset_session()
+                        reset_session_state()
+                        st.rerun()
+                with col3:
+                    if st.button("📊 View Analytics", use_container_width=True):
+                        st.session_state.selected_feature = "📊 Session Analytics"
+                        st.rerun()
+
+            # Tab 2: FOD STACER Form
+            with tab2:
+                # Extract STACER text
+                STACER_text = st.session_state.session_data.get('FOD_STACER')
+
+                html = markdown2.markdown(STACER_text,
+                                          extras=["tables", "fenced-code-blocks", "strike", "cuddled-lists"])
+
+                # Display with Streamlit
+                st.markdown("### 📄 Completed FOD STACER Evaluation Form")
+                st.info("This is a structured Fundamentals STACER form based on your most recent session. This form evaluates the expectations of PGY2 students. ")
+                st.markdown("---")
+                st.markdown(html, unsafe_allow_html=True)
+
+            # Tab 3: COD STACER Form
+            with tab3:
+                # Extract STACER text
+                STACER_text = st.session_state.session_data.get('COD_STACER')
+
+                html = markdown2.markdown(STACER_text,
+                                          extras=["tables", "fenced-code-blocks", "strike", "cuddled-lists"])
+
+                # Display with Streamlit
+                st.markdown("### 📄 Completed COD STACER Evaluation Form")
+                st.info("This is a structured Core STACER form based on your most recent session. This form evaluates the expectations of PGY3 and PGY4 students.")
+                st.markdown("---")
+                st.markdown(html, unsafe_allow_html=True)
 
 elif feature == "📊 Session Analytics":
     st.markdown('<div class="session-header">', unsafe_allow_html=True)

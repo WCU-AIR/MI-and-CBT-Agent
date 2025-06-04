@@ -8,6 +8,7 @@ from pydantic import SecretStr
 from FileReader import load_prompt, load_context, load_patient_profile, load_random_case_profile
 import json
 from datetime import datetime
+from Voice import *
 
 # Configure logging
 logging.basicConfig(
@@ -32,6 +33,8 @@ class InterviewState(TypedDict):
     session_metadata: Dict[str, Any]
     error_message: Optional[str]
     next_action: Optional[str]
+    COD_STACER: str
+    FOD_STACER: str
 
 class LearningBuddy:
     def __init__(self, api_key: str):
@@ -42,6 +45,7 @@ class LearningBuddy:
         self.init_graph = self._build_init_workflow()
         self.message_graph = self._build_message_workflow()
         self.feedback_graph = self._build_feedback_workflow()
+        self.voice = ""
         
         self.current_state = None
         logging.info("LearningBuddy initialized with separate LangGraph workflows.")
@@ -224,6 +228,8 @@ class LearningBuddy:
                 logging.error(f"Error in profile verification: {str(e)}")
                 return {**state, "error_message": f"Profile verification failed: {str(e)}"}
 
+        self.voice = set_patient_voice(case_study)
+
         return {
             **state,
             "case_study": case_study,
@@ -379,16 +385,16 @@ class LearningBuddy:
             return {**state, "error_message": f"Error loading prompts or context: {str(e)}"}
 
         strict_feedback_prompt = f"""
-{base_instruction_prompt}
-
-{evaluation_context}
-
-Patient Profile for Reference:
-{case_study}
-
-Clinical Summary:
-{clinical_summary}
-"""
+                                {base_instruction_prompt}
+                                
+                                {evaluation_context}
+                                
+                                Patient Profile for Reference:
+                                {case_study}
+                                
+                                Clinical Summary:
+                                {clinical_summary}
+                                """
 
         # Filter conversation messages (exclude system messages and case study repeats)
         conversation_messages = [
@@ -403,17 +409,20 @@ Clinical Summary:
             HumanMessage(content="Here is the therapy session transcript to evaluate:")
         ]
 
+        formatted_lines = []
         for m in conversation_messages:
             prefix = "THERAPIST: " if m["role"] == "user" else "PATIENT: "
             content = prefix + m["content"]
             msg_cls = HumanMessage if m["role"] == "user" else AIMessage
             messages.append(msg_cls(content=content))
+            formatted_lines.append(content)
 
+        formatted_transcript = "\n".join(formatted_lines)
         messages.append(HumanMessage(content="""
-Now provide your comprehensive, strict evaluation of this therapy session. 
-Be thorough, critical, and specific in identifying areas for improvement.
-Structure your feedback using all the sections mentioned.
-"""))
+                                            Now provide your comprehensive, strict evaluation of this therapy session. 
+                                            Be thorough, critical, and specific in identifying areas for improvement.
+                                            Structure your feedback using all the sections mentioned.
+                                            """))
 
         try:
             response = self.llm_feedback.invoke(messages)
@@ -424,22 +433,75 @@ Structure your feedback using all the sections mentioned.
 
         num_exchanges = len(conversation_messages) // 2
         session_feedback = f"""
-## SESSION STATISTICS
-- Total Exchanges: {num_exchanges}
-- Session Completeness: {'Incomplete - ended prematurely' if num_exchanges < 5 else 'Complete'}
+                            ## SESSION STATISTICS
+                            - Total Exchanges: {num_exchanges}
+                            - Session Completeness: {'Incomplete - ended prematurely' if num_exchanges < 5 else 'Complete'}
+                            
+                            ## DETAILED CLINICAL EVALUATION
+                            
+                            {feedback_text}
+                            
+                            ---
+                            *Note: This feedback is intentionally strict and critical to accelerate your learning.*
+                            """
 
-## DETAILED CLINICAL EVALUATION
+        #Generate Formatted STACER Forms
+        #COD
+        instruction_prompt = load_prompt('STACER Prompt')
+        blank_STACER_file = load_context("COD STACER")
 
-{feedback_text}
+        STACER_prompt = f"""
+        {instruction_prompt}
 
----
-*Note: This feedback is intentionally strict and critical to accelerate your learning.*
-"""
+        Here is the Full Transcript:
+        {formatted_transcript}
+
+        Here is the Evaluation Criteria to base your answer off of:
+        {feedback_text}
+
+        And here is the blank STACER form that you must use to format your answer:
+        {blank_STACER_file}
+        """
+
+        messages = [
+            SystemMessage(content=STACER_prompt),
+            HumanMessage(content="Please provide the formatted answer below:")
+        ]
+
+        response = self.llm_feedback.invoke(messages)
+        COD_STACER_response = response.content
+
+
+        #FOD
+        blank_STACER_file = load_context("FOD STACER")
+
+        STACER_prompt = f"""
+                {instruction_prompt}
+
+                Here is the Full Transcript:
+                {formatted_transcript}
+
+                Here is the Evaluation Criteria to base your answer off of:
+                {feedback_text}
+
+                And here is the blank STACER form that you must use to format your answer:
+                {blank_STACER_file}
+                """
+
+        messages = [
+            SystemMessage(content=STACER_prompt),
+            HumanMessage(content="Please provide the formatted answer below:")
+        ]
+
+        response = self.llm_feedback.invoke(messages)
+        FOD_STACER_response = response.content
 
         logging.info("Feedback evaluation complete.")
         return {
             **state,
             "feedback": session_feedback,
+            'COD_STACER': COD_STACER_response,
+            'FOD_STACER': FOD_STACER_response,
             "current_phase": "complete_session",
             "session_active": False
         }
