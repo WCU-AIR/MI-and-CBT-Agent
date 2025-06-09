@@ -1,12 +1,7 @@
 import streamlit as st
-import os
-import random
 from datetime import datetime
-import json
 import time
-from typing import Optional, Dict, List, Any
 from LearningBuddy import LearningBuddy
-from FileReader import load_prompt, load_context, load_patient_profile, load_random_case_profile
 from Voice import *
 import base64
 import markdown2
@@ -228,7 +223,7 @@ def get_available_patient_profiles(directory='Patient_Profiles'):
 def get_patient_profile_preview(filepath):
     """Get a preview of the patient profile content"""
     try:
-        content = load_patient_profile(filepath)
+        content = st.session_state.learning_buddy.load_patient_profile(filepath)
         return content[:200] + "..." if len(content) > 200 else content
     except Exception:
         return "Unable to load preview"
@@ -711,7 +706,6 @@ if feature == "💬 Therapy Session":
                                     "content": ai_response
                                 })
                                 #Use Text To Speach to play the user's response
-                                print(st.session_state.muted)
                                 if not st.session_state.muted:
                                     try:
                                         audio_bytes = text_to_speech(ai_response, st.session_state.learning_buddy.voice)
@@ -745,12 +739,11 @@ if feature == "💬 Therapy Session":
         # Display Feedback After Session
         if (st.session_state.session_data and
                 st.session_state.session_data.get('feedback') and
-                st.session_state.session_data.get('COD_STACER') and
-                st.session_state.session_data.get('FOD_STACER') and
+                st.session_state.session_data.get('cod_stacer') and
                 not st.session_state.session_active and
                 not st.session_state.processing_phase):
             # Use tabs for Feedback and STACER form
-            tab1, tab2, tab3 = st.tabs(["📝 AI Feedback", "📄 FOD STACER Form", "📄 COD STACER Form"])
+            tab1, tab2 = st.tabs(["📝 AI Feedback", "📄 COD STACER Form"])
 
             # Tab 1: Feedback
             with tab1:
@@ -803,39 +796,13 @@ if feature == "💬 Therapy Session":
 
                         st.markdown('</div>', unsafe_allow_html=True)
 
-                col1, col2, col3 = st.columns(3)
-                with col1:
-                    if st.button("📥 Save Feedback", use_container_width=True):
-                        st.success("✅ Feedback saved!")
-                with col2:
-                    if st.button("🎭 New Session", use_container_width=True):
-                        if st.session_state.learning_buddy:
-                            st.session_state.learning_buddy.reset_session()
-                        reset_session_state()
-                        st.rerun()
-                with col3:
-                    if st.button("📊 View Analytics", use_container_width=True):
-                        st.session_state.selected_feature = "📊 Session Analytics"
-                        st.rerun()
 
-            # Tab 2: FOD STACER Form
+            # Tab 2: COD STACER Form
             with tab2:
                 # Extract STACER text
-                STACER_text = st.session_state.session_data.get('FOD_STACER')
+                STACER_text = st.session_state.session_data.get('cod_stacer')
 
-                html = markdown2.markdown(STACER_text,
-                                          extras=["tables", "fenced-code-blocks", "strike", "cuddled-lists"])
-
-                # Display with Streamlit
-                st.markdown("### 📄 Completed FOD STACER Evaluation Form")
-                st.info("This is a structured Fundamentals STACER form based on your most recent session. This form evaluates the expectations of PGY2 students. ")
-                st.markdown("---")
-                st.markdown(html, unsafe_allow_html=True)
-
-            # Tab 3: COD STACER Form
-            with tab3:
-                # Extract STACER text
-                STACER_text = st.session_state.session_data.get('COD_STACER')
+                st.session_state.session_data['cod_stacer'] = STACER_text
 
                 html = markdown2.markdown(STACER_text,
                                           extras=["tables", "fenced-code-blocks", "strike", "cuddled-lists"])
@@ -845,6 +812,21 @@ if feature == "💬 Therapy Session":
                 st.info("This is a structured Core STACER form based on your most recent session. This form evaluates the expectations of PGY3 and PGY4 students.")
                 st.markdown("---")
                 st.markdown(html, unsafe_allow_html=True)
+
+            col1, col2, col3 = st.columns(3)
+            with col1:
+                if st.button("📥 Save Feedback", use_container_width=True):
+                    st.success("✅ Feedback saved!")
+            with col2:
+                if st.button("🎭 New Session", use_container_width=True):
+                    if st.session_state.learning_buddy:
+                        st.session_state.learning_buddy.reset_session()
+                    reset_session_state()
+                    st.rerun()
+            with col3:
+                if st.button("📊 View Analytics", use_container_width=True):
+                    st.session_state.selected_feature = "📊 Session Analytics"
+                    st.rerun()
 
 elif feature == "📊 Session Analytics":
     st.markdown('<div class="session-header">', unsafe_allow_html=True)
@@ -945,7 +927,7 @@ elif feature == "📊 Session Analytics":
             duration = session_metadata.get('session_duration_minutes', 0)
             
             with st.expander(f"🔬 Chat Session {session_num} - {session['timestamp'].strftime('%Y-%m-%d %H:%M')} ({duration:.1f}m) - {profile_display}"):
-                tab1, tab2, tab3, tab4, tab5 = st.tabs(["📋 Patient Data", "💬 Conversation", "📝 Feedback", "📊 Metrics", "🔬 LangGraph Details"])
+                tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["📋 Patient Data", "💬 Conversation", "📝 Feedback",  "📋 COD STACER", "📊 Metrics", "🔬 LangGraph Details"])
                 
                 with tab1:
                     st.markdown("**Patient Profile (Verified):**")
@@ -977,8 +959,16 @@ elif feature == "📊 Session Analytics":
                         st.markdown('</div>', unsafe_allow_html=True)
                     else:
                         st.warning("No feedback available for this session")
-                
+
                 with tab4:
+                    cod_stacer = langgraph_data.get('cod_stacer', '')
+                    if cod_stacer:
+                        st.markdown("**COD Clinical Observation Document (STACER):**")
+                        st.markdown(cod_stacer, unsafe_allow_html=True)
+                    else:
+                        st.warning("No COD STACER data available for this session.")
+
+                with tab5:
                     col1, col2 = st.columns(2)
                     with col1:
                         session_stats = langgraph_data.get('session_statistics', {})
@@ -997,7 +987,7 @@ elif feature == "📊 Session Analytics":
                         st.markdown("- Models: GPT-4o-mini")
                         st.markdown("- Workflow: 4-Phase")
                 
-                with tab5:
+                with tab6:
                     st.markdown("**Complete LangGraph Workflow Data:**")
                     col1, col2 = st.columns(2)
                     

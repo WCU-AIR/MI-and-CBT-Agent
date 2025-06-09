@@ -15,7 +15,7 @@ pip install streamlit langgraph langchain langchain-core langchain-openai pydant
 
 # Set Eleven Labs API Key as an Environment Variable
 
-set ELEVEN_API_KEY=your_elevenLabs_api_key_here
+set ELEVEN_API_KEY="your_elevenLabs_api_key_here"
 
 # Run app using the following command:
 

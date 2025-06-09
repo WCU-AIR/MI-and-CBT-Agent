@@ -1,10 +1,6 @@
-from elevenlabs.client import ElevenLabs
-from elevenlabs import play
-import io
 from elevenlabs import ElevenLabs
 import os
 import  re
-
 
 MALE_VOICE = "iP95p4xoKVk53GoZ742B"     #Eleven Labs Default Voice: Chris
 FEMALE_VOICE = "cgSgspJ2msm6clMCkdW9"   #Eleven Labs Default Voice: Jessica
@@ -14,7 +10,6 @@ FEMALE_VOICE = "cgSgspJ2msm6clMCkdW9"   #Eleven Labs Default Voice: Jessica
 api_key = os.getenv("ELEVEN_API_KEY")
 if not api_key:
     raise ValueError("ELEVEN_API_KEY not set in environment variables")
-
 
 client = ElevenLabs(api_key=api_key)  # Now it works!
 
@@ -48,12 +43,6 @@ def set_patient_voice(case_study: str) -> str:
     return voice
 
 def text_to_speech(text: str, voice: str) -> bytes:
-
-    # If no voice is set, default to female voice
-    if voice != MALE_VOICE and voice != FEMALE_VOICE:
-        voice = FEMALE_VOICE
-
-
     #Remove text inside parentheses (We don't want to read that part aloud)
     text = re.sub(r'^\s*\([^)]*\)\s*', '', text)
 
