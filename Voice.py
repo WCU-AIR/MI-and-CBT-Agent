@@ -6,12 +6,70 @@ MALE_VOICE = "iP95p4xoKVk53GoZ742B"     #Eleven Labs Default Voice: Chris
 FEMALE_VOICE = "cgSgspJ2msm6clMCkdW9"   #Eleven Labs Default Voice: Jessica
 
 
-# Initialize
-api_key = os.getenv("ELEVEN_API_KEY")
-if not api_key:
-    raise ValueError("ELEVEN_API_KEY not set in environment variables")
+class Voice:
+    MALE_VOICE = "iP95p4xoKVk53GoZ742B"     # Eleven Labs Default Voice: Chris
+    FEMALE_VOICE = "cgSgspJ2msm6clMCkdW9"   # Eleven Labs Default Voice: Jessica
 
-client = ElevenLabs(api_key=api_key)  # Now it works!
+    def __init__(self, case_study: str, api_key: str):
+        self.client = ElevenLabs(api_key=api_key)
+        self.case_study = case_study
+        self.patient_voice = self._set_patient_voice()
+        self.evaluator_voice = self._set_evaluator_voice()
+
+    def _get_patient_sex(self) -> str:
+        try:
+            match = re.search(r"Sex:\s*(Male|Female)", self.case_study, re.IGNORECASE)
+            if match:
+                return match.group(1).capitalize()
+        except Exception as e:
+            print(f"Error extracting sex: {e}")
+        return "Unknown"
+
+    def _set_patient_voice(self) -> str:
+        sex = self._get_patient_sex()
+        if sex == "Male":
+            print("Male Voice Selected")
+            return self.MALE_VOICE
+        elif sex == "Female":
+            print("Female Voice Selected")
+            return self.FEMALE_VOICE
+        else:
+            print("Unknown Voice Detected. Defaulting to female voice")
+            return self.FEMALE_VOICE
+
+    def _set_evaluator_voice(self) -> str:
+        if self.patient_voice == MALE_VOICE:
+            voice = FEMALE_VOICE
+        else:
+            voice = MALE_VOICE
+
+        return voice
+
+    def text_to_speech(self, text: str, speaker: str = "patient") -> bytes:
+        #Remove text inside parentheses (We don't want to read that part aloud)
+        text = re.sub(r'^\s*\([^)]*\)\s*', '', text)
+
+        voice_id = self.patient_voice if speaker == "patient" else self.evaluator_voice
+
+        # Convert text to speech and return raw MP3 bytes
+        audio_stream = self.client.text_to_speech.convert(
+            text=text,
+            voice_id=voice_id,
+            model_id="eleven_monolingual_v1",
+            voice_settings={
+                "stability": 0.25,          # Purpose: Controls how much variation or emotional expressiveness is allowed in the generated speech.
+                                            # Lower Value (0.25) = More expressive, emotional, and dynamic.
+                "similarity_boost": 0.6     # Purpose: Controls how closely the output matches the original voice's training data.
+                                            # Mid-range value (0.6) gives some flexibility, while still remaining
+                                            # consistent across multiple utterances
+            }
+        )
+        audio_bytes = b"".join(chunk for chunk in audio_stream)
+
+        return audio_bytes
+
+
+
 
 def get_patient_sex(case_study: str) -> str:
     try:

@@ -43,7 +43,7 @@ class LBState(TypedDict):
     folder_name: str
 
 class LearningBuddy:
-    def __init__(self, api_key: str):
+    def __init__(self, api_key: str, elevenlabs_api_key: str):
         self.api_key = SecretStr(api_key)
         self.llm_mini_verification = ChatOpenAI(model="gpt-4.1-mini", temperature=0, api_key=self.api_key)
         self.llm_mini_summary = ChatOpenAI(model="gpt-4.1-mini", temperature=0.2, api_key=self.api_key)
@@ -55,8 +55,8 @@ class LearningBuddy:
         self.feedback_graph = self._build_feedback_workflow()
         self.evaluator_graph = self._build_evaluator_workflow()
         self.voice = ""
-        self.evaluator_voice = ""
         self.current_state = None
+        self.elevenlabs_api_key = elevenlabs_api_key
         logging.info("LearningBuddy initialized with separate LangGraph workflows.")
 
     ###############################################################
@@ -151,8 +151,7 @@ class LearningBuddy:
                 logging.error(f"Error in profile verification: {str(e)}")
                 return {**state, "error_message": f"Profile verification failed: {str(e)}"}
 
-        self.voice = set_patient_voice(case_study)
-        self.evaluator_voice = set_evaluator_voice(self.voice)
+        self.voice = Voice(case_study, self.elevenlabs_api_key)
 
         return {
             **state,

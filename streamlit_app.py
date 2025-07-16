@@ -321,26 +321,38 @@ st.sidebar.title("🏥 Clinical Learning Buddy")
 st.sidebar.markdown("---")
 
 # API Key Management
-if not st.session_state.api_key:
-    st.sidebar.warning("⚠️ Please enter your OpenAI API key")
+if not st.session_state.get("api_key") or not st.session_state.get("elevenlabs_api_key"):
+    st.sidebar.warning("⚠️ Please enter your API keys")
+
     api_key_input = st.sidebar.text_input(
-        "OpenAI API Key", 
+        "OpenAI API Key",
         type="password",
         placeholder="sk-..."
     )
-    if st.sidebar.button("🔑 Set API Key"):
-        if api_key_input:
+    eleven_key_input = st.sidebar.text_input(
+        "ElevenLabs API Key",
+        type="password",
+        placeholder="elevenlabs-..."
+    )
+
+    if st.sidebar.button("🔑 Set API Keys"):
+        if api_key_input and eleven_key_input:
             try:
                 st.session_state.api_key = api_key_input
-                st.session_state.learning_buddy = LearningBuddy(api_key_input)
-                st.sidebar.success("✅ API Key set successfully!")
+                st.session_state.elevenlabs_api_key = eleven_key_input
+                st.session_state.learning_buddy = LearningBuddy(api_key_input, eleven_key_input)
+
+                st.sidebar.success("✅ API keys set successfully!")
                 st.rerun()
             except Exception as e:
                 st.sidebar.error(f"❌ Error initializing LearningBuddy: {str(e)}")
+        else:
+            st.sidebar.error("❌ Please enter both API keys.")
 else:
-    st.sidebar.success("✅ API Key configured")
-    if st.sidebar.button("🔑 Change API Key", disabled=st.session_state.processing_phase is not None):
+    st.sidebar.success("✅ API Keys configured")
+    if st.sidebar.button("🔑 Change API Keys", disabled=st.session_state.processing_phase is not None):
         st.session_state.api_key = None
+        st.session_state.elevenlabs_api_key = None
         st.session_state.learning_buddy = None
         reset_session_state()
         st.rerun()
@@ -645,7 +657,7 @@ if feature == "💬 STACER Practice Session":
             not st.session_state.show_end_confirmation):
             
             st.markdown("---")
-            st.markdown("### 💭 AI-Powered Therapy Conversation")
+            st.markdown("### 💭 AI-Powered Patient Interview")
             
             # Clinical Summary Reference
             if st.session_state.session_data.get('clinical_summary'):
@@ -777,7 +789,7 @@ if feature == "💬 STACER Practice Session":
                                 #Use Text To Speach to play the user's response
                                 if not st.session_state.muted:
                                     try:
-                                        audio_bytes = text_to_speech(ai_response, st.session_state.learning_buddy.voice)
+                                        audio_bytes = st.session_state.learning_buddy.voice.text_to_speech(ai_response, speaker="patient")
                                         st.session_state.latest_audio = audio_bytes  # Save audio here
                                     except Exception as e:
                                         st.warning(f"⚠️ Audio playback error: {e}")
@@ -932,10 +944,8 @@ if feature == "💬 STACER Practice Session":
 
                                     if not st.session_state.evaluator_muted:
                                         try:
-                                            audio_bytes = text_to_speech(
-                                                ai_response,
-                                                st.session_state.learning_buddy.evaluator_voice
-                                            )
+                                            audio_bytes = st.session_state.learning_buddy.voice.text_to_speech(
+                                                ai_response, speaker="evaluator")
                                             st.session_state.latest_evaluator_audio = audio_bytes
                                         except Exception as e:
                                             st.warning(f"⚠️ Audio playback error: {e}")
@@ -991,10 +1001,8 @@ if feature == "💬 STACER Practice Session":
 
                                         if not st.session_state.evaluator_muted:
                                             try:
-                                                audio_bytes = text_to_speech(
-                                                    ai_response,
-                                                    st.session_state.learning_buddy.evaluator_voice
-                                                )
+                                                audio_bytes = st.session_state.learning_buddy.voice.text_to_speech(
+                                                    ai_response, speaker="evaluator")
                                                 st.session_state.latest_evaluator_audio = audio_bytes
                                             except Exception as e:
                                                 st.warning(f"⚠️ Audio playback error: {e}")
