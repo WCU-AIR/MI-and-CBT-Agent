@@ -8,6 +8,7 @@ from pydantic import SecretStr
 import random
 from datetime import datetime
 from Voice import *
+import os
 
 # Configure logging
 logging.basicConfig(
@@ -34,6 +35,12 @@ class LBState(TypedDict):
     error_message: Optional[str]
     next_action: Optional[str]
     cod_stacer: str
+    presentation: str
+    evaluator_chatlog: List[Dict[str, Any]]
+    evaluator_session_active: bool
+    formatted_transcript: str
+    formatted_presentation: str
+    folder_name: str
 
 class LearningBuddy:
     def __init__(self, api_key: str):
@@ -42,10 +49,13 @@ class LearningBuddy:
         self.llm_mini_summary = ChatOpenAI(model="gpt-4.1-mini", temperature=0.2, api_key=self.api_key)
         self.llm_mini_virtualPatient = ChatOpenAI(model="gpt-4.1-mini", temperature=1, api_key=self.api_key)
         self.llm_feedback = ChatOpenAI(model="gpt-4.1", temperature=0.1, api_key=self.api_key)
+        self.llm_mini_virtualEvaluator = ChatOpenAI(model="gpt-4.1-mini", temperature=0.7, api_key=self.api_key)
         self.init_graph = self._build_init_workflow()
         self.message_graph = self._build_message_workflow()
         self.feedback_graph = self._build_feedback_workflow()
+        self.evaluator_graph = self._build_evaluator_workflow()
         self.voice = ""
+        self.evaluator_voice = ""
         self.current_state = None
         logging.info("LearningBuddy initialized with separate LangGraph workflows.")
 
@@ -142,6 +152,7 @@ class LearningBuddy:
                 return {**state, "error_message": f"Profile verification failed: {str(e)}"}
 
         self.voice = set_patient_voice(case_study)
+        self.evaluator_voice = set_evaluator_voice(self.voice)
 
         return {
             **state,
@@ -266,7 +277,7 @@ class LearningBuddy:
     def _build_message_workflow(self):
         """ Build message processing workflow - linear, no loops"""
         workflow = StateGraph(state_schema=LBState)
-        
+
         workflow.add_node("process_input", RunnableLambda(self._process_user_input))
         workflow.add_node("generate_response", RunnableLambda(self._generate_ai_response))
         workflow.set_entry_point("process_input")
@@ -367,11 +378,38 @@ class LearningBuddy:
             logging.error(f"Error processing message: {str(e)}")
             return {"error": str(e)}
 
+        ###############################################################
+        ###             Workflow 2b : Case Presentation             ###
+        ###############################################################
+        #   This step handles the case presentation.
+        #   The UI prompts the user for input, and uses this function to append and save the user's whole presentation:
+        #            1. Read and save user input(s)
+        #
+        #   Public function to use this step: add_presentation_message()
+
+    def add_presentation_message(self, user_input: str):
+        """ Append and save user messages during presentation phase manually.
+            Public function for frontend use.
+        """
+        if not self.current_state:
+            logging.error("No active session found.")
+            return {"error": "No active session"}
+
+        presentation = self.current_state.get("presentation", [])
+        presentation.append(user_input)
+
+        self.current_state["presentation"] = presentation
+        logging.info(f"Presentation input added: {user_input[:50]}...")
+
+        return {"presentation": presentation, "status": "updated"}
+
+
     ###############################################################
     ###                Workflow 3: STACER Feedback              ###
     ###############################################################
-    #   This workflow generates all feedback after an interview ends:
+    #   This workflow generates all static feedback after an interview ends:
     #            1. Generates detailed feedback and fills out STACER
+    #            2. Initializes Feedback Agent
     #            2. Ends current session and saves all session data
     #
     #   Public function to use this workflow: end_session()
@@ -379,9 +417,9 @@ class LearningBuddy:
     def _build_feedback_workflow(self):
         """Build feedback workflow - linear, no loops"""
         workflow = StateGraph(state_schema=LBState)
-        
-        workflow.add_node("evaluate_session", RunnableLambda(self._generate_feedback))
-        workflow.add_node("complete_session", RunnableLambda(self._complete_session))
+
+        workflow.add_node("evaluate_session",   RunnableLambda(self._generate_feedback))
+        workflow.add_node("complete_session",   RunnableLambda(self._complete_session))
         workflow.set_entry_point("evaluate_session")
         workflow.add_edge("evaluate_session", "complete_session")
         workflow.add_edge("complete_session", END)
@@ -401,6 +439,7 @@ class LearningBuddy:
         case_study = state.get("case_study")
         clinical_summary = state.get("clinical_summary")
         chatlog = state.get("chatlog", [])
+        presentation = state.get("presentation", [])
 
         if not case_study:
             return {**state, "error_message": "Case study content is missing from state."}
@@ -408,6 +447,8 @@ class LearningBuddy:
             return {**state, "error_message": "Clinical summary is missing from state."}
         if not chatlog:
             return {**state, "error_message": "Chatlog is empty or missing from state."}
+        if not presentation:
+            return {**state, "error_message": "Presentation is empty or missing from state."}
 
         try:
             evaluation_context = self._load_context('Feedback Criteria') or ""
@@ -442,7 +483,7 @@ class LearningBuddy:
 
         formatted_lines = []
         for m in conversation_messages:
-            prefix = "THERAPIST: " if m["role"] == "user" else "PATIENT: "
+            prefix = "PSYCHIATRIST: " if m["role"] == "user" else "PATIENT: "
             content = prefix + m["content"]
             msg_cls = HumanMessage if m["role"] == "user" else AIMessage
             messages.append(msg_cls(content=content))
@@ -450,9 +491,23 @@ class LearningBuddy:
 
         formatted_transcript = "\n".join(formatted_lines)
 
+        # Format the diagnostic presentation
+        formatted_presentation = []
+        if presentation:
+            formatted_presentation = "\n".join(
+                f"Psychiatrist Presentation: {p.strip()}" for p in presentation if p.strip()
+            )
+            messages.append(HumanMessage(
+                content="Here is the Psychiatrist's diagnostic presentation:"
+            ))
+            messages.append(HumanMessage(content=formatted_presentation))
+        else:
+            logging.warning("Presentation was expected but empty or missing.")
+
+
         # Generate Full Feedback with scores
         messages.append(HumanMessage(content="""
-                                            Now provide your comprehensive, strict evaluation of this therapy session. 
+                                            Now provide your comprehensive, strict evaluation of this diagnostic session. 
                                             Be thorough, critical, and specific in identifying areas for improvement.
                                             Structure your feedback using all the sections mentioned.
                                             """))
@@ -466,18 +521,13 @@ class LearningBuddy:
 
         num_exchanges = len(conversation_messages) // 2
         session_feedback = f"""
-                            ## SESSION STATISTICS
-                            - Total Exchanges: {num_exchanges}
-                            - Session Completeness: {'Incomplete - ended prematurely' if num_exchanges < 5 else 'Complete'}
-
                             ## DETAILED CLINICAL EVALUATION
 
                             {feedback_text}
 
-                            ---
-                            *Note: This feedback is intentionally strict and critical to accelerate your learning.*
-                            """
-
+                          """
+        logging.info("Finished detailed feedback generation. ")
+        logging.info("Starting STACER generation ")
         # Generate Formatted COD STACER Form
         instruction_prompt = self._load_prompt('STACER Prompt')
         blank_stacer_file = self._load_context("COD STACER")
@@ -487,6 +537,9 @@ class LearningBuddy:
 
         Here is the Full Transcript:
         {formatted_transcript}
+        
+        Here is the full Case Presentation:
+        {formatted_presentation}
 
         Here is the Evaluation Criteria to base your answer off of:
         {feedback_text}
@@ -503,18 +556,101 @@ class LearningBuddy:
         response = self.llm_feedback.invoke(messages)
         cod_stacer_response = response.content
 
+        logging.info("Finished STACER generation ")
+        logging.info("Starting Agent Setup ")
+
+
+        ####   Eval Agent Set Up
+        evaluator_prompt = self._load_prompt('Virtual Evaluator')
+
+        # Build full system message with context
+        full_system_prompt = f"""
+              {evaluator_prompt}
+
+              You are presenting the evaluation of the following psychiatric interview and case presentation:
+              === INTERVIEW TRANSCRIPT ===
+              {formatted_transcript}
+
+              === PRESENTATION TRANSCRIPT ===
+              {formatted_presentation}
+
+              This is the completed evaluation and filled out STACER form which you will use to create your responses:
+              === COMPLETE EVALUATION ===
+              {session_feedback}
+
+              === COMPLETE STACER ===
+              {cod_stacer_response}
+
+              Here is the full patient profile, which can be used to answer questions about the patient:
+              {case_study}
+
+              Begin by giving a 'feedback sandwich': positive, then constructive critique, then end with positive support. 
+              After that, respond to any questions the user may ask about the evaluation or the scoring.
+              """
+
+        initial_messages = [
+            {
+                "type": "system",
+                "role": "system",
+                "content": full_system_prompt.strip()
+            }
+        ]
+
+        eval_chatlog = initial_messages
+
+        logging.info("Finished Agent Setup ")
+
         logging.info("Feedback evaluation complete.")
         return {
             **state,
             "feedback": session_feedback,
-            'cod_stacer': cod_stacer_response,
-            "current_phase": "complete_session",
-            "session_active": False
+            "cod_stacer": cod_stacer_response,
+            "formatted_transcript": formatted_transcript,
+            "formatted_presentation": formatted_presentation,
+            "current_phase": "evaluator_active",
+            "session_active": False,
+            "evaluator_chatlog": eval_chatlog,
+            "evaluator_session_active": True,
+            "user_input": None,
+            "ai_response": None
         }
 
     def _complete_session(self, state: LBState):
         """Complete the session by saving all session data"""
-        logging.info("Session completed successfully.")
+
+        logging.info("Saving session data...")
+        ###Save Data to text Files###
+
+        case_study = state.get("case_study")
+        stacer = state.get("cod_stacer")
+        detailed_feedback = state.get("feedback")
+        transcript = state.get("formatted_transcript")
+        presentation = state.get("formatted_presentation")
+
+        # Create base directory if it doesn't exist
+        base_dir = "Saved_sessions"
+        os.makedirs(base_dir, exist_ok=True)
+
+        # Create timestamped subfolder inside Saved_sessions
+        base_dir = "Saved_Sessions"
+        timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
+        folder_name = os.path.join(base_dir, f"session_export_{timestamp}")
+        os.makedirs(folder_name, exist_ok=True)
+
+        files = {
+            "case_study.txt": case_study,
+            "cod_stacer.txt": stacer,
+            "detailed_feedback.txt": detailed_feedback,
+            "interview_transcript.txt": transcript,
+            "presentation_transcript.txt": presentation,
+        }
+
+        # Save each content to a text file
+        for filename, content in files.items():
+            with open(os.path.join(folder_name, filename), "w", encoding="utf-8") as f:
+                f.write(content)
+
+        logging.info("Session data saved successfully.")
 
         # Update session metadata
         session_metadata = state.get("session_metadata", {})
@@ -526,11 +662,13 @@ class LearningBuddy:
             "completion_status": "completed"
         })
 
+        logging.info("Session completed successfully.")
         return {
             **state,
             "session_metadata": session_metadata,
             "current_phase": "completed",
-            "session_active": False
+            "session_active": False,
+            "folder_name": folder_name
         }
 
     def end_session(self):
@@ -550,9 +688,118 @@ class LearningBuddy:
             return {"error": str(e)}
 
 
-###############################################################
-###                Additional Utility Methods               ###
-###############################################################
+    ###############################################################
+    ###          Workflow 4: Virtual Evaluator Chatbot          ###
+    ###############################################################
+    #   This workflow handles one turn of the virtual evaluator feedback and Q&A:
+    #            1. Read user input
+    #            2. Generate evaluator response
+    #
+    #   Public function to use this workflow: send_message()
+
+    def _build_evaluator_workflow(self):
+        """Build workflow for evaluator bot – single-turn message processing."""
+        workflow = StateGraph(state_schema=LBState)
+
+        workflow.add_node("process_input", RunnableLambda(self._process_user_input_evaluator))
+        workflow.add_node("generate_feedback", RunnableLambda(self._generate_evaluator_response))
+        workflow.set_entry_point("process_input")
+        workflow.add_edge("process_input", "generate_feedback")
+        workflow.add_edge("generate_feedback", END)
+
+        logging.info("Evaluator workflow built successfully.")
+        return workflow.compile()
+
+    def _process_user_input_evaluator(self, state: LBState):
+        """Process user input during evaluator interaction.
+           Appends entries to evaluator_chatlog.
+        """
+        user_input = state.get("user_input")
+        if not user_input:
+            return state
+
+        logging.info(f"Processing evaluator user input: {user_input[:50]}...")
+
+        # Append to separate evaluator-specific chatlog
+        chatlog = state.get("evaluator_chatlog", [])
+        chatlog.append({
+            "type": "human",
+            "role": "user",
+            "content": user_input
+        })
+
+        return {
+            **state,
+            "evaluator_chatlog": chatlog,
+            "current_phase": "generate_eval_feedback",
+            "user_input": None
+        }
+
+    def _generate_evaluator_response(self, state: LBState):
+        """Generate response from evaluator agent using transcript and scoring."""
+        logging.info("Generating evaluator feedback...")
+
+        try:
+            eval_chatlog = state.get("evaluator_chatlog", [])
+
+
+            # Build full system message with context
+            langchain_messages = []
+            for msg in eval_chatlog:
+                if msg.get('type') == 'system':
+                    langchain_messages.append(SystemMessage(content=msg['content']))
+                elif msg.get('type') == 'human':
+                    langchain_messages.append(HumanMessage(content=msg['content']))
+                elif msg.get('type') == 'ai':
+                    langchain_messages.append(AIMessage(content=msg['content']))
+
+            response = self.llm_mini_virtualEvaluator.invoke(langchain_messages)
+            ai_response = response.content
+
+            eval_chatlog.append({
+                "type": "ai",
+                "role": "evaluator",
+                "content": ai_response
+            })
+
+            logging.info("Evaluator response generated.")
+
+            return {
+                **state,
+                "evaluator_chatlog": eval_chatlog,
+                "ai_response": ai_response,
+                "evaluator_session_active": True,
+                "current_phase": "eval_feedback_complete"
+            }
+
+        except Exception as e:
+            logging.error(f"Evaluator response failed: {str(e)}")
+            return {**state, "error_message": f"Evaluator error: {str(e)}"}
+
+    def send_evaluator_message(self, user_input: str):
+        """Public entrypoint for evaluator chat."""
+        if not self.current_state or not self.current_state.get("evaluator_session_active"):
+            logging.error("No active evaluation session.")
+            return {"error": "No active session"}
+
+        try:
+            message_state = {**self.current_state, "user_input": user_input}
+            result = self.evaluator_graph.invoke(message_state)
+            self.current_state = result
+
+            return {
+                "ai_response": result.get("ai_response"),
+                "evaluator_session_active": result.get("evaluator_session_active", True),
+                "current_phase": "evaluator_chat",
+                "chatlog": result.get("chatlog", [])
+            }
+        except Exception as e:
+            logging.error(f"Error in evaluator chat: {str(e)}")
+            return {"error": str(e)}
+
+    ###############################################################
+    ###                Additional Utility Methods               ###
+    ###############################################################
 
     def get_session_state(self):
         """Get current session state"""
@@ -639,6 +886,8 @@ class LearningBuddy:
             filepath = 'Prompts/feedback_agent_prompt.txt'
         elif prompt_name == 'STACER Prompt':
             filepath = 'Prompts/STACER_form_prompt.txt'
+        elif prompt_name == 'Virtual Evaluator':
+            filepath = 'Prompts/virtual_evaluator_prompt.txt'
         else:
             filepath = ''
         return self._read_file(filepath)

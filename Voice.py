@@ -42,6 +42,14 @@ def set_patient_voice(case_study: str) -> str:
 
     return voice
 
+def set_evaluator_voice(patient_voice: str) -> str:
+    if patient_voice == MALE_VOICE:
+        voice = FEMALE_VOICE
+    else:
+        voice = MALE_VOICE
+
+    return voice
+
 def text_to_speech(text: str, voice: str) -> bytes:
     #Remove text inside parentheses (We don't want to read that part aloud)
     text = re.sub(r'^\s*\([^)]*\)\s*', '', text)

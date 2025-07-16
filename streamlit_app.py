@@ -248,6 +248,12 @@ def reset_session_state():
     st.session_state.processing_phase = None
     st.session_state.show_patient_info = False
     st.session_state.show_end_confirmation = False
+    st.session_state.presentation_messages = []
+    st.session_state.presentation_started = False
+    st.session_state.presentation_phase = False
+    st.session_state.evaluator_chat_messages = []
+    st.presentation_start_time = None
+    st.session_start_time = None
 
 def get_phase_display_name(phase):
     """Get user-friendly phase names"""
@@ -289,8 +295,28 @@ if 'show_end_confirmation' not in st.session_state:
     st.session_state.show_end_confirmation = False
 if "muted" not in st.session_state:
     st.session_state.muted = False
+if 'presentation_phase' not in st.session_state:
+    st.session_state.presentation_phase = False
+if 'presentation_messages' not in st.session_state:
+    st.session_state.presentation_messages = []
+if 'presentation_started' not in st.session_state:
+    st.session_state.presentation_started = False
+if "evaluator_chat_messages" not in st.session_state:
+    st.session_state.evaluator_chat_messages = []
+if "evaluator_muted" not in st.session_state:
+    st.session_state.evaluator_muted = False
 
 # Sidebar Configuration
+st.markdown("""
+    <style>
+        [data-testid="stSidebar"] {
+            width: 350px !important;  
+        }
+        [data-testid="stSidebar"] > div:first-child {
+            width: 350px !important;
+        }
+    </style>
+""", unsafe_allow_html=True)
 st.sidebar.title("🏥 Clinical Learning Buddy")
 st.sidebar.markdown("---")
 
@@ -330,7 +356,7 @@ if st.session_state.api_key:
         st.rerun()
     
     # Patient profile selection
-    profile_options = ["Random Selection"] + st.session_state.available_profiles
+    profile_options = ["Random"] + st.session_state.available_profiles
     
     selected_option = st.sidebar.selectbox(
         "Choose Patient Profile:",
@@ -339,7 +365,7 @@ if st.session_state.api_key:
         disabled=st.session_state.session_active or st.session_state.processing_phase is not None
     )
     
-    if selected_option != "Random Selection":
+    if selected_option != "Random":
         st.session_state.selected_patient_profile = os.path.join('Patient_Profiles', selected_option)
         
         # Show preview
@@ -353,7 +379,7 @@ if st.session_state.api_key:
 # Feature Navigation
 feature = st.sidebar.radio(
     "Navigate",
-    ["💬 Therapy Session", "📊 Session Analytics", "🎯 Performance Review"],
+    ["💬 STACER Practice Session",],      # "📊 Session Analytics🎯", "Performance Review"
     index=0,
     disabled=st.session_state.processing_phase is not None
 )
@@ -395,10 +421,10 @@ if not st.session_state.learning_buddy and st.session_state.api_key:
         st.error(f"❌ Error initializing LearningBuddy: {str(e)}")
 
 # Main Content
-if feature == "💬 Therapy Session":
+if feature == "💬 STACER Practice Session":
     # Session header
     st.markdown('<div class="session-header">', unsafe_allow_html=True)
-    st.markdown("# 💬 Virtual Therapy Session")
+    st.markdown("# 💬 Virtual Patient Interview")
     st.markdown("Practice clinical skills with AI-powered patient simulations")
     st.markdown('</div>', unsafe_allow_html=True)
     
@@ -410,7 +436,7 @@ if feature == "💬 Therapy Session":
     
     else:
         # Session Controls
-        col1, col2, col3, col4 = st.columns([2, 2, 2, 2])
+        col1, col2, col3 = st.columns([2, 2, 2])
         
         controls_disabled = st.session_state.processing_phase is not None
         
@@ -421,28 +447,24 @@ if feature == "💬 Therapy Session":
                        type="primary"):
                 
                 # Set processing phase
+                reset_session_state()
                 st.session_state.processing_phase = "initialize_node"
                 st.rerun()
         
         with col2:
-            show_end_button = (st.session_state.session_active and 
-                             not st.session_state.show_end_confirmation and 
-                             not controls_disabled)
+            show_end_button = ((st.session_state.session_active or st.session_state.presentation_phase) and
+                               not st.session_state.show_end_confirmation and
+                               not controls_disabled)
             
             if st.button("🏁 End Session", 
                        use_container_width=True, 
                        disabled=not show_end_button, 
                        type="secondary"):
+                st.session_state.presentation_phase = False
                 st.session_state.show_end_confirmation = True
                 st.rerun()
-        
+
         with col3:
-            if st.button("📋 Patient Info", 
-                       use_container_width=True, 
-                       disabled=not st.session_state.session_data or controls_disabled):
-                st.session_state.show_patient_info = not st.session_state.show_patient_info
-        
-        with col4:
             if st.button("🔄 Reset All", 
                        use_container_width=True,
                        disabled=controls_disabled):
@@ -645,36 +667,83 @@ if feature == "💬 Therapy Session":
                             if session_metadata.get('start_time'):
                                 duration = format_session_duration(session_metadata['start_time'])
                                 st.markdown(f"**Duration**: {duration}")
-            
+
+            #Chat Set up
+            # --- Initialize session start time ---
+            if 'session_start_time' not in st.session_state:
+                st.session_state.session_start_time = datetime.now()
+
+            # --- Initialize chat messages ---
+            if 'chat_messages' not in st.session_state:
+                st.session_state.chat_messages = []
+
+            # --- Add Evaluator Welcome Message (only once) ---
+            if 'evaluator_intro_shown' not in st.session_state:
+                st.session_state.chat_messages.append({
+                    "role": "evaluator",
+                    "content": "Hello and welcome to your simulated STACER evaluation. I will be evaluating your patient interviewing skills today. When you have finished speaking with the patient, press the 'End Interview' button. "
+                })
+                st.session_state.chat_messages.append({
+                    "role": "evaluator",
+                    "content": "The virtual patient is in the chatroom with us. You may now begin."
+                })
+                st.session_state.evaluator_intro_shown = True
+
+            # --- Timed Evaluator Messages ---
+            now = datetime.now()
+            elapsed = (now - st.session_state.session_start_time).total_seconds()
+
+            # Add 50-minute evaluator message
+            if elapsed >= 50 * 60 and not any(
+                    m.get("tag") == "evaluator_50min" for m in st.session_state.chat_messages):
+                st.session_state.chat_messages.append({
+                    "role": "evaluator",
+                    "content": "*50 minutes have passed. 5 minutes remaining.*",
+                    "tag": "evaluator_50min"
+                })
+
+            # Add 55-minute evaluator message
+            if elapsed >= 55 * 60 and not any(
+                    m.get("tag") == "evaluator_55min" for m in st.session_state.chat_messages):
+                st.session_state.chat_messages.append({
+                    "role": "evaluator",
+                    "content": "*55 minutes have elapsed. The session should now conclude.*",
+                    "tag": "evaluator_55min"
+                })
+
             # Chat Interface
             chat_container = st.container(height=400)
             
             with chat_container:
-                # Welcome message
-                if not st.session_state.chat_messages:
-                    st.chat_message("assistant").markdown(
-                        "👋 *Patient simulation ready. The session is now active and ready for therapeutic interaction.*"
-                    )
-                
+
                 # Display chat history
                 for msg in st.session_state.chat_messages:
                     role = msg.get('role')
                     content = msg.get('content', '')
-                    
+
                     if role == 'user':  # Therapist (Right side)
                         st.markdown(f"""
                         <div style="display: flex; justify-content: flex-end; margin-bottom: 10px;">
                             <div style="background-color: #e3f2fd; padding: 12px 18px; border-radius: 15px; max-width: 70%; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align: right;">
-                                <strong>Therapist:</strong><br>{content}
+                                <strong>You:</strong><br>{content}
                             </div>
                         </div>
                         """, unsafe_allow_html=True)
-                    
+
                     elif role == 'assistant':  # Patient (Left side)
                         st.markdown(f"""
                         <div style="display: flex; justify-content: flex-start; margin-bottom: 10px;">
                             <div style="background-color: #f3e5f5; padding: 12px 18px; border-radius: 15px; max-width: 70%; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align: left;">
                                 <strong>Patient:</strong><br>{content}
+                            </div>
+                        </div>
+                        """, unsafe_allow_html=True)
+
+                    elif role == 'evaluator':
+                        st.markdown(f"""
+                        <div style="display: flex; justify-content: flex-start; margin-bottom: 10px;">
+                            <div style="background-color: #f1f8e9; padding: 12px 18px; border-radius: 15px; max-width: 70%; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align: left;">
+                                <strong>Evaluator:</strong><br>{content}
                             </div>
                         </div>
                         """, unsafe_allow_html=True)
@@ -722,6 +791,12 @@ if feature == "💬 Therapy Session":
                 
                 st.rerun()
 
+            # End Interview Button
+            if st.button("🛑 End Interview"):
+                st.session_state.presentation_phase = True
+                st.session_state.session_active = False  # Stop current chat
+                st.rerun()
+
             #Audio Playback
             if 'latest_audio' in st.session_state:
                 audio_base64 = base64.b64encode(st.session_state.latest_audio).decode('utf-8')
@@ -734,7 +809,80 @@ if feature == "💬 Therapy Session":
 
                 del st.session_state['latest_audio']
 
+        if st.session_state.presentation_phase and not st.session_state.show_end_confirmation:
+            st.markdown("---")
+            st.markdown("### 🧠 Clinical Presentation Entry")
 
+            # Initialize evaluator's opening message
+            if not st.session_state.presentation_started:
+                evaluator_intro = "Please begin your diagnostic presentation based on the interview. You may type it as one single message, or a series of smaller messages. When you are done presenting, press the 'End Session' Button"
+                st.session_state.presentation_messages.append({"role": "evaluator", "content": evaluator_intro})
+                st.session_state.presentation_started = True
+
+            # --- Initialize session start time ---
+            if 'presentation_start_time' not in st.session_state:
+                st.session_state.presentation_start_time = datetime.now()
+            # --- Timed Evaluator Messages ---
+            now = datetime.now()
+            elapsed = (now - st.session_state.presentation_start_time).total_seconds()
+
+
+            # Add 20-minute evaluator message
+            if elapsed >= 20 * 60 and not any(
+                    m.get("tag") == "evaluator_20min" for m in st.session_state.presentation_messages):
+                st.session_state.presentation_messages.append({
+                    "role": "evaluator",
+                    "content": "*20 minutes have passed. 5 minutes remaining.*",
+                    "tag": "evaluator_20min"
+                })
+
+            # Add 25-minute evaluator message
+            if elapsed >= 25 * 60 and not any(
+                    m.get("tag") == "evaluator_25min" for m in st.session_state.presentation_messages):
+                st.session_state.presentation_messages.append({
+                    "role": "evaluator",
+                    "content": "*25 minutes have elapsed. The presentation should now conclude.*",
+                    "tag": "evaluator_25min"
+                })
+
+            # Scrollable Presentation Container
+            with st.container(height=400):
+                for msg in st.session_state.presentation_messages:
+                    role = msg.get("role")
+                    content = msg.get("content", '')
+
+                    if role == 'evaluator':
+                        st.markdown(f"""
+                        <div style="display: flex; justify-content: flex-start; margin-bottom: 10px;">
+                            <div style="background-color: #f1f8e9; padding: 12px 18px; border-radius: 15px; max-width: 70%; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align: left;">
+                                <strong>Evaluator:</strong><br>{content}
+                            </div>
+                        </div>
+                        """, unsafe_allow_html=True)
+
+                    elif role == 'user':
+                        st.markdown(f"""
+                        <div style="display: flex; justify-content: flex-end; margin-bottom: 10px;">
+                            <div style="background-color: #e3f2fd ; padding: 12px 18px; border-radius: 15px; max-width: 70%; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align: right;">
+                                <strong>You:</strong><br>{content}
+                            </div>
+                        </div>
+                        """, unsafe_allow_html=True)
+
+            # Input box for presentation entries
+            if user_input := st.chat_input("Type your case presentation here..."):
+                st.session_state.presentation_messages.append({
+                    "role": "user",
+                    "content": user_input
+                })
+
+                # Call helper to store presentation
+                try:
+                    st.session_state.learning_buddy.add_presentation_message(user_input)
+                except Exception as e:
+                    st.error(f"Error storing presentation input: {str(e)}")
+
+                st.rerun()
 
         # Display Feedback After Session
         if (st.session_state.session_data and
@@ -743,10 +891,150 @@ if feature == "💬 Therapy Session":
                 not st.session_state.session_active and
                 not st.session_state.processing_phase):
             # Use tabs for Feedback and STACER form
-            tab1, tab2 = st.tabs(["📝 AI Feedback", "📄 COD STACER Form"])
+            tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["💬 Evaluator Chat", "📝 COD STACER Form", " 📊 Detailed Feedback" , "🎤 Patient Interview Transcript", "🗣️ Case Presentation Transcript", "👤 Patient Profile"])
 
-            # Tab 1: Feedback
+            # Tab 1: Evaluator Chat
             with tab1:
+                st.markdown("### 💬 Interactive Evaluator")
+                evaluator_chat_container = st.container(height=400)
+
+                # Only allow access if evaluator session is active
+                evaluator_active = (
+                        st.session_state.learning_buddy and
+                        st.session_state.learning_buddy.current_state.get("evaluator_session_active", False)
+                )
+
+                if not evaluator_active:
+                    st.warning("⚠️ Evaluator session not available. Complete your interview and presentation first.")
+                else:
+                    # Initialize chat messages if missing
+                    if "evaluator_chat_messages" not in st.session_state:
+                        st.session_state.evaluator_chat_messages = []
+
+                    # Initialize muted state if missing
+                    if "evaluator_muted" not in st.session_state:
+                        st.session_state.evaluator_muted = False
+
+                    #Append the first message
+                    if st.session_state.evaluator_chat_messages == []:
+                        try:
+                            response = st.session_state.learning_buddy.send_evaluator_message("Please Begin the Evaluation")
+
+                            if response.get("error"):
+                                st.error(f"❌ Error: {response['error']}")
+                            else:
+                                ai_response = response.get("ai_response", "")
+                                if ai_response:
+                                    st.session_state.evaluator_chat_messages.append({
+                                        "role": "evaluator",
+                                        "content": ai_response
+                                    })
+
+                                    if not st.session_state.evaluator_muted:
+                                        try:
+                                            audio_bytes = text_to_speech(
+                                                ai_response,
+                                                st.session_state.learning_buddy.evaluator_voice
+                                            )
+                                            st.session_state.latest_evaluator_audio = audio_bytes
+                                        except Exception as e:
+                                            st.warning(f"⚠️ Audio playback error: {e}")
+
+                        except Exception as e:
+                            st.error(f"❌ Evaluator processing error: {e}")
+
+                    with evaluator_chat_container:
+                        for msg in st.session_state.evaluator_chat_messages:
+                            role = msg.get("role")
+                            content = msg.get("content", "")
+
+                            if role == "user":
+                                st.markdown(f"""
+                                    <div style="display: flex; justify-content: flex-end; margin-bottom: 10px;">
+                                        <div style="background-color: #e3f2fd; padding: 12px 18px; border-radius: 15px; max-width: 70%; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align: right;">
+                                            <strong>You:</strong><br>{content}
+                                        </div>
+                                    </div>
+                                """, unsafe_allow_html=True)
+
+                            elif role == "evaluator":
+                                st.markdown(f"""
+                                    <div style="display: flex; justify-content: flex-start; margin-bottom: 10px;">
+                                        <div style="background-color: #f1f8e9; padding: 12px 18px; border-radius: 15px; max-width: 70%; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align: left;">
+                                            <strong>Evaluator:</strong><br>{content}
+                                        </div>
+                                    </div>
+                                """, unsafe_allow_html=True)
+
+                    st.session_state.evaluator_muted = st.toggle("🔇 Mute evaluator",
+                                                                 value=st.session_state.get("evaluator_muted", False))
+
+                    if prompt := st.chat_input("Ask a question about your evaluation..."):
+                        st.session_state.evaluator_chat_messages.append({
+                            "role": "user",
+                            "content": prompt
+                        })
+
+                        with st.spinner("💬 Evaluator preparing response..."):
+                            try:
+                                response = st.session_state.learning_buddy.send_evaluator_message(prompt)
+
+                                if response.get("error"):
+                                    st.error(f"❌ Error: {response['error']}")
+                                else:
+                                    ai_response = response.get("ai_response", "")
+                                    if ai_response:
+                                        st.session_state.evaluator_chat_messages.append({
+                                            "role": "evaluator",
+                                            "content": ai_response
+                                        })
+
+                                        if not st.session_state.evaluator_muted:
+                                            try:
+                                                audio_bytes = text_to_speech(
+                                                    ai_response,
+                                                    st.session_state.learning_buddy.evaluator_voice
+                                                )
+                                                st.session_state.latest_evaluator_audio = audio_bytes
+                                            except Exception as e:
+                                                st.warning(f"⚠️ Audio playback error: {e}")
+
+                            except Exception as e:
+                                st.error(f"❌ Evaluator processing error: {e}")
+
+                        st.rerun()
+
+                    # Audio Playback
+                    if 'latest_evaluator_audio' in st.session_state:
+                        audio_base64 = base64.b64encode(st.session_state.latest_evaluator_audio).decode('utf-8')
+                        audio_html = f'''
+                                <audio autoplay>
+                                  <source src="data:audio/mp3;base64,{audio_base64}" type="audio/mpeg">
+                                </audio>
+                                '''
+                        st.markdown(audio_html, unsafe_allow_html=True)
+
+                        del st.session_state['latest_evaluator_audio']
+
+            # Tab 2: COD STACER Form
+            with tab2:
+                # Extract STACER text
+                STACER_text = st.session_state.session_data.get('cod_stacer')
+
+                st.session_state.session_data['cod_stacer'] = STACER_text
+
+                html = markdown2.markdown(STACER_text,
+                                          extras=["tables", "fenced-code-blocks", "strike", "cuddled-lists"])
+
+                # Display with Streamlit
+                st.markdown("### 📄 Completed COD STACER Evaluation Form")
+                st.info(
+                    "This is a structured Core STACER form based on your most recent session. This form evaluates the expectations of PGY3 and PGY4 students.")
+                st.markdown("---")
+                st.markdown(html, unsafe_allow_html=True)
+
+            # Tab 3: Feedback
+            with tab3:
                 st.markdown("---")
                 st.markdown("### 🎯 AI Clinical Supervision Feedback")
                 st.warning(
@@ -796,22 +1084,77 @@ if feature == "💬 Therapy Session":
 
                         st.markdown('</div>', unsafe_allow_html=True)
 
+            # Tab 4: Transcript
+            with tab4:
+                # Chat Interface
+                chat_container = st.container(height=400)
 
-            # Tab 2: COD STACER Form
-            with tab2:
-                # Extract STACER text
-                STACER_text = st.session_state.session_data.get('cod_stacer')
+                with chat_container:
+                    # Welcome message
+                    if not st.session_state.chat_messages:
+                        st.chat_message("assistant").markdown(
+                            "👋 *Patient simulation ready. The session is now active and ready for therapeutic interaction.*"
+                        )
 
-                st.session_state.session_data['cod_stacer'] = STACER_text
+                    # Display chat history
+                    for msg in st.session_state.chat_messages:
+                        role = msg.get('role')
+                        content = msg.get('content', '')
 
-                html = markdown2.markdown(STACER_text,
-                                          extras=["tables", "fenced-code-blocks", "strike", "cuddled-lists"])
+                        if role == 'user':  # Therapist (Right side)
+                            st.markdown(f"""
+                                                <div style="display: flex; justify-content: flex-end; margin-bottom: 10px;">
+                                                    <div style="background-color: #e3f2fd; padding: 12px 18px; border-radius: 15px; max-width: 70%; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align: right;">
+                                                        <strong>You:</strong><br>{content}
+                                                    </div>
+                                                </div>
+                                                """, unsafe_allow_html=True)
 
-                # Display with Streamlit
-                st.markdown("### 📄 Completed COD STACER Evaluation Form")
-                st.info("This is a structured Core STACER form based on your most recent session. This form evaluates the expectations of PGY3 and PGY4 students.")
-                st.markdown("---")
-                st.markdown(html, unsafe_allow_html=True)
+                        elif role == 'assistant':  # Patient (Left side)
+                            st.markdown(f"""
+                                                <div style="display: flex; justify-content: flex-start; margin-bottom: 10px;">
+                                                    <div style="background-color: #f3e5f5; padding: 12px 18px; border-radius: 15px; max-width: 70%; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align: left;">
+                                                        <strong>Patient:</strong><br>{content}
+                                                    </div>
+                                                </div>
+                                                """, unsafe_allow_html=True)
+            #Tab 5: Presentation
+            with tab5:
+                # Scrollable Presentation Container
+                with st.container(height=400):
+                    for msg in st.session_state.presentation_messages:
+                        role = msg.get("role")
+                        content = msg.get("content", '')
+
+                        if role == 'evaluator':
+                            st.markdown(f"""
+                                                <div style="display: flex; justify-content: flex-start; margin-bottom: 10px;">
+                                                    <div style="background-color: #f1f8e9; padding: 12px 18px; border-radius: 15px; max-width: 70%; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align: left;">
+                                                        <strong>Evaluator:</strong><br>{content}
+                                                    </div>
+                                                </div>
+                                                """, unsafe_allow_html=True)
+
+                        elif role == 'user':
+                            st.markdown(f"""
+                                                <div style="display: flex; justify-content: flex-end; margin-bottom: 10px;">
+                                                    <div style="background-color: #e3f2fd ; padding: 12px 18px; border-radius: 15px; max-width: 70%; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align: right;">
+                                                        <strong>You:</strong><br>{content}
+                                                    </div>
+                                                </div>
+                                                """, unsafe_allow_html=True)
+
+            #Tab 6: Patient Profile
+            with tab6:
+
+                clinical_summary = st.session_state.session_data.get('clinical_summary', '')
+                if clinical_summary:
+                    st.markdown("**AI-Generated Clinical Summary:**")
+                    st.info(clinical_summary)
+
+                case_study = st.session_state.session_data.get('case_study', '')
+                st.markdown("**Patient Profile Used During Simulation:**")
+                st.info(case_study)
 
             col1, col2, col3 = st.columns(3)
             with col1:
@@ -827,6 +1170,9 @@ if feature == "💬 Therapy Session":
                 if st.button("📊 View Analytics", use_container_width=True):
                     st.session_state.selected_feature = "📊 Session Analytics"
                     st.rerun()
+
+
+
 
 elif feature == "📊 Session Analytics":
     st.markdown('<div class="session-header">', unsafe_allow_html=True)
