@@ -269,6 +269,21 @@ def get_phase_display_name(phase):
         "error": "❌ Error"
     }
     return phase_names.get(phase, phase)
+def save_evaluator_transcript():
+    filepath = st.session_state.session_data.get('folder_name')
+    print(filepath)
+    if not filepath:
+        return  # Exit if no filepath is defined
+
+    os.makedirs(filepath, exist_ok=True)
+    full_path = os.path.join(filepath, "evaluator_transcript.txt")
+
+    with open(full_path, "w", encoding="utf-8") as f:
+        for msg in st.session_state.evaluator_chat_messages:
+            role = msg.get("role", "").capitalize()
+            content = msg.get("content", "")
+            f.write(f"{role}: {content}\n\n")
+
 
 # Initialize session state
 if 'api_key' not in st.session_state:
@@ -941,6 +956,7 @@ if feature == "💬 STACER Practice Session":
                                         "role": "evaluator",
                                         "content": ai_response
                                     })
+                                    save_evaluator_transcript()
 
                                     if not st.session_state.evaluator_muted:
                                         try:
@@ -998,7 +1014,7 @@ if feature == "💬 STACER Practice Session":
                                             "role": "evaluator",
                                             "content": ai_response
                                         })
-
+                                        save_evaluator_transcript()
                                         if not st.session_state.evaluator_muted:
                                             try:
                                                 audio_bytes = st.session_state.learning_buddy.voice.text_to_speech(
