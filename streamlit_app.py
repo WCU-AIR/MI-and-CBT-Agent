@@ -5,6 +5,9 @@ from LearningBuddy import LearningBuddy
 from Voice import *
 import base64
 import markdown2
+import uuid
+import io
+import streamlit.components.v1 as components
 
 # Streamlit App Configuration
 st.set_page_config(
@@ -210,6 +213,37 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Helper functions
+def autoplay_audio(audio_bytes: bytes):
+    audio_base64 = base64.b64encode(audio_bytes).decode("utf-8")
+    unique_id = f"audio_{uuid.uuid4().hex}"
+
+    html = f"""
+    <html>
+        <body>
+            <audio id="{unique_id}" autoplay style="display:none;">
+                <source src="data:audio/mp3;base64,{audio_base64}" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <script>
+                const audio = document.getElementById("{unique_id}");
+                if (audio) {{
+                    audio.volume = 1.0;
+                    audio.play().catch((e) => {{
+                        console.warn("Autoplay blocked:", e);
+                    }});
+                }}
+            </script>
+        </body>
+    </html>
+    """
+
+    # This embeds it in an iframe so Streamlit doesn't re-render it
+    components.html(html, height=0)
+
+
+
+
+
 def get_available_patient_profiles(directory='Patient_Profiles'):
     """Get list of available patient profile files"""
     try:
@@ -805,7 +839,9 @@ if feature == "💬 STACER Practice Session":
                                 if not st.session_state.muted:
                                     try:
                                         audio_bytes = st.session_state.learning_buddy.voice.text_to_speech(ai_response, speaker="patient")
-                                        st.session_state.latest_audio = audio_bytes  # Save audio here
+                                        #st.session_state.latest_audio = audio_bytes  # Save audio here
+                                        st.session_state._pending_audio_text = ai_response
+                                        st.session_state._trigger_audio_playback = True
                                     except Exception as e:
                                         st.warning(f"⚠️ Audio playback error: {e}")
                             
@@ -818,6 +854,19 @@ if feature == "💬 STACER Practice Session":
                 
                 st.rerun()
 
+            if st.session_state.get('_trigger_audio_playback') and not st.session_state.get("muted", False):
+                try:
+                    audio_bytes = st.session_state.learning_buddy.voice.text_to_speech(
+                        st.session_state._pending_audio_text, speaker="patient"
+                    )
+                    st.session_state.latest_audio = audio_bytes
+                except Exception as e:
+                    st.warning(f"⚠️ Audio generation error: {e}")
+                finally:
+                    del st.session_state['_trigger_audio_playback']
+                    del st.session_state['_pending_audio_text']
+
+
             # End Interview Button
             if st.button("🛑 End Interview"):
                 st.session_state.presentation_phase = True
@@ -825,16 +874,9 @@ if feature == "💬 STACER Practice Session":
                 st.rerun()
 
             #Audio Playback
-            if 'latest_audio' in st.session_state:
-                audio_base64 = base64.b64encode(st.session_state.latest_audio).decode('utf-8')
-                audio_html = f'''
-                <audio autoplay>
-                  <source src="data:audio/mp3;base64,{audio_base64}" type="audio/mpeg">
-                </audio>
-                '''
-                st.markdown(audio_html, unsafe_allow_html=True)
-
-                del st.session_state['latest_audio']
+            if "latest_audio" in st.session_state:
+                autoplay_audio(st.session_state.latest_audio)
+                del st.session_state["latest_audio"]
 
         if st.session_state.presentation_phase and not st.session_state.show_end_confirmation:
             st.markdown("---")

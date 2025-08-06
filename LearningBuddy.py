@@ -627,10 +627,10 @@ class LearningBuddy:
         presentation = state.get("formatted_presentation")
 
         # Create base directory if it doesn't exist
-        base_dir = "Saved_sessions"
+        base_dir = "Saved_Sessions"
         os.makedirs(base_dir, exist_ok=True)
 
-        # Create timestamped subfolder inside Saved_sessions
+        # Create timestamped subfolder inside Saved_Sessions
         base_dir = "Saved_Sessions"
         timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
         folder_name = os.path.join(base_dir, f"session_export_{timestamp}")
