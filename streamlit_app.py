@@ -244,8 +244,16 @@ def autoplay_audio(audio_bytes: bytes):
 
 
 
-def get_available_patient_profiles(directory='Patient_Profiles'):
+def get_available_patient_profiles(directory='Patient_Profiles', mode=LearningBuddy.STACER_MODE):
     """Get list of available patient profile files"""
+
+    # Select Patients available in the current mode
+    if mode == LearningBuddy.STACER_MODE:
+        directory += "/STACER"
+    elif mode == LearningBuddy.MI_MODE:
+        directory += "/MI"
+    # Add more modes ...
+
     try:
         if not os.path.exists(directory):
             return []
@@ -354,6 +362,10 @@ if "evaluator_chat_messages" not in st.session_state:
     st.session_state.evaluator_chat_messages = []
 if "evaluator_muted" not in st.session_state:
     st.session_state.evaluator_muted = False
+if "mode" not in st.session_state:
+    st.session_state.evaluator_muted = 0
+if " mode_label" not in st.session_state:
+    st.session_state.evaluator_muted = ""
 
 # Sidebar Configuration
 st.markdown("""
@@ -384,12 +396,24 @@ if not st.session_state.get("api_key") or not st.session_state.get("elevenlabs_a
         placeholder="elevenlabs-..."
     )
 
+    # Mode selection dropdown
+    mode_options = {
+        "STACER Evaluation": LearningBuddy.STACER_MODE,
+        "Motivational Interviewing (WIP)": LearningBuddy.MI_MODE,
+        # APPEND MORE OPTIONS HERE
+    }
+    selected_mode_label = st.sidebar.selectbox("Select Mode", list(mode_options.keys()))
+    selected_mode = mode_options[selected_mode_label]
+
     if st.sidebar.button("🔑 Set API Keys"):
         if api_key_input and eleven_key_input:
             try:
                 st.session_state.api_key = api_key_input
                 st.session_state.elevenlabs_api_key = eleven_key_input
-                st.session_state.learning_buddy = LearningBuddy(api_key_input, eleven_key_input)
+                st.session_state.mode = selected_mode
+                st.session_state.mode_label = selected_mode_label
+                st.session_state.available_profiles = get_available_patient_profiles(mode = st.session_state.mode)
+                st.session_state.learning_buddy = LearningBuddy(api_key_input, eleven_key_input, mode=selected_mode)
 
                 st.sidebar.success("✅ API keys set successfully!")
                 st.rerun()
@@ -398,11 +422,13 @@ if not st.session_state.get("api_key") or not st.session_state.get("elevenlabs_a
         else:
             st.sidebar.error("❌ Please enter both API keys.")
 else:
-    st.sidebar.success("✅ API Keys configured")
-    if st.sidebar.button("🔑 Change API Keys", disabled=st.session_state.processing_phase is not None):
+    st.sidebar.success(f"✅ API Keys configured | Mode: { st.session_state.mode_label}")
+    if st.sidebar.button("🔑 Change API Keys/Mode", disabled=st.session_state.processing_phase is not None):
         st.session_state.api_key = None
         st.session_state.elevenlabs_api_key = None
         st.session_state.learning_buddy = None
+        st.session_state.mode = None
+        st.session_state.mode_label = None
         reset_session_state()
         st.rerun()
 
@@ -413,7 +439,8 @@ if st.session_state.api_key:
     
     # Refresh profiles button
     if st.sidebar.button("🔄 Refresh Profiles"):
-        st.session_state.available_profiles = get_available_patient_profiles()
+        print(st.session_state.mode)
+        st.session_state.available_profiles = get_available_patient_profiles(mode=st.session_state.mode)
         st.rerun()
     
     # Patient profile selection

@@ -43,7 +43,11 @@ class LBState(TypedDict):
     folder_name: str
 
 class LearningBuddy:
-    def __init__(self, api_key: str, elevenlabs_api_key: str):
+    # Modes
+    STACER_MODE = 1
+    MI_MODE = 2
+
+    def __init__(self, api_key: str, elevenlabs_api_key: str, mode=STACER_MODE):
         self.api_key = SecretStr(api_key)
         self.llm_mini_verification = ChatOpenAI(model="gpt-4.1-mini", temperature=0, api_key=self.api_key)
         self.llm_mini_summary = ChatOpenAI(model="gpt-4.1-mini", temperature=0.2, api_key=self.api_key)
@@ -57,6 +61,7 @@ class LearningBuddy:
         self.voice = ""
         self.current_state = None
         self.elevenlabs_api_key = elevenlabs_api_key
+        self.mode = mode
         logging.info("LearningBuddy initialized with separate LangGraph workflows.")
 
     ###############################################################
@@ -377,14 +382,14 @@ class LearningBuddy:
             logging.error(f"Error processing message: {str(e)}")
             return {"error": str(e)}
 
-        ###############################################################
-        ###             Workflow 2b : Case Presentation             ###
-        ###############################################################
-        #   This step handles the case presentation.
-        #   The UI prompts the user for input, and uses this function to append and save the user's whole presentation:
-        #            1. Read and save user input(s)
-        #
-        #   Public function to use this step: add_presentation_message()
+    ###############################################################
+    ###             Workflow 2b : Case Presentation             ###
+    ###############################################################
+    #   This step handles the case presentation.
+    #   The UI prompts the user for input, and uses this function to append and save the user's whole presentation:
+    #            1. Read and save user input(s)
+    #
+    #   Public function to use this step: add_presentation_message()
 
     def add_presentation_message(self, user_input: str):
         """ Append and save user messages during presentation phase manually.
@@ -529,7 +534,7 @@ class LearningBuddy:
         logging.info("Starting STACER generation ")
         # Generate Formatted COD STACER Form
         instruction_prompt = self._load_prompt('STACER Prompt')
-        blank_stacer_file = self._load_context("COD STACER")
+        blank_stacer_file = self._load_context("Evaluation Form")
 
         stacer_prompt = f"""
         {instruction_prompt}
@@ -856,9 +861,9 @@ class LearningBuddy:
             with open(filepath, 'r', encoding='utf-8') as file:
                 return file.read().strip()
         except FileNotFoundError:
-            raise FileNotFoundError(f"Case study file not found: {filepath}")
+            raise FileNotFoundError(f"file not found: {filepath}")
         except Exception as e:
-            raise RuntimeError(f"Failed to read case study: {e}")
+            raise RuntimeError(f"Failed to read file: {e}")
 
     def load_patient_profile(self, filepath: str) -> str:
         """ Returns the selected patient profile"""
@@ -866,6 +871,14 @@ class LearningBuddy:
 
     def _load_random_case_profile(self, directory='Patient_Profiles'):
         """ Returns a randomly selected patient profile"""
+
+        # Select Patients available in the current mode
+        if self.mode == LearningBuddy.STACER_MODE:
+            directory += "/STACER"
+        elif self.mode == LearningBuddy.MI_MODE:
+            directory += "/MI"
+        # Add more modes ...
+
         files = [f for f in os.listdir(directory)]
         if not files:
             raise FileNotFoundError("No patient profiles found in the directory.")
@@ -875,28 +888,69 @@ class LearningBuddy:
 
     def _load_prompt(self, prompt_name: str) -> str:
         """ Returns the selected prompt"""
-        if prompt_name == 'Clinical Summary':
-            filepath = 'Prompts/clinical_summary_prompt.txt'
-        elif prompt_name == 'Virtual Patient':
-            filepath = 'Prompts/virtual_patient_prompt.txt'
-        elif prompt_name == 'Verification':
-            filepath = 'Prompts/patient_profile_verification_prompt.txt'
-        elif prompt_name == 'Feedback':
-            filepath = 'Prompts/feedback_agent_prompt.txt'
-        elif prompt_name == 'STACER Prompt':
-            filepath = 'Prompts/STACER_form_prompt.txt'
-        elif prompt_name == 'Virtual Evaluator':
-            filepath = 'Prompts/virtual_evaluator_prompt.txt'
+        #Standard LB STACER Evaluation
+        if self.mode == LearningBuddy.STACER_MODE:
+            if prompt_name == 'Clinical Summary':
+                filepath = 'Prompts/STACER/clinical_summary_prompt.txt'
+            elif prompt_name == 'Virtual Patient':
+                filepath = 'Prompts/STACER/virtual_patient_prompt.txt'
+            elif prompt_name == 'Verification':
+                filepath = 'Prompts/STACER/patient_profile_verification_prompt.txt'
+            elif prompt_name == 'Feedback':
+                filepath = 'Prompts/STACER/feedback_agent_prompt.txt'
+            elif prompt_name == 'STACER Prompt':
+                filepath = 'Prompts/STACER/STACER_form_prompt.txt'
+            elif prompt_name == 'Virtual Evaluator':
+                filepath = 'Prompts/STACER/virtual_evaluator_prompt.txt'
+            else:
+                raise FileNotFoundError(f"File not found. Invalid Prompt Name: {prompt_name}")
+
+        # Motivational Interviewing Evaluation
+        elif self.mode == LearningBuddy.MI_MODE:
+            if prompt_name == 'Clinical Summary':
+                filepath = 'Prompts/MI/clinical_summary_prompt.txt'
+            elif prompt_name == 'Virtual Patient':
+                filepath = 'Prompts/MI/virtual_patient_prompt.txt'
+            elif prompt_name == 'Verification':
+                filepath = 'Prompts/MI/patient_profile_verification_prompt.txt'
+            elif prompt_name == 'Feedback':
+                filepath = 'Prompts/MI/feedback_agent_prompt.txt'
+            elif prompt_name == 'STACER Prompt':
+                filepath = 'Prompts/MI/STACER_form_prompt.txt'
+            elif prompt_name == 'Virtual Evaluator':
+                filepath = 'Prompts/MI/virtual_evaluator_prompt.txt'
+            else:
+                raise FileNotFoundError(f"File not found. Invalid Prompt Name: {prompt_name}")
+
+        #Add more modes here...
         else:
-            filepath = ''
+            raise FileNotFoundError(f"File not found. Invalid Mode: {self.mode}")
+
         return self._read_file(filepath)
 
     def _load_context(self, context_name: str) -> str:
         """ Returns the selected LLM context"""
-        if context_name == 'Feedback Criteria':
-            filepath = 'Context/feedback_criteria.txt'
-        elif context_name == 'COD STACER':
-            filepath = 'Context/COD_STACER.txt'
+
+        #STACER Mode
+        if self.mode == LearningBuddy.STACER_MODE:
+            if context_name == 'Feedback Criteria':
+                filepath = 'Context/STACER/feedback_criteria.txt'
+            elif context_name == 'Evaluation Form':
+                filepath = 'Context/STACER/COD_STACER.txt'
+            else:
+                raise FileNotFoundError(f"File not found. Invalid Prompt Name: {context_name}")
+
+        # Motivational Interviewing Mode
+        elif self.mode == LearningBuddy.MI_MODE:
+            if context_name == 'Feedback Criteria':
+                filepath = 'Context/MI/feedback_criteria.txt'
+            elif context_name == 'Evaluation Form':
+                filepath = 'Context/MI/Evaluation_Format.txt'
+            else:
+                raise FileNotFoundError(f"File not found. Invalid Prompt Name: {context_name}")
+
+        # Add more modes here...
         else:
-            filepath = ''
+            raise FileNotFoundError(f"File not found. Invalid Mode: {self.mode}")
+
         return self._read_file(filepath)
