@@ -244,10 +244,11 @@ def autoplay_audio(audio_bytes: bytes):
 
 
 
-def get_available_patient_profiles(directory='Patient_Profiles', mode=LearningBuddy.STACER_MODE):
+def get_available_patient_profiles(directory='Patient_Profiles', mode=LearningBuddy.mode):
     """Get list of available patient profile files"""
 
     # Select Patients available in the current mode
+    print(mode)
     if mode == LearningBuddy.STACER_MODE:
         directory += "/STACER"
     elif mode == LearningBuddy.MI_MODE:
@@ -465,13 +466,21 @@ if st.session_state.api_key:
         st.sidebar.info("🎲 Random patient will be selected")
 
 # Feature Navigation
-feature = st.sidebar.radio(
-    "Navigate",
-    ["💬 STACER Practice Session",],      # "📊 Session Analytics🎯", "Performance Review"
-    index=0,
-    disabled=st.session_state.processing_phase is not None
-)
-
+mode = LearningBuddy.mode
+if mode == LearningBuddy.STACER_MODE:
+    feature = st.sidebar.radio(
+        "Navigate",
+        ["💬 STACER Practice Session",],      # "📊 Session Analytics🎯", "Performance Review"
+        index=0,
+        disabled=st.session_state.processing_phase is not None
+    )
+else:
+    feature = st.sidebar.radio(
+        "Navigate",
+        ["💬 MI Practice Session",],      # "📊 Session Analytics🎯", "Performance Review"
+        index=0,
+        disabled=st.session_state.processing_phase is not None
+    )
 # LangGraph Session Status
 if st.session_state.session_data or st.session_state.processing_phase:
     st.sidebar.markdown("---")
@@ -509,7 +518,7 @@ if not st.session_state.learning_buddy and st.session_state.api_key:
         st.error(f"❌ Error initializing LearningBuddy: {str(e)}")
 
 # Main Content
-if feature == "💬 STACER Practice Session":
+if feature == "💬 STACER Practice Session" or feature == "💬 MI Practice Session":
     # Session header
     st.markdown('<div class="session-header">', unsafe_allow_html=True)
     st.markdown("# 💬 Virtual Patient Interview")
@@ -767,10 +776,17 @@ if feature == "💬 STACER Practice Session":
 
             # --- Add Evaluator Welcome Message (only once) ---
             if 'evaluator_intro_shown' not in st.session_state:
-                st.session_state.chat_messages.append({
-                    "role": "evaluator",
-                    "content": "Hello and welcome to your simulated STACER evaluation. I will be evaluating your patient interviewing skills today. When you have finished speaking with the patient, press the 'End Interview' button. "
-                })
+                mode = LearningBuddy.mode
+                if mode == LearningBuddy.STACER_MODE:
+                    st.session_state.chat_messages.append({
+                        "role": "evaluator",
+                        "content": "Hello and welcome to your simulated STACER evaluation. I will be evaluating your patient interviewing skills today. When you have finished speaking with the patient, press the 'End Interview' button. "
+                    })
+                else:
+                       st.session_state.chat_messages.append({
+                        "role": "evaluator",
+                        "content": "Hello and welcome to your simulated MI evaluation. I will be evaluating your motivational interviewing skills today. When you have finished speaking with the patient, press the 'End Interview' button. "
+                    })
                 st.session_state.chat_messages.append({
                     "role": "evaluator",
                     "content": "The virtual patient is in the chatroom with us. You may now begin."
@@ -896,7 +912,11 @@ if feature == "💬 STACER Practice Session":
 
             # End Interview Button
             if st.button("🛑 End Interview"):
-                st.session_state.presentation_phase = True
+                mode = LearningBuddy.mode
+                if mode == LearningBuddy.STACER_MODE:
+                    st.session_state.presentation_phase = True
+                else:
+                    st.session_state.show_end_confirmation = True
                 st.session_state.session_active = False  # Stop current chat
                 st.rerun()
 
@@ -987,8 +1007,11 @@ if feature == "💬 STACER Practice Session":
                 not st.session_state.session_active and
                 not st.session_state.processing_phase):
             # Use tabs for Feedback and STACER form
-            tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["💬 Evaluator Chat", "📝 COD STACER Form", " 📊 Detailed Feedback" , "🎤 Patient Interview Transcript", "🗣️ Case Presentation Transcript", "👤 Patient Profile"])
-
+            if mode == LearningBuddy.STACER_MODE:
+                tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["💬 Evaluator Chat", "📝 COD STACER Form", " 📊 Detailed Feedback" , "🎤 Patient Interview Transcript", "🗣️ Case Presentation Transcript", "👤 Patient Profile"])
+            else: 
+                tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["💬 Evaluator Chat", "📝 MI Evaluation Form", " 📊 Detailed Feedback" , "🎤 Patient Interview Transcript", "🗣️ Case Presentation Transcript", "👤 Patient Profile"])
+            
             # Tab 1: Evaluator Chat
             with tab1:
                 st.markdown("### 💬 Interactive Evaluator")
@@ -1120,9 +1143,15 @@ if feature == "💬 STACER Practice Session":
                                           extras=["tables", "fenced-code-blocks", "strike", "cuddled-lists"])
 
                 # Display with Streamlit
-                st.markdown("### 📄 Completed COD STACER Evaluation Form")
-                st.info(
-                    "This is a structured Core STACER form based on your most recent session. This form evaluates the expectations of PGY3 and PGY4 students.")
+                if mode == LearningBuddy.STACER_MODE:
+                    st.markdown("### 📄 Completed COD STACER Evaluation Form")
+                    st.info(
+                        "This is a structured Core STACER form based on your most recent session. This form evaluates the expectations of PGY3 and PGY4 students.")
+                else:
+                    st.markdown("### 📄 Completed MI Evaluation Form")
+                    st.info(
+                        "This is a structured Motivational Interviewing form based on your most recent session. This form evaluates the expectations of PGY3 and PGY4 students.")
+                     
                 st.markdown("---")
                 st.markdown(html, unsafe_allow_html=True)
 
@@ -1356,6 +1385,7 @@ elif feature == "📊 Session Analytics":
         if sort_order == "Newest First":
             sessions_to_display.reverse()
         
+        mode = LearningBuddy.mode
         for i, session in enumerate(sessions_to_display):
             session_num = len(st.session_state.completed_sessions) - i if sort_order == "Newest First" else i + 1
             profile_info = session.get('profile_used', 'Unknown')
@@ -1366,8 +1396,11 @@ elif feature == "📊 Session Analytics":
             duration = session_metadata.get('session_duration_minutes', 0)
             
             with st.expander(f"🔬 Chat Session {session_num} - {session['timestamp'].strftime('%Y-%m-%d %H:%M')} ({duration:.1f}m) - {profile_display}"):
-                tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["📋 Patient Data", "💬 Conversation", "📝 Feedback",  "📋 COD STACER", "📊 Metrics", "🔬 LangGraph Details"])
+                if mode == LearningBuddy.STACER_MODE:
+                    tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["📋 Patient Data", "💬 Conversation", "📝 Feedback",  "📋 COD STACER", "📊 Metrics", "🔬 LangGraph Details"])
                 
+                else:
+                    tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["📋 Patient Data", "💬 Conversation", "📝 Feedback",  "📋 Motivational Interviewing", "📊 Metrics", "🔬 LangGraph Details"])
                 with tab1:
                     st.markdown("**Patient Profile (Verified):**")
                     case_study = langgraph_data.get('case_study', '')
@@ -1402,10 +1435,16 @@ elif feature == "📊 Session Analytics":
                 with tab4:
                     cod_stacer = langgraph_data.get('cod_stacer', '')
                     if cod_stacer:
-                        st.markdown("**COD Clinical Observation Document (STACER):**")
+                        if mode == LearningBuddy.STACER_MODE:
+                            st.markdown("**COD Clinical Observation Document (STACER):**")
+                        else:
+                            st.markdown("**MI Observation Document (MI Evaluation Form):**")
                         st.markdown(cod_stacer, unsafe_allow_html=True)
                     else:
-                        st.warning("No COD STACER data available for this session.")
+                        if mode == LearningBuddy.STACER_MODE:
+                            st.warning("No COD STACER data available for this session.")
+                        else:
+                            st.warning("No MI Evaluation data available for this session.")
 
                 with tab5:
                     col1, col2 = st.columns(2)
