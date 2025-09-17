@@ -244,11 +244,12 @@ def autoplay_audio(audio_bytes: bytes):
 
 
 
-def get_available_patient_profiles(directory='Patient_Profiles', mode=LearningBuddy.mode):
+def get_available_patient_profiles(directory='Patient_Profiles', mode=None):
     """Get list of available patient profile files"""
 
     # Select Patients available in the current mode
-    print(mode)
+    if mode is None:
+        mode = st.session_state.mode
     if mode == LearningBuddy.STACER_MODE:
         directory += "/STACER"
     elif mode == LearningBuddy.MI_MODE:
