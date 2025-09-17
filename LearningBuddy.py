@@ -47,7 +47,7 @@ class LearningBuddy:
     STACER_MODE = 1
     MI_MODE = 2
 
-    def __init__(self, api_key: str, elevenlabs_api_key: str, mode=STACER_MODE):
+    def __init__(self, api_key: str, elevenlabs_api_key: str):
         self.api_key = SecretStr(api_key)
         self.llm_mini_verification = ChatOpenAI(model="gpt-4.1-mini", temperature=0, api_key=self.api_key)
         self.llm_mini_summary = ChatOpenAI(model="gpt-4.1-mini", temperature=0.2, api_key=self.api_key)

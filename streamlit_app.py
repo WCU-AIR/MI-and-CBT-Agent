@@ -415,7 +415,8 @@ if not st.session_state.get("api_key") or not st.session_state.get("elevenlabs_a
                 st.session_state.mode = selected_mode
                 st.session_state.mode_label = selected_mode_label
                 st.session_state.available_profiles = get_available_patient_profiles(mode = st.session_state.mode)
-                st.session_state.learning_buddy = LearningBuddy(api_key_input, eleven_key_input, mode=selected_mode)
+                st.session_state.learning_buddy = LearningBuddy(api_key_input, eleven_key_input)
+                st.session_state.learning_buddy.mode = selected_mode
 
                 st.sidebar.success("✅ API keys set successfully!")
                 st.rerun()
