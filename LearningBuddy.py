@@ -916,7 +916,7 @@ class LearningBuddy:
             elif prompt_name == 'Feedback':
                 filepath = 'Prompts/MI/feedback_agent_prompt.txt'
             elif prompt_name == 'STACER Prompt':
-                filepath = 'Prompts/MI/STACER_form_prompt.txt'
+                filepath = 'Prompts/MI/MI_form_prompt.txt'
             elif prompt_name == 'Virtual Evaluator':
                 filepath = 'Prompts/MI/virtual_evaluator_prompt.txt'
             else:
@@ -943,9 +943,9 @@ class LearningBuddy:
         # Motivational Interviewing Mode
         elif self.mode == LearningBuddy.MI_MODE:
             if context_name == 'Feedback Criteria':
-                filepath = 'Context/MI/feedback_criteria.txt'
+                filepath = 'Context/MI/feedback_criteria_MI_5point.txt'
             elif context_name == 'Evaluation Form':
-                filepath = 'Context/MI/Evaluation_Format.txt'
+                filepath = 'Context/MI/MI_EVAL.txt'
             else:
                 raise FileNotFoundError(f"File not found. Invalid Prompt Name: {context_name}")
 
