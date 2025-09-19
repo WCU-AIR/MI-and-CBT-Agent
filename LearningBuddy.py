@@ -47,7 +47,7 @@ class LearningBuddy:
     STACER_MODE = 1
     MI_MODE = 2
 
-    def __init__(self, api_key: str, elevenlabs_api_key: str):
+    def __init__(self, api_key: str, elevenlabs_api_key: str, mode=STACER_MODE):
         self.api_key = SecretStr(api_key)
         self.llm_mini_verification = ChatOpenAI(model="gpt-4.1-mini", temperature=0, api_key=self.api_key)
         self.llm_mini_summary = ChatOpenAI(model="gpt-4.1-mini", temperature=0.2, api_key=self.api_key)
@@ -395,6 +395,7 @@ class LearningBuddy:
         """ Append and save user messages during presentation phase manually.
             Public function for frontend use.
         """
+
         if not self.current_state:
             logging.error("No active session found.")
             return {"error": "No active session"}

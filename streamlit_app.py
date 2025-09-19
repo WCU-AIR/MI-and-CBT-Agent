@@ -17,6 +17,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+selected_mode = None 
 # CSS for enhanced chat interface 
 st.markdown("""
     <style>
@@ -249,7 +250,7 @@ def get_available_patient_profiles(directory='Patient_Profiles', mode=None):
 
     # Select Patients available in the current mode
     if mode is None:
-        mode = st.session_state.mode
+        mode = LearningBuddy.STACER_MODE
     if mode == LearningBuddy.STACER_MODE:
         directory += "/STACER"
     elif mode == LearningBuddy.MI_MODE:
@@ -468,7 +469,7 @@ if st.session_state.api_key:
         st.sidebar.info("🎲 Random patient will be selected")
 
 # Feature Navigation
-mode = LearningBuddy.mode
+mode = selected_mode
 if mode == LearningBuddy.STACER_MODE:
     feature = st.sidebar.radio(
         "Navigate",
@@ -778,7 +779,7 @@ if feature == "💬 STACER Practice Session" or feature == "💬 MI Practice Ses
 
             # --- Add Evaluator Welcome Message (only once) ---
             if 'evaluator_intro_shown' not in st.session_state:
-                mode = LearningBuddy.mode
+                mode = selected_mode
                 if mode == LearningBuddy.STACER_MODE:
                     st.session_state.chat_messages.append({
                         "role": "evaluator",
@@ -914,11 +915,8 @@ if feature == "💬 STACER Practice Session" or feature == "💬 MI Practice Ses
 
             # End Interview Button
             if st.button("🛑 End Interview"):
-                mode = LearningBuddy.mode
-                if mode == LearningBuddy.STACER_MODE:
-                    st.session_state.presentation_phase = True
-                else:
-                    st.session_state.show_end_confirmation = True
+                mode = selected_mode
+                st.session_state.presentation_phase = True
                 st.session_state.session_active = False  # Stop current chat
                 st.rerun()
 
@@ -1009,6 +1007,9 @@ if feature == "💬 STACER Practice Session" or feature == "💬 MI Practice Ses
                 not st.session_state.session_active and
                 not st.session_state.processing_phase):
             # Use tabs for Feedback and STACER form
+            print(selected_mode)
+            mode = selected_mode
+            # Use tabs for Feedback and STACER/MI form
             if mode == LearningBuddy.STACER_MODE:
                 tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["💬 Evaluator Chat", "📝 COD STACER Form", " 📊 Detailed Feedback" , "🎤 Patient Interview Transcript", "🗣️ Case Presentation Transcript", "👤 Patient Profile"])
             else: 
@@ -1387,7 +1388,7 @@ elif feature == "📊 Session Analytics":
         if sort_order == "Newest First":
             sessions_to_display.reverse()
         
-        mode = LearningBuddy.mode
+        mode = selected_mode
         for i, session in enumerate(sessions_to_display):
             session_num = len(st.session_state.completed_sessions) - i if sort_order == "Newest First" else i + 1
             profile_info = session.get('profile_used', 'Unknown')
