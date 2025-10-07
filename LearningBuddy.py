@@ -46,6 +46,7 @@ class LearningBuddy:
     # Modes
     STACER_MODE = 1
     MI_MODE = 2
+    CBT_MODE = 3
 
     def __init__(self, api_key: str, elevenlabs_api_key: str, mode=STACER_MODE):
         self.api_key = SecretStr(api_key)
@@ -642,13 +643,29 @@ class LearningBuddy:
         folder_name = os.path.join(base_dir, f"session_export_{timestamp}")
         os.makedirs(folder_name, exist_ok=True)
 
-        files = {
-            "case_study.txt": case_study,
-            "cod_stacer.txt": stacer,
-            "detailed_feedback.txt": detailed_feedback,
-            "interview_transcript.txt": transcript,
-            "presentation_transcript.txt": presentation,
-        }
+        if self.mode == LearningBuddy.STACER_MODE:
+            files = {
+                "case_study.txt": case_study,
+                "cod_stacer.txt": stacer,
+                "detailed_feedback.txt": detailed_feedback,
+                "interview_transcript.txt": transcript,
+                "presentation_transcript.txt": presentation,
+            }
+        if self.mode == LearningBuddy.MI_MODE:
+            files = {
+                "case_study.txt": case_study,
+                "MI_EVAL.txt": stacer,
+                "detailed_feedback.txt": detailed_feedback,
+                "interview_transcript.txt": transcript
+            }
+        if self.mode == LearningBuddy.CBT_MODE:
+            files = {
+                "case_study.txt": case_study,
+                "CBT_EVAL.txt": stacer,
+                "detailed_feedback.txt": detailed_feedback,
+                "interview_transcript.txt": transcript,
+                "presentation_transcript.txt": presentation,
+            }
 
         # Save each content to a text file
         for filename, content in files.items():
@@ -874,7 +891,7 @@ class LearningBuddy:
         """ Returns a randomly selected patient profile"""
 
         # Select Patients available in the current mode
-        if self.mode == LearningBuddy.STACER_MODE:
+        if self.mode == LearningBuddy.STACER_MODE or self.mode == LearningBuddy.CBT_MODE:
             directory += "/STACER"
         elif self.mode == LearningBuddy.MI_MODE:
             directory += "/MI"
@@ -922,6 +939,23 @@ class LearningBuddy:
                 filepath = 'Prompts/MI/virtual_evaluator_prompt.txt'
             else:
                 raise FileNotFoundError(f"File not found. Invalid Prompt Name: {prompt_name}")
+            
+        # Motivational Interviewing Evaluation
+        elif self.mode == LearningBuddy.CBT_MODE:
+            if prompt_name == 'Clinical Summary':
+                filepath = 'Prompts/CBT/clinical_summary_prompt.txt'
+            elif prompt_name == 'Virtual Patient':
+                filepath = 'Prompts/CBT/virtual_patient_prompt.txt'
+            elif prompt_name == 'Verification':
+                filepath = 'Prompts/CBT/patient_profile_verification_prompt.txt'
+            elif prompt_name == 'Feedback':
+                filepath = 'Prompts/CBT/feedback_agent_prompt.txt'
+            elif prompt_name == 'STACER Prompt':
+                filepath = 'Prompts/CBT/CBT_form_prompt.txt'
+            elif prompt_name == 'Virtual Evaluator':
+                filepath = 'Prompts/CBT/virtual_evaluator_prompt.txt'
+            else:
+                raise FileNotFoundError(f"File not found. Invalid Prompt Name: {prompt_name}")
 
         #Add more modes here...
         else:
@@ -947,6 +981,15 @@ class LearningBuddy:
                 filepath = 'Context/MI/feedback_criteria_MI_5point.txt'
             elif context_name == 'Evaluation Form':
                 filepath = 'Context/MI/MI_EVAL.txt'
+            else:
+                raise FileNotFoundError(f"File not found. Invalid Prompt Name: {context_name}")
+            
+
+        elif self.mode == LearningBuddy.CBT_MODE:
+            if context_name == 'Feedback Criteria':
+                filepath = 'Context/CBT/feedback_criteria_CBT.txt'
+            elif context_name == 'Evaluation Form':
+                filepath = 'Context/CBT/CBT_EVAL.txt'
             else:
                 raise FileNotFoundError(f"File not found. Invalid Prompt Name: {context_name}")
 
