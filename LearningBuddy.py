@@ -447,6 +447,13 @@ class LearningBuddy:
         chatlog = state.get("chatlog", [])
         presentation = state.get("presentation", [])
 
+
+        # Feedback fails if chatlog or presentaion lists are empty. Adds empty string if user skips a step and the lists are empty
+        if chatlog == []:
+            chatlog = [" "]
+        if presentation == []:
+            presentation = [" "]
+
         if not case_study:
             return {**state, "error_message": "Case study content is missing from state."}
         if not clinical_summary:
@@ -669,8 +676,14 @@ class LearningBuddy:
 
         # Save each content to a text file
         for filename, content in files.items():
-            with open(os.path.join(folder_name, filename), "w", encoding="utf-8") as f:
-                f.write(content)
+            try:
+                file_path = os.path.join(folder_name, filename)
+                with open(file_path, "w", encoding="utf-8") as f:
+                    f.write(content)
+                logging.info(f"Saved: {filename}")
+            except Exception as e:
+                logging.info(f"Error saving {filename}: {e}")
+                continue
 
         logging.info("Session data saved successfully.")
 
