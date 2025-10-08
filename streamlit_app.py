@@ -256,7 +256,7 @@ def get_available_patient_profiles(directory='Patient_Profiles', mode=None):
     elif mode == LearningBuddy.MI_MODE:
         directory += "/MI"
     elif mode == LearningBuddy.CBT_MODE:
-        directory += "/CBT"
+        directory += "/STACER"
     # Add more modes ...
 
     try:
@@ -461,8 +461,14 @@ if st.session_state.api_key:
     )
     
     if selected_option != "Random":
-        st.session_state.selected_patient_profile = os.path.join('Patient_Profiles', selected_option)
-        
+        print("Selected option",selected_option)
+        if st.session_state.learning_buddy.mode == LearningBuddy.STACER_MODE:
+            st.session_state.selected_patient_profile = os.path.join('Patient_Profiles\STACER', selected_option)
+        elif st.session_state.learning_buddy.mode == LearningBuddy.MI_MODE:
+            st.session_state.selected_patient_profile = os.path.join('Patient_Profiles\MI', selected_option)
+        elif st.session_state.learning_buddy.mode == LearningBuddy.CBT_MODE:
+            st.session_state.selected_patient_profile = os.path.join('Patient_Profiles\STACER', selected_option)
+
         # Show preview
         with st.sidebar.expander("📋 Profile Preview"):
             preview = get_patient_profile_preview(st.session_state.selected_patient_profile)
