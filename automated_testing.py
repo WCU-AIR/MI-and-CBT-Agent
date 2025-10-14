@@ -23,7 +23,7 @@ CBT_MODE = 3
 
 # Runs a single test with the selected student and patient profile
 def run_test(therapy_mode, patient_profile_path, student_profile_number):
-    api_key_input = "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"
+    api_key_input = "key"
 
     # Create lb object
     if therapy_mode == MI_MODE:
