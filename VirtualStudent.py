@@ -13,10 +13,7 @@ class VirtualStudent:
     def __init__(self, api_key: str, therapy_type, student_num=0):
         self.api_key = SecretStr(api_key)
         self.therapy_type = therapy_type
-        if 0 <= student_num < 10:
-            self.student_num = student_num
-        else:
-            self.student_num = 0
+        self.student_num = student_num
         self.llm_mini_virtualStudent = ChatOpenAI(model="gpt-4.1", temperature=1, api_key=self.api_key)
 
         self.student_prompt = self._load_full_prompt()
@@ -29,14 +26,20 @@ class VirtualStudent:
     def _load_full_prompt(self) -> str:
         if self.therapy_type == self.MI:
             df = pd.read_csv('Student_Profiles/AK_StudentAgent_10Profiles - Prompts for MI Students.csv', quotechar='"', skipinitialspace=True)
+            print("Student Profile Selected: ", df.iloc[self.student_num]["Name"])
             prompt = self._load_prompt("Prompts/MI/virtual_student_prompt.txt")
             profile  = (df.iloc[self.student_num]["Prompt"])
-            return prompt + profile
+            final_prompt = prompt + profile
+            #print("Full Prompt: ", final_prompt)
+            return final_prompt
         elif self.therapy_type == self.CBT:
             df = pd.read_csv('Student_Profiles/AK_StudentAgent_10Profiles - Promts for CBT Students.csv', quotechar='"', skipinitialspace=True)
+            print("Student Profile Selected: ", df.iloc[self.student_num]["Name"])
             prompt = self._load_prompt("Prompts/CBT/virtual_student_prompt.txt")
             profile = (df.iloc[self.student_num]["Prompt"])
-            return prompt + profile
+            final_prompt = prompt + profile
+            #print("Full Prompt: ", final_prompt)
+            return final_prompt
         else:
             return " "
 
