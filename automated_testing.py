@@ -70,7 +70,12 @@ def extract_MI_scores(eval_file_paths):
         "Reflections",
         "Affirmations",
         "Persuade with Permission",
-        "Emphasize Autonomy"
+        "Emphasize Autonomy",
+        "Engaging",
+        "Focusing",
+        "Evoking",
+        "Planning",
+        "Summarizing"
     ]
 
     # Step 2: Initialize dictionary with empty lists
@@ -189,6 +194,10 @@ def run_all_tests(num_patients, student_profiles):
     elapsed_seconds = end - start
     elapsed_minutes = elapsed_seconds / 60
     print(f"Elapsed time: {elapsed_seconds:.2f} seconds ({elapsed_minutes:.2f} minutes)")
+
+    # Ensure the base folder exists
+    base_folder = "saved_tests"
+    os.makedirs(base_folder, exist_ok=True)
 
     # Create a unique folder for saving results
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
