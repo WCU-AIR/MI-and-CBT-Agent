@@ -138,21 +138,21 @@ class LearningBuddy:
                 instruction_prompt = self._load_prompt('Verification')
                 messages = [SystemMessage(content=f"{instruction_prompt}\n\n{case_study}")]
                 response = self.llm_mini_verification.invoke(messages)
-                response_text = response.content.strip()
+                # response_text = response.content.strip()
 
-                if response_text.lower().startswith("no"):
-                    logging.info(f"[Attempt {attempt}] Case study rejected by LLM.")
-                    if attempt >= max_attempts:
-                        # If all attempts fail, just proceed with the current case study
-                        logging.warning("Max verification attempts reached, proceeding with current case study.")
-                        response_text = "Yes, proceeding with case study."
-                        break
-                    # Try loading a new random profile
-                    case_study = self._load_random_case_profile()
-                    continue
-                else:
-                    logging.info("Case study verified successfully.")
-                    break
+                # if response_text.lower().startswith("no"):
+                #     logging.info(f"[Attempt {attempt}] Case study rejected by LLM.")
+                #     if attempt >= max_attempts:
+                #         # If all attempts fail, just proceed with the current case study
+                #         logging.warning("Max verification attempts reached, proceeding with current case study.")
+                #         response_text = "Yes, proceeding with case study."
+                #         break
+                #     # Try loading a new random profile
+                #     case_study = self._load_random_case_profile()
+                #     continue
+                # else:
+                #     logging.info("Case study verified successfully.")
+                #     break
             except Exception as e:
                 logging.error(f"Error in profile verification: {str(e)}")
                 return {**state, "error_message": f"Profile verification failed: {str(e)}"}
