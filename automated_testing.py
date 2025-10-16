@@ -13,7 +13,7 @@ from datetime import datetime
 from pathlib import Path
 import csv
 import json
-from plot.py import *
+from plot import *
 
 
 # Modes
