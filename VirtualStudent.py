@@ -33,7 +33,7 @@ class VirtualStudent:
             #print("Full Prompt: ", final_prompt)
             return final_prompt
         elif self.therapy_type == self.CBT:
-            df = pd.read_csv('Student_Profiles/AK_StudentAgent_10Profiles - Promts for CBT Students.csv', quotechar='"', skipinitialspace=True)
+            df = pd.read_csv('Student_Profiles/AK_StudentAgent_10Profiles - Prompts for CBT Students.csv', quotechar='"', skipinitialspace=True)
             print("Student Profile Selected: ", df.iloc[self.student_num]["Name"])
             prompt = self._load_prompt("Prompts/CBT/virtual_student_prompt.txt")
             profile = (df.iloc[self.student_num]["Prompt"])
