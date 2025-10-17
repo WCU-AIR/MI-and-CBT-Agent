@@ -10,13 +10,14 @@ class VirtualStudent:
     STACER = 1
     MI = 2
     CBT = 3
-    def __init__(self, api_key: str, therapy_type, student_num=0):
+    def __init__(self, api_key: str, therapy_type, student_num=0, prompt_add_on = ""):
         self.api_key = SecretStr(api_key)
         self.therapy_type = therapy_type
         self.student_num = student_num
         self.llm_mini_virtualStudent = ChatOpenAI(model="gpt-4.1", temperature=1, api_key=self.api_key)
 
-        self.student_prompt = self._load_full_prompt()
+        self.student_prompt = self._load_full_prompt() + prompt_add_on
+        print(self.student_prompt)
 
         #self.presentation_prompt = 'Student Presentation'
         #self.present_filepath = self._load_filepath(self.presentation_prompt)

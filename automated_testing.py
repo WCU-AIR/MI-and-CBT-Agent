@@ -63,47 +63,6 @@ def count_files(directory):
         if entry.is_file()
     )
 
-def plot_scores_from_csv(csv_file):
-    # Step 1: Load CSV
-    df = pd.read_csv(csv_file)
-
-    # Step 2: Identify score columns (everything except 'Student' and 'session_folder')
-    score_columns = [col for col in df.columns if col not in ['Student', 'session_folder']]
-
-    # Step 3: Group by 'Student' and calculate mean (replace None/NaN with 0)
-    df[score_columns] = df[score_columns].fillna(0)
-    grouped = df.groupby('Student')[score_columns].mean()
-
-    categories = score_columns
-    good_scores = grouped.loc['good student'].tolist()
-    bad_scores = grouped.loc['bad student'].tolist()
-
-    # Step 4: Plot grouped bar chart
-    x = np.arange(len(categories))
-    width = 0.35
-
-    fig, ax = plt.subplots(figsize=(12, 6))
-    bars1 = ax.bar(x - width / 2, good_scores, width, label='Good Student', color='skyblue')
-    bars2 = ax.bar(x + width / 2, bad_scores, width, label='Bad Student', color='orange')
-
-    ax.set_ylabel('Average Score')
-    ax.set_xlabel('Score Category')
-    ax.set_title('Evaluation Scores for MI')
-    ax.set_xticks(x)
-    ax.set_xticklabels(categories, rotation=45, ha='right')
-    ax.set_ylim(0, 5.5)
-    ax.legend()
-
-    # Step 5: Label bars with values
-    for bars in [bars1, bars2]:
-        for bar in bars:
-            height = bar.get_height()
-            ax.text(bar.get_x() + bar.get_width() / 2, height + 0.05, f'{height:.2f}',
-                    ha='center', va='bottom', fontsize=9)
-
-    plt.tight_layout()
-    return fig
-
 def extract_scores_from_text(text):
     categories = [
         "Acceptance",
@@ -279,10 +238,9 @@ def run_all_tests(num_patients, student_profiles):
 
 #############################################
 ##Main:
-#num_patients = count_files("Patient_Profiles/MI/")
+num_patients = count_files("Patient_Profiles/MI/")
 
-#run_all_tests(num_patients, [11,10])
+run_all_tests(num_patients, [11,10])
 
-fig = plot_scores_from_csv("saved_tests/run_20251015_095027/extracted_scores.csv")
-plt.show()
+
 
