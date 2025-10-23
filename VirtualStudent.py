@@ -14,7 +14,7 @@ class VirtualStudent:
         self.api_key = SecretStr(api_key)
         self.therapy_type = therapy_type
         self.student_num = student_num
-        self.llm_mini_virtualStudent = ChatOpenAI(model="gpt-4.1", temperature=1, api_key=self.api_key)
+        self.llm_mini_virtualStudent = ChatOpenAI(model="gpt-4.1-mini", temperature=0.1, api_key=self.api_key)
 
         self.student_prompt = self._load_full_prompt() + prompt_add_on
         print(self.student_prompt)
