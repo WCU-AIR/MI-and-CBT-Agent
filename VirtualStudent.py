@@ -1,4 +1,5 @@
 import openai
+from langchain_core.messages import SystemMessage, HumanMessage
 from langchain_openai import ChatOpenAI
 from pydantic import SecretStr
 import pandas as pd
@@ -51,15 +52,13 @@ class VirtualStudent:
     def _extract_clean_chatlog(self, chatlog) :
         cleaned = []
         for entry in chatlog:
-            role = entry.get("role")
-            content = entry.get("content", "").strip()
 
             # Skip system messages
-            if role == "system":
+            if isinstance(entry, SystemMessage):
                 continue
 
             # Skip the big case file or prompt
-            if role == "user" and "# **Prompt:" in content:
+            if isinstance(entry, HumanMessage) and "# **Prompt:" in entry.content:
                 continue
 
             cleaned.append(entry)
@@ -67,8 +66,8 @@ class VirtualStudent:
 
     def get_response(self, conversation):
         conversation = self._extract_clean_chatlog(conversation)
-        message = [f"{self.student_prompt}\n\n{conversation}"]
-        response = self.llm_mini_virtualStudent.invoke(message)
+        messages = [SystemMessage(content=self.student_prompt), *conversation]
+        response = self.llm_mini_virtualStudent.invoke(messages)
         return response.content
 
   # def present_casesummary(self, conversation):

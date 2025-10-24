@@ -208,16 +208,8 @@ class LearningBuddy:
 
             # Initialize chatlog with system and case study messages
             initial_messages = [
-                {
-                    "type": "system",
-                    "role": "system",
-                    "content": instruction_prompt
-                },
-                {
-                    "type": "human",
-                    "role": "user",
-                    "content": case_study
-                }
+                SystemMessage(content=instruction_prompt),
+                HumanMessage(content=case_study)
             ]
 
             logging.info("Roleplay setup completed. Session ready for interaction.")
@@ -304,11 +296,7 @@ class LearningBuddy:
 
         # Add user message to chatlog
         chatlog = state.get("chatlog", [])
-        chatlog.append({
-            "type": "human",
-            "role": "user",
-            "content": user_input
-        })
+        chatlog.append(HumanMessage(content=user_input))
 
         return {
             **state,
@@ -326,25 +314,13 @@ class LearningBuddy:
         try:
             chatlog = state.get("chatlog", [])
 
-            langchain_messages = []
-            for msg in chatlog:
-                if msg.get('type') == 'system':
-                    langchain_messages.append(SystemMessage(content=msg['content']))
-                elif msg.get('type') == 'human':
-                    langchain_messages.append(HumanMessage(content=msg['content']))
-                elif msg.get('type') == 'ai':
-                    langchain_messages.append(AIMessage(content=msg['content']))
-
+            langchain_messages = chatlog
             # Generate response
             response = self.llm_mini_virtualPatient.invoke(langchain_messages)
             ai_response = response.content
 
             # Add AI response to chatlog
-            chatlog.append({
-                "type": "ai",
-                "role": "assistant",
-                "content": ai_response
-            })
+            chatlog.append(AIMessage(content=ai_response))
 
             logging.info("AI response generated successfully.")
 
@@ -484,9 +460,7 @@ class LearningBuddy:
         # Filter conversation messages (exclude system messages and case study repeats)
         conversation_messages = [
             m for m in chatlog
-            if m.get("role") in ["user", "assistant"] and
-               m.get("content") and
-               m["content"].strip() != case_study.strip()
+            if not isinstance(m, SystemMessage)
         ]
 
         messages = [
@@ -757,11 +731,7 @@ class LearningBuddy:
 
         # Append to separate evaluator-specific chatlog
         chatlog = state.get("evaluator_chatlog", [])
-        chatlog.append({
-            "type": "human",
-            "role": "user",
-            "content": user_input
-        })
+        chatlog.append(HumanMessage(content=user_input))
 
         return {
             **state,
@@ -791,11 +761,7 @@ class LearningBuddy:
             response = self.llm_mini_virtualEvaluator.invoke(langchain_messages)
             ai_response = response.content
 
-            eval_chatlog.append({
-                "type": "ai",
-                "role": "evaluator",
-                "content": ai_response
-            })
+            eval_chatlog.append(AIMessage(content=ai_response))
 
             logging.info("Evaluator response generated.")
 
@@ -851,7 +817,7 @@ class LearningBuddy:
             return {}
         
         chatlog = self.current_state.get("chatlog", [])
-        conversation_messages = [m for m in chatlog if m.get("role") in ["user", "assistant"]]
+        conversation_messages = [m for m in chatlog if not isinstance(m, SystemMessage)]
         
         return {
             "total_messages": len(conversation_messages),
