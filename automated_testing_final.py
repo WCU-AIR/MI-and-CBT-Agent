@@ -1,16 +1,18 @@
-import pandas as pd
-import LearningBuddy
-import VirtualStudent
-import time
-import re
-import matplotlib.pyplot as plt
-import numpy as np
+import csv
 import os
 import random
+import re
+import time
 from datetime import datetime
 from pathlib import Path
-import csv
 
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+
+import LearningBuddy
+import VirtualStudent
+from utils.api_key_loader import load_openai_api_key
 
 # =============================
 # === Experiment Constants ====
@@ -27,6 +29,8 @@ NUM_PATIENTS = 103
 GOOD_STUDENT_NUM = 11
 BAD_STUDENT_NUM = 10
 
+API_KEY = load_openai_api_key()
+
 
 # =============================
 # === Core Helper Functions ===
@@ -34,14 +38,16 @@ BAD_STUDENT_NUM = 10
 
 def run_test(therapy_mode, patient_profile_path, student_profile_number, api_key_input=None):
     """Run one simulated therapy session between student and patient."""
-    api_key_input = api_key_input or "key"
+    api_key_input = API_KEY or "key"
 
     if therapy_mode == MI_MODE:
         lb = LearningBuddy.LearningBuddy(api_key_input, "null", LearningBuddy.LearningBuddy.MI_MODE)
-        student = VirtualStudent.VirtualStudent(api_key_input, VirtualStudent.VirtualStudent.MI, student_num=student_profile_number)
+        student = VirtualStudent.VirtualStudent(api_key_input, VirtualStudent.VirtualStudent.MI,
+                                                student_num=student_profile_number)
     elif therapy_mode == CBT_MODE:
         lb = LearningBuddy.LearningBuddy(api_key_input, "null", LearningBuddy.LearningBuddy.CBT_MODE)
-        student = VirtualStudent.VirtualStudent(api_key_input, VirtualStudent.VirtualStudent.CBT, student_num=student_profile_number)
+        student = VirtualStudent.VirtualStudent(api_key_input, VirtualStudent.VirtualStudent.CBT,
+                                                student_num=student_profile_number)
     else:
         raise ValueError("Invalid therapy mode selected")
 
@@ -128,8 +134,8 @@ def plot_scores(scores_a, scores_b, label_a, label_b, title):
     width = 0.35
     fig, ax = plt.subplots(figsize=(14, 6))
 
-    bars1 = ax.bar(x - width/2, avg_a, width, label=label_a, color='skyblue')
-    bars2 = ax.bar(x + width/2, avg_b, width, label=label_b, color='orange')
+    bars1 = ax.bar(x - width / 2, avg_a, width, label=label_a, color='skyblue')
+    bars2 = ax.bar(x + width / 2, avg_b, width, label=label_b, color='orange')
 
     ax.set_ylabel('Average Score')
     ax.set_xlabel('Score Category')
@@ -142,7 +148,8 @@ def plot_scores(scores_a, scores_b, label_a, label_b, title):
     for bars in [bars1, bars2]:
         for bar in bars:
             height = bar.get_height()
-            ax.text(bar.get_x() + bar.get_width()/2, height + 0.05, f'{height:.1f}', ha='center', va='bottom', fontsize=9)
+            ax.text(bar.get_x() + bar.get_width() / 2, height + 0.05, f'{height:.1f}', ha='center', va='bottom',
+                    fontsize=9)
 
     plt.tight_layout()
     return fig
@@ -238,7 +245,7 @@ if __name__ == "__main__":
 
     # Plot overall average after feedback
     fig2 = plot_scores(scores_after_all, scores_bad, "After Feedback", "Before Feedback",
-                    "Evaluation Scores - Before vs After Individual Feedback")
+                       "Evaluation Scores - Before vs After Individual Feedback")
     path2 = os.path.join("saved_tests", f"comparison_before_after_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png")
     fig2.savefig(path2, bbox_inches='tight')
     plt.close(fig2)

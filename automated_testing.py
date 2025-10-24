@@ -1,42 +1,38 @@
-import pandas as pd
+import json
+import os
+import random
+import re
+import time
+from datetime import datetime
 
 import LearningBuddy
 import VirtualStudent
-
-import time
-import re
-import matplotlib.pyplot as plt
-import numpy as np
-import os
-import random
-from datetime import datetime
-from pathlib import Path
-import csv
-import json
 from plot import *
-
+from utils.api_key_loader import load_openai_api_key
 
 # Modes
 STACER_MODE = 1
 MI_MODE = 2
 CBT_MODE = 3
 
+API_KEY = load_openai_api_key()
+
 
 # Runs a single test with the selected student and patient profile
 def run_test(therapy_mode, patient_profile_path, student_profile_number):
-    api_key_input = "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"
-
     # Create lb object
     if therapy_mode == MI_MODE:
-        lb=LearningBuddy.LearningBuddy(api_key_input, "null", LearningBuddy.LearningBuddy.MI_MODE)
+        lb = LearningBuddy.LearningBuddy(API_KEY, "null", LearningBuddy.LearningBuddy.MI_MODE)
     elif therapy_mode == CBT_MODE:
-        lb=LearningBuddy.LearningBuddy(api_key_input, "null", LearningBuddy.LearningBuddy.CBT_MODE)
+        lb = LearningBuddy.LearningBuddy(API_KEY, "null", LearningBuddy.LearningBuddy.CBT_MODE)
 
-    #Load student profile for student agent
+    # Load student profile for student agent
     if therapy_mode == MI_MODE:
-        student = VirtualStudent.VirtualStudent(api_key_input, VirtualStudent.VirtualStudent.MI, student_num=student_profile_number)
+        student = VirtualStudent.VirtualStudent(API_KEY, VirtualStudent.VirtualStudent.MI,
+                                                student_num=student_profile_number)
     elif therapy_mode == CBT_MODE:
-        student = VirtualStudent.VirtualStudent(api_key_input, VirtualStudent.VirtualStudent.CBT, student_num=student_profile_number)
+        student = VirtualStudent.VirtualStudent(API_KEY, VirtualStudent.VirtualStudent.CBT,
+                                                student_num=student_profile_number)
 
     # Load patient profile for LB patient agent
     case = lb.load_patient_profile(patient_profile_path)
@@ -44,15 +40,15 @@ def run_test(therapy_mode, patient_profile_path, student_profile_number):
     # Initialize LB
     session_result = lb.start_session(case_study=case)
 
-    #Loop for student agent and patient agent to talk to each other-- limit of 10
+    # Loop for student agent and patient agent to talk to each other-- limit of 10
     for i in range(0, 10):
         student_utterance = student.get_response(session_result["chatlog"])
         session_result = lb.send_message(student_utterance)
 
-    #generate Feedback:
+    # generate Feedback:
     session_result = lb.end_session()
 
-    #Everything gets saved to Saved Session Folder
+    # Everything gets saved to Saved Session Folder
 
     return session_result
 
@@ -62,6 +58,7 @@ def count_files(directory):
         1 for entry in os.scandir(directory)
         if entry.is_file()
     )
+
 
 def extract_scores_from_text(text):
     categories = [
@@ -132,6 +129,7 @@ def extract_scores_from_text(text):
 
     return results
 
+
 def extract_all_scores_from_folder(parent_folder, filename="detailed_feedback.txt"):
     all_results = []
     for subdir in os.listdir(parent_folder):
@@ -139,7 +137,7 @@ def extract_all_scores_from_folder(parent_folder, filename="detailed_feedback.tx
         if os.path.isdir(subpath):
             file_path = os.path.join(subpath, filename)
             if os.path.exists(file_path):
-                #print(f"Extracting scores from {subpath}...")
+                # print(f"Extracting scores from {subpath}...")
                 with open(file_path, "r", encoding="utf-8") as f:
                     text = f.read()
                 scores = extract_scores_from_text(text)
@@ -149,18 +147,21 @@ def extract_all_scores_from_folder(parent_folder, filename="detailed_feedback.tx
                 print(f"⚠️ File not found in: {subpath}")
     return pd.DataFrame(all_results)
 
+
 # Runs all the tests in a loop
 def run_all_tests(num_patients, student_profiles):
     start = time.time()
 
     # Select Patient Profiles
     directory = "Patient_Profiles/MI/"
-    all_files = [os.path.join(directory, f) for f in os.listdir(directory) if os.path.isfile(os.path.join(directory, f))]
+    all_files = [os.path.join(directory, f) for f in os.listdir(directory) if
+                 os.path.isfile(os.path.join(directory, f))]
     random_files = random.sample(all_files, num_patients)
 
-    mode = MI_MODE
+    mode = CBT_MODE
     all_results = []
-    df = pd.read_csv('Student_Profiles/AK_StudentAgent_10Profiles - Prompts for MI Students.csv', quotechar='"', skipinitialspace=True)
+    df = pd.read_csv('Student_Profiles/AK_StudentAgent_10Profiles - Prompts for CBT Students.csv', quotechar='"',
+                     skipinitialspace=True)
 
     # Create save folder
     base_folder = "saved_tests"
@@ -236,11 +237,10 @@ def run_all_tests(num_patients, student_profiles):
 
     print(f"Run complete. Checkpoint and results saved in: {save_folder}")
 
+
 #############################################
 ##Main:
-num_patients = count_files("Patient_Profiles/MI/")
+# num_patients = count_files("Patient_Profiles/MI/")
 
-run_all_tests(num_patients, [11,10])
-
-
-
+num_patients = 1
+run_all_tests(num_patients, [11])
