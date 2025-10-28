@@ -54,29 +54,29 @@ def plot_scores(good_student, bad_student, title="Evaluation Scores for CBT"):
 # =====================
 # READ AND PREPARE DATA
 # =====================
-df = pd.read_csv("saved_tests/run_20251015_104140/CBT_scores.csv")
-
-# Extract unique students
-students = df['Student'].unique()
-print("Students found:", students)
-
-# Example: compare expert vs novice
-good_student_name = "12_Expert_CBTVirtuoso"
-bad_student_name = "11_Novice_UndirectedAdviceGiver"
-
-# Select their data
-good_df = df[df["Student"] == good_student_name]
-bad_df = df[df["Student"] == bad_student_name]
-
-# Extract numeric columns (categories only)
-score_cols = [c for c in df.columns if c not in ["Student", "Patient", "Overall Average"]]
-
-# Build category dictionaries
-good_student = {col: good_df[col].dropna().tolist() for col in score_cols}
-bad_student  = {col: bad_df[col].dropna().tolist()  for col in score_cols}
-
-# =====================
-# PLOT
-# =====================
-fig = plot_scores(good_student, bad_student)
-plt.show()
+# df = pd.read_csv("saved_tests/run_20251015_104140/CBT_scores.csv")
+#
+# # Extract unique students
+# students = df['Student'].unique()
+# print("Students found:", students)
+#
+# # Example: compare expert vs novice
+# good_student_name = "12_Expert_CBTVirtuoso"
+# bad_student_name = "11_Novice_UndirectedAdviceGiver"
+#
+# # Select their data
+# good_df = df[df["Student"] == good_student_name]
+# bad_df = df[df["Student"] == bad_student_name]
+#
+# # Extract numeric columns (categories only)
+# score_cols = [c for c in df.columns if c not in ["Student", "Patient", "Overall Average"]]
+#
+# # Build category dictionaries
+# good_student = {col: good_df[col].dropna().tolist() for col in score_cols}
+# bad_student  = {col: bad_df[col].dropna().tolist()  for col in score_cols}
+#
+# # =====================
+# # PLOT
+# # =====================
+# fig = plot_scores(good_student, bad_student)
+# plt.show()

@@ -1,14 +1,15 @@
 import logging
-from langgraph.graph import StateGraph, END
-from langchain_core.runnables import RunnableLambda
-from langchain_openai import ChatOpenAI
-from langchain.schema import AIMessage, HumanMessage, SystemMessage
-from typing import TypedDict, List, Dict, Any, Optional
-from pydantic import SecretStr
+import os
 import random
 from datetime import datetime
-from Voice import *
-import os
+
+from langchain.schema import AIMessage, HumanMessage, SystemMessage
+from langchain_core.runnables import RunnableLambda
+from langchain_openai import ChatOpenAI
+from langgraph.graph import StateGraph, END
+from pydantic import SecretStr
+
+from LearningBuddy_Agent.graph_state import *
 
 # Configure logging
 logging.basicConfig(
@@ -20,28 +21,8 @@ logging.basicConfig(
     ]
 )
 
-# Defining LangGraph State Variables
-class LBState(TypedDict):
-    case_study: Optional[str]
-    diagnosis_summary: str
-    clinical_summary: str
-    chatlog: List[Dict[str, Any]]
-    feedback: str
-    current_phase: str
-    session_active: bool
-    user_input: Optional[str]
-    ai_response: Optional[str]
-    session_metadata: Dict[str, Any]
-    error_message: Optional[str]
-    next_action: Optional[str]
-    cod_stacer: str
-    presentation: str
-    evaluator_chatlog: List[Dict[str, Any]]
-    evaluator_session_active: bool
-    formatted_transcript: str
-    formatted_presentation: str
-    folder_name: str
 
+# Defining LangGraph State Variables
 class LearningBuddy:
     # Modes
     STACER_MODE = 1
@@ -79,7 +60,7 @@ class LearningBuddy:
     def _build_init_workflow(self):
         """Build initialization workflow - linear, no loops"""
         workflow = StateGraph(state_schema=LBState)
-        
+
         workflow.add_node("initialize", RunnableLambda(self._select_patient_profile))
         workflow.add_node("verify_profile", RunnableLambda(self._profile_verification))
         workflow.add_node("generate_summary", RunnableLambda(self._clinical_summary))
@@ -93,174 +74,272 @@ class LearningBuddy:
         logging.info("Initialization workflow built successfully.")
         return workflow.compile()
 
-    def _select_patient_profile(self, state: LBState):
-        """ Checks if user selected a specific patient profile.
-            Uses the selected profile if it exists,
-            Else, chooses a random profile.
+    def _select_patient_profile(self, state: LBState) -> dict:
+        """Select or load patient profile."""
+        logging.info("Selecting patient profile...")
+
+        # Check if patient context already exists
+        patient_ctx = state.get("patient_context")
+
+        if patient_ctx and patient_ctx.get("case_study"):
+            # Case study already provided
+            logging.info("Using pre-loaded case study")
+            return {}  # No changes needed
+
+        # Load case study
+        try:
+            selected_profile = state["metadata"].get("selected_profile")
+
+            if selected_profile:
+                case_study = self.load_patient_profile(selected_profile)
+                logging.info(f"Loaded selected profile: {selected_profile}")
+            else:
+                case_study = self._load_random_case_profile()
+                selected_profile = None  # Track that it was random
+                logging.info("Loaded random profile")
+
+            # Return new patient context
+            return {
+                "patient_context": {
+                    "case_study": case_study,
+                    "diagnosis_summary": "",
+                    "clinical_summary": "",
+                    "profile_path": selected_profile
+                },
+                "current_phase": "initializing"
+            }
+
+        except Exception as e:
+            logging.error(f"Error loading case study: {str(e)}")
+            return {
+                "current_phase": "error",
+                "error": f"Failed to load case study: {str(e)}"
+            }
+
+    def _profile_verification(self, state: LBState) -> dict:
         """
-        logging.info("Initializing session...")
-
-        case_study = state.get("case_study")
-        selected_profile = state.get("session_metadata", {}).get("selected_profile")
-
-        # Load case study if not provided
-        if not case_study:
-            try:
-                if selected_profile:
-                    case_study = self.load_patient_profile(selected_profile)
-                    logging.info(f"Loaded selected profile: {selected_profile}")
-                else:
-                    case_study = self._load_random_case_profile()
-                    logging.info("Loaded random profile")
-            except Exception as e:
-                logging.error(f"Error loading case study: {str(e)}")
-                return {**state, "error_message": f"Failed to load case study: {str(e)}"}
-
-        return {
-            **state,
-            "case_study": case_study,
-            "current_phase": "verify_profile"
-        }
-
-    def _profile_verification(self, state: LBState):
-        """ Verifies that selected profile is a patient with MDD.
-            If profile doesn't have MDD, chooses a different random profile.
+        Verifies the loaded patient profile. Updates patient_context with the
+        diagnosis summary (or handles the profile rejection/retry logic if enabled).
         """
         logging.info("Starting profile verification phase.")
-        case_study = state["case_study"]
 
+        # 1. Access nested data and safely check for required content
+        patient_ctx = state.get("patient_context")
+        if not patient_ctx or not patient_ctx.get("case_study"):
+            return {
+                "current_phase": "error",
+                "error": "Verification failed: Missing case_study in patient_context."
+            }
+
+        case_study = patient_ctx["case_study"]
         max_attempts = 3
         attempt = 0
+        response_content = ""
 
+        # NOTE: The original loop structure is kept for context,
+        # but the internal verification logic is still commented out.
         while attempt < max_attempts:
             attempt += 1
             try:
                 instruction_prompt = self._load_prompt('Verification')
-                messages = [SystemMessage(content=f"{instruction_prompt}\n\n{case_study}")]
+                # Use standard LangChain Message objects for LLM invocation
+                messages = [
+                    SystemMessage(content=instruction_prompt + case_study),
+                ]
                 response = self.llm_mini_verification.invoke(messages)
-                # response_text = response.content.strip()
+                response_content = response.content
+                # Assuming verification passes for now (since original logic was commented out)
+                break
 
-                # if response_text.lower().startswith("no"):
-                #     logging.info(f"[Attempt {attempt}] Case study rejected by LLM.")
-                #     if attempt >= max_attempts:
-                #         # If all attempts fail, just proceed with the current case study
-                #         logging.warning("Max verification attempts reached, proceeding with current case study.")
-                #         response_text = "Yes, proceeding with case study."
-                #         break
-                #     # Try loading a new random profile
-                #     case_study = self._load_random_case_profile()
-                #     continue
-                # else:
-                #     logging.info("Case study verified successfully.")
-                #     break
             except Exception as e:
-                logging.error(f"Error in profile verification: {str(e)}")
-                return {**state, "error_message": f"Profile verification failed: {str(e)}"}
+                logging.error(f"Error in profile verification: {str(e)}", exc_info=True)
+                # 2. Use new error format for conditional routing
+                return {
+                    "current_phase": "error",
+                    "error": f"Profile verification failed: {str(e)}"
+                }
 
-        self.voice = Voice(case_study, self.elevenlabs_api_key)
-
+        # 3. Return updates using the nested structure
         return {
-            **state,
-            "case_study": case_study,
-            "diagnosis_summary": response.content,
+            "patient_context": {
+                **patient_ctx,  # Keep existing fields
+                "diagnosis_summary": response_content,
+            },
             "current_phase": "generate_summary"
         }
 
-    def _clinical_summary(self, state: LBState):
-        """ Generates a clinical summary,
-            This summary includes some brief intake information
-            on the patient before the interview starts
+    def _clinical_summary(self, state: LBState) -> dict:
+        """
+        Generates a clinical summary. This summary includes brief intake information
+        on the patient before the interview starts.
         """
         logging.info("Starting clinical summary phase.")
 
+        # 1. Safely access nested data
+        patient_ctx = state.get("patient_context")
+        if not patient_ctx or not patient_ctx.get("case_study"):
+            return {
+                "current_phase": "error",
+                "error": "Clinical Summary failed: Missing case_study in patient_context."
+            }
+
+        case_study = patient_ctx["case_study"]
+
         try:
             instruction_prompt = self._load_prompt('Clinical Summary')
-            case_study = state["case_study"]
 
             messages = [
-                SystemMessage(content=instruction_prompt),
-                HumanMessage(content=case_study)
+                SystemMessage(content=instruction_prompt + case_study),
             ]
 
             response = self.llm_mini_summary.invoke(messages)
-            assistant_message = response.content
+            clinical_summary = response.content
             logging.info("Clinical summary generated.")
 
+            # 2. Return updates using the nested structure
             return {
-                **state,
-                "clinical_summary": assistant_message,
+                "patient_context": {
+                    **patient_ctx,  # Keep existing fields
+                    "clinical_summary": clinical_summary,
+                },
                 "current_phase": "setup_roleplay"
             }
-        except Exception as e:
-            logging.error(f"Error in clinical summary: {str(e)}")
-            return {**state, "error_message": f"Clinical summary failed: {str(e)}"}
 
-    def _roleplay_setup(self, state: LBState):
-        """ Setup roleplay and complete initialization.
-            Loads and formats the prompt to be used
-            for the virtual patient chatbot.
+        except Exception as e:
+            logging.error(f"Error in clinical summary: {str(e)}", exc_info=True)
+            # 3. Use new error format
+            return {
+                "current_phase": "error",
+                "error": f"Clinical summary generation failed: {str(e)}"
+            }
+
+    def _roleplay_setup(self, state: LBState) -> dict:
+        """
+        Sets up the roleplay session by loading the patient prompt and initializing
+        the conversation history with required system and context messages.
         """
         logging.info("Setting up virtual patient roleplay.")
 
+        # 1. Safely access nested data
+        patient_ctx = state.get("patient_context")
+        if not patient_ctx or not patient_ctx.get("case_study"):
+            return {
+                "current_phase": "error",
+                "error": "Roleplay setup failed: Missing case_study in patient_context."
+            }
+
+        case_study = patient_ctx["case_study"]
+
         try:
             instruction_prompt = self._load_prompt('Virtual Patient')
-            case_study = state["case_study"]
 
-            # Initialize chatlog with system and case study messages
+            # 2. Initialize conversation history with LangChain Message objects
             initial_messages = [
-                SystemMessage(content=instruction_prompt),
-                HumanMessage(content=case_study)
+                SystemMessage(content=instruction_prompt + case_study),
             ]
 
             logging.info("Roleplay setup completed. Session ready for interaction.")
+
+            # 3. Return updates using the new state fields
             return {
-                **state,
-                "chatlog": initial_messages,
+                "interview_messages": initial_messages,  # New field for conversation history
                 "current_phase": "active_roleplay",
                 "session_active": True,
-                "user_input": None,
-                "ai_response": None
+                # Removed redundant 'user_input' and 'ai_response' fields
             }
-        except Exception as e:
-            logging.error(f"Error in roleplay setup: {str(e)}")
-            return {**state, "error_message": f"Roleplay setup failed: {str(e)}"}
 
-    def start_session(self, case_study: Optional[str] = None, selected_profile: Optional[str] = None):
-        """ Start a new session using initialization workflow.
-            Public function for use by frontend to use this workflow.
+        except Exception as e:
+            logging.error(f"Error in roleplay setup: {str(e)}", exc_info=True)
+            # 4. Use new error format
+            return {
+                "current_phase": "error",
+                "error": f"Roleplay setup failed: {str(e)}"
+            }
+
+    def start_session(
+            self,
+            case_study: Optional[str] = None,
+            selected_profile: Optional[str] = None
+    ) -> LBState:
+        """
+        Start a new session using initialization workflow.
+
+        Args:
+            case_study: Pre-loaded case study content (optional)
+            selected_profile: Path to specific patient profile (optional)
+
+        Returns:
+            Initial state after running initialization workflow
+
+        Raises:
+            Exception: If initialization workflow fails
         """
         logging.info("Starting new LearningBuddy session...")
 
-        initial_state = {
-            "case_study": case_study,
-            "diagnosis_summary": "",
-            "clinical_summary": "",
-            "chatlog": [],
-            "feedback": "",
-            "cod_stacer": "",
-            "current_phase": "initialize",
+        # Generate session metadata
+        now = datetime.now()
+        session_id = f"session_{now.strftime('%Y%m%d_%H%M%S')}"
+
+        # Build initial state with new structure
+        initial_state: LBState = {
+            # Conversational state - empty at start
+            "interview_messages": [],
+            "evaluator_messages": [],
+
+            # Session control
+            "current_phase": "initializing",
             "session_active": False,
-            "user_input": None,
-            "ai_response": None,
-            "session_metadata": {
-                "start_time": datetime.now().isoformat(),
-                "selected_profile": selected_profile,
-                "session_id": f"session_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+            "evaluator_active": False,
+
+            # Nested data structures - all None at start
+            "patient_context": None,
+            "presentation": None,
+            "evaluation": None,
+
+            # Session metadata
+            "metadata": {
+                "session_id": session_id,
+                "start_time": now.isoformat(),
+                "end_time": None,
+                "selected_profile": selected_profile
             },
-            "error_message": None,
-            "next_action": None
+
+            # Error handling
+            "error": None,
+
+            # Export path
+            "export_folder": None
         }
+
+        # If case_study provided, initialize patient_context early
+        if case_study:
+            initial_state["patient_context"] = PatientContext(
+                case_study=case_study,
+                diagnosis_summary="",
+                clinical_summary="",
+                profile_path=selected_profile)
 
         try:
             # Run initialization workflow
             result = self.init_graph.invoke(initial_state)
             self.current_state = result
-            logging.info("Session initialized successfully.")
-            return result
-        except Exception as e:
-            logging.error(f"Error starting session: {str(e)}")
-            return {"error_message": str(e), "current_phase": "error"}
 
+            # Log success
+            if result.get("error"):
+                logging.error(f"Session initialized with errors: {result['error']}")
+            else:
+                logging.info(f"Session initialized successfully. ID: {session_id}")
+
+            return result
+
+        except Exception as e:
+            logging.error(f"Error starting session: {str(e)}", exc_info=True)
+
+            # Return error state
+            error_state = initial_state
+            error_state["current_phase"] = "error"
+            error_state["error"] = f"Initialization failed: {str(e)}"
+            return error_state
 
     ###############################################################
     ###           Workflow 2: Virtual Patient Chatbot           ###
@@ -288,21 +367,15 @@ class LearningBuddy:
         """ Process user input during interview.
             Appends all entries to chatlog for future reference.
         """
-        user_input = state.get("user_input")
+        user_input = state.get("interview_messages")[-1].content if state.get("interview_messages") else None
+        logging.info(f"Processing user input: ...")
+
         if not user_input:
+            logging.error("User input is Empty...")
             return state
 
-        logging.info(f"Processing user input: {user_input[:50]}...")
-
-        # Add user message to chatlog
-        chatlog = state.get("chatlog", [])
-        chatlog.append(HumanMessage(content=user_input))
-
         return {
-            **state,
-            "chatlog": chatlog,
             "current_phase": "generate_response",
-            "user_input": None
         }
 
     def _generate_ai_response(self, state: LBState):
@@ -312,30 +385,24 @@ class LearningBuddy:
         logging.info("Generating AI patient response...")
 
         try:
-            chatlog = state.get("chatlog", [])
+            interview_messages = state.get("interview_messages", [])
 
-            langchain_messages = chatlog
             # Generate response
-            response = self.llm_mini_virtualPatient.invoke(langchain_messages)
-            ai_response = response.content
+            response = self.llm_mini_virtualPatient.invoke(interview_messages)
 
             # Add AI response to chatlog
-            chatlog.append(AIMessage(content=ai_response))
 
             logging.info("AI response generated successfully.")
 
             return {
-                **state,
-                "chatlog": chatlog,
-                "ai_response": ai_response,
-                "session_active": True,
+                "interview_messages": [AIMessage(content=response.content)],
                 "current_phase": "message_complete"
             }
         except Exception as e:
             logging.error(f"Error generating AI response: {str(e)}")
             return {**state, "error_message": f"AI response generation failed: {str(e)}"}
 
-    def send_message(self, user_input: str):
+    def send_message(self, user_input: str) -> dict:
         """ Send a user message using message processing workflow.
             Public function for use by frontend to use this workflow.
         """
@@ -345,8 +412,9 @@ class LearningBuddy:
 
         try:
             # Create state for message processing
-            message_state = {**self.current_state, "user_input": user_input}
-            result = self.message_graph.invoke(message_state)
+            self.current_state["interview_messages"] = [*self.current_state.get("interview_messages"), HumanMessage(
+                content=user_input)]
+            result = self.message_graph.invoke(self.current_state)
             self.current_state = result
 
             return {
@@ -385,7 +453,6 @@ class LearningBuddy:
 
         return {"presentation": presentation, "status": "updated"}
 
-
     ###############################################################
     ###                Workflow 3: STACER Feedback              ###
     ###############################################################
@@ -400,8 +467,8 @@ class LearningBuddy:
         """Build feedback workflow - linear, no loops"""
         workflow = StateGraph(state_schema=LBState)
 
-        workflow.add_node("evaluate_session",   RunnableLambda(self._generate_feedback))
-        workflow.add_node("complete_session",   RunnableLambda(self._complete_session))
+        workflow.add_node("evaluate_session", RunnableLambda(self._generate_feedback))
+        workflow.add_node("complete_session", RunnableLambda(self._complete_session))
         workflow.set_entry_point("evaluate_session")
         workflow.add_edge("evaluate_session", "complete_session")
         workflow.add_edge("complete_session", END)
@@ -418,24 +485,23 @@ class LearningBuddy:
         logging.info("Starting feedback evaluation phase.")
 
         # Validate and format required data
-        case_study = state.get("case_study")
-        clinical_summary = state.get("clinical_summary")
-        chatlog = state.get("chatlog", [])
+        case_study = state.get("patient_context").get("case_study")
+        clinical_summary = state.get("patient_context").get("clinical_summary")
+        interview_messages = state.get("interview_messages", [])
         presentation = state.get("presentation", [])
 
-
         # Feedback fails if chatlog or presentaion lists are empty. Adds empty string if user skips a step and the lists are empty
-        if chatlog == []:
+        if interview_messages == []:
             chatlog = [" "]
-        if presentation == []:
+        if presentation == [] or presentation is None:
             presentation = [" "]
 
         if not case_study:
             return {**state, "error_message": "Case study content is missing from state."}
         if not clinical_summary:
             return {**state, "error_message": "Clinical summary is missing from state."}
-        if not chatlog:
-            return {**state, "error_message": "Chatlog is empty or missing from state."}
+        if not interview_messages:
+            return {**state, "error_message": "Interview messages is empty or missing from state."}
         if not presentation:
             return {**state, "error_message": "Presentation is empty or missing from state."}
 
@@ -459,8 +525,10 @@ class LearningBuddy:
                                 """
         # Filter conversation messages (exclude system messages and case study repeats)
         conversation_messages = [
-            m for m in chatlog
-            if not isinstance(m, SystemMessage)
+            m for m in interview_messages
+            if (isinstance(m, HumanMessage) or isinstance(m, AIMessage)) and
+               m.content
+            # and m.content.strip() != case_study.strip()
         ]
 
         messages = [
@@ -470,9 +538,9 @@ class LearningBuddy:
 
         formatted_lines = []
         for m in conversation_messages:
-            prefix = "PSYCHIATRIST: " if m["role"] == "user" else "PATIENT: "
-            content = prefix + m["content"]
-            msg_cls = HumanMessage if m["role"] == "user" else AIMessage
+            prefix = "PSYCHIATRIST: " if isinstance(m, AIMessage) else "PATIENT: "
+            content = prefix + m.content
+            msg_cls = HumanMessage if isinstance(m, HumanMessage) else AIMessage
             messages.append(msg_cls(content=content))
             formatted_lines.append(content)
 
@@ -491,7 +559,6 @@ class LearningBuddy:
         else:
             logging.warning("Presentation was expected but empty or missing.")
 
-
         # Generate Full Feedback with scores
         messages.append(HumanMessage(content="""
                                             Now provide your comprehensive, strict evaluation of this diagnostic session. 
@@ -501,6 +568,8 @@ class LearningBuddy:
 
         try:
             response = self.llm_feedback.invoke(messages)
+            messages.append(response)
+            updates = {"feedback_messages": messages}
             feedback_text = response.content.strip()
         except Exception as e:
             logging.exception("LLM feedback generation failed")
@@ -546,7 +615,6 @@ class LearningBuddy:
         logging.info("Finished STACER generation ")
         logging.info("Starting Agent Setup ")
 
-
         ####   Eval Agent Set Up
         evaluator_prompt = self._load_prompt('Virtual Evaluator')
 
@@ -576,31 +644,23 @@ class LearningBuddy:
               """
 
         initial_messages = [
-            {
-                "type": "system",
-                "role": "system",
-                "content": full_system_prompt.strip()
-            }
+                SystemMessage(content=full_system_prompt.strip())
         ]
 
-        eval_chatlog = initial_messages
+        eval_messages = initial_messages
 
         logging.info("Finished Agent Setup ")
 
         logging.info("Feedback evaluation complete.")
-        return {
-            **state,
-            "feedback": session_feedback,
-            "cod_stacer": cod_stacer_response,
-            "formatted_transcript": formatted_transcript,
-            "formatted_presentation": formatted_presentation,
-            "current_phase": "evaluator_active",
-            "session_active": False,
-            "evaluator_chatlog": eval_chatlog,
-            "evaluator_session_active": True,
-            "user_input": None,
-            "ai_response": None
-        }
+        updates["cod_stacer"] = cod_stacer_response
+        updates["formatted_transcript"] = formatted_transcript
+        updates["formatted_presentation"] = formatted_presentation
+        updates["current_phase"] = "evaluator_active"
+        updates["session_active"] = False
+        updates["evaluator_messages"] = eval_messages
+        updates["evaluator_active"] = True
+
+        return updates
 
     def _complete_session(self, state: LBState):
         """Complete the session by saving all session data"""
@@ -608,9 +668,10 @@ class LearningBuddy:
         logging.info("Saving session data...")
         ###Save Data to text Files###
 
-        case_study = state.get("case_study")
+        case_study = state.get("patient_context").get("case_study")
         stacer = state.get("cod_stacer")
-        detailed_feedback = state.get("feedback")
+        detailed_feedback = state.get("feedback_messages")
+        detailed_feedback = ' \n '.join(item.content for item in detailed_feedback)
         transcript = state.get("formatted_transcript")
         presentation = state.get("formatted_presentation")
 
@@ -666,19 +727,19 @@ class LearningBuddy:
         session_metadata.update({
             "end_time": datetime.now().isoformat(),
             "total_exchanges": len(
-                [m for m in state.get("chatlog", []) if m.get("role") in ["user", "assistant"]]) // 2,
+                [m for m in state.get("interview_messages", []) if type(m) in [AIMessage, HumanMessage]]) // 2,
             "session_duration_minutes": self._calculate_session_duration(session_metadata.get("start_time")),
             "completion_status": "completed"
         })
 
         logging.info("Session completed successfully.")
-        return {
-            **state,
+        updates = {
             "session_metadata": session_metadata,
             "current_phase": "completed",
             "session_active": False,
             "folder_name": folder_name
         }
+        return updates
 
     def end_session(self):
         """ End session using feedback workflow
@@ -686,16 +747,15 @@ class LearningBuddy:
         """
         if not self.current_state:
             return {"error": "No active session"}
-        
+
         try:
             result = self.feedback_graph.invoke(self.current_state)
             self.current_state = result
-            
+
             return result
         except Exception as e:
             logging.error(f"Error ending session: {str(e)}")
             return {"error": str(e)}
-
 
     ###############################################################
     ###          Workflow 4: Virtual Evaluator Chatbot          ###
@@ -731,7 +791,11 @@ class LearningBuddy:
 
         # Append to separate evaluator-specific chatlog
         chatlog = state.get("evaluator_chatlog", [])
-        chatlog.append(HumanMessage(content=user_input))
+        chatlog.append({
+            "type": "human",
+            "role": "user",
+            "content": user_input
+        })
 
         return {
             **state,
@@ -747,7 +811,6 @@ class LearningBuddy:
         try:
             eval_chatlog = state.get("evaluator_chatlog", [])
 
-
             # Build full system message with context
             langchain_messages = []
             for msg in eval_chatlog:
@@ -761,7 +824,11 @@ class LearningBuddy:
             response = self.llm_mini_virtualEvaluator.invoke(langchain_messages)
             ai_response = response.content
 
-            eval_chatlog.append(AIMessage(content=ai_response))
+            eval_chatlog.append({
+                "type": "ai",
+                "role": "evaluator",
+                "content": ai_response
+            })
 
             logging.info("Evaluator response generated.")
 
@@ -815,10 +882,10 @@ class LearningBuddy:
         """Get current session statistics"""
         if not self.current_state:
             return {}
-        
+
         chatlog = self.current_state.get("chatlog", [])
-        conversation_messages = [m for m in chatlog if not isinstance(m, SystemMessage)]
-        
+        conversation_messages = [m for m in chatlog if m.get("role") in ["user", "assistant"]]
+
         return {
             "total_messages": len(conversation_messages),
             "total_exchanges": len(conversation_messages) // 2,
@@ -831,7 +898,7 @@ class LearningBuddy:
         """Export session data for analysis"""
         if not self.current_state:
             return None
-        
+
         return {
             "session_metadata": self.current_state.get("session_metadata", {}),
             "case_study": self.current_state.get("case_study"),
@@ -885,7 +952,7 @@ class LearningBuddy:
 
     def _load_prompt(self, prompt_name: str) -> str:
         """ Returns the selected prompt"""
-        #Standard LB STACER Evaluation
+        # Standard LB STACER Evaluation
         if self.mode == LearningBuddy.STACER_MODE:
             if prompt_name == 'Clinical Summary':
                 filepath = 'Prompts/STACER/clinical_summary_prompt.txt'
@@ -918,7 +985,7 @@ class LearningBuddy:
                 filepath = 'Prompts/MI/virtual_evaluator_prompt.txt'
             else:
                 raise FileNotFoundError(f"File not found. Invalid Prompt Name: {prompt_name}")
-            
+
         # Motivational Interviewing Evaluation
         elif self.mode == LearningBuddy.CBT_MODE:
             if prompt_name == 'Clinical Summary':
@@ -936,7 +1003,7 @@ class LearningBuddy:
             else:
                 raise FileNotFoundError(f"File not found. Invalid Prompt Name: {prompt_name}")
 
-        #Add more modes here...
+        # Add more modes here...
         else:
             raise FileNotFoundError(f"File not found. Invalid Mode: {self.mode}")
 
@@ -945,7 +1012,7 @@ class LearningBuddy:
     def _load_context(self, context_name: str) -> str:
         """ Returns the selected LLM context"""
 
-        #STACER Mode
+        # STACER Mode
         if self.mode == LearningBuddy.STACER_MODE:
             if context_name == 'Feedback Criteria':
                 filepath = 'Context/STACER/feedback_criteria.txt'
@@ -962,7 +1029,7 @@ class LearningBuddy:
                 filepath = 'Context/MI/MI_EVAL.txt'
             else:
                 raise FileNotFoundError(f"File not found. Invalid Prompt Name: {context_name}")
-            
+
 
         elif self.mode == LearningBuddy.CBT_MODE:
             if context_name == 'Feedback Criteria':

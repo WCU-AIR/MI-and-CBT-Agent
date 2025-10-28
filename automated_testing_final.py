@@ -43,11 +43,11 @@ def run_test(therapy_mode, patient_profile_path, student_profile_number, api_key
     if therapy_mode == MI_MODE:
         lb = LearningBuddy.LearningBuddy(api_key_input, "null", LearningBuddy.LearningBuddy.MI_MODE)
         student = VirtualStudent.VirtualStudent(api_key_input, VirtualStudent.VirtualStudent.MI,
-                                                student_num=student_profile_number)
+                                                student_index=student_profile_number)
     elif therapy_mode == CBT_MODE:
         lb = LearningBuddy.LearningBuddy(api_key_input, "null", LearningBuddy.LearningBuddy.CBT_MODE)
         student = VirtualStudent.VirtualStudent(api_key_input, VirtualStudent.VirtualStudent.CBT,
-                                                student_num=student_profile_number)
+                                                student_index=student_profile_number)
     else:
         raise ValueError("Invalid therapy mode selected")
 
@@ -55,7 +55,7 @@ def run_test(therapy_mode, patient_profile_path, student_profile_number, api_key
     session_result = lb.start_session(case_study=case)
 
     for _ in range(10):
-        student_utterance = student.get_response(session_result["chatlog"])
+        student_utterance = student.get_response(lb.current_state["interview_messages"])
         session_result = lb.send_message(student_utterance)
 
     session_result = lb.end_session()

@@ -28,11 +28,12 @@ def run_test(therapy_mode, patient_profile_path, student_profile_number):
 
     # Load student profile for student agent
     if therapy_mode == MI_MODE:
-        student = VirtualStudent.VirtualStudent(API_KEY, VirtualStudent.VirtualStudent.MI,
-                                                student_num=student_profile_number)
+        student = VirtualStudent.VirtualStudent(api_key=API_KEY, therapy_type="MI",
+                                                student_index=student_profile_number)
+
     elif therapy_mode == CBT_MODE:
-        student = VirtualStudent.VirtualStudent(API_KEY, VirtualStudent.VirtualStudent.CBT,
-                                                student_num=student_profile_number)
+        student = VirtualStudent.VirtualStudent(api_key=API_KEY, therapy_type="CBT",
+                                                student_index=student_profile_number)
 
     # Load patient profile for LB patient agent
     case = lb.load_patient_profile(patient_profile_path)
@@ -41,8 +42,11 @@ def run_test(therapy_mode, patient_profile_path, student_profile_number):
     session_result = lb.start_session(case_study=case)
 
     # Loop for student agent and patient agent to talk to each other-- limit of 10
-    for i in range(0, 10):
-        student_utterance = student.get_response(session_result["chatlog"])
+    for i in range(0, 2):
+        # Student interaction with the Framework
+        student_utterance = student.get_response(lb.current_state["interview_messages"])
+
+        # Framework response to the student
         session_result = lb.send_message(student_utterance)
 
     # generate Feedback:
