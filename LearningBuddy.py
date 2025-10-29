@@ -919,19 +919,6 @@ class LearningBuddy:
         except:
             return 0.0
 
-    def _read_file(self, filepath):
-        """ Reads and returns the selected file"""
-        try:
-            with open(filepath, 'r', encoding='utf-8') as file:
-                return file.read().strip()
-        except FileNotFoundError:
-            raise FileNotFoundError(f"file not found: {filepath}")
-        except Exception as e:
-            raise RuntimeError(f"Failed to read file: {e}")
-
-    def load_patient_profile(self, filepath: str) -> str:
-        """ Returns the selected patient profile"""
-        return self._read_file(filepath)
 
     def _load_random_case_profile(self, directory='Patient_Profiles'):
         """ Returns a randomly selected patient profile"""

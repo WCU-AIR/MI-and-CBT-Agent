@@ -10,17 +10,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-import LearningBuddy
+from LearningBuddy_Agent import LearningBuddy, STACER_MODE, MI_MODE, CBT_MODE
 import VirtualStudent
 from utils.api_key_loader import load_openai_api_key
 
 # =============================
 # === Experiment Constants ====
 # =============================
-
-STACER_MODE = 1
-MI_MODE = 2
-CBT_MODE = 3
 
 STUDENT_CSV_PATH = "Student_Profiles/AK_StudentAgent_10Profiles - Prompts for CBT Students.csv"
 PATIENT_DIR = "Patient_Profiles/STACER/"
@@ -40,26 +36,51 @@ def run_test(therapy_mode, patient_profile_path, student_profile_number, api_key
     """Run one simulated therapy session between student and patient."""
     api_key_input = API_KEY or "key"
 
+    # Initialize LearningBuddy with appropriate mode
     if therapy_mode == MI_MODE:
-        lb = LearningBuddy.LearningBuddy(api_key_input, "null", LearningBuddy.LearningBuddy.MI_MODE)
-        student = VirtualStudent.VirtualStudent(api_key_input, VirtualStudent.VirtualStudent.MI,
-                                                student_index=student_profile_number)
+        lb = LearningBuddy(api_key_input, "null", MI_MODE)
+        student = VirtualStudent.VirtualStudent(
+            api_key_input,
+            VirtualStudent.VirtualStudent.MI,
+            student_index=student_profile_number
+        )
     elif therapy_mode == CBT_MODE:
-        lb = LearningBuddy.LearningBuddy(api_key_input, "null", LearningBuddy.LearningBuddy.CBT_MODE)
-        student = VirtualStudent.VirtualStudent(api_key_input, VirtualStudent.VirtualStudent.CBT,
-                                                student_index=student_profile_number)
+        lb = LearningBuddy(api_key_input, "null", CBT_MODE)
+        student = VirtualStudent.VirtualStudent(
+            api_key_input,
+            VirtualStudent.VirtualStudent.CBT,
+            student_index=student_profile_number
+        )
     else:
         raise ValueError("Invalid therapy mode selected")
 
+    # Load patient profile and start session
     case = lb.load_patient_profile(patient_profile_path)
     session_result = lb.start_session(case_study=case)
 
+    # Run 10 exchanges between student and patient
     for _ in range(10):
-        student_utterance = student.get_response(lb.current_state["interview_messages"])
+        # Get current interview messages from state
+        current_state = lb.get_session_state()
+        interview_messages = current_state.get("interview_messages", [])
+
+        # Student generates response
+        student_utterance = student.get_response(interview_messages)
+
+        # Send student's message to virtual patient
         session_result = lb.send_message(student_utterance)
 
+    # End session and get feedback
     session_result = lb.end_session()
-    return session_result
+
+    # Get export folder path from state
+    final_state = lb.get_session_state()
+    export_folder = final_state.get("export_folder", "")
+
+    return {
+        "session_result": session_result,
+        "folder_name": export_folder
+    }
 
 
 def extract_cbt_scores(eval_file_paths):
@@ -76,7 +97,10 @@ def extract_cbt_scores(eval_file_paths):
     for file_path in eval_file_paths:
         text = Path(file_path).read_text(encoding="utf-8")
         for cat in categories:
-            pattern = re.compile(rf"{re.escape(cat)}.*?Score:\s*\**\s*(\d+(\.\d+)?)\**", re.IGNORECASE | re.DOTALL)
+            pattern = re.compile(
+                rf"{re.escape(cat)}.*?Score:\s*\**\s*(\d+(\.\d+)?)\**",
+                re.IGNORECASE | re.DOTALL
+            )
             match = pattern.search(text)
             score_value = float(match.group(1)) if match else 0.0
             scores[cat].append(score_value)
@@ -112,7 +136,7 @@ def augment_student_prompt(student_csv, student_num, feedback_texts, save_as="St
     improvement_intro = (
         "Now, ignore all previous instructions and strive to enhance your CBT skills and performance during the therapy session with the patient by strictly incorporating the list of recommendations. "
         "Your first message should greet the patient as if you have just started the session."
-        "Subsequent responses should flow naturally based on the patient’s replies (but keep the above errors)."
+        "Subsequent responses should flow naturally based on the patient's replies (but keep the above errors)."
         "End the conversation after exactly 10 clinician–patient exchanges. \n\n"
     )
     df.loc[student_num, "Prompt"] += f"\n\n# Feedback to incorporate:\n{improvement_intro}{combined_feedback}"
@@ -148,8 +172,14 @@ def plot_scores(scores_a, scores_b, label_a, label_b, title):
     for bars in [bars1, bars2]:
         for bar in bars:
             height = bar.get_height()
-            ax.text(bar.get_x() + bar.get_width() / 2, height + 0.05, f'{height:.1f}', ha='center', va='bottom',
-                    fontsize=9)
+            ax.text(
+                bar.get_x() + bar.get_width() / 2,
+                height + 0.05,
+                f'{height:.1f}',
+                ha='center',
+                va='bottom',
+                fontsize=9
+            )
 
     plt.tight_layout()
     return fig
@@ -164,8 +194,12 @@ def run_experiment(student_num, num_patients, student_csv_path, label):
     start = time.time()
     random.seed(42)
 
-    all_files = [os.path.join(PATIENT_DIR, f) for f in os.listdir(PATIENT_DIR)
-                 if os.path.isfile(os.path.join(PATIENT_DIR, f))]
+    # Get random patient files
+    all_files = [
+        os.path.join(PATIENT_DIR, f)
+        for f in os.listdir(PATIENT_DIR)
+        if os.path.isfile(os.path.join(PATIENT_DIR, f))
+    ]
     random_files = random.sample(all_files, num_patients)
 
     mode = CBT_MODE
@@ -173,14 +207,21 @@ def run_experiment(student_num, num_patients, student_csv_path, label):
     all_results = []
     saved_data_directory = []
 
+    # Run tests for each patient
     for patient in random_files:
         results = run_test(mode, patient, student_num)
-        saved_data_directory.append(results["folder_name"] + "/detailed_feedback.txt")
+        feedback_path = results["folder_name"] + "/detailed_feedback.txt"
+        saved_data_directory.append(feedback_path)
 
+    # Extract scores from all feedback files
     student_scores = extract_cbt_scores(saved_data_directory)
 
+    # Build results table
     for idx, patient_file in enumerate(random_files):
-        row = {"Student": df.iloc[student_num]["Name"], "Patient": os.path.basename(patient_file)}
+        row = {
+            "Student": df.iloc[student_num]["Name"],
+            "Patient": os.path.basename(patient_file)
+        }
         for key, values in student_scores.items():
             row[key] = values[idx] if idx < len(values) else None
         all_results.append(row)
@@ -194,10 +235,14 @@ def run_experiment(student_num, num_patients, student_csv_path, label):
 
     csv_path = os.path.join(save_folder, "CBT_scores.csv")
     with open(csv_path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=["Student", "Patient"] + list(student_scores.keys()))
+        writer = csv.DictWriter(
+            f,
+            fieldnames=["Student", "Patient"] + list(student_scores.keys())
+        )
         writer.writeheader()
         writer.writerows(all_results)
 
+    # Save elapsed time
     elapsed_seconds = time.time() - start
     with open(os.path.join(save_folder, "elapsed_time.txt"), "w") as f:
         f.write(f"Elapsed time: {elapsed_seconds:.2f} seconds\n")
@@ -211,20 +256,50 @@ def run_experiment(student_num, num_patients, student_csv_path, label):
 # =============================
 
 if __name__ == "__main__":
-    # 1️⃣ Good vs Bad student comparison
-    scores_good, _ = run_experiment(GOOD_STUDENT_NUM, NUM_PATIENTS, STUDENT_CSV_PATH, label="good_student")
-    scores_bad, feedback_files = run_experiment(BAD_STUDENT_NUM, NUM_PATIENTS, STUDENT_CSV_PATH, label="bad_student")
+    print("=" * 60)
+    print("Starting Automated CBT Testing Pipeline")
+    print("=" * 60)
 
-    fig1 = plot_scores(scores_good, scores_bad, "Good Student", "Bad Student", "Evaluation Scores for CBT")
-    path1 = os.path.join("saved_tests", f"comparison_good_vs_bad_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png")
+    # 1️⃣ Good vs Bad student comparison
+    print("\n[STEP 1] Running Good Student Experiments...")
+    scores_good, _ = run_experiment(
+        GOOD_STUDENT_NUM,
+        NUM_PATIENTS,
+        STUDENT_CSV_PATH,
+        label="good_student"
+    )
+
+    print("\n[STEP 2] Running Bad Student Experiments...")
+    scores_bad, feedback_files = run_experiment(
+        BAD_STUDENT_NUM,
+        NUM_PATIENTS,
+        STUDENT_CSV_PATH,
+        label="bad_student"
+    )
+
+    print("\n[STEP 3] Generating comparison plot (Good vs Bad)...")
+    fig1 = plot_scores(
+        scores_good,
+        scores_bad,
+        "Good Student",
+        "Bad Student",
+        "Evaluation Scores for CBT"
+    )
+    path1 = os.path.join(
+        "saved_tests",
+        f"comparison_good_vs_bad_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
+    )
     fig1.savefig(path1, bbox_inches='tight')
     plt.close(fig1)
     print(f"✅ Plot 1 saved: {path1}")
 
     # 2️⃣ Bad student before vs after feedback (individualized feedback per session)
-    scores_after_all = {cat: [] for cat in scores_bad.keys()}  # initialize to collect across sessions
+    print("\n[STEP 4] Running Bad Student with Individual Feedback...")
+    scores_after_all = {cat: [] for cat in scores_bad.keys()}
 
     for i, feedback_path in enumerate(feedback_files):
+        print(f"  Processing feedback {i + 1}/{len(feedback_files)}...")
+
         # Extract feedback only from this session
         feedback_text = extract_recommendations([feedback_path])
 
@@ -237,16 +312,33 @@ if __name__ == "__main__":
         )
 
         # Run experiment for that single feedback improvement
-        scores_after, _ = run_experiment(BAD_STUDENT_NUM, 1, updated_csv, label=f"bad_student_after_feedback_{i}")
+        scores_after, _ = run_experiment(
+            BAD_STUDENT_NUM,
+            1,
+            updated_csv,
+            label=f"bad_student_after_feedback_{i}"
+        )
 
         # Accumulate results (combine all single runs)
         for cat in scores_after_all.keys():
             scores_after_all[cat].extend(scores_after[cat])
 
-    # Plot overall average after feedback
-    fig2 = plot_scores(scores_after_all, scores_bad, "After Feedback", "Before Feedback",
-                       "Evaluation Scores - Before vs After Individual Feedback")
-    path2 = os.path.join("saved_tests", f"comparison_before_after_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png")
+    print("\n[STEP 5] Generating comparison plot (Before vs After Feedback)...")
+    fig2 = plot_scores(
+        scores_after_all,
+        scores_bad,
+        "After Feedback",
+        "Before Feedback",
+        "Evaluation Scores - Before vs After Individual Feedback"
+    )
+    path2 = os.path.join(
+        "saved_tests",
+        f"comparison_before_after_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
+    )
     fig2.savefig(path2, bbox_inches='tight')
     plt.close(fig2)
     print(f"✅ Plot 2 saved: {path2}")
+
+    print("\n" + "=" * 60)
+    print("✅ All experiments completed successfully!")
+    print("=" * 60)
