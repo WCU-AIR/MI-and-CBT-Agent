@@ -645,7 +645,7 @@ After that, respond to any questions the user may ask about the evaluation or th
             "metadata": session_metadata,
             "current_phase": "completed",
             "session_active": False,
-            "export_folder": folder_name
+            "folder_name": folder_name
         }
 
     def run(self, state: LBState) -> LBState:

@@ -20,7 +20,7 @@ from utils.api_key_loader import load_openai_api_key
 
 STUDENT_CSV_PATH = "Student_Profiles/AK_StudentAgent_10Profiles - Prompts for CBT Students.csv"
 PATIENT_DIR = "Patient_Profiles/STACER/"
-NUM_PATIENTS = 103
+NUM_PATIENTS = 1
 
 GOOD_STUDENT_NUM = 11
 BAD_STUDENT_NUM = 10
@@ -75,11 +75,11 @@ def run_test(therapy_mode, patient_profile_path, student_profile_number, api_key
 
     # Get export folder path from state
     final_state = lb.get_session_state()
-    export_folder = final_state.get("export_folder", "")
+    folder_name = final_state.get("folder_name", "")
 
     return {
         "session_result": session_result,
-        "folder_name": export_folder
+        "folder_name": folder_name
     }
 
 
