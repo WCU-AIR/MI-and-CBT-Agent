@@ -18,9 +18,9 @@ from utils.api_key_loader import load_openai_api_key
 # === Experiment Constants ====
 # =============================
 
-STUDENT_CSV_PATH = "Student_Profiles/AK_StudentAgent_10Profiles - Prompts for CBT Students.csv"
-PATIENT_DIR = "Patient_Profiles/STACER/"
-NUM_PATIENTS = 1
+STUDENT_CSV_PATH = "Student_Profiles/AK_StudentAgent_10Profiles - Prompts for MI Students.csv"
+PATIENT_DIR = "Patient_Profiles/MI/"
+NUM_PATIENTS = 10
 
 GOOD_STUDENT_NUM = 11
 BAD_STUDENT_NUM = 10
@@ -86,23 +86,36 @@ def run_test(therapy_mode, patient_profile_path, student_profile_number, api_key
 def extract_cbt_scores(eval_file_paths):
     """Extract numerical CBT scores from feedback text files."""
     categories = [
-        "Agenda", "Feedback", "Understanding", "Interpersonal Effectiveness", "Collaboration",
-        "Pacing and Efficient Use of Time", "Guided Discovery",
-        "Focusing on Key Cognitions or Behaviors", "Strategy for Change",
-        "Application of Cognitive-Behavioral Techniques", "Homework"
+        "Cultivating Change Talk",
+        "Softening Sustain Talk",
+        "Partnership",
+        "Empathy",
+        "Acceptance",
+        "Direction",
+        "Autonomy Support",
+        "Collaboration",
+        "Evocation"
     ]
 
+    
     scores = {cat: [] for cat in categories}
 
     for file_path in eval_file_paths:
         text = Path(file_path).read_text(encoding="utf-8")
+
         for cat in categories:
             pattern = re.compile(
                 rf"{re.escape(cat)}.*?Score:\s*\**\s*(\d+(\.\d+)?)\**",
                 re.IGNORECASE | re.DOTALL
             )
-            match = pattern.search(text)
-            score_value = float(match.group(1)) if match else 0.0
+
+            matches = pattern.findall(text)
+            if matches:
+                # Each match is a tuple like ('4.5', '.5'), so take matches[-1][0]
+                score_value = float(matches[-1][0])
+            else:
+                score_value = 0.0
+
             scores[cat].append(score_value)
 
     num_files = len(eval_file_paths)
@@ -119,12 +132,17 @@ def extract_cbt_scores(eval_file_paths):
 def extract_recommendations(feedback_files):
     """Extract 'Recommendations' section from feedback files."""
     recommendations = []
+
     for path in feedback_files:
         text = Path(path).read_text(encoding="utf-8")
+
         pattern = re.compile(r"\s*Recommendations.*", re.DOTALL | re.IGNORECASE)
-        match = pattern.search(text)
-        if match:
-            recommendations.append(match.group(0).strip())
+        matches = pattern.findall(text)
+
+        if matches:
+            # take the last occurrence
+            recommendations.append(matches[-1].strip())
+
     print(recommendations)
     return recommendations
 
@@ -134,11 +152,16 @@ def augment_student_prompt(student_csv, student_num, feedback_texts, save_as="St
     df = pd.read_csv(student_csv, quotechar='"', skipinitialspace=True)
     combined_feedback = "\n\n---\n\n".join(feedback_texts)
     improvement_intro = (
-        "Now, ignore all previous instructions and strive to enhance your CBT skills and performance during the therapy session with the patient by strictly incorporating the list of recommendations. "
-        "Your first message should greet the patient as if you have just started the session."
-        "Subsequent responses should flow naturally based on the patient's replies (but keep the above errors)."
+        "Now, reflect on the weaknesses of the previous instructions and strive to enhance your MI skills and performance during the therapy session with the patient by strictly incorporating the list of recommendations. "
         "End the conversation after exactly 10 clinician–patient exchanges. \n\n"
     )
+
+    # improvement_intro = (
+    #     "You have just completed your first session and received supervision. "
+    #     "Now you have received some feedback to help you improve. "
+    #     "You are now attempting to apply this feedback. "
+    #     "End the conversation after exactly 10 clinician–patient exchanges. \n\n"
+    # )
     df.loc[student_num, "Prompt"] += f"\n\n# Feedback to incorporate:\n{improvement_intro}{combined_feedback}"
     df.to_csv(save_as, index=False)
     return save_as
@@ -166,7 +189,7 @@ def plot_scores(scores_a, scores_b, label_a, label_b, title):
     ax.set_title(title)
     ax.set_xticks(x)
     ax.set_xticklabels(categories, rotation=45, ha='right')
-    ax.set_ylim(0, 6.5)
+    ax.set_ylim(0, 5.5)
     ax.legend()
 
     for bars in [bars1, bars2]:
@@ -202,7 +225,7 @@ def run_experiment(student_num, num_patients, student_csv_path, label):
     ]
     random_files = random.sample(all_files, num_patients)
 
-    mode = CBT_MODE
+    mode = MI_MODE
     df = pd.read_csv(student_csv_path, quotechar='"', skipinitialspace=True)
     all_results = []
     saved_data_directory = []
@@ -233,7 +256,7 @@ def run_experiment(student_num, num_patients, student_csv_path, label):
     save_folder = os.path.join(base_folder, f"{label}_{timestamp}")
     os.makedirs(save_folder, exist_ok=True)
 
-    csv_path = os.path.join(save_folder, "CBT_scores.csv")
+    csv_path = os.path.join(save_folder, "MI_scores.csv")
     with open(csv_path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(
             f,
@@ -283,7 +306,7 @@ if __name__ == "__main__":
         scores_bad,
         "Good Student",
         "Bad Student",
-        "Evaluation Scores for CBT"
+        "Evaluation Scores for MI"
     )
     path1 = os.path.join(
         "saved_tests",
