@@ -373,7 +373,7 @@ class InterviewWorkflow:
 class FeedbackWorkflow:
     """
     Handles feedback generation workflow:
-    1. Generate comprehensive feedback and STACER
+    1. Generate comprehensive feedback and CBT
     2. Complete session and save data
     """
 
@@ -414,7 +414,7 @@ class FeedbackWorkflow:
     def _generate_feedback(self, state: LBState) -> dict:
         """
         Generate comprehensive feedback.
-        Scores criteria, writes feedback, fills out STACER/evaluation form,
+        Scores criteria, writes feedback, fills out CBT/evaluation form,
         and sets up evaluator agent.
         """
         logging.info("Starting feedback evaluation phase.")
@@ -507,10 +507,10 @@ Structure your feedback using all the sections mentioned.
 """
 
         logging.info("Finished detailed feedback generation.")
-        logging.info("Starting STACER generation.")
+        logging.info("Starting CBT generation.")
 
-        # Generate formatted STACER/Evaluation form
-        instruction_prompt = self.prompt_loader.load_prompt('STACER Prompt')
+        # Generate formatted CBT/Evaluation form
+        instruction_prompt = self.prompt_loader.load_prompt('CBT Prompt')
         blank_stacer_file = self.prompt_loader.load_context("Evaluation Form")
 
         stacer_prompt = f"""
@@ -525,7 +525,7 @@ Here is the full Case Presentation:
 Here is the Evaluation Criteria to base your answer off of:
 {feedback_text}
 
-And here is the blank STACER form that you must use to format your answer:
+And here is the blank CBT form that you must use to format your answer:
 {blank_stacer_file}
 """
 
@@ -537,7 +537,7 @@ And here is the blank STACER form that you must use to format your answer:
         response = self.llm_feedback.invoke(messages_stacer)
         cod_stacer_response = response.content
 
-        logging.info("Finished STACER generation.")
+        logging.info("Finished CBT generation.")
         logging.info("Starting Evaluator Agent setup.")
 
         # Set up Virtual Evaluator Agent
@@ -553,11 +553,11 @@ You are presenting the evaluation of the following psychiatric interview and cas
 === PRESENTATION TRANSCRIPT ===
 {formatted_presentation}
 
-This is the completed evaluation and filled out STACER form which you will use to create your responses:
+This is the completed evaluation and filled out CBT form which you will use to create your responses:
 === COMPLETE EVALUATION ===
 {session_feedback}
 
-=== COMPLETE STACER ===
+=== COMPLETE CBT ===
 {cod_stacer_response}
 
 Here is the full patient profile, which can be used to answer questions about the patient:

@@ -1,6 +1,6 @@
 """
 Virtual Student module for simulating student interactions in therapy training scenarios.
-Supports multiple therapy types (MI, CBT, STACER) with configurable student profiles.
+Supports multiple therapy types (MI, CBT, CBT) with configurable student profiles.
 """
 
 from typing import List, Literal, Optional
@@ -15,7 +15,7 @@ from pydantic import SecretStr
 from utils.api_key_loader import load_openai_api_key
 
 # Type aliases for clarity
-TherapyType = Literal["MI", "CBT", "STACER"]
+TherapyType = Literal["MI", "CBT", "CBT"]
 MessageList = List[BaseMessage]
 
 
@@ -71,7 +71,7 @@ class StudentProfileLoader:
         Load a student profile for the given therapy type and index.
 
         Args:
-            therapy_type: Type of therapy (MI, CBT, STACER)
+            therapy_type: Type of therapy (MI, CBT, CBT)
             student_index: Index of student profile to load (default: 0)
 
         Returns:
@@ -151,7 +151,7 @@ class VirtualStudent:
     """
 
     # Therapy type constants (for backward compatibility)
-    STACER = "STACER"
+    STACER = "CBT"
     MI = "MI"
     CBT = "CBT"
 
@@ -162,14 +162,14 @@ class VirtualStudent:
             student_index: int = 0,
             prompt_addon: str = "",
             model: str = "gpt-4o-mini",
-            temperature: float = 0.1
+            temperature: float = 0.5
     ):
         """
         Initialize a virtual student.
 
         Args:
             api_key: OpenAI API key
-            therapy_type: Type of therapy (MI, CBT, STACER)
+            therapy_type: Type of therapy (MI, CBT, CBT)
             student_index: Index of student profile to use (default: 0)
             prompt_addon: Additional text to append to student prompt
             model: OpenAI model to use

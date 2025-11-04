@@ -245,10 +245,10 @@ class LearningBuddy:
         return results
 
 ###############################################################
-    ###                Workflow 3: STACER Feedback              ###
+    ###                Workflow 3: CBT Feedback              ###
     ###############################################################
     #   This workflow generates all static feedback after an interview ends:
-    #            1. Generates detailed feedback and fills out STACER
+    #            1. Generates detailed feedback and fills out CBT
     #            2. Initializes Feedback Agent
     #            2. Ends current session and saves all session data
     #
@@ -271,7 +271,7 @@ class LearningBuddy:
         """ Generate comprehensive feedback.
             First scores all defined criteria on a 1-5 scale and writes
             thorough feedback based on provided rubric.
-            Then uses full feedback to fill out a formatted COD STACER.
+            Then uses full feedback to fill out a formatted COD CBT.
         """
         logging.info("Starting feedback evaluation phase.")
 
@@ -370,9 +370,9 @@ class LearningBuddy:
 
                           """
         logging.info("Finished detailed feedback generation. ")
-        logging.info("Starting STACER generation ")
-        # Generate Formatted COD STACER Form
-        instruction_prompt = self._load_prompt('STACER Prompt')
+        logging.info("Starting CBT generation ")
+        # Generate Formatted COD CBT Form
+        instruction_prompt = self._load_prompt('CBT Prompt')
         blank_stacer_file = self._load_context("Evaluation Form")
 
         stacer_prompt = f"""
@@ -387,7 +387,7 @@ class LearningBuddy:
         Here is the Evaluation Criteria to base your answer off of:
         {feedback_text}
 
-        And here is the blank STACER form that you must use to format your answer:
+        And here is the blank CBT form that you must use to format your answer:
         {blank_stacer_file}
         """
 
@@ -399,7 +399,7 @@ class LearningBuddy:
         response = self.llm_feedback.invoke(messages)
         cod_stacer_response = response.content
 
-        logging.info("Finished STACER generation ")
+        logging.info("Finished CBT generation ")
         logging.info("Starting Agent Setup ")
 
 
@@ -417,11 +417,11 @@ class LearningBuddy:
               === PRESENTATION TRANSCRIPT ===
               {formatted_presentation}
 
-              This is the completed evaluation and filled out STACER form which you will use to create your responses:
+              This is the completed evaluation and filled out CBT form which you will use to create your responses:
               === COMPLETE EVALUATION ===
               {session_feedback}
 
-              === COMPLETE STACER ===
+              === COMPLETE CBT ===
               {cod_stacer_response}
 
               Here is the full patient profile, which can be used to answer questions about the patient:
@@ -733,7 +733,7 @@ class LearningBuddy:
 
         # Select Patients available in the current mode
         if self.mode == LearningBuddy.STACER_MODE:
-            directory += "/STACER"
+            directory += "/CBT"
         elif self.mode == LearningBuddy.MI_MODE:
             directory += "/MI"
         # Add more modes ...
@@ -747,20 +747,20 @@ class LearningBuddy:
 
     def _load_prompt(self, prompt_name: str) -> str:
         """ Returns the selected prompt"""
-        #Standard LB STACER Evaluation
+        #Standard LB CBT Evaluation
         if self.mode == LearningBuddy.STACER_MODE:
             if prompt_name == 'Clinical Summary':
-                filepath = 'Prompts/STACER/clinical_summary_prompt.txt'
+                filepath = 'Prompts/CBT/clinical_summary_prompt.txt'
             elif prompt_name == 'Virtual Patient':
-                filepath = 'Prompts/STACER/virtual_patient_prompt.txt'
+                filepath = 'Prompts/CBT/virtual_patient_prompt.txt'
             elif prompt_name == 'Verification':
-                filepath = 'Prompts/STACER/patient_profile_verification_prompt.txt'
+                filepath = 'Prompts/CBT/patient_profile_verification_prompt.txt'
             elif prompt_name == 'Feedback':
-                filepath = 'Prompts/STACER/feedback_agent_prompt.txt'
-            elif prompt_name == 'STACER Prompt':
-                filepath = 'Prompts/STACER/STACER_form_prompt.txt'
+                filepath = 'Prompts/CBT/feedback_agent_prompt.txt'
+            elif prompt_name == 'CBT Prompt':
+                filepath = 'Prompts/CBT/STACER_form_prompt.txt'
             elif prompt_name == 'Virtual Evaluator':
-                filepath = 'Prompts/STACER/virtual_evaluator_prompt.txt'
+                filepath = 'Prompts/CBT/virtual_evaluator_prompt.txt'
             else:
                 raise FileNotFoundError(f"File not found. Invalid Prompt Name: {prompt_name}")
 
@@ -774,7 +774,7 @@ class LearningBuddy:
                 filepath = 'Prompts/MI/patient_profile_verification_prompt.txt'
             elif prompt_name == 'Feedback':
                 filepath = 'Prompts/MI/feedback_agent_prompt.txt'
-            elif prompt_name == 'STACER Prompt':
+            elif prompt_name == 'CBT Prompt':
                 filepath = 'Prompts/MI/MI_form_prompt.txt'
             elif prompt_name == 'Virtual Evaluator':
                 filepath = 'Prompts/MI/virtual_evaluator_prompt.txt'
@@ -790,12 +790,12 @@ class LearningBuddy:
     def _load_context(self, context_name: str) -> str:
         """ Returns the selected LLM context"""
 
-        #STACER Mode
+        #CBT Mode
         if self.mode == LearningBuddy.STACER_MODE:
             if context_name == 'Feedback Criteria':
-                filepath = 'Context/STACER/feedback_criteria.txt'
+                filepath = 'Context/CBT/feedback_criteria.txt'
             elif context_name == 'Evaluation Form':
-                filepath = 'Context/STACER/COD_STACER.txt'
+                filepath = 'Context/CBT/COD_STACER.txt'
             else:
                 raise FileNotFoundError(f"File not found. Invalid Prompt Name: {context_name}")
 
@@ -939,8 +939,8 @@ def _format_result(transcript_id: str, payload: Dict[str, str]) -> str:
         divider,
         f"Transcript ID: {transcript_id} (source: {payload.get('source_file', 'unknown')})",
         '-' * 80,
-        'Filled STACER Form:',
-        payload.get('cod_stacer', '(no STACER output)'),
+        'Filled CBT Form:',
+        payload.get('cod_stacer', '(no CBT output)'),
         '',
         'Detailed Feedback:',
         payload.get('detailed_feedback', '(no feedback generated)'),

@@ -44,7 +44,7 @@ class LearningBuddy:
     Coordinates four main workflows:
     1. Initialization: Setup session and patient profile
     2. Interview: Virtual patient conversation
-    3. Feedback: Generate evaluation and STACER form
+    3. Feedback: Generate evaluation and CBT form
     4. Evaluator: Q&A about evaluation
     """
 
@@ -105,7 +105,7 @@ class LearningBuddy:
             ),
             'virtual_evaluator': ChatOpenAI(
                 model="gpt-4o-mini",
-                temperature=0.7,
+                temperature=0.1,
                 api_key=self.api_key
             )
         }

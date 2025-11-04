@@ -1,15 +1,31 @@
-import json
+import csv
 import os
-import random
 import re
 import time
+import argparse
+import json
 from datetime import datetime
+from pathlib import Path
+from glob import glob
+
+import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 
 from LearningBuddy_Agent import LearningBuddy, STACER_MODE, MI_MODE, CBT_MODE
 import VirtualStudent
-from plot import *
 from utils.api_key_loader import load_openai_api_key
+
+# =============================
+# === Experiment Constants ====
+# =============================
+
+STUDENT_CSV_PATH = "Student_Profiles/AK_StudentAgent_10Profiles - Prompts for CBT Students.csv"
+PATIENT_DIR_MI = "Patient_Profiles/MI/"
+PATIENT_DIR_CBT = "Patient_Profiles/CBT/"
+
+GOOD_STUDENT_NUM = 11
+BAD_STUDENT_NUM = 10
 
 API_KEY = load_openai_api_key()
 
@@ -18,337 +34,476 @@ API_KEY = load_openai_api_key()
 # === Core Helper Functions ===
 # =============================
 
-def run_test(therapy_mode, patient_profile_path, student_profile_number):
-    """
-    Run a single test with the selected student and patient profile.
+def get_patient_files(mode, start_idx=None, end_idx=None):
+    """Get patient files in alphabetical order, optionally sliced by range."""
+    patient_dir = PATIENT_DIR_MI if mode == MI_MODE else PATIENT_DIR_CBT
 
-    Args:
-        therapy_mode: One of MI_MODE, CBT_MODE, or STACER_MODE
-        patient_profile_path: Path to patient profile file
-        student_profile_number: Index of student profile to use
+    all_files = sorted([
+        os.path.join(patient_dir, f)
+        for f in os.listdir(patient_dir)
+        if os.path.isfile(os.path.join(patient_dir, f))
+    ])
 
-    Returns:
-        Dictionary with session results and folder name
-    """
+    if start_idx is not None and end_idx is not None:
+        return all_files[start_idx:end_idx]
+    return all_files
+
+
+def run_test(therapy_mode, patient_profile_path, student_profile_number, api_key_input=None):
+    """Run one simulated therapy session between student and patient."""
+    api_key_input = API_KEY or "key"
+
+    modes = {
+        'MI': MI_MODE,
+        'CBT': CBT_MODE
+    }
     # Initialize LearningBuddy with appropriate mode
-    if therapy_mode == MI_MODE:
-        lb = LearningBuddy(API_KEY, "null", MI_MODE)
+    if modes[therapy_mode] == MI_MODE:
+        lb = LearningBuddy(api_key_input, "null", MI_MODE)
         student = VirtualStudent.VirtualStudent(
-            api_key=API_KEY,
-            therapy_type="MI",
+            api_key_input,
+            VirtualStudent.VirtualStudent.MI,
             student_index=student_profile_number
         )
-    elif therapy_mode == CBT_MODE:
-        lb = LearningBuddy(API_KEY, "null", CBT_MODE)
+    elif modes[therapy_mode] == CBT_MODE:
+        lb = LearningBuddy(api_key_input, "null", CBT_MODE)
         student = VirtualStudent.VirtualStudent(
-            api_key=API_KEY,
-            therapy_type="CBT",
+            api_key_input,
+            VirtualStudent.VirtualStudent.CBT,
             student_index=student_profile_number
         )
     else:
-        raise ValueError(f"Invalid therapy mode: {therapy_mode}")
+        raise ValueError("Invalid therapy mode selected")
 
     # Load patient profile and start session
     case = lb.load_patient_profile(patient_profile_path)
     session_result = lb.start_session(case_study=case)
 
-    # Loop for student agent and patient agent to talk to each other (limit of 2 in this version)
-    for i in range(0, 2):
-        # Get current state for student
+    # Run 10 exchanges between student and patient
+    for _ in range(10):
         current_state = lb.get_session_state()
         interview_messages = current_state.get("interview_messages", [])
-
-        # Student generates response
         student_utterance = student.get_response(interview_messages)
-
-        # Send student's message to virtual patient
         session_result = lb.send_message(student_utterance)
 
-    # Generate feedback
+    # End session and get feedback
     session_result = lb.end_session()
-
-    # Get export folder from final state
     final_state = lb.get_session_state()
-    export_folder = final_state.get("export_folder", "")
+    folder_name = final_state.get("folder_name", "")
 
     return {
         "session_result": session_result,
-        "folder_name": export_folder
+        "folder_name": folder_name
     }
 
 
-def count_files(directory):
-    """Count number of files in a directory."""
-    return sum(
-        1 for entry in os.scandir(directory)
-        if entry.is_file()
-    )
-
-
-def extract_scores_from_text(text):
-    """
-    Extract MI scores from detailed feedback text.
-
-    Args:
-        text: Feedback text content
-
-    Returns:
-        Dictionary of category scores
-    """
+def extract_scores(eval_file_paths):
+    """Extract numerical scores from feedback text files."""
     categories = [
-        "Acceptance",
-        "Empathy",
-        "Spirit of MI",
         "Cultivating Change Talk",
         "Softening Sustain Talk",
         "Partnership",
-        "Open Questions",
-        "Reflections",
-        "Affirmations",
-        "Persuade with Permission",
-        "Emphasize Autonomy",
-        "Engaging",
-        "Focusing",
-        "Evoking",
-        "Planning",
-        "Summarizing"
+        "Empathy",
+        "Acceptance",
+        "Direction",
+        "Autonomy Support",
+        "Collaboration",
+        "Evocation"
     ]
 
-    # Normalize line endings and spacing
-    text = text.replace("\r\n", "\n").replace("\r", "\n")
+    scores = {cat: [] for cat in categories}
 
-    results = {}
+    for file_path in eval_file_paths:
+        text = Path(file_path).read_text(encoding="utf-8")
 
-    for cat in categories:
-        # Markdown heading pattern, e.g.:
-        # ### 1. Acceptance
-        # ### Acceptance
-        # ### **Acceptance**
-        heading_pattern = re.compile(
-            rf"^#+\s*(?:\d+\.\s*)?\*?\*?{re.escape(cat)}\*?\*?.*$",
-            re.IGNORECASE | re.MULTILINE
-        )
-        match = heading_pattern.search(text)
-
-        if not match:
-            # Some headings might include parentheses or extra symbols
-            print(f"Could not extract {cat}")
-            results[cat] = 1.0
-            continue
-
-        # Extract text starting after this heading until the next ### or end of file
-        section_start = match.end()
-        next_heading = re.search(r"^###\s", text[section_start:], re.MULTILINE)
-        section_end = section_start + next_heading.start() if next_heading else len(text)
-        section_text = text[section_start:section_end]
-
-        # Look for Score line – matches patterns like:
-        # **Score: 2 (blah)**
-        # **Score:** **2**
-        # **Score: 2/5**
-        score_match = re.search(
-            r"\*\*Score[:\s]*\**\s*(\d+(?:\.\d+)?)(?:\s*/\s*\d+)?",
-            section_text,
-            re.IGNORECASE
-        )
-
-        if score_match:
-            results[cat] = float(score_match.group(1))
-        else:
-            # Fall back to first standalone number if no explicit Score line
-            num_match = re.search(r"(\d+(?:\.\d+)?)", section_text)
-            results[cat] = float(num_match.group(1)) if num_match else 1.0
-
-    # Add Overall Average
-    numeric_scores = [v for k, v in results.items() if k in categories]
-    results["Overall Average"] = (
-        round(sum(numeric_scores) / len(numeric_scores), 2)
-        if numeric_scores else 1.0
-    )
-
-    return results
-
-
-def extract_all_scores_from_folder(parent_folder, filename="detailed_feedback.txt"):
-    """
-    Extract scores from all feedback files in a folder structure.
-
-    Args:
-        parent_folder: Parent directory containing session subdirectories
-        filename: Name of feedback file to extract from
-
-    Returns:
-        DataFrame with all extracted scores
-    """
-    all_results = []
-    for subdir in os.listdir(parent_folder):
-        subpath = os.path.join(parent_folder, subdir)
-        if os.path.isdir(subpath):
-            file_path = os.path.join(subpath, filename)
-            if os.path.exists(file_path):
-                with open(file_path, "r", encoding="utf-8") as f:
-                    text = f.read()
-                scores = extract_scores_from_text(text)
-                scores["session_folder"] = subdir
-                all_results.append(scores)
+        for cat in categories:
+            pattern = re.compile(
+                rf"{re.escape(cat)}.*?Score:\s*\**\s*(\d+(\.\d+)?)\**",
+                re.IGNORECASE | re.DOTALL
+            )
+            matches = pattern.findall(text)
+            if matches:
+                score_value = float(matches[-1][0])
             else:
-                print(f"⚠️ File not found in: {subpath}")
-    return pd.DataFrame(all_results)
+                score_value = 0.0
+            scores[cat].append(score_value)
+
+    num_files = len(eval_file_paths)
+    overall_averages = []
+    for i in range(num_files):
+        file_scores = [scores[cat][i] for cat in categories]
+        overall_avg = round(sum(file_scores) / len(file_scores), 3)
+        overall_averages.append(overall_avg)
+
+    scores["Overall Average"] = overall_averages
+    return scores
 
 
-# =============================
-# === Main Testing Pipeline ===
-# =============================
+def extract_recommendations(feedback_files):
+    """Extract 'Recommendations' section from feedback files."""
+    recommendations = []
 
-def run_all_tests(num_patients, student_profiles):
-    """
-    Run all tests in a loop for multiple students and patients.
+    for path in feedback_files:
+        text = Path(path).read_text(encoding="utf-8")
+        pattern = re.compile(r"\s*Recommendations.*", re.DOTALL | re.IGNORECASE)
+        matches = pattern.findall(text)
 
-    Args:
-        num_patients: Number of patient profiles to test with
-        student_profiles: List of student profile indices to test
-    """
-    start = time.time()
+        if matches:
+            recommendations.append(matches[-1].strip())
 
-    # Select Patient Profiles
-    directory = "Patient_Profiles/MI/"
-    all_files = [
-        os.path.join(directory, f)
-        for f in os.listdir(directory)
-        if os.path.isfile(os.path.join(directory, f))
-    ]
-    random_files = random.sample(all_files, num_patients)
+    return recommendations
 
-    mode = CBT_MODE
-    all_results = []
-    df = pd.read_csv(
-        'Student_Profiles/AK_StudentAgent_10Profiles - Prompts for CBT Students.csv',
-        quotechar='"',
-        skipinitialspace=True
+
+def augment_student_prompt(student_csv, student_num, feedback_texts, save_as="Student_Profiles/temp_student.csv"):
+    """Append combined feedback to student's prompt and save as new CSV."""
+    df = pd.read_csv(student_csv, quotechar='"', skipinitialspace=True)
+    combined_feedback = "\n\n---\n\n".join(feedback_texts)
+    improvement_intro = (
+        "Now, reflect on the weaknesses of the previous instructions and strive to enhance your MI skills and performance during the therapy session with the patient by strictly incorporating the list of recommendations. "
+        "End the conversation after exactly 10 clinician–patient exchanges. \n\n"
     )
+
+    df.loc[student_num, "Prompt"] += f"\n\n# Feedback to incorporate:\n{improvement_intro}{combined_feedback}"
+    df.to_csv(save_as, index=False)
+    return save_as
+
+
+# =============================
+# === Experiment Pipeline ====
+# =============================
+
+def run_experiment(student_num, patient_files, student_csv_path, mode, label, save_folder):
+    """Run experiment for one student configuration."""
+    df = pd.read_csv(student_csv_path, quotechar='"', skipinitialspace=True)
+    all_results = []
+    saved_data_directory = []
+
+    # Run tests for each patient
+    for patient in patient_files:
+        results = run_test(mode, patient, student_num)
+        feedback_path = results["folder_name"] + "/detailed_feedback.txt"
+        saved_data_directory.append(feedback_path)
+
+    # Extract scores from all feedback files
+    student_scores = extract_scores(saved_data_directory)
+
+    # Build results table
+    for idx, patient_file in enumerate(patient_files):
+        row = {
+            "Student": df.iloc[student_num]["Name"],
+            "Patient": os.path.basename(patient_file)
+        }
+        for key, values in student_scores.items():
+            row[key] = values[idx] if idx < len(values) else None
+        all_results.append(row)
+
+    # Save results
+    csv_path = os.path.join(save_folder, f"{label}_scores.csv")
+    with open(csv_path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(
+            f,
+            fieldnames=["Student", "Patient"] + list(student_scores.keys())
+        )
+        writer.writeheader()
+        writer.writerows(all_results)
+
+    return student_scores, saved_data_directory
+
+
+def run_parallel_experiments(args):
+    """Main function for parallel execution mode."""
+    start_time = time.time()
+
+    # Get patient files for this range
+    patient_files = get_patient_files(args.mode, args.start_patient, args.end_patient)
+    num_patients = len(patient_files)
+
+    print(f"Processing patients {args.start_patient} to {args.end_patient} ({num_patients} patients)")
+    print(f"Mode: {args.mode}")
 
     # Create save folder
-    base_folder = "saved_tests"
-    os.makedirs(base_folder, exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    save_folder = os.path.join(base_folder, f"run_{timestamp}")
+    save_folder = os.path.join(
+        "saved_tests",
+        f"{args.run_id}_patients_{args.start_patient}_{args.end_patient}_{timestamp}"
+    )
     os.makedirs(save_folder, exist_ok=True)
 
-    # Load checkpoint if it exists
-    checkpoint_path = os.path.join(save_folder, "checkpoint.json")
-    if os.path.exists(checkpoint_path):
-        with open(checkpoint_path, "r", encoding="utf-8") as f:
-            checkpoint = json.load(f)
-        completed_pairs = set(tuple(x) for x in checkpoint["completed_pairs"])
-        all_file_paths = checkpoint["all_file_paths"]
-        print(f"📂 Loaded checkpoint with {len(completed_pairs)} completed pairs")
-    else:
-        completed_pairs = set()
-        all_file_paths = [[] for _ in student_profiles]
-        print("🆕 Starting fresh run (no checkpoint found)")
+    # Save metadata
+    metadata = {
+        "run_id": args.run_id,
+        "mode": args.mode,
+        "start_patient": args.start_patient,
+        "end_patient": args.end_patient,
+        "num_patients": num_patients,
+        "timestamp": timestamp
+    }
+    with open(os.path.join(save_folder, "metadata.json"), "w") as f:
+        json.dump(metadata, f, indent=2)
 
-    num_tests = len(student_profiles) * len(random_files)
-    count = 1
+    # 1️⃣ Good student
+    print("\n[STEP 1] Running Good Student...")
+    scores_good, _ = run_experiment(
+        GOOD_STUDENT_NUM,
+        patient_files,
+        STUDENT_CSV_PATH,
+        args.mode,
+        "good_student",
+        save_folder
+    )
 
-    student_number = 0
+    # 2️⃣ Bad student (1st attempt)
+    print("\n[STEP 2] Running Bad Student (1st attempt)...")
+    scores_bad1, feedback_files = run_experiment(
+        BAD_STUDENT_NUM,
+        patient_files,
+        STUDENT_CSV_PATH,
+        args.mode,
+        "bad_student_1st",
+        save_folder
+    )
 
-    # Run all tests
-    for student in student_profiles:
-        print(f"\n{'=' * 60}")
-        print(f"Testing Student Profile #{student}")
-        print(f"{'=' * 60}")
+    # 3️⃣ Bad student with individual feedback
+    print("\n[STEP 3] Running Bad Student with Individual Feedback...")
+    scores_bad_feedback = {cat: [] for cat in scores_bad1.keys()}
 
-        for patient in random_files:
-            pair_key = (student, patient)
+    for i, (feedback_path, patient_file) in enumerate(zip(feedback_files, patient_files)):
+        print(f"  Processing feedback {i + 1}/{num_patients}...")
 
-            # Skip if already completed
-            if pair_key in completed_pairs:
-                print(f"⏭️  Skipping completed pair: Student {student}, Patient {os.path.basename(patient)}")
-                count += 1
-                continue
+        feedback_text = extract_recommendations([feedback_path])
+        updated_csv = augment_student_prompt(
+            STUDENT_CSV_PATH,
+            BAD_STUDENT_NUM,
+            feedback_text,
+            save_as=os.path.join(save_folder, f"temp_student_feedback_{i}.csv")
+        )
 
-            print(f"\n[{count}/{num_tests}] Running test...")
-            print(f"  Student: {student}")
-            print(f"  Patient: {os.path.basename(patient)}")
+        # Run single patient with feedback
+        results = run_test(args.mode, patient_file, BAD_STUDENT_NUM)
+        feedback_path_new = results["folder_name"] + "/detailed_feedback.txt"
+        scores_single = extract_scores([feedback_path_new])
 
-            try:
-                # Run the test
-                results = run_test(mode, patient, student)
-                feedback_path = results["folder_name"] + "/detailed_feedback.txt"
-                all_file_paths[student_number].append(feedback_path)
+        for cat in scores_bad_feedback.keys():
+            scores_bad_feedback[cat].extend(scores_single[cat])
 
-                # Mark as completed
-                completed_pairs.add(pair_key)
+    # Save feedback results
+    all_results_feedback = []
+    df = pd.read_csv(STUDENT_CSV_PATH, quotechar='"', skipinitialspace=True)
+    for idx, patient_file in enumerate(patient_files):
+        row = {
+            "Student": df.iloc[BAD_STUDENT_NUM]["Name"] + " (with feedback)",
+            "Patient": os.path.basename(patient_file)
+        }
+        for key, values in scores_bad_feedback.items():
+            row[key] = values[idx] if idx < len(values) else None
+        all_results_feedback.append(row)
 
-                # Save checkpoint after each successful test
-                checkpoint_data = {
-                    "completed_pairs": list(completed_pairs),
-                    "all_file_paths": all_file_paths
-                }
-                with open(checkpoint_path, "w", encoding="utf-8") as f:
-                    json.dump(checkpoint_data, f, indent=2)
+    csv_path = os.path.join(save_folder, "bad_student_feedback_scores.csv")
+    with open(csv_path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(
+            f,
+            fieldnames=["Student", "Patient"] + list(scores_bad_feedback.keys())
+        )
+        writer.writeheader()
+        writer.writerows(all_results_feedback)
 
-                print(f"  ✅ Test completed successfully")
-
-            except Exception as e:
-                print(f"  ❌ Error during test: {e}")
-                import traceback
-                traceback.print_exc()
-                continue
-
-            count += 1
-
-        student_number += 1
-
-    # Once all tests complete, extract scores
-    print(f"\n{'=' * 60}")
-    print("Extracting scores from feedback files...")
-    print(f"{'=' * 60}")
-
-    parent_folder = "Saved_Sessions"
-    df = extract_all_scores_from_folder(parent_folder)
-
-    # Add "Student" column
-    half = len(df) // 2
-    df['Student'] = ['good student'] * half + ['bad student'] * (len(df) - half)
-
-    # Save results to CSV
-    output_csv = os.path.join(save_folder, "extracted_scores.csv")
-    df.to_csv(output_csv, index=False)
-    print(f"✅ Scores saved to: {output_csv}")
+    # 4️⃣ Bad student (2nd attempt, no feedback)
+    print("\n[STEP 4] Running Bad Student (2nd attempt, no feedback)...")
+    scores_bad2, _ = run_experiment(
+        BAD_STUDENT_NUM,
+        patient_files,
+        STUDENT_CSV_PATH,
+        args.mode,
+        "bad_student_2nd",
+        save_folder
+    )
 
     # Save elapsed time
-    end = time.time()
-    elapsed_minutes = (end - start) / 60
-    elapsed_time_path = os.path.join(save_folder, "elapsed_time.txt")
-    with open(elapsed_time_path, "w") as f:
-        f.write(f"Elapsed time: {elapsed_minutes:.2f} minutes\n")
-    print(f"✅ Elapsed time: {elapsed_minutes:.2f} minutes")
+    elapsed_seconds = time.time() - start_time
+    with open(os.path.join(save_folder, "elapsed_time.txt"), "w") as f:
+        f.write(f"Elapsed time: {elapsed_seconds:.2f} seconds\n")
+
+    print(f"\n✅ Parallel run complete! Results saved to {save_folder}")
+    return save_folder
+
+
+def plot_scores(score_sets, labels, title, colors=None):
+    """Plot bar chart comparing multiple sets of scores with error bars."""
+    plt.rcParams['font.family'] = 'sans-serif'
+    plt.rcParams['font.sans-serif'] = ['Arial']
+    plt.rcParams['font.size'] = 11
+
+    if colors is None:
+        colors = ['skyblue', 'orange', 'green', 'red']
+
+    categories = list(score_sets[0].keys())
+    num_sets = len(score_sets)
+
+    # Calculate averages and standard deviations
+    averages = []
+    std_devs = []
+    for scores in score_sets:
+        avg = []
+        std = []
+        for cat in categories:
+            values = [v if v is not None else 0 for v in scores[cat]]
+            avg.append(round(np.mean(values), 2))
+            std.append(round(np.std(values, ddof=1) if len(values) > 1 else 0, 2))
+        averages.append(avg)
+        std_devs.append(std)
+
+    x = np.arange(len(categories))
+    width = 0.8 / num_sets
+    fig, ax = plt.subplots(figsize=(14, 6))
+
+    bars_list = []
+    for i, (avg, std, label, color) in enumerate(zip(averages, std_devs, labels, colors[:num_sets])):
+        offset = (i - num_sets / 2 + 0.5) * width
+        bars = ax.bar(x + offset, avg, width, label=label, color=color,
+                      yerr=std, capsize=3, error_kw={'elinewidth': 1, 'capthick': 1})
+        bars_list.append(bars)
+
+    ax.set_ylabel('Average Score')
+    ax.set_xlabel('Score Category')
+    ax.set_title(title)
+    ax.set_xticks(x)
+    ax.set_xticklabels(categories, rotation=45, ha='right')
+    ax.set_ylim(0, 6.0)  # Increased to accommodate error bars
+    ax.legend()
+
+    for bars, avg_vals in zip(bars_list, averages):
+        for bar, height in zip(bars, avg_vals):
+            ax.text(
+                bar.get_x() + bar.get_width() / 2,
+                height + 0.05,
+                f'{height:.1f}',
+                ha='center',
+                va='bottom',
+                fontsize=8
+            )
+
+    plt.tight_layout()
+    return fig
+
+
+def aggregate_results(args):
+    """Aggregate results from multiple parallel runs and generate plots."""
+    print(f"\n{'=' * 60}")
+    print(f"Aggregating results for run_id: {args.run_id}")
+    print(f"{'=' * 60}")
+
+    # Find all folders for this run_id
+    pattern = os.path.join("saved_tests", f"{args.run_id}_patients_*")
+    folders = glob(pattern)
+
+    if not folders:
+        print(f"❌ No folders found for run_id: {args.run_id}")
+        return
+
+    print(f"Found {len(folders)} parallel run folders")
+
+    # Load and combine all CSVs
+    good_dfs = []
+    bad1_dfs = []
+    bad_feedback_dfs = []
+    bad2_dfs = []
+
+    for folder in sorted(folders):
+        print(f"  Loading from {os.path.basename(folder)}...")
+        good_dfs.append(pd.read_csv(os.path.join(folder, "good_student_scores.csv")))
+        bad1_dfs.append(pd.read_csv(os.path.join(folder, "bad_student_1st_scores.csv")))
+        bad_feedback_dfs.append(pd.read_csv(os.path.join(folder, "bad_student_feedback_scores.csv")))
+        bad2_dfs.append(pd.read_csv(os.path.join(folder, "bad_student_2nd_scores.csv")))
+
+    # Combine dataframes
+    df_good = pd.concat(good_dfs, ignore_index=True)
+    df_bad1 = pd.concat(bad1_dfs, ignore_index=True)
+    df_bad_feedback = pd.concat(bad_feedback_dfs, ignore_index=True)
+    df_bad2 = pd.concat(bad2_dfs, ignore_index=True)
+
+    # Create aggregated folder
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    agg_folder = os.path.join("saved_tests", f"{args.run_id}_aggregated_{timestamp}")
+    os.makedirs(agg_folder, exist_ok=True)
+
+    # Save combined CSVs
+    df_good.to_csv(os.path.join(agg_folder, "good_student_all.csv"), index=False)
+    df_bad1.to_csv(os.path.join(agg_folder, "bad_student_1st_all.csv"), index=False)
+    df_bad_feedback.to_csv(os.path.join(agg_folder, "bad_student_feedback_all.csv"), index=False)
+    df_bad2.to_csv(os.path.join(agg_folder, "bad_student_2nd_all.csv"), index=False)
+
+    # Convert to score dictionaries
+    score_cols = [col for col in df_good.columns if col not in ["Student", "Patient"]]
+
+    scores_good = {col: df_good[col].tolist() for col in score_cols}
+    scores_bad1 = {col: df_bad1[col].tolist() for col in score_cols}
+    scores_bad_feedback = {col: df_bad_feedback[col].tolist() for col in score_cols}
+    scores_bad2 = {col: df_bad2[col].tolist() for col in score_cols}
+
+    # Generate plots
+    print("\n[AGGREGATION] Generating Plot 1: Good vs Bad (1st)...")
+    fig1 = plot_scores(
+        [scores_good, scores_bad1],
+        ["Good Student", "Bad Student (1st)"],
+        "Plot 1: Good Student vs Bad Student (1st Attempt)",
+        colors=['skyblue', 'orange']
+    )
+    fig1.savefig(os.path.join(agg_folder, "plot1_good_vs_bad1.png"), bbox_inches='tight')
+    plt.close(fig1)
+
+    print("[AGGREGATION] Generating Plot 2: Bad (1st) vs Bad+Feedback vs Bad (2nd)...")
+    fig2 = plot_scores(
+        [scores_bad1, scores_bad_feedback, scores_bad2],
+        ["Bad Student (1st)", "Bad Student + Feedback", "Bad Student (2nd)"],
+        "Plot 2: Learning Effect - Before vs After Feedback vs Second Attempt",
+        colors=['orange', 'green', 'red']
+    )
+    fig2.savefig(os.path.join(agg_folder, "plot2_learning_effect.png"), bbox_inches='tight')
+    plt.close(fig2)
+
+    print("[AGGREGATION] Generating Plot 3: All Four Conditions...")
+    fig3 = plot_scores(
+        [scores_good, scores_bad1, scores_bad_feedback, scores_bad2],
+        ["Good Student", "Bad Student (1st)", "Bad Student + Feedback", "Bad Student (2nd)"],
+        "Plot 3: Complete Comparison - All Conditions",
+        colors=['skyblue', 'orange', 'green', 'red']
+    )
+    fig3.savefig(os.path.join(agg_folder, "plot3_all_conditions.png"), bbox_inches='tight')
+    plt.close(fig3)
 
     print(f"\n{'=' * 60}")
-    print(f"Run complete! All results saved in: {save_folder}")
+    print(f"✅ Aggregation complete! Results saved to {agg_folder}")
     print(f"{'=' * 60}")
+    print(f"\nGenerated files:")
+    print(f"  - Combined CSVs for all 4 conditions")
+    print(f"  - plot1_good_vs_bad1.png")
+    print(f"  - plot2_learning_effect.png")
+    print(f"  - plot3_all_conditions.png")
 
 
 # =============================
-# === Main Execution =========
+# === Main Entry Point ====
 # =============================
 
 if __name__ == "__main__":
-    print("=" * 60)
-    print("Automated Testing Pipeline")
-    print("=" * 60)
+    parser = argparse.ArgumentParser(description="Automated Testing Pipeline for MI/CBT")
 
-    # Configuration
-    # num_patients = count_files("Patient_Profiles/MI/")
-    num_patients = 1
-    student_profiles = [11]
+    parser.add_argument("--mode", type=str, choices=["MI", "CBT"], default="MI",
+                        help="Therapy mode: MI or CBT")
+    parser.add_argument("--start-patient", type=int,
+                        help="Start patient index (for parallel execution)")
+    parser.add_argument("--end-patient", type=int,
+                        help="End patient index (for parallel execution)")
+    parser.add_argument("--run-id", type=str, default="exp1",
+                        help="Run identifier for grouping parallel runs")
+    parser.add_argument("--aggregate", action="store_true",
+                        help="Aggregate results from parallel runs")
 
-    print(f"\nConfiguration:")
-    print(f"  Number of patients: {num_patients}")
-    print(f"  Student profiles: {student_profiles}")
-    print(f"  Mode: CBT")
-    print()
+    args = parser.parse_args()
 
-    # Run tests
-    run_all_tests(num_patients, student_profiles)
+    if args.aggregate:
+        aggregate_results(args)
+    else:
+        if args.start_patient is None or args.end_patient is None:
+            parser.error("--start-patient and --end-patient are required for parallel execution")
+        run_parallel_experiments(args)
