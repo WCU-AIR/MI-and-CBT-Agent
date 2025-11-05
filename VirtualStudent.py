@@ -161,8 +161,8 @@ class VirtualStudent:
             therapy_type: TherapyType,
             student_index: int = 0,
             prompt_addon: str = "",
-            model: str = "gpt-4o-mini",
-            temperature: float = 1.0
+            model: str = "gpt-4.1-mini",
+            temperature: float = 0.5
     ):
         """
         Initialize a virtual student.

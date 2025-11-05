@@ -121,24 +121,25 @@ class LearningBuddy:
         """
         return {
             'verification': ChatOpenAI(
-                model="gpt-4o-mini",
+                model="gpt-4.1-mini",
                 temperature=0,
                 api_key=self.api_key
             ),
             'summary': ChatOpenAI(
-                model="gpt-4o-mini",
+                model="gpt-4.1-mini",
                 temperature=0.2,
                 api_key=self.api_key
             ),
             'virtual_patient': ChatOpenAI(
-                model="gpt-4o-mini",
-                temperature=0.5,
+                model="gpt-4.1-mini",
+                temperature=1.0,
                 api_key=self.api_key
             ),
             'feedback': ChatOpenAI(
-                model="gpt-4o-mini",
-                temperature=0.1,
-                api_key=self.api_key
+                model="google/gemini-2.5-flash-lite-preview-09-2025",
+                temperature=0.2,
+                base_url="https://openrouter.ai/api/v1",
+                api_key=load_openrouter_api_key()
             ),
             'virtual_evaluator': ChatOpenAI(
                 model="google/gemini-2.5-flash-lite-preview-09-2025",
