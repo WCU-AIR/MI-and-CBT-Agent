@@ -493,6 +493,7 @@ Structure your feedback using all the sections mentioned.
 
         # Generate detailed feedback
         try:
+            logging.info("Generating detailed feedback from LLM...")
             response = self.llm_feedback.invoke(messages)
             messages.append(response)
             feedback_text = response.content.strip()

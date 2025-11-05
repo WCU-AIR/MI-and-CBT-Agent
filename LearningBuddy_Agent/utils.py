@@ -73,7 +73,7 @@ class FileManager:
         """
         # Select Patients available in the current mode
         if self.mode == LearningBuddy.STACER_MODE or self.mode == LearningBuddy.CBT_MODE:
-            directory += "/STACER"
+            directory += "/CBT"
         elif self.mode == LearningBuddy.MI_MODE:
             directory += "/MI"
         # Add more modes ...
@@ -117,7 +117,7 @@ class FileManager:
 
         Args:
             case_study: Patient case study content
-            stacer: Completed STACER/evaluation form
+            stacer: Completed CBT/evaluation form
             detailed_feedback: Detailed feedback text
             transcript: Formatted interview transcript
             presentation: Formatted presentation transcript
@@ -197,19 +197,19 @@ class PromptLoader:
         # Define prompt paths for each mode
         self.prompt_paths = {
             1: {  # STACER_MODE
-                'Clinical Summary': 'Prompts/STACER/clinical_summary_prompt.txt',
-                'Virtual Patient': 'Prompts/STACER/virtual_patient_prompt.txt',
-                'Verification': 'Prompts/STACER/patient_profile_verification_prompt.txt',
-                'Feedback': 'Prompts/STACER/feedback_agent_prompt.txt',
-                'STACER Prompt': 'Prompts/STACER/STACER_form_prompt.txt',
-                'Virtual Evaluator': 'Prompts/STACER/virtual_evaluator_prompt.txt',
+                'Clinical Summary': 'Prompts/CBT/clinical_summary_prompt.txt',
+                'Virtual Patient': 'Prompts/CBT/virtual_patient_prompt.txt',
+                'Verification': 'Prompts/CBT/patient_profile_verification_prompt.txt',
+                'Feedback': 'Prompts/CBT/feedback_agent_prompt.txt',
+                'CBT Prompt': 'Prompts/CBT/STACER_form_prompt.txt',
+                'Virtual Evaluator': 'Prompts/CBT/virtual_evaluator_prompt.txt',
             },
             2: {  # MI_MODE
                 'Clinical Summary': 'Prompts/MI/clinical_summary_prompt.txt',
                 'Virtual Patient': 'Prompts/MI/virtual_patient_prompt.txt',
                 'Verification': 'Prompts/MI/patient_profile_verification_prompt.txt',
                 'Feedback': 'Prompts/MI/feedback_agent_prompt.txt',
-                'STACER Prompt': 'Prompts/MI/MI_form_prompt.txt',
+                'CBT Prompt': 'Prompts/MI/MI_form_prompt.txt',
                 'Virtual Evaluator': 'Prompts/MI/virtual_evaluator_prompt.txt',
             },
             3: {  # CBT_MODE
@@ -217,7 +217,7 @@ class PromptLoader:
                 'Virtual Patient': 'Prompts/CBT/virtual_patient_prompt.txt',
                 'Verification': 'Prompts/CBT/patient_profile_verification_prompt.txt',
                 'Feedback': 'Prompts/CBT/feedback_agent_prompt.txt',
-                'STACER Prompt': 'Prompts/CBT/CBT_form_prompt.txt',
+                'CBT Prompt': 'Prompts/CBT/CBT_form_prompt.txt',
                 'Virtual Evaluator': 'Prompts/CBT/virtual_evaluator_prompt.txt',
             }
         }
@@ -225,8 +225,8 @@ class PromptLoader:
         # Define context paths for each mode
         self.context_paths = {
             1: {  # STACER_MODE
-                'Feedback Criteria': 'Context/STACER/feedback_criteria.txt',
-                'Evaluation Form': 'Context/STACER/COD_STACER.txt',
+                'Feedback Criteria': 'Context/CBT/feedback_criteria.txt',
+                'Evaluation Form': 'Context/CBT/COD_STACER.txt',
             },
             2: {  # MI_MODE
                 'Feedback Criteria': 'Context/MI/feedback_criteria_MI_5point.txt',

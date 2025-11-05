@@ -162,7 +162,7 @@ class VirtualStudent:
             student_index: int = 0,
             prompt_addon: str = "",
             model: str = "gpt-4o-mini",
-            temperature: float = 0.5
+            temperature: float = 1.0
     ):
         """
         Initialize a virtual student.

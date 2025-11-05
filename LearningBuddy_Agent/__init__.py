@@ -1,7 +1,7 @@
 """
 LearningBuddy Agent - Virtual Patient Simulation System
 
-A multi-modal therapy training system supporting STACER, MI (Motivational Interviewing),
+A multi-modal therapy training system supporting CBT, MI (Motivational Interviewing),
 and CBT (Cognitive Behavioral Therapy) evaluation modes.
 
 Main Components:

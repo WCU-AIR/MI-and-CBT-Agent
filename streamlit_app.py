@@ -252,11 +252,11 @@ def get_available_patient_profiles(directory='Patient_Profiles', mode=None):
     if mode is None:
         mode = LearningBuddy.STACER_MODE
     if mode == LearningBuddy.STACER_MODE:
-        directory += "/STACER"
+        directory += "/CBT"
     elif mode == LearningBuddy.MI_MODE:
         directory += "/MI"
     elif mode == LearningBuddy.CBT_MODE:
-        directory += "/STACER"
+        directory += "/CBT"
     # Add more modes ...
 
     try:
@@ -403,7 +403,7 @@ if not st.session_state.get("api_key") or not st.session_state.get("elevenlabs_a
 
     # Mode selection dropdown
     mode_options = {
-        "STACER Evaluation": LearningBuddy.STACER_MODE,
+        "CBT Evaluation": LearningBuddy.STACER_MODE,
         "Motivational Interviewing (MI) Evaluation": LearningBuddy.MI_MODE,
         "Cognitive Behavioural Therapy (CBT) Evaluation": LearningBuddy.CBT_MODE
         # APPEND MORE OPTIONS HERE
@@ -463,11 +463,11 @@ if st.session_state.api_key:
     if selected_option != "Random":
         print("Selected option",selected_option)
         if st.session_state.learning_buddy.mode == LearningBuddy.STACER_MODE:
-            st.session_state.selected_patient_profile = os.path.join('Patient_Profiles\STACER', selected_option)
+            st.session_state.selected_patient_profile = os.path.join('Patient_Profiles/CBT', selected_option)
         elif st.session_state.learning_buddy.mode == LearningBuddy.MI_MODE:
             st.session_state.selected_patient_profile = os.path.join('Patient_Profiles\MI', selected_option)
         elif st.session_state.learning_buddy.mode == LearningBuddy.CBT_MODE:
-            st.session_state.selected_patient_profile = os.path.join('Patient_Profiles\STACER', selected_option)
+            st.session_state.selected_patient_profile = os.path.join('Patient_Profiles/CBT', selected_option)
 
         # Show preview
         with st.sidebar.expander("📋 Profile Preview"):
@@ -484,7 +484,7 @@ if mode == None:
     if st.session_state.learning_buddy.mode == LearningBuddy.STACER_MODE:
         feature = st.sidebar.radio(
             "Navigate",
-            ["💬 STACER Practice Session",],      # "📊 Session Analytics🎯", "Performance Review"
+            ["💬 CBT Practice Session",],      # "📊 Session Analytics🎯", "Performance Review"
             index=0,
             disabled=st.session_state.processing_phase is not None
         )
@@ -506,7 +506,7 @@ else:
     if mode == LearningBuddy.STACER_MODE:
         feature = st.sidebar.radio(
             "Navigate",
-            ["💬 STACER Practice Session",],      # "📊 Session Analytics🎯", "Performance Review"
+            ["💬 CBT Practice Session",],      # "📊 Session Analytics🎯", "Performance Review"
             index=0,
             disabled=st.session_state.processing_phase is not None
         )
@@ -561,7 +561,7 @@ if not st.session_state.learning_buddy and st.session_state.api_key:
         st.error(f"❌ Error initializing LearningBuddy: {str(e)}")
 
 # Main Content
-if feature == "💬 STACER Practice Session" or feature == "💬 MI Practice Session" or feature == "💬 CBT Practice Session":
+if feature == "💬 CBT Practice Session" or feature == "💬 MI Practice Session" or feature == "💬 CBT Practice Session":
     # Session header
     st.markdown('<div class="session-header">', unsafe_allow_html=True)
     st.markdown("# 💬 Virtual Patient Interview")
@@ -823,7 +823,7 @@ if feature == "💬 STACER Practice Session" or feature == "💬 MI Practice Ses
                 if mode == LearningBuddy.STACER_MODE:
                     st.session_state.chat_messages.append({
                         "role": "evaluator",
-                        "content": "Hello and welcome to your simulated STACER evaluation. I will be evaluating your patient interviewing skills today. When you have finished speaking with the patient, press the 'End Interview' button. "
+                        "content": "Hello and welcome to your simulated CBT evaluation. I will be evaluating your patient interviewing skills today. When you have finished speaking with the patient, press the 'End Interview' button. "
                     })
                 elif mode == LearningBuddy.MI_MODE:
                        st.session_state.chat_messages.append({
@@ -1051,12 +1051,12 @@ if feature == "💬 STACER Practice Session" or feature == "💬 MI Practice Ses
                 st.session_state.session_data.get('cod_stacer') and
                 not st.session_state.session_active and
                 not st.session_state.processing_phase):
-            # Use tabs for Feedback and STACER form
+            # Use tabs for Feedback and CBT form
             print(st.session_state.learning_buddy.mode)
             mode = st.session_state.learning_buddy.mode
-            # Use tabs for Feedback and STACER/MI form
+            # Use tabs for Feedback and CBT/MI form
             if mode == LearningBuddy.STACER_MODE:
-                tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["💬 Evaluator Chat", "📝 COD STACER Form", " 📊 Detailed Feedback" , "🎤 Patient Interview Transcript", "🗣️ Case Presentation Transcript", "👤 Patient Profile"])
+                tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["💬 Evaluator Chat", "📝 COD CBT Form", " 📊 Detailed Feedback" , "🎤 Patient Interview Transcript", "🗣️ Case Presentation Transcript", "👤 Patient Profile"])
             elif mode == LearningBuddy.MI_MODE: 
                 tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["💬 Evaluator Chat", "📝 MI Evaluation Form", " 📊 Detailed Feedback" , "🎤 Patient Interview Transcript", "🗣️ Case Presentation Transcript", "👤 Patient Profile"])
             elif mode == LearningBuddy.CBT_MODE: 
@@ -1182,9 +1182,9 @@ if feature == "💬 STACER Practice Session" or feature == "💬 MI Practice Ses
 
                         del st.session_state['latest_evaluator_audio']
 
-            # Tab 2: COD STACER Form
+            # Tab 2: COD CBT Form
             with tab2:
-                # Extract STACER text
+                # Extract CBT text
                 STACER_text = st.session_state.session_data.get('cod_stacer')
 
                 st.session_state.session_data['cod_stacer'] = STACER_text
@@ -1194,9 +1194,9 @@ if feature == "💬 STACER Practice Session" or feature == "💬 MI Practice Ses
 
                 # Display with Streamlit
                 if mode == LearningBuddy.STACER_MODE:
-                    st.markdown("### 📄 Completed COD STACER Evaluation Form")
+                    st.markdown("### 📄 Completed COD CBT Evaluation Form")
                     st.info(
-                        "This is a structured Core STACER form based on your most recent session. This form evaluates the expectations of PGY3 and PGY4 students.")
+                        "This is a structured Core CBT form based on your most recent session. This form evaluates the expectations of PGY3 and PGY4 students.")
                 elif mode == LearningBuddy.MI_MODE:
                     st.markdown("### 📄 Completed MI Evaluation Form")
                     st.info(
@@ -1451,7 +1451,7 @@ elif feature == "📊 Session Analytics":
             
             with st.expander(f"🔬 Chat Session {session_num} - {session['timestamp'].strftime('%Y-%m-%d %H:%M')} ({duration:.1f}m) - {profile_display}"):
                 if mode == LearningBuddy.STACER_MODE:
-                    tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["📋 Patient Data", "💬 Conversation", "📝 Feedback",  "📋 COD STACER", "📊 Metrics", "🔬 LangGraph Details"])
+                    tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["📋 Patient Data", "💬 Conversation", "📝 Feedback",  "📋 COD CBT", "📊 Metrics", "🔬 LangGraph Details"])
                 
                 elif mode ==LearningBuddy.MI_MODE:
                     tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["📋 Patient Data", "💬 Conversation", "📝 Feedback",  "📋 Motivational Interviewing", "📊 Metrics", "🔬 LangGraph Details"])
@@ -1492,7 +1492,7 @@ elif feature == "📊 Session Analytics":
                     cod_stacer = langgraph_data.get('cod_stacer', '')
                     if cod_stacer:
                         if mode == LearningBuddy.STACER_MODE:
-                            st.markdown("**COD Clinical Observation Document (STACER):**")
+                            st.markdown("**COD Clinical Observation Document (CBT):**")
                         elif mode == LearningBuddy.MI_MODE:
                             st.markdown("**MI Observation Document (MI Evaluation Form):**")
                         elif mode == LearningBuddy.CBT_MODE:
@@ -1500,7 +1500,7 @@ elif feature == "📊 Session Analytics":
                         st.markdown(cod_stacer, unsafe_allow_html=True)
                     else:
                         if mode == LearningBuddy.STACER_MODE:
-                            st.warning("No COD STACER data available for this session.")
+                            st.warning("No COD CBT data available for this session.")
                         elif mode == LearningBuddy.MI_MODE:
                             st.warning("No MI Evaluation data available for this session.")
                         elif mode == LearningBuddy.CBT_MODE:

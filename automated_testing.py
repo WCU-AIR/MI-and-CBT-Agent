@@ -1,19 +1,19 @@
+import argparse
 import csv
+import json
 import os
 import re
 import time
-import argparse
-import json
 from datetime import datetime
-from pathlib import Path
 from glob import glob
+from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-from LearningBuddy_Agent import LearningBuddy, STACER_MODE, MI_MODE, CBT_MODE
 import VirtualStudent
+from LearningBuddy_Agent import LearningBuddy, MI_MODE, CBT_MODE
 from utils.api_key_loader import load_openai_api_key
 
 # =============================
@@ -36,7 +36,7 @@ API_KEY = load_openai_api_key()
 
 def get_patient_files(mode, start_idx=None, end_idx=None):
     """Get patient files in alphabetical order, optionally sliced by range."""
-    patient_dir = PATIENT_DIR_MI if mode == MI_MODE else PATIENT_DIR_CBT
+    patient_dir = PATIENT_DIR_MI if mode == 'MI' else PATIENT_DIR_CBT
 
     all_files = sorted([
         os.path.join(patient_dir, f)
@@ -49,14 +49,32 @@ def get_patient_files(mode, start_idx=None, end_idx=None):
     return all_files
 
 
-def run_test(therapy_mode, patient_profile_path, student_profile_number, api_key_input=None):
-    """Run one simulated therapy session between student and patient."""
+def run_test(therapy_mode, patient_profile_path, student_profile_number,
+             patient_number=None, student_type=None, api_key_input=None):
+    """Run one simulated therapy session between student and patient.
+
+    Args:
+        therapy_mode: 'MI' or 'CBT'
+        patient_profile_path: Path to patient profile file
+        student_profile_number: Index of student profile to use
+        patient_number: Optional patient identifier for folder naming
+        student_type: Optional student type ('good', 'bad_1st', 'bad_feedback') for folder naming
+        api_key_input: Optional API key
+    """
     api_key_input = API_KEY or "key"
 
     modes = {
         'MI': MI_MODE,
         'CBT': CBT_MODE
     }
+
+    # Prepare session metadata for folder naming
+    session_metadata = {}
+    if patient_number is not None:
+        session_metadata['patient_number'] = patient_number
+    if student_type is not None:
+        session_metadata['student_type'] = student_type
+
     # Initialize LearningBuddy with appropriate mode
     if modes[therapy_mode] == MI_MODE:
         lb = LearningBuddy(api_key_input, "null", MI_MODE)
@@ -75,9 +93,14 @@ def run_test(therapy_mode, patient_profile_path, student_profile_number, api_key
     else:
         raise ValueError("Invalid therapy mode selected")
 
-    # Load patient profile and start session
+    # Load patient profile and start session with metadata
     case = lb.load_patient_profile(patient_profile_path)
-    session_result = lb.start_session(case_study=case)
+
+    # Pass metadata to start_session if the method supports it
+    if session_metadata:
+        session_result = lb.start_session(case_study=case, session_metadata=session_metadata)
+    else:
+        session_result = lb.start_session(case_study=case)
 
     # Run 10 exchanges between student and patient
     for _ in range(10):
@@ -97,19 +120,38 @@ def run_test(therapy_mode, patient_profile_path, student_profile_number, api_key
     }
 
 
-def extract_scores(eval_file_paths):
-    """Extract numerical scores from feedback text files."""
-    categories = [
-        "Cultivating Change Talk",
-        "Softening Sustain Talk",
-        "Partnership",
-        "Empathy",
-        "Acceptance",
-        "Direction",
-        "Autonomy Support",
-        "Collaboration",
-        "Evocation"
-    ]
+def extract_scores(eval_file_paths, mode):
+    """Extract numerical scores from feedback text files based on therapy mode."""
+
+    # Define categories based on therapy mode
+    if mode == "MI":
+        categories = [
+            "Cultivating Change Talk",
+            "Softening Sustain Talk",
+            "Partnership",
+            "Empathy",
+            "Acceptance",
+            "Direction",
+            "Autonomy Support",
+            "Collaboration",
+            "Evocation"
+        ]
+    elif mode == "CBT":
+        categories = [
+            "Agenda",
+            "Feedback",
+            "Understanding",
+            "Interpersonal Effectiveness",
+            "Collaboration",
+            "Pacing and Efficient Use of Time",
+            "Guided Discovery",
+            "Focusing on Key Cognitions or Behaviors",
+            "Strategy for Change",
+            "Application of CBT Techniques",
+            "Homework"
+        ]
+    else:
+        raise ValueError(f"Invalid mode: {mode}. Must be 'MI' or 'CBT'")
 
     scores = {cat: [] for cat in categories}
 
@@ -179,13 +221,23 @@ def run_experiment(student_num, patient_files, student_csv_path, mode, label, sa
     saved_data_directory = []
 
     # Run tests for each patient
-    for patient in patient_files:
-        results = run_test(mode, patient, student_num)
+    for patient_idx, patient in enumerate(patient_files):
+        # Extract patient number from filename or use index
+        patient_basename = os.path.basename(patient)
+        patient_number = patient_idx + 1  # Or extract from filename if it contains a number
+
+        results = run_test(
+            mode,
+            patient,
+            student_num,
+            patient_number=patient_number,
+            student_type=label
+        )
         feedback_path = results["folder_name"] + "/detailed_feedback.txt"
         saved_data_directory.append(feedback_path)
 
     # Extract scores from all feedback files
-    student_scores = extract_scores(saved_data_directory)
+    student_scores = extract_scores(saved_data_directory, mode)
 
     # Build results table
     for idx, patient_file in enumerate(patient_files):
@@ -211,6 +263,7 @@ def run_experiment(student_num, patient_files, student_csv_path, mode, label, sa
 
 
 def run_parallel_experiments(args):
+    STUDENT_CSV_PATH = "Student_Profiles/AK_StudentAgent_10Profiles - Prompts for CBT Students.csv" if args.mode == "CBT" else "Student_Profiles/AK_StudentAgent_10Profiles - Prompts for MI Students.csv"
     """Main function for parallel execution mode."""
     start_time = time.time()
 
@@ -281,7 +334,7 @@ def run_parallel_experiments(args):
         # Run single patient with feedback
         results = run_test(args.mode, patient_file, BAD_STUDENT_NUM)
         feedback_path_new = results["folder_name"] + "/detailed_feedback.txt"
-        scores_single = extract_scores([feedback_path_new])
+        scores_single = extract_scores([feedback_path_new], args.mode)
 
         for cat in scores_bad_feedback.keys():
             scores_bad_feedback[cat].extend(scores_single[cat])
@@ -306,17 +359,6 @@ def run_parallel_experiments(args):
         )
         writer.writeheader()
         writer.writerows(all_results_feedback)
-
-    # 4️⃣ Bad student (2nd attempt, no feedback)
-    print("\n[STEP 4] Running Bad Student (2nd attempt, no feedback)...")
-    scores_bad2, _ = run_experiment(
-        BAD_STUDENT_NUM,
-        patient_files,
-        STUDENT_CSV_PATH,
-        args.mode,
-        "bad_student_2nd",
-        save_folder
-    )
 
     # Save elapsed time
     elapsed_seconds = time.time() - start_time
@@ -406,20 +448,17 @@ def aggregate_results(args):
     good_dfs = []
     bad1_dfs = []
     bad_feedback_dfs = []
-    bad2_dfs = []
 
     for folder in sorted(folders):
         print(f"  Loading from {os.path.basename(folder)}...")
         good_dfs.append(pd.read_csv(os.path.join(folder, "good_student_scores.csv")))
         bad1_dfs.append(pd.read_csv(os.path.join(folder, "bad_student_1st_scores.csv")))
         bad_feedback_dfs.append(pd.read_csv(os.path.join(folder, "bad_student_feedback_scores.csv")))
-        bad2_dfs.append(pd.read_csv(os.path.join(folder, "bad_student_2nd_scores.csv")))
 
     # Combine dataframes
     df_good = pd.concat(good_dfs, ignore_index=True)
     df_bad1 = pd.concat(bad1_dfs, ignore_index=True)
     df_bad_feedback = pd.concat(bad_feedback_dfs, ignore_index=True)
-    df_bad2 = pd.concat(bad2_dfs, ignore_index=True)
 
     # Create aggregated folder
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -430,7 +469,6 @@ def aggregate_results(args):
     df_good.to_csv(os.path.join(agg_folder, "good_student_all.csv"), index=False)
     df_bad1.to_csv(os.path.join(agg_folder, "bad_student_1st_all.csv"), index=False)
     df_bad_feedback.to_csv(os.path.join(agg_folder, "bad_student_feedback_all.csv"), index=False)
-    df_bad2.to_csv(os.path.join(agg_folder, "bad_student_2nd_all.csv"), index=False)
 
     # Convert to score dictionaries
     score_cols = [col for col in df_good.columns if col not in ["Student", "Patient"]]
@@ -438,7 +476,6 @@ def aggregate_results(args):
     scores_good = {col: df_good[col].tolist() for col in score_cols}
     scores_bad1 = {col: df_bad1[col].tolist() for col in score_cols}
     scores_bad_feedback = {col: df_bad_feedback[col].tolist() for col in score_cols}
-    scores_bad2 = {col: df_bad2[col].tolist() for col in score_cols}
 
     # Generate plots
     print("\n[AGGREGATION] Generating Plot 1: Good vs Bad (1st)...")
@@ -451,22 +488,22 @@ def aggregate_results(args):
     fig1.savefig(os.path.join(agg_folder, "plot1_good_vs_bad1.png"), bbox_inches='tight')
     plt.close(fig1)
 
-    print("[AGGREGATION] Generating Plot 2: Bad (1st) vs Bad+Feedback vs Bad (2nd)...")
+    print("[AGGREGATION] Generating Plot 2: Bad (1st) vs Bad+Feedback...")
     fig2 = plot_scores(
-        [scores_bad1, scores_bad_feedback, scores_bad2],
-        ["Bad Student (1st)", "Bad Student + Feedback", "Bad Student (2nd)"],
-        "Plot 2: Learning Effect - Before vs After Feedback vs Second Attempt",
-        colors=['orange', 'green', 'red']
+        [scores_bad1, scores_bad_feedback],
+        ["Bad Student (1st)", "Bad Student + Feedback"],
+        "Plot 2: Learning Effect - Before vs After Feedback",
+        colors=['orange', 'green']
     )
     fig2.savefig(os.path.join(agg_folder, "plot2_learning_effect.png"), bbox_inches='tight')
     plt.close(fig2)
 
-    print("[AGGREGATION] Generating Plot 3: All Four Conditions...")
+    print("[AGGREGATION] Generating Plot 3: All Three Conditions...")
     fig3 = plot_scores(
-        [scores_good, scores_bad1, scores_bad_feedback, scores_bad2],
-        ["Good Student", "Bad Student (1st)", "Bad Student + Feedback", "Bad Student (2nd)"],
+        [scores_good, scores_bad1, scores_bad_feedback],
+        ["Good Student", "Bad Student (1st)", "Bad Student + Feedback"],
         "Plot 3: Complete Comparison - All Conditions",
-        colors=['skyblue', 'orange', 'green', 'red']
+        colors=['skyblue', 'orange', 'green']
     )
     fig3.savefig(os.path.join(agg_folder, "plot3_all_conditions.png"), bbox_inches='tight')
     plt.close(fig3)
@@ -475,7 +512,7 @@ def aggregate_results(args):
     print(f"✅ Aggregation complete! Results saved to {agg_folder}")
     print(f"{'=' * 60}")
     print(f"\nGenerated files:")
-    print(f"  - Combined CSVs for all 4 conditions")
+    print(f"  - Combined CSVs for all 3 conditions")
     print(f"  - plot1_good_vs_bad1.png")
     print(f"  - plot2_learning_effect.png")
     print(f"  - plot3_all_conditions.png")

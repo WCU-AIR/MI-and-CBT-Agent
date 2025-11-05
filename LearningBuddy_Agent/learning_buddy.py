@@ -3,7 +3,9 @@ from datetime import datetime
 from typing import Optional, Dict
 from pydantic import SecretStr
 from langchain_openai import ChatOpenAI
+from dotenv import load_dotenv
 
+from utils.api_key_loader import load_openrouter_api_key
 from .graph_state import LBState, PatientContext
 from .utils import FileManager, PromptLoader
 from .workflows import (
@@ -12,16 +14,51 @@ from .workflows import (
     FeedbackWorkflow,
     EvaluatorWorkflow
 )
+import logging
+import colorlog
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s [%(levelname)s] %(message)s",
-    handlers=[
-        logging.FileHandler("learningbuddy.log"),
-        logging.StreamHandler()
-    ]
+# Get the root logger
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+
+# Clear any existing handlers
+logger.handlers.clear()
+
+# Create a colored formatter for console
+colored_formatter = colorlog.ColoredFormatter(
+    "%(log_color)s%(asctime)s [%(levelname)s]%(reset)s %(message)s",
+    datefmt='%Y-%m-%d %H:%M:%S',
+    log_colors={
+        'DEBUG': 'cyan',
+        'INFO': 'green',
+        'WARNING': 'yellow',
+        'ERROR': 'red',
+        'CRITICAL': 'red,bg_white',
+    }
 )
+
+# Create a plain formatter for file output (no colors)
+file_formatter = logging.Formatter(
+    "%(asctime)s [%(levelname)s] %(message)s",
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+
+# Create and configure file handler
+file_handler = logging.FileHandler("learningbuddy.log")
+file_handler.setLevel(logging.INFO)
+file_handler.setFormatter(file_formatter)
+
+# Create and configure console handler
+console_handler = logging.StreamHandler()
+console_handler.setLevel(logging.INFO)
+console_handler.setFormatter(colored_formatter)
+
+# Add handlers to logger
+logger.addHandler(file_handler)
+logger.addHandler(console_handler)
+
+
 
 ###############################################################
 ###                  Mode Constants                         ###
@@ -95,7 +132,7 @@ class LearningBuddy:
             ),
             'virtual_patient': ChatOpenAI(
                 model="gpt-4o-mini",
-                temperature=1,
+                temperature=0.5,
                 api_key=self.api_key
             ),
             'feedback': ChatOpenAI(
@@ -104,9 +141,10 @@ class LearningBuddy:
                 api_key=self.api_key
             ),
             'virtual_evaluator': ChatOpenAI(
-                model="gpt-4o-mini",
-                temperature=0.1,
-                api_key=self.api_key
+                model="google/gemini-2.5-flash-lite-preview-09-2025",
+                temperature=0.2,
+                base_url="https://openrouter.ai/api/v1",
+                api_key=load_openrouter_api_key()
             )
         }
 
@@ -146,7 +184,8 @@ class LearningBuddy:
     def start_session(
             self,
             case_study: Optional[str] = None,
-            selected_profile: Optional[str] = None
+            selected_profile: Optional[str] = None,
+            session_metadata: Optional[dict] = None
     ) -> LBState:
         """
         Start a new session using initialization workflow.
@@ -154,6 +193,8 @@ class LearningBuddy:
         Args:
             case_study: Pre-loaded case study content (optional)
             selected_profile: Path to specific patient profile (optional)
+            session_metadata: Additional metadata for folder naming (optional)
+                             Expected keys: 'patient_number', 'student_type'
 
         Returns:
             Initial state after running initialization workflow
@@ -165,7 +206,18 @@ class LearningBuddy:
 
         # Generate session metadata
         now = datetime.now()
-        session_id = f"session_{now.strftime('%Y%m%d_%H%M%S')}"
+        timestamp = now.strftime('%Y%m%d_%H%M%S')
+
+        # Build session_id with metadata
+        session_id_parts = [f"session_{timestamp}"]
+
+        if session_metadata:
+            if 'patient_number' in session_metadata:
+                session_id_parts.append(f"patient_{session_metadata['patient_number']}")
+            if 'student_type' in session_metadata:
+                session_id_parts.append(session_metadata['student_type'])
+
+        session_id = "_".join(session_id_parts)
 
         # Build initial state
         initial_state: LBState = {
@@ -188,7 +240,9 @@ class LearningBuddy:
                 "session_id": session_id,
                 "start_time": now.isoformat(),
                 "end_time": None,
-                "selected_profile": selected_profile
+                "selected_profile": selected_profile,
+                "patient_number": session_metadata.get('patient_number') if session_metadata else None,
+                "student_type": session_metadata.get('student_type') if session_metadata else None
             },
 
             # Error handling
