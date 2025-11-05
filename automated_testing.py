@@ -50,7 +50,7 @@ def get_patient_files(mode, start_idx=None, end_idx=None):
 
 
 def run_test(therapy_mode, patient_profile_path, student_profile_number,
-             patient_number=None, student_type=None, api_key_input=None):
+             patient_number=None, student_type=None, student_feedback_csv="", api_key_input=None):
     """Run one simulated therapy session between student and patient.
 
     Args:
@@ -75,20 +75,27 @@ def run_test(therapy_mode, patient_profile_path, student_profile_number,
     if student_type is not None:
         session_metadata['student_type'] = student_type
 
+    add_on = ""
+    if not student_feedback_csv == "":
+        df = pd.read_csv(student_feedback_csv, quotechar='"', skipinitialspace=True)
+        add_on = df.loc[student_profile_number, "Prompt"]
+
     # Initialize LearningBuddy with appropriate mode
     if modes[therapy_mode] == MI_MODE:
         lb = LearningBuddy(api_key_input, "null", MI_MODE)
         student = VirtualStudent.VirtualStudent(
             api_key_input,
             VirtualStudent.VirtualStudent.MI,
-            student_index=student_profile_number
+            student_index=student_profile_number,
+            prompt_addon=add_on
         )
     elif modes[therapy_mode] == CBT_MODE:
         lb = LearningBuddy(api_key_input, "null", CBT_MODE)
         student = VirtualStudent.VirtualStudent(
             api_key_input,
             VirtualStudent.VirtualStudent.CBT,
-            student_index=student_profile_number
+            student_index=student_profile_number,
+            prompt_addon=add_on
         )
     else:
         raise ValueError("Invalid therapy mode selected")
@@ -182,15 +189,39 @@ def extract_scores(eval_file_paths, mode):
 
 
 def extract_recommendations(feedback_files):
-    """Extract 'Recommendations' section from feedback files."""
+    """
+    Extracts the 'Recommendations' section content, stopping cleanly
+    before the subsequent 'Overall Session Score' or separator.
+    """
     recommendations = []
 
+    # Define the pattern to find the Recommendations section.
+    # 1. Looks for the word "Recommendations" (case-insensitive).
+    # 2. Uses a non-greedy match (.*?) to capture the content following it.
+    # 3. Uses a lookahead assertion (?=...) to define the end boundary
+    #    without including it in the captured group. The boundary is
+    #    a horizontal rule (---) or the heading "## Overall Session Score".
+    pattern = re.compile(
+        r"Recommendations\s*(.*?)(?=\n\s*---|\n\s*## Overall Session Score)",
+        re.DOTALL | re.IGNORECASE
+    )
+
     for path in feedback_files:
-        text = Path(path).read_text(encoding="utf-8")
-        pattern = re.compile(r"\s*Recommendations.*", re.DOTALL | re.IGNORECASE)
+        try:
+            # Assumes 'path' points to a file that can be read.
+            text = Path(path).read_text(encoding="utf-8")
+        except FileNotFoundError:
+            print(f"Error: File not found at {path}")
+            continue
+        except Exception as e:
+            print(f"Error reading file {path}: {e}")
+            continue
+
         matches = pattern.findall(text)
 
         if matches:
+            # The desired content is in the first (and only) capturing group,
+            # so we take the last match's content and clean up whitespace.
             recommendations.append(matches[-1].strip())
 
     return recommendations
@@ -201,11 +232,12 @@ def augment_student_prompt(student_csv, student_num, feedback_texts, save_as="St
     df = pd.read_csv(student_csv, quotechar='"', skipinitialspace=True)
     combined_feedback = "\n\n---\n\n".join(feedback_texts)
     improvement_intro = (
-        "Now, reflect on the weaknesses of the previous instructions and strive to enhance your MI skills and performance during the therapy session with the patient by strictly incorporating the list of recommendations. "
+        "Now, reflect on the weaknesses of the previous instructions and strive to enhance your skills and performance during the therapy session with the patient by strictly incorporating the list of recommendations. "
         "End the conversation after exactly 10 clinician–patient exchanges. \n\n"
     )
 
-    df.loc[student_num, "Prompt"] += f"\n\n# Feedback to incorporate:\n{improvement_intro}{combined_feedback}"
+    df.loc[student_num, "Prompt"] += f"\n\n# Feedback to incorporate:\n{improvement_intro}" \
+                                     f"{combined_feedback}"
     df.to_csv(save_as, index=False)
     return save_as
 
@@ -233,7 +265,7 @@ def run_experiment(student_num, patient_files, student_csv_path, mode, label, sa
             patient_number=patient_number,
             student_type=label
         )
-        feedback_path = results["folder_name"] + "/detailed_feedback.txt"
+        feedback_path = results["folder_name"] + f"/detailed_feedback_{label}.txt"
         saved_data_directory.append(feedback_path)
 
     # Extract scores from all feedback files
@@ -294,69 +326,169 @@ def run_parallel_experiments(args):
     with open(os.path.join(save_folder, "metadata.json"), "w") as f:
         json.dump(metadata, f, indent=2)
 
-    # 1️⃣ Good student
-    print("\n[STEP 1] Running Good Student...")
-    scores_good, _ = run_experiment(
-        GOOD_STUDENT_NUM,
-        patient_files,
-        STUDENT_CSV_PATH,
-        args.mode,
-        "good_student",
-        save_folder
-    )
+    # Initialize storage for all results
+    all_feedback_files_bad1 = []
+    all_results_good = []
+    all_results_bad1 = []
+    all_results_feedback = []
 
-    # 2️⃣ Bad student (1st attempt)
-    print("\n[STEP 2] Running Bad Student (1st attempt)...")
-    scores_bad1, feedback_files = run_experiment(
-        BAD_STUDENT_NUM,
-        patient_files,
-        STUDENT_CSV_PATH,
-        args.mode,
-        "bad_student_1st",
-        save_folder
-    )
+    df = pd.read_csv(STUDENT_CSV_PATH, quotechar='"', skipinitialspace=True)
 
-    # 3️⃣ Bad student with individual feedback
-    print("\n[STEP 3] Running Bad Student with Individual Feedback...")
-    scores_bad_feedback = {cat: [] for cat in scores_bad1.keys()}
+    # Process each patient with all three student types
+    for patient_idx, patient_file in enumerate(patient_files):
+        print(f"\n{'=' * 60}")
+        print(f"Processing Patient {patient_idx + 1}/{num_patients}: {os.path.basename(patient_file)}")
+        print(f"{'=' * 60}")
 
-    for i, (feedback_path, patient_file) in enumerate(zip(feedback_files, patient_files)):
-        print(f"  Processing feedback {i + 1}/{num_patients}...")
+        patient_number = patient_idx + 1
 
-        feedback_text = extract_recommendations([feedback_path])
+        # 1️⃣ Good student for this patient
+        print(f"  [STEP 1] Running Good Student...")
+        results_good = run_test(
+            args.mode,
+            patient_file,
+            GOOD_STUDENT_NUM,
+            patient_number=patient_number,
+            student_type="good_student"
+        )
+        # Look for the feedback file - it might be named differently
+        folder_name = results_good["folder_name"]
+
+        # Try to find the feedback file (check different possible names)
+        possible_names = [
+            "detailed_feedback_good_student.txt",
+            "detailed_feedback.txt",
+            "feedback.txt"
+        ]
+
+        feedback_path_good = None
+        for name in possible_names:
+            potential_path = os.path.join(folder_name, name)
+            if os.path.exists(potential_path):
+                feedback_path_good = potential_path
+                break
+
+        if feedback_path_good is None:
+            # List all files in the folder to see what's actually there
+            print(f"  Warning: Could not find feedback file in {folder_name}")
+            print(
+                f"  Files in folder: {os.listdir(folder_name) if os.path.exists(folder_name) else 'folder does not exist'}")
+            # Use a default pattern - adjust based on what you see
+            feedback_path_good = os.path.join(folder_name, "detailed_feedback.txt")
+
+        scores_good = extract_scores([feedback_path_good], args.mode)
+
+        # Store good student result
+        row_good = {
+            "Student": df.iloc[GOOD_STUDENT_NUM]["Name"],
+            "Patient": os.path.basename(patient_file)
+        }
+        for key, values in scores_good.items():
+            row_good[key] = values[0] if values else None
+        all_results_good.append(row_good)
+
+        # 2️⃣ Bad student (1st attempt) for this patient
+        print(f"  [STEP 2] Running Bad Student (1st attempt)...")
+        results_bad1 = run_test(
+            args.mode,
+            patient_file,
+            BAD_STUDENT_NUM,
+            patient_number=patient_number,
+            student_type="bad_student_1st"
+        )
+        folder_name_bad1 = results_bad1["folder_name"]
+
+        # Find feedback file for bad student
+        feedback_path_bad1 = None
+        for name in possible_names:
+            potential_path = os.path.join(folder_name_bad1, name)
+            if os.path.exists(potential_path):
+                feedback_path_bad1 = potential_path
+                break
+
+        if feedback_path_bad1 is None:
+            feedback_path_bad1 = os.path.join(folder_name_bad1, "detailed_feedback.txt")
+
+        all_feedback_files_bad1.append(feedback_path_bad1)
+        scores_bad1 = extract_scores([feedback_path_bad1], args.mode)
+
+        # Store bad student 1st result
+        row_bad1 = {
+            "Student": df.iloc[BAD_STUDENT_NUM]["Name"],
+            "Patient": os.path.basename(patient_file)
+        }
+        for key, values in scores_bad1.items():
+            row_bad1[key] = values[0] if values else None
+        all_results_bad1.append(row_bad1)
+
+        # 3️⃣ Bad student with feedback for this patient
+        print(f"  [STEP 3] Running Bad Student with Feedback...")
+        feedback_text = extract_recommendations([feedback_path_bad1])
         updated_csv = augment_student_prompt(
             STUDENT_CSV_PATH,
             BAD_STUDENT_NUM,
             feedback_text,
-            save_as=os.path.join(save_folder, f"temp_student_feedback_{i}.csv")
+            save_as=os.path.join(save_folder, f"temp_student_feedback_{patient_idx}.csv")
         )
 
-        # Run single patient with feedback
-        results = run_test(args.mode, patient_file, BAD_STUDENT_NUM)
-        feedback_path_new = results["folder_name"] + "/detailed_feedback.txt"
-        scores_single = extract_scores([feedback_path_new], args.mode)
+        results_feedback = run_test(
+            args.mode,
+            patient_file,
+            BAD_STUDENT_NUM,
+            patient_number=patient_number,
+            student_type="bad_student_feedback",
+            student_feedback_csv=updated_csv
+        )
+        folder_name_feedback = results_feedback["folder_name"]
 
-        for cat in scores_bad_feedback.keys():
-            scores_bad_feedback[cat].extend(scores_single[cat])
+        # Find feedback file
+        feedback_path_feedback = None
+        for name in possible_names:
+            potential_path = os.path.join(folder_name_feedback, name)
+            if os.path.exists(potential_path):
+                feedback_path_feedback = potential_path
+                break
 
-    # Save feedback results
-    all_results_feedback = []
-    df = pd.read_csv(STUDENT_CSV_PATH, quotechar='"', skipinitialspace=True)
-    for idx, patient_file in enumerate(patient_files):
-        row = {
+        if feedback_path_feedback is None:
+            feedback_path_feedback = os.path.join(folder_name_feedback, "detailed_feedback.txt")
+
+        scores_feedback = extract_scores([feedback_path_feedback], args.mode)
+
+        # Store bad student with feedback result
+        row_feedback = {
             "Student": df.iloc[BAD_STUDENT_NUM]["Name"] + " (with feedback)",
             "Patient": os.path.basename(patient_file)
         }
-        for key, values in scores_bad_feedback.items():
-            row[key] = values[idx] if idx < len(values) else None
-        all_results_feedback.append(row)
+        for key, values in scores_feedback.items():
+            row_feedback[key] = values[0] if values else None
+        all_results_feedback.append(row_feedback)
 
-    csv_path = os.path.join(save_folder, "bad_student_feedback_scores.csv")
-    with open(csv_path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(
-            f,
-            fieldnames=["Student", "Patient"] + list(scores_bad_feedback.keys())
-        )
+    # Save all results to CSV files
+    print("\n" + "=" * 60)
+    print("Saving results...")
+    print("=" * 60)
+
+    # Determine score columns from first result
+    score_cols = [k for k in all_results_good[0].keys() if k not in ["Student", "Patient"]]
+
+    # Save good student scores
+    csv_path_good = os.path.join(save_folder, "good_student_scores.csv")
+    with open(csv_path_good, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=["Student", "Patient"] + score_cols)
+        writer.writeheader()
+        writer.writerows(all_results_good)
+
+    # Save bad student 1st scores
+    csv_path_bad1 = os.path.join(save_folder, "bad_student_1st_scores.csv")
+    with open(csv_path_bad1, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=["Student", "Patient"] + score_cols)
+        writer.writeheader()
+        writer.writerows(all_results_bad1)
+
+    # Save bad student feedback scores
+    csv_path_feedback = os.path.join(save_folder, "bad_student_feedback_scores.csv")
+    with open(csv_path_feedback, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=["Student", "Patient"] + score_cols)
         writer.writeheader()
         writer.writerows(all_results_feedback)
 
@@ -367,7 +499,6 @@ def run_parallel_experiments(args):
 
     print(f"\n✅ Parallel run complete! Results saved to {save_folder}")
     return save_folder
-
 
 def plot_scores(score_sets, labels, title, colors=None):
     """Plot bar chart comparing multiple sets of scores with error bars."""

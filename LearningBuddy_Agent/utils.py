@@ -5,7 +5,8 @@ from typing import Optional, List, Dict, Tuple
 from langchain.schema import AIMessage, HumanMessage, SystemMessage
 import logging
 
-from LearningBuddy import LearningBuddy
+# Import main class and constants from learning_buddy module
+
 
 
 ###############################################################
@@ -72,9 +73,9 @@ class FileManager:
             FileNotFoundError: If no profiles found in directory
         """
         # Select Patients available in the current mode
-        if self.mode == LearningBuddy.STACER_MODE or self.mode == LearningBuddy.CBT_MODE:
+        if self.mode == 'STACER' or self.mode == 'CBT':
             directory += "/CBT"
-        elif self.mode == LearningBuddy.MI_MODE:
+        elif self.mode == 'MI':
             directory += "/MI"
         # Add more modes ...
 
@@ -314,7 +315,7 @@ def format_interview_messages(messages: List) -> Tuple[List, str]:
     # Format for LangChain (with role prefixes)
     formatted_messages = []
     for m in conversation_messages:
-        prefix = "PSYCHIATRIST: " if isinstance(m, AIMessage) else "PATIENT: "
+        prefix = "PATIENT: " if isinstance(m, AIMessage) else "PSYCHIATRIST: "
         content = prefix + m.content
         msg_cls = AIMessage if isinstance(m, AIMessage) else HumanMessage
         formatted_messages.append(msg_cls(content=content))
@@ -322,7 +323,7 @@ def format_interview_messages(messages: List) -> Tuple[List, str]:
     # Format as plain text transcript
     formatted_lines = []
     for m in conversation_messages:
-        prefix = "PSYCHIATRIST: " if isinstance(m, AIMessage) else "PATIENT: "
+        prefix = "PATIENT: " if isinstance(m, AIMessage) else "PSYCHIATRIST: "
         formatted_lines.append(prefix + m.content)
 
     formatted_transcript = "\n".join(formatted_lines)
