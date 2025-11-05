@@ -103,11 +103,8 @@ def run_test(therapy_mode, patient_profile_path, student_profile_number,
     # Load patient profile and start session with metadata
     case = lb.load_patient_profile(patient_profile_path)
 
-    # Pass metadata to start_session if the method supports it
-    if session_metadata:
-        session_result = lb.start_session(case_study=case, session_metadata=session_metadata)
-    else:
-        session_result = lb.start_session(case_study=case)
+    # Pass metadata to start_session
+    session_result = lb.start_session(case_study=case, session_metadata=session_metadata)
 
     # Run 10 exchanges between student and patient
     for _ in range(10):
@@ -119,13 +116,14 @@ def run_test(therapy_mode, patient_profile_path, student_profile_number,
     # End session and get feedback
     session_result = lb.end_session()
     final_state = lb.get_session_state()
-    folder_name = final_state.get("folder_name", "")
+
+    # Get folder name - try both possible keys
+    folder_name = final_state.get("export_folder") or final_state.get("folder_name", "")
 
     return {
         "session_result": session_result,
         "folder_name": folder_name
     }
-
 
 def extract_scores(eval_file_paths, mode):
     """Extract numerical scores from feedback text files based on therapy mode."""

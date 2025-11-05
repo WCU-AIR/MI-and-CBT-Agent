@@ -111,7 +111,8 @@ class FileManager:
             transcript: str,
             presentation: str,
             mode: int,
-            base_dir: str = "Saved_Sessions"
+            base_dir: str = "Saved_Sessions",
+            session_id: str = None
     ) -> str:
         """
         Save all session data to timestamped folder.
@@ -124,6 +125,7 @@ class FileManager:
             presentation: Formatted presentation transcript
             mode: Current mode (STACER_MODE, MI_MODE, or CBT_MODE)
             base_dir: Base directory for saving sessions
+            session_id: Optional session identifier with metadata (patient number, student type)
 
         Returns:
             Path to the created folder
@@ -131,9 +133,46 @@ class FileManager:
         # Create base directory if it doesn't exist
         os.makedirs(base_dir, exist_ok=True)
 
-        # Create timestamped subfolder
-        timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
-        folder_name = os.path.join(base_dir, f"session_export_{timestamp}")
+        # Create timestamped subfolder with session_id if provided
+        if session_id:
+            # Use the full session_id which already includes timestamp and metadata
+            # Format: session_20251105_175800_patient_1_good_student
+            # Convert to: session_export_2025-11-05_17-58_patient_1_good_student
+            if session_id.startswith("session_"):
+                # Extract timestamp and metadata parts
+                parts = session_id.split("_", 2)  # ['session', '20251105', '175800_patient_1_good_student']
+                if len(parts) >= 3:
+                    date_part = parts[1]  # '20251105'
+                    time_and_meta = parts[2]  # '175800_patient_1_good_student'
+
+                    # Split time from metadata
+                    time_meta_parts = time_and_meta.split("_", 1)  # ['175800', 'patient_1_good_student']
+                    time_part = time_meta_parts[0]  # '175800'
+                    metadata_part = time_meta_parts[1] if len(time_meta_parts) > 1 else ""  # 'patient_1_good_student'
+
+                    # Format timestamp
+                    formatted_date = f"{date_part[:4]}-{date_part[4:6]}-{date_part[6:8]}"
+                    formatted_time = f"{time_part[:2]}-{time_part[2:4]}"
+
+                    # Build folder name
+                    if metadata_part:
+                        folder_name = os.path.join(base_dir,
+                                                   f"session_export_{formatted_date}_{formatted_time}_{metadata_part}")
+                    else:
+                        folder_name = os.path.join(base_dir, f"session_export_{formatted_date}_{formatted_time}")
+                else:
+                    # Fallback if format is unexpected
+                    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
+                    folder_name = os.path.join(base_dir, f"session_export_{timestamp}")
+            else:
+                # Fallback if session_id doesn't start with 'session_'
+                timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
+                folder_name = os.path.join(base_dir, f"session_export_{timestamp}")
+        else:
+            # Original behavior if no session_id provided
+            timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
+            folder_name = os.path.join(base_dir, f"session_export_{timestamp}")
+
         os.makedirs(folder_name, exist_ok=True)
 
         # Define files to save based on mode

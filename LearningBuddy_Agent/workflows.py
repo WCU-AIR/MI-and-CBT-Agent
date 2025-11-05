@@ -606,6 +606,9 @@ After that, respond to any questions the user may ask about the evaluation or th
         presentation = state.get("formatted_presentation", "")
 
         # Save session data using FileManager
+        session_metadata = state.get("metadata", {})
+        session_id = session_metadata.get("session_id")
+
         try:
             folder_name = self.file_manager.save_session_data(
                 case_study=case_study,
@@ -613,7 +616,8 @@ After that, respond to any questions the user may ask about the evaluation or th
                 detailed_feedback=detailed_feedback,
                 transcript=transcript,
                 presentation=presentation,
-                mode=self.mode
+                mode=self.mode,
+                session_id=session_id
             )
         except Exception as e:
             logging.error(f"Error saving session data: {str(e)}")
