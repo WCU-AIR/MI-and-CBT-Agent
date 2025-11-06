@@ -184,8 +184,10 @@ class VirtualStudent:
         # Initialize LLM
         self.llm = ChatOpenAI(
             model=model,
-            temperature=temperature,
-            api_key=self.api_key
+            temperature=0.5,
+            api_key=self.api_key,
+            max_retries=5,  # Retry up to 3 times
+            timeout=30
         )
 
         # Load student profile

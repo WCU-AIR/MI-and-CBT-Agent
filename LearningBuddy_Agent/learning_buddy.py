@@ -123,29 +123,39 @@ class LearningBuddy:
             'verification': ChatOpenAI(
                 model="gpt-4.1-mini",
                 temperature=0,
-                api_key=self.api_key
+                api_key=self.api_key,
+                max_retries=5,  # Retry up to 3 times
+                timeout=30
             ),
             'summary': ChatOpenAI(
                 model="gpt-4.1-mini",
                 temperature=0.2,
-                api_key=self.api_key
+                api_key=self.api_key,
+                max_retries=5,  # Retry up to 3 times
+                timeout=30
             ),
             'virtual_patient': ChatOpenAI(
                 model="gpt-4.1-mini",
                 temperature=1.0,
-                api_key=self.api_key
+                api_key=self.api_key,
+                max_retries=5,  # Retry up to 3 times
+                timeout=30
             ),
             'feedback': ChatOpenAI(
                 model="google/gemini-2.5-flash-lite-preview-09-2025",
                 temperature=0.2,
                 base_url="https://openrouter.ai/api/v1",
-                api_key=load_openrouter_api_key()
+                api_key=load_openrouter_api_key(),
+                max_retries=5,  # Retry up to 3 times
+                timeout=30
             ),
             'virtual_evaluator': ChatOpenAI(
                 model="google/gemini-2.5-flash-lite-preview-09-2025",
                 temperature=0.2,
                 base_url="https://openrouter.ai/api/v1",
-                api_key=load_openrouter_api_key()
+                api_key=load_openrouter_api_key(),
+                max_retries=5,  # Retry up to 3 times
+                timeout=30
             )
         }
 

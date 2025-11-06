@@ -1,4 +1,5 @@
 import pandas as pd
+from matplotlib import pyplot as plt
 from scipy.stats import wilcoxon
 
 # === Load CSV ===
@@ -60,3 +61,58 @@ if results:
     print(results_df[["Category","Good Mean", "Bad Mean", "stat", "P-value"]].to_string(index=False))
 else:
     print("⚠️ No valid pairs found for Wilcoxon test.")
+
+
+def plot_significance_summary(wilcoxon_df):
+    """Create a summary plot showing which categories have significant differences."""
+    plt.rcParams['font.family'] = 'sans-serif'
+    plt.rcParams['font.sans-serif'] = ['Arial']
+    plt.rcParams['font.size'] = 10
+
+    # Sort by difference (largest to smallest)
+    df_sorted = wilcoxon_df.sort_values('Difference', ascending=True)
+
+    fig, ax = plt.subplots(figsize=(10, 8))
+
+    categories = df_sorted['Category'].values
+    differences = df_sorted['Difference'].values
+    p_values = df_sorted['P_Value'].values
+
+    # Color bars based on significance
+    colors = []
+    for p in p_values:
+        if pd.isna(p):
+            colors.append('gray')
+        elif p < 0.001:
+            colors.append('darkgreen')
+        elif p < 0.01:
+            colors.append('green')
+        elif p < 0.05:
+            colors.append('lightgreen')
+        else:
+            colors.append('lightcoral')
+
+    bars = ax.barh(categories, differences, color=colors)
+
+    # Add p-value annotations
+    for i, (bar, p, sig) in enumerate(zip(bars, p_values, df_sorted['Significance'].values)):
+        x_pos = bar.get_width()
+        if x_pos > 0:
+            ha = 'left'
+            x_pos += 0.02
+        else:
+            ha = 'right'
+            x_pos -= 0.02
+
+        if not pd.isna(p):
+            ax.text(x_pos, bar.get_y() + bar.get_height() / 2,
+                    f'{sig}', ha=ha, va='center', fontweight='bold')
+
+    ax.axvline(x=0, color='black', linestyle='-', linewidth=0.8)
+    ax.set_xlabel('Mean Difference (Expert - Novice)')
+    ax.set_title(
+        'Statistical Significance of Performance Differences\n*** p<0.001, ** p<0.01, * p<0.05, ns = not significant')
+    ax.grid(axis='x', alpha=0.3)
+
+    plt.tight_layout()
+    return fig

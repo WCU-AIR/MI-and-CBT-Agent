@@ -11,6 +11,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from scipy.stats import wilcoxon
 
 import VirtualStudent
 from LearningBuddy_Agent import LearningBuddy, MI_MODE, CBT_MODE
@@ -610,8 +611,8 @@ def aggregate_results(args):
     print("\n[AGGREGATION] Generating Plot 1: Good vs Bad (1st)...")
     fig1 = plot_scores(
         [scores_good, scores_bad1],
-        ["Good Student", "Bad Student (1st)"],
-        "Plot 1: Good Student vs Bad Student (1st Attempt)",
+        ["Expert Student", "Novice Student"],
+        "Plot 1: Expert Student vs Bad Student (1st Attempt)",
         colors=['skyblue', 'orange']
     )
     fig1.savefig(os.path.join(agg_folder, "plot1_good_vs_bad1.png"), bbox_inches='tight')
@@ -620,7 +621,7 @@ def aggregate_results(args):
     print("[AGGREGATION] Generating Plot 2: Bad (1st) vs Bad+Feedback...")
     fig2 = plot_scores(
         [scores_bad1, scores_bad_feedback],
-        ["Bad Student (1st)", "Bad Student + Feedback"],
+        ["Novice Student", "Novice Student + Feedback"],
         "Plot 2: Learning Effect - Before vs After Feedback",
         colors=['orange', 'green']
     )
@@ -630,12 +631,114 @@ def aggregate_results(args):
     print("[AGGREGATION] Generating Plot 3: All Three Conditions...")
     fig3 = plot_scores(
         [scores_good, scores_bad1, scores_bad_feedback],
-        ["Good Student", "Bad Student (1st)", "Bad Student + Feedback"],
+        ["Expert Student", "Novice Student", "Novice Student + Feedback"],
         "Plot 3: Complete Comparison - All Conditions",
         colors=['skyblue', 'orange', 'green']
     )
     fig3.savefig(os.path.join(agg_folder, "plot3_all_conditions.png"), bbox_inches='tight')
     plt.close(fig3)
+
+    # ========================================
+    # === WILCOXON SIGNED-RANK TESTS ===
+    # ========================================
+
+    # Test 1: Good vs Bad (1st)
+    print("\n" + "=" * 60)
+    print("WILCOXON TEST 1: Expert vs Novice (1st Attempt)")
+    print("=" * 60)
+
+    good_sorted = df_good.sort_values("Patient").reset_index(drop=True)
+    bad1_sorted = df_bad1.sort_values("Patient").reset_index(drop=True)
+
+    n_pairs_1 = min(len(good_sorted), len(bad1_sorted))
+    good_sorted = good_sorted.head(n_pairs_1)
+    bad1_sorted = bad1_sorted.head(n_pairs_1)
+
+    print(f"Paired {n_pairs_1} expert/novice sessions for analysis.\n")
+
+    results_1 = []
+    for cat in score_cols:
+        if cat not in good_sorted.columns or cat not in bad1_sorted.columns:
+            continue
+
+        x = good_sorted[cat].astype(float)
+        y = bad1_sorted[cat].astype(float)
+
+        valid = (x != y) & (~x.isna()) & (~y.isna())
+        x_valid, y_valid = x[valid], y[valid]
+
+        if len(x_valid) < 2:
+            print(f"⚠️  Skipping {cat}: not enough valid pairs ({len(x_valid)})")
+            continue
+
+        stat, p = wilcoxon(x_valid, y_valid)
+        results_1.append({
+            "Category": cat,
+            "Good Mean": x_valid.mean(),
+            "Bad Mean": y_valid.mean(),
+            "stat": stat,
+            "P-value": p,
+            "Significant (<0.05)?": p < 0.05
+        })
+
+    if results_1:
+        results_df_1 = pd.DataFrame(results_1)
+        print("Wilcoxon Signed-Rank Test Results:")
+        print(results_df_1[["Category", "stat", "P-value"]].to_string(index=False))
+        print("\n")
+        print(results_df_1[["Category", "Good Mean", "Bad Mean", "stat", "P-value"]].to_string(index=False))
+        results_df_1.to_csv(os.path.join(agg_folder, "wilcoxon_test1_good_vs_bad1.csv"), index=False)
+    else:
+        print("⚠️ No valid pairs found for Wilcoxon test.")
+
+    # Test 2: Bad (1st) vs Bad (with Feedback)
+    print("\n" + "=" * 60)
+    print("WILCOXON TEST 2: Novice (1st) vs Novice (with Feedback)")
+    print("=" * 60)
+
+    bad1_sorted2 = df_bad1.sort_values("Patient").reset_index(drop=True)
+    feedback_sorted = df_bad_feedback.sort_values("Patient").reset_index(drop=True)
+
+    n_pairs_2 = min(len(bad1_sorted2), len(feedback_sorted))
+    bad1_sorted2 = bad1_sorted2.head(n_pairs_2)
+    feedback_sorted = feedback_sorted.head(n_pairs_2)
+
+    print(f"Paired {n_pairs_2} before/after feedback sessions for analysis.\n")
+
+    results_2 = []
+    for cat in score_cols:
+        if cat not in bad1_sorted2.columns or cat not in feedback_sorted.columns:
+            continue
+
+        x = bad1_sorted2[cat].astype(float)
+        y = feedback_sorted[cat].astype(float)
+
+        valid = (x != y) & (~x.isna()) & (~y.isna())
+        x_valid, y_valid = x[valid], y[valid]
+
+        if len(x_valid) < 2:
+            print(f"⚠️  Skipping {cat}: not enough valid pairs ({len(x_valid)})")
+            continue
+
+        stat, p = wilcoxon(x_valid, y_valid)
+        results_2.append({
+            "Category": cat,
+            "Before Mean": x_valid.mean(),
+            "After Mean": y_valid.mean(),
+            "stat": stat,
+            "P-value": p,
+            "Significant (<0.05)?": p < 0.05
+        })
+
+    if results_2:
+        results_df_2 = pd.DataFrame(results_2)
+        print("Wilcoxon Signed-Rank Test Results:")
+        print(results_df_2[["Category", "stat", "P-value"]].to_string(index=False))
+        print("\n")
+        print(results_df_2[["Category", "Before Mean", "After Mean", "stat", "P-value"]].to_string(index=False))
+        results_df_2.to_csv(os.path.join(agg_folder, "wilcoxon_test2_learning_effect.csv"), index=False)
+    else:
+        print("⚠️ No valid pairs found for Wilcoxon test.")
 
     print(f"\n{'=' * 60}")
     print(f"✅ Aggregation complete! Results saved to {agg_folder}")
@@ -645,7 +748,8 @@ def aggregate_results(args):
     print(f"  - plot1_good_vs_bad1.png")
     print(f"  - plot2_learning_effect.png")
     print(f"  - plot3_all_conditions.png")
-
+    print(f"  - wilcoxon_test1_good_vs_bad1.csv")
+    print(f"  - wilcoxon_test2_learning_effect.csv")
 
 # =============================
 # === Main Entry Point ====
