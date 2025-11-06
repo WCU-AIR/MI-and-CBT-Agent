@@ -616,6 +616,7 @@ def aggregate_results(args):
         colors=['skyblue', 'orange']
     )
     fig1.savefig(os.path.join(agg_folder, "plot1_good_vs_bad1.png"), bbox_inches='tight')
+    fig1.savefig(os.path.join(agg_folder, "plot1_good_vs_bad1.svg"), bbox_inches='tight')
     plt.close(fig1)
 
     print("[AGGREGATION] Generating Plot 2: Bad (1st) vs Bad+Feedback...")
@@ -626,6 +627,7 @@ def aggregate_results(args):
         colors=['orange', 'green']
     )
     fig2.savefig(os.path.join(agg_folder, "plot2_learning_effect.png"), bbox_inches='tight')
+    fig2.savefig(os.path.join(agg_folder, "plot2_learning_effect.svg"), bbox_inches='tight')
     plt.close(fig2)
 
     print("[AGGREGATION] Generating Plot 3: All Three Conditions...")
@@ -636,6 +638,7 @@ def aggregate_results(args):
         colors=['skyblue', 'orange', 'green']
     )
     fig3.savefig(os.path.join(agg_folder, "plot3_all_conditions.png"), bbox_inches='tight')
+    fig3.savefig(os.path.join(agg_folder, "plot3_all_conditions.svg"), bbox_inches='tight')
     plt.close(fig3)
 
     # ========================================
