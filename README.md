@@ -1,4 +1,4 @@
-# LearningBuddy - 16 July Update
+# To be Updated ...
 
 Learning buddy to teach medical residents how to treat patients with MDD
 
