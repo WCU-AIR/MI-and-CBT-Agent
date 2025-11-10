@@ -3,7 +3,7 @@ import os
 import re
 from pathlib import Path
 from datetime import datetime
-from typing import Dict, Optional
+from typing import Dict, Optional, List, Any
 import pandas as pd
 from langchain.schema import AIMessage, HumanMessage, SystemMessage
 
@@ -12,6 +12,14 @@ from LearningBuddy_Agent import LearningBuddy, MI_MODE, STACER_MODE
 from LearningBuddy_Agent.graph_state import LBState, PatientContext, SessionMetadata
 from utils.api_key_loader import load_openai_api_key
 
+# --- New Imports for Full Evaluation ---
+from sklearn.metrics import (
+    confusion_matrix,
+    accuracy_score,
+    precision_score,
+    recall_score,
+    f1_score
+)
 
 
 class TranscriptEvaluator:
@@ -217,12 +225,15 @@ class TranscriptEvaluator:
         for csv_file in sorted(csv_path.glob("*.csv")):
             try:
                 df = pd.read_csv(csv_file)
+                print('========================')
+                print(f"Processing transcript file: {csv_file}")
+                print('========================')
             except Exception as exc:
                 logging.exception("Failed to read transcript file %s: %s", csv_file, exc)
                 continue
 
             if df.empty:
-                logging.warning("Skipping empty transcript file %s", csv_file)
+                logging.error("Skipping empty transcript file %s", csv_file)
                 continue
 
             if "transcript_id" not in df.columns:
@@ -289,12 +300,20 @@ class TranscriptEvaluator:
         return results
 
 
+import pandas as pd
+import os
+import re
+
+
 def extract_case_feedback_data(root_path: str) -> pd.DataFrame:
     """
     Traverse all folders in `root_path`, extract Transcript ID, Quality Label,
     and Final Overall Score from the two text files (case_study.txt and MI_EVAL.txt),
     and return a DataFrame with columns:
         ['Transcript ID', 'Quality Label', 'Predicted Score'].
+
+    The function uses robust regular expressions to handle varied scoring formats
+    in MI_EVAL.txt, including decimals (which are rounded to the nearest integer).
     """
     data = []
 
@@ -325,25 +344,50 @@ def extract_case_feedback_data(root_path: str) -> pd.DataFrame:
             with open(feedback_path, "r", encoding="utf-8") as f:
                 text = f.read().strip()
 
-            # Try case 1: Overall MI Adherence: 3
-            match_direct = re.search(r"Overall MI Adherence:\s*(\d+)", text)
+            predicted_score = None
 
-            # Try range form followed by "Score:"
-            match_score = re.search(r"Score:\s*(\d+)", text)
+            # 1. Look for a score expressed as a fraction (e.g., '3/5', '1/5')
+            # This captures the numerator (the desired score).
+            # Captures '3' from 'Score: 3/5' or 'Comments: 3/5'
+            match_fraction = re.search(r"(\d)/5", text)
 
-            # Try checkbox form (☑ 3 or ✓ 3)
-            match_checkbox = re.search(r"[☑✓]\s*(\d+)", text)
+            # 2. Look for explicit score labels or checkboxes (e.g., '[X] 3', 'Score: 3')
+            # The (?:\b...|\b...) non-capturing group looks for a leading keyword or symbol
+            # The \d captures the single-digit score
+            match_score_label = re.search(r"(?:[☑✓]|\bScore|\bRating)[:\s]*(\d)", text, re.IGNORECASE)
 
-            if match_checkbox:
-                predicted_score = int(match_checkbox.group(1))
-            elif match_score:
-                predicted_score = int(match_score.group(1))
-            elif match_direct:
-                predicted_score = int(match_direct.group(1))
+            # 3. Look for the score right after the main header 'Overall MI Adherence:'
+            # Captures the first digit/decimal number (e.g., '3', '3.56') near the header.
+            # re.DOTALL allows the .* to match across newlines
+            match_header = re.search(r"Overall MI Adherence:.*?(\d+\.?\d*)", text, re.DOTALL | re.IGNORECASE)
+
+            # --- Prioritized Assignment ---
+            score_str = None
+
+            if match_fraction:
+                # Highest priority for clean X/5 format
+                score_str = match_fraction.group(1)
+            elif match_score_label:
+                # Second priority for explicit label/checkbox score
+                score_str = match_score_label.group(1)
+            elif match_header:
+                # Third priority for decimal or number next to the main title
+                score_str = match_header.group(1)
+
+            if score_str:
+                try:
+                    score_float = float(score_str)
+
+                    # Round the float to the nearest integer score (e.g., 3.56 -> 4, 1.11 -> 1)
+                    # This handles both whole numbers (3 -> 3) and decimals.
+                    predicted_score = int(round(score_float))
+                except ValueError:
+                    # Should not happen if regex works, but safe to catch
+                    predicted_score = None
             else:
                 predicted_score = None
 
-        # Only add if at least one item was found
+        # Only add if at least one piece of useful data was found
         if transcript_id or quality_label or predicted_score:
             data.append({
                 "Transcript ID": transcript_id,
@@ -355,48 +399,124 @@ def extract_case_feedback_data(root_path: str) -> pd.DataFrame:
     df = pd.DataFrame(data, columns=["Transcript ID", "Quality Label", "Predicted Score"])
     return df
 
-
-def evaluate_accuracy(csv_path: str) -> float:
+def run_full_evaluation_analysis(csv_path: str) -> Optional[pd.DataFrame]:
     """
-    Evaluate prediction accuracy based on a CSV containing:
-        - 'Quality Label' (values: 'high' or 'low')
-        - 'Predicted Score' (integer values)
+    Evaluates prediction accuracy by varying the threshold from 1 to 4.
+    Computes confusion matrix, accuracy, precision, recall, and F1-score
+    for each threshold.
 
-    Rules:
-        - Correct if (Quality Label == 'high' and Predicted Score > 2)
-        - Correct if (Quality Label == 'low' and Predicted Score <= 2)
-        - Otherwise incorrect
+    Args:
+        csv_path: Path to the CSV file containing 'Quality Label' and 'Predicted Score'.
 
     Returns:
-        accuracy (float): Percentage of correct predictions
+        A DataFrame containing the summary of metrics for each threshold, or None.
     """
-    # Load the dataframe
-    df = pd.read_csv(csv_path)
+    try:
+        df = pd.read_csv(csv_path)
+    except FileNotFoundError:
+        print(f"Error: Metrics file not found at {csv_path}")
+        return None
+    except Exception as e:
+        print(f"Error reading CSV {csv_path}: {e}")
+        return None
 
-    # Validate required columns
     required_cols = {"Quality Label", "Predicted Score"}
     if not required_cols.issubset(df.columns):
-        raise ValueError(f"CSV must contain the columns: {required_cols}")
+        print(f"Error: CSV must contain the columns: {required_cols}")
+        return None
 
-    # Calculate correctness per row
-    df["Correct"] = (
-            ((df["Quality Label"].str.lower() == "high") & (df["Predicted Score"] > 2))
-            | ((df["Quality Label"].str.lower() == "low") & (df["Predicted Score"] <= 2))
-    )
+    # Drop rows with missing labels or scores, as they can't be evaluated
+    df = df.dropna(subset=['Quality Label', 'Predicted Score'])
+    df['Predicted Score'] = pd.to_numeric(df['Predicted Score'], errors='coerce')
+    df = df.dropna(subset=['Predicted Score'])
+    df['Predicted Score'] = df['Predicted Score'].astype(int)
 
-    # Tally results
-    correct = df["Correct"].sum()
-    total = len(df)
-    incorrect = total - correct
-    accuracy = (correct / total) * 100 if total > 0 else 0
+    if df.empty:
+        print("No valid data to evaluate after dropping missing values.")
+        return None
 
-    # Print summary
-    print(f"✅ Total: {total}")
-    print(f"✔️ Correct: {correct}")
-    print(f"❌ Incorrect: {incorrect}")
-    print(f"🎯 Accuracy: {accuracy:.2f}%")
+    y_true = df['Quality Label'].str.lower()
+    y_score = df['Predicted Score']
 
-    return accuracy
+    print("\n" + "=" * 80)
+    print("Running Full Evaluation Analysis (Positive Label: 'high')")
+    print("=" * 80 + "\n")
+
+    results_data = []
+
+    # Define the order of labels for confusion matrix and metrics
+    # 'high' is the "positive" class, 'low' is the "negative" class
+    metric_labels = ['high', 'low']
+    pos_label = 'high'
+
+    # Threshold T means scores [1...T] are 'low', [T+1...5] are 'high'
+    for threshold in range(1, 5):  # This loops T=1, T=2, T=3, T=4
+
+        # Classify scores: > threshold is 'high', <= threshold is 'low'
+        y_pred = y_score.apply(lambda x: 'high' if x > threshold else 'low')
+
+        # --- Calculate Metrics ---
+        # We set zero_division=0 to handle cases where a denominator is zero
+        # (e.g., no 'high' predictions -> precision=0)
+
+        accuracy = accuracy_score(y_true, y_pred)
+        precision = precision_score(y_true, y_pred, labels=metric_labels, pos_label=pos_label, zero_division=0)
+        recall = recall_score(y_true, y_pred, labels=metric_labels, pos_label=pos_label, zero_division=0)
+        f1 = f1_score(y_true, y_pred, labels=metric_labels, pos_label=pos_label, zero_division=0)
+
+        # Get confusion matrix
+        # labels=['high', 'low'] means:
+        #          Pred: high | Pred: low
+        # True: high   [[  TP   ,    FN   ],
+        # True: low    [   FP   ,    TN   ]]
+        cm = confusion_matrix(y_true, y_pred, labels=metric_labels)
+
+        # Handle cases where matrix isn't 2x2 (e.g., only one class present/predicted)
+        if cm.shape == (2, 2):
+            tp, fn, fp, tn = cm.ravel()
+        else:
+            # Re-calculate manually for robustness if cm is not 2x2
+            tp = ((y_pred == 'high') & (y_true == 'high')).sum()
+            fn = ((y_pred == 'low') & (y_true == 'high')).sum()
+            fp = ((y_pred == 'high') & (y_true == 'low')).sum()
+            tn = ((y_pred == 'low') & (y_true == 'low')).sum()
+
+        # --- Print Report for this Threshold ---
+        print(f"--- Threshold: {threshold} (Scores {threshold + 1}-5 = 'high' | Scores 1-{threshold} = 'low') ---")
+        print(f"  Confusion Matrix (Rows: True, Cols: Pred; Labels: {metric_labels})")
+        print(f"    [[TP: {tp:^4}, FN: {fn:^4}]")
+        print(f"     [FP: {fp:^4}, TN: {tn:^4}]]\n")
+        print(f"  Accuracy:   {accuracy: .4f}")
+        print(f"  Precision:  {precision:.4f}  (TP / (TP + FP))")
+        print(f"  Recall:     {recall:.4f}  (TP / (TP + FN))")
+        print(f"  F1-Score:   {f1:.4f}\n")
+
+        results_data.append({
+            "Threshold": threshold,
+            "Rule (High)": f">{threshold}",
+            "TP": tp, "FN": fn, "FP": fp, "TN": tn,
+            "Accuracy": accuracy,
+            "Precision": precision,
+            "Recall": recall,
+            "F1-Score": f1
+        })
+
+    # --- Print Summary Table ---
+    results_df = pd.DataFrame(results_data)
+    print("=" * 80)
+    print("Summary of Metrics Across All Thresholds")
+    print("=" * 80)
+
+    # Set display options for cleaner table printing
+    with pd.option_context(
+            'display.max_rows', None,
+            'display.max_columns', None,
+            'display.width', 1000,
+            'display.float_format', '{:,.4f}'.format
+    ):
+        print(results_df.to_string(index=False))
+
+    return results_df
 
 
 def _prompt_for_value(env_key: str, prompt_text: str) -> str:
@@ -448,27 +568,28 @@ def main() -> None:
     # Get API key
     api_key = load_openai_api_key()
 
-    # Initialize evaluator
-    evaluator = TranscriptEvaluator(api_key=api_key, mode=MI_MODE)
+    # # Initialize evaluator
+    # evaluator = TranscriptEvaluator(api_key=api_key, mode=MI_MODE)
+    #
+    # # Run evaluations
+    # try:
+    #     results = evaluator.run_directory_evaluations(transcripts_dir)
+    # except Exception as exc:
+    #     logging.exception('Evaluation run failed')
+    #     print(f'Evaluation failed: {exc}')
+    #     return
+    #
+    # if not results:
+    #     print('No transcripts were processed. Verify the directory path and CSV schema.')
+    #     return
+    #
+    # # Display results
+    # for transcript_id, payload in results.items():
+    #     print(_format_result(transcript_id, payload))
+    #
+    # print('=' * 80)
+    # print('Evaluation complete.')
 
-    # Run evaluations
-    try:
-        results = evaluator.run_directory_evaluations(transcripts_dir)
-    except Exception as exc:
-        logging.exception('Evaluation run failed')
-        print(f'Evaluation failed: {exc}')
-        return
-
-    if not results:
-        print('No transcripts were processed. Verify the directory path and CSV schema.')
-        return
-
-    # Display results
-    for transcript_id, payload in results.items():
-        print(_format_result(transcript_id, payload))
-
-    print('=' * 80)
-    print('Evaluation complete.')
 
     # Extract metrics and calculate accuracy
     saved_sessions_path = "Saved_Sessions"
@@ -481,9 +602,9 @@ def main() -> None:
         print(f"Metrics saved to: {metrics_csv}")
 
         if os.path.exists(metrics_csv):
-            print("\nCalculating accuracy...")
-            accuracy = evaluate_accuracy(metrics_csv)
-            print(f"\nFinal Accuracy: {accuracy:.2f}%")
+            print("\nCalculating accuracy across all thresholds...")
+            # Run the new, full analysis
+            run_full_evaluation_analysis(metrics_csv)
 
 
 if __name__ == '__main__':

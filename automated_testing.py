@@ -500,7 +500,7 @@ def run_parallel_experiments(args):
     return save_folder
 
 
-def plot_scores(score_sets, labels, title, colors=None):
+def plot_scores(score_sets, labels, title, colors=None, ylim=(0, 6.0)):
     """Plot bar chart comparing multiple sets of scores with error bars."""
     plt.rcParams['font.family'] = 'sans-serif'
     plt.rcParams['font.sans-serif'] = ['Arial']
@@ -548,9 +548,12 @@ def plot_scores(score_sets, labels, title, colors=None):
         std_devs.append(std)
 
     x = np.arange(len(categories))
-    # Fixed bar width regardless of number of categories
-    bar_width = 0.30  # Fixed width per bar
-    width = bar_width
+
+    # --- MODIFICATION 2: Dynamic bar width to shrink whitespace between categories ---
+    # Target to use about 85% of the available space (1.0 unit) to leave a small gap (15% gap)
+    space_to_use = 0.85
+    width = space_to_use / num_sets
+    bar_width = width
 
     # Calculate figure width based on number of categories to maintain consistent spacing
     fig_width = max(14, len(categories) * num_sets * 0.8 + 4)
@@ -568,8 +571,10 @@ def plot_scores(score_sets, labels, title, colors=None):
     ax.set_title(title)
     ax.set_xticks(x)
     ax.set_xticklabels(categories, rotation=45, ha='right')
-    ax.set_ylim(0, 6.0)  # Increased to accommodate error bars
-    ax.legend()
+
+    # --- MODIFICATION 1: Use the new ylim parameter for consistent Y-axis ---
+    ax.set_ylim(ylim)
+    ax.legend(loc='upper left')
 
     # Add value labels in the middle of bars with 11pt Arial font
     for bars, avg_vals in zip(bars_list, averages):
@@ -586,7 +591,6 @@ def plot_scores(score_sets, labels, title, colors=None):
 
     plt.tight_layout()
     return fig
-
 def aggregate_results(args):
     """Aggregate results from multiple parallel runs and generate plots."""
     print(f"\n{'=' * 60}")
