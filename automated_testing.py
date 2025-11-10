@@ -504,7 +504,7 @@ def plot_scores(score_sets, labels, title, colors=None, ylim=(0, 6.0)):
     """Plot bar chart comparing multiple sets of scores with error bars."""
     plt.rcParams['font.family'] = 'sans-serif'
     plt.rcParams['font.sans-serif'] = ['Arial']
-    plt.rcParams['font.size'] = 14
+    plt.rcParams['font.size'] = 20
 
     if colors is None:
         colors = ['skyblue', 'orange', 'green', 'red']
@@ -551,7 +551,7 @@ def plot_scores(score_sets, labels, title, colors=None, ylim=(0, 6.0)):
 
     # --- MODIFICATION 2: Dynamic bar width to shrink whitespace between categories ---
     # Target to use about 85% of the available space (1.0 unit) to leave a small gap (15% gap)
-    space_to_use = 0.85
+    space_to_use = 0.65
     width = space_to_use / num_sets
     bar_width = width
 
@@ -570,7 +570,8 @@ def plot_scores(score_sets, labels, title, colors=None, ylim=(0, 6.0)):
     ax.set_xlabel('Score Category')
     ax.set_title(title)
     ax.set_xticks(x)
-    ax.set_xticklabels(categories, rotation=45, ha='right')
+    ax.set_xticklabels([])
+    # ax.set_xticklabels(categories, rotation=45, ha='right')
 
     # --- MODIFICATION 1: Use the new ylim parameter for consistent Y-axis ---
     ax.set_ylim(ylim)
@@ -585,12 +586,14 @@ def plot_scores(score_sets, labels, title, colors=None, ylim=(0, 6.0)):
                 f'{height:.1f}',
                 ha='center',
                 va='center',  # Center vertically
-                fontsize=14,  # Changed to 11pt
+                fontsize=20,  # Changed to 11pt
                 fontfamily='Arial'  # Explicit Arial font
             )
 
     plt.tight_layout()
     return fig
+
+
 def aggregate_results(args):
     """Aggregate results from multiple parallel runs and generate plots."""
     print(f"\n{'=' * 60}")
