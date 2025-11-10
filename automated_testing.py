@@ -504,7 +504,7 @@ def plot_scores(score_sets, labels, title, colors=None):
     """Plot bar chart comparing multiple sets of scores with error bars."""
     plt.rcParams['font.family'] = 'sans-serif'
     plt.rcParams['font.sans-serif'] = ['Arial']
-    plt.rcParams['font.size'] = 11
+    plt.rcParams['font.size'] = 14
 
     if colors is None:
         colors = ['skyblue', 'orange', 'green', 'red']
@@ -548,8 +548,13 @@ def plot_scores(score_sets, labels, title, colors=None):
         std_devs.append(std)
 
     x = np.arange(len(categories))
-    width = 0.8 / num_sets
-    fig, ax = plt.subplots(figsize=(14, 6))
+    # Fixed bar width regardless of number of categories
+    bar_width = 0.30  # Fixed width per bar
+    width = bar_width
+
+    # Calculate figure width based on number of categories to maintain consistent spacing
+    fig_width = max(14, len(categories) * num_sets * 0.8 + 4)
+    fig, ax = plt.subplots(figsize=(fig_width, 6))
 
     bars_list = []
     for i, (avg, std, label, color) in enumerate(zip(averages, std_devs, labels, colors[:num_sets])):
@@ -575,13 +580,12 @@ def plot_scores(score_sets, labels, title, colors=None):
                 f'{height:.1f}',
                 ha='center',
                 va='center',  # Center vertically
-                fontsize=11,  # Changed to 11pt
+                fontsize=14,  # Changed to 11pt
                 fontfamily='Arial'  # Explicit Arial font
             )
 
     plt.tight_layout()
     return fig
-
 
 def aggregate_results(args):
     """Aggregate results from multiple parallel runs and generate plots."""
