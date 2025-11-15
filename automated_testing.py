@@ -499,14 +499,37 @@ def run_parallel_experiments(args):
     print(f"\n✅ Parallel run complete! Results saved to {save_folder}")
     return save_folder
 
-def plot_scores(score_sets, labels, title, colors=None):
+
+def plot_scores(score_sets, labels, title, colors=None, ylim=(0, 6.0)):
     """Plot bar chart comparing multiple sets of scores with error bars."""
     plt.rcParams['font.family'] = 'sans-serif'
     plt.rcParams['font.sans-serif'] = ['Arial']
-    plt.rcParams['font.size'] = 11
+    plt.rcParams['font.size'] = 20
 
     if colors is None:
         colors = ['skyblue', 'orange', 'green', 'red']
+
+    # Reorder the data: Novice → Novice+Feedback → Expert
+    # Find indices for reordering
+    reorder_map = []
+    for i, label in enumerate(labels):
+        if "Novice Student + Feedback" in label or "After" in label:
+            reorder_map.append((i, 1))  # Second position
+        elif "Expert" in label or "Good" in label:
+            reorder_map.append((i, 2))  # Third position
+        elif "Novice" in label or "Bad" in label or "Before" in label:
+            reorder_map.append((i, 0))  # First position
+        else:
+            reorder_map.append((i, i))  # Keep original position if no match
+
+    # Sort by target position
+    reorder_map.sort(key=lambda x: x[1])
+    indices = [x[0] for x in reorder_map]
+
+    # Reorder all lists
+    score_sets = [score_sets[i] for i in indices]
+    labels = [labels[i] for i in indices]
+    colors = [colors[i] for i in indices]
 
     categories = list(score_sets[0].keys())
     num_sets = len(score_sets)
@@ -525,8 +548,16 @@ def plot_scores(score_sets, labels, title, colors=None):
         std_devs.append(std)
 
     x = np.arange(len(categories))
-    width = 0.8 / num_sets
-    fig, ax = plt.subplots(figsize=(14, 6))
+
+    # --- MODIFICATION 2: Dynamic bar width to shrink whitespace between categories ---
+    # Target to use about 85% of the available space (1.0 unit) to leave a small gap (15% gap)
+    space_to_use = 0.65
+    width = space_to_use / num_sets
+    bar_width = width
+
+    # Calculate figure width based on number of categories to maintain consistent spacing
+    fig_width = max(14, len(categories) * num_sets * 0.8 + 4)
+    fig, ax = plt.subplots(figsize=(fig_width, 6))
 
     bars_list = []
     for i, (avg, std, label, color) in enumerate(zip(averages, std_devs, labels, colors[:num_sets])):
@@ -539,19 +570,24 @@ def plot_scores(score_sets, labels, title, colors=None):
     ax.set_xlabel('Score Category')
     ax.set_title(title)
     ax.set_xticks(x)
-    ax.set_xticklabels(categories, rotation=45, ha='right')
-    ax.set_ylim(0, 6.0)  # Increased to accommodate error bars
-    ax.legend()
+    ax.set_xticklabels([])
+    # ax.set_xticklabels(categories, rotation=45, ha='right')
 
+    # --- MODIFICATION 1: Use the new ylim parameter for consistent Y-axis ---
+    ax.set_ylim(ylim)
+    ax.legend(loc='upper left')
+
+    # Add value labels in the middle of bars with 11pt Arial font
     for bars, avg_vals in zip(bars_list, averages):
         for bar, height in zip(bars, avg_vals):
             ax.text(
                 bar.get_x() + bar.get_width() / 2,
-                height + 0.05,
+                height / 2,  # Position in the middle of the bar
                 f'{height:.1f}',
                 ha='center',
-                va='bottom',
-                fontsize=8
+                va='center',  # Center vertically
+                fontsize=20,  # Changed to 11pt
+                fontfamily='Arial'  # Explicit Arial font
             )
 
     plt.tight_layout()

@@ -1,20 +1,22 @@
-# To be Updated ...
+# Learning Buddy: MI & CBT Branch
 
-Learning buddy to teach medical residents how to treat patients with MDD
+The Learning Buddy for MI & CBT helps medical students and residents practice motivational interviewing and cognitive-behavioral therapy skills through realistic, interactive roleplays with the virtual Patient Agent. The user also receives guided feedback from the Evaluator Agent to strengthen skills and improve future performance. 
+
+It also includes a Student Agent that simulates student performance for automated testing and evaluation of instructional prompts, feedback quality, and skill assessment accuracy.
 
 # Setting up Environment and installing required libraries
 
-# Create virtual environment
+## Create virtual environment
 
 python -m venv myenv
 myenv\Scripts\activate
 
-# Install packages
+## Install packages
 
 pip install streamlit langgraph langchain langchain-core langchain-openai pydantic openai elevenlabs markdown2 colorlog
 
 
-# Run app using the following command:
+## Run app using the following command:
 
 streamlit run streamlit_app.py
 
