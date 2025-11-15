@@ -60,6 +60,7 @@ class FileManager:
         return self.read_file(filepath)
 
     def load_random_case_profile(self, directory: str = 'Patient_Profiles') -> str:
+        from LearningBuddy_Agent import STACER_MODE,  MI_MODE, CBT_MODE
         """
         Load a random patient profile from the appropriate mode directory.
 
@@ -73,17 +74,20 @@ class FileManager:
             FileNotFoundError: If no profiles found in directory
         """
         # Select Patients available in the current mode
-        if self.mode == 'STACER' or self.mode == 'CBT':
+        if self.mode == STACER_MODE or self.mode == CBT_MODE:
             directory += "/CBT"
-        elif self.mode == 'MI':
+        elif self.mode == MI_MODE:
             directory += "/MI"
         # Add more modes ...
 
+
+        print("Dir:",directory)
         files = [f for f in os.listdir(directory)]
         if not files:
             raise FileNotFoundError("No patient profiles found in the directory.")
         random_file = random.choice(files)
         full_path = os.path.join(directory, random_file)
+        print("FullPath:", full_path)
         return self.load_patient_profile(full_path)
 
     def calculate_session_duration(self, start_time_iso: str) -> float:

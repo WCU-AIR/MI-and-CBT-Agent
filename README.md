@@ -11,7 +11,7 @@ myenv\Scripts\activate
 
 # Install packages
 
-pip install streamlit langgraph langchain langchain-core langchain-openai pydantic openai elevenlabs markdown2
+pip install streamlit langgraph langchain langchain-core langchain-openai pydantic openai elevenlabs markdown2 colorlog
 
 
 # Run app using the following command:

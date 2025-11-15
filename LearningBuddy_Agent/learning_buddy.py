@@ -6,6 +6,7 @@ from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 
 from utils.api_key_loader import load_openrouter_api_key
+from utils.Voice import Voice
 from .graph_state import LBState, PatientContext
 from .utils import FileManager, PromptLoader
 from .workflows import (
@@ -276,6 +277,9 @@ class LearningBuddy:
             # Run initialization workflow
             result = self.workflows['initialization'].run(initial_state)
             self.current_state = result
+
+            logging.info(f"Creating Voice")
+            self.voice = Voice(self.current_state['patient_context']['case_study'], self.elevenlabs_api_key)
 
             # Log success or errors
             if result.get("error"):

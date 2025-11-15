@@ -47,6 +47,7 @@ class LBState(TypedDict):
     feedback_messages: Annotated[list[Message], add_messages]
     evaluator_messages: Annotated[list[Message], add_messages]
 
+    user_input: Optional[str]
     cod_stacer: Optional[str]
     formatted_transcript: Optional[str]
     formatted_presentation: Optional[str]

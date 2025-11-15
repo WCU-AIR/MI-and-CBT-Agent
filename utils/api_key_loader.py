@@ -88,6 +88,46 @@ def load_openrouter_api_key():
             else:
                 print("Input cannot be empty. Please try again or press Ctrl+C to exit.")
 
+def load_elevenlabs_api_key():
+    """
+    Attempts to load the ELEVENLABS_API_KEY from a .env file and
+    environment variables. If not found, it prompts the user to
+    enter the key securely.
+
+    Returns:
+        str: The loaded or entered API key.
+    """
+    api_key_env_var = "ELEVENLABS_API_KEY"
+
+    # 1. Load variables from the .env file (if it exists)
+    load_dotenv()
+
+    # 2. Retrieve the key from the environment dictionary
+    api_key = os.getenv(api_key_env_var)
+
+    if api_key:
+        print(f"✅ Success: Loaded API Key from environment variable '{api_key_env_var}'.")
+        # For security, only print the first few characters
+        print(f"   Key starts with: {api_key[:4]}...")
+        return api_key
+    else:
+        # 3. Key not found, prompt the user for secure input
+        print(f"⚠️ Warning: API Key '{api_key_env_var}' not found in environment or .env file.")
+        print("-" * 50)
+
+        while True:
+            # Use getpass.getpass() to hide input
+            user_input = getpass.getpass("Please enter your ElevenLabs API Key now (input hidden): ").strip()
+
+            if user_input:
+                # Optionally, set the environment variable for the current session
+                os.environ[api_key_env_var] = user_input
+                print("\nKey accepted and set in environment for this session. Proceeding.")
+                print("-" * 50)
+                return user_input
+            else:
+                print("Input cannot be empty. Please try again or press Ctrl+C to exit.")
+
 # Example usage:
 if __name__ == '__main__':
     key = load_openai_api_key()
