@@ -18,8 +18,11 @@ pip install streamlit langgraph langchain langchain-core langchain-openai pydant
 ## Create .env file
 
 create a file named .env and add your api keys to the file in the following format:
+
 OPENROUTER_API_KEY=sk...
+
 OPENAI_API_KEY=sk...
+
 ELEVENLABS_API_KEY=sk...
 
 ## Run app using the following command:
