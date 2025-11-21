@@ -1160,30 +1160,23 @@ if True:
 
             # Tab 2: COD CBT Form
             with tab2:
-                # Extract CBT text
-                STACER_text = st.session_state.session_data.get('cod_stacer')
+                STACER_text = st.session_state.session_data.get('cod_stacer', "")
 
-                st.session_state.session_data['cod_stacer'] = STACER_text
-
-                html = markdown2.markdown(STACER_text,
-                                          extras=["tables", "fenced-code-blocks", "strike", "cuddled-lists"])
-
-                # Display with Streamlit
                 if mode == STACER_MODE:
                     st.markdown("### 📄 Completed COD CBT Evaluation Form")
-                    st.info(
-                        "This is a structured Core CBT form based on your most recent session. ")
+                    st.info("This is a structured Core CBT form based on your most recent session.")
                 elif mode == MI_MODE:
                     st.markdown("### 📄 Completed MI Evaluation Form")
-                    st.info(
-                        "This is a structured Motivational Interviewing form based on your most recent session.")
+                    st.info("This is a structured Motivational Interviewing form based on your most recent session.")
                 elif mode == CBT_MODE:
                     st.markdown("### 📄 Completed CBT Evaluation Form")
                     st.info(
-                        "This is a structured Cognitive Bahavioural Therapy form based on your most recent session.")
-                     
+                        "This is a structured Cognitive Behavioural Therapy form based on your most recent session.")
+
                 st.markdown("---")
-                st.markdown(html, unsafe_allow_html=True)
+
+                # Display preserving spacing and formatting
+                st.markdown(STACER_text, unsafe_allow_html=True)
 
             # Tab 3: Feedback
             with tab3:
