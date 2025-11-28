@@ -15,7 +15,7 @@ from utils.speech_to_text import STT
 # Streamlit App Configuration
 ############################################################
 st.set_page_config(
-    page_title="Learning Buddy: MI & CBT",
+    page_title="Simulation & Assessment of Psychotherapy Skills",
     page_icon="🤖",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -404,7 +404,7 @@ st.markdown("""
         }
     </style>
 """, unsafe_allow_html=True)
-st.sidebar.title("Learning Buddy for MI & CBT")
+st.sidebar.title("Simulation & Assessment of Psychotherapy Skills")
 st.sidebar.markdown("---")
 
 ############################################################
@@ -583,7 +583,7 @@ if True:
             unsafe_allow_html=True
         )
     st.markdown(
-        "<h5 style='text-align: center;'>Practice clinical skills with AI-powered patient simulations and evaluations</h5>",
+        "<h5 style='text-align: center;'>Practice general psychotherapy skills with AI-powered patient simulations and evaluations</h5>",
         unsafe_allow_html=True
     )
     st.markdown('</div>', unsafe_allow_html=True)
