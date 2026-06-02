@@ -83,8 +83,8 @@ def run_test(therapy_mode, patient_profile_path, student_profile_number, api_key
     }
 
 
-def extract_cbt_scores(eval_file_paths):
-    """Extract numerical CBT scores from feedback text files."""
+def extract_mi_scores(eval_file_paths):
+    """Extract numerical MI scores from feedback text files."""
     categories = [
         "Cultivating Change Talk",
         "Softening Sustain Talk",
@@ -237,7 +237,7 @@ def run_experiment(student_num, num_patients, student_csv_path, label):
         saved_data_directory.append(feedback_path)
 
     # Extract scores from all feedback files
-    student_scores = extract_cbt_scores(saved_data_directory)
+    student_scores = extract_mi_scores(saved_data_directory)
 
     # Build results table
     for idx, patient_file in enumerate(random_files):

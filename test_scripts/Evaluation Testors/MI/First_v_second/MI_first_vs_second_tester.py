@@ -13,6 +13,9 @@ from datetime import datetime
 from pathlib import Path
 import csv
 import json
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 # Modes
@@ -21,7 +24,7 @@ MI_MODE = 2
 CBT_MODE = 3
 
 def run_test(therapy_mode, patient_profile_path, student_profile_number, prompt_addition = ""):
-    api_key_input = "key"
+    api_key_input = os.getenv("OPENAI_API_KEY", "")
 
     # Create lb object
     if therapy_mode == MI_MODE:

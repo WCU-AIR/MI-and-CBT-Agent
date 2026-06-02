@@ -55,6 +55,11 @@ for cat in categories:
 if results:
     results_df = pd.DataFrame(results)
     results_df["Significant (<0.05)?"] = results_df["P-value"] < 0.05
+    results_df["Difference"] = results_df["Good Mean"] - results_df["Bad Mean"]
+    results_df["P_Value"] = results_df["P-value"]
+    results_df["Significance"] = results_df["P-value"].apply(
+        lambda p: "***" if p < 0.001 else ("**" if p < 0.01 else ("*" if p < 0.05 else "ns"))
+    )
     print("Wilcoxon Signed-Rank Test Results:")
     print(results_df[["Category", "stat", "P-value"]].to_string(index=False))
     print("\n\n")
