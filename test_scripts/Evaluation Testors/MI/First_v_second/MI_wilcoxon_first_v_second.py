@@ -24,10 +24,17 @@ second_df = second_df.iloc[:min_len]
 results = []
 
 for cat in categories:
-    first_vals = first_df[cat].values
-    second_vals = second_df[cat].values
+    first_vals = pd.to_numeric(first_df[cat], errors='coerce')
+    second_vals = pd.to_numeric(second_df[cat], errors='coerce')
 
+    # Drop pairs where either value is NaN
+    valid = (~first_vals.isna()) & (~second_vals.isna())
+    first_vals = first_vals[valid]
+    second_vals = second_vals[valid]
 
+    if len(first_vals) < 2:
+        print(f"Skipping {cat}: not enough valid pairs ({len(first_vals)})")
+        continue
 
     # Wilcoxon test, one-sided: second > first
     stat, p = wilcoxon(first_vals, second_vals, alternative="less")

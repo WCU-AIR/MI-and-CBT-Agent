@@ -48,7 +48,7 @@ for cat in categories:
         "Bad Mean": y_valid.mean(),
         "stat": stat,
         "P-value": round(p, 7),
-        "Second > First (p < 0.05)?": p < 0.05
+        "Good > Bad (p < 0.05)?": p < 0.05
     })
 
 # === Summarize Results ===

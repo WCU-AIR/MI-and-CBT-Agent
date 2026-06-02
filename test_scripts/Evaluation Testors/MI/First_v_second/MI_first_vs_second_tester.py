@@ -145,9 +145,9 @@ def extract_scores_from_text(text):
         match = heading_pattern.search(text)
 
         if not match:
-            # Some headings might include parentheses or extra symbols
+            # Heading not found — record as NaN so the Wilcoxon can drop it
             print(f"Could not extract {cat}")
-            results[cat] = 1.0
+            results[cat] = float('nan')
             continue
 
         # Extract text starting after this heading until the next ### or end of file
@@ -169,11 +169,11 @@ def extract_scores_from_text(text):
         else:
             # Fall back to first standalone number if no explicit Score line
             num_match = re.search(r"(\d+(?:\.\d+)?)", section_text)
-            results[cat] = float(num_match.group(1)) if num_match else 1.0
+            results[cat] = float(num_match.group(1)) if num_match else float('nan')
 
-    # Add Overall Average
-    numeric_scores = [v for k, v in results.items() if k in categories]
-    results["Overall Average"] = round(sum(numeric_scores) / len(numeric_scores), 2) if numeric_scores else 1.0
+    # Add Overall Average — skip NaN categories
+    numeric_scores = [v for k, v in results.items() if k in categories and v == v]  # v == v is False for NaN
+    results["Overall Average"] = round(sum(numeric_scores) / len(numeric_scores), 2) if numeric_scores else float('nan')
 
     return results
 
