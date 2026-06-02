@@ -114,15 +114,15 @@ def extract_mi_scores(eval_file_paths):
                 # Each match is a tuple like ('4.5', '.5'), so take matches[-1][0]
                 score_value = float(matches[-1][0])
             else:
-                score_value = 0.0
+                score_value = float('nan')
 
             scores[cat].append(score_value)
 
     num_files = len(eval_file_paths)
     overall_averages = []
     for i in range(num_files):
-        file_scores = [scores[cat][i] for cat in categories]
-        overall_avg = round(sum(file_scores) / len(file_scores), 3)
+        file_scores = [scores[cat][i] for cat in categories if scores[cat][i] == scores[cat][i]]  # skip NaN
+        overall_avg = round(sum(file_scores) / len(file_scores), 3) if file_scores else float('nan')
         overall_averages.append(overall_avg)
 
     scores["Overall Average"] = overall_averages

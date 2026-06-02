@@ -1,71 +1,94 @@
+import os
+import glob
 import pandas as pd
 from matplotlib import pyplot as plt
 from scipy.stats import wilcoxon
+from statsmodels.stats.multitest import multipletests
 
-# === Load CSV ===
-df = pd.read_csv("Results- Good vs Bad/extracted_scores.csv")
+# === Find the most recent MI_aggregated folder ===
+_script_dir = os.path.dirname(os.path.abspath(__file__))
+_repo_root  = os.path.normpath(os.path.join(_script_dir, "..", "..", "..", ".."))
+_base_dir   = os.path.join(_repo_root, "saved_tests")
+_agg_folders = sorted(glob.glob(os.path.join(_base_dir, "MI_aggregated_*")))
+if not _agg_folders:
+    raise FileNotFoundError(f"No MI_aggregated_* folders found in {_base_dir}")
+latest_folder = _agg_folders[-1]
+print(f"Using data from: {latest_folder}\n")
 
-# Define your evaluation categories
-categories = [
-    "Acceptance", "Empathy", "Spirit of MI", "Cultivating Change Talk",
-    "Softening Sustain Talk", "Partnership", "Open Questions", "Reflections",
-    "Affirmations", "Persuade with Permission", "Emphasize Autonomy",
-    "Engaging", "Focusing", "Evoking", "Planning", "Summarizing"
-]
+# === Load separate good / bad CSVs and pair by Patient ===
+good_df = pd.read_csv(os.path.join(latest_folder, "good_student_all.csv"))
+bad_df  = pd.read_csv(os.path.join(latest_folder, "bad_student_1st_all.csv"))
 
-# Split into good and bad groups
-good_df = df[df["Student"] == "good student"].sort_values("session_folder").reset_index(drop=True)
-bad_df  = df[df["Student"] == "bad student"].sort_values("session_folder").reset_index(drop=True)
+# Derive category list from columns (everything except metadata)
+_exclude = {"Student", "Patient"}
+categories = [c for c in good_df.columns if c not in _exclude]
 
-# Ensure same number of rows
-n_pairs = min(len(good_df), len(bad_df))
-good_df = good_df.head(n_pairs)
-bad_df  = bad_df.head(n_pairs)
-
-print(f"Paired {n_pairs} good/bad sessions for analysis.\n")
+merged = good_df.merge(bad_df, on="Patient", suffixes=("_good", "_bad"))
+print(f"Paired {len(merged)} patients for analysis.\n")
 
 results = []
 
 # === Perform Wilcoxon Signed-Rank Tests ===
 for cat in categories:
-    if cat not in good_df.columns or cat not in bad_df.columns:
+    col_good = f"{cat}_good"
+    col_bad  = f"{cat}_bad"
+    if col_good not in merged.columns or col_bad not in merged.columns:
         continue
 
-    x = good_df[cat].astype(float)
-    y = bad_df[cat].astype(float)
+    x = pd.to_numeric(merged[col_good], errors="coerce")
+    y = pd.to_numeric(merged[col_bad],  errors="coerce")
 
-    # Drop NaNs and identical pairs
+    # Drop NaNs and identical pairs (Wilcoxon requires at least one non-zero diff)
     valid = (x != y) & (~x.isna()) & (~y.isna())
     x_valid, y_valid = x[valid], y[valid]
 
     if len(x_valid) < 2:
-        continue  # skip if not enough pairs for test
+        continue
 
+    n = len(x_valid)
     stat, p = wilcoxon(x_valid, y_valid)
+
+    # Rank-biserial r: 1 = all diffs in same direction, 0 = no effect
+    r = 1 - (2 * stat) / (n * (n + 1))
+
     results.append({
-        "Category": cat,
-        "Good Mean": x_valid.mean(),
-        "Bad Mean": y_valid.mean(),
-        "stat": stat,
-        "P-value": round(p, 7),
-        "Good > Bad (p < 0.05)?": p < 0.05
+        "Category":      cat,
+        "Good Mean":     x_valid.mean(),
+        "Bad Mean":      y_valid.mean(),
+        "n":             n,
+        "stat":          stat,
+        "P-value":       p,
+        "Effect_Size_r": r,
     })
 
-# === Summarize Results ===
-if results:
-    results_df = pd.DataFrame(results)
-    results_df["Significant (<0.05)?"] = results_df["P-value"] < 0.05
-    results_df["Difference"] = results_df["Good Mean"] - results_df["Bad Mean"]
-    results_df["P_Value"] = results_df["P-value"]
-    results_df["Significance"] = results_df["P-value"].apply(
-        lambda p: "***" if p < 0.001 else ("**" if p < 0.01 else ("*" if p < 0.05 else "ns"))
-    )
-    print("Wilcoxon Signed-Rank Test Results:")
-    print(results_df[["Category", "stat", "P-value"]].to_string(index=False))
-    print("\n\n")
-    print(results_df[["Category","Good Mean", "Bad Mean", "stat", "P-value"]].to_string(index=False))
-else:
+if not results:
     print("⚠️ No valid pairs found for Wilcoxon test.")
+    raise SystemExit(1)
+
+results_df = pd.DataFrame(results)
+
+# === BH-FDR Multiple Comparisons Correction ===
+_reject, _p_fdr, _, _ = multipletests(results_df["P-value"], alpha=0.05, method="fdr_bh")
+results_df["p_fdr_bh"]           = list(_p_fdr)
+results_df["Significant_fdr_bh"] = _reject
+
+# Columns kept for plot_significance_summary and backward-compat readers
+results_df["Good > Bad (p < 0.05)?"] = results_df["P-value"] < 0.05
+results_df["Significant (<0.05)?"]   = results_df["Good > Bad (p < 0.05)?"]
+results_df["Difference"]  = results_df["Good Mean"] - results_df["Bad Mean"]
+results_df["P_Value"]     = results_df["P-value"]
+results_df["Significance"] = results_df["P-value"].apply(
+    lambda p: "***" if p < 0.001 else ("**" if p < 0.01 else ("*" if p < 0.05 else "ns"))
+)
+
+print("Wilcoxon Signed-Rank Test Results (Good vs Bad):")
+print(results_df[["Category", "Good Mean", "Bad Mean", "n", "stat",
+                   "P-value", "Effect_Size_r", "p_fdr_bh", "Significant_fdr_bh"]].to_string(index=False))
+
+# === Save Results ===
+_out_path = os.path.join(latest_folder, "wilcoxon_test1_good_vs_bad1.csv")
+results_df.to_csv(_out_path, index=False)
+print(f"\nResults saved to: {_out_path}")
 
 
 def plot_significance_summary(wilcoxon_df):
