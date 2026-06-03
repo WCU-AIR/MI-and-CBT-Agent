@@ -1,7 +1,10 @@
 import logging
 from datetime import datetime
 from typing import Optional, Dict, List
-from langchain.schema import AIMessage, HumanMessage, SystemMessage
+try:
+    from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
+except ImportError:
+    from langchain.schema import AIMessage, HumanMessage, SystemMessage
 from langchain_core.runnables import RunnableLambda
 from langgraph.graph import StateGraph, END
 

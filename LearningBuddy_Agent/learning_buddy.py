@@ -16,7 +16,10 @@ from .workflows import (
     EvaluatorWorkflow
 )
 import logging
-import colorlog
+try:
+    import colorlog
+except ImportError:
+    colorlog = None
 
 # Configure logging
 # Get the root logger
@@ -26,18 +29,24 @@ logger.setLevel(logging.INFO)
 # Clear any existing handlers
 logger.handlers.clear()
 
-# Create a colored formatter for console
-colored_formatter = colorlog.ColoredFormatter(
-    "%(log_color)s%(asctime)s [%(levelname)s]%(reset)s %(message)s",
-    datefmt='%Y-%m-%d %H:%M:%S',
-    log_colors={
-        'DEBUG': 'cyan',
-        'INFO': 'green',
-        'WARNING': 'yellow',
-        'ERROR': 'red',
-        'CRITICAL': 'red,bg_white',
-    }
-)
+# Create a colored formatter for console when colorlog is installed.
+if colorlog is not None:
+    console_formatter = colorlog.ColoredFormatter(
+        "%(log_color)s%(asctime)s [%(levelname)s]%(reset)s %(message)s",
+        datefmt='%Y-%m-%d %H:%M:%S',
+        log_colors={
+            'DEBUG': 'cyan',
+            'INFO': 'green',
+            'WARNING': 'yellow',
+            'ERROR': 'red',
+            'CRITICAL': 'red,bg_white',
+        }
+    )
+else:
+    console_formatter = logging.Formatter(
+        "%(asctime)s [%(levelname)s] %(message)s",
+        datefmt='%Y-%m-%d %H:%M:%S'
+    )
 
 # Create a plain formatter for file output (no colors)
 file_formatter = logging.Formatter(
@@ -53,7 +62,7 @@ file_handler.setFormatter(file_formatter)
 # Create and configure console handler
 console_handler = logging.StreamHandler()
 console_handler.setLevel(logging.INFO)
-console_handler.setFormatter(colored_formatter)
+console_handler.setFormatter(console_formatter)
 
 # Add handlers to logger
 logger.addHandler(file_handler)
@@ -455,7 +464,10 @@ class LearningBuddy:
             return {}
 
         interview_messages = self.current_state.get("interview_messages", [])
-        from langchain.schema import AIMessage, HumanMessage
+        try:
+            from langchain_core.messages import AIMessage, HumanMessage
+        except ImportError:
+            from langchain.schema import AIMessage, HumanMessage
 
         conversation_messages = [
             m for m in interview_messages

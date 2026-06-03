@@ -11,7 +11,10 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from scipy.stats import wilcoxon
+try:
+    from scipy.stats import wilcoxon
+except ImportError:
+    wilcoxon = None
 
 import VirtualStudent
 from LearningBuddy_Agent import LearningBuddy, MI_MODE, CBT_MODE
@@ -496,7 +499,7 @@ def run_parallel_experiments(args):
     with open(os.path.join(save_folder, "elapsed_time.txt"), "w") as f:
         f.write(f"Elapsed time: {elapsed_seconds:.2f} seconds\n")
 
-    print(f"\n✅ Parallel run complete! Results saved to {save_folder}")
+    print(f"\nParallel run complete! Results saved to {save_folder}")
     return save_folder
 
 
@@ -605,7 +608,7 @@ def aggregate_results(args):
     folders = glob(pattern)
 
     if not folders:
-        print(f"❌ No folders found for run_id: {args.run_id}")
+        print(f"No folders found for run_id: {args.run_id}")
         return
 
     print(f"Found {len(folders)} parallel run folders")
@@ -681,6 +684,18 @@ def aggregate_results(args):
     # === WILCOXON SIGNED-RANK TESTS ===
     # ========================================
 
+    if wilcoxon is None:
+        print("\nSciPy is not installed; skipping Wilcoxon signed-rank tests.")
+        print(f"\n{'=' * 60}")
+        print(f"Aggregation complete! Results saved to {agg_folder}")
+        print(f"{'=' * 60}")
+        print(f"\nGenerated files:")
+        print(f"  - Combined CSVs for all 3 conditions")
+        print(f"  - plot1_good_vs_bad1.png")
+        print(f"  - plot2_learning_effect.png")
+        print(f"  - plot3_all_conditions.png")
+        return
+
     # Test 1: Good vs Bad (1st)
     print("\n" + "=" * 60)
     print("WILCOXON TEST 1: Expert vs Novice (1st Attempt)")
@@ -707,7 +722,7 @@ def aggregate_results(args):
         x_valid, y_valid = x[valid], y[valid]
 
         if len(x_valid) < 2:
-            print(f"⚠️  Skipping {cat}: not enough valid pairs ({len(x_valid)})")
+            print(f"Skipping {cat}: not enough valid pairs ({len(x_valid)})")
             continue
 
         stat, p = wilcoxon(x_valid, y_valid)
@@ -728,7 +743,7 @@ def aggregate_results(args):
         print(results_df_1[["Category", "Good Mean", "Bad Mean", "stat", "P-value"]].to_string(index=False))
         results_df_1.to_csv(os.path.join(agg_folder, "wilcoxon_test1_good_vs_bad1.csv"), index=False)
     else:
-        print("⚠️ No valid pairs found for Wilcoxon test.")
+        print("No valid pairs found for Wilcoxon test.")
 
     # Test 2: Bad (1st) vs Bad (with Feedback)
     print("\n" + "=" * 60)
@@ -756,7 +771,7 @@ def aggregate_results(args):
         x_valid, y_valid = x[valid], y[valid]
 
         if len(x_valid) < 2:
-            print(f"⚠️  Skipping {cat}: not enough valid pairs ({len(x_valid)})")
+            print(f"Skipping {cat}: not enough valid pairs ({len(x_valid)})")
             continue
 
         stat, p = wilcoxon(x_valid, y_valid)
@@ -777,10 +792,10 @@ def aggregate_results(args):
         print(results_df_2[["Category", "Before Mean", "After Mean", "stat", "P-value"]].to_string(index=False))
         results_df_2.to_csv(os.path.join(agg_folder, "wilcoxon_test2_learning_effect.csv"), index=False)
     else:
-        print("⚠️ No valid pairs found for Wilcoxon test.")
+        print("No valid pairs found for Wilcoxon test.")
 
     print(f"\n{'=' * 60}")
-    print(f"✅ Aggregation complete! Results saved to {agg_folder}")
+    print(f"Aggregation complete! Results saved to {agg_folder}")
     print(f"{'=' * 60}")
     print(f"\nGenerated files:")
     print(f"  - Combined CSVs for all 3 conditions")
