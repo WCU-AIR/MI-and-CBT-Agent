@@ -190,19 +190,3 @@ Despite these limitations, session-average logprob remains a lightweight,
 zero-annotation signal for **flagging sessions that warrant closer human review**,
 particularly in large-scale automated experiments where reading every transcript
 is infeasible.
-
----
-
-## 9. Intended Use
-
-These metrics are **not** an evaluation of student performance. They are a
-validity check on the **patient simulator**:
-
-- **Across patient profiles**: profiles with consistently low $p_{\text{avg}}$
-  may be under-specified or ambiguous for the model.
-- **Across student types**: if good/bad/feedback student groups produce
-  systematically different patient logprobs, this indicates the patient is
-  responding to student quality — which is expected and desirable.
-- **Across runs of the same profile**: high variance in $\bar{\ell}_{\text{session}}$
-  for a fixed patient and student suggests the patient roleplay is stochastic
-  rather than persona-consistent.
