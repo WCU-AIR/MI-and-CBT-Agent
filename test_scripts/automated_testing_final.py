@@ -1,11 +1,20 @@
 import csv
 import os
+import sys
 import random
 import re
 import time
 from datetime import datetime
 from pathlib import Path
 
+# Ensure project root is on sys.path and is the working directory
+# regardless of where the script is invoked from.
+_PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if _PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, _PROJECT_ROOT)
+os.chdir(_PROJECT_ROOT)
+
+import math
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -77,9 +86,30 @@ def run_test(therapy_mode, patient_profile_path, student_profile_number, api_key
     final_state = lb.get_session_state()
     folder_name = final_state.get("folder_name", "")
 
+    # Compute patient consistency metrics from per-turn logprobs
+    turn_logprobs = final_state.get("patient_turn_logprobs") or []
+    if turn_logprobs:
+        session_avg_logprob = sum(turn_logprobs) / len(turn_logprobs)
+        session_avg_prob = math.exp(session_avg_logprob) * 100
+        # Save logprob summary alongside session files
+        if folder_name:
+            import json
+            lp_path = os.path.join(folder_name, "patient_logprobs.json")
+            with open(lp_path, "w") as f:
+                json.dump({
+                    "turn_logprobs": turn_logprobs,
+                    "session_avg_logprob": session_avg_logprob,
+                    "session_avg_prob_pct": round(math.exp(session_avg_logprob) * 100, 2),
+                    "n_turns": len(turn_logprobs)
+                }, f, indent=2)
+        print(f"  [logprob] patient avg logprob: {session_avg_logprob:.4f} ({math.exp(session_avg_logprob)*100:.1f}% avg token prob) over {len(turn_logprobs)} turns")
+    else:
+        session_avg_logprob = None
+
     return {
         "session_result": session_result,
-        "folder_name": folder_name
+        "folder_name": folder_name,
+        "patient_session_avg_logprob": session_avg_logprob
     }
 
 
@@ -212,29 +242,39 @@ def plot_scores(scores_a, scores_b, label_a, label_b, title):
 # === Experiment Pipeline ====
 # =============================
 
-def run_experiment(student_num, num_patients, student_csv_path, label):
-    """Run CBT experiment for one student."""
+def run_experiment(student_num, num_patients, student_csv_path, label, patient_files=None):
+    """Run CBT experiment for one student.
+
+    Args:
+        patient_files: Optional list of patient file paths to use. If provided,
+                       ``num_patients`` and random sampling are ignored.
+    """
     start = time.time()
     random.seed(42)
 
-    # Get random patient files
-    all_files = [
-        os.path.join(PATIENT_DIR, f)
-        for f in os.listdir(PATIENT_DIR)
-        if os.path.isfile(os.path.join(PATIENT_DIR, f))
-    ]
-    random_files = random.sample(all_files, num_patients)
+    if patient_files is not None:
+        random_files = list(patient_files)
+    else:
+        # Get random patient files
+        all_files = [
+            os.path.join(PATIENT_DIR, f)
+            for f in os.listdir(PATIENT_DIR)
+            if os.path.isfile(os.path.join(PATIENT_DIR, f))
+        ]
+        random_files = random.sample(all_files, num_patients)
 
     mode = MI_MODE
     df = pd.read_csv(student_csv_path, quotechar='"', skipinitialspace=True)
     all_results = []
     saved_data_directory = []
+    session_logprobs = []  # parallel list to random_files
 
     # Run tests for each patient
     for patient in random_files:
         results = run_test(mode, patient, student_num)
         feedback_path = results["folder_name"] + "/detailed_feedback.txt"
         saved_data_directory.append(feedback_path)
+        session_logprobs.append(results.get("patient_session_avg_logprob"))
 
     # Extract scores from all feedback files
     student_scores = extract_mi_scores(saved_data_directory)
@@ -247,6 +287,9 @@ def run_experiment(student_num, num_patients, student_csv_path, label):
         }
         for key, values in student_scores.items():
             row[key] = values[idx] if idx < len(values) else None
+        lp = session_logprobs[idx]
+        row["patient_avg_logprob"] = round(lp, 4) if lp is not None else None
+        row["patient_avg_prob_pct"] = round(math.exp(lp) * 100, 2) if lp is not None else None  # geometric mean token prob
         all_results.append(row)
 
     # Save results
@@ -260,7 +303,7 @@ def run_experiment(student_num, num_patients, student_csv_path, label):
     with open(csv_path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(
             f,
-            fieldnames=["Student", "Patient"] + list(student_scores.keys())
+            fieldnames=["Student", "Patient"] + list(student_scores.keys()) + ["patient_avg_logprob", "patient_avg_prob_pct"]
         )
         writer.writeheader()
         writer.writerows(all_results)
@@ -279,89 +322,129 @@ def run_experiment(student_num, num_patients, student_csv_path, label):
 # =============================
 
 if __name__ == "__main__":
-    print("=" * 60)
-    print("Starting Automated CBT Testing Pipeline")
-    print("=" * 60)
+    import argparse
 
-    # 1️⃣ Good vs Bad student comparison
-    print("\n[STEP 1] Running Good Student Experiments...")
-    scores_good, _ = run_experiment(
-        GOOD_STUDENT_NUM,
-        NUM_PATIENTS,
-        STUDENT_CSV_PATH,
-        label="good_student"
+    parser = argparse.ArgumentParser(description="Run MI/CBT automated testing pipeline.")
+    parser.add_argument(
+        "--mode", choices=["full", "subset"], default="full",
+        help="'full' runs the complete pipeline; 'subset' runs a single student on a slice of patients."
     )
-
-    print("\n[STEP 2] Running Bad Student Experiments...")
-    scores_bad, feedback_files = run_experiment(
-        BAD_STUDENT_NUM,
-        NUM_PATIENTS,
-        STUDENT_CSV_PATH,
-        label="bad_student"
+    parser.add_argument(
+        "--student", type=int, default=None,
+        help="Student profile index to use (default: BAD_STUDENT_NUM)."
     )
-
-    print("\n[STEP 3] Generating comparison plot (Good vs Bad)...")
-    fig1 = plot_scores(
-        scores_good,
-        scores_bad,
-        "Good Student",
-        "Bad Student",
-        "Evaluation Scores for MI"
+    parser.add_argument(
+        "--start", type=int, default=0,
+        help="Start index of patient files (inclusive, sorted order). Default: 0."
     )
-    path1 = os.path.join(
-        "saved_tests",
-        f"comparison_good_vs_bad_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
+    parser.add_argument(
+        "--end", type=int, default=None,
+        help="End index of patient files (exclusive, sorted order). Default: all."
     )
-    fig1.savefig(path1, bbox_inches='tight')
-    plt.close(fig1)
-    print(f"✅ Plot 1 saved: {path1}")
+    parser.add_argument(
+        "--label", type=str, default="subset",
+        help="Label prefix for the saved_tests output folder."
+    )
+    args = parser.parse_args()
 
-    # 2️⃣ Bad student before vs after feedback (individualized feedback per session)
-    print("\n[STEP 4] Running Bad Student with Individual Feedback...")
-    scores_after_all = {cat: [] for cat in scores_bad.keys()}
+    if args.mode == "subset":
+        student_num = args.student if args.student is not None else BAD_STUDENT_NUM
+        all_files = sorted([
+            os.path.join(PATIENT_DIR, f)
+            for f in os.listdir(PATIENT_DIR)
+            if os.path.isfile(os.path.join(PATIENT_DIR, f))
+        ])
+        subset = all_files[args.start:args.end]
+        print(f"Running {len(subset)} patient(s) [index {args.start}:{args.end}] "
+              f"with student #{student_num}:")
+        for f in subset:
+            print(f"  {os.path.basename(f)}")
+        run_experiment(student_num, None, STUDENT_CSV_PATH, label=args.label, patient_files=subset)
 
-    for i, feedback_path in enumerate(feedback_files):
-        print(f"  Processing feedback {i + 1}/{len(feedback_files)}...")
+    else:
+        print("=" * 60)
+        print("Starting Automated CBT Testing Pipeline")
+        print("=" * 60)
 
-        # Extract feedback only from this session
-        feedback_text = extract_recommendations([feedback_path])
-
-        # Create a temporary CSV with only that feedback
-        updated_csv = augment_student_prompt(
+        # 1️⃣ Good vs Bad student comparison
+        print("\n[STEP 1] Running Good Student Experiments...")
+        scores_good, _ = run_experiment(
+            GOOD_STUDENT_NUM,
+            NUM_PATIENTS,
             STUDENT_CSV_PATH,
-            BAD_STUDENT_NUM,
-            feedback_text,
-            save_as=f"Student_Profiles/temp_student_feedback_{i}.csv"
+            label="good_student"
         )
 
-        # Run experiment for that single feedback improvement
-        scores_after, _ = run_experiment(
+        print("\n[STEP 2] Running Bad Student Experiments...")
+        scores_bad, feedback_files = run_experiment(
             BAD_STUDENT_NUM,
-            1,
-            updated_csv,
-            label=f"bad_student_after_feedback_{i}"
+            NUM_PATIENTS,
+            STUDENT_CSV_PATH,
+            label="bad_student"
         )
 
-        # Accumulate results (combine all single runs)
-        for cat in scores_after_all.keys():
-            scores_after_all[cat].extend(scores_after[cat])
+        print("\n[STEP 3] Generating comparison plot (Good vs Bad)...")
+        fig1 = plot_scores(
+            scores_good,
+            scores_bad,
+            "Good Student",
+            "Bad Student",
+            "Evaluation Scores for MI"
+        )
+        path1 = os.path.join(
+            "saved_tests",
+            f"comparison_good_vs_bad_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
+        )
+        fig1.savefig(path1, bbox_inches='tight')
+        plt.close(fig1)
+        print(f"✅ Plot 1 saved: {path1}")
 
-    print("\n[STEP 5] Generating comparison plot (Before vs After Feedback)...")
-    fig2 = plot_scores(
-        scores_after_all,
-        scores_bad,
-        "After Feedback",
-        "Before Feedback",
-        "Evaluation Scores - Before vs After Individual Feedback"
-    )
-    path2 = os.path.join(
-        "saved_tests",
-        f"comparison_before_after_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
-    )
-    fig2.savefig(path2, bbox_inches='tight')
-    plt.close(fig2)
-    print(f"✅ Plot 2 saved: {path2}")
+        # 2️⃣ Bad student before vs after feedback (individualized feedback per session)
+        print("\n[STEP 4] Running Bad Student with Individual Feedback...")
+        scores_after_all = {cat: [] for cat in scores_bad.keys()}
 
-    print("\n" + "=" * 60)
-    print("✅ All experiments completed successfully!")
-    print("=" * 60)
+        for i, feedback_path in enumerate(feedback_files):
+            print(f"  Processing feedback {i + 1}/{len(feedback_files)}...")
+
+            # Extract feedback only from this session
+            feedback_text = extract_recommendations([feedback_path])
+
+            # Create a temporary CSV with only that feedback
+            updated_csv = augment_student_prompt(
+                STUDENT_CSV_PATH,
+                BAD_STUDENT_NUM,
+                feedback_text,
+                save_as=f"Student_Profiles/temp_student_feedback_{i}.csv"
+            )
+
+            # Run experiment for that single feedback improvement
+            scores_after, _ = run_experiment(
+                BAD_STUDENT_NUM,
+                1,
+                updated_csv,
+                label=f"bad_student_after_feedback_{i}"
+            )
+
+            # Accumulate results (combine all single runs)
+            for cat in scores_after_all.keys():
+                scores_after_all[cat].extend(scores_after[cat])
+
+        print("\n[STEP 5] Generating comparison plot (Before vs After Feedback)...")
+        fig2 = plot_scores(
+            scores_after_all,
+            scores_bad,
+            "After Feedback",
+            "Before Feedback",
+            "Evaluation Scores - Before vs After Individual Feedback"
+        )
+        path2 = os.path.join(
+            "saved_tests",
+            f"comparison_before_after_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
+        )
+        fig2.savefig(path2, bbox_inches='tight')
+        plt.close(fig2)
+        print(f"✅ Plot 2 saved: {path2}")
+
+        print("\n" + "=" * 60)
+        print("✅ All experiments completed successfully!")
+        print("=" * 60)

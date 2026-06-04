@@ -68,4 +68,8 @@ class LBState(TypedDict):
 
     # Export path (only set at completion)
     folder_name: Optional[str]
+
+    # Per-turn avg logprobs from virtual patient (gpt-4.1-mini)
+    patient_turn_logprobs: Optional[list]
+
     __extra_items__: Any
