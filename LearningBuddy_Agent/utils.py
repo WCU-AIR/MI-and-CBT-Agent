@@ -2,10 +2,7 @@ import os
 import random
 from datetime import datetime
 from typing import Optional, List, Dict, Tuple
-try:
-    from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
-except ImportError:
-    from langchain.schema import AIMessage, HumanMessage, SystemMessage
+from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
 import logging
 
 # Import main class and constants from learning_buddy module

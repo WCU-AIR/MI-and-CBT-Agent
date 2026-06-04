@@ -1,10 +1,7 @@
 import logging
 from datetime import datetime
 from typing import Optional, Dict, List
-try:
-    from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
-except ImportError:
-    from langchain.schema import AIMessage, HumanMessage, SystemMessage
+from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
 from langchain_core.runnables import RunnableLambda
 from langgraph.graph import StateGraph, END
 
@@ -324,14 +321,33 @@ class InterviewWorkflow:
         try:
             interview_messages = state.get("interview_messages", [])
 
-            # Generate response
-            response = self.llm_virtual_patient.invoke(interview_messages)
+            # Generate response with logprobs for consistency tracking
+            result = self.llm_virtual_patient.generate([interview_messages])
+            gen = result.generations[0][0]
+            response_text = gen.text
 
-            logging.info("AI response generated successfully.")
+            # Extract avg logprob for this turn
+            import math
+            turn_logprob = None
+            logprobs_info = (gen.generation_info or {}).get("logprobs", {})
+            if logprobs_info and logprobs_info.get("content"):
+                tokens = logprobs_info["content"]
+                # Clip at -10 (exp(-10) ≈ 0.005%) to exclude OpenAI's near-zero sentinel
+                # values for forced/special tokens which otherwise dominate the session average
+                clipped = [max(t["logprob"], -10.0) for t in tokens]
+                turn_logprob = sum(clipped) / len(clipped)
+
+            # Accumulate per-turn logprobs in state
+            patient_logprobs = list(state.get("patient_turn_logprobs", []) or [])
+            if turn_logprob is not None:
+                patient_logprobs.append(turn_logprob)
+
+            logging.info(f"AI response generated successfully. Turn avg logprob: {turn_logprob:.4f}" if turn_logprob is not None else "AI response generated. Logprobs unavailable.")
 
             return {
-                "interview_messages": [AIMessage(content=response.content)],
-                "current_phase": "message_complete"
+                "interview_messages": [AIMessage(content=response_text)],
+                "current_phase": "message_complete",
+                "patient_turn_logprobs": patient_logprobs
             }
         except Exception as e:
             logging.error(f"Error generating AI response: {str(e)}")

@@ -149,7 +149,8 @@ class LearningBuddy:
                 temperature=1.0,
                 api_key=self.api_key,
                 max_retries=5,  # Retry up to 3 times
-                timeout=30
+                timeout=30,
+                logprobs=True
             ),
             'feedback': ChatOpenAI(
                 model="google/gemini-2.5-flash-lite-preview-09-2025",
@@ -464,10 +465,7 @@ class LearningBuddy:
             return {}
 
         interview_messages = self.current_state.get("interview_messages", [])
-        try:
-            from langchain_core.messages import AIMessage, HumanMessage
-        except ImportError:
-            from langchain.schema import AIMessage, HumanMessage
+        from langchain_core.messages import AIMessage, HumanMessage
 
         conversation_messages = [
             m for m in interview_messages
