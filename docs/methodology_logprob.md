@@ -24,12 +24,12 @@ constrained the patient's behaviour is by its persona prompt.
 For a generated sequence $y = (y_1, y_2, \ldots, y_T)$ the model assigns a
 probability to each token conditioned on all preceding context:
 
-$$p(y_t \mid y_{<t},\, x)$$
+$$p(y_t \mid y_{<t}, x)$$
 
 where $x$ is the full prompt (system prompt + conversation history). The
 **token log-probability** is:
 
-$$\ell_t = \log p(y_t \mid y_{<t},\, x)$$
+$$\ell_t = \log p(y_t \mid y_{<t}, x)$$
 
 Because $0 < p \leq 1$, we have $\ell_t \leq 0$ always.
 
