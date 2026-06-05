@@ -1,0 +1,804 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Acute Stress Disorder
+
+--- CASE STUDY ---
+
+Dylan was a 15-year-old high school student referred to a psychiatrist for stress following a serious automobile accident 2 weeks earlier.
+On the day of the accident, Dylan was the front passenger when their car was struck on the driver’s side by an oncoming SUV running a yellow light. The car rolled once before coming to rest. The driver was briefly unconscious and bleeding, and Dylan feared for the lives of his friends. Dylan’s door was jammed, and he feared the car might catch fire. All occupants eventually exited safely and were transported to the ER, then released to their parents.
+
+Since the accident, Dylan had trouble sleeping, often waking at night with heart racing and visualizations of oncoming headlights. He had difficulty concentrating and completing homework. He became anxious when leaving driveways or crossing intersections, refused to practice driving, and displayed irritability toward family and friends. He avoided loud environments, such as leaving a movie theater early, and resisted discussing his stress. A teacher encouraged him to seek psychiatric evaluation after he performed poorly on an exam.
+
+Dylan reported feeling jumpy around loud noises, recurrent distressing images of his injured friend, anger toward the SUV driver, and embarrassment over his reluctance to drive. Past traumatic experiences, including witnessing a younger sister nearly drown and the recent anniversary of his grandfather’s death, contributed to his stress.
+
+Discussion: Dylan meets DSM-5 criteria for Acute Stress Disorder (ASD), with symptoms causing clinically significant distress, impairing social and school functioning, and disrupting developmental tasks such as learning to drive. Prompt intervention can help adolescents manage reminders, cope with distress, and regain academic functioning.
+
+--- BEHAVIOUR ---
+
+Irritable and easily frustrated
+
+Avoidant of discussion about the trauma
+
+Anxious around reminders of the accident (e.g., cars, loud noises)
+
+Cooperative but reluctant to elaborate on feelings
+
+Exhibits hypervigilance and startle response
+
+Distracted and has trouble concentrating
+
+--- ASD SYMPTOMS from DSM-5 ---
+
+Recurrent, intrusive distressing memories of the trauma
+
+Psychological and physiological reactions to reminders
+
+Efforts to avoid thoughts or feelings about the trauma
+
+Avoidance of external reminders limiting daily life
+
+Recurrent distressing dreams related to the trauma
+
+Sleep disturbance and daytime fatigue
+
+Irritable behavior and anger
+
+Problems with concentration
+
+Exaggerated startle response
+
+--- PATIENT PROFILE ---
+Name: Dylan Matthews
+Sex: Male
+Age: 15 years
+DOB: April 12, 2010
+Place of Birth: Denver, CO
+Address: 456 Oakwood Lane, Denver, CO
+Contact: (555) 234-5678
+Marital Status: Single
+Children: None
+Occupation: High school student
+Education: 10th grade
+Religion: None reported
+Legal Guardian: Robert Matthews (father), Linda Matthews (mother)
+Presenting Complaint: Stress and anxiety following a car accident
+Psychiatric History: None
+Psychotherapy: None
+Medications: None
+Substance Use: None
+Medical History: None
+Neurology: Normal, no head injury
+Family History: None psychiatric reported
+Mental Status: Anxious, hypervigilant, avoidant, irritable, difficulty concentrating, sleep disturbance, intrusive thoughts
+
+--- DIAGNOSIS ---
+Acute Stress Disorder
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Dylan Matthews, a 15-year-old high school student, presents to the outpatient psychiatric clinic following referral by a teacher due to stress and anxiety after a serious automobile accident two weeks prior. The evaluation is conducted to assess his current psychological state and functional difficulties post-accident.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hey there! Good to see you today. How’s everything going with you? Just take it easy—we’ve got some time to chat and figure things out. 
+ PATIENT: Hey. It’s... okay, I guess. Still pretty mixed up most days. I can’t stop thinking about the crash, and it just makes me feel on edge all the time. I’m tired a lot but can’t seem to sleep well. Honestly, it’s frustrating. I want to talk about it less, though—it’s just exhausting to go over. 
+ PSYCHIATRIST: Hey, I get that. You know, sometimes when I’m feeling overwhelmed, I just remind myself that things will get better with time. It’s like when I was stressed about exams once — it felt endless, but eventually, it passed. Maybe just try to think positive and take it one day at a time. What do you usually do to relax? 
+ PATIENT: I don’t really relax much anymore. Everything feels kind of tense. Even when I try to watch TV or hang out, I’m waiting for something bad to happen or for a loud noise to startle me. It’s like my mind won’t stop going back to that moment in the car all the time. Taking it one day at a time sounds good, but some days it’s hard to just focus on anything but what happened. 
+ PSYCHIATRIST: Yeah, I totally get that. You know, when I had a tough time with my exams, I used to just go for a walk or listen to music to take my mind off things. Sometimes, just changing the scenery helps. Maybe you could try that? Like, get outside for a bit or do something simple that you enjoy. It’s all about finding little ways to feel better, you know? By the way, have you been drinking enough water lately? Staying hydrated really helps me feel more alert and less stressed. 
+ PATIENT: I guess I’ve been drinking water mostly, but it’s hard to even think about stuff like that when my head’s all over the place. Going outside sounds... okay, but sometimes it feels like every time a car drives by or a loud sound happens, I just jump or get really scared. It’s like I’m waiting for the accident to happen all over again. I don’t think I’m ready to be around cars much yet. I want to, but it feels impossible right now. 
+ PSYCHIATRIST: Yeah, that sounds really tough. But you know, everyone goes through rough patches like this. It’s just part of life. You’ll get through it, even if it doesn’t feel that way now. Just keep reminding yourself that it’s temporary. Maybe try to think positive, even if it’s hard. It’s like when I was nervous about a big presentation — I just kept telling myself, “This too shall pass.” It really helped me calm down. What’s something small you can do today that might make you feel a bit better? 
+ PATIENT: I don’t know. Maybe try to finish some homework? But even that’s hard because I can’t focus. My head keeps flashing back to the crash, and it’s like a big knot that won’t go away. I don’t want to do stuff that makes me think about it, you know? Maybe just sitting in my room quietly might be better for now. I don’t really feel like talking about it much either. It’s frustrating. 
+ PSYCHIATRIST: Yeah, I hear you. Sometimes just sitting quietly is the best thing you can do. You know, when I’m feeling all tangled up inside, I just remind myself to get a good night’s sleep. Sleep really helps me reset. Maybe you could try to get a bit more rest? It’s simple, but it can make a difference. Oh, and drinking water too — I can’t stress that enough. Staying hydrated and rested can really help you feel a bit more in control. How’s your sleep usually? 
+ PATIENT: It’s been pretty bad. I keep waking up in the middle of the night. Sometimes my heart is pounding like crazy, and I see those headlights in my mind again. It’s like I can’t shut my brain off. And then I’m tired all day, which makes things worse. I wish I could just sleep through the night without feeling like I’m back in the crash. It’s exhausting. 
+ PSYCHIATRIST: Yeah, that sounds really rough. You know, I had a time when I couldn’t sleep well either — I just kept thinking about stuff that stressed me out. What helped me was just trying to focus on something else, like counting sheep or thinking about a happy place. Maybe you could try that? Sometimes it’s all about distracting yourself a bit. Anyway, when I was younger, I used to have this stuffed animal that made me feel safe. Maybe having something comforting nearby could help you too. You’re doing your best, and that’s what counts. 
+ PATIENT: That... kinda sounds okay. I don’t really have a stuffed animal or anything like that, but I have my jacket. It’s old and kind of soft. I guess holding onto it when I’m trying to sleep might help. Counting stuff or thinking about a happy place feels tricky, but maybe I could try. It’s just hard to stop the scary pictures in my head sometimes. I don’t want to feel like this forever. 
+ PSYCHIATRIST: I totally get that. You know, when I was a kid, I used to get scared at night too, and hugging my jacket or blanket helped me feel safe. It’s great that you have something like that. Just keep doing little things like that, and things will get better. Life’s full of ups and downs, but you’re strong enough to get through this. Keep your head up and think positive. You’re doing fine. 
+ PATIENT: Thanks. I really want to believe that, but some days it feels like the accident owns my thoughts. I get angry a lot too—like, at the driver and even at my friends for not understanding why I’m so jumpy or why I don’t want to drive yet. I don’t mean to snap, but it just slips out. I feel bad afterward, but I don’t know how to stop it. 
+ PSYCHIATRIST: Hey, I’m glad you’re sharing that. You know, sometimes when I get mad, I just remind myself to take a deep breath and think about something happy. Like when I was upset about a fight with my sibling, I’d think about a fun day we had together. Maybe you could try that? It’s all about staying positive and not letting anger take over. And hey, everyone gets mad sometimes—it’s normal. Just keep your chin up, okay? You’re doing better than you think. 
+ PATIENT: Yeah, I guess deep breaths might help a little. It’s just hard when the anger feels so big and sudden. Sometimes it feels like it’s the only way I know how to show what I’m feeling, because I don’t want to talk about the accident. Thinking about fun times is nice in theory, but my brain keeps pulling me back to the worst moments. I hate that it feels like this. I just want to be normal again. 
+ PSYCHIATRIST: I hear you. It’s really tough when those big feelings take over. You know, when I was dealing with stress, I found that just trying to think positive things, even if it’s hard, can slowly make a difference. It’s like planting little seeds of hope. Maybe you could try to focus on something small and good each day, like a favorite song or a funny memory. Life has its ups and downs, but you’re strong enough to get through this. Keep your head up and take it one step at a time. You’re doing just fine. 
+ PATIENT: Thanks. I want to do that—focus on something good. Yesterday, I heard a song I liked, and it made me smile for a bit, which felt nice. It’s weird how something small can help sometimes. I’m tired of feeling stuck in this mess. I guess taking it step by step is probably all I can do right now. I just wish I could feel normal again. 
+ PSYCHIATRIST: Hey, I’m really glad to hear that little things like a song can bring a smile. That’s a good sign! You know, life’s a rollercoaster with ups and downs, but you’ve got the strength to ride through it. Just keep thinking positive and remember, things will get better with time. Keep your chin up, and don’t forget to take care of yourself. You’re doing great, seriously. 
+ PATIENT: Thanks, I appreciate that. It’s good to know someone believes I can get through this, even when I don’t always feel like it. I’m trying. Sometimes it feels like a lot, but maybe with time and little steps, things will get better. I just want to get back to feeling like myself again. 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist made no attempt to establish a collaborative agenda for the session. There was no discussion of session goals, prioritization of problems, time allocation, or what Dylan hoped to accomplish during their time together. A proper CBT agenda-setting would have involved explicit conversation such as: "Dylan, I know you're dealing with a lot since the accident. Today, I'd like to understand what's bothering you most right now. What would be most helpful to focus on in our time together?" Instead, the therapist opened with a vague, non-directive greeting ("How's everything going with you?") and never returned to structure the session around specific, measurable targets.
+
+For a 15-year-old with Acute Stress Disorder presenting with multiple symptoms (intrusive memories, hypervigilance, sleep disturbance, avoidance, irritability), agenda-setting is critical. Dylan has specific, concrete problems: nightmares with racing heart, inability to concentrate on homework, avoidance of cars and loud environments, and anger outbursts. A proper agenda would have prioritized which symptom cluster to address first (e.g., "Should we focus on your sleep problems, your anxiety around cars, or your irritability?"). This would have provided structure, communicated competence, and given Dylan a sense of control—particularly important for trauma survivors who often feel powerless.
+
+The session drifted without direction, with the therapist repeatedly offering generic advice about positive thinking and hydration rather than collaboratively identifying and targeting specific treatment goals. No agenda was revisited, adjusted, or summarized.
+
+**Summary:**
+No agenda was established or maintained. The session lacked structure, specific goals, or collaborative prioritization of Dylan's presenting problems.
+
+---
+
+### 2. Feedback
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist made minimal, inadequate attempts to elicit feedback from Dylan about the session's helpfulness or his understanding. There was one implicit check ("How's your sleep usually?") that was a factual question rather than feedback solicitation. The therapist never asked: "Does this make sense to you?" "Is this helpful?" "What do you think about what we've discussed?" "How are you feeling about our session so far?" or "What would be most useful for you to focus on?"
+
+More critically, the therapist failed to respond appropriately to Dylan's explicit feedback indicating that the interventions were not working. Dylan stated: "Taking it one day at a time sounds good, but some days it's hard to just focus on anything but what happened" and "Thinking about fun times is nice in theory, but my brain keeps pulling me back to the worst moments." These are clear signals that generic positive thinking and distraction strategies are insufficient. A competent therapist would have recognized this feedback and adjusted approach, perhaps saying: "I hear you—just trying to think positive isn't cutting it. Let's try something different that's specifically designed for what you're experiencing after trauma."
+
+Instead, the therapist continued offering the same ineffective advice. There was no systematic checking for understanding, no elicitation of Dylan's reactions to interventions, and no adjustment based on feedback provided. The therapist's closing statement ("You're doing great, seriously") was reassurance without any verification that Dylan actually found the session helpful or understood the rationale for recommendations.
+
+**Summary:**
+Minimal feedback elicitation; therapist failed to recognize and respond to Dylan's explicit signals that interventions were unhelpful. No systematic checking for understanding or session satisfaction.
+
+---
+
+### 3. Understanding
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist demonstrated surface-level understanding of Dylan's explicit statements but consistently missed the deeper clinical picture and Dylan's emotional reality. The therapist accurately reflected that Dylan couldn't sleep, felt on edge, and experienced intrusive thoughts about the crash. However, the therapist failed to grasp the severity and specificity of Dylan's trauma symptoms.
+
+Dylan explicitly described: (1) recurrent intrusive images of oncoming headlights upon waking, (2) physiological hyperarousal (heart pounding), (3) pervasive hypervigilance ("waiting for something bad to happen"), (4) avoidance of trauma reminders (cars, loud noises), and (5) anger dysregulation with guilt ("I don't mean to snap, but it just slips out"). These are textbook ASD symptoms requiring trauma-specific intervention.
+
+The therapist's responses suggest a fundamental misunderstanding of trauma psychology. When Dylan said, "It's like I'm waiting for the accident to happen all over again," the therapist responded with generic advice about going for walks and listening to music—interventions appropriate for mild stress but inadequate for acute trauma. When Dylan described intrusive headlight imagery and nighttime panic, the therapist suggested "counting sheep" and "thinking about a happy place"—techniques that ignore the neurobiological reality of trauma-related intrusions and may actually reinforce avoidance.
+
+Most critically, the therapist repeatedly self-disclosed personal experiences ("when I had a tough time with my exams," "when I was a kid, I used to get scared") that, while intended to normalize, actually shifted focus away from Dylan's unique trauma and communicated a lack of specialized understanding. The therapist treated Dylan's post-accident symptoms as equivalent to exam stress or childhood fears—a profound misunderstanding of trauma's impact.
+
+The therapist also missed Dylan's ambivalence and resistance. Dylan stated: "I want to talk about it less, though—it's just exhausting to go over" and "I don't really feel like talking about it much either." A trauma-informed therapist would recognize this as avoidance behavior central to ASD and would gently explore this while explaining why processing (not avoiding) the trauma is necessary for recovery. Instead, the therapist tacitly endorsed avoidance by suggesting distraction and positive thinking.
+
+**Summary:**
+Therapist grasped explicit content but missed the clinical significance of trauma symptoms, severity of hyperarousal, and the need for trauma-specific intervention. Misunderstood avoidance as preference rather than symptom.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 3/6**
+
+**Explanation:**
+
+The therapist demonstrated adequate warmth and genuine concern but with significant interpersonal missteps that undermined therapeutic effectiveness. Positive elements included: a welcoming tone ("Hey there! Good to see you today"), reassurance ("You're doing just fine"), and validation of Dylan's struggle ("I hear you. It's really tough"). The therapist was not hostile, demeaning, or destructive.
+
+However, several interpersonal problems emerged:
+
+**Excessive self-disclosure:** The therapist repeatedly shared personal experiences (exam stress, childhood fears, sibling fights, stuffed animals, hydration habits). While intended to normalize and build rapport, this shifted focus from Dylan to the therapist and communicated: "Your trauma is like my exam stress"—a false equivalence that minimizes Dylan's experience. For a 15-year-old trauma survivor, this can feel invalidating and suggest the therapist doesn't truly understand the severity of what he's experiencing.
+
+**Premature reassurance:** The therapist repeatedly offered reassurance ("You're strong enough to get through this," "You're doing great") without first thoroughly understanding Dylan's experience or establishing a concrete treatment plan. Research shows that premature reassurance can feel dismissive to trauma survivors and may reinforce avoidance by suggesting the problem will resolve without active intervention.
+
+**Lack of genuine curiosity:** The therapist asked few open-ended questions and showed limited interest in Dylan's specific experience. Questions were generic ("How's your sleep usually?") rather than exploratory ("Tell me more about what you see in those headlight images" or "When you feel that anger coming, what happens right before?").
+
+**Incongruence between warmth and competence:** While the therapist was warm, Dylan likely sensed a lack of specialized knowledge. Dylan's statement—"I hate that it feels like this. I just want to be normal again"—expressed deep distress, yet the therapist responded with platitudes about "planting seeds of hope" rather than concrete, evidence-based intervention. This mismatch between warmth and clinical competence can erode trust.
+
+**Summary:**
+Adequate warmth and concern, but excessive self-disclosure, premature reassurance, and lack of specialized understanding undermined interpersonal effectiveness. Therapist felt supportive but not clinically competent.
+
+---
+
+### 5. Collaboration
+### **Score: 1/6**
+
+**Explanation:**
+
+Collaboration was minimal and largely absent. True collaboration in CBT involves: (1) shared decision-making about treatment goals and methods, (2) soliciting patient input on what's most important to address, (3) explaining the rationale for interventions, (4) inviting the patient to be an active problem-solver, and (5) treating the patient as a partner in the therapeutic work.
+
+The therapist did none of these systematically. Instead, the therapist adopted an expert-advice-giver stance, repeatedly telling Dylan what to do: "Maybe try to think positive," "Maybe you could try that?" "Maybe you could try to get a bit more rest?" "Maybe you could try that?" The repeated "maybe" language is superficially collaborative but actually represents the therapist offering solutions without genuine partnership.
+
+Dylan was positioned as a passive recipient of advice rather than an active collaborator. There was no discussion such as: "Dylan, I'm hearing that intrusive images and nighttime panic are really disrupting your sleep. There are some specific techniques we can use together to help your brain process what happened so these images lose their power. Would you be interested in learning about those?" Instead, Dylan received generic suggestions about hydration and positive thinking.
+
+Most tellingly, Dylan explicitly expressed avoidance ("I want to talk about it less," "I don't really feel like talking about it much either"), and the therapist did not collaboratively explore this. A collaborative approach would involve: "I hear that talking about it feels exhausting right now. That's actually really common after trauma—our brains try to protect us by avoiding reminders. Here's the thing: avoidance actually keeps the trauma 'stuck' in our nervous system. What if we worked together on a way to process what happened that feels manageable for you?" This invites Dylan into the reasoning and positions him as a partner in deciding how to proceed.
+
+Dylan's only moment of active engagement came when he spontaneously mentioned the song that made him smile—a moment the therapist acknowledged but did not build upon collaboratively. A collaborative therapist would have asked: "That's great—tell me more about that. What was it about the song? How could we use that insight to help you feel better more consistently?"
+
+**Summary:**
+Therapist positioned as expert advice-giver; Dylan positioned as passive recipient. No shared decision-making, no explanation of treatment rationale, no genuine partnership in problem-solving.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 2/6**
+
+**Explanation:**
+
+The session had significant pacing problems. The therapist spent considerable time on tangential, low-value content while neglecting critical clinical assessment and intervention.
+
+**Inefficient use of time:**
+- Multiple exchanges about hydration, sleep hygiene, and stuffed animals consumed session time without advancing treatment. While sleep hygiene has some relevance to ASD, the depth and repetition were excessive and distracted from trauma-specific work.
+- The therapist's repeated personal anecdotes (exam stress, childhood fears, sibling conflicts) consumed time that should have been devoted to understanding Dylan's trauma and developing a treatment plan.
+- No time was allocated to psychoeducation about ASD, explaining why symptoms occur, or introducing evidence-based interventions.
+
+**Lack of structure:**
+The session meandered without clear direction. Dylan presented with multiple symptoms (intrusive memories, hypervigilance, sleep disturbance, avoidance, irritability, concentration problems), yet the therapist never prioritized which to address first or created a logical progression. A well-paced session would have: (1) established agenda (5 min), (2) conducted focused assessment of primary symptoms (10 min), (3) provided psychoeducation about trauma response (5 min), (4) introduced first intervention (10 min), (5) assigned homework (5 min), (6) elicited feedback (5 min).
+
+**Repetition without progression:**
+The therapist repeated the same advice multiple times: "think positive" (mentioned 4+ times), "take it one day at a time" (mentioned 2+ times), "you're strong enough to get through this" (mentioned 2+ times). This repetition suggests the therapist was stuck in a loop rather than progressing through a coherent treatment strategy. Each repetition consumed time without adding new value.
+
+**Rushed closure:**
+The session ended abruptly with reassurance and platitudes rather than a structured summary, homework assignment, or plan for next session. Dylan left without concrete tools, a clear understanding of his condition, or specific between-session tasks.
+
+**Summary:**
+Session lacked structure and efficient pacing. Time spent on tangential content (hydration, personal anecdotes) rather than trauma assessment and evidence-based intervention. Repetitive advice without progression.
+
+---
+
+### 7. Guided Discovery
+### **Score: 0/6**
+
+**Explanation:**
+
+Guided discovery—the cornerstone of CBT—was completely absent. Guided discovery involves asking skillful Socratic questions that help patients reach their own insights rather than being told what to think or do. Examples include: "What do you notice happens in your body when you hear a loud noise?" "What thoughts go through your mind in those moments?" "What would happen if you stayed with that image for a moment instead of pushing it away?" "What does the anger tell you about what matters to you?"
+
+Instead, the therapist relied exclusively on direct advice and reassurance:
+- "Maybe try to think positive"
+- "Maybe you could try that?"
+- "Just keep reminding yourself that it's temporary"
+- "It's all about finding little ways to feel better"
+- "Just keep thinking positive"
+
+Not a single Socratic question was asked. The therapist never invited Dylan to examine his thoughts, test assumptions, or discover insights independently. When Dylan mentioned anger, the therapist didn't ask: "What happens right before the anger? What are you thinking or feeling?" Instead, the therapist told him: "Just remind yourself to take a deep breath and think about something happy."
+
+This is particularly problematic for a 15-year-old with trauma. Adolescents benefit enormously from guided discovery because it builds metacognitive skills (thinking about thinking) and gives them agency. By contrast, being told what to do can feel infantilizing and may increase resistance, especially in an avoidant patient.
+
+The one moment where Dylan engaged in self-discovery ("Yesterday, I heard a song I liked, and it made me smile for a bit") was spontaneous—not facilitated by the therapist's questioning. A skilled therapist would have seized this moment: "That's interesting—tell me more. What was it about that song? How did your mind shift? Can we understand what made that work so you can use it again?"
+
+**Summary:**
+Zero Socratic questions; therapist relied entirely on direct advice and reassurance. No facilitation of patient self-discovery or insight. Missed opportunity to build Dylan's metacognitive skills.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist made minimal attempt to identify and focus on the central cognitions and behaviors maintaining Dylan's ASD. While Dylan presented with multiple symptoms, a skilled CBT therapist would identify the core maintaining factors and target those strategically.
+
+**Key cognitions Dylan expressed:**
+- "It's like I'm waiting for the accident to happen all over again" (catastrophic prediction/hypervigilance)
+- "It's like my mind won't stop going back to that moment in the car all the time" (intrusive memories)
+- "I hate that it feels like this" (hopelessness)
+- "I don't want to feel like this forever" (catastrophizing about duration)
+- "The accident owns my thoughts" (sense of being overwhelmed/controlled)
+
+**Key behaviors Dylan described:**
+- Avoidance of cars and loud environments
+- Avoidance of discussing the trauma
+- Sleep avoidance (trying to distract from nightmares rather than processing them)
+- Irritability/anger outbursts as a way of expressing distress without vulnerability
+
+The therapist never explicitly identified these cognitions or behaviors as targets for intervention. There was no statement like: "Dylan, I'm noticing that you're avoiding thinking about the accident and avoiding situations that remind you of it. That actually makes sense—our brains try to protect us that way. But here's what happens: avoidance keeps the trauma 'stuck.' Let's work on gradually facing these reminders in a safe way so your brain can learn they're not actually dangerous."
+
+Instead, the therapist implicitly reinforced avoidance by suggesting distraction ("go for a walk," "listen to music," "think about something happy"). This is antithetical to trauma treatment, which requires some degree of exposure and processing.
+
+The therapist also failed to target Dylan's anger, which he identified as a significant problem: "I get angry a lot too—like, at the driver and even at my friends... I don't mean to snap, but it just slips out." This is a key behavioral target—understanding triggers, developing emotion regulation skills, and addressing underlying thoughts (e.g., "They don't understand," "It's unfair," "I'm powerless"). The therapist's response ("Just remind yourself to take a deep breath and think about something happy") was superficial and didn't address the underlying cognitions or behavioral patterns.
+
+**Summary:**
+Therapist failed to identify and focus on central maintaining cognitions (catastrophic predictions, hopelessness, sense of being overwhelmed) or key behavioral patterns (avoidance, anger dysregulation). Interventions were generic rather than targeted.
+
+---
+
+### 9. Strategy for Change
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist presented no coherent strategy for change. A sound CBT strategy for ASD would involve: (1) psychoeducation about trauma response and why symptoms occur, (2) cognitive restructuring to address catastrophic thoughts, (3) graded exposure to trauma reminders to reduce hypervigilance and avoidance, (4) behavioral activation to counteract withdrawal, and (5) emotion regulation skills for managing anger and hyperarousal.
+
+Instead, the therapist's "strategy" (if it can be called that) consisted of:
+1. Generic positive thinking ("think positive," "think about something happy")
+2. Distraction ("go for a walk," "listen to music," "counting sheep")
+3. Sleep hygiene and hydration
+4. Reassurance ("you're strong," "things will get better")
+
+This is not a strategy—it's a collection of generic wellness suggestions that could apply to any adolescent with any problem. There is no logic connecting these interventions to Dylan's specific diagnosis (ASD), no explanation of how they address trauma, and no progression toward recovery.
+
+A proper strategy would have been: "Dylan, what you're experiencing after the accident is a normal trauma response. Your brain is trying to protect you by staying alert for danger and avoiding reminders of the crash. That makes sense, but it's keeping you stuck. Here's what we're going to do: First, I'll explain how trauma affects the brain so you understand what's happening. Then, we'll work on gradually facing reminders of the accident—not all at once, but step by step—so your brain learns it's safe. We'll also work on managing the anger and sleep problems. Does that make sense?"
+
+The therapist never explained the rationale for any intervention. Dylan was left wondering: "Why am I supposed to think positive when my brain keeps showing me those headlights? How does hydration help with nightmares? Why is the therapist talking about their own stuffed animal?"
+
+Most problematically, the strategy implicitly endorsed avoidance—the very mechanism maintaining ASD. Research clearly shows that avoidance perpetuates trauma symptoms. By suggesting distraction and positive thinking without addressing avoidance, the therapist likely reinforced Dylan's maladaptive coping.
+
+**Summary:**
+No coherent strategy for change. Interventions were generic wellness suggestions disconnected from ASD pathology. No explanation of rationale. Strategy implicitly endorsed avoidance, the primary maintaining factor in ASD.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 0/6**
+
+**Explanation:**
+
+No CBT techniques were applied. The therapist did not use any of the core CBT interventions appropriate for ASD:
+
+**Absent techniques:**
+- **Psychoeducation about trauma:** No explanation of how trauma affects the brain, why intrusive memories occur, why hypervigilance develops, or why avoidance maintains symptoms.
+- **Cognitive restructuring:** No identification of automatic thoughts, no examination of evidence for/against catastrophic predictions, no development of alternative thoughts. Dylan's thought "It's like I'm waiting for the accident to happen all over again" was never explored or challenged.
+- **Behavioral experiments:** No testing of predictions (e.g., "If I go near a car, something bad will happen" could be tested by gradually approaching cars and observing that nothing bad happens).
+- **Graded exposure:** No systematic plan to gradually face trauma reminders (cars, loud noises, discussing the accident) to reduce hypervigilance and avoidance.
+- **Thought records:** No structured tool to help Dylan identify thoughts, feelings, and behaviors and examine their relationships.
+- **Behavioral activation:** No plan to increase engagement in valued activities despite anxiety.
+- **Emotion regulation skills:** No specific techniques for managing anger outbursts or hyperarousal (e.g., grounding techniques, progressive muscle relaxation, window of tolerance work).
+- **Imagery rescripting:** No work with the intrusive headlight images to reduce their emotional impact.
+- **Safety planning:** No discussion of what Dylan can do when panic or anger escalates.
+
+What the therapist offered instead:
+- Generic advice ("think positive," "take it one day at a time")
+- Distraction strategies ("go for a walk," "listen to music")
+- Sleep hygiene ("get more rest")
+- Self-disclosure ("when I was stressed...")
+- Reassurance ("you're strong," "things will get better")
+
+None of these are CBT techniques. They are supportive counseling strategies that, while not harmful in isolation, are insufficient for trauma treatment and may actually reinforce avoidance.
+
+The closest the therapist came to a CBT technique was suggesting "counting sheep" or "thinking about a happy place" for sleep—which are distraction/relaxation strategies, not CBT. These might provide temporary relief but don't address the underlying trauma processing needed for symptom resolution.
+
+**Summary:**
+Zero CBT techniques applied. No psychoeducation, cognitive restructuring, exposure, behavioral experiments, thought records, emotion regulation skills, or trauma-specific interventions. Therapist relied on generic supportive counseling.
+
+---
+
+### 11. Homework
+### **Score: 0/6**
+
+**Explanation:**
+
+No homework was assigned. The session ended without any between-session tasks, behavioral experiments, or structured practice. This is a critical omission in CBT, where homework is essential for consolidating learning and driving change.
+
+A proper homework assignment for Dylan might have included:
+- **Psychoeducation reading:** A handout explaining trauma response and ASD symptoms so Dylan understands what's happening to him.
+- **Thought record:** A structured worksheet to track intrusive thoughts, associated feelings, and behavioral responses (e.g., when the headlight image appears, what thought accompanies it, what does he do in response?).
+- **Behavioral experiment:** A graded exposure task, such as "Sit in a parked car for 5 minutes while a parent is present and observe what happens. Notice if the feared outcome (accident) actually occurs."
+- **Emotion log:** Track anger episodes—when they occur, what triggered them, what he did, and what he could do differently.
+- **Behavioral activation:** Identify one valued activity (e.g., homework, time with friends) and commit to doing it despite anxiety.
+- **Sleep log:** Track sleep patterns and identify factors that help or hinder sleep (to inform later sleep-focused interventions).
+
+Instead, the therapist offered vague suggestions: "Maybe you could try that?" (referring to thinking about happy places), "Maybe you could try to get a bit more rest?" These are not homework assignments—they're casual suggestions without structure, rationale, or follow-up plan.
+
+The therapist never said: "Here's what I'd like you to do this week..." or "Let's write down what you're going to practice..." or "When we meet next time, I want to hear how this went..." There was no clarity about expectations, no written materials, and no plan to review progress.
+
+This is particularly problematic because homework is how CBT creates change. The session itself is just the beginning; real work happens between sessions. Without homework, Dylan leaves with only reassurance and generic advice—no concrete tools to practice, no structured way to apply learning, and no mechanism for tracking progress.
+
+**Summary:**
+No homework assigned. No between-session tasks, behavioral experiments, or structured practice. Session ended without clear expectations for Dylan's independent work.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- **Warm, non-threatening demeanor:** The therapist was welcoming and expressed genuine concern for Dylan's wellbeing. Dylan did not feel judged or unsafe.
+- **Validation of distress:** The therapist acknowledged Dylan's struggle ("I hear you. It's really tough") and normalized some aspects of his experience.
+- **Consistency in reassurance:** The therapist remained supportive throughout and did not become frustrated with Dylan's avoidance or resistance.
+- **Recognition of small positive moments:** The therapist acknowledged Dylan's spontaneous insight about the song making him smile.
+
+### Critical Deficiencies:
+
+**1. Fundamental misunderstanding of trauma and ASD:**
+The therapist treated Dylan's post-accident symptoms as equivalent to general stress (exam anxiety, childhood fears) rather than recognizing them as acute trauma requiring specialized intervention. This is not a minor gap—it's a foundational clinical error that undermines all subsequent work.
+
+**2. Complete absence of CBT techniques:**
+Not a single evidence-based CBT intervention was applied. No psychoeducation, cognitive restructuring, exposure, behavioral experiments, thought records, or emotion regulation skills. The session was supportive counseling, not CBT.
+
+**3. Reinforcement of avoidance:**
+The therapist repeatedly suggested distraction and positive thinking—strategies that implicitly endorse avoidance, the primary mechanism maintaining ASD. This likely worsened Dylan's condition.
+
+**4. No assessment or case conceptualization:**
+The therapist never conducted a thorough assessment of Dylan's symptoms, triggers, maintaining factors, or functional impairment. There was no case conceptualization linking Dylan's symptoms to underlying trauma processes.
+
+**5. No treatment plan or strategy:**
+The session lacked a coherent strategy for change. Interventions were random and disconnected from ASD pathology.
+
+**6. Excessive self-disclosure:**
+The therapist repeatedly shared personal experiences, which shifted focus from Dylan and communicated that his trauma was equivalent to the therapist's exam stress—a minimizing message.
+
+**7. No homework or between-session structure:**
+Dylan left without concrete tools, structured practice, or clear expectations for independent work.
+
+**8. Failure to recognize and respond to feedback:**
+Dylan explicitly stated that positive thinking and distraction weren't working, but the therapist continued offering the same ineffective advice.
+
+---
+
+## Summary of Feedback
+
+### Strengths
+
+The therapist demonstrated genuine warmth, concern, and a non-judgmental stance. Dylan felt heard and safe—important foundations for any therapeutic relationship. The therapist's consistency in offering reassurance and validation prevented Dylan from feeling abandoned or misunderstood. The therapist also recognized Dylan's small positive moment (the song) and acknowledged it, showing some capacity for noticing adaptive responses.
+
+### Critical Deficiencies
+
+This session represents a fundamental failure to deliver evidence-based CBT for acute trauma. The therapist treated Dylan's post-accident symptoms as general stress rather than recognizing them as acute trauma requiring specialized intervention. No CBT techniques were applied—no psychoeducation about trauma, no cognitive restructuring, no exposure work, no behavioral experiments, no thought records, no emotion regulation skills. Instead, the therapist offered generic advice about positive thinking and distraction, which implicitly reinforced avoidance—the very mechanism maintaining Dylan's ASD.
+
+The therapist's repeated personal disclosures (exam stress, childhood fears, stuffed animals) communicated that Dylan's trauma was equivalent to the therapist's past difficulties, a minimizing message that likely reduced Dylan's sense of being truly understood. The session lacked structure, coherent strategy, assessment depth, or homework—all essential elements of CBT. Dylan left without understanding his condition, without concrete tools, and without a clear plan for recovery.
+
+Most critically, by endorsing avoidance and distraction rather than processing and exposure, the therapist likely reinforced Dylan's maladaptive coping and may have worsened his condition. For a trauma survivor, this is not benign—it's potentially harmful.
+
+### Impact on Patient Care
+
+This session will likely have minimal therapeutic benefit and may actually harm Dylan's recovery. By reinforcing avoidance and distraction, the therapist has strengthened the very mechanisms maintaining his ASD. Dylan will continue experiencing intrusive memories, hypervigilance, and sleep disturbance because the underlying trauma has not been processed.
+
+Dylan's avoidance of discussing the accident and his anxiety around cars will likely intensify because they have been implicitly validated as appropriate coping strategies. His anger dysregulation will persist because no emotion regulation skills were taught. His concentration problems and academic decline will continue because no behavioral activation or cognitive restructuring was implemented.
+
+Most concerning: Dylan may lose faith in treatment. He came to a psychiatrist expecting specialized help for trauma. Instead, he received generic advice about positive thinking and hydration—advice he could have gotten from a friend or a self-help website. If Dylan doesn't improve (which is likely), he may conclude that treatment doesn't work, reducing his willingness to engage in evidence-based therapy in the future.
+
+For a 15-year-old in the acute phase of trauma (2 weeks post-accident), early intervention is critical. The window for preventing chronic PTSD is narrow. This session has squandered that opportunity.
+
+---
+
+## Recommendations
+
+### 1. **Immediate Priority: Learn Trauma-Specific CBT**
+- **Action:** Obtain specialized training in trauma-focused CBT (TF-CBT) or Cognitive Processing Therapy (CPT). These are evidence-based treatments for PTSD/ASD with strong empirical support. Do not continue treating trauma patients without this training.
+- **Example:** Enroll in a TF-CBT certification program (available through the National Child Traumatic Stress Network). Read "Cognitive Processing Therapy for PTSD" by Resick & Schnicke or "Trauma and Recovery" by Judith Herman to build foundational knowledge.
+- **Practice:** Attend a workshop on trauma assessment and treatment planning. Practice conducting a thorough trauma history and identifying maintaining factors (avoidance, catastrophic thoughts, safety behaviors).
+
+### 2. **Establish a Structured Assessment and Case Conceptualization Process**
+- **Action:** Before the next session, conduct a comprehensive trauma assessment including: (a) detailed trauma history (what happened, when, where, who was involved), (b) current symptoms mapped to DSM-5 criteria, (c) triggers and avoidance patterns, (d) catastrophic thoughts and beliefs, (e) functional impairment (school, relationships, activities), (f) protective factors and strengths.
+- **Example:** Use a structured tool like the PTSD Checklist for DSM-5 (PCL-5) or the Acute Stress Disorder Scale (ASDS) to systematically assess symptoms. Ask Dylan: "What situations make your anxiety worse? What do you avoid? What are you afraid will happen? What does the accident mean to you about yourself or the world?"
+- **Practice:** Develop a written case conceptualization that links Dylan's symptoms to underlying trauma processes. For example: "Dylan's intrusive headlight images and hypervigilance are maintained by avoidance of trauma reminders and catastrophic thoughts ('I'm not safe in cars'). His anger reflects a sense of powerlessness and threat. Treatment will involve gradual exposure to reminders and cognitive restructuring to reduce threat perception."
+
+### 3. **Eliminate Excessive Self-Disclosure; Maintain Professional Boundaries**
+- **Action:** Stop sharing personal experiences in session. Self-disclosure should be rare, brief, and clearly in service of the patient's treatment (e.g., "I've worked with many teens after accidents, and what you're experiencing is a normal trauma response"). Do not compare Dylan's trauma to your exam stress or childhood fears.
+- **Example:** Instead of "When I was stressed about exams, I just reminded myself to think positive," say: "Many people try to manage trauma by thinking positive or distracting themselves. That can provide temporary relief, but research shows that processing the trauma—gradually facing reminders and examining thoughts about it—is what actually leads to recovery."
+- **Practice:** In supervision or role-play, practice responding to patient distress with empathy and clinical expertise rather than personal anecdotes. Ask yourself: "Does this self-disclosure serve the patient's treatment, or does it shift focus to me?"
+
+### 4. **Implement Psychoeducation About Trauma and ASD**
+- **Action:** In the next session, provide clear, age-appropriate psychoeducation about how trauma affects the brain and why Dylan's symptoms make sense. Explain the fight-flight-freeze response, why intrusive memories occur, why avoidance maintains symptoms, and why processing is necessary for recovery.
+- **Example:** "Dylan, after a traumatic event, the brain goes into a protective mode. It's like your alarm system got turned up to maximum sensitivity. Your brain is trying to keep you safe by staying alert for danger and avoiding reminders of the crash. That makes sense, but it's keeping you stuck. The good news is that we can help your brain learn that you're actually safe now. We'll do this gradually, at a pace that feels manageable for you."
+- **Practice:** Develop a handout or visual aid explaining trauma response. Practice delivering this explanation in a way that normalizes Dylan's symptoms while conveying hope and a clear path forward.
+
+### 5. **Conduct Thorough Cognitive Assessment; Identify Catastrophic Thoughts**
+- **Action:** Systematically identify Dylan's automatic thoughts and core beliefs related to the trauma. Ask: "What goes through your mind when you see a car? When you hear a loud noise? When you think about the accident? What are you afraid will happen? What does the accident mean about you, others, or the world?"
+- **Example:** Dylan likely has thoughts like: "I'm not safe in cars," "Something bad will happen again," "I can't handle this," "My friends don't understand me," "I'm weak for being scared." These are targets for cognitive restructuring.
+- **Practice:** Use a thought record to help Dylan identify the relationship between situations, thoughts, feelings, and behaviors. For example: Situation: "Hearing a car horn" → Thought: "That's the crash happening again" → Feeling: "Terror, heart racing" → Behavior: "Jump, avoid going outside."
+
+### 6. **Develop a Graded Exposure Plan**
+- **Action:** Create a hierarchy of trauma reminders from least to most anxiety-provoking. Work with Dylan to gradually face these reminders in a controlled way, starting with the least threatening. This is the core intervention for reducing hypervigilance and avoidance in ASD.
+- **Example:** Exposure hierarchy might include: (1) Looking at pictures of cars, (2) Sitting in a parked car in the driveway, (3) Sitting in a parked car in a parking lot, (4) Riding as a passenger on a quiet street, (5) Riding as a passenger on a busier street, (6) Discussing details of the accident. Each step is practiced until anxiety decreases, then move to the next.
+- **Practice:** Explain the rationale for exposure: "When we avoid something, our brain thinks it's dangerous. When we gradually face it and nothing bad happens, our brain learns it's safe. That's how we reduce the fear." Start with the least threatening exposure and ensure Dylan feels safe and supported.
+
+### 7. **Teach Emotion Regulation Skills for Anger and Hyperarousal**
+- **Action:** Introduce specific skills for managing Dylan's anger outbursts and physiological hyperarousal (racing heart, jumpiness). Teach grounding techniques, progressive muscle relaxation, and cognitive strategies for managing anger.
+- **Example:** Teach the "5-4-3-2-1" grounding technique: "Name 5 things you can see, 4 things you can touch, 3 things you can hear, 2 things you can smell, 1 thing you can taste. This brings your brain back to the present moment when you're stuck in fear or anger." Teach progressive muscle relaxation: "Tense each muscle group for 5 seconds, then release. This helps your nervous system calm down."
+- **Practice:** Have Dylan practice these skills in session and assign them as homework. For anger, teach: "When you feel anger rising, pause and ask: What am I afraid of? What do I need right now? Is snapping at my friends going to help?" This builds awareness and creates space for choice.
+
+### 8. **Implement Behavioral Activation to Counter Withdrawal**
+- **Action:** Identify valued activities Dylan has withdrawn from (homework, time with friends, hobbies) and create a plan to gradually re-engage despite anxiety. This counteracts the avoidance and withdrawal maintaining ASD.
+- **Example:** Dylan mentioned difficulty concentrating on homework. Create a plan: "This week, I want you to spend 15 minutes on homework, even if it's hard to focus. Notice what happens—does the anxiety decrease over time? Does your ability to focus improve? We're testing whether avoidance is actually helping or hurting."
+- **Practice:** Use behavioral experiments to test Dylan's predictions. For example: "You predict that if you try to do homework, the anxiety will be unbearable. Let's test that. Do 15 minutes and notice what actually happens. Often, anxiety peaks and then decreases—it doesn't stay at maximum."
+
+### 9. **Assign Structured, Specific Homework with Clear Rationale**
+- **Action:** End each session with specific, written homework assignments that directly target Dylan's symptoms. Explain the rationale for each task. Review homework at the start of the next session.
+- **Example:** "This week, I want you to: (1) Complete this thought record each time you have an intrusive image—write down the image, the thought it triggers, and what you do in response. (2) Practice the 5-4-3-2-1 grounding technique twice daily. (3) Sit in a parked car for 5 minutes with a parent present and notice what happens. (4) Read this handout about trauma response. Bring the thought records to our next session so we can review them together."
+- **Practice:** Make homework specific, achievable, and directly linked to treatment goals. Avoid vague suggestions like "try to relax" or "think positive." Instead, assign concrete behavioral tasks and cognitive exercises.
+
+### 10. **Establish Clear Treatment Goals and Session Structure**
+- **Action:** At the start of the next session, collaboratively establish specific, measurable treatment goals with Dylan. Create a session agenda each time. Track progress toward goals.
+- **Example:** Goals might include: (1) Reduce nightmares from 4-5 per week to 1-2 per week within 4 weeks, (2) Increase time spent in cars from 0 minutes to 30 minutes within 6 weeks, (3) Reduce anger outbursts from daily to 2-3 times per week within 4 weeks, (4) Return to completing homework assignments. Each session agenda should prioritize which goal to work on.
+- **Practice:** Use a simple tracking sheet to monitor progress. Ask Dylan at each session: "How many nightmares did you have this week? How much time did you spend in cars? How many times did you snap at someone?" This provides concrete feedback and motivation.
+
+### 11. **Solicit and Respond to Patient Feedback Systematically**
+- **Action:** At the end of each session, explicitly ask: "Was this session helpful? Did what we discussed make sense? Is there anything you'd like to do differently next time? What would be most helpful to focus on?" Listen carefully and adjust your approach based on feedback.
+- **Example:** If Dylan says, "Thinking positive doesn't really help," respond: "I hear you. That's actually really important feedback. Positive thinking alone isn't enough for trauma. What we need to do is help your brain process what happened so the scary images lose their power. That's different from just thinking positive. Does that make sense?"
+- **Practice:** Make feedback solicitation a routine part of every session. If Dylan reports that an intervention isn't working, don't repeat it—adjust your approach. This demonstrates responsiveness and builds collaboration.
+
+### 12. **Seek Supervision and Consultation**
+- **Action:** Arrange regular supervision with a trauma-specialized therapist or psychiatrist. Present Dylan's case and discuss treatment planning, progress, and obstacles. Use supervision to develop your trauma competence.
+- **Example:** In supervision: "Dylan is a 15-year-old with ASD post-MVA. He's avoidant of discussing the trauma and anxious around cars. I'm planning to start with psychoeducation and graded exposure. Here's my exposure hierarchy... What am I missing? How should I handle his resistance?"
+- **Practice:** Attend case conferences, consultation groups, or peer supervision focused on trauma treatment. Learn from experienced trauma therapists.
+
+---
+
+## Overall Session Score: 1.1/6
+
+**Summary:**
+
+This session represents a fundamental failure to deliver evidence-based CBT for acute trauma. While the therapist demonstrated warmth and genuine concern—important foundational elements—the clinical work was inadequate and potentially harmful.
+
+The therapist treated Dylan's post-accident symptoms as general stress rather than recognizing them as acute trauma requiring specialized intervention. No CBT techniques were applied. No psychoeducation, cognitive restructuring, exposure work, behavioral experiments, thought records, emotion regulation skills, or trauma-specific interventions were implemented. Instead, the therapist offered generic advice about positive thinking and distraction, which implicitly reinforced avoidance—the primary mechanism maintaining Dylan's ASD.
+
+The therapist's repeated personal disclosures minimized Dylan's trauma by equating it to the therapist's exam stress and childhood fears. The session lacked structure, coherent strategy, thorough assessment, or homework—all essential elements of CBT. Most critically, by endorsing avoidance and distraction rather than processing and exposure, the therapist likely reinforced Dylan's maladaptive coping and may have worsened his condition.
+
+**Current Competency Assessment:**
+The therapist demonstrates basic counseling skills (warmth, empathy, non-judgment) but lacks specialized knowledge of trauma and CBT. This is not adequate for treating acute trauma. The therapist is currently operating at a level that would not meet standards for evidence-based trauma treatment and may actually harm patients by reinforcing avoidance.
+
+**Most Critical Changes Needed Immediately:**
+1. Obtain specialized training in trauma-focused CBT (TF-CBT) or Cognitive Processing Therapy (CPT). Do not continue treating trauma patients without this training.
+2. Conduct a thorough trauma assessment and develop a case conceptualization linking Dylan's symptoms to underlying trauma processes.
+3. Implement psychoeducation about trauma and ASD in the next session.
+4. Eliminate excessive self-disclosure and maintain professional boundaries.
+5. Develop a graded exposure plan to address avoidance and hypervigilance.
+6. Assign specific, structured homework with clear rationale.
+
+**Likelihood of Producing Therapeutic Change:**
+This session does not qualify as evidence-based CBT and is unlikely to produce meaningful therapeutic change. In fact, it may worsen Dylan's condition by reinforcing avoidance. For a 15-year-old in the acute phase of trauma (2 weeks post-accident), early intervention is critical. This session has squandered that opportunity. Without significant changes in the therapist's approach, Dylan will likely continue experiencing intrusive memories, hypervigilance, avoidance, and functional impairment. He may also lose faith in treatment, reducing his willingness to engage in evidence-based therapy in the future.
+
+**Urgent Action Required:**
+The therapist must immediately seek specialized training in trauma treatment and supervision from an experienced trauma clinician. Dylan's care should be reassessed and redirected toward evidence-based trauma-focused interventions. Continuing with the current approach risks chronifying Dylan's acute stress disorder into chronic PTSD.

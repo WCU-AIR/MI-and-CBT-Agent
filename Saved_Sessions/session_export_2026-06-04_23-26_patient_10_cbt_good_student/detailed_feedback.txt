@@ -1,0 +1,804 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Attention-Deficit/Hyperactivity Disorder; Specific Learning Disorder; Major Depressive Disorder; Panic Disorder
+
+--- CASE STUDY ---
+
+Carlos was a 19-year-old Hispanic college freshman referred by his guidance counselor for academic difficulties. Since starting college 6 months earlier, he had struggled with test performance, managing his study schedule, and maintaining concentration, resulting in anxiety, insomnia, poor concentration, and hopelessness. After a difficult week, he told his family he thought he should quit college.
+
+Carlos had a childhood diagnosis of ADHD, combined type, at age 9. He had difficulty following instructions, completing homework, remaining seated, and concentrating except for video games. Psychoeducational testing at that time revealed reading fluency and comprehension difficulties, but he did not meet the criteria for a learning disability. His family supported him with tutoring rather than medication.
+
+Since starting college, Carlos reported restlessness, agitation, and worry. He had trouble sleeping, low energy, and reduced enjoyment in activities. His depressive symptoms fluctuated during the week and were compounded by social stressors, including being the only Dominican student on campus and questions about sexual orientation. He denied substance use.
+
+Collateral history revealed a childhood history of ataques de nervios, with trembling, agitation, palpitations, shortness of breath, dread of harm, and fear of separation from caregivers, treated with supportive prayer and herbal remedies. Family history is positive for ADHD in a younger brother and a cousin with dyslexia.
+
+On examination, Carlos was well-groomed, polite, soft-spoken, hunched, and avoided eye contact. He tapped his fingers and shuffled in his seat but responded appropriately. He spoke English fluently with a slight Spanish accent and occasional mispronunciations. He denied suicidal thoughts and appeared motivated to improve academically.
+
+Updated psychoeducational testing revealed moderately severe reading and writing difficulties, confirming a Specific Learning Disorder.
+
+Discussion: Carlos has a history of childhood ADHD, current academic difficulties, mild major depressive episode, and panic symptoms in the context of transition stress and acculturation. He meets DSM-5 criteria for ADHD (inattentive type), SLD, and mild depression. Academic accommodations are indicated to support his college performance.
+
+--- BEHAVIOUR ---
+
+Polite, soft-spoken
+
+Quiet, hunched posture
+
+Finger tapping, fidgeting, shuffling in seat
+
+Hesitant eye contact
+
+Motivated to improve
+
+--- DSM-5 SYMPTOMS ---
+ADHD (predominantly inattentive)
+
+Difficulty sustaining attention
+
+Easily distracted
+
+Trouble completing tasks/assignments
+
+Difficulty organizing tasks
+
+Often forgetful in daily activities
+
+SLD
+
+Reading fluency and comprehension deficits
+
+Written expression deficits (spelling, organization)
+
+MDD (mild, single episode)
+
+Anxiety and worry
+
+Insomnia
+
+Poor concentration
+
+Low energy
+
+Reduced enjoyment
+
+Panic symptoms
+
+Episodes of trembling, agitation, palpitations, shortness of breath, dread
+
+--- PATIENT PROFILE ---
+Name: Carlos Martinez
+Sex: Male
+Age: 19 years
+DOB: February 12, 2006
+Place of Birth: Santo Domingo, Dominican Republic
+Address: 45 Elm Street, Chicago, IL
+Contact: (555) 987-6543
+Marital Status: Single
+Children: None
+Occupation: College student, freshman
+Education: High school diploma, currently attending public university
+Religion: Catholic
+Legal Guardian: Maria Martinez (mother)
+Presenting Complaint: Academic difficulties, anxiety about college performance
+Psychiatric History: ADHD (combined type, childhood), panic episodes in childhood (ataque de nervios)
+Psychotherapy: None
+Medications: None
+Substance Use: Denies
+Medical History: None significant
+Neurology: Normal
+Family History: Younger brother with ADHD, cousin with dyslexia
+Mental Status: Soft-spoken, anxious, fidgeting, hesitant eye contact, motivated, denies suicidal ideation
+
+--- DIAGNOSIS ---
+
+Major Depressive Disorder, mild, single episode
+
+History of Panic Disorder; rule out current
+
+History of ADHD, predominantly inattentive, mild-moderate; rule out current
+
+Specific Learning Disorder: reading (fluency & comprehension) and written expression, moderate severity
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Carlos Martinez, a 19-year-old Hispanic college freshman, presents to the outpatient clinic following referral by his college guidance counselor due to concerns about academic difficulties and anxiety related to college performance. The intake is conducted to assess his current challenges and support needs.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hello, it’s good to see you today. Before we begin, I’d like to set our agenda together. Is there one or two main things you’d like us to focus on in this session? Also, on a scale from 0 to 10, how would you rate your current mood or stress level? 
+ PATIENT: Hi, thanks for seeing me. Um, I guess the main thing I want to focus on is managing my anxiety about school, especially because I keep getting distracted and it feels like I’m not keeping up with anything. And maybe also my trouble sleeping, ’cause that’s been really hard. 
+
+If I had to rate my stress right now, I’d say it’s about a 7. It feels pretty heavy most days, especially when I think about tests or assignments. 
+ PSYCHIATRIST: Thank you for sharing that. So, our agenda for today will focus on your anxiety related to school and the difficulties you’re having with sleep. Does that sound right to you? 
+
+Before we dive deeper, just to check in—on that same 0 to 10 scale, how would you rate your anxiety specifically about school right now? And how about your sleep difficulties? This will help us track any changes as we go along. 
+ PATIENT: Yes, that sounds right. 
+
+Um, about my anxiety with school right now, I think it’s about an 8. I get really worried about falling behind or messing up, and it’s hard to stop those thoughts. 
+
+For my sleep problems, I’d say maybe a 6? I’m not falling asleep quickly, and sometimes I wake up a lot during the night, so it feels like I’m not getting rested. 
+ PSYCHIATRIST: Thank you for those ratings. Let’s start by exploring a recent situation at school that triggered your anxiety. Can you tell me about a specific moment or event in the past few days when you noticed your anxiety increase? What was happening, and what thoughts were going through your mind at that time? 
+ PATIENT: Yeah, um, just a couple days ago, I had this big assignment due for one of my classes. I was trying to study, but my mind kept drifting, and I couldn’t focus. I started thinking, like, “I’m never going to finish this, I’ll probably fail the class, and then everything’s just going to get worse.” 
+
+I felt my heart speeding up and my hands started shaking a little. I tried to calm myself down, but the more I worried, the harder it was to concentrate, and then I just ended up putting it off for a bit because it felt too overwhelming. 
+ PSYCHIATRIST: Thank you for sharing that specific moment. It sounds like when you were trying to study for this big assignment, your thoughts were quite negative and made you feel overwhelmed, which then made it harder to focus and led to putting the work off. 
+
+Just to make sure I’m understanding, you had the thought, “I’m never going to finish this, I’ll probably fail the class, and then everything’s just going to get worse.” Is that right? 
+
+Can you tell me more about how you felt emotionally in that moment, and what you did behaviorally after those thoughts came up? 
+ PATIENT: Yes, that’s exactly what I was thinking. It’s like this spiral in my head that just gets louder.
+
+Emotionally, I felt really stressed and kind of hopeless, like no matter what I tried, it wouldn’t be good enough. I got tight in my chest, and my stomach felt upset. I was scared, not just about the assignment, but about disappointing my family and myself.
+
+After those thoughts, I mostly avoided the work for a while. I kept checking my phone or just staring at the page without writing anything. It felt easier to do anything else than face the assignment, even though I knew that only made me feel worse later. 
+ PSYCHIATRIST: Thank you for describing that so clearly. It sounds like the thought of not finishing the assignment led to feelings of stress, hopelessness, and physical tension, which then contributed to avoidance behaviors like distraction and procrastination. 
+
+To make sure we’re on the same page, here’s a brief summary of the links we’ve identified: the situation was trying to study for the big assignment, the automatic thought was “I’m never going to finish this, I’ll probably fail the class, and then everything’s just going to get worse,” which triggered feelings of stress and hopelessness, physical symptoms, and then avoidance behavior, which reinforced the stress.
+
+Does that sound accurate to you? And how does it feel to see these connections laid out like this? 
+ PATIENT: Yeah, that sounds right. Seeing it all laid out like that kind of helps. It’s like I hadn’t really thought about how the thoughts, feelings, and behaviors are all connected before. 
+
+It’s a little scary to realize how much the thoughts affect me, but also a bit hopeful ’cause maybe if I can change the way I think, it might not feel so overwhelming. 
+ PSYCHIATRIST: I’m glad that seeing the connections feels helpful, even if it’s a bit scary. It’s a big step to recognize how your thoughts influence your feelings and actions. 
+
+Let’s explore the thought you had, “I’m never going to finish this, I’ll probably fail the class, and then everything’s just going to get worse.” What evidence do you have that supports this thought? And what evidence might challenge or contradict it? 
+ PATIENT: Well, the part that feels true is that sometimes I do have a hard time finishing things. I’ve missed a few deadlines already, and I get really distracted or stuck. So, it seems like maybe I won’t finish this assignment on time if I keep feeling like this.
+
+But on the other hand, I guess I have finished some assignments, even if they weren’t perfect. And some of my teachers have said I’m trying, even if it’s slow. So maybe it’s not guaranteed that I’ll fail.
+
+It’s hard to hold onto the positive because the worry feels stronger, but I can see that maybe the thought that everything will just get worse isn’t completely true. It feels more like a fear than a fact. 
+ PSYCHIATRIST: Thank you for that thoughtful reflection. You’ve identified some evidence both for and against the thought, and you’re noticing the difference between fears and facts, which is important.
+
+Given this, what might be a more balanced or realistic way to think about the situation? How could you reframe that original thought in a way that feels more accurate and less overwhelming? 
+ PATIENT: Maybe I could think, um, “I’m struggling right now, but I’ve done some work before and I can keep trying. Even if it takes more time, I can get through this assignment.” 
+
+It feels a little less scary to think that way, like it’s not all or nothing. And maybe even if things don’t go perfectly, that’s okay – I can still learn and improve. 
+ PSYCHIATRIST: That sounds like a very balanced and compassionate way to think about it. How do you feel now when you consider that alternative thought compared to the original one? Has your anxiety or stress level shifted at all? 
+ PATIENT: Thinking it that way actually makes me feel a bit calmer. Maybe the stress goes down from like an 8 to a 6. It’s not completely gone, but it feels like there’s some room to breathe instead of being stuck in panic.
+
+I think it helps because I’m not telling myself I have to be perfect or that I’m already failing. I can just focus on doing what I can. 
+ PSYCHIATRIST: I’m glad to hear that the alternative thought brings some relief and lowers your stress. That sense of breathing room is important.
+
+Given this, what is one small, manageable step you feel you could take in the next few days to test out this new way of thinking or to help with your studying? Maybe something that feels doable even when anxiety is present? 
+ PATIENT: Maybe I could set a timer for, like, 20 minutes to work on the assignment without worrying about finishing it all at once. Just focus on a small part, like reading or writing a paragraph.
+
+I think that feels doable, even if I’m anxious, because it’s not too much and I don’t have to do everything at once. Just taking a little step might help me get past feeling stuck. 
+ PSYCHIATRIST: That’s a great idea—using a timer to focus on a small, manageable part of the assignment for 20 minutes. It breaks the task into less overwhelming pieces and gives you a clear, achievable goal.
+
+What might get in the way of doing this, and how confident do you feel about trying it in the next couple of days? 
+ PATIENT: I guess what might get in the way is the urge to check my phone or get distracted, or just feeling like it’s too hard and stopping.
+
+But I feel maybe like a 6 out of 10 confident that I can try the timer thing. It seems like something small enough that I can push through the distractions for a little bit. And even if I don’t finish, it’s still progress. 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 5/6**
+
+**Explanation:**
+The therapist demonstrated strong agenda-setting skills by explicitly asking Carlos what he wanted to focus on and collaboratively establishing priorities. The therapist stated: "So, our agenda for today will focus on your anxiety related to school and the difficulties you're having with sleep. Does that sound right to you?" This represents genuine collaborative agenda-setting with patient confirmation. The therapist identified two specific, measurable target problems (school anxiety and sleep difficulties) appropriate for a single session.
+
+However, the agenda had minor limitations. First, the therapist did not explicitly allocate time to each agenda item or establish priorities between them (e.g., "We have 50 minutes; let's spend 30 on anxiety and 20 on sleep"). Second, while sleep was mentioned as an agenda item, the session never returned to it—the entire session focused exclusively on school anxiety. This represents incomplete agenda adherence. Third, the therapist did not establish concrete session goals (e.g., "By the end of today, we'll have a plan for managing test anxiety and a homework assignment to practice"). The agenda was collaborative but lacked specificity about time allocation and measurable session outcomes.
+
+**Summary:**
+The therapist effectively collaborated with Carlos to set a clear, two-part agenda with patient confirmation. However, the session failed to address one agenda item (sleep) and lacked explicit time management or concrete session goals, representing incomplete agenda execution.
+
+---
+
+### 2. Feedback
+### **Score: 4/6**
+
+**Explanation:**
+The therapist elicited feedback at key moments, demonstrating adequate but not exemplary skill. Early in the session, the therapist checked understanding: "Just to make sure I'm understanding, you had the thought, 'I'm never going to finish this, I'll probably fail the class, and then everything's just going to get worse.' Is that right?" This represents explicit verification of understanding. Later, the therapist asked: "Does that sound accurate to you? And how does it feel to see these connections laid out like this?" This demonstrates feedback-seeking about the therapist's conceptualization.
+
+However, feedback elicitation was inconsistent and incomplete. The therapist did not systematically check for understanding after introducing CBT concepts (e.g., after explaining the cognitive model, did Carlos understand it?). The therapist did not ask for feedback about session pace, depth, or helpfulness (e.g., "Is this moving too fast?" or "Is this approach making sense?"). Most critically, the therapist did not elicit feedback at session end about what was most helpful, what Carlos will take away, or what could be improved. The therapist also did not check whether Carlos felt heard or whether the session addressed his concerns adequately. Feedback was reactive (responding to patient statements) rather than proactive (systematically soliciting reactions throughout).
+
+**Summary:**
+The therapist checked understanding at 2-3 points but did not systematically elicit feedback about session helpfulness, pacing, or satisfaction. Feedback-seeking was adequate but lacked the consistency and comprehensiveness expected for higher scores.
+
+---
+
+### 3. Understanding
+### **Score: 5/6**
+
+**Explanation:**
+The therapist demonstrated strong empathic understanding of Carlos's internal experience. When Carlos described his anxiety spiral, the therapist reflected: "It sounds like when you were trying to study for this big assignment, your thoughts were quite negative and made you feel overwhelmed, which then made it harder to focus and led to putting the work off." This accurately captured the sequence of thoughts, emotions, and behaviors Carlos described. The therapist also demonstrated understanding of the emotional weight: "It sounds like the thought of not finishing the assignment led to feelings of stress, hopelessness, and physical tension, which then contributed to avoidance behaviors."
+
+The therapist accurately identified the cognitive-behavioral cycle and reflected it back with appropriate emotional tone. The therapist also validated Carlos's fear about disappointing family, demonstrating cultural sensitivity to his values. The therapist's summary of the cognitive model ("the situation was trying to study for the big assignment, the automatic thought was...") showed clear comprehension of the presenting problem.
+
+However, there were subtle gaps in understanding. The therapist did not explore the connection between Carlos's ADHD symptoms (difficulty sustaining attention, distractibility) and his anxiety—these are not simply anxiety-driven avoidance but may reflect genuine attentional difficulties. The therapist did not inquire about whether Carlos has tried accommodations, medication, or ADHD-specific strategies. Additionally, the therapist did not explore the cultural context of Carlos's anxiety (being the only Dominican student, questions about sexual orientation, acculturation stress) beyond acknowledging family disappointment. The therapist's understanding was solid but somewhat surface-level regarding the complexity of Carlos's presentation.
+
+**Summary:**
+The therapist demonstrated good empathic listening and accurate reflection of Carlos's thoughts, feelings, and behaviors. Understanding was warm and validating but did not fully integrate Carlos's ADHD, learning disability, or cultural/identity stressors into the conceptualization.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 5/6**
+
+**Explanation:**
+The therapist created a warm, safe, and professional therapeutic environment. The opening ("Hello, it's good to see you today") was warm and welcoming. The therapist's tone throughout was gentle, non-judgmental, and encouraging. When Carlos expressed fear about recognizing his thought patterns, the therapist responded: "I'm glad that seeing the connections feels helpful, even if it's a bit scary. It's a big step to recognize how your thoughts influence your feelings and actions." This demonstrates genuine warmth and validation of Carlos's courage.
+
+The therapist maintained appropriate professional boundaries, did not self-disclose, and consistently focused on Carlos's experience. The therapist's language was accessible and avoided jargon (e.g., "automatic thought" was used but explained through example). The therapist praised Carlos's insights ("That sounds like a very balanced and compassionate way to think about it") and normalized his struggle.
+
+However, there were minor interpersonal gaps. The therapist did not explicitly acknowledge Carlos's observable anxiety (fidgeting, hesitant eye contact, soft-spoken manner) or normalize it. A statement like, "I notice you seem a bit anxious right now—that's completely understandable given what you're dealing with" could have deepened rapport. The therapist also did not use Carlos's name frequently, which can enhance connection. The therapist's warmth was present but somewhat reserved—more emotional attunement to Carlos's visible distress could have strengthened the alliance.
+
+**Summary:**
+The therapist demonstrated consistent warmth, professionalism, and validation, creating a safe environment. Interpersonal effectiveness was strong but could have been enhanced through explicit acknowledgment of Carlos's observable anxiety and more frequent use of his name.
+
+---
+
+### 5. Collaboration
+### **Score: 5/6**
+
+**Explanation:**
+The therapist demonstrated strong collaborative practice throughout the session. The opening explicitly invited Carlos's input: "Is there one or two main things you'd like us to focus on in this session?" The therapist then confirmed the agenda: "Does that sound right to you?" This represents genuine shared decision-making. When exploring the automatic thought, the therapist asked Carlos to generate evidence for and against it rather than providing the analysis: "What evidence do you have that supports this thought? And what evidence might challenge or contradict it?" Carlos then independently identified both supporting and contradicting evidence, demonstrating true guided discovery.
+
+Most importantly, when asking for a reframe, the therapist used Socratic questioning: "What might be a more balanced or realistic way to think about the situation?" rather than providing the reframe directly. Carlos generated his own alternative thought: "Maybe I could think, um, 'I'm struggling right now, but I've done some work before and I can keep trying.'" This represents excellent collaborative empiricism—the patient is actively generating insights rather than passively receiving them.
+
+The therapist also invited Carlos's input on homework: "What is one small, manageable step you feel you could take in the next few days?" Carlos generated the timer strategy himself. However, collaboration could have been stronger in one area: the therapist did not explicitly invite Carlos to help develop the treatment strategy or discuss why cognitive restructuring was chosen over other approaches. The therapist also did not ask Carlos whether he preferred to focus on thoughts, behaviors, or both, or whether he had preferences about intervention style.
+
+**Summary:**
+The therapist consistently invited Carlos's input, used guided discovery effectively, and positioned Carlos as an active agent in generating insights and solutions. Collaboration was strong but could have included explicit discussion of treatment strategy and patient preferences.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 5/6**
+
+**Explanation:**
+The therapist demonstrated good pacing and time management. The session moved logically from agenda-setting → identifying a specific situation → exploring thoughts/feelings/behaviors → cognitive restructuring → behavioral planning. Each section received appropriate depth without excessive tangents. The therapist did not allow Carlos to ramble or get lost in peripheral details; instead, the therapist gently redirected to the core issue (the assignment anxiety).
+
+The therapist also used efficient summarization: "Here's a brief summary of the links we've identified: the situation was trying to study for the big assignment, the automatic thought was..." This helped consolidate learning without wasting time. The session covered substantial ground—from problem identification through homework assignment—in what appears to be a reasonable timeframe.
+
+However, there are pacing concerns. First, the session spent considerable time on cognitive restructuring (exploring evidence, generating alternative thoughts, rating anxiety reduction) but never addressed the sleep agenda item. If this was a 50-minute session, the therapist may have over-invested in one problem at the expense of the other. Second, the therapist did not explicitly check whether Carlos wanted to continue with cognitive work or shift focus. Third, the behavioral component (the timer strategy) was introduced somewhat abruptly near the end without sufficient exploration of implementation barriers. The therapist asked "What might get in the way?" but did not develop a detailed implementation plan or problem-solve obstacles.
+
+**Summary:**
+The therapist maintained good session flow and logical progression but incompletely addressed the two-part agenda and introduced homework somewhat hastily without thorough implementation planning.
+
+---
+
+### 7. Guided Discovery
+### **Score: 6/6**
+
+**Explanation:**
+The therapist demonstrated exemplary guided discovery throughout the session. Rather than telling Carlos his thoughts were distorted, the therapist asked: "What evidence do you have that supports this thought? And what evidence might challenge or contradict it?" Carlos then independently identified both supporting evidence ("I've missed a few deadlines already") and contradicting evidence ("I have finished some assignments"). The therapist did not debate or persuade; instead, the therapist allowed Carlos to reach his own conclusions: "It feels more like a fear than a fact."
+
+When asking for a reframe, the therapist used pure Socratic questioning: "What might be a more balanced or realistic way to think about the situation? How could you reframe that original thought in a way that feels more accurate and less overwhelming?" Carlos then generated his own balanced thought without the therapist providing it. This is textbook guided discovery—the patient reaches insights through skillful questioning rather than therapist instruction.
+
+The therapist also used discovery when developing homework: "What is one small, manageable step you feel you could take in the next few days?" Carlos generated the timer strategy independently. The therapist then asked: "What might get in the way of doing this, and how confident do you feel about trying it in the next couple of days?" This invited Carlos to anticipate obstacles and assess his own readiness—further guided discovery.
+
+Throughout, the therapist avoided lecturing, debating, or cross-examining. The tone was collaborative and curious rather than didactic. This represents the highest level of guided discovery skill.
+
+**Summary:**
+The therapist consistently used Socratic questioning to facilitate Carlos's self-discovery, avoiding didactic instruction or persuasion. Guided discovery was exemplary throughout the session.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 4/6**
+
+**Explanation:**
+The therapist identified and focused on a relevant automatic thought: "I'm never going to finish this, I'll probably fail the class, and then everything's just going to get worse." This thought is clearly central to Carlos's anxiety and avoidance. The therapist appropriately explored this thought through evidence examination and cognitive restructuring.
+
+However, there are significant concerns about whether this was the *most* central cognition or behavior for Carlos's presenting problems. Carlos has ADHD (predominantly inattentive type) with documented reading and writing difficulties. His difficulty concentrating and completing assignments may not be primarily driven by catastrophic thinking but by genuine attentional and learning challenges. The therapist focused exclusively on the thought ("I'll fail") without adequately exploring whether Carlos's actual difficulty sustaining attention is an ADHD symptom requiring accommodation or medication rather than cognitive restructuring.
+
+Additionally, the therapist identified avoidance behavior (procrastination, distraction) but did not explore whether this represents anxiety-driven avoidance or ADHD-driven avoidance (difficulty initiating, organizing, sustaining attention). These require different interventions. The therapist also did not focus on the behavioral pattern of sleep disruption, which was listed as an agenda item but never addressed. The therapist did not explore whether sleep problems are anxiety-driven (racing thoughts) or ADHD-driven (restlessness, difficulty winding down).
+
+Most critically, the therapist did not focus on Carlos's core identity stressors (being the only Dominican student, questions about sexual orientation, acculturation stress) which may be driving the depression and panic symptoms. These contextual factors were mentioned in the case but not explored in the session.
+
+**Summary:**
+The therapist focused on a relevant automatic thought but may not have targeted the most central issues. The session did not adequately address whether Carlos's difficulties stem from ADHD/learning disability (requiring accommodation/medication) versus anxiety (requiring cognitive-behavioral intervention), nor did it explore cultural/identity stressors contributing to his depression.
+
+---
+
+### 9. Strategy for Change
+### **Score: 4/6**
+
+**Explanation:**
+The therapist employed a coherent cognitive-behavioral strategy: identify automatic thoughts → examine evidence → generate alternative thoughts → test through behavioral experiment (timer strategy). This represents a logical, evidence-based CBT approach with reasonable promise for reducing anxiety about specific assignments.
+
+However, the strategy has significant limitations given Carlos's actual presentation. The strategy assumes Carlos's primary problem is catastrophic thinking driving avoidance. But Carlos's case formulation should consider:
+
+1. **ADHD component**: Carlos has documented inattentive ADHD with difficulty sustaining attention and organizing tasks. Cognitive restructuring alone will not address attentional deficits. The strategy should include ADHD-specific interventions (environmental modifications, task breakdown, external structure, possible medication evaluation).
+
+2. **Learning disability component**: Carlos has moderate-severity reading and writing difficulties. Cognitive restructuring about "I can't do this" will not address genuine skill deficits. The strategy should include academic accommodations and learning support.
+
+3. **Panic/anxiety component**: Carlos has a history of panic symptoms (ataques de nervios) and current panic symptoms (heart racing, trembling, shortness of breath). The strategy should include exposure or interoceptive exposure, not just cognitive restructuring.
+
+4. **Depression component**: Carlos shows depressive symptoms (low energy, reduced enjoyment, hopelessness). The strategy should include behavioral activation, not just cognitive work.
+
+5. **Cultural/identity stressors**: Carlos is experiencing acculturation stress and identity questions. The strategy should address these contextual factors.
+
+The therapist's strategy is appropriate for test anxiety but insufficient for Carlos's complex, multi-diagnostic presentation. A more comprehensive strategy would integrate ADHD management, learning disability accommodation, behavioral activation, exposure for panic, and cultural exploration.
+
+**Summary:**
+The therapist used a coherent cognitive-behavioral strategy for test anxiety with reasonable promise for that specific problem. However, the strategy is insufficient for Carlos's complex presentation (ADHD, learning disability, depression, panic, cultural stressors) and does not address the full range of his difficulties.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 5/6**
+
+**Explanation:**
+The therapist skillfully applied several core CBT techniques:
+
+1. **Cognitive Model/Psychoeducation**: The therapist explicitly taught the cognitive model: "the situation was trying to study for the big assignment, the automatic thought was..., which triggered feelings of stress and hopelessness, physical symptoms, and then avoidance behavior." This was clear and accessible.
+
+2. **Thought Record/Evidence Examination**: The therapist asked Carlos to identify evidence for and against the automatic thought. Carlos identified supporting evidence ("I've missed a few deadlines") and contradicting evidence ("I have finished some assignments"). This is a core CBT technique applied appropriately.
+
+3. **Cognitive Restructuring**: The therapist guided Carlos to generate an alternative, more balanced thought: "I'm struggling right now, but I've done some work before and I can keep trying." The therapist then assessed the impact: "How do you feel now when you consider that alternative thought compared to the original one? Has your anxiety or stress level shifted at all?" Carlos reported anxiety reduction from 8 to 6.
+
+4. **Behavioral Experiment/Homework**: The therapist assigned a specific behavioral task (20-minute timer for studying) to test the new thought and build mastery. The therapist also explored barriers and confidence.
+
+However, there are limitations in technique application:
+
+1. **Depth of cognitive work**: The cognitive restructuring was relatively brief. The therapist did not explore whether the alternative thought is truly believable to Carlos or whether it requires repeated practice. The therapist did not use techniques like the "downward arrow" to explore core beliefs or use thought records for ongoing practice.
+
+2. **Limited technique variety**: The session relied almost exclusively on cognitive techniques (thought examination, restructuring). Given Carlos's ADHD and learning disability, behavioral techniques (task breakdown, environmental modification, time management) would have been more appropriate. No exposure techniques were used despite panic symptoms.
+
+3. **Homework specificity**: While the timer strategy is concrete, the therapist did not provide a written thought record or structured homework form. The therapist did not specify exactly when Carlos would do this (e.g., "Tuesday evening, 7-7:20 PM") or how he would track it.
+
+4. **No follow-up plan**: The therapist did not establish how Carlos would report back on the homework or what to do if the strategy doesn't work.
+
+**Summary:**
+The therapist applied cognitive restructuring and behavioral assignment techniques skillfully with appropriate depth. However, technique application was somewhat narrow (cognitive-focused) and lacked the specificity and follow-up planning expected for exemplary CBT.
+
+---
+
+### 11. Homework
+### **Score: 5/6**
+
+**Explanation:**
+The therapist assigned a specific, concrete homework task: use a 20-minute timer to work on the assignment, focusing on one small part (reading or writing a paragraph). This is a clear, manageable behavioral experiment directly linked to the session's work. The therapist provided rationale: "It breaks the task into less overwhelming pieces and gives you a clear, achievable goal." The therapist also explored barriers ("What might get in the way?") and assessed confidence (Carlos rated 6/10).
+
+The homework is appropriately tailored to Carlos's needs—it's small enough to be achievable despite anxiety and ADHD symptoms, and it directly tests the alternative thought ("I can keep trying even if it takes time"). The therapist did not assign excessive homework or something disconnected from the session.
+
+However, homework assignment had significant gaps:
+
+1. **No written form**: The therapist did not provide a written thought record, homework sheet, or structured tracking form. Carlos is relying on memory to implement the strategy.
+
+2. **Vague timing**: The therapist said "in the next couple of days" but did not specify exactly when (e.g., "Tuesday and Thursday evenings"). For someone with ADHD, vague timing reduces follow-through.
+
+3. **No tracking mechanism**: The therapist did not ask Carlos to track the homework (e.g., "Write down when you did it, how long you focused, and what you noticed about your anxiety").
+
+4. **No contingency planning**: The therapist did not discuss what to do if Carlos doesn't complete the homework or if it doesn't work. There's no plan for troubleshooting.
+
+5. **Incomplete review plan**: The therapist did not explicitly state that the next session will review this homework or establish how Carlos should report back.
+
+6. **No sleep homework**: The therapist did not assign homework related to the sleep agenda item, which was never addressed.
+
+7. **Limited scope**: The homework addresses only one problem (test anxiety) and does not include sleep hygiene, ADHD management strategies, or other relevant interventions.
+
+**Summary:**
+The therapist assigned a specific, concrete behavioral task with clear rationale and barrier exploration. However, homework lacked written structure, specific timing, tracking mechanisms, and contingency planning. Additionally, the sleep agenda item received no homework assignment.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- **Exemplary guided discovery**: The therapist consistently used Socratic questioning to facilitate Carlos's self-discovery rather than providing answers or persuading. This is a hallmark of skilled CBT.
+- **Strong collaboration**: The therapist invited Carlos's input throughout, positioned him as an active agent, and genuinely incorporated his ideas (e.g., the timer strategy came from Carlos, not the therapist).
+- **Clear cognitive model**: The therapist effectively taught and applied the cognitive model, helping Carlos understand the connection between thoughts, feelings, and behaviors.
+- **Warm, validating tone**: The therapist created a safe, non-judgmental environment with appropriate empathy and encouragement.
+- **Logical session flow**: The session moved coherently from agenda-setting through problem identification, cognitive work, and homework assignment.
+- **Appropriate pacing**: The session maintained good momentum without excessive tangents or rushing.
+
+### Critical Deficiencies:
+- **Incomplete agenda adherence**: The session addressed only one of two agenda items (school anxiety but not sleep). This represents incomplete session planning and follow-through.
+- **Insufficient case conceptualization**: The therapist did not adequately integrate Carlos's ADHD, learning disability, panic symptoms, depression, or cultural/identity stressors into the treatment strategy. The session treated this as simple test anxiety rather than a complex, multi-diagnostic presentation.
+- **Narrow intervention focus**: The session relied almost exclusively on cognitive techniques (thought examination, restructuring) without addressing ADHD-specific strategies, behavioral activation for depression, exposure for panic, or cultural exploration.
+- **Lack of diagnostic clarity**: The therapist did not clarify whether Carlos's difficulties are primarily anxiety-driven (requiring cognitive-behavioral intervention) or ADHD/learning disability-driven (requiring accommodation/medication). This distinction is critical for treatment planning.
+- **Insufficient homework structure**: Homework lacked written forms, specific timing, tracking mechanisms, and contingency planning. For a patient with ADHD, this reduces follow-through likelihood.
+- **No assessment of medication/accommodation needs**: The therapist did not discuss whether Carlos should be evaluated for ADHD medication or academic accommodations, which are likely indicated given his presentation and documented learning disability.
+- **Superficial cultural exploration**: While the therapist acknowledged family values, the session did not explore Carlos's acculturation stress, identity questions, or social isolation as contributors to his depression and anxiety.
+
+---
+
+## Impact on Patient Care
+
+**Likelihood of Therapeutic Change:**
+This session demonstrates competent basic CBT skills but is unlikely to produce substantial, sustained improvement in Carlos's functioning. Here's why:
+
+1. **Misalignment with primary problems**: If Carlos's core difficulties stem from ADHD and learning disability (which the case suggests), cognitive restructuring alone will not address them. Carlos may experience temporary anxiety reduction but will continue to struggle with attention, organization, and academic performance. This could lead to demoralization and treatment dropout.
+
+2. **Incomplete symptom coverage**: The session addressed test anxiety but ignored sleep disruption, depression, and panic symptoms. Carlos leaves with a strategy for one problem but no plan for the others. His overall functioning is unlikely to improve substantially.
+
+3. **Risk of reinforcing avoidance**: If the timer strategy works temporarily but Carlos continues to struggle with attention and learning, he may attribute failure to personal inadequacy rather than recognizing his need for accommodation or medication. This could worsen depression and hopelessness.
+
+4. **Missed opportunity for comprehensive assessment**: The therapist did not clarify whether Carlos needs psychiatric evaluation for ADHD medication, psychoeducational testing confirmation, or academic accommodations. Delaying these interventions prolongs suffering and academic decline.
+
+5. **Cultural disconnection**: By not exploring Carlos's acculturation stress and identity questions, the therapist may miss important contributors to his depression and anxiety. Carlos may feel that the therapist doesn't understand his full experience.
+
+**Positive aspects:**
+- The cognitive work that was done was skillfully executed and may provide some temporary anxiety relief.
+- Carlos's confidence in the timer strategy (6/10) suggests he may attempt the homework, which could build some mastery.
+- The warm therapeutic relationship established may facilitate future engagement and more comprehensive treatment.
+
+---
+
+## Recommendations
+
+### 1. **Conduct Comprehensive Case Conceptualization Before Next Session**
+- **Action**: Before the next session, review Carlos's full diagnostic picture (ADHD, learning disability, depression, panic, cultural stressors) and develop an integrated case formulation that identifies which problems are primarily anxiety-driven versus ADHD/learning disability-driven versus depression-driven.
+- **Example**: "Carlos's difficulty completing assignments appears to involve three components: (1) ADHD-related attention and organization difficulties, (2) anxiety-driven avoidance, and (3) learning disability-related reading/writing struggles. Treatment must address all three."
+- **Practice**: Use the case formulation template to map out: primary diagnosis → maintaining factors → treatment targets → specific interventions for each target. This prevents the narrow cognitive focus that characterized this session.
+
+### 2. **Assess and Address ADHD and Learning Disability Accommodation Needs**
+- **Action**: In the next session, explicitly discuss whether Carlos has been evaluated for ADHD medication and whether he has received academic accommodations (extended test time, reduced distraction environment, note-taking support, etc.). If not, refer for these evaluations immediately.
+- **Example**: "Carlos, I notice you have ADHD and a learning disability. Have you talked with your college's disability services about accommodations like extended test time or a quiet testing environment? These can make a big difference. I'd like to help you connect with them."
+- **Practice**: Familiarize yourself with college disability services processes and have referral information available. Recognize that accommodations are not "cheating"—they level the playing field for students with disabilities.
+
+### 3. **Expand Intervention Beyond Cognitive Restructuring**
+- **Action**: Incorporate ADHD-specific strategies (task breakdown, environmental modification, time management, external reminders) and behavioral activation for depression alongside cognitive work.
+- **Example**: Instead of only cognitive restructuring, also teach: "Let's break this assignment into smaller steps: (1) Read the prompt, (2) Outline main points, (3) Write introduction, (4) Write body paragraphs. We'll schedule each step on your calendar with reminders."
+- **Practice**: Study ADHD coaching techniques, behavioral activation protocols, and task management strategies. Recognize that CBT for ADHD looks different from CBT for pure anxiety.
+
+### 4. **Address the Sleep Agenda Item in Next Session**
+- **Action**: Do not leave the sleep problem unaddressed. In the next session, explicitly return to sleep: "Last time we focused on test anxiety. Today I want to make sure we address your sleep difficulties. Can you tell me more about what's happening with your sleep?"
+- **Example**: Explore whether sleep problems are anxiety-driven (racing thoughts about assignments) or ADHD-driven (restlessness, difficulty winding down). Assign appropriate interventions (sleep hygiene, worry time, relaxation techniques, or ADHD-specific sleep strategies).
+- **Practice**: Develop a sleep assessment protocol and ensure all agenda items are addressed before session end.
+
+### 5. **Explore and Validate Cultural and Identity Stressors**
+- **Action**: Explicitly explore Carlos's experience as the only Dominican student on campus and his questions about sexual orientation. Validate how these stressors contribute to his depression and anxiety.
+- **Example**: "I know you mentioned being the only Dominican student here and having questions about your identity. Those are significant stressors that can really affect mood and anxiety. Can you tell me more about how that's been for you?"
+- **Practice**: Develop cultural humility. Recognize that acculturation stress, minority stress, and identity exploration are legitimate treatment targets. Consider referral to cultural or LGBTQ+ affirming resources.
+
+### 6. **Assess for Panic Disorder and Consider Exposure-Based Interventions**
+- **Action**: Clarify whether Carlos meets criteria for current Panic Disorder (the case notes "rule out current"). If panic symptoms are present, consider interoceptive exposure or cognitive-behavioral panic treatment alongside anxiety management.
+- **Example**: "You mentioned your heart racing and hands shaking when you think about assignments. Have you noticed these physical sensations in other situations? Let's talk about whether we should work on managing panic symptoms specifically."
+- **Practice**: Familiarize yourself with panic disorder assessment and exposure-based treatment. Recognize that panic requires different intervention than generalized anxiety.
+
+### 7. **Provide Structured, Written Homework with Tracking**
+- **Action**: For all future homework assignments, provide written forms (thought records, behavioral tracking sheets, task checklists) with specific timing, tracking mechanisms, and contingency plans.
+- **Example**: Provide a written form: "Study Session Log: Date: ___, Time: ___, Duration: ___ minutes, Anxiety before (0-10): ___, Anxiety after (0-10): ___, What I accomplished: ___, Barriers I faced: ___"
+- **Practice**: Develop a homework template library for common assignments. Recognize that written structure is especially important for patients with ADHD.
+
+### 8. **Establish Clear Agenda Adherence and Time Management**
+- **Action**: At the start of each session, explicitly allocate time to each agenda item and check in mid-session to ensure you're on track. If an item won't fit, explicitly discuss with the patient and reschedule.
+- **Example**: "We have 50 minutes today. I'd like to spend 25 minutes on your test anxiety and 25 minutes on your sleep. Does that sound okay? Let's check in at the 25-minute mark to make sure we're covering what's important."
+- **Practice**: Use a timer during sessions. Develop the habit of mid-session check-ins and explicit renegotiation of agenda if needed.
+
+### 9. **Assess Medication Readiness and Psychiatric Consultation**
+- **Action**: Discuss with Carlos whether he's open to psychiatric evaluation for ADHD medication. Explain that medication can improve attention and executive function, making cognitive-behavioral strategies more effective.
+- **Example**: "You mentioned you've never tried ADHD medication. Some people find that medication helps them focus better, which makes it easier to study and manage anxiety. Would you be open to talking with a psychiatrist about whether medication might help you?"
+- **Practice**: Understand the role of medication in ADHD treatment. Recognize that therapy + medication is often more effective than therapy alone for ADHD.
+
+### 10. **Deepen Cognitive Work with Thought Records and Core Belief Exploration**
+- **Action**: While the cognitive restructuring in this session was good, deepen the work by introducing thought records for ongoing practice and exploring whether there are core beliefs (e.g., "I'm not smart enough," "I don't belong here") underlying the automatic thoughts.
+- **Example**: "The thought 'I'll fail' seems to come up a lot. I'm wondering if there's a deeper belief underneath, like 'I'm not smart enough' or 'I don't belong in college.' Let's explore that."
+- **Practice**: Teach Carlos to use a thought record form to track situations, thoughts, feelings, and evidence. Use the downward arrow technique to identify core beliefs.
+
+### 11. **Establish Explicit Feedback and Collaboration Rituals**
+- **Action**: At the end of each session, explicitly ask: "What was most helpful today?" "What could we do differently?" "Do you feel we're on the right track?" Make this a consistent ritual.
+- **Example**: "Before we wrap up, I want to check in: Did today's session feel helpful? Is there anything you wish we'd covered? Any feedback for me about how I can better support you?"
+- **Practice**: Develop the habit of systematic feedback-seeking. Recognize that patient feedback improves outcomes and strengthens alliance.
+
+### 12. **Integrate Behavioral Activation for Depression**
+- **Action**: Recognize that Carlos shows depressive symptoms (low energy, reduced enjoyment, hopelessness). Incorporate behavioral activation—scheduling valued activities and mastery experiences—alongside anxiety management.
+- **Example**: "I notice you mentioned low energy and not enjoying things as much. Let's identify some activities that used to bring you joy or that you find meaningful, and we'll schedule them into your week. Sometimes doing things we value helps lift mood."
+- **Practice**: Study behavioral activation protocols. Recognize that depression requires behavioral intervention, not just cognitive work.
+
+---
+
+## Overall Session Score: 4.6/6
+
+**Summary:**
+
+Carlos's therapist demonstrated solid foundational CBT skills with exemplary guided discovery, strong collaboration, and warm interpersonal effectiveness. The cognitive work on test anxiety was skillfully executed, and the session established a good therapeutic alliance. However, the session falls short of evidence-based CBT for Carlos's actual presentation.
+
+**Current Competency Assessment:**
+The therapist is at the "adequate to good" level for basic CBT with straightforward anxiety presentations. However, the therapist is not yet competent to treat complex, multi-diagnostic cases like Carlos's. The therapist demonstrated good technique execution but poor case conceptualization and treatment planning.
+
+**Most Critical Changes Needed Immediately:**
+1. **Develop comprehensive case formulation** that integrates ADHD, learning disability, depression, panic, and cultural stressors—not just test anxiety.
+2. **Assess and facilitate ADHD medication evaluation and academic accommodations**—these are likely more important than cognitive restructuring for Carlos's core difficulties.
+3. **Expand intervention repertoire** beyond cognitive techniques to include ADHD strategies, behavioral activation, and exposure-based work.
+4. **Ensure complete agenda adherence** by explicitly allocating time and checking in mid-session.
+5. **Provide structured, written homework** with specific timing and tracking for better follow-through.
+
+**Does This Session Qualify as Evidence-Based CBT?**
+Partially. The session demonstrates evidence-based cognitive-behavioral technique (guided discovery, cognitive restructuring, behavioral assignment) applied skillfully. However, the overall treatment approach is not evidence-based for Carlos's presentation because it:
+- Fails to address ADHD and learning disability, which are primary maintaining factors
+- Ignores depression and panic symptoms
+- Does not incorporate cultural/identity exploration
+- Lacks comprehensive case conceptualization
+
+**Likelihood of Producing Therapeutic Change:**
+Moderate for test anxiety specifically; low for overall functioning. Carlos may experience temporary anxiety reduction about assignments but is unlikely to show sustained improvement in academic performance, sleep, mood, or overall functioning without addressing ADHD, learning disability, and depression. There is significant risk of treatment failure and demoralization if the narrow cognitive approach does not produce lasting change.
+
+**Recommendation for Supervision:**
+This therapist would benefit from:
+- Supervision focused on complex case conceptualization and multi-diagnostic treatment planning
+- Training in ADHD-informed CBT and learning disability accommodation
+- Training in culturally-informed therapy
+- Structured feedback on agenda adherence and homework assignment
+- Observation and feedback on deeper cognitive work (thought records, core belief exploration)
+
+With targeted supervision and training, this therapist has the foundational skills to become an excellent CBT practitioner. The core issue is not technique execution but case formulation and treatment planning.

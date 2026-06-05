@@ -15,6 +15,9 @@ from .workflows import (
     FeedbackWorkflow,
     EvaluatorWorkflow
 )
+
+OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
+FEEDBACK_MODEL = "anthropic/claude-haiku-4.5"
 import logging
 try:
     import colorlog
@@ -153,9 +156,9 @@ class LearningBuddy:
                 logprobs=True
             ),
             'feedback': ChatOpenAI(
-                model="google/gemini-2.5-flash-lite-preview-09-2025",
+                model=FEEDBACK_MODEL,
                 temperature=0.2,
-                base_url="https://openrouter.ai/api/v1",
+                base_url=OPENROUTER_BASE_URL,
                 api_key=load_openrouter_api_key(),
                 max_retries=5,  # Retry up to 3 times
                 timeout=30
@@ -163,7 +166,7 @@ class LearningBuddy:
             'virtual_evaluator': ChatOpenAI(
                 model="google/gemini-2.5-flash-lite-preview-09-2025",
                 temperature=0.2,
-                base_url="https://openrouter.ai/api/v1",
+                base_url=OPENROUTER_BASE_URL,
                 api_key=load_openrouter_api_key(),
                 max_retries=5,  # Retry up to 3 times
                 timeout=30
