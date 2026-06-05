@@ -1,16 +1,22 @@
-# Virtual Patient Consistency: Log-Probability Methodology
+# Virtual Agent Consistency: Log-Probability Methodology
 
 This document describes the mathematical framework used to quantify the
-behavioural consistency of the virtual patient (GPT-4.1-mini) across simulated
-therapy sessions in the LearningBuddy framework.
+behavioural consistency of both the virtual patient and the virtual student
+(GPT-4.1-mini) across simulated therapy sessions in the LearningBuddy framework.
 
 ---
 
 ## 1. Motivation
 
-The virtual patient is a language model prompted to roleplay a specific clinical
-profile. A key validity question is: **does the patient respond consistently to
-different students, or does it drift arbitrarily?**
+Both the virtual patient and the virtual student are language models prompted to
+roleplay specific clinical personas. A key validity question for each is: **does
+the agent respond consistently to different partners, or does it drift
+arbitrarily?**
+
+For the **virtual patient**, we ask whether it stays in character regardless of
+whether the counsellor is skilled or unskilled. For the **virtual student**, we
+ask whether it maintains its assigned competence level (good, mediocre, or bad)
+consistently across different patient profiles.
 
 Rather than a separate human-rating pass, we exploit the token-level log-
 probabilities that the model itself assigns during generation. These capture how
@@ -25,7 +31,12 @@ For a generated sequence $y = (y_1, y_2, \dots, y_T)$ the model assigns a probab
 
 $$p(y_t \mid y_{\text{<}t}, x)$$
 
-where $x$ is the full prompt (system prompt + conversation history). The **token log-probability** is:
+where $x$ is the full prompt (system prompt + conversation history). The same
+formulation applies to **both the virtual patient and the virtual student**, as
+each is an LLM generating utterances conditioned on its own persona prompt and
+the evolving dialogue.
+
+The **token log-probability** is:
 
 $$\ell_t = \log p(y_t \mid y_{\text{<}t}, x)$$
 
@@ -35,12 +46,16 @@ Because $0 < p \leq 1$, we have $\ell_t \leq 0$ always.
 
 ## 3. Turn-Level Average Log-Probability
 
-For a single patient utterance of $T$ tokens the **turn average log-probability**
-is the arithmetic mean over tokens:
+For a single utterance of $T$ tokens (whether from the patient or the student)
+the **turn average log-probability** is the arithmetic mean over tokens:
 
 $$\bar{\ell}_{\text{turn}} = \frac{1}{T} \sum_{t=1}^{T} \ell_t$$
 
 This equals the per-token log-likelihood of the utterance under the model.
+Both the virtual patient and the virtual student collect these values, but the
+patient logprobs are additionally stored in the `LBState` graph state
+(`patient_turn_logprobs`) for post-hoc analysis. Student logprobs are held in
+memory via the `VirtualStudent` instance and returned by `get_logprob_summary()`.
 
 ### Clipping
 
@@ -62,13 +77,21 @@ $$\bar{\ell}_{\text{turn}} = \frac{1}{T} \sum_{t=1}^{T} \tilde{\ell}_t$$
 
 ## 4. Session-Level Average Log-Probability
 
-Each session consists of $N = 10$ patient turns. The **session average log-
+Each session consists of $N = 10$ turns per agent. The **session average log-
 probability** is the mean of the turn averages:
 
 $$\bar{\ell}_{\text{session}} = \frac{1}{N} \sum_{n=1}^{N} \bar{\ell}_{\text{turn},\, n}$$
 
-This is stored as `patient_avg_logprob` in `MI_scores.csv` and as
-`session_avg_logprob` in `patient_logprobs.json`.
+For the **patient**, this is stored as `patient_avg_logprob` in `MI_scores.csv`
+and as `session_avg_logprob` in `patient_logprobs.json`. The values are
+reliably collected because the `LearningBuddy` graph state explicitly tracks
+`patient_turn_logprobs` after every patient generation.
+
+For the **student**, the same computation is applied inside `VirtualStudent`
+(via `_turn_logprobs`) and can be retrieved at any time with
+`get_logprob_summary()`. However, student logprobs are **not** automatically
+written to disk by `run_test()`; they must be captured explicitly by the
+caller after the loop completes.
 
 ---
 
@@ -109,14 +132,17 @@ the prompt. Because we report $\bar{\ell}_{\text{session}}$ (negative), higher
 
 ## 7. Saved Artefacts
 
-For every session `run_test()` writes a `patient_logprobs.json` alongside the
+### 7.1 Virtual Patient Artefacts
+
+For every session, `run_test()` writes a `patient_logprobs.json` alongside the
 other session files:
 
 ```json
 {
-  "turn_logprobs": [-0.65, -0.71, ...],   // N floats, one per turn
-  "session_avg_logprob": -0.6887,          // mean of turn_logprobs
-  "session_avg_prob_pct": 50.2,            // exp(session_avg_logprob) × 100
+  "turn_logprobs": [-0.65, -0.71, -0.58, -0.62, -0.70,
+                     -0.68, -0.73, -0.66, -0.69, -0.71],
+  "session_avg_logprob": -0.6887,
+  "session_avg_prob_pct": 50.2,
   "n_turns": 10
 }
 ```
@@ -127,6 +153,27 @@ other session files:
 |---|---|---|
 | `patient_avg_logprob` | float | $\bar{\ell}_{\text{session}}$, rounded to 4 d.p. |
 | `patient_avg_prob_pct` | float | $p_{\text{avg}}$, rounded to 2 d.p. |
+
+### 7.2 Virtual Student Artefacts
+
+When student logprobs are explicitly captured in `automated_testing.py`, the
+result follows the same JSON schema:
+
+```json
+{
+  "turn_logprobs": [-0.82, -0.91, -0.85, -0.88, -0.87,
+                     -0.86, -0.90, -0.84, -0.89, -0.83],
+  "session_avg_logprob": -0.8654,
+  "session_avg_prob_pct": 42.1,
+  "n_turns": 10
+}
+```
+
+**Key difference from patient logprobs**: `VirtualStudent.get_response()`
+cleans the conversation history via `MessageCleaner.clean_conversation()`
+before calling the LLM. This strips system messages and oversized case-file
+prompts, so the student logprobs reflect only the **filtered dialogue context**,
+not the full raw prompt seen by the patient.
 
 ---
 
