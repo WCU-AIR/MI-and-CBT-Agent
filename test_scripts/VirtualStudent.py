@@ -6,6 +6,7 @@ Supports multiple therapy types (MI, CBT, CBT) with configurable student profile
 from typing import List, Literal, Optional
 from pathlib import Path
 from dataclasses import dataclass
+import math
 
 import pandas as pd
 from langchain_core.messages import BaseMessage, SystemMessage, HumanMessage, AIMessage
@@ -187,8 +188,11 @@ class VirtualStudent:
             temperature=0.5,
             api_key=self.api_key,
             max_retries=5,  # Retry up to 3 times
-            timeout=30
+            timeout=30,
+            logprobs=True
         )
+
+        self._turn_logprobs: list = []  # per-turn avg logprob (clipped)
 
         # Load student profile
         self.profile: Optional[StudentProfile] = None
@@ -226,10 +230,35 @@ class VirtualStudent:
 
         # Generate response
         try:
-            response = self.llm.invoke(messages)
-            return response.content
+            result = self.llm.generate([messages])
+            gen = result.generations[0][0]
+            response_text = gen.text
+
+            # Extract per-turn avg logprob (clip at -10 to exclude sentinel tokens)
+            logprobs_info = (gen.generation_info or {}).get("logprobs", {})
+            if logprobs_info and logprobs_info.get("content"):
+                tokens = logprobs_info["content"]
+                clipped = [max(t["logprob"], -10.0) for t in tokens]
+                turn_logprob = sum(clipped) / len(clipped)
+                self._turn_logprobs.append(turn_logprob)
+
+            return response_text
         except Exception as e:
             raise Exception(f"Failed to generate student response: {str(e)}")
+
+    def get_logprob_summary(self) -> dict:
+        """Return avg logprob stats across all turns generated so far."""
+        lps = self._turn_logprobs
+        if not lps:
+            return {"turn_logprobs": [], "session_avg_logprob": None,
+                    "session_avg_prob_pct": None, "n_turns": 0}
+        avg = sum(lps) / len(lps)
+        return {
+            "turn_logprobs": lps,
+            "session_avg_logprob": avg,
+            "session_avg_prob_pct": round(math.exp(avg) * 100, 2),
+            "n_turns": len(lps),
+        }
 
     def get_profile_info(self) -> dict:
         """

@@ -7,12 +7,20 @@ import random
 import re
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from pathlib import Path
 
+import matplotlib
+matplotlib.use("Agg")  # non-interactive backend — must be set before importing pyplot
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+
+# Set once at module level so threads don't race on global rcParams
+plt.rcParams["font.family"] = "sans-serif"
+plt.rcParams["font.sans-serif"] = ["Arial"]
+plt.rcParams["font.size"] = 14
 
 try:
     from scipy.stats import wilcoxon
@@ -51,8 +59,9 @@ VIRTUAL_STUDENT_MODES = {
 GOOD_STUDENT_NUM = 11
 BAD_STUDENT_NUM = 10
 MEDIOCRE_STUDENT_NUM = 12
-DEFAULT_PATIENT_COUNT = 10
+DEFAULT_PATIENT_COUNT = 20
 DEFAULT_SEED = 42
+DEFAULT_WORKERS = 20
 API_KEY = load_openai_api_key()
 
 
@@ -184,6 +193,14 @@ def save_patient_logprobs(folder_name, turn_logprobs):
     return summary
 
 
+def save_student_logprobs(folder_name, student):
+    summary = student.get_logprob_summary()
+    if summary["n_turns"] > 0:
+        with open(os.path.join(folder_name, "student_logprobs.json"), "w", encoding="utf-8") as handle:
+            json.dump(summary, handle, indent=2)
+    return summary
+
+
 def run_session(mode, patient_file, student_num, patient_number, student_type, prompt_addon=""):
     lb = LearningBuddy(API_KEY or "key", "null", MODE_CONSTANTS[mode])
     student = VirtualStudent.VirtualStudent(
@@ -216,14 +233,17 @@ def run_session(mode, patient_file, student_num, patient_number, student_type, p
 
     feedback_path = find_feedback_file(folder_name)
     logprob_summary = save_patient_logprobs(folder_name, final_state.get("patient_turn_logprobs") or [])
+    student_logprob_summary = save_student_logprobs(folder_name, student)
     return {
         "folder_name": folder_name,
         "feedback_path": feedback_path,
         "logprob_summary": logprob_summary,
+        "student_logprob_summary": student_logprob_summary,
     }
 
 
 def make_result_row(mode, condition, student_name, patient_file, session_result):
+    slp = session_result["student_logprob_summary"]
     row = {
         "Condition": condition,
         "Student": student_name,
@@ -234,6 +254,8 @@ def make_result_row(mode, condition, student_name, patient_file, session_result)
         "patient_avg_prob_pct": session_result["logprob_summary"]["session_avg_prob_pct"],
         "logprob_turns": session_result["logprob_summary"]["n_turns"],
         "logprob_recorded": session_result["logprob_summary"]["logprob_recorded"],
+        "student_avg_logprob": slp["session_avg_logprob"],
+        "student_avg_prob_pct": slp["session_avg_prob_pct"],
     }
     row.update(extract_scores(session_result["feedback_path"], mode))
     return row
@@ -254,10 +276,6 @@ def score_dict(df, score_cols):
 
 
 def plot_scores(score_sets, labels, title, colors=None, ylim=(0, 6.0)):
-    plt.rcParams["font.family"] = "sans-serif"
-    plt.rcParams["font.sans-serif"] = ["Arial"]
-    plt.rcParams["font.size"] = 14
-
     if colors is None:
         colors = ["orange", "green", "gold", "skyblue"]
 
@@ -370,7 +388,7 @@ def save_mode_outputs(mode, save_folder, condition_rows):
         col for col in score_categories(mode) + ["Overall Average"]
         if col in condition_dfs["good_student"].columns
     ]
-    logprob_cols = [
+    patient_logprob_cols = [
         "Condition",
         "Student",
         "Patient",
@@ -380,7 +398,16 @@ def save_mode_outputs(mode, save_folder, condition_rows):
         "logprob_recorded",
         "session_folder",
     ]
-    all_df[logprob_cols].to_csv(os.path.join(save_folder, "logprob_summary.csv"), index=False)
+    student_logprob_cols = [
+        "Condition",
+        "Student",
+        "Patient",
+        "student_avg_logprob",
+        "student_avg_prob_pct",
+        "session_folder",
+    ]
+    all_df[patient_logprob_cols].to_csv(os.path.join(save_folder, "patient_logprob_summary.csv"), index=False)
+    all_df[student_logprob_cols].to_csv(os.path.join(save_folder, "student_logprob_summary.csv"), index=False)
 
     plot_specs = [
         (
@@ -437,38 +464,20 @@ def save_mode_outputs(mode, save_folder, condition_rows):
         mean_rows.append(row)
     pd.DataFrame(mean_rows).to_csv(os.path.join(save_folder, "mean_comparison.csv"), index=False)
 
-    test1 = run_wilcoxon(
-        condition_dfs["good_student"],
-        condition_dfs["bad_student_1st"],
-        score_cols,
-        "Good",
-        "Bad",
-    )
-    test1.to_csv(os.path.join(save_folder, "wilcoxon_test1_good_vs_bad1.csv"), index=False)
-
-    test2 = run_wilcoxon(
-        condition_dfs["bad_student_1st"],
-        condition_dfs["bad_student_feedback"],
-        score_cols,
-        "Before",
-        "After",
-        alternative="less",
-    )
-    test2.to_csv(os.path.join(save_folder, "wilcoxon_test2_learning_effect.csv"), index=False)
-
-    extra_tests = []
-    for comparison, left, right, left_label, right_label in [
-        ("mediocre_vs_bad", "mediocre_student", "bad_student_1st", "Mediocre", "Bad"),
-        ("good_vs_mediocre", "good_student", "mediocre_student", "Good", "Mediocre"),
-        ("mediocre_vs_feedback", "mediocre_student", "bad_student_feedback", "Mediocre", "Feedback"),
-    ]:
-        df = run_wilcoxon(condition_dfs[left], condition_dfs[right], score_cols, left_label, right_label)
-        df.insert(0, "Comparison", comparison)
-        extra_tests.append(df)
-    pd.concat(extra_tests, ignore_index=True).to_csv(
-        os.path.join(save_folder, "wilcoxon_extra_mediocre_comparisons.csv"),
-        index=False,
-    )
+    wilcoxon_pairs = [
+        ("bad1_vs_feedback",    "bad_student_1st",      "bad_student_feedback", "Bad1st",   "Feedback", "less"),
+        ("bad1_vs_mediocre",    "bad_student_1st",      "mediocre_student",     "Bad1st",   "Mediocre", "two-sided"),
+        ("bad1_vs_good",        "bad_student_1st",      "good_student",         "Bad1st",   "Good",     "two-sided"),
+        ("feedback_vs_mediocre","bad_student_feedback", "mediocre_student",     "Feedback", "Mediocre", "two-sided"),
+        ("feedback_vs_good",    "bad_student_feedback", "good_student",         "Feedback", "Good",     "two-sided"),
+        ("mediocre_vs_good",    "mediocre_student",     "good_student",         "Mediocre", "Good",     "two-sided"),
+    ]
+    for name, left, right, left_label, right_label, alternative in wilcoxon_pairs:
+        result_df = run_wilcoxon(
+            condition_dfs[left], condition_dfs[right],
+            score_cols, left_label, right_label, alternative=alternative,
+        )
+        result_df.to_csv(os.path.join(save_folder, f"wilcoxon_{name}.csv"), index=False)
 
     return {
         "rows": len(all_df),
@@ -521,56 +530,60 @@ def run_mode(mode, parent_folder, patient_count, seed, random_sample):
     print(f"Saving to: {save_folder}")
     print(f"{'=' * 72}")
 
-    for patient_idx, patient_file in enumerate(patient_files, start=1):
+    def _run_patient(patient_idx, patient_file):
         patient_name = os.path.basename(patient_file)
         print(f"\n[{mode}] Patient {patient_idx}/{len(patient_files)}: {patient_name}")
+        patient_rows = {}
 
-        for condition, student_num in [
-            ("good_student", GOOD_STUDENT_NUM),
-            ("mediocre_student", MEDIOCRE_STUDENT_NUM),
-            ("bad_student_1st", BAD_STUDENT_NUM),
-        ]:
-            print(f"  Running {condition}...")
-            session_result = run_session(
-                mode,
-                patient_file,
-                student_num,
-                patient_idx,
-                f"{mode.lower()}_{condition}",
-            )
-            condition_rows[condition].append(
-                make_result_row(mode, condition, student_names[condition], patient_file, session_result)
-            )
-            if condition == "bad_student_1st":
-                bad_feedback_path = session_result["feedback_path"]
+        # Run good, mediocre, bad_1st in parallel
+        with ThreadPoolExecutor(max_workers=3) as inner:
+            futs = {
+                inner.submit(
+                    run_session, mode, patient_file, num, patient_idx,
+                    f"{mode.lower()}_{cond}"
+                ): cond
+                for cond, num in [
+                    ("good_student", GOOD_STUDENT_NUM),
+                    ("mediocre_student", MEDIOCRE_STUDENT_NUM),
+                    ("bad_student_1st", BAD_STUDENT_NUM),
+                ]
+            }
+            for fut in as_completed(futs):
+                cond = futs[fut]
+                patient_rows[cond] = fut.result()
 
-        print("  Running bad_student_feedback...")
+        # bad_feedback depends on bad_1st result
+        bad_feedback_path = patient_rows["bad_student_1st"]["feedback_path"]
         feedback_text = extract_recommendations(bad_feedback_path)
         feedback_addon = build_feedback_addon(feedback_text)
         build_feedback_csv(
-            mode,
-            BAD_STUDENT_NUM,
-            feedback_text,
-            feedback_addon,
+            mode, BAD_STUDENT_NUM, feedback_text, feedback_addon,
             os.path.join(save_folder, f"temp_student_feedback_{patient_idx}.csv"),
         )
-        feedback_session = run_session(
-            mode,
-            patient_file,
-            BAD_STUDENT_NUM,
-            patient_idx,
+        patient_rows["bad_student_feedback"] = run_session(
+            mode, patient_file, BAD_STUDENT_NUM, patient_idx,
             f"{mode.lower()}_bad_student_feedback",
             prompt_addon=f"\n\n{feedback_addon}",
         )
-        condition_rows["bad_student_feedback"].append(
-            make_result_row(
-                mode,
-                "bad_student_feedback",
-                student_names["bad_student_feedback"],
-                patient_file,
-                feedback_session,
+        return patient_idx, patient_file, patient_rows
+
+    # Run all patients in parallel
+    patient_results = [None] * len(patient_files)
+    with ThreadPoolExecutor(max_workers=DEFAULT_WORKERS) as executor:
+        futures = {
+            executor.submit(_run_patient, idx + 1, pf): idx
+            for idx, pf in enumerate(patient_files)
+        }
+        for future in as_completed(futures):
+            idx = futures[future]
+            patient_results[idx] = future.result()
+
+    # Collect into condition_rows (ordered by original patient order)
+    for _, patient_file, patient_rows in patient_results:
+        for condition in ("good_student", "mediocre_student", "bad_student_1st", "bad_student_feedback"):
+            condition_rows[condition].append(
+                make_result_row(mode, condition, student_names[condition], patient_file, patient_rows[condition])
             )
-        )
 
     output_summary = save_mode_outputs(mode, save_folder, condition_rows)
     elapsed = time.time() - mode_start
@@ -608,13 +621,7 @@ def run_all(args):
     mode_summaries = []
     for offset, mode in enumerate(("MI", "CBT")):
         mode_summaries.append(
-            run_mode(
-                mode,
-                parent_folder,
-                args.patient_count,
-                args.seed + offset,
-                args.random_sample,
-            )
+            run_mode(mode, parent_folder, args.patient_count, args.seed + offset, args.random_sample)
         )
 
     total_elapsed = time.time() - overall_start

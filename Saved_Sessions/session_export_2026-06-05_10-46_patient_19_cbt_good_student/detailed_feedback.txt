@@ -1,0 +1,836 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Bipolar II Disorder
+
+--- CASE STUDY ---
+
+Olivia Jacobs was a 22-year-old graduate student in architecture who was referred for urgent psychiatric consultation after telling her roommate she was suicidal.
+She had a history of mood symptoms controlled with lithium and sertraline, but depressive symptoms returned 3 months earlier after moving to a new city for school.
+
+She was preoccupied with ways to end her life without inconveniencing others, particularly thoughts of shooting herself while leaning out of a dorm window. She did not have access to a gun but searched online for ways to obtain one.
+
+Her psychiatric history began at age 15 with alcohol and marijuana use in social settings, which she reported as calming and non-problematic. At 17, she experienced brief, intense depressive episodes with tearfulness, guilt, anhedonia, hopelessness, low energy, poor concentration, and oversleeping, followed by 5-day periods of hypomania characterized by increased energy, pressured speech, creativity, and paranoia about friends. She was diagnosed with bipolar II disorder and treated with lithium and sertraline.
+
+Upon evaluation, she was visibly depressed and tearful with psychomotor slowing, difficulty getting out of bed, poor concentration, guilt about family expenses, hopelessness, and persistent suicidal thoughts. She reported occasional superficial self-injury, depersonalization, and panic attacks, but denied current substance use, mood instability outside episodes, identity concerns, or fear of abandonment.
+
+Discussion: Ms. Jacobs presents with major depressive symptoms causing significant distress and impairment for 3 months. She has a history of hypomanic episodes consistent with bipolar II disorder. She also meets criteria for unspecified anxiety disorder. Her suicidal ideation is severe, indicating a high risk of self-harm.
+
+--- BEHAVIOUR ---
+
+Tearful, visibly depressed
+
+Psychomotor slowing
+
+Difficulty getting out of bed
+
+Distracted, poor concentration
+
+Cooperative but preoccupied with suicidal thoughts
+
+--- DSM-5 SYMPTOMS ---
+
+Depressed mood
+
+Anhedonia
+
+Hypersomnia / sleep disturbance
+
+Low energy (anergia)
+
+Psychomotor retardation
+
+Excessive guilt
+
+Poor concentration
+
+Recurrent suicidal thoughts
+
+Hypomanic episodes: increased energy, pressured speech, increased creativity, diminished need for sleep
+
+Occasional paranoid ideation
+
+Anxiety: depersonalization, panic attacks
+
+--- PATIENT PROFILE ---
+Name: Olivia Jacobs
+Sex: Female
+Age: 22 years
+DOB: February 12, 2003
+Place of Birth: Boston, MA
+Address: 45 Elm Street, Boston, MA
+Contact: (555) 987-6543
+Marital Status: Single
+Children: None
+Occupation: Graduate student, Architecture
+Education: Bachelor’s degree, enrolled in graduate program
+Religion: None specified
+Legal Guardian: N/A
+Presenting Complaint: Suicidal ideation, preoccupation with methods
+Psychiatric History: Bipolar II disorder, diagnosed at 17
+Psychotherapy: Previous outpatient therapy
+Medications: Lithium, sertraline
+Substance Use: Past alcohol and marijuana use (age 15–18); none recently
+Medical History: None significant
+Neurology: Normal
+Family History: Not reported
+Mental Status: Depressed, tearful, psychomotor slowing, preoccupied with suicide, guilt, low energy, poor concentration, occasional depersonalization and panic attacks
+
+--- DIAGNOSIS ---
+
+Bipolar II disorder, current episode depressed, with high suicidal risk
+
+Unspecified anxiety disorder
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Olivia Jacobs, a 22-year-old graduate architecture student, presents to the outpatient psychiatric clinic following referral due to suicidal ideation reported to her roommate. She has a known history of bipolar II disorder managed with lithium and sertraline and reports a recent recurrence of depressive symptoms after relocating for school.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hello, it’s good to see you again. Before we get started, I’d like to set a brief agenda for today’s session. Would you like to focus on any particular issues or challenges you’ve been experiencing recently? I was thinking we could look at one or two priorities, maybe something around managing stress or negative thoughts. Also, could you rate your current mood or level of distress on a scale from 0 to 10, where 0 is feeling completely calm and 10 is extremely upset? 
+ PATIENT: Hi. Thanks for seeing me again. Umm... I guess I’d like to focus on these thoughts I’ve been having about ending my life. They just won’t go away, and I’m scared of what might happen if they keep getting stronger. Sometimes I feel so overwhelmed that I don’t even know where to start with managing stress or anything.
+
+Right now... I think my distress is probably around an 8. I’m tired all the time, and it feels like such a huge weight on me. It’s hard to think straight or feel hopeful about anything. 
+ PSYCHIATRIST: Thank you for sharing that with me; it sounds really difficult to carry those thoughts and feelings. So, for today’s session, we can focus on understanding these thoughts about ending your life and exploring ways to manage the distress they bring. Does that feel like a helpful priority for you?
+
+You rated your distress as an 8, which shows you’re feeling quite overwhelmed right now. Before we go further, is it okay if I ask about any safety concerns or if you have a plan or means related to these thoughts? It’s important we keep you safe as we work together.
+
+If you’re comfortable, could you tell me about a recent specific moment when these thoughts felt particularly strong? What was happening, and what was going through your mind at that time? 
+ PATIENT: Yeah, focusing on those thoughts sounds right. They’re always there, like a heavy cloud I can’t shake.
+
+About safety... I don’t have any means right now, like a gun or anything, but I have thought a lot about how I could do it without making a mess or hurting others. I try to be quiet about it, but the thoughts get so loud sometimes, especially when I’m alone or feeling really down.
+
+Just yesterday, I was trying to finish a project for school, but I couldn’t focus at all. My mind kept drifting to those thoughts, and I started thinking about how easy it would be to just lean out the window and shoot myself. It’s scary because I don’t want to die, but I also don’t want the pain anymore. It’s confusing and makes me feel trapped. 
+ PSYCHIATRIST: Thank you for trusting me with that—it’s really important we talk about these feelings openly. It sounds like when you’re overwhelmed or alone, these thoughts become more intense and confusing, making it hard to focus or feel hopeful.
+
+Let me summarize what I’m hearing: When you’re in a stressful situation, like trying to work on your project, the thought that ending your life might be an option comes up automatically. This thought then leads to feelings of fear, confusion, and being trapped, which affects your ability to concentrate and manage your distress.
+
+Does that sound about right? And if so, what feelings come up most strongly for you in those moments—would you say it’s mostly sadness, anxiety, or something else? 
+ PATIENT: Yeah, that sounds about right. It’s like these thoughts just show up uninvited when I’m stressed or alone, and it’s hard to stop them.
+
+I think sadness is definitely there the most. It just feels... hopeless. Like no matter what I do, things won’t get better. But there’s also this anxious feeling, like my heart races and I can’t catch my breath sometimes. It’s scary and makes me want to escape from everything. So, mostly sadness mixed with anxiety, I guess. 
+ PSYCHIATRIST: Thank you for sharing that. It’s understandable that feeling both sadness and anxiety in those moments would be very distressing.
+
+Let’s explore the thought that comes up in those moments—the idea that things won’t get better. When you notice that thought, what evidence do you see that supports it? And what evidence might challenge or contradict it? This can help us see if the thought is fully accurate or if there might be other ways to look at the situation. 
+ PATIENT: Hmm, supporting evidence... Well, I feel stuck a lot. I moved here for school, but I still don’t feel like I belong. My grades have slipped, and I’m falling behind. I think about my family and how much money they’re spending on my education, and I feel so guilty, like I’m letting them down. All this makes it seem like things really won’t get better.
+
+But challenging that thought... I guess there are some small things. Like when I had a good day, or when I finish a project even if it’s not perfect. My roommate checks on me, so I do have some support. And my medication helps sometimes, even if it doesn’t fix everything. So maybe things can change, but it’s hard to believe that when I’m feeling this way. 
+ PSYCHIATRIST: Thank you for that thoughtful reflection. It sounds like there’s a lot of difficult evidence supporting your feelings of hopelessness, but also some small signs of hope and support that you recognize, even if they feel overshadowed right now.
+
+If a close friend came to you with these thoughts—that things won’t get better—what might you say to them? Sometimes imagining this can help us develop a more balanced or compassionate perspective toward ourselves.
+
+What do you think? 
+ PATIENT: If a close friend told me they felt like things wouldn’t get better, I think I’d tell them that it’s okay to feel that way sometimes, but that it’s not the whole story. I’d remind them of the times they’ve gotten through tough spots before and that they’re not alone. I’d probably say they matter a lot to people and that it’s important to hold on, even if it’s really hard.
+
+But it’s hard to say that to myself. I feel like I’m such a burden, and it’s easier to believe the hopeless stuff than to be kind to myself. I want to feel that way, though—like I’m worth something or that I can get through this. Maybe I need to try talking to myself like I would to a friend. 
+ PSYCHIATRIST: That’s a really insightful observation—that you can offer kindness and hope to a friend but find it much harder to do so for yourself. Recognizing that difference is an important step.
+
+Let’s try to develop a balanced thought you might say to yourself when those hopeless thoughts come up. Something that acknowledges the difficulty but also reminds you of your strengths or support. What might that thought look like, based on what you’ve said? How could you phrase it in a way that feels believable, even a little? 
+ PATIENT: Maybe something like, "Even though things feel really hard and I don’t see a way out right now, I have gotten through tough times before. I’m not alone, and there are people who care about me. It’s okay to struggle, and I can take things one step at a time."
+
+It feels a bit strange to say it to myself, but I think it sounds fair. It acknowledges the pain without ignoring it and reminds me there’s hope, even if I don’t feel it fully right now. I want to believe it. 
+ PSYCHIATRIST: That’s a very balanced and compassionate thought. It acknowledges the struggle while also highlighting your resilience and support network, which is important.
+
+How do you feel when you say that thought to yourself? Would you say it reduces your sadness or anxiety at all, even a little? 
+ PATIENT: When I say it to myself, I do feel a tiny bit of relief—like a little space opens up where the heaviness isn’t as crushing. It doesn’t take away all the sadness or anxiety, but it makes it a little easier to keep going, even if just for a moment.
+
+It’s still hard to remember to say it, especially when the negative thoughts are so loud, but I want to practice. Maybe if I say it enough, it’ll start to feel more real. 
+ PSYCHIATRIST: That’s a meaningful insight—that even a small shift in how you relate to those thoughts can create a bit of relief. It makes sense that practicing this balanced thought could help it feel more natural over time.
+
+Let’s think about a small, manageable step you could try before our next session to practice this. Perhaps you could notice when those hopeless thoughts come up and gently remind yourself of this balanced thought. Maybe you could even write it down somewhere you can see it, like on your phone or a sticky note.
+
+What do you think would be a realistic and specific way for you to try this? When and where might you do it, and how often? 
+ PATIENT: I think I can try that. Maybe I can write the balanced thought on a sticky note and put it on my laptop, where I spend a lot of time working on school stuff. That way, when I start feeling overwhelmed or hopeless, I might see it and remember to say it.
+
+I won’t beat myself up if I forget, but I’ll try to do it at least once or twice a day, especially when I notice my mood getting really low. It feels like something small I can handle right now. 
+ PSYCHIATRIST: That sounds like a thoughtful and achievable plan—having the sticky note on your laptop to remind you during those tough moments is a great idea. Trying to say the balanced thought once or twice a day, especially when your mood dips, is a manageable and specific step.
+
+Before we finish, I want to check in: What stood out to you most from today’s session? Was there anything that felt particularly helpful or maybe less useful? Also, do you feel confident about trying this exercise over the next week? 
+ PATIENT: What stood out most was realizing I can be kinder to myself, like I am to a friend. It felt a bit hopeful, even if it’s just a small thing.
+
+It was helpful to put words to the balanced thought because before I just felt stuck in a loop of negative stuff with no way out.
+
+I think the sticky note and trying to say the thought a couple of times a day feels doable. I’m nervous about forgetting or feeling like it isn’t true, but I want to try anyway.
+
+Thanks for helping me today. 
+ PSYCHIATRIST: Thank you for sharing that; I’m glad this felt hopeful and doable for you. To recap, your homework is to write your balanced thought on a sticky note and place it on your laptop, aiming to say it to yourself once or twice daily, especially when you notice low moods. We’ll check in on how this went next time.
+
+Before we finish, do you have any final questions or concerns you’d like to discuss today? If not, I want to acknowledge the courage it took to share openly, and I look forward to supporting you in our next session. Take care until then. 
+ PATIENT: I don’t have any other questions right now. I’m just grateful for the chance to talk about all this and for the plan to try something new. It’s a bit scary, but I feel a little less alone than before.
+
+Thank you for listening and understanding. I’ll see you next time. 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated strong agenda-setting skills by opening the session with a collaborative invitation: "Would you like to focus on any particular issues or challenges you've been experiencing recently?" This approach invited patient input rather than imposing priorities. The therapist then offered specific options ("managing stress or negative thoughts") while remaining flexible to the patient's needs. When the patient identified suicidal ideation as the primary concern, the therapist explicitly confirmed this priority: "So, for today's session, we can focus on understanding these thoughts about ending your life and exploring ways to manage the distress they bring. Does that feel like a helpful priority for you?" This demonstrates genuine collaboration and prioritization.
+
+However, the agenda lacked explicit time allocation or structure regarding session length and how much time would be devoted to different components (safety assessment vs. cognitive work vs. homework planning). The therapist did not establish a clear endpoint or check-in about whether the planned work was achievable within the session timeframe. Additionally, while the initial agenda was set, there was no mid-session agenda review or adjustment if priorities shifted.
+
+The session maintained reasonable focus on the identified priority throughout, though the therapist could have been more explicit about time management ("We have about X minutes, so let's focus on...").
+
+**Summary:**
+
+The therapist effectively collaborated with the patient to establish a clear, prioritized agenda focused on suicidal ideation and hopelessness. The approach was patient-centered and flexible, though explicit time allocation and mid-session structure checks were absent.
+
+---
+
+### 2. Feedback
+### **Score: 4/6**
+
+**Explanation:**
+
+The therapist demonstrated adequate feedback-seeking behavior at multiple points. Most notably, the therapist explicitly checked understanding: "Does that sound about right?" after summarizing the patient's presentation. This is a direct, appropriate feedback elicitation. Later, the therapist asked "How do you feel when you say that thought to yourself?" to gauge the patient's reaction to the cognitive intervention, and "Would you say it reduces your sadness or anxiety at all, even a little?" to assess perceived helpfulness.
+
+At the end of the session, the therapist made a strong effort to solicit comprehensive feedback: "What stood out to you most from today's session? Was there anything that felt particularly helpful or maybe less useful? Also, do you feel confident about trying this exercise over the next week?" This multi-part question addresses content helpfulness, technique effectiveness, and homework confidence—all appropriate feedback domains.
+
+However, the therapist did not consistently check for understanding throughout the session. For example, after introducing the cognitive restructuring technique (examining evidence for and against thoughts), the therapist did not explicitly verify that the patient understood the rationale or mechanism. The therapist also did not elicit feedback about the pacing of the session, whether the patient felt rushed or wanted to explore anything more deeply, or whether the therapeutic relationship felt safe and collaborative. Non-verbal feedback cues were not explicitly addressed (e.g., "I notice you seem hesitant—what's that about?").
+
+**Summary:**
+
+The therapist appropriately elicited feedback about session content, technique helpfulness, and homework confidence, with explicit check-ins for understanding. However, feedback-seeking was not consistently woven throughout the session, and non-verbal cues and pacing feedback were not addressed.
+
+---
+
+### 3. Understanding
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated strong empathic understanding of the patient's internal experience. Early in the session, the therapist reflected: "Thank you for sharing that; it sounds really difficult to carry those thoughts and feelings," which acknowledges the emotional weight the patient is experiencing. This demonstrates genuine comprehension of the patient's distress.
+
+The therapist's summary midway through the session was particularly strong: "When you're in a stressful situation, like trying to work on your project, the thought that ending your life might be an option comes up automatically. This thought then leads to feelings of fear, confusion, and being trapped, which affects your ability to concentrate and manage your distress." This reflects accurate understanding of the cognitive-emotional sequence and the functional impact on the patient's life. The therapist also accurately identified the mixed emotional presentation: "It's understandable that feeling both sadness and anxiety in those moments would be very distressing."
+
+The therapist demonstrated understanding of the patient's ambivalence about suicide ("I don't want to die, but I also don't want the pain anymore") and reflected this back compassionately. The therapist also recognized the patient's insight about self-compassion deficits: "It sounds like there's a lot of difficult evidence supporting your feelings of hopelessness, but also some small signs of hope and support that you recognize, even if they feel overshadowed right now."
+
+However, the therapist did not deeply explore the patient's guilt about family finances or the identity/belonging concerns related to the move, which the patient mentioned as contributing factors. These contextual factors could have been explored more thoroughly to demonstrate fuller understanding of the patient's situation. Additionally, the therapist did not explicitly address the patient's depersonalization or panic attacks, which are part of the clinical presentation.
+
+**Summary:**
+
+The therapist demonstrated strong empathic attunement and accurate reflection of the patient's cognitive-emotional patterns and suicidal ambivalence. Understanding was generally excellent, though some contextual factors (guilt, belonging, anxiety symptoms) could have been explored more deeply.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated strong interpersonal skills throughout the session. Warmth and genuineness were evident in opening statements ("Hello, it's good to see you again") and consistent use of validating language ("Thank you for trusting me with that," "Thank you for sharing that thoughtful reflection"). The therapist's tone was consistently gentle and non-judgmental, particularly when discussing sensitive content like suicidal ideation and methods.
+
+The therapist appropriately balanced empathy with professional boundaries. When the patient disclosed preoccupation with methods of suicide, the therapist responded with concern but maintained clinical focus: "Before we go further, is it okay if I ask about any safety concerns or if you have a plan or means related to these thoughts? It's important we keep you safe as we work together." This demonstrates both care and appropriate professional responsibility.
+
+The therapist conveyed confidence in the collaborative process without being dismissive of the patient's suffering: "That's a meaningful insight—that even a small shift in how you relate to those thoughts can create a bit of relief." This affirms the patient's agency while maintaining realistic expectations.
+
+However, the therapist could have demonstrated greater warmth and genuine connection by using more specific, personalized language. For example, the therapist could have acknowledged the patient's courage more explicitly or shown more visible enthusiasm about the patient's insights. The therapist's responses, while warm, occasionally felt somewhat formulaic (e.g., "Thank you for sharing that" appears multiple times). Additionally, the therapist did not explicitly normalize the patient's experience or provide psychoeducation about depression and suicidal ideation, which can enhance the therapeutic relationship by reducing shame.
+
+**Summary:**
+
+The therapist demonstrated consistent warmth, validation, appropriate boundaries, and professional confidence. Interpersonal effectiveness was strong, though responses occasionally felt somewhat formulaic and could have included more explicit normalization or psychoeducation.
+
+---
+
+### 5. Collaboration
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist exemplified collaborative practice throughout the session. The opening invitation—"Would you like to focus on any particular issues or challenges you've been experiencing recently?"—explicitly invites the patient to set priorities rather than imposing them. When the patient identified suicidal ideation, the therapist confirmed: "Does that feel like a helpful priority for you?" This demonstrates genuine shared decision-making.
+
+During the cognitive work, the therapist used collaborative language: "Let's explore the thought that comes up in those moments" and "Let's try to develop a balanced thought you might say to yourself." The use of "let's" and "we" throughout positions the therapist and patient as a team. The therapist also explicitly invited the patient's input on the homework: "What do you think would be a realistic and specific way for you to try this?" rather than prescribing a specific intervention.
+
+The therapist demonstrated respect for the patient's autonomy by acknowledging potential barriers: "I won't beat myself up if I forget, but I'll try to do it at least once or twice a day" (patient's statement, affirmed by therapist), which shows the therapist accepted the patient's realistic self-assessment rather than pushing for perfection.
+
+However, collaboration could have been strengthened by more explicitly involving the patient in treatment conceptualization. The therapist did not ask the patient: "How do you understand what's happening?" or "What do you think might help?" before introducing cognitive restructuring. The therapist could have also invited the patient to help identify which thoughts or situations to target first, rather than implicitly directing the focus. Additionally, the therapist did not explicitly discuss the rationale for cognitive work or ask if the patient agreed this was an appropriate approach.
+
+**Summary:**
+
+The therapist demonstrated strong collaborative practice through shared agenda-setting, use of inclusive language, and respect for patient autonomy in homework design. Collaboration was excellent, though explicit discussion of treatment rationale and patient input on intervention selection could have been more prominent.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 4/6**
+
+**Explanation:**
+
+The therapist maintained reasonable session flow and avoided significant tangents. The session progressed logically: agenda-setting → safety assessment → identifying the core thought → examining evidence → developing a balanced thought → assigning homework → soliciting feedback. This structure is coherent and efficient.
+
+The therapist did not allow the patient to drift into lengthy storytelling or peripheral details. When the patient mentioned moving to a new city, grades slipping, and family guilt, the therapist acknowledged these but kept focus on the central cognitive pattern rather than exploring each factor exhaustively. This demonstrates appropriate prioritization.
+
+However, the pacing had some inefficiencies. The therapist spent considerable time on the cognitive restructuring exercise (examining evidence for and against the thought, developing a balanced thought, testing its emotional impact) without explicitly checking whether this depth was necessary or whether the patient would benefit from behavioral interventions, safety planning, or other CBT techniques. Given that this is a patient with active suicidal ideation and high distress (8/10), more time could have been devoted to safety planning, crisis resources, or behavioral activation strategies.
+
+Additionally, the therapist did not establish explicit time boundaries or check-ins ("We have about 10 minutes left; let's make sure we cover..."). The session appears to have moved at a reasonable pace, but without knowing the total session length, it's unclear whether all critical content was adequately addressed. For a patient with suicidal ideation, the absence of explicit safety planning, crisis hotline numbers, or emergency protocols is a notable gap that suggests time may not have been optimally allocated.
+
+**Summary:**
+
+The therapist maintained logical session flow and avoided tangents, demonstrating adequate time management. However, the absence of explicit time boundaries, safety planning, and consideration of alternative interventions (behavioral, safety-focused) suggests pacing could have been more strategically optimized for a high-risk patient.
+
+---
+
+### 7. Guided Discovery
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated strong use of Socratic questioning to facilitate patient self-discovery. A key example: "If a close friend came to you with these thoughts—that things won't get better—what might you say to them? Sometimes imagining this can help us develop a more balanced or compassionate perspective toward ourselves." This is an excellent guided discovery question that helps the patient access their own wisdom and compassion without the therapist imposing a perspective.
+
+The therapist also used effective questioning to help the patient examine evidence: "When you notice that thought, what evidence do you see that supports it? And what evidence might challenge or contradict it?" This invites the patient to generate their own evidence rather than the therapist providing counterarguments. The patient then independently identified supporting evidence (feeling stuck, grades slipping, guilt) and challenging evidence (good days, finishing projects, roommate support, medication help).
+
+The therapist asked open-ended questions about emotional experience: "What feelings come up most strongly for you in those moments—would you say it's mostly sadness, anxiety, or something else?" This allows the patient to articulate their experience rather than the therapist labeling it.
+
+However, the therapist occasionally moved toward more direct suggestion rather than pure guided discovery. For example: "Let's try to develop a balanced thought you might say to yourself, based on what you've said. How could you phrase it in a way that feels believable, even a little?" While this is still collaborative, the therapist is more directly guiding the patient toward a specific intervention rather than asking "What do you think might be a more balanced way to think about this?" The therapist could have asked more exploratory questions before suggesting the balanced thought exercise.
+
+**Summary:**
+
+The therapist skillfully used Socratic questioning to help the patient access self-compassion and examine evidence independently. Guided discovery was strong, though the therapist occasionally moved toward more direct suggestion rather than pure discovery-based questioning.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 4/6**
+
+**Explanation:**
+
+The therapist appropriately identified and focused on a central cognition: the thought that "things won't get better" and the related hopelessness. This is indeed a key cognition in depression and suicidal ideation, and targeting it is clinically sound. The therapist explicitly named this: "Let's explore the thought that comes up in those moments—the idea that things won't get better."
+
+The therapist also identified the automatic thought pattern that occurs in stressful situations: "When you're in a stressful situation, like trying to work on your project, the thought that ending your life might be an option comes up automatically." This demonstrates recognition of a central cognitive pattern.
+
+However, the therapist's focus was somewhat narrow. The patient presented with multiple relevant cognitions and behaviors that could have been targeted:
+
+1. **Guilt cognitions**: "I feel so guilty, like I'm letting them down" (regarding family finances). This guilt is a maintaining factor in depression and was not explored or targeted.
+
+2. **Belonging/identity concerns**: "I still don't feel like I belong" after moving. This contextual stressor was mentioned but not explored as a potential intervention target.
+
+3. **Behavioral patterns**: The patient reported "difficulty getting out of bed," "poor concentration," and social isolation ("especially when I'm alone"). These are behavioral targets that could have been addressed through behavioral activation or scheduling.
+
+4. **Anxiety symptoms**: The patient mentioned "panic attacks" and "depersonalization," which were not addressed despite being part of the clinical presentation.
+
+5. **Rumination/worry**: The patient's preoccupation with suicidal methods and "thoughts that just won't go away" suggests rumination, which could have been targeted through thought-stopping or attention-shifting techniques.
+
+The therapist focused primarily on cognitive restructuring of one thought rather than conducting a broader functional analysis of the patient's difficulties or prioritizing which cognitions/behaviors would have the highest impact on symptom reduction.
+
+**Summary:**
+
+The therapist appropriately identified and focused on the central hopelessness cognition, which is clinically relevant. However, the focus was somewhat narrow, missing other key cognitions (guilt, belonging concerns) and behavioral targets (activity, anxiety management) that could have been prioritized for intervention.
+
+---
+
+### 9. Strategy for Change
+### **Score: 3/6**
+
+**Explanation:**
+
+The therapist's overall strategy for change is partially coherent but has significant limitations. The implicit strategy appears to be: (1) identify the core hopelessness thought, (2) examine evidence for and against it, (3) develop a more balanced thought, (4) practice the balanced thought via homework. This is a standard cognitive restructuring approach and is theoretically sound for addressing depressive cognitions.
+
+However, the strategy has critical gaps:
+
+1. **Incomplete for suicidal ideation**: For a patient with active suicidal ideation, preoccupation with methods, and high distress (8/10), cognitive restructuring alone is insufficient. The strategy should include explicit safety planning, crisis resources, means restriction discussion, and behavioral interventions. The therapist did not develop a comprehensive safety strategy.
+
+2. **No behavioral component**: The patient reported significant behavioral symptoms (difficulty getting out of bed, poor concentration, social isolation). A comprehensive change strategy would include behavioral activation, scheduling, or exposure to valued activities. The strategy is purely cognitive.
+
+3. **No mood monitoring or tracking**: The therapist did not establish a systematic way to monitor mood changes or identify early warning signs of deterioration. For a bipolar patient with suicidal ideation, this is a critical omission.
+
+4. **Medication management not addressed**: The patient is on lithium and sertraline, but the therapist did not discuss medication adherence, efficacy, or whether medication adjustment might be warranted. This is a significant gap in the overall change strategy.
+
+5. **Limited specificity about mechanism**: The therapist did not explicitly explain why practicing a balanced thought would reduce suicidal ideation or how it connects to symptom improvement. The rationale for the intervention was not clearly articulated.
+
+6. **No relapse prevention**: The strategy does not address what the patient should do if the balanced thought doesn't work or if suicidal thoughts intensify.
+
+The strategy is coherent within the narrow domain of cognitive restructuring but lacks the breadth and specificity needed for a high-risk patient with multiple symptom domains.
+
+**Summary:**
+
+The therapist employed a cognitive restructuring strategy that is theoretically sound but incomplete for a patient with active suicidal ideation. Critical gaps include absence of safety planning, behavioral interventions, mood monitoring, medication discussion, and relapse prevention. The strategy is too narrow for the complexity of the presentation.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 4/6**
+
+**Explanation:**
+
+The therapist demonstrated competent application of several CBT techniques:
+
+1. **Cognitive Restructuring (Evidence Examination)**: The therapist asked the patient to identify evidence supporting and contradicting the hopelessness thought. The patient successfully generated evidence on both sides, and the therapist helped organize this into a more balanced perspective. This is appropriate application of a core CBT technique.
+
+2. **Thought Record (Implicit)**: The therapist implicitly guided the patient through a thought record by identifying the situation (working on school project), the automatic thought (things won't get better), and the emotional consequence (fear, confusion, being trapped). While not formally structured as a thought record, this demonstrates understanding of the cognitive model.
+
+3. **Behavioral Experiment (Implicit)**: The therapist suggested the patient practice the balanced thought and observe its emotional impact ("How do you feel when you say that thought to yourself?"). This is a form of behavioral experiment, though not explicitly framed as such.
+
+4. **Guided Discovery/Socratic Questioning**: As noted above, the therapist used Socratic questions effectively to help the patient reach insights independently.
+
+However, the application of techniques has limitations:
+
+1. **Lack of depth**: The cognitive restructuring was relatively brief and surface-level. The therapist did not deeply explore the evidence, challenge the patient's reasoning, or help the patient develop a truly compelling alternative thought. The balanced thought the patient generated ("Even though things feel really hard...") is reasonable but somewhat generic.
+
+2. **No formal thought records**: The therapist did not introduce or teach the patient to use a formal thought record, which would provide a structured tool for ongoing practice.
+
+3. **No behavioral activation**: Despite the patient's significant behavioral symptoms (difficulty getting out of bed, poor concentration), the therapist did not apply behavioral activation techniques.
+
+4. **No exposure or behavioral experiments**: For a patient with anxiety symptoms (panic, depersonalization), the therapist did not suggest exposure or behavioral experiments.
+
+5. **No safety planning**: The therapist did not apply safety planning techniques, which are essential for suicidal ideation.
+
+6. **Limited homework specificity**: While the homework (sticky note with balanced thought) is concrete, it lacks the specificity and structure of a formal CBT homework assignment. The therapist did not provide a written thought record template, a mood tracking sheet, or other structured tools.
+
+7. **No psychoeducation**: The therapist did not provide psychoeducation about depression, bipolar disorder, or the cognitive model, which would enhance the patient's understanding and engagement with CBT techniques.
+
+**Summary:**
+
+The therapist competently applied cognitive restructuring and Socratic questioning but with limited depth and scope. Critical CBT techniques for this presentation (safety planning, behavioral activation, formal thought records, psychoeducation) were absent or minimally applied. Application was adequate but not comprehensive or skillfully executed.
+
+---
+
+### 11. Homework
+### **Score: 4/6**
+
+**Explanation:**
+
+The therapist assigned homework that is concrete, specific, and relevant to the session content. The assignment is: write the balanced thought on a sticky note, place it on the laptop, and practice saying the thought once or twice daily, especially during low moods. This is a clear, actionable task.
+
+**Strengths of the homework assignment:**
+
+1. **Specificity**: The therapist specified exactly what to do (write the thought, place it on laptop), when to do it (once or twice daily, especially during low moods), and where to do it (on the laptop, a location the patient frequents).
+
+2. **Relevance**: The homework directly applies the cognitive work from the session and provides a bridge between session and real-world practice.
+
+3. **Feasibility**: The therapist checked feasibility with the patient: "What do you think would be a realistic and specific way for you to try this?" and the patient confirmed it felt "doable."
+
+4. **Rationale**: The therapist provided a brief rationale: "Having the sticky note on your laptop to remind you during those tough moments is a great idea."
+
+5. **Collaborative**: The patient helped design the homework, increasing buy-in and ownership.
+
+**Limitations of the homework assignment:**
+
+1. **No prior homework review**: The therapist did not review homework from previous sessions, which is a standard CBT practice. This is a significant omission that suggests either this is the first session or prior homework was not tracked.
+
+2. **Limited structure**: The homework lacks formal structure (e.g., a thought record template, mood tracking sheet). The patient is asked to practice a thought but not to systematically record when they practiced it, what happened, or how their mood changed.
+
+3. **No contingency planning**: The therapist did not discuss what the patient should do if the balanced thought doesn't feel believable or doesn't reduce distress. There is no backup plan or troubleshooting strategy.
+
+4. **No safety-focused homework**: Given the patient's suicidal ideation, homework could have included safety planning (identifying crisis resources, calling a friend when thoughts intensify, etc.). This is a critical omission.
+
+5. **Insufficient detail on practice**: The therapist did not specify how the patient should practice (e.g., "Say it out loud three times," "Write it in a journal," "Set phone reminders"). The instruction to "say it to yourself" is vague.
+
+6. **No follow-up plan**: The therapist did not specify exactly how the homework would be reviewed in the next session or what data the patient should collect.
+
+7. **No written assignment**: The therapist did not provide a written homework sheet or summary, which would help the patient remember the assignment and provide a reference.
+
+**Summary:**
+
+The therapist assigned concrete, relevant, and collaborative homework that is specific and feasible. However, the assignment lacks formal structure, safety-focused components, contingency planning, and detailed practice instructions. Prior homework review was absent, and the follow-up plan was not explicit. Homework assignment was adequate but could have been more comprehensive and structured.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- **Strong agenda-setting**: Collaborative, prioritized, patient-centered approach to establishing session focus
+- **Excellent empathic understanding**: Accurate reflection of patient's cognitive-emotional patterns and ambivalence about suicide
+- **Effective Socratic questioning**: Skillful use of guided discovery, particularly the "friend perspective" intervention
+- **Warm, validating interpersonal style**: Consistent use of validation, appropriate boundaries, and professional confidence
+- **Collaborative approach**: Genuine shared decision-making, inclusive language, respect for patient autonomy
+- **Coherent cognitive work**: Logical progression from identifying thoughts to examining evidence to developing alternatives
+- **Concrete, feasible homework**: Specific, actionable assignment with patient input and realistic expectations
+
+### Critical Deficiencies:
+- **Absence of safety planning**: No explicit safety plan, crisis resources, means restriction discussion, or emergency protocols for a patient with active suicidal ideation and preoccupation with methods
+- **Narrow intervention strategy**: Cognitive restructuring only; no behavioral activation, anxiety management, or mood monitoring despite significant behavioral and anxiety symptoms
+- **Incomplete clinical assessment**: No discussion of medication adherence, efficacy, or adjustment; no exploration of guilt, belonging concerns, or contextual stressors
+- **Limited CBT technique application**: No formal thought records, behavioral experiments, psychoeducation, or structured tools; techniques applied at surface level
+- **No behavioral component**: Patient has significant behavioral symptoms (difficulty getting out of bed, poor concentration, social isolation) that were not addressed
+- **Insufficient homework structure**: No formal tracking, contingency planning, or safety-focused assignments; no prior homework review
+- **Missing bipolar-specific considerations**: No mood monitoring, relapse prevention, or discussion of hypomanic triggers despite bipolar II diagnosis
+- **Lack of treatment rationale**: Therapist did not explicitly explain why cognitive restructuring would reduce suicidal ideation or how it connects to symptom improvement
+
+---
+
+## Summary of Feedback
+
+### Strengths
+
+This therapist demonstrated several genuine strengths in foundational therapeutic skills. The agenda-setting was collaborative and patient-centered, with explicit prioritization of the patient's identified concern (suicidal ideation). The therapist's empathic attunement was evident throughout—accurate reflections of the patient's cognitive-emotional patterns, recognition of the patient's ambivalence about suicide, and validation of the difficulty of the patient's experience. The use of Socratic questioning was skillful, particularly the "friend perspective" intervention, which helped the patient access self-compassion and generate a more balanced thought independently. The interpersonal style was consistently warm, validating, and professional, creating a safe therapeutic environment. The therapist demonstrated genuine collaboration by inviting patient input on priorities, intervention selection, and homework design. The cognitive work was logically structured and coherent, progressing from identifying the core thought to examining evidence to developing an alternative perspective. Finally, the homework assignment was concrete, specific, and feasible, with patient input and realistic expectations.
+
+### Critical Deficiencies
+
+Despite these strengths, this session has profound gaps that significantly compromise its effectiveness for a high-risk patient. **Most critically, there is no explicit safety planning.** For a patient with active suicidal ideation, preoccupation with methods (shooting herself out a window), and high distress (8/10), the absence of a safety plan, crisis resources, emergency protocols, or means restriction discussion is a serious clinical error. The therapist did not establish what the patient should do if suicidal thoughts intensify, did not provide crisis hotline numbers, and did not discuss access to means. This is not a minor omission—it is a fundamental failure in risk management.
+
+**The intervention strategy is too narrow.** The therapist employed cognitive restructuring exclusively, which is appropriate for depressive cognitions but insufficient for a complex presentation. The patient has significant behavioral symptoms (difficulty getting out of bed, poor concentration, social isolation, anhedonia) that require behavioral activation. The patient has anxiety symptoms (panic attacks, depersonalization) that require anxiety management. The patient has a bipolar disorder diagnosis but received no discussion of mood monitoring, relapse prevention, or hypomanic triggers. The patient has guilt about family finances and belonging concerns related to the move, which were mentioned but not explored or targeted. A comprehensive CBT strategy would address multiple symptom domains, not just hopelessness cognitions.
+
+**CBT techniques were applied superficially.** While the therapist used cognitive restructuring and Socratic questioning, the depth and scope were limited. The thought record was implicit rather than formal; the patient did not receive a structured template for ongoing practice. No behavioral experiments were suggested. No formal psychoeducation was provided about depression, bipolar disorder, or the cognitive model. No mood tracking or systematic monitoring was established. The balanced thought the patient generated is reasonable but somewhat generic and may not be compelling enough to compete with suicidal ideation in moments of crisis.
+
+**Medication management was not addressed.** The patient is on lithium and sertraline, but the therapist did not discuss adherence, efficacy, side effects, or whether medication adjustment might be warranted. For a patient with recurrent depression and suicidal ideation, medication optimization is a critical component of treatment.
+
+**Homework lacked structure and safety focus.** While the sticky note assignment is concrete, it lacks the rigor of formal CBT homework. There is no thought record template, no mood tracking sheet, no contingency planning for when the balanced thought doesn't work, and no safety-focused assignments (e.g., identifying crisis resources, calling a friend when thoughts intensify). Prior homework was not reviewed, suggesting either this is the first session or prior work was not tracked.
+
+---
+
+## Impact on Patient Care
+
+The deficiencies identified above have serious implications for patient outcomes. **The absence of safety planning leaves the patient vulnerable.** If suicidal ideation intensifies between sessions, the patient has no explicit plan, no crisis resources, and no clear protocol for seeking help. The therapist did not establish what constitutes a crisis or when the patient should seek emergency care. For a patient who has already been referred for urgent psychiatric consultation due to suicidal ideation, this is a critical gap.
+
+**The narrow intervention strategy is unlikely to produce sustained symptom improvement.** Cognitive restructuring alone may provide temporary relief (as the patient noted, "a tiny bit of relief"), but it does not address the behavioral, social, and contextual factors maintaining the depression. The patient's difficulty getting out of bed, poor concentration, and social isolation are behavioral symptoms that require behavioral activation. The patient's guilt and belonging concerns are contextual factors that require exploration and problem-solving. Without addressing these domains, the patient is likely to experience symptom recurrence and continued suicidal ideation.
+
+**The patient's bipolar disorder is not being adequately managed.** The therapist did not establish mood monitoring, discuss relapse prevention, or address hypomanic triggers. For a patient with a history of hypomanic episodes and current depression, the risk of mood cycling is significant. Without explicit monitoring and prevention strategies, the patient is at risk for rapid mood shifts that could increase suicidal risk.
+
+**The patient's anxiety symptoms are being ignored.** The patient reported panic attacks and depersonalization, which are distressing and can exacerbate suicidal ideation. These symptoms require targeted intervention (e.g., breathing exercises, grounding techniques, exposure), which were not provided.
+
+**The homework assignment, while concrete, is unlikely to be sufficient.** The patient acknowledged that the balanced thought "doesn't take away all the sadness or anxiety" and that "it's still hard to remember to say it, especially when the negative thoughts are so loud." Without more structured practice, contingency planning, and behavioral interventions, the patient is likely to struggle with homework completion and may experience a sense of failure if the sticky note strategy doesn't work.
+
+**Overall, while this session demonstrates good foundational therapeutic skills, it does not constitute adequate evidence-based CBT for a high-risk patient with complex, multi-domain symptoms.** The session is more consistent with supportive counseling with some cognitive elements rather than comprehensive CBT. For a patient with active suicidal ideation, this approach is insufficient and potentially harmful if it creates a false sense of security without establishing adequate safety protocols.
+
+---
+
+## Recommendations
+
+### 1. **Implement Explicit Safety Planning (HIGHEST PRIORITY)**
+- **Action:** In the next session, conduct a comprehensive safety assessment and develop a written safety plan with the patient. The plan should include: (a) warning signs that suicidal thoughts are intensifying, (b) internal coping strategies the patient can use, (c) people and social settings that provide distraction, (d) people the patient can ask for help, (e) professional resources (therapist phone number, crisis hotline, emergency room), and (f) ways to make the environment safer (means restriction).
+- **Example:** "Olivia, I want to make sure we have a clear plan for what you should do if suicidal thoughts get stronger. Let's identify the warning signs—what happens right before you feel most at risk? Then we'll list specific things you can do, people you can call, and when to go to the emergency room. I'll give you my crisis number and the National Suicide Prevention Lifeline number (988). We'll also talk about reducing access to means—do you have a plan for how to keep yourself safe?"
+- **Practice:** Review safety planning protocols in CBT supervision. Practice conducting safety assessments with role-plays. Use standardized safety planning templates (e.g., Stanley & Brown's Safety Planning Intervention). Ensure every high-risk patient has a written safety plan before leaving the session.
+
+### 2. **Expand Intervention Strategy to Include Behavioral Activation**
+- **Action:** Conduct a functional analysis of the patient's behavioral symptoms (difficulty getting out of bed, poor concentration, social isolation). Identify valued activities and schedule behavioral activation. Use activity monitoring and scheduling to increase engagement in meaningful activities, which will improve mood and reduce rumination about suicide.
+- **Example:** "I notice you're spending a lot of time in bed and feeling isolated, which can make depression worse. Let's identify activities that are important to you or that you used to enjoy—even small things like going to the library, calling a friend, or taking a walk. We'll schedule these into your week so you have something to look forward to and to break the cycle of isolation."
+- **Practice:** Learn behavioral activation protocols. Practice identifying valued activities and creating realistic activity schedules. Understand the mechanism: behavioral activation increases positive reinforcement, reduces rumination, and improves mood.
+
+### 3. **Establish Systematic Mood Monitoring and Bipolar-Specific Relapse Prevention**
+- **Action:** Introduce a mood tracking tool (e.g., daily mood log, bipolar disorder mood chart) to monitor depressive and hypomanic symptoms. Discuss early warning signs of mood episodes and develop a relapse prevention plan. Discuss medication adherence and efficacy.
+- **Example:** "Because you have bipolar II disorder, it's important to track your mood regularly so we can catch any changes early. I'd like you to rate your mood each day on a 0-10 scale and note any changes in sleep, energy, or racing thoughts. If you notice your mood shifting, we can adjust your treatment plan. Let's also talk about your medications—how are they working for you? Are you taking them consistently?"
+- **Practice:** Learn bipolar disorder psychoeducation and relapse prevention protocols. Become familiar with mood tracking tools. Understand the importance of medication management in bipolar disorder.
+
+### 4. **Provide Psychoeducation About Depression, Bipolar Disorder, and the Cognitive Model**
+- **Action:** In the next session, provide brief psychoeducation about how depression affects thinking, behavior, and mood. Explain the cognitive model and how CBT works. Discuss bipolar II disorder, the role of medication, and the importance of monitoring. This will enhance the patient's understanding and engagement with treatment.
+- **Example:** "Depression affects how we think, feel, and act. When we're depressed, our thoughts become more negative and hopeless, we withdraw from activities, and our mood gets worse. CBT helps by changing our thoughts and behaviors to break this cycle. You also have bipolar II disorder, which means your mood can shift between depression and hypomania. Medication helps stabilize your mood, and we'll work together to monitor for any changes."
+- **Practice:** Develop a brief psychoeducation handout for depression and bipolar disorder. Practice delivering this in a clear, accessible way. Provide written materials for the patient to review.
+
+### 5. **Deepen Cognitive Restructuring and Introduce Formal Thought Records**
+- **Action:** Move beyond surface-level cognitive restructuring. Help the patient develop more compelling, personalized alternative thoughts. Introduce a formal thought record template that the patient can use to systematically challenge thoughts between sessions. Teach the patient to identify cognitive distortions (e.g., catastrophizing, all-or-nothing thinking) and develop specific counters.
+- **Example:** "The balanced thought you developed is good, but let's make it even more powerful. What specific evidence from your life shows that you can get through difficult times? What would you tell a friend who was struggling? Let me give you a thought record template—it has columns for the situation, the automatic thought, the evidence for and against, and a more balanced thought. You can use this whenever you notice negative thoughts."
+- **Practice:** Learn to identify cognitive distortions and develop specific, evidence-based counters. Practice using thought record templates. Understand that cognitive restructuring is most effective when the alternative thought is personally meaningful and well-supported by evidence.
+
+### 6. **Address Guilt and Belonging Concerns Through Problem-Solving and Behavioral Experiments**
+- **Action:** Explore the patient's guilt about family finances and belonging concerns related to the move. Use problem-solving to identify concrete steps the patient can take (e.g., talking to family about finances, joining campus groups, seeking academic support). Design behavioral experiments to test the belief that she doesn't belong.
+- **Example:** "You mentioned feeling guilty about your family's expenses and not belonging at school. Let's break this down. First, have you talked to your family about how you're feeling? They might have a different perspective. Second, what would help you feel more connected at school? Are there clubs, study groups, or campus activities you could join? Let's try one this week and see what happens."
+- **Practice:** Learn problem-solving and behavioral experiment techniques. Practice identifying concrete, achievable steps. Understand that addressing contextual stressors is essential for treating depression.
+
+### 7. **Develop Contingency Plans for When Cognitive Strategies Don't Work**
+- **Action:** Acknowledge that the balanced thought may not always feel believable or reduce distress. Develop backup strategies: grounding techniques for anxiety, behavioral activation for low mood, calling a friend, using the safety plan. Normalize that CBT is a toolkit, not a single solution.
+- **Example:** "The balanced thought is a great tool, but sometimes it won't feel true, especially when you're really struggling. That's okay. We have other tools too—like grounding exercises for anxiety, getting out of bed and doing something even if you don't feel like it, or calling your roommate. If nothing helps and you're thinking about suicide, that's when you use your safety plan and call the crisis line."
+- **Practice:** Teach multiple coping strategies (grounding, distraction, behavioral activation, social support). Practice using these in session. Ensure the patient has a toolkit, not a single strategy.
+
+### 8. **Teach Anxiety Management Techniques for Panic and Depersonalization**
+- **Action:** The patient reported panic attacks and depersonalization. Teach specific anxiety management techniques: diaphragmatic breathing, progressive muscle relaxation, grounding exercises (5-4-3-2-1 technique), and psychoeducation about panic. Consider brief exposure if appropriate.
+- **Example:** "Let's practice a breathing exercise that can help with panic. Breathe in slowly for a count of 4, hold for 4, and breathe out for 4. This calms your nervous system. We can also use grounding—notice 5 things you see, 4 you can touch, 3 you hear, 2 you smell, 1 you taste. This brings you back to the present when you feel disconnected."
+- **Practice:** Learn anxiety management protocols. Practice breathing and grounding exercises. Understand the relationship between anxiety and suicidal ideation (anxiety can intensify suicidal thoughts).
+
+### 9. **Improve Homework Structure and Tracking**
+- **Action:** Provide written homework assignments with clear instructions, rationale, and tracking mechanisms. Use thought record templates, activity logs, mood charts, or other structured tools. Review homework at the beginning of each session and troubleshoot barriers. Celebrate successes and normalize difficulties.
+- **Example:** "Here's your homework sheet. This week, I'd like you to: (1) Use this thought record when you notice negative thoughts—write down the situation, the thought, evidence for and against, and a more balanced thought. (2) Schedule one activity each day that you value or that used to bring you joy. (3) Track your mood each morning and evening on this chart. (4) Keep your safety plan somewhere accessible. Let's review how it went next session."
+- **Practice:** Develop homework templates for thought records, activity logs, and mood tracking. Practice assigning homework clearly and reviewing it systematically. Understand that homework is the primary mechanism of change in CBT.
+
+### 10. **Discuss Medication Management and Coordinate with Psychiatry**
+- **Action:** Inquire about medication adherence, efficacy, side effects, and any concerns. If the patient is not responding adequately to current medications, coordinate with the prescribing psychiatrist about potential adjustments. Discuss the role of medication in managing bipolar disorder and depression.
+- **Example:** "How are you doing with your lithium and sertraline? Are you taking them as prescribed? Are they helping with your mood? Any side effects? Sometimes when depression is this severe, we need to adjust medications. I'll talk with your psychiatrist about whether any changes might help. Medication and therapy work best together."
+- **Practice:** Understand psychopharmacology basics for depression and bipolar disorder. Learn to assess medication adherence and efficacy. Develop collaborative relationships with prescribing psychiatrists.
+
+---
+
+## Overall Session Score: 4.1/6
+
+**Summary:**
+
+This therapist demonstrated solid foundational skills in agenda-setting, empathy, Socratic questioning, and collaboration. The session was warm, validating, and collaborative, with logical cognitive work and concrete homework. However, the session falls short of evidence-based CBT for a high-risk patient with complex, multi-domain symptoms. **Most critically, there is no explicit safety planning for a patient with active suicidal ideation and preoccupation with methods.** The intervention strategy is too narrow, focusing exclusively on cognitive restructuring while ignoring significant behavioral, anxiety, and contextual factors. CBT techniques were applied at a surface level without formal structure or depth. Medication management was not addressed. Bipolar-specific considerations (mood monitoring, relapse prevention) were absent. Homework lacked structure and safety focus.
+
+**This session demonstrates competent supportive counseling with some cognitive elements, but it does not constitute comprehensive, evidence-based CBT.** For a patient with active suicidal ideation, high distress, and complex symptoms, this approach is insufficient and potentially harmful if it creates a false sense of security without establishing adequate safety protocols. The therapist has genuine strengths that should be built upon, but immediate, significant changes are needed to provide adequate care for this patient. **The highest priority is implementing explicit safety planning and expanding the intervention strategy to address behavioral, anxiety, and contextual factors.** With these changes, this therapist could provide excellent CBT.
+
+**Likelihood of therapeutic change:** Moderate to low. While the patient may experience temporary relief from the cognitive work and feel supported by the therapeutic relationship, sustained symptom improvement is unlikely without safety planning, behavioral activation, anxiety management, and medication optimization. The risk of suicidal ideation intensifying between sessions is significant without explicit safety protocols.

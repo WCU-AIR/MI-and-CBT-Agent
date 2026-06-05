@@ -1,0 +1,765 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Avoidant/Restrictive Food Intake Disorder (ARFID)
+--- CASE STUDY ---
+
+Uma, an 11-year-old girl in a gifted and talented school, was referred to an eating disorder specialist due to concerns that she had drifted below the 10th percentile for weight. She had previously been treated by a child psychiatrist for perfectionistic traits causing significant anxiety, with sessions focusing on anxiety rather than eating behavior.
+
+Eating difficulties began at age 9, when Uma refused to eat and reported fear of vomiting. At that time, her pediatrician monitored her yearly, explaining such phases were normal. At age 9, she was above the 25th percentile for height and weight (52 inches, 58 pounds), but by age 11, her growth had flattened, and she dropped to the 5th percentile (52.5 inches, 55 pounds).
+
+Uma is the only child of two professional parents who divorced 5 years earlier. She lives with her mother on weekdays and father on weekends. She was born prematurely at 34 weeks, with early developmental delays but was developmentally normal by age 2. Yearly physical exams were unremarkable except for the recent decline in growth. Uma has always been petite but never below the 25th percentile before. She is talented academically and well-liked by teachers, but recently stopped socializing, coming home directly from school, stating she felt calmer at home.
+
+For the past 2 years, Uma has eaten very small amounts of food slowly. Parents attempted to encourage eating with different foods and restaurants, but she gradually refused to eat outside either parent's home. Mealtimes involved rearranging food on her plate, cutting food into small pieces, and crying if urged to eat. Fear of vomiting originated from a single incident at age 4 and has led to avoidance of eating in public. She denies concern about appearance and recognizes the seriousness of low weight, expressing a desire to gain weight.
+
+Discussion: Uma is an 11-year-old with a significant flattening of height and weight due to minimal food intake, triggered by fear of vomiting. She demonstrates social withdrawal and anxiety but does not fear weight gain or deny the seriousness of her low weight, distinguishing her condition from anorexia nervosa. Diagnosis of ARFID is consistent with DSM-5 criteria, with a subtype related to fear of vomiting. Differential diagnoses include anxiety disorders, obsessive-compulsive disorder, and medical/neurological issues, but ARFID is the most parsimonious explanation.
+
+--- BEHAVIOUR ---
+- Tearful during discussion of food or weight
+- Avoids social interaction with peers
+- Compliant but anxious during assessment
+- Focused on rearranging and cutting food
+- Prefers eating at home; refuses public eating
+- Exhibits perfectionistic tendencies
+
+--- ARFID SYMPTOMS from DSM-5 ---
+- Avoidance or restriction of food intake
+- Persistent failure to meet nutritional/energy needs
+- Significant weight loss or failure to achieve expected growth
+- Dependence on supplemental feeding or specific food preparation
+- Marked interference with psychosocial functioning
+- Fear of vomiting triggers food avoidance
+- No concern with body weight or shape
+
+--- PATIENT PROFILE ---
+Name: Uma Patel
+Sex: Female
+Age: 11 years
+DOB: March 22, 2012
+Place of Birth: Chicago, IL
+Address: 78 Willow Lane, Apt 12, Chicago, IL
+Contact: (555) 234-5678
+Marital Status: N/A (child)
+Siblings: None
+Parents: Mother (primary), Father (weekends)
+School: Gifted and Talented Elementary School
+Education: 5th grade
+Hobbies: Reading, art, academic competitions
+Medical History: Premature birth (34 weeks), early developmental delays
+Medications: None
+Substance Use: None
+Family History: Divorced parents; no known psychiatric conditions
+Mental Status: Tearful, anxious, socially withdrawn, rigid around food, perfectionistic tendencies, avoids eating in public
+
+--- DIAGNOSIS ---
+Avoidant/Restrictive Food Intake Disorder (ARFID)
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Uma Patel, an 11-year-old girl attending a gifted and talented elementary school, presents to an outpatient eating disorder specialist following referral by her pediatrician due to concerns about significant growth flattening and weight decline below the 10th percentile. The referral was prompted by parental and medical concerns regarding her restrictive eating behaviors and associated weight loss over the past two years.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hello! Good to see you today. I was thinking we could chat a bit about anything that's been bothering you lately or just how things have been going overall. How does that sound? 
+ PATIENT: Hi… thanks for seeing me. Um, well, I guess things have been kind of hard lately. Eating is still really tough for me. I get really scared, especially at school and with other kids around. I just want to go home and be by myself where I feel calmer. Sometimes, during lunch, I just don’t eat anything at all because I’m worried I might throw up or something. It’s embarrassing and stressful. Does that make sense? 
+ PSYCHIATRIST: Yeah, that makes sense, for sure. So, eating at school is hard because you’re worried about throwing up and feeling embarrassed. When you think about eating there, what kind of thoughts come up? Like, what exactly do you tell yourself? Maybe something like, "I can’t do this," or "Everyone is watching me," or something else? 
+ PATIENT: Yeah, it's kind of like that. When I think about eating at school, my mind jumps to things like, "What if I throw up in front of everyone?" or "People will think something's wrong with me or that I'm weird." I tell myself I better not eat because if I do and something bad happens, I’ll be so embarrassed. Sometimes I think, "I won’t be able to control it," and it just makes me freeze up. It's like my brain is stuck on remembering that one time I felt sick before, and I don’t want to go through that again. So, I just avoid eating or eat really, really slowly and carefully, hoping nothing happens. 
+ PSYCHIATRIST: Okay, so it sounds like you’re telling yourself some pretty stressful things about what might happen if you eat at school. Maybe it would help to try thinking about it differently, like reminding yourself that even if something did happen, it wouldn’t be the end of the world or that people might not be paying as much attention as you think. Do you think those kinds of thoughts might be easier to believe or help you feel less worried? Sometimes just trying to think about things a bit more positively can make a difference. What do you think? 
+ PATIENT: I guess I want to believe that, but it’s really hard. When I’m at school, it feels like everyone is watching me, even if they’re probably not. And the thought of throwing up still scares me a lot. I know people might not care as much as I think, but it’s tough to remember that when I’m in the moment. I keep telling myself if I mess up even a little bit, it’ll be really bad. Maybe if I tried, I could remind myself that it’s not the worst thing, but it feels kind of impossible right now. I don’t want to feel so scared all the time. 
+ PSYCHIATRIST: Yeah, that sounds really hard to deal with. Maybe you could try some things like taking deep breaths or focusing on something else when you start feeling scared at school. Sometimes, doing something small like that can help calm down the worry a bit. Also, maybe it would help to practice imagining the situation going okay, like picturing yourself eating without any problems. That might make it feel less scary over time. What do you think about trying some of those ideas? Do you think they might help a little? 
+ PATIENT: Hmm… I’m not sure. Deep breaths sound okay, I guess. I do sometimes try to focus on my book or drawing when I’m feeling really nervous. Imagining things going okay sounds kind of weird but maybe it could help if I practice it a bit. I just worry I’ll end up feeling worse if I imagine something good but it doesn’t happen. But I really want to feel less scared. Maybe I could try those things at home first? That feels safer than at school. What do you think? 
+ PSYCHIATRIST: Yeah, trying those things at home first sounds like a good idea. You could practice deep breathing and imagining eating calmly in a safe place, so it feels less scary when you try it at school. Maybe it would help to notice how you feel when you do those exercises, like if you feel a bit less worried or more relaxed. It’s okay if it doesn’t work perfectly right away; just practicing is important. You should practice this during the week and see how it goes. How does that sound? 
+ PATIENT: That sounds okay. I can try to do the deep breathing and imagine eating calmly while I’m at home, maybe during breakfast or dinner. I’ll try to pay attention to how I feel when I do it. Sometimes it’s hard to tell if I’m less scared or not, but I’ll do my best. I want to get better at this. It’s just kind of scary to think about changing how I do things, but maybe it’s worth trying. Thanks for suggesting it. 
+ PSYCHIATRIST: Great, that sounds like a good plan to start with. Also, maybe it would help if you tried to notice any other thoughts that pop up when you practice, like if you feel worried or calm. You could try to remind yourself of the positive thoughts we talked about earlier, like "Even if something happens, it’s not the end of the world." Just keep practicing those ideas. Next time we meet, we can talk about how it went and if anything felt different. Remember, it’s okay if it takes time to feel better. You should practice this during the week and see how it goes. Does that sound alright to you? 
+ PATIENT: Yes, I think I can do that. I’ll try to pay attention to what I’m thinking and how I’m feeling when I practice. And I’ll try to remind myself the positive things we talked about, even if it’s hard. It’s kind of scary, but I want to get better and not feel so worried all the time. I’ll practice during the week and we can talk about it next time. Thank you for helping me with this. 
+ PSYCHIATRIST: You're very welcome. I’m glad you’re willing to give it a try. Just remember, it’s okay if progress feels slow or if some days are harder than others. Keep practicing the breathing and those positive thoughts when you can. We’ll check in next time and see how things are going. You’re doing a good job by taking these steps. See you at our next session! 
+ PATIENT: Thank you. I’ll try my best. See you next time. 
+ PSYCHIATRIST: Hi, good to see you today! So, um, I thought maybe we could just talk about whatever’s been on your mind lately or any problems you’ve been having. Does that sound okay? 
+ PATIENT: Hi. Yeah, I guess that’s okay. Lately, I’ve been feeling kind of nervous about eating again. I still worry a lot about throwing up, especially at school or when I’m around other kids. It makes me want to eat less or not at all sometimes. I don’t really like talking about it because it makes me upset, but I don’t know how to make the scary part stop. 
+ PSYCHIATRIST: Hi! It's good to see you too. So, um, maybe we can just start by talking about something that's been bothering you recently or how things have been going in general. Does that sound alright? 
+ PATIENT: Hi. Yeah, that sounds okay, I guess. Lately, I’ve been feeling worried a lot about eating, especially when I’m not at home. I get scared I might throw up again like that one time before, and it makes me want to avoid eating altogether. I know I should eat more, but it’s really hard. Sometimes I just want to cry because it feels so overwhelming. I don’t really want to eat in front of other people anymore. 
+ PSYCHIATRIST: Hi there! It’s good to see you today. So, um, maybe we can just chat about anything that’s been on your mind or some problems you’ve been having recently. Does that sound okay to you? 
+ PATIENT: Hi. Yeah, that’s okay. I’ve been feeling kind of scared about eating again. Especially at school or when there are other kids around. I worry I might throw up or something bad will happen, so I try not to eat much there. It makes me feel sad and frustrated because I want to eat normally but I just can’t. Talking about it makes me a little upset too. 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist failed to establish a structured, collaborative agenda at any point in this session. In the opening, the therapist used vague language: "I was thinking we could chat a bit about anything that's been bothering you lately or just how things have been going overall." This is not agenda-setting; it is an open-ended invitation without prioritization, time allocation, or specific target problems identified collaboratively.
+
+Critically, the therapist repeated this same vague opening three separate times across the session ("So, um, maybe we can just start by talking about something that's been bothering you recently..." and "Hi there! It's good to see you today. So, um, maybe we can just chat about anything that's been on your mind..."). This repetition suggests either a lack of awareness that agenda was never set, or a failure to recognize the need for structured session planning. For an 11-year-old with ARFID presenting with significant functional impairment (weight below 5th percentile, social withdrawal, school avoidance), a clear agenda is essential to maintain focus and maximize limited session time.
+
+No priorities were established. No time allocation was discussed. No collaborative negotiation occurred about what to focus on. The session drifted based on patient presentation rather than therapist-guided structure. This is particularly problematic in pediatric eating disorder treatment, where clear behavioral targets and measurable goals are foundational to evidence-based intervention.
+
+**Summary:**
+Agenda-setting was entirely absent. The therapist used identical vague openings multiple times without establishing priorities, time allocation, or collaborative goal-setting. This represents a fundamental failure in CBT session structure.
+
+---
+
+### 2. Feedback
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist elicited minimal feedback and did not systematically check for understanding throughout the session. After presenting the initial intervention suggestions (deep breathing, imagining eating calmly, positive self-talk), the therapist asked only: "What do you think about trying some of those ideas? Do you think they might help a little?" This is a single, superficial check-in that does not constitute adequate feedback elicitation.
+
+The therapist did not ask clarifying questions about whether Uma understood the rationale for the interventions. No questions were asked about Uma's confidence in implementing the strategies. When Uma expressed hesitation ("I just worry I'll end up feeling worse if I imagine something good but it doesn't happen"), the therapist acknowledged this briefly but did not explore it further or adjust the intervention based on this important concern about potential harm from the technique.
+
+At the end of the session, the therapist did not solicit feedback about the session itself, the therapeutic relationship, or whether Uma felt heard and understood. No summary of key points was collaboratively developed. No explicit check for understanding of homework was conducted beyond "Does that sound alright to you?" This represents a missed opportunity to ensure the patient's buy-in and comprehension.
+
+The therapist also failed to elicit feedback about the patient's previous week's homework attempt (in the second session), simply stating "we can talk about how it went" without actually asking detailed questions about what was attempted, what worked, what didn't, and why.
+
+**Summary:**
+Feedback elicitation was minimal and superficial. The therapist asked only surface-level questions without systematically checking understanding, exploring concerns, or adjusting interventions based on patient responses. No end-of-session feedback was solicited.
+
+---
+
+### 3. Understanding
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist demonstrated basic comprehension of Uma's explicit statements but missed critical nuances in her presentation and failed to demonstrate deep understanding of her internal experience. When Uma described her fear of vomiting and social embarrassment, the therapist accurately reflected the surface content: "So, eating at school is hard because you're worried about throwing up and feeling embarrassed." This is adequate paraphrasing but not sophisticated understanding.
+
+However, the therapist missed several important clinical indicators. Uma stated: "I just want to go home and be by myself where I feel calmer" and "Sometimes it's hard to tell if I'm less scared or not." These statements suggest significant anxiety and possible dissociation or emotional numbing—critical information for understanding her internal experience. The therapist did not explore these observations or demonstrate understanding of the underlying anxiety architecture.
+
+Most critically, the therapist failed to recognize or address Uma's expressed ambivalence and fear about change. When Uma said, "I just worry I'll end up feeling worse if I imagine something good but it doesn't happen," this is a sophisticated expression of fear of disappointment and potential harm from the intervention itself. A therapist demonstrating deep understanding would have explored this concern, validated it, and collaboratively problem-solved rather than moving forward with the intervention. Instead, the therapist minimized this concern and proceeded with the homework assignment.
+
+The therapist also did not demonstrate understanding of the developmental context. Uma is 11 years old with perfectionist traits, social withdrawal, and anxiety. The therapist's suggestion to "think about it differently" and "remind yourself that even if something did happen, it wouldn't be the end of the world" reflects a cognitive intervention appropriate for adults but potentially invalidating for a child whose catastrophic thinking is driven by genuine anxiety, not just distorted cognition.
+
+Additionally, the therapist did not explore Uma's statement about wanting to practice at home first as a sign of her need for graduated exposure and safety—an important clinical insight that should have informed the treatment strategy.
+
+**Summary:**
+The therapist reflected explicit content but missed subtle communications about anxiety, dissociation, ambivalence, and fear of change. Understanding remained at a surface level without demonstration of deep empathic grasp of Uma's internal experience or developmental context.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 3/6**
+
+**Explanation:**
+
+The therapist demonstrated adequate but inconsistent interpersonal skills. Warmth and concern were present in statements like "Yeah, that makes sense, for sure" and "You're doing a good job by taking these steps," which convey basic acceptance and encouragement. The therapist's tone appears genuinely supportive, and there are no hostile or demeaning statements.
+
+However, several interpersonal problems emerged. First, the therapist's repeated use of "um" and vague openings ("So, um, maybe we can just chat about...") repeated three times in one session—conveys uncertainty and lack of professional confidence. For an 11-year-old patient with anxiety, therapist uncertainty can undermine the therapeutic alliance and suggest the therapist is not in control of the treatment.
+
+Second, the therapist's suggestion to "think about it differently" and use positive thinking ("reminding yourself that even if something did happen, it wouldn't be the end of the world") without adequate validation of Uma's fear may feel dismissive. Uma's fear of vomiting is real and rooted in a genuine traumatic memory (age 4 incident). Suggesting she simply think more positively can feel invalidating, as if her concerns are not being taken seriously.
+
+Third, the therapist did not demonstrate genuine curiosity or deeper engagement with Uma's experience. Questions were asked but felt somewhat perfunctory rather than genuinely exploratory. For example, after Uma described her catastrophic thoughts in detail, the therapist moved quickly to intervention suggestions without exploring the thoughts further or demonstrating fascination with understanding her world.
+
+Fourth, the therapist did not establish appropriate professional boundaries around the therapeutic relationship. There was no discussion of confidentiality, the role of parents in treatment, or how the therapist and Uma would work together. For a child patient, this is a significant oversight.
+
+**Summary:**
+Interpersonal skills were adequate but inconsistent. Warmth was present, but therapist uncertainty, potential invalidation of fears, and lack of deeper engagement undermined rapport. Professional boundaries were not established.
+
+---
+
+### 5. Collaboration
+### **Score: 2/6**
+
+**Explanation:**
+
+Collaboration was minimal and largely one-directional. The therapist presented interventions (deep breathing, positive self-talk, imagining eating calmly) without genuine collaborative problem-solving. The language used was suggestive rather than collaborative: "Maybe you could try some things like..." and "Maybe it would help to..." These are therapist-directed suggestions, not collaborative decisions.
+
+When Uma expressed a preference to practice at home first, the therapist validated this ("Yeah, trying those things at home first sounds like a good idea") but did not use this as an opportunity for deeper collaboration. A truly collaborative approach would have involved: "That's a great insight about needing to practice at home first. Let's think together about why that feels safer and how we can use that to build toward eating at school. What do you think would help you feel ready to try this at school?"
+
+Instead, the therapist simply incorporated Uma's suggestion into the homework assignment without exploring it collaboratively or using it to develop a shared understanding of the treatment strategy.
+
+Additionally, there was no collaborative empiricism—no joint hypothesis-testing or experimentation. The therapist did not invite Uma to be a scientist investigating her own thoughts and fears. Instead, the therapist told Uma what to think and do: "remind yourself of the positive thoughts we talked about earlier" and "just keep practicing those ideas."
+
+The patient was not invited to actively participate in developing the treatment plan. No discussion occurred about what Uma thought might help, what she had already tried, what worked or didn't work, or what her goals were. The therapist did not ask Uma what she wanted to accomplish or how she would know treatment was working.
+
+Furthermore, the therapist did not involve Uma in understanding the rationale for interventions. Why would deep breathing help? Why would imagining eating calmly reduce fear? These questions were never explored collaboratively.
+
+**Summary:**
+Collaboration was largely absent. The therapist presented interventions directively without genuine joint problem-solving, collaborative empiricism, or shared decision-making. The patient remained passive rather than actively engaged as a partner in treatment.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 2/6**
+
+**Explanation:**
+
+Pacing was inefficient and the therapist failed to maintain appropriate session structure. The most glaring problem is the repetition of the opening agenda-setting statement three times within a single session transcript. This suggests either: (1) the therapist is not tracking what has already been discussed, or (2) the session is disorganized and the therapist is restarting repeatedly.
+
+The session lacked clear structure. After the initial opening, the therapist moved directly to exploring automatic thoughts without establishing what the session would focus on or how much time would be spent on different topics. There was no transition between exploration and intervention; the shift felt abrupt.
+
+The therapist spent considerable time on cognitive restructuring ("Maybe it would help to try thinking about it differently...") without adequately exploring the presenting problem first. For an 11-year-old with ARFID and significant weight loss, behavioral assessment and intervention should take priority over cognitive work. The therapist did not assess: What is Uma currently eating? How much? When? Where? What are the specific triggers? What has been tried? What are the barriers?
+
+Instead, the therapist jumped to interventions (deep breathing, positive self-talk, imagining) without sufficient assessment. This is inefficient use of time and reflects poor prioritization.
+
+The session also lacked clear closure. The therapist ended with "See you at our next session!" without a clear summary of what was discussed, what homework was assigned, or what to expect next. This is poor time management in terms of maximizing learning and retention.
+
+Additionally, the therapist allowed the session to drift without redirecting. When Uma expressed concern about imagining things going well but having them not happen, this was a critical moment to explore and potentially adjust the intervention. Instead, the therapist moved forward without addressing this concern, wasting an opportunity for deeper work.
+
+**Summary:**
+Pacing was poor with inefficient use of time. The session lacked clear structure, priorities were not established, and the therapist repeated the opening multiple times. Insufficient assessment occurred before interventions were introduced.
+
+---
+
+### 7. Guided Discovery
+### **Score: 1/6**
+
+**Explanation:**
+
+Guided discovery was almost entirely absent. The therapist relied heavily on direct suggestion and persuasion rather than Socratic questioning to help Uma reach her own insights. This is a fundamental failure in CBT technique.
+
+When the therapist said, "Maybe it would help to try thinking about it differently, like reminding yourself that even if something did happen, it wouldn't be the end of the world or that people might not be paying as much attention as you think," this is direct instruction, not guided discovery. The therapist is telling Uma what to think, not helping her discover alternative perspectives through questioning.
+
+A guided discovery approach would have involved questions like:
+- "When you imagine eating at school, what's the worst thing that could happen?"
+- "If that happened, what would actually occur? Would people really think you're weird, or might they forget about it?"
+- "Has anything ever happened to you that felt catastrophic at the time but turned out to be manageable?"
+- "What evidence do you have that people are watching you? What evidence suggests they might not be?"
+
+Instead, the therapist provided answers rather than asking questions that would help Uma discover answers herself.
+
+Similarly, when discussing coping strategies, the therapist suggested deep breathing and positive self-talk without asking Uma what she had already tried, what worked in the past, or what she thought might help. A guided discovery approach would have involved: "You mentioned you sometimes focus on your book or drawing when nervous. Tell me more about that. How does that help? Could we build on that?"
+
+The therapist also failed to use guided discovery to help Uma understand the connection between her thoughts, feelings, and behaviors. No Socratic questioning explored the relationship between her catastrophic thoughts and her avoidance of eating.
+
+When Uma expressed doubt about the interventions ("I just worry I'll end up feeling worse if I imagine something good but it doesn't happen"), this was a perfect opportunity for guided discovery: "That's an interesting concern. Let's think about that together. What do you think would happen if you imagined eating going well and it didn't? What would that mean?" Instead, the therapist minimized the concern and moved forward.
+
+**Summary:**
+Guided discovery was essentially absent. The therapist relied on direct suggestion and persuasion rather than Socratic questioning. Uma was not helped to discover her own insights or problem-solve collaboratively.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist identified some relevant cognitions but failed to focus on the most central and clinically important thoughts and behaviors driving Uma's ARFID. The therapist did identify catastrophic thoughts about vomiting ("What if I throw up in front of everyone?") and social embarrassment ("People will think something's wrong with me or that I'm weird"), which are relevant to her presentation.
+
+However, the therapist failed to identify and explore several more central cognitions and behaviors:
+
+1. **Fear of vomiting as the primary driver**: The therapist did not adequately explore the original traumatic incident at age 4 or the specific fear conditioning that has occurred. Understanding the exact nature of the vomiting fear (Is it fear of the physical sensation? Fear of loss of control? Fear of contamination?) is essential for targeted intervention.
+
+2. **Perfectionism and control**: Uma's case presentation emphasizes perfectionist traits. The therapist did not explore how perfectionism relates to her eating restriction. Is she restricting food to maintain control? Is she afraid of making mistakes with eating? These are central cognitions that should have been explored.
+
+3. **Social withdrawal and isolation**: Uma has stopped socializing and comes home directly from school, stating she feels calmer at home. This is a critical behavioral pattern indicating possible anxiety or depression. The therapist did not explore this or identify it as a key target for intervention.
+
+4. **Avoidance as the primary maintaining behavior**: While the therapist identified that Uma avoids eating at school, the therapist did not adequately conceptualize avoidance as the core behavioral problem maintaining her ARFID. The focus should have been on gradually reducing avoidance through exposure, not on cognitive restructuring alone.
+
+5. **Dependence on specific environments**: Uma will only eat at home with specific parents. This environmental dependence is a critical behavioral pattern that should have been identified and targeted.
+
+6. **Slow eating and food manipulation**: Uma rearranges food, cuts it into small pieces, and eats very slowly. These are safety behaviors that maintain anxiety and should have been identified as targets for change.
+
+The therapist's focus on "thinking about it differently" and positive self-talk suggests a cognitive intervention approach, but for ARFID with fear-based avoidance, behavioral interventions (exposure, reducing safety behaviors, graduated eating challenges) should be primary. The therapist missed the opportunity to identify and focus on the most clinically important behavioral patterns.
+
+**Summary:**
+The therapist identified some relevant cognitions but failed to focus on the most central thoughts and behaviors. Critical patterns (perfectionism, avoidance, safety behaviors, environmental dependence, social withdrawal) were not adequately explored or targeted.
+
+---
+
+### 9. Strategy for Change
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist's strategy for change was vague, unfocused, and not grounded in evidence-based ARFID treatment. This represents a critical failure in CBT conceptualization.
+
+The proposed strategy consisted of:
+1. Deep breathing exercises
+2. Positive self-talk ("Even if something happens, it's not the end of the world")
+3. Imagining eating calmly
+4. Noticing thoughts and feelings during practice
+
+This strategy is problematic for several reasons:
+
+**First, it lacks a coherent conceptualization of the problem.** The therapist did not articulate a clear understanding of ARFID maintenance factors. ARFID with fear of vomiting is maintained by: (1) avoidance of eating situations, (2) safety behaviors (slow eating, food manipulation, eating only at home), (3) anxiety conditioning, and (4) lack of exposure to feared situations. The proposed strategy does not address any of these maintenance factors directly.
+
+**Second, the strategy is not evidence-based for ARFID.** The gold standard treatment for ARFID with anxiety/fear is exposure-based cognitive-behavioral therapy (CBT), which involves: (1) psychoeducation about anxiety and avoidance, (2) graduated exposure to feared foods and eating situations, (3) reduction of safety behaviors, (4) behavioral experiments to test catastrophic predictions, and (5) parent involvement in supporting behavioral change. The therapist's strategy includes none of these elements.
+
+**Third, the strategy is not tailored to Uma's specific presentation.** Uma's ARFID is driven by fear of vomiting, not by concern about weight or appearance. The strategy should focus on: (1) understanding the original trauma (age 4 vomiting incident), (2) recognizing that fear of vomiting is maintained by avoidance, (3) gradually exposing Uma to eating situations while preventing avoidance, and (4) helping her learn that eating does not lead to vomiting. The proposed strategy does not address any of this.
+
+**Fourth, the strategy lacks clear progression or hierarchy.** There is no discussion of starting with easier situations and progressing to more difficult ones. No hierarchy of feared foods or eating situations was developed. No clear steps toward the ultimate goal (eating normally at school and in social situations) were outlined.
+
+**Fifth, the strategy does not involve parents.** Uma's parents are critical to treatment success. They need to understand the treatment rationale, support exposure exercises, and avoid accommodation behaviors (allowing Uma to eat only at home, preparing special foods, etc.). The therapist did not discuss parent involvement.
+
+**Sixth, the strategy is not specific or measurable.** What does "practice deep breathing and imagine eating calmly" mean operationally? How many times per day? For how long? In what situations? What is the goal? How will progress be measured? These critical details were not specified.
+
+The therapist's strategy appears to be a generic anxiety management approach rather than a specific, evidence-based ARFID intervention. This is a fundamental failure in CBT conceptualization and strategy development.
+
+**Summary:**
+The strategy for change was vague, unfocused, and not evidence-based for ARFID. It lacked clear conceptualization of maintenance factors, did not include exposure-based interventions, was not tailored to Uma's specific presentation, and did not involve parents or specify measurable goals.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist attempted to apply CBT techniques but did so with significant flaws and limited skill. The techniques attempted were:
+
+1. **Cognitive restructuring/thought challenging**: The therapist suggested Uma "try thinking about it differently" and reminded her that "even if something did happen, it wouldn't be the end of the world." This is a basic form of cognitive restructuring, but it was applied poorly. The therapist did not systematically identify the thought, examine evidence for and against it, develop alternative thoughts, or test the new thought through behavioral experiments. The suggestion felt like simple positive thinking rather than structured cognitive work.
+
+2. **Relaxation/breathing exercises**: The therapist suggested deep breathing as a coping strategy. While this is a legitimate CBT technique, it was presented without adequate rationale, instruction, or practice. The therapist did not teach proper diaphragmatic breathing, did not have Uma practice it in session, and did not explain how it would help with her specific fear of vomiting.
+
+3. **Imagery/visualization**: The therapist suggested Uma imagine "eating calmly" and "the situation going okay." This is a legitimate technique but was applied without adequate instruction. The therapist did not guide Uma through the imagery, did not help her develop a detailed, realistic scenario, and did not explain the mechanism by which this would help (habituation, cognitive change, etc.).
+
+4. **Behavioral experiments**: The therapist implicitly suggested Uma "practice" these techniques and "notice how you feel," which is a form of behavioral experiment. However, this was not structured as a formal experiment with a clear hypothesis, prediction, and method for testing the prediction.
+
+**Critical flaws in application:**
+
+- **Lack of psychoeducation**: The therapist did not explain the CBT model (thoughts → feelings → behaviors) or help Uma understand how her anxiety and avoidance maintain her ARFID.
+
+- **Lack of exposure**: For fear-based ARFID, exposure is the primary intervention. The therapist did not introduce any exposure exercises, even graduated ones. Suggesting Uma practice deep breathing and positive thinking at home does not constitute exposure to the feared situation (eating at school).
+
+- **Lack of behavioral activation**: The therapist did not encourage Uma to engage in valued activities or gradually increase her eating. No specific behavioral goals were set.
+
+- **Lack of safety behavior reduction**: The therapist did not identify or target Uma's safety behaviors (slow eating, food manipulation, eating only at home). These behaviors maintain anxiety and should be explicitly targeted.
+
+- **Lack of parent involvement**: No parent-based interventions were discussed. Parents should be involved in supporting exposure exercises and reducing accommodation.
+
+- **Inadequate skill in application**: The techniques were presented in a superficial, non-systematic way. The therapist did not demonstrate mastery or confidence in applying these techniques.
+
+**Summary:**
+CBT techniques were attempted but applied with significant flaws. Cognitive restructuring, relaxation, and imagery were suggested without adequate instruction, rationale, or practice. Critical techniques (exposure, behavioral activation, safety behavior reduction, parent involvement) were absent. Application lacked skill and systematicity.
+
+---
+
+### 11. Homework
+### **Score: 2/6**
+
+**Explanation:**
+
+Homework was assigned but with significant deficiencies in clarity, specificity, rationale, and follow-up. The homework assigned was:
+
+1. Practice deep breathing and imagine eating calmly at home
+2. Notice thoughts and feelings during practice
+3. Remind yourself of positive thoughts ("Even if something happens, it's not the end of the world")
+4. Practice during the week
+
+**Critical deficiencies:**
+
+**Lack of specificity**: The homework is vague. "Practice deep breathing and imagine eating calmly" does not specify: How many times per day? For how long? At what time? In what situation? What exactly should Uma imagine? What foods? What setting? Without specificity, homework compliance is unlikely and measurement of progress is impossible.
+
+**Lack of clear rationale**: The therapist did not explain why these exercises would help Uma. What is the mechanism? How does deep breathing reduce fear of vomiting? How does imagining eating calmly help her actually eat at school? The rationale was not explained, which reduces motivation and understanding.
+
+**Lack of behavioral specificity**: The homework is primarily cognitive/mental (imagining, thinking positive thoughts) rather than behavioral. For ARFID, behavioral homework (actually eating, trying new foods, eating in new situations) is more important than mental exercises.
+
+**Lack of graduated difficulty**: No hierarchy of difficulty was established. Uma should start with easier tasks (eating familiar foods at home) and progress to harder tasks (eating at school, eating with peers). Instead, the homework is generic and not tailored to a progression.
+
+**Lack of measurement**: No clear way to measure whether homework was completed or whether it was helpful. "Notice how you feel" is subjective and difficult to track. Better homework would include: "Eat one additional food item this week" or "Practice deep breathing 3 times daily and rate anxiety before and after on a 0-10 scale."
+
+**Inadequate check for understanding and commitment**: The therapist asked "Does that sound alright to you?" but did not thoroughly check whether Uma understood the homework, felt capable of doing it, or was committed to trying it. When Uma expressed concern ("I just worry I'll end up feeling worse if I imagine something good but it doesn't happen"), this concern was not adequately addressed before assigning homework that involves imagining positive outcomes.
+
+**Inadequate follow-up in subsequent session**: In the second session, the therapist did not ask detailed questions about the homework. The therapist stated "we can talk about how it went" but never actually asked: Did you do it? How many times? What happened? What did you notice? What was difficult? This represents a failure to follow up on homework.
+
+**No parent involvement**: For an 11-year-old, parent involvement in homework is critical. The therapist did not discuss how parents could support the homework or what role they should play.
+
+**Summary:**
+Homework was assigned but with significant deficiencies. It lacked specificity, clear rationale, behavioral focus, graduated difficulty, and measurable outcomes. Follow-up was inadequate, and parent involvement was not discussed.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- **Basic empathy and warmth**: The therapist demonstrated genuine concern and supportive tone throughout the session. Statements like "You're doing a good job by taking these steps" convey encouragement.
+- **Identification of relevant cognitions**: The therapist correctly identified some of Uma's catastrophic thoughts about vomiting and social embarrassment.
+- **Patient engagement**: Uma remained engaged and willing to try suggestions, indicating the therapist did not create a hostile or dismissive environment.
+- **Acknowledgment of patient preferences**: When Uma expressed a preference to practice at home first, the therapist validated this preference.
+
+### Critical Deficiencies:
+- **Complete absence of structured agenda-setting**: The therapist repeated vague openings three times without establishing priorities, time allocation, or collaborative goals. This is a fundamental CBT failure.
+- **Lack of evidence-based ARFID treatment**: The proposed strategy (deep breathing, positive self-talk, imagining) is not evidence-based for ARFID. Exposure-based CBT is the gold standard, and this was entirely absent.
+- **No exposure interventions**: For fear-based ARFID, exposure to feared eating situations is the primary intervention. None was introduced or planned.
+- **Inadequate assessment**: The therapist did not conduct a thorough behavioral assessment. Critical information about what Uma eats, when, where, and what maintains her avoidance was not explored.
+- **Minimal guided discovery**: The therapist relied on direct suggestion rather than Socratic questioning. Uma was not helped to discover her own insights.
+- **Poor collaboration**: The therapist presented interventions directively without genuine joint problem-solving or collaborative empiricism.
+- **Vague and unmeasurable homework**: Homework lacked specificity, clear rationale, behavioral focus, and measurable outcomes.
+- **No parent involvement**: Parents were not discussed or involved in treatment planning, despite their critical role in supporting an 11-year-old's recovery.
+- **Inadequate follow-up**: In the second session, homework was not reviewed in detail.
+- **Lack of conceptualization**: The therapist did not articulate a clear understanding of ARFID maintenance factors or how the proposed interventions would address them.
+
+---
+
+## Impact on Patient Care
+
+**This session represents a significant departure from evidence-based CBT for ARFID and is unlikely to produce meaningful therapeutic change.** Uma's ARFID is maintained by avoidance of eating situations and anxiety conditioning. The proposed interventions (deep breathing, positive self-talk, imagining) do not address these maintenance factors. In fact, suggesting Uma practice coping strategies at home may inadvertently reinforce her avoidance of eating at school by implying that eating at school is too difficult to approach directly.
+
+For a child with significant weight loss (below 5th percentile), social withdrawal, and functional impairment, the lack of a clear, evidence-based treatment strategy is concerning. Uma's condition is serious and requires structured, systematic intervention. The current approach is unlikely to produce the behavioral change (increased eating, reduced avoidance, weight gain) necessary for recovery.
+
+Additionally, the lack of parent involvement is problematic. Uma's parents are critical to treatment success. They need to understand the treatment rationale, support exposure exercises, and avoid accommodation behaviors. Without parent involvement, treatment is unlikely to succeed.
+
+The therapist's repeated vague openings and lack of clear structure may also undermine Uma's confidence in the therapist and the treatment process. For an anxious, perfectionistic child, therapist uncertainty and lack of clear direction can increase anxiety rather than reduce it.
+
+---
+
+## Recommendations
+
+### 1. **Establish a Structured, Evidence-Based Treatment Conceptualization for ARFID**
+- **Action**: Develop a clear formulation of Uma's ARFID that identifies: (1) the original trauma (age 4 vomiting incident), (2) the fear conditioning that has occurred, (3) the avoidance behaviors maintaining the fear, (4) the safety behaviors (slow eating, food manipulation, eating only at home) maintaining anxiety, and (5) the environmental dependence maintaining restriction.
+- **Example**: "Uma's ARFID is maintained by a cycle: fear of vomiting → avoidance of eating at school → anxiety reduction (negative reinforcement) → continued avoidance. Safety behaviors (slow eating, eating only at home) prevent her from learning that eating does not lead to vomiting. Treatment will involve gradually exposing Uma to eating situations while preventing avoidance and safety behaviors."
+- **Practice**: Review evidence-based ARFID treatment protocols (e.g., CBT for ARFID, exposure-based interventions). Consult with an eating disorder specialist. Develop a written case formulation before the next session.
+
+### 2. **Implement Structured Agenda-Setting at the Beginning of Every Session**
+- **Action**: At the start of each session, collaboratively establish: (1) specific target problems to address, (2) time allocation for each topic, (3) priorities, and (4) what success would look like for that session.
+- **Example**: "Today I'd like to focus on three things: first, understanding what you've been eating this week; second, planning some small steps toward eating at school; and third, talking about how your parents can help. We have 45 minutes. Does that sound okay? Is there anything else you'd like to make sure we cover?"
+- **Practice**: Use a written agenda template. Practice with colleagues. Record sessions and review your agenda-setting skills.
+
+### 3. **Conduct a Thorough Behavioral Assessment Before Introducing Interventions**
+- **Action**: Before suggesting interventions, conduct a detailed assessment of: (1) what foods Uma currently eats and avoids, (2) when and where she eats, (3) what triggers avoidance, (4) what safety behaviors she uses, (5) what she has already tried, (6) what works and what doesn't, and (7) what her goals are.
+- **Example**: "Let's start by understanding your eating in detail. Can you tell me about a typical day? What do you eat for breakfast? Where? Who's there? How do you feel? What about lunch at school? What happens? What do you do? What are you thinking and feeling?"
+- **Practice**: Develop a detailed assessment form. Practice asking open-ended questions. Spend at least 20-30 minutes on assessment before introducing interventions.
+
+### 4. **Replace Cognitive Interventions with Exposure-Based Interventions as the Primary Treatment**
+- **Action**: Shift from suggesting positive self-talk and cognitive restructuring to planning graduated exposure to feared eating situations. Develop a hierarchy of feared situations (from least to most anxiety-provoking) and plan systematic exposure.
+- **Example**: "Instead of just thinking about eating differently, let's plan some small steps where you actually practice eating in situations that make you nervous. We'll start with something easier and work up to harder situations. For example, maybe we could start with eating a familiar food at home with your mom, then eating with your dad, then eating a slightly less familiar food, then eating at school with a friend. What do you think?"
+- **Practice**: Learn exposure-based CBT protocols. Develop a fear hierarchy with Uma. Plan specific exposure exercises. Practice conducting exposures in session.
+
+### 5. **Use Guided Discovery (Socratic Questioning) Rather Than Direct Suggestion**
+- **Action**: Replace statements like "Maybe you could try..." with questions that help Uma discover her own insights. Use Socratic questions to help her examine her thoughts, consider alternatives, and reach conclusions independently.
+- **Example**: Instead of "Maybe it would help to think about it differently," ask: "When you imagine eating at school, what's the worst thing that could happen? If that happened, what would actually occur? Has anything ever happened to you that felt really scary at the time but turned out to be okay? What would it mean if you did throw up? Would people really think you're weird, or might they forget about it?"
+- **Practice**: Study Socratic questioning techniques. Practice asking questions rather than making suggestions. Record sessions and review your use of guided discovery.
+
+### 6. **Involve Parents as Active Treatment Partners**
+- **Action**: Schedule a session with Uma and her parents (or separate sessions with each parent) to: (1) explain the ARFID formulation, (2) discuss the role of avoidance and safety behaviors in maintaining the disorder, (3) explain the exposure-based treatment approach, (4) identify accommodation behaviors parents are currently using, (5) plan how parents will support exposure exercises, and (6) establish clear behavioral goals.
+- **Example**: "Uma's fear of vomiting is maintained by avoiding eating at school. When she avoids, her anxiety goes down temporarily, but the fear stays strong. To help her overcome this fear, she needs to gradually practice eating in situations that make her nervous. This is where you're critical. We need you to support her in trying new things, not to let her avoid. For example, if she says she won't eat lunch at school, we need to help her do it anyway, even though it's scary. Can you help with that?"
+- **Practice**: Develop a parent psychoeducation handout. Practice explaining the formulation and treatment approach. Conduct a parent session before the next individual session with Uma.
+
+### 7. **Develop Specific, Measurable, Behavioral Homework with Clear Rationale**
+- **Action**: Replace vague homework ("practice deep breathing and imagine eating calmly") with specific behavioral homework that directly targets avoidance and safety behaviors. Include: (1) specific behavior to practice, (2) frequency and duration, (3) clear rationale, (4) measurement method, and (5) parent support plan.
+- **Example**: "This week, I'd like you to eat one new food or one additional serving of a familiar food at home with your mom. We're doing this because eating is the only way to learn that you won't throw up. Each time you eat without throwing up, your brain learns a little more that eating is safe. Can you pick a food you'd like to try? Let's make a plan for when you'll do it. Your mom will be there to support you. After you eat, notice what happened—did you throw up? Probably not. That's the important information your brain needs to learn."
+- **Practice**: Develop a homework template. Practice writing specific, measurable homework. Review homework in detail at the next session.
+
+### 8. **Systematically Elicit and Respond to Patient Feedback Throughout the Session**
+- **Action**: Regularly check for understanding, explore concerns, and adjust interventions based on patient feedback. Ask: "Does that make sense?" "What do you think about that?" "Do you have any concerns?" "What would help you feel more confident about trying this?"
+- **Example**: When Uma expressed concern ("I just worry I'll end up feeling worse if I imagine something good but it doesn't happen"), respond with: "That's a really important concern. Let's talk about that. What do you think would happen if you imagined eating going well and it didn't? What would that mean? How would that feel? Let's think about whether that's actually likely to happen and what we could do if it did."
+- **Practice**: Build feedback elicitation into your session structure. Ask for feedback at multiple points: after explaining the formulation, after suggesting interventions, at the end of the session. Record sessions and count how many times you elicit feedback.
+
+### 9. **Establish Clear Professional Boundaries and Explain the Therapeutic Relationship**
+- **Action**: At the beginning of treatment, explain: (1) the role of the therapist and patient, (2) confidentiality and its limits, (3) the role of parents, (4) how you will work together, and (5) what to expect from treatment.
+- **Example**: "I'm here to help you understand your fear of vomiting and to help you gradually practice eating in situations that make you nervous. You're the expert on your own experience, and I'm here to guide you. We'll work together as a team. Your parents will also be involved because they can help support you at home. Everything you tell me is private, except if I'm worried you're in danger. Does that make sense? Do you have any questions?"
+- **Practice**: Develop a brief explanation of the therapeutic relationship. Practice delivering it in a way that's appropriate for an 11-year-old. Include this in your first session with every patient.
+
+### 10. **Eliminate Vague Language and Demonstrate Therapist Confidence and Clarity**
+- **Action**: Replace uncertain language ("um," "maybe," "I guess") with clear, confident statements. Demonstrate that you have a plan and know where you're going.
+- **Example**: Instead of "So, um, maybe we can just chat about anything that's been on your mind," say: "Today I'd like to focus on understanding what you've been eating this week and planning some steps toward eating at school. Let's start with breakfast. What did you eat this morning?"
+- **Practice**: Record sessions and listen for filler words and uncertain language. Practice speaking with confidence and clarity. Ask colleagues for feedback on your presentation.
+
+### 11. **Develop a Detailed Treatment Plan with Specific, Measurable Goals and Timeline**
+- **Action**: Before the next session, develop a written treatment plan that includes: (1) diagnosis and formulation, (2) specific treatment goals (e.g., "eat lunch at school 3 days per week by week 8"), (3) treatment approach (exposure-based CBT), (4) specific interventions planned, (5) timeline, (6) role of parents, and (7) how progress will be measured.
+- **Example**: "Treatment Goal: Uma will eat lunch at school 3 days per week by week 8. Week 1-2: Assessment and psychoeducation. Week 3-4: Exposure to eating familiar foods at home with each parent. Week 5-6: Exposure to eating at school with therapist support. Week 7-8: Independent eating at school. Progress will be measured by: (1) number of days eating at school, (2) variety of foods eaten, (3) anxiety rating before and after eating, (4) weight gain."
+- **Practice**: Review treatment planning guidelines. Develop a template. Write a detailed plan for Uma before the next session.
+
+---
+
+## Overall Session Score: 1.9/6
+
+**Summary:**
+
+This session represents a significant failure in evidence-based CBT delivery for ARFID. While the therapist demonstrated basic warmth and empathy, the session lacked the core components of effective CBT: structured agenda-setting, thorough assessment, evidence-based conceptualization, exposure-based interventions, guided discovery, collaboration, and specific homework. The therapist's approach appears to be generic anxiety management (deep breathing, positive self-talk) rather than specialized ARFID treatment.
+
+**Current Competency Assessment:**
+The therapist demonstrates basic counseling skills (empathy, warmth, non-judgmental stance) but lacks competency in evidence-based CBT for ARFID. The therapist does not appear to have a clear understanding of ARFID maintenance factors or how to treat this disorder effectively. The repeated vague openings and lack of clear structure suggest the therapist may lack confidence or training in structured CBT delivery.
+
+**Most Critical Changes Needed Immediately:**
+1. Develop a clear, evidence-based formulation of Uma's ARFID that identifies avoidance and anxiety conditioning as maintenance factors
+2. Replace cognitive interventions with exposure-based interventions as the primary treatment
+3. Implement structured agenda-setting at the beginning of every session
+4. Involve parents as active treatment partners
+5. Conduct thorough behavioral assessment before introducing interventions
+6. Use guided discovery (Socratic questioning) rather than direct suggestion
+7. Develop specific, measurable behavioral homework with clear rationale
+
+**Whether Session Qualifies as Evidence-Based CBT:**
+This session does not qualify as evidence-based CBT for ARFID. The proposed interventions (deep breathing, positive self-talk, imagining) are not the gold standard for ARFID with fear-based avoidance. Exposure-based CBT is the evidence-based treatment, and this was entirely absent. The lack of structured agenda-setting, thorough assessment, and clear conceptualization further indicates this is not evidence-based CBT.
+
+**Likelihood of Producing Therapeutic Change:**
+The likelihood of this approach producing meaningful therapeutic change is low. Uma's ARFID is maintained by avoidance of eating situations. Suggesting she practice coping strategies at home does not address the core problem and may inadvertently reinforce avoidance. Without exposure to feared eating situations, without reduction of safety behaviors, and without parent involvement, Uma is unlikely to overcome her fear of vomiting or increase her eating. Her weight will likely continue to decline, and her social withdrawal may worsen.
+
+**Urgent Action Required:**
+This therapist requires immediate supervision and training in evidence-based ARFID treatment. Before the next session with Uma, the therapist should: (1) review evidence-based ARFID treatment protocols, (2) develop a clear case formulation, (3) create a detailed treatment plan with exposure-based interventions, (4) plan a parent session, and (5) practice structured agenda-setting and guided discovery. Without these changes, this treatment is unlikely to help Uma and may cause harm by reinforcing avoidance and delaying effective intervention.

@@ -1,9 +1,11 @@
 import csv
 import json
+import math
 import os
 import random
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from glob import glob
 
@@ -29,8 +31,9 @@ from automated_testing import (
 
 
 MEDIOCRE_STUDENT_NUM = 12
-SAMPLE_SIZE = 10
+SAMPLE_SIZE = 20
 DEFAULT_SEED = 42
+DEFAULT_WORKERS = 20
 MODES_TO_RUN = ("MI", "CBT")
 
 
@@ -51,10 +54,22 @@ def student_csv_path(mode):
 
 
 def latest_aggregate_folder(mode):
+    # First try the legacy MI_aggregated_* / CBT_aggregated_* pattern
     pattern = os.path.join("saved_tests", f"{mode}_aggregated_*")
-    folders = [folder for folder in glob(pattern) if os.path.isdir(folder)]
+    folders = [f for f in glob(pattern) if os.path.isdir(f)]
+
+    # Also search MI_CBT_* combined runs that store data in a mode subdirectory
+    combined_pattern = os.path.join("saved_tests", "MI_CBT_*")
+    for combined in glob(combined_pattern):
+        subdir = os.path.join(combined, mode)
+        if os.path.isdir(subdir) and os.path.exists(os.path.join(subdir, "good_student_all.csv")):
+            folders.append(subdir)
+
     if not folders:
-        raise FileNotFoundError(f"No existing aggregate folders found for {mode}: {pattern}")
+        raise FileNotFoundError(
+            f"No existing aggregate folders found for {mode}. "
+            f"Looked for: saved_tests/{mode}_aggregated_* and saved_tests/MI_CBT_*/{mode}/"
+        )
     return max(folders, key=os.path.getmtime)
 
 
@@ -83,17 +98,16 @@ def write_rows(path, rows, fieldnames):
         writer.writerows(rows)
 
 
-def run_mediocre_sample(mode, patient_files, save_folder):
+def run_mediocre_sample(mode, patient_files, save_folder, max_workers=DEFAULT_WORKERS):
     student_df = pd.read_csv(student_csv_path(mode), quotechar='"', skipinitialspace=True)
     mediocre_name = student_df.iloc[MEDIOCRE_STUDENT_NUM]["Name"]
 
-    rows = []
-    feedback_files = []
+    total = len(patient_files)
 
-    for patient_idx, patient_file in enumerate(patient_files, start=1):
+    def _run_one(args):
+        patient_idx, patient_file = args
         patient_name = os.path.basename(patient_file)
-        print(f"\n[MEDIOCRE] Running patient {patient_idx}/{len(patient_files)}: {patient_name}")
-
+        print(f"\n[MEDIOCRE] Running patient {patient_idx}/{total}: {patient_name}")
         results = run_test(
             mode,
             patient_file,
@@ -102,16 +116,31 @@ def run_mediocre_sample(mode, patient_files, save_folder):
             student_type="mediocre_student",
         )
         feedback_path = find_feedback_file(results["folder_name"], "mediocre_student")
-        feedback_files.append(feedback_path)
-
         scores = extract_scores([feedback_path], mode)
-        row = {
-            "Student": mediocre_name,
-            "Patient": patient_name,
-        }
+        row = {"Student": mediocre_name, "Patient": patient_name}
         for key, values in scores.items():
             row[key] = values[0] if values else None
-        rows.append(row)
+        plp = results.get("patient_session_avg_logprob")
+        slp = results.get("student_session_avg_logprob")
+        row["patient_avg_logprob"] = round(plp, 4) if plp is not None else None
+        row["patient_avg_prob_pct"] = round(math.exp(plp) * 100, 2) if plp is not None else None
+        row["student_avg_logprob"] = round(slp, 4) if slp is not None else None
+        row["student_avg_prob_pct"] = round(math.exp(slp) * 100, 2) if slp is not None else None
+        return row, feedback_path
+
+    rows = [None] * total
+    feedback_files = [None] * total
+
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = {
+            executor.submit(_run_one, (idx + 1, pf)): idx
+            for idx, pf in enumerate(patient_files)
+        }
+        for future in as_completed(futures):
+            idx = futures[future]
+            row, feedback_path = future.result()
+            rows[idx] = row
+            feedback_files[idx] = feedback_path
 
     score_cols = [key for key in rows[0].keys() if key not in ["Student", "Patient"]]
     write_rows(
@@ -135,23 +164,32 @@ def load_existing_samples(aggregate_folder, sample_size, seed):
     expert_df = pd.read_csv(good_path)
     bad_df = pd.read_csv(bad_path)
 
-    if len(expert_df) < sample_size:
-        raise ValueError(f"Expert results only have {len(expert_df)} rows, need {sample_size}")
-    if len(bad_df) < sample_size:
-        raise ValueError(f"Bad-student results only have {len(bad_df)} rows, need {sample_size}")
+    expert_n = min(sample_size, len(expert_df))
+    bad_n = min(sample_size, len(bad_df))
 
-    expert_sample = expert_df.sample(n=sample_size, random_state=seed).reset_index(drop=True)
-    bad_sample = bad_df.sample(n=sample_size, random_state=seed + 1).reset_index(drop=True)
+    if expert_n < sample_size:
+        print(f"  [warn] Expert baseline only has {len(expert_df)} rows; using all of them.")
+    if bad_n < sample_size:
+        print(f"  [warn] Bad-student baseline only has {len(bad_df)} rows; using all of them.")
+
+    expert_sample = expert_df.sample(n=expert_n, random_state=seed).reset_index(drop=True)
+    bad_sample = bad_df.sample(n=bad_n, random_state=seed + 1).reset_index(drop=True)
     return expert_sample, bad_sample
 
 
-def score_dict(df):
-    score_cols = [col for col in df.columns if col not in ["Student", "Patient"]]
-    return {col: pd.to_numeric(df[col], errors="coerce").tolist() for col in score_cols}
+NON_SCORE_COLS = {
+    "Student", "Patient", "Condition", "session_folder", "feedback_file",
+    "patient_avg_logprob", "patient_avg_prob_pct", "logprob_turns", "logprob_recorded",
+    "student_avg_logprob", "student_avg_prob_pct",
+}
+
+
+def score_dict(df, score_cols):
+    return {col: pd.to_numeric(df[col], errors="coerce").tolist() for col in score_cols if col in df.columns}
 
 
 def compare_groups(mediocre_df, expert_df, bad_df, save_folder):
-    score_cols = [col for col in mediocre_df.columns if col not in ["Student", "Patient"]]
+    score_cols = [col for col in mediocre_df.columns if col not in NON_SCORE_COLS]
 
     tagged = pd.concat(
         [
@@ -215,7 +253,7 @@ def compare_groups(mediocre_df, expert_df, bad_df, save_folder):
         stats_df.to_csv(os.path.join(save_folder, "mannwhitney_comparison.csv"), index=False)
 
     fig = plot_scores(
-        [score_dict(bad_df), score_dict(mediocre_df), score_dict(expert_df)],
+        [score_dict(bad_df, score_cols), score_dict(mediocre_df, score_cols), score_dict(expert_df, score_cols)],
         ["Existing Bad Sample", "Mediocre Student", "Existing Expert Sample"],
         "Mediocre Student vs Existing Bad and Expert Samples",
         colors=["orange", "green", "skyblue"],
@@ -311,9 +349,16 @@ def run_all():
     print(f"Sample size per mode: {SAMPLE_SIZE}")
     print(f"Saving combined run to: {parent_folder}")
 
-    summaries = []
-    for offset, mode in enumerate(MODES_TO_RUN):
-        summaries.append(run_mode(mode, DEFAULT_SEED + offset, parent_folder))
+    # Run MI and CBT modes in parallel — they are fully independent
+    summaries = [None] * len(MODES_TO_RUN)
+    with ThreadPoolExecutor(max_workers=len(MODES_TO_RUN)) as executor:
+        futures = {
+            executor.submit(run_mode, mode, DEFAULT_SEED + offset, parent_folder): offset
+            for offset, mode in enumerate(MODES_TO_RUN)
+        }
+        for future in as_completed(futures):
+            offset = futures[future]
+            summaries[offset] = future.result()
 
     total_elapsed = time.time() - overall_start
     run_summary = {

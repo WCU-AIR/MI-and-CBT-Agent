@@ -106,10 +106,21 @@ def run_test(therapy_mode, patient_profile_path, student_profile_number, api_key
     else:
         session_avg_logprob = None
 
+    # Compute student consistency metrics
+    student_lp_summary = student.get_logprob_summary()
+    student_avg_logprob = student_lp_summary["session_avg_logprob"]
+    if student_avg_logprob is not None and folder_name:
+        import json
+        slp_path = os.path.join(folder_name, "student_logprobs.json")
+        with open(slp_path, "w") as f:
+            json.dump(student_lp_summary, f, indent=2)
+        print(f"  [logprob] student avg logprob: {student_avg_logprob:.4f} ({math.exp(student_avg_logprob)*100:.1f}% avg token prob) over {student_lp_summary['n_turns']} turns")
+
     return {
         "session_result": session_result,
         "folder_name": folder_name,
-        "patient_session_avg_logprob": session_avg_logprob
+        "patient_session_avg_logprob": session_avg_logprob,
+        "student_session_avg_logprob": student_avg_logprob,
     }
 
 
@@ -267,7 +278,8 @@ def run_experiment(student_num, num_patients, student_csv_path, label, patient_f
     df = pd.read_csv(student_csv_path, quotechar='"', skipinitialspace=True)
     all_results = []
     saved_data_directory = []
-    session_logprobs = []  # parallel list to random_files
+    session_logprobs = []       # patient logprobs, parallel to random_files
+    student_logprobs = []       # student logprobs, parallel to random_files
 
     # Run tests for each patient
     for patient in random_files:
@@ -275,6 +287,7 @@ def run_experiment(student_num, num_patients, student_csv_path, label, patient_f
         feedback_path = results["folder_name"] + "/detailed_feedback.txt"
         saved_data_directory.append(feedback_path)
         session_logprobs.append(results.get("patient_session_avg_logprob"))
+        student_logprobs.append(results.get("student_session_avg_logprob"))
 
     # Extract scores from all feedback files
     student_scores = extract_mi_scores(saved_data_directory)
@@ -290,6 +303,9 @@ def run_experiment(student_num, num_patients, student_csv_path, label, patient_f
         lp = session_logprobs[idx]
         row["patient_avg_logprob"] = round(lp, 4) if lp is not None else None
         row["patient_avg_prob_pct"] = round(math.exp(lp) * 100, 2) if lp is not None else None  # geometric mean token prob
+        slp = student_logprobs[idx]
+        row["student_avg_logprob"] = round(slp, 4) if slp is not None else None
+        row["student_avg_prob_pct"] = round(math.exp(slp) * 100, 2) if slp is not None else None
         all_results.append(row)
 
     # Save results
@@ -303,7 +319,7 @@ def run_experiment(student_num, num_patients, student_csv_path, label, patient_f
     with open(csv_path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(
             f,
-            fieldnames=["Student", "Patient"] + list(student_scores.keys()) + ["patient_avg_logprob", "patient_avg_prob_pct"]
+            fieldnames=["Student", "Patient"] + list(student_scores.keys()) + ["patient_avg_logprob", "patient_avg_prob_pct", "student_avg_logprob", "student_avg_prob_pct"]
         )
         writer.writeheader()
         writer.writerows(all_results)
