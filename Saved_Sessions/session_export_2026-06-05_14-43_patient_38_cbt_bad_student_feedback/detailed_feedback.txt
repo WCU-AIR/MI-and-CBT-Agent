@@ -1,0 +1,805 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Dissociative Amnesia / Major Depressive Disorder / Posttraumatic Stress Disorder
+
+--- CASE STUDY ---
+
+Judith Vaughan was a 29-year-old white woman, a special education teacher, who sought psychiatric consultation because: “I'm tired of always being sad and alone.”
+She reported chronic, severe depression unresponsive to multiple antidepressant and mood stabilizer trials. Psychotherapy (CBT, DBT) had helped more. Electroconvulsive therapy was suggested but refused. She had two prior hospitalizations for suicidal ideation and severe self-cutting requiring stitches.
+
+Her younger sister reported past sexual abuse by their father when Judith was 13, though Judith denied being abused. She had minimal memory of ages 7–13 and attributed it to “nothing happened.” Visits from her family often triggered self-injurious and suicidal behavior.
+
+Ms. Vaughan was socially withdrawn in childhood but academically successful in high school and college. She excelled at work, forming long-term friendships, but had difficulty with intimacy, experiencing intense fear and disgust toward sexual advances. She often felt worthless or “bad.” Sleep was poor, and fatigue was common. She denied alcohol and drug use.
+
+Mental status examination: well-groomed, cooperative, coherent and goal-directed responses, emotionally constricted, appeared sad and “numb.” Denied hallucinations, confusion, or current suicidal intent, though suicidal thoughts were “always around.” She had nightmares of being chased by a dangerous man, difficulty concentrating (but hyperfocused at work), intense startle reaction, and engaged in compulsive behaviors (counting, singing, checking, arranging furniture) to reduce anxiety.
+
+Discussion: Ms. Vaughan exhibits persistent depressed mood, insomnia, fatigue, worthlessness, suicidality, trauma-related memory loss, avoidance of intimacy, nightmares, hyperarousal, and compulsive behaviors. The history and presentation support diagnoses of dissociative amnesia, chronic major depressive disorder with suicidal ideation, and posttraumatic stress disorder. She denies symptoms of dissociative identity disorder.
+
+--- BEHAVIOUR ---
+
+Cooperative and well-groomed
+
+Coherent, goal-directed responses, but emotionally constricted
+
+Appears sad, numb
+
+Denies current suicidal intent, but acknowledges persistent suicidal thoughts
+
+Avoidant of trauma discussion
+
+Engages in compulsive behaviors when anxious (counting, singing, checking, arranging)
+
+--- SYMPTOMS from DSM-5 ---
+
+Depressed mood
+
+Fatigue / loss of energy
+
+Insomnia / poor sleep
+
+Feelings of worthlessness / guilt
+
+Suicidal ideation
+
+Dissociative amnesia (6-year autobiographical gap)
+
+Trauma-related nightmares / intrusive thoughts
+
+Avoidance of triggers (family visits, sexual intimacy)
+
+Hyperarousal / hyperreactivity (startle reaction)
+
+Compulsive behaviors (counting, checking, arranging)
+
+--- PATIENT PROFILE ---
+Name: Judith Vaughan
+Sex: Female
+Age: 29 years
+DOB: February 18, 1996
+Place of Birth: Portland, OR
+Address: 482 Cedar Street, Portland, OR
+Contact: (555) 987-6543
+Marital Status: Single
+Children: None
+Occupation: Special Education Teacher
+Education: Bachelor’s degree in Special Education
+Religion: Christian (Protestant)
+Legal Guardian: N/A
+Presenting Complaint: “I'm tired of always being sad and alone.”
+Psychiatric History: Chronic major depressive disorder, prior hospitalizations for suicidal ideation/self-harm
+Psychotherapy: CBT, DBT
+Medications: Multiple antidepressants and mood stabilizers (previous trials, not effective)
+Substance Use: None
+Medical History: None significant
+Neurology: Normal
+Family History: Younger sister reported sexual abuse by father; father with history of alcoholism and “sex addiction”
+Mental Status: Depressed mood, emotional constriction, suicidal thoughts, dissociative amnesia, trauma-related nightmares, compulsive behaviors, hyperarousal
+
+--- DIAGNOSIS ---
+
+Dissociative Amnesia
+
+Major Depressive Disorder, chronic, with suicidal ideation
+
+Posttraumatic Stress Disorder
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Judith Vaughan is a 29-year-old special education teacher presenting for outpatient psychiatric evaluation due to persistent feelings of sadness and loneliness, as reported by herself and corroborated by her younger sister. She has a history of chronic depressive symptoms, prior hospitalizations for suicidal ideation and self-harm, and has undergone multiple medication trials and psychotherapy.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hi there! It’s good to see you today. How have you been feeling lately? Anything on your mind you want to chat about? 
+ PATIENT: Hi. Thanks for asking. I guess... I’ve just been feeling kind of numb most days, like there’s this heavy fog I can’t shake. I’m tired—always tired—and it’s hard to find motivation for anything. Sometimes the sadness feels so deep I don’t even have the energy to cry. It’s like I’m stuck in this dark place, but I don’t really know how to get out. I’m not sure if there’s anything specific to talk about. It mostly just feels like being alone with all this sadness. 
+ PSYCHIATRIST: Hey, I’m really sorry you’re feeling that way. You know, everyone goes through rough patches like this sometimes. It’ll get better, I promise. Just try to think positive and take things one day at a time. When I was feeling down before, I found that just getting outside for a walk helped me clear my head a bit. Maybe you could try that too? Sometimes little things like that can make a big difference. What do you think? 
+ PATIENT: I appreciate you trying to help, but it’s hard for me to think positive most days. It feels like this sadness has been with me forever, and going outside or doing little things... it doesn’t really change what I feel inside. Sometimes I do go for walks because I know I should, but it doesn’t make the numbness go away. It’s like no matter what I do, the sadness just hangs around, and I end up feeling even more alone. It’s frustrating because I want to feel better, but it’s like the sadness is stuck to me. I'm not sure if something small like a walk can really help. 
+ PSYCHIATRIST: Hey, I totally get that it feels tough and like the sadness is stuck. You know, I had a time when I felt really down too, and what helped me was just keeping busy with stuff I liked, even if I didn’t feel like it at first. Like, I started baking again because I love sweets, and it gave me something to focus on. Maybe you have something you used to enjoy? Sometimes reconnecting with little hobbies can help, even if it’s just a tiny bit. But hey, everyone goes through this stuff, so you’re definitely not alone in feeling this way. It’ll get better eventually. Have you tried anything like that before? 
+ PATIENT: I used to like reading a lot, especially stories that could take me away from everything for a little while. But even that feels hard now. Sometimes I try to read, but my mind just wanders, or I get distracted and start feeling worse because I notice how empty everything feels. I do try to keep busy at work since I want to do well for the kids I teach, but after that, everything just feels so heavy again. I don’t really have much energy left for hobbies or things I used to enjoy. It feels like the sadness and numbness are always waiting for me when I’m done with everything. So, I guess I’ve tried, but it’s like there’s this wall I can’t get past. 
+ PSYCHIATRIST: Hey, you’re doing your best, and that’s what counts. You know, sometimes life just throws these tough times at us, but if you keep trying to think positive and focus on the good things, even the small ones, it can really help. Remember, this feeling won’t last forever. Just hang in there and keep your head up. Drinking enough water and getting some sleep can also work wonders, you know? Sometimes the basics make a bigger difference than we think. Have you been able to get enough rest lately? 
+ PATIENT: Sleep has been really tough for me. Most nights, I lie awake for hours before falling asleep, and then I wake up several times. I have these nightmares, too—always some dangerous man chasing me. When I wake up, my heart is racing, and it’s hard to feel safe again. That just makes the tiredness worse during the day. I’ve tried to get more rest, but it feels impossible sometimes. It’s frustrating because I know sleep is important, but my body just won’t cooperate. Even when I’m exhausted, I can’t seem to have a peaceful night. 
+ PSYCHIATRIST: Oh man, that sounds really rough with the nightmares and all. I’ve had nights like that too where I just couldn’t shut my brain off. But you know what? It’s important to keep trying to get that sleep. Maybe you could try some relaxing stuff before bed, like listening to calm music or drinking some warm tea. Sometimes that helps me wind down. And hey, it’s okay to have bad nights—everyone does. Just don’t give up on trying to get that rest. It’ll get better, I promise. What do you usually do before bed? 
+ PATIENT: Before bed, I usually just lie there and try to distract myself by counting or sometimes singing quietly to keep the scary thoughts away. I find if I don’t do something like that, my mind starts racing, and the nightmares feel worse. It’s like these little rituals keep me just safe enough to fall asleep, but they don’t really help me feel rested or calm. I haven’t tried things like calm music or tea much, but I guess I could try. It just feels hard to believe anything will make a real difference because it’s been this way for so long. But maybe trying something new wouldn’t hurt. 
+ PSYCHIATRIST: You’re already doing a good job with those little rituals, and that’s something to hold onto. You know, I once tried listening to ocean sounds before bed, and it really helped me relax after a stressful day. Maybe you could give something like that a shot? Sometimes just a small change can make a difference. And hey, don’t be too hard on yourself—everyone has their own ways of coping. By the way, have you been able to talk to anyone else about these nightmares or how you’re feeling? Sometimes sharing can lighten the load a bit. 
+ PATIENT: I haven’t really talked much about the nightmares or how I feel, not even with my family. It’s hard because when they bring up certain things, I just shut down or get really scared. I avoid talking about it because it feels like opening a door to things I want to keep locked away. Sometimes I worry that if I say too much, it’ll all become real again, and I don’t think I could handle that. So mostly, I keep it to myself or just try to manage on my own. It’s lonely, but it feels safer that way. 
+ PSYCHIATRIST: That sounds really tough, keeping all that inside. You know, sometimes talking helps, but it’s also okay to keep things close until you’re ready. When I was going through a rough patch, I found that writing down my thoughts helped me feel a bit less alone, even if I didn’t share it with anyone. Maybe giving that a try could be something to think about? But no pressure—do whatever feels right for you. Just remember, you’re not alone, and it’ll get better with time. What’s something that usually helps you feel a little better, even if just for a moment? 
+ PATIENT: Sometimes when I’m really overwhelmed, I like to do the counting or arranging things around me. It feels like those small actions give me a bit of control when everything else feels out of reach. The counting especially helps quiet my mind, even if it doesn’t fix the bigger sadness or fears. It’s like those little routines create a safe space for a moment. Other times, singing quietly to myself helps keep the scary thoughts at bay too. These things don’t make the bad feelings go away, but they make them a little easier to handle. That’s probably the closest I have to feeling a bit better, even if just for a little while. 
+ PSYCHIATRIST: Thanks for sharing that with me. It sounds like those little routines really help you manage when things get tough. You know, sometimes just holding onto those small moments of control can make a big difference over time. Keep doing what feels safe for you. And remember, it’s okay to take things one step at a time. You’re stronger than you think, and it’ll get better. Just hang in there, alright? I’m rooting for you. 
+ PATIENT: Thank you. It’s hard to believe I’m strong sometimes, but hearing that helps a little. I’ll try to keep going and stick with the things that keep me safe, even if they feel small. It’s not easy, but talking like this makes it feel a bit less heavy. I appreciate you listening and not pushing me too hard. I’ll keep trying, one step at a time. 
+ PSYCHIATRIST: Hey, it’s good to hear you’re hanging in there. Remember, every small step counts, even if it doesn’t feel like much right now. Just keep taking care of yourself the best you can. You’ve got this, and things will get better with time. Keep your head up! 
+ PATIENT: Thanks. I hope so. Sometimes it feels like I’m just waiting for the sadness to go away, but I guess maybe just holding on for now is enough. I’ll keep trying to take care of myself, even if it feels like a struggle. It’s nice to feel like someone’s on my side. 
+ PSYCHIATRIST: Hey, it’s good to see you today. How have you been feeling lately? Anything on your mind you want to chat about? 
+ PATIENT: Hi. I’ve been feeling kind of the same—tired and numb most days. The sadness is still pretty heavy, and I find myself thinking about how alone I feel a lot. It’s hard to find any real joy or hope right now. I don’t really want to go into much detail about what’s behind it because it feels too overwhelming, but it’s just... a constant weight. 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 0/6**
+
+**Explanation:**
+
+No agenda was established at any point in this session. The therapist opened with a generic, unstructured question ("How have you been feeling lately? Anything on your mind you want to chat about?") without collaboratively identifying specific target problems, prioritizing concerns, or establishing time-bound goals. Throughout the 10+ exchanges, there was no attempt to define what would be accomplished in the session, what problems would be addressed, or how time would be allocated. The patient presented with multiple severe, comorbid diagnoses (dissociative amnesia, chronic MDD with suicidal ideation, PTSD), yet the therapist never worked with the patient to identify which issue(s) would be the focus. There was no discussion of session structure, duration, or what success would look like. The session drifted aimlessly from topic to topic (sleep, hobbies, nightmares, coping rituals, family avoidance) without any coherent plan or prioritization. This represents a fundamental failure in basic CBT structure.
+
+**Summary:**
+
+The therapist completely failed to establish a collaborative agenda, leaving the session without direction, clear goals, or prioritized targets for intervention.
+
+---
+
+### 2. Feedback
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist made minimal, inadequate attempts to elicit or respond to patient feedback. There were no explicit check-ins for understanding (e.g., "Does that make sense?" "How does that land for you?"). The therapist did not ask whether the patient found the suggestions helpful, whether the session was meeting her needs, or whether she understood the rationale behind recommendations. When the patient explicitly stated that positive thinking and walks "don't really change what I feel inside" and that "no matter what I do, the sadness just hangs around," the therapist did not pause to check whether the patient felt heard or whether the approach was working. The therapist did not summarize key points, ask for the patient's takeaways, or solicit input on what would be most helpful going forward. Near the end, the therapist asked "What's something that usually helps you feel a little better?" but this was a content question, not genuine feedback elicitation about the session itself. The patient's statement "I appreciate you listening and not pushing me too hard" suggests the patient was relieved by lack of pressure, but the therapist never formally assessed whether the session was therapeutic or whether adjustments were needed.
+
+**Summary:**
+
+The therapist rarely elicited feedback and never systematically checked for understanding, satisfaction, or therapeutic progress, missing critical opportunities to adjust approach.
+
+---
+
+### 3. Understanding
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist demonstrated surface-level listening but repeatedly missed the patient's explicit communications and underlying clinical presentation. The patient clearly stated: "the sadness feels so deep I don't even have the energy to cry," "it's like being alone with all this sadness," "the numbness go away," "the sadness is stuck to me," and "there's this wall I can't get past." These are not simple mood fluctuations—they reflect anhedonia, emotional numbing, and hopelessness consistent with severe, treatment-resistant depression and trauma. Yet the therapist responded with platitudes ("everyone goes through rough patches," "it'll get better, I promise") and personal anecdotes about baking and ocean sounds, fundamentally misunderstanding the severity and chronicity of the patient's condition.
+
+Most critically, the therapist completely missed the clinical significance of the patient's disclosure about nightmares ("always some dangerous man chasing me"), hyperarousal ("my heart is racing"), avoidance of family ("when they bring up certain things, I just shut down or get really scared"), and compulsive rituals ("counting or arranging things," "singing quietly to keep the scary thoughts away"). These are hallmark PTSD and dissociative symptoms. The patient explicitly stated: "I worry that if I say too much, it'll all become real again, and I don't think I could handle that." This is trauma avoidance and indicates significant distress around trauma material. The therapist did not recognize this as a clinical red flag requiring trauma-informed, structured intervention. Instead, the therapist suggested journaling and ocean sounds.
+
+The patient also disclosed suicidal ideation history (two prior hospitalizations) and persistent suicidal thoughts ("suicidal thoughts were 'always around'"), yet the therapist never assessed current safety, suicide risk, or ideation frequency. This is a critical failure in understanding the patient's clinical presentation.
+
+**Summary:**
+
+The therapist demonstrated adequate surface empathy but fundamentally misunderstood the severity, complexity, and trauma-related nature of the patient's presentation, missing critical clinical indicators requiring specialized intervention.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 3/6**
+
+**Explanation:**
+
+The therapist displayed moderate warmth and genuine concern but with significant interpersonal limitations. Positive elements: the therapist was not hostile, demeaning, or dismissive; maintained a supportive tone; and acknowledged the patient's struggle ("that sounds really rough"). The therapist did not rush or appear impatient.
+
+However, there were notable problems. The therapist repeatedly shared personal anecdotes ("when I was feeling down before," "I once tried listening to ocean sounds," "when I was going through a rough patch"), which, while intended to normalize and connect, actually shifted focus away from the patient and suggested the therapist's experience was comparable to the patient's severe, chronic, treatment-resistant depression with suicidal ideation and trauma. This is inappropriate and can feel invalidating. The therapist's repeated reassurances ("it'll get better, I promise," "you're stronger than you think," "things will get better with time") came across as generic and disconnected from the patient's actual clinical reality. The patient has had two hospitalizations, multiple failed medication trials, and persistent suicidal thoughts—generic reassurance is insufficient and potentially harmful.
+
+Most problematically, the therapist's tone was somewhat patronizing. Phrases like "Hey, you're doing your best, and that's what counts," "Just hang in there and keep your head up," and "You've got this" sound encouraging in isolation but, when repeated across a session with a severely depressed, suicidal patient, can feel dismissive of the genuine severity of her experience. The patient's response—"It's nice to feel like someone's on my side"—suggests she appreciated basic support, but this does not indicate the therapist was truly effective; it indicates the patient was grateful for minimal engagement.
+
+**Summary:**
+
+The therapist was warm and non-hostile but relied on generic reassurance, personal anecdotes, and somewhat patronizing language that, while not destructive, failed to convey genuine understanding of the patient's severe clinical presentation.
+
+---
+
+### 5. Collaboration
+### **Score: 1/6**
+
+**Explanation:**
+
+Collaboration was minimal and largely absent. True collaboration in CBT requires: (1) shared decision-making about treatment targets and approach, (2) explicit invitation for patient input and preferences, (3) collaborative empiricism (testing ideas together), and (4) the patient functioning as an active partner in treatment planning.
+
+None of these occurred. The therapist unilaterally suggested interventions: "try to think positive," "get outside for a walk," "reconnect with little hobbies," "try some relaxing stuff before bed," "try listening to calm music or drinking some warm tea," "try writing down your thoughts," "try ocean sounds." These were presented as recommendations, not collaboratively developed plans. The patient was positioned as a passive recipient of advice, not an active partner.
+
+When the patient explicitly stated that positive thinking and walks don't help, the therapist did not pause to ask: "What do you think would be most helpful?" or "What have you found works best for you?" or "Let's figure this out together." Instead, the therapist continued offering suggestions. When the patient disclosed compulsive rituals (counting, arranging, singing), the therapist validated them ("You're already doing a good job with those little rituals") but did not explore them collaboratively—no discussion of whether these rituals were helping or maintaining anxiety, no collaborative analysis of their function, no shared decision-making about whether to modify them.
+
+The patient's statement "I appreciate you listening and not pushing me too hard" is telling: she appreciated the *absence* of pressure, not genuine collaboration. This suggests the therapist was passive rather than actively collaborative.
+
+**Summary:**
+
+The therapist functioned as an advice-giver rather than a collaborative partner, offering unilateral suggestions without soliciting patient input, preferences, or active engagement in treatment planning.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 2/6**
+
+**Explanation:**
+
+The session had significant pacing problems. The therapist allowed the conversation to drift across multiple topics—sleep, hobbies, nightmares, family avoidance, coping rituals, journaling—without establishing priorities or allocating time strategically. Each topic received surface-level exploration followed by a suggestion, then movement to the next topic. There was no depth on any single issue.
+
+Most problematically, the therapist spent considerable time on personal anecdotes and generic reassurance ("when I was feeling down," "I once tried ocean sounds," "when I was going through a rough patch") that consumed session time without advancing clinical understanding or treatment. The therapist also repeated similar themes across multiple exchanges (positive thinking, small steps, it'll get better) rather than moving forward with structured assessment or intervention.
+
+The session ended abruptly with the therapist asking "How have you been feeling lately?" again—suggesting either the session was restarting or the therapist had lost track of time/structure. This is confusing and indicates poor session management.
+
+Critically, given the patient's presentation (suicidal ideation, trauma, dissociative amnesia, compulsive behaviors), the therapist should have prioritized: (1) suicide risk assessment, (2) trauma history and current triggers, (3) functional analysis of compulsive behaviors, (4) identification of avoidance patterns. Instead, time was spent on generic wellness suggestions. This represents poor clinical prioritization and inefficient use of time.
+
+**Summary:**
+
+The therapist allowed the session to drift without clear priorities, spent time on personal anecdotes and repetitive reassurance, and failed to allocate time to critical clinical assessment (suicide risk, trauma history, functional analysis).
+
+---
+
+### 7. Guided Discovery
+### **Score: 1/6**
+
+**Explanation:**
+
+Guided discovery—using Socratic questioning to help the patient reach insights independently—was almost entirely absent. Instead, the therapist relied on direct advice and persuasion. Examples of the therapist's approach:
+
+- "Just try to think positive and take things one day at a time."
+- "Maybe you could try that too?"
+- "Maybe you have something you used to enjoy?"
+- "Maybe you could give something like that a shot?"
+- "Sometimes just holding onto those small moments of control can make a big difference."
+
+These are suggestions and directives, not Socratic questions. True guided discovery would involve questions like:
+
+- "You mentioned the sadness feels stuck—what do you think keeps it stuck?"
+- "When you count or arrange things, what happens to your anxiety?"
+- "You said you avoid talking about the nightmares because it feels like opening a door—what do you imagine might happen if you did open that door?"
+- "You mentioned feeling alone—what would it look like to feel less alone?"
+- "When you try to read or do hobbies, what thoughts go through your mind?"
+
+The therapist asked some open questions ("What do you think?" "Have you tried anything like that before?" "What's something that usually helps you feel a little better?") but these were not part of a systematic Socratic process. They were isolated questions followed by advice, not a chain of questions designed to help the patient discover insights.
+
+The patient's compulsive rituals (counting, arranging, singing) are clinically significant and warrant exploration: Are they reinforcing anxiety? Are they preventing habituation to feared thoughts? Are they maintaining avoidance? The therapist never asked these questions. Instead, the therapist validated the rituals without understanding their function.
+
+**Summary:**
+
+The therapist relied almost entirely on direct advice and suggestions rather than using Socratic questioning to facilitate patient self-discovery and insight.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist failed to identify, explore, or focus on the most clinically relevant cognitions and behaviors. The patient presented with multiple critical targets:
+
+**Key Cognitions (Not Addressed):**
+- "I'm worthless" / "I'm bad" (stated in case summary; patient feels "worthless or 'bad'")
+- "If I talk about the trauma, it'll become real and I can't handle it" (explicit avoidance cognition)
+- "I'm alone" / "No one understands" (pervasive theme)
+- "Nothing will help" / "This will never get better" (hopelessness)
+- "I can't get past this wall" (learned helplessness)
+
+**Key Behaviors (Not Addressed):**
+- Compulsive rituals (counting, arranging, singing) — maintaining anxiety and preventing exposure
+- Avoidance of family and trauma discussion — maintaining PTSD and dissociative symptoms
+- Social withdrawal — maintaining depression and isolation
+- Sleep disruption and nightmares — maintaining hyperarousal and fatigue
+- Suicidal ideation — critical safety concern
+
+The therapist touched on some behaviors (sleep, hobbies, rituals, family avoidance) but never analyzed them functionally or targeted them systematically. For example, when the patient disclosed that counting and arranging "give me a bit of control," the therapist validated this without exploring: Is this control real or illusory? Does it prevent the patient from learning that anxiety decreases naturally? Is it maintaining the anxiety cycle?
+
+The therapist's suggestions (positive thinking, walks, hobbies, tea, ocean sounds, journaling) are generic and not targeted to the patient's core issues. They do not address the trauma, the dissociative amnesia, the suicidal ideation, or the compulsive behaviors. They are surface-level interventions for a patient with severe, complex, treatment-resistant pathology.
+
+**Summary:**
+
+The therapist failed to identify or focus on the most clinically relevant cognitions (hopelessness, worthlessness, trauma-related avoidance beliefs) and behaviors (compulsive rituals, avoidance, social withdrawal, suicidal ideation), instead offering generic suggestions disconnected from the patient's core issues.
+
+---
+
+### 9. Strategy for Change
+### **Score: 0/6**
+
+**Explanation:**
+
+There was no coherent strategy for change. A sound CBT strategy requires: (1) a clear conceptualization of the patient's problems, (2) identification of maintaining factors, (3) a logical sequence of interventions targeting those factors, and (4) explicit connection between interventions and symptom improvement.
+
+None of this occurred. The therapist offered disconnected suggestions (positive thinking, walks, hobbies, tea, ocean sounds, journaling) without any overarching strategy. There was no discussion of:
+
+- Why the patient is depressed (maintaining factors: avoidance, isolation, compulsive behaviors, unprocessed trauma?)
+- What needs to change for improvement (exposure to avoided material? behavioral activation? trauma processing?)
+- How the suggested interventions address the maintaining factors
+- What the treatment plan is (is this supportive counseling? CBT? trauma-focused therapy?)
+- What the expected timeline or milestones are
+
+The therapist's approach was reactive and ad hoc: patient mentions sleep problems → suggest tea; patient mentions hobbies → suggest reconnecting; patient mentions nightmares → suggest ocean sounds. This is not a strategy; it is a series of unrelated suggestions.
+
+Given the patient's diagnoses (dissociative amnesia, PTSD, chronic MDD with suicidal ideation), an evidence-based strategy would involve:
+
+1. **Safety assessment and planning** (suicide risk, self-harm)
+2. **Psychoeducation** about trauma, dissociation, and depression
+3. **Stabilization and coping skills** (emotion regulation, distress tolerance)
+4. **Trauma-focused intervention** (when appropriate and safe) — potentially CPT, PE, or EMDR
+5. **Behavioral activation** for depression
+6. **Cognitive restructuring** for core beliefs (worthlessness, hopelessness)
+7. **Relapse prevention**
+
+The therapist's approach does not align with any evidence-based protocol for these diagnoses.
+
+**Summary:**
+
+The therapist had no coherent strategy for change, offered disconnected suggestions without a conceptualization of maintaining factors or a logical treatment plan, and failed to align interventions with evidence-based protocols for trauma, dissociation, and severe depression.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 0/6**
+
+**Explanation:**
+
+No CBT techniques were applied. The therapist offered general wellness suggestions (positive thinking, walks, hobbies, tea, ocean sounds, journaling) that are not specific CBT interventions. CBT techniques include:
+
+- **Cognitive restructuring** (identifying and challenging automatic thoughts, examining evidence, developing alternative thoughts)
+- **Behavioral experiments** (testing predictions, gathering evidence)
+- **Exposure** (gradual or prolonged exposure to feared situations or thoughts)
+- **Behavioral activation** (scheduling valued activities, tracking mood-behavior relationships)
+- **Thought records** (structured worksheets for analyzing thoughts)
+- **Problem-solving** (systematic approach to identifying and addressing problems)
+- **Relaxation training** (progressive muscle relaxation, breathing exercises)
+- **Imagery rescripting** (for trauma)
+- **Functional analysis** (analyzing antecedents, behaviors, consequences)
+- **Values clarification** (identifying what matters and aligning behavior)
+
+The therapist did not use any of these. The suggestion to "think positive" is not cognitive restructuring—it is generic advice without the structured, evidence-based process of identifying specific thoughts, examining evidence, and developing alternatives. The suggestion to "get outside for a walk" is not behavioral activation—it is a generic suggestion without functional analysis, mood tracking, or values alignment.
+
+The therapist did not teach any CBT skills, did not use any worksheets or structured tools, did not conduct any functional analysis, and did not guide the patient through any CBT process. This is not CBT; it is supportive counseling with generic wellness advice.
+
+**Summary:**
+
+No CBT techniques were applied. The therapist offered generic wellness suggestions without using any structured, evidence-based CBT interventions.
+
+---
+
+### 11. Homework
+### **Score: 0/6**
+
+**Explanation:**
+
+No formal homework was assigned. The therapist made several suggestions that could be construed as implicit homework ("try to think positive," "get outside for a walk," "reconnect with little hobbies," "try some relaxing stuff before bed," "try listening to calm music or drinking some warm tea," "try writing down your thoughts," "try ocean sounds"), but these were not presented as formal, structured homework assignments.
+
+Effective CBT homework requires:
+
+1. **Clear rationale** — explaining why the task is important and how it connects to treatment goals
+2. **Specificity** — defining exactly what the patient will do, when, where, and how often
+3. **Collaborative agreement** — ensuring the patient agrees and feels capable
+4. **Written documentation** — providing written instructions or worksheets
+5. **Follow-up plan** — explicitly stating that homework will be reviewed next session
+
+None of this occurred. The suggestions were vague ("try to think positive," "maybe you could try that"), lacked rationale ("it can really help," "it works wonders"), and were not documented. There was no explicit agreement or commitment from the patient. There was no statement like "Next session, we'll review how the walks went" or "Bring your journal entries so we can look at them together."
+
+The patient's response to the suggestions was cautious ("I guess I could try," "It just feels hard to believe anything will make a real difference"), indicating she was not genuinely committed or confident. The therapist did not address this ambivalence or build motivation.
+
+Additionally, given the patient's compulsive rituals (counting, arranging, singing), a critical homework assignment would be to monitor these behaviors—when they occur, what triggers them, how long they last, what happens after. This functional analysis is essential for understanding and treating the anxiety and compulsive patterns. The therapist did not assign this.
+
+**Summary:**
+
+No formal homework was assigned. Vague suggestions were made without clear rationale, specificity, collaborative agreement, or follow-up plan, and no functional analysis or structured monitoring was requested.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- The therapist was warm, non-hostile, and maintained a supportive tone throughout
+- The therapist did not rush or appear impatient
+- The therapist acknowledged the patient's struggle and validated some of her coping attempts
+- The therapist did not dismiss or minimize the patient's concerns
+- The patient felt heard enough to continue engaging ("It's nice to feel like someone's on my side")
+
+### Critical Deficiencies:
+
+**1. Complete Absence of CBT Structure and Technique**
+- No agenda, no goals, no treatment plan
+- No CBT techniques applied (cognitive restructuring, behavioral activation, exposure, functional analysis, thought records, etc.)
+- No homework assigned with rationale and specificity
+- This is not CBT; it is supportive counseling with generic advice
+
+**2. Failure to Assess and Address Critical Safety Issues**
+- No suicide risk assessment despite patient's history of two hospitalizations, persistent suicidal ideation, and self-harm
+- No safety planning or crisis protocol
+- No assessment of current suicidal intent or frequency of ideation
+- This is a serious clinical and ethical failure
+
+**3. Failure to Recognize and Address Trauma and Dissociation**
+- Patient disclosed nightmares, hyperarousal, avoidance of family, and trauma-related fear ("I worry that if I say too much, it'll all become real")
+- Therapist did not recognize these as PTSD symptoms requiring trauma-informed, structured intervention
+- No trauma history assessment, no discussion of trauma processing, no trauma-focused techniques
+- Compulsive rituals (counting, arranging, singing) were validated but not analyzed functionally—they likely maintain anxiety and prevent habituation
+
+**4. Misunderstanding of Severe, Treatment-Resistant Depression**
+- Patient has failed multiple medication trials and prior psychotherapy
+- Patient presents with anhedonia, emotional numbing, hopelessness, and suicidal ideation
+- Therapist responded with generic reassurance ("it'll get better, I promise") and suggestions (walks, hobbies, tea)
+- These interventions are insufficient for severe, chronic depression and may feel invalidating
+
+**5. Lack of Collaboration and Patient Engagement**
+- Therapist functioned as advice-giver, not collaborative partner
+- Patient was passive recipient of suggestions, not active participant in treatment planning
+- No shared decision-making about treatment targets or approach
+- No elicitation of patient feedback or preferences
+
+**6. Poor Clinical Prioritization and Time Management**
+- Multiple critical issues (suicide risk, trauma, dissociation, compulsive behaviors) were not prioritized
+- Time was spent on personal anecdotes and repetitive reassurance
+- No functional analysis, no assessment of maintaining factors
+- Session ended abruptly with therapist repeating opening question, suggesting confusion or loss of structure
+
+---
+
+### Impact on Patient Care:
+
+This session is unlikely to produce therapeutic change and may cause harm. The patient has severe, complex, treatment-resistant pathology requiring specialized, structured intervention. Instead, she received generic wellness advice and reassurance disconnected from her actual clinical needs.
+
+**Specific harms:**
+- **Suicide risk unaddressed**: The patient has persistent suicidal ideation and a history of serious self-harm. Without risk assessment and safety planning, she is at ongoing risk.
+- **Trauma unprocessed**: The patient has clear PTSD symptoms and dissociative amnesia related to childhood sexual abuse. Without trauma-focused intervention, symptoms will likely persist or worsen.
+- **Compulsive behaviors reinforced**: The therapist validated the patient's compulsive rituals without analyzing their function. This may reinforce anxiety-maintaining behaviors.
+- **Hopelessness reinforced**: Generic reassurance ("it'll get better, I promise") without a concrete, evidence-based plan may deepen hopelessness when improvement doesn't occur.
+- **Therapeutic relationship at risk**: The patient appreciated basic support, but if generic suggestions fail (as they likely will), she may lose trust in the therapist and disengage from treatment.
+
+---
+
+## Recommendations
+
+### 1. **Conduct Comprehensive Suicide Risk Assessment (URGENT)**
+- **Action:** In the next session, conduct a structured suicide risk assessment including: frequency and intensity of suicidal ideation, presence of intent and plan, access to means, protective factors, and history of attempts/self-harm. Use a validated tool (e.g., Columbia-Suicide Severity Rating Scale).
+- **Example:** "I want to understand your safety better. You mentioned suicidal thoughts are 'always around'—can you tell me more about that? How often do you have these thoughts? Do you ever think about how you might hurt yourself? Do you have a plan? What keeps you safe right now?"
+- **Practice:** Review suicide risk assessment protocols. Practice asking direct questions about intent, plan, and means without judgment. Develop a safety planning template for future use.
+
+### 2. **Establish a Clear, Collaborative Treatment Agenda and Plan**
+- **Action:** At the start of the next session, explicitly set an agenda: "We have a lot to work on—your depression, the nightmares, the feelings of being alone, and your safety. What feels most important to focus on today? What would be most helpful?" Prioritize collaboratively. Explain that you will be using CBT, which is a structured, evidence-based approach with specific techniques and homework.
+- **Example:** "Based on what you've shared, I'm thinking we should focus on three main areas: (1) keeping you safe, (2) understanding and reducing the nightmares and anxiety, and (3) addressing the depression and isolation. Does that make sense? What would you add or change?"
+- **Practice:** Develop a session-by-session treatment plan for a patient with trauma, depression, and suicidal ideation. Practice explaining CBT and its structure to patients. Role-play collaborative agenda-setting.
+
+### 3. **Conduct Trauma History Assessment and Develop Trauma-Informed Approach**
+- **Action:** Assess trauma history systematically: What happened? When? How old was the patient? What are the current triggers? What memories or thoughts are most distressing? What avoidance patterns exist? Use trauma-informed language and pacing. Explain that trauma can cause nightmares, hyperarousal, and avoidance, and that these are normal responses to abnormal events.
+- **Example:** "You mentioned nightmares about a dangerous man chasing you. I'm wondering if these might be connected to something that happened in your past. I know it's hard to talk about, and we can go at your pace. Can you tell me a bit about what you remember or what feels scary?"
+- **Practice:** Study trauma-informed CBT protocols (CPT, PE, EMDR). Learn how to assess trauma history safely. Practice pacing and titrating trauma discussion to avoid retraumatization. Develop a trauma timeline with a supervisor.
+
+### 4. **Conduct Functional Analysis of Compulsive Behaviors**
+- **Action:** Systematically analyze the patient's compulsive rituals (counting, arranging, singing). Ask: When do these occur? What triggers them? What happens before, during, and after? How do they affect anxiety? Do they provide temporary relief followed by increased anxiety? Explain the anxiety cycle and how rituals maintain it.
+- **Example:** "You mentioned that counting and arranging help you feel more in control. I'm curious—when you count, does your anxiety go down right away? And then what happens? Does it come back? How long does the relief last? Let's track this together so we understand the pattern."
+- **Practice:** Learn functional analysis and the anxiety maintenance cycle. Practice explaining OCD and anxiety disorders to patients. Develop a behavioral monitoring worksheet.
+
+### 5. **Replace Generic Advice with Structured CBT Interventions**
+- **Action:** Stop offering generic suggestions (positive thinking, walks, tea). Instead, use evidence-based CBT techniques: behavioral activation (linked to values and mood tracking), cognitive restructuring (identifying and challenging specific thoughts), exposure (gradual approach to avoided situations or thoughts), and behavioral experiments (testing predictions).
+- **Example:** Instead of "try to think positive," use cognitive restructuring: "You mentioned feeling worthless. Let's look at that thought together. What evidence do you have that you're worthless? What evidence contradicts that? What would a friend say? What's a more balanced thought?" Instead of "get outside for a walk," use behavioral activation: "Let's identify activities that are important to you or that used to bring you joy. We'll schedule one this week and track your mood before and after to see what happens."
+- **Practice:** Study CBT manuals for depression, anxiety, and trauma. Practice cognitive restructuring, behavioral activation, and exposure in role-plays. Develop thought records and behavioral monitoring worksheets.
+
+### 6. **Assign Specific, Structured Homework with Clear Rationale**
+- **Action:** At the end of each session, assign 1-2 specific homework tasks with written instructions, clear rationale, and explicit follow-up plan. Examples: thought record (to identify automatic thoughts), behavioral monitoring (to track compulsive behaviors or mood-activity links), behavioral experiment (to test a prediction), or exposure task (to approach an avoided situation).
+- **Example:** "This week, I'd like you to keep a thought record. When you notice the sadness or the feeling of being worthless, write down: (1) What happened? (2) What thought went through your mind? (3) How did you feel? (4) What did you do? This will help us understand the patterns. Bring it next session and we'll look at it together. Does that make sense? Do you have any questions?"
+- **Practice:** Develop homework templates for various CBT interventions. Practice explaining rationale clearly and checking for understanding. Role-play addressing homework non-compliance.
+
+### 7. **Eliminate Personal Anecdotes and Generic Reassurance**
+- **Action:** Stop sharing personal stories ("when I was feeling down," "I once tried ocean sounds"). Stop offering generic reassurance ("it'll get better, I promise," "you're stronger than you think"). Instead, provide specific, evidence-based information and concrete plans.
+- **Example:** Instead of "it'll get better," say: "Research shows that CBT is effective for depression and trauma. We'll work together to identify what's maintaining your depression, and then we'll use specific techniques to address those factors. It takes time and effort, but many people see significant improvement."
+- **Practice:** Develop psychoeducational materials about depression, trauma, and anxiety. Practice delivering information clearly and collaboratively. Avoid personal disclosure unless clinically indicated and brief.
+
+### 8. **Systematically Elicit and Respond to Patient Feedback**
+- **Action:** At multiple points in each session, ask for feedback: "Does this make sense?" "How does that land for you?" "Is this approach helpful?" "What would be more helpful?" At the end of the session, ask: "What was most useful today? What could we do differently? What are your thoughts on the homework?"
+- **Example:** "I notice you said positive thinking doesn't help. I hear you. Let's try a different approach. Instead of trying to think positive, let's look at the specific thoughts that come up when you're feeling sad, and we'll examine them together. Does that sound better?"
+- **Practice:** Develop a feedback checklist for each session. Practice asking open-ended questions and genuinely listening to responses. Role-play adjusting approach based on feedback.
+
+### 9. **Develop and Implement a Suicide Safety Plan**
+- **Action:** Once risk is assessed, develop a written safety plan collaboratively with the patient. Include: warning signs of crisis, internal coping strategies, people and social settings that provide distraction, people to ask for help, professional contacts, and means restriction strategies.
+- **Example:** "Let's create a safety plan together. When you notice suicidal thoughts getting stronger, what can you do to keep yourself safe? Who can you call? What activities help? Let's write this down so you have it when you need it."
+- **Practice:** Learn safety planning protocols. Practice having direct conversations about means restriction. Develop a safety plan template.
+
+### 10. **Receive Supervision and Training in Trauma-Focused CBT**
+- **Action:** This patient requires specialized training in trauma-focused CBT (CPT, PE, EMDR) and complex PTSD. Seek supervision from an expert in trauma treatment. Attend training workshops. Review case conceptualizations with a supervisor.
+- **Example:** Bring this case to supervision: "This patient has dissociative amnesia, PTSD, and severe depression. I'm not sure how to approach the trauma safely while managing suicide risk. What's the best sequence of interventions?"
+- **Practice:** Enroll in trauma-focused CBT training. Attend supervision regularly. Review case formulations with experts. Develop competence in assessing and treating complex trauma.
+
+### 11. **Establish Clear Session Structure and Maintain Agenda Adherence**
+- **Action:** Structure each session: (1) agenda-setting (5 min), (2) homework review (5 min), (3) main work (40 min), (4) summary and feedback (5 min), (5) homework assignment (5 min). Write the agenda on a whiteboard or paper. Refer to it throughout the session. If new topics arise, ask: "Is this more important than what we planned, or should we save it for next time?"
+- **Example:** "Here's what I'm thinking for today: (1) Check in on how you're doing and review last week's homework, (2) Work on understanding the nightmares and what triggers them, (3) Plan a behavioral experiment for this week. Does that work for you? Anything you'd change?"
+- **Practice:** Use a session structure template. Practice time management. Role-play maintaining agenda while remaining flexible.
+
+---
+
+## Overall Session Score: 0.8/6
+
+**Summary:**
+
+This session represents a fundamental failure to deliver evidence-based CBT. The therapist demonstrated basic warmth and non-hostility (strengths in interpersonal effectiveness and understanding at a surface level), but failed across nearly all critical CBT competencies: no agenda, no CBT techniques, no homework, no collaboration, no strategy for change, and no assessment of critical safety issues.
+
+**Current Competency Assessment:**
+
+The therapist is functioning at a pre-CBT level. While capable of supportive counseling, the therapist lacks foundational CBT knowledge and skills. This is not adequate for a patient with severe, complex, treatment-resistant pathology (dissociative amnesia, PTSD, chronic MDD with suicidal ideation). The therapist requires immediate, intensive training and supervision in:
+
+1. CBT fundamentals (agenda-setting, collaboration, guided discovery, homework)
+2. Suicide risk assessment and safety planning
+3. Trauma-focused CBT and dissociative disorders
+4. Functional analysis and behavioral interventions
+5. Cognitive restructuring and thought records
+6. Case conceptualization and treatment planning
+
+**Most Critical Changes Needed Immediately:**
+
+1. **Conduct suicide risk assessment and develop safety plan** — this is urgent and non-negotiable
+2. **Establish a clear, collaborative treatment agenda and CBT-based plan** — without this, treatment will remain aimless
+3. **Learn and apply specific CBT techniques** — generic advice is insufficient and potentially harmful
+4. **Assess trauma history and develop trauma-informed approach** — the patient's PTSD and dissociative symptoms require specialized intervention
+
+**Likelihood of Producing Therapeutic Change:**
+
+This session is unlikely to produce meaningful therapeutic change. The patient has failed multiple medication trials and prior psychotherapy. She requires a structured, evidence-based, specialized approach. Generic supportive counseling with wellness suggestions will not address the underlying trauma, dissociation, or treatment-resistant depression. Without significant changes in the therapist's approach, the patient is at risk of continued suffering, ongoing suicidal ideation, and potential harm.
+
+**Does This Qualify as Evidence-Based CBT?**
+
+No. This session does not meet criteria for evidence-based CBT. It is supportive counseling with generic wellness advice. To qualify as CBT, the therapist must: (1) use a structured, collaborative approach, (2) apply specific CBT techniques, (3) assign homework with rationale, (4) conduct functional analysis, (5) develop a clear treatment plan, and (6) measure progress. None of this occurred.
+
+**Recommendation:**
+
+This therapist should not continue treating this patient without immediate, intensive supervision and training. The patient's safety and wellbeing are at risk. If the therapist is committed to developing CBT competence, they should: (1) enroll in a structured CBT training program, (2) seek weekly supervision from an experienced CBT supervisor, (3) review this session with a supervisor and develop a corrective action plan, and (4) consider referring this patient to a more experienced trauma-focused CBT therapist in the interim.

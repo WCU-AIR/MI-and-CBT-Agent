@@ -1,0 +1,823 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Steroid-Induced Bipolar and Related Disorder, with Mania, Severe, with Mood-Congruent Psychotic Features and Catatonic Features
+
+--- CASE STUDY ---
+
+Taaj Mustafa, a 22-year-old recent college graduate, was brought to the ER by friends after disappearing for 3 days and appearing bizarrely silent. He had recently undergone treatment for testicular cancer, including chemotherapy with cisplatin, etoposide, and dexamethasone. In the ER, he demonstrated mutism, stupor, bizarre posturing with waxy flexibility, and stereotypic movements. Initial labs showed elevated CPK and mild tachycardia. Neurological workup, including head CT, MRI, EEG, and toxicology, was unremarkable.
+
+Mr. Mustafa had a history of depression following his cancer diagnosis 1 year prior and was taking sertraline 50 mg/day. Family history included a maternal uncle with severe bipolar disorder treated with ECT. After administration of intravenous lorazepam, his rigidity resolved, speech became fluent and pressured, and manic behaviors emerged, including hyperactivity, grandiosity, and elated mood.
+
+Discussion: Mr. Mustafa presents with catatonia, evidenced by mutism, stupor, waxy flexibility, and stereotypy. Catatonia can occur in the context of mood disorders, medical conditions, or substance/medication effects. In this case, the manic episode appears triggered by steroid chemotherapy. The patient’s severe mania emerged after catatonia resolved with lorazepam, consistent with steroid-induced bipolar and related disorder. Early recognition and benzodiazepine treatment were critical to prevent morbidity and clarify the underlying psychiatric condition.
+
+--- BEHAVIOUR ---
+
+Bizarre, rigid posture with waxy flexibility
+
+Mutism and stupor initially, later fluent and pressured speech
+
+Stereotyped movements
+
+Initially nonresponsive, anxious, fearful of dying
+
+After lorazepam, hyperactive, pacing, grandiose, and talkative
+
+--- DSM-5 SYMPTOMS ---
+
+Manic mood: elevated, expansive, or irritable
+
+Grandiosity
+
+Hyperactivity and goal-directed activity
+
+Pressured speech
+
+Mood-congruent psychotic features (belief of having cured cancer)
+
+Catatonic features: mutism, stupor, waxy flexibility, stereotypy
+
+Functional impairment and behavioral dysregulation
+
+--- PATIENT PROFILE ---
+Name: Taaj Mustafa
+Sex: Male
+Age: 22 years
+DOB: March 5, 2003
+Place of Birth: Houston, TX
+Address: 92 Elm Street, Houston, TX
+Contact: (555) 987-6543
+Marital Status: Single
+Occupation: Recent college graduate
+Education: College graduate
+Religion: Not specified
+Presenting Complaint: Bizarrely silent, immobile, and rigid; concerns from friends after 3-day disappearance
+Psychiatric History: Depression following cancer diagnosis; taking sertraline
+Substance Use: Denied illicit substances; no alcohol misuse
+Medical History: Testicular cancer; recent chemotherapy with steroids
+Family History: Maternal uncle with bipolar disorder treated with ECT
+Mental Status: Mutism, stupor, waxy flexibility, stereotypy initially; later hyperactive, pressured speech, grandiose, euphoric
+Cognitive Function: Alert and oriented; initially unable to communicate effectively
+Insight/Judgment: Initially poor; improved with lorazepam
+
+--- DIAGNOSIS ---
+Steroid-Induced Bipolar and Related Disorder, with Mania, Severe, with Mood-Congruent Psychotic Features and Catatonic Features
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Taaj Mustafa, a 22-year-old male recent college graduate, presents to the emergency room after being brought in by friends due to a 3-day disappearance and concerns about bizarre silence and immobility. The intake is prompted by his friends' observations of his recent unusual behavior following chemotherapy treatment for testicular cancer.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hey there! Good to see you today. How’s your day been so far? 
+ PATIENT: Hey... um, it's been kind of all over the place, honestly. One moment I feel like I can do anything, like I’m on top of the world—cured cancer, you know? But then other times, it feels like I’m stuck, like I can’t move or even speak. It’s confusing. How about you? 
+ PSYCHIATRIST: Hey! Good to see you too. My day’s been pretty okay, you know? Just the usual stuff. Sometimes you just gotta roll with it, right? Life throws curveballs, but it’ll get better. Just gotta keep your chin up and think positive. What do you usually do to cheer yourself up when things feel tough? 
+ PATIENT: Yeah, I guess rolling with it makes sense. When things get tough, sometimes I just pace around, trying to burn off all this energy in my head. It’s like my mind races so fast I can’t keep up. Other times, I kind of freeze up, like I can’t even move or say anything. It’s weird — one minute I’m like buzzing and the next I’m stuck. Usually, I try to tell myself I’m actually fine, that I’ve beaten cancer, but then sometimes it feels like those thoughts are too big to hold onto. What about you? What do you do when things feel rough? 
+ PSYCHIATRIST: Hey! Good to see you too. My day’s been pretty okay, you know? Just the usual stuff. Sometimes you just gotta roll with it, right? Life throws curveballs, but it’ll get better. Just gotta keep your chin up and think positive. What do you usually do to cheer yourself up when things feel tough? 
+ PATIENT: Yeah, I get that. It’s like, I want to keep my chin up, but sometimes it’s hard to even know what’s real anymore. When I’m feeling good, I tell myself I’m cured, like I beat cancer and can do anything. That thought makes me feel invincible. But then, there are moments when I just can’t even talk or move—I get scared that something’s wrong with me, that maybe I’m not going to get better. I just try to remind myself that these moments don’t last, but it’s exhausting. What do you do to keep positive when things get tough? 
+ PSYCHIATRIST: Hey! It’s really great to hear you’re keeping your chin up. You know, everyone goes through ups and downs—it’s just part of life. When I feel stuck or down, I try to think about the good stuff, like the time I went on this amazing trip with my friends. It really helped me forget my worries for a while. Sometimes, just focusing on the positive things around you can make a big difference. Have you had any fun experiences lately that helped you feel better? 
+ PATIENT: I wish I could say yes... lately, it’s been hard to enjoy things like I used to. Sometimes, when I feel really good and full of energy, I start pacing and talking a lot—my friends say I’m acting kind of hyper. In those moments, I feel like I could do anything, like I’m invincible. But the other times, when I’m stuck and can’t even speak, it’s like all the fun just disappears. I guess the time before all this started, when I finished college, was really good. I felt proud, like I had a future. But now it feels so far away. Do you think I’ll get back to feeling like that again? 
+ PSYCHIATRIST: Hey! It’s really great to hear you’re keeping your chin up. You know, everyone goes through ups and downs—it’s just part of life. When I feel stuck or down, I try to think about the good stuff, like the time I went on this amazing trip with my friends. It really helped me forget my worries for a while. Sometimes, just focusing on the positive things around you can make a big difference. Have you had any fun experiences lately that helped you feel better? 
+ PATIENT: I’m not sure if things like that can happen for me right now. When I feel like myself, I want to do fun things and hang out with friends, but sometimes it feels like there’s this huge energy inside me that won’t let me be calm or happy in a normal way. Like, when I pace or talk fast, it’s almost too much. And when I can’t talk or move, I just feel stuck and scared. It's like I’m stuck between two really different versions of me. I want to feel good again like before, but it’s hard to know if that will happen. Do you think there’s a way to make the stuck feeling go away? 
+ PSYCHIATRIST: Hey! You know, sometimes when I feel stuck or overwhelmed, I find that just getting a good night's sleep or drinking plenty of water can really help. It sounds simple, but taking care of the basics can make a big difference. Maybe trying to rest more or stay hydrated could help with that stuck feeling. I remember one time when I was super stressed, just making sure I slept well helped me feel a bit better. Have you been getting enough sleep lately? 
+ PATIENT: Sleep has been really weird for me. Sometimes I feel so full of energy I don’t want to sleep at all—I end up staying up, pacing or talking fast. Other times, I barely move or talk, and I just feel drained like I could sleep forever. It’s like my body and mind can’t decide what they want. When I manage to sleep, I sometimes have dreams that feel really intense or confusing, and I wake up feeling even more off. I try to rest, but it’s not steady or normal. When you say sleeping helped you before, it makes me wonder if I could find a way to get better sleep... but it doesn’t seem easy. Do you think there’s anything I could do to make sleeping easier? 
+ PSYCHIATRIST: Hey! It sounds like you’re really going through a lot with your sleep. You know, sometimes just trying to relax before bed, like listening to some calm music or reading a book, can help. When I’ve had trouble sleeping, I’d just remind myself that tomorrow’s a new day and everything will be okay. It’s kind of like hitting a reset button. Also, drinking a glass of water before bed sometimes helped me feel more refreshed in the morning. It’s simple stuff, but it might be worth a try. Just keep thinking positive, and things will get better. What do you usually do to wind down before bed? 
+ PATIENT: Honestly, I don’t really have a routine to wind down. Usually, I’m either pacing around or just frozen in place, so it’s hard to have a calm time before bed. Sometimes a friend will play music nearby, but the sounds can feel too much or too little, and I can’t really focus on reading or anything like that. I try telling myself tomorrow will be better, but sometimes it feels like tomorrow just keeps being the same all over again. I want to believe things will improve, but sometimes it’s hard not to feel stuck in this cycle. Do you think doing the same stuff every night could actually help, even if I don’t feel like it at first? 
+ PSYCHIATRIST: Hey, I totally get that feeling of being stuck in a cycle. You know, sometimes just sticking to a routine, even if it feels boring or hard at first, can make a difference over time. Like, I remember when I started going for a walk every morning, even when I didn’t feel like it. After a while, it actually helped me feel a bit more in control. So maybe trying to do the same calming things before bed each night could help you too. Just keep your head up and remember, it’ll get better. Life has its ups and downs, but you’re stronger than you think. Keep going! 
+ PATIENT: That kind of makes sense. I guess having something steady to hold onto sounds better than just feeling like I’m bouncing between being super wired and completely frozen. Maybe if I try a simple routine before bed, even if it feels weird at first, it could help stop this on-and-off thing inside me. I just don’t want to mess it up or make it worse. But hearing you say it could get better makes me want to try. Thanks for saying that. Sometimes I need to hear that I’m stronger than this, even when it feels like I’m not. 
+ PSYCHIATRIST: Alright, I’m glad you’re feeling a bit more hopeful. Just remember, you’ve got this! Sometimes life throws us curveballs, but if you keep thinking positive and take things one step at a time, things will improve. Keep your chin up, and don’t forget to take care of yourself. You’re stronger than you know. I’m rooting for you! 
+ PATIENT: Thank you... it means a lot to hear that, especially when things feel so confusing inside my head. I want to believe I can get through this, even when I can’t talk or feel stuck. I’ll try to take it one step at a time, like you said. Having someone remind me I’m not alone makes a big difference. I’ll keep trying. 
+ PSYCHIATRIST: Hey there! Good to see you today. How’s your day been so far? 
+ PATIENT: Hey... today’s been kind of a rollercoaster. I woke up feeling like I had all this energy and wanted to keep moving, but then I had moments where I just felt stuck and couldn’t say anything. It’s hard to explain. How about you? 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist made no attempt to establish a collaborative agenda for the session. There was no discussion of session goals, prioritization of problems, or time allocation. The session lacked structure entirely—no explicit identification of what would be addressed, why it mattered, or what the patient hoped to accomplish by session's end.
+
+This is particularly critical given Taaj's presentation: he presents with severe steroid-induced bipolar disorder with catatonic features, mood-congruent psychotic features (belief he has cured cancer), and acute functional impairment. A proper agenda would have: (1) acknowledged his acute psychiatric crisis, (2) identified the most pressing safety and symptom concerns, (3) explained the rationale for today's focus, and (4) set realistic expectations about what could be addressed in one session versus what requires ongoing treatment and medication management.
+
+Instead, the therapist engaged in casual conversation ("My day's been pretty okay, you know?") and never returned to structured goal-setting. The session drifted from topic to topic without clear direction or clinical purpose.
+
+**Summary:**
+
+No agenda was established. The session lacked structure, clear goals, or collaborative prioritization of Taaj's presenting problems.
+
+---
+
+### 2. Feedback
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist elicited minimal feedback and did not systematically check for understanding throughout the session. There were no explicit questions asking whether Taaj understood the therapist's reasoning, whether interventions made sense, or whether the session was helpful.
+
+The only implicit feedback moment occurred when the therapist asked "Have you been getting enough sleep lately?" and "What do you usually do to wind down before bed?"—but these were content questions, not meta-level feedback about the session itself or the therapeutic process.
+
+Critical gaps: The therapist never asked, "Does this make sense to you?" "How are you feeling about what we've discussed?" "Is this helpful?" "What's your reaction to these suggestions?" or "What will you take away from today?" At the end of the session, there was no summary of key points, no check for understanding of any recommendations, and no solicitation of the patient's perspective on whether the session addressed his needs.
+
+For a patient in acute psychiatric crisis with severe mania, catatonic features, and psychotic beliefs, feedback-checking is essential to ensure: (1) the patient understands his condition, (2) he grasps the rationale for treatment, and (3) he feels heard and understood.
+
+**Summary:**
+
+Minimal feedback elicitation. No systematic checking for understanding, no meta-level discussion of session helpfulness, and no end-of-session summary or patient input.
+
+---
+
+### 3. Understanding
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist demonstrated surface-level listening but missed critical clinical nuances and the severity of Taaj's presentation. The therapist heard explicit statements (sleep problems, energy fluctuations, feeling stuck) but failed to grasp the underlying psychiatric crisis.
+
+What the therapist missed:
+- **Catatonic features**: Taaj explicitly stated "sometimes I just can't even talk or move" and "I get scared that something's wrong with me." The therapist never explored this or recognized it as a psychiatric emergency symptom.
+- **Mood-congruent psychotic features**: Taaj stated "I tell myself I'm cured, like I beat cancer and can do anything. That thought makes me feel invincible." This is a delusion requiring clinical intervention, not a thought to be "kept positive about."
+- **Severity of mood dysregulation**: Taaj described extreme oscillation between hyperactivity/pressured speech and mutism/immobility. The therapist normalized this as "everyone goes through ups and downs—it's just part of life," fundamentally misunderstanding bipolar mania with catatonic features.
+- **Functional impairment**: Taaj indicated he cannot maintain routines, cannot focus, and feels trapped in a cycle. The therapist's response was to suggest simple sleep hygiene—inadequate for severe psychiatric illness.
+- **Anxiety and fear**: Taaj expressed fear ("I get scared that something's wrong with me"), but the therapist never explored this or provided reassurance grounded in accurate diagnosis.
+
+The therapist's empathy was generic ("It sounds like you're really going through a lot") rather than demonstrating true comprehension of Taaj's internal reality. There was no evidence the therapist understood that Taaj is experiencing a severe, acute psychiatric episode requiring psychiatric medication, not lifestyle adjustments.
+
+**Summary:**
+
+The therapist heard surface content but fundamentally misunderstood the severity and nature of Taaj's condition. Critical psychiatric symptoms were missed or minimized.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist displayed warmth and friendliness but in a manner that was clinically inappropriate and potentially harmful. The tone was overly casual, peer-like, and lacked professional boundaries—the therapist repeatedly shared personal anecdotes ("When I feel stuck or down, I try to think about the good stuff, like the time I went on this amazing trip with my friends").
+
+Problematic interpersonal patterns:
+
+1. **Boundary violations**: The therapist answered personal questions from the patient ("How about you?" "What do you do when things feel rough?") and shared details about his own life. This shifted focus from the patient's crisis to the therapist's experiences and is inappropriate in a clinical setting, especially with an acutely ill patient.
+
+2. **False equivalence**: By sharing personal coping strategies ("I remember when I started going for a walk every morning"), the therapist implied his experiences are comparable to Taaj's severe bipolar disorder with catatonia and psychosis. This is invalidating and suggests the therapist does not grasp the severity of Taaj's condition.
+
+3. **Tone-deafness**: The repeated use of "keep your chin up," "think positive," and "you're stronger than you think" is dismissive of genuine psychiatric illness. These platitudes, while well-intentioned, communicate that Taaj's symptoms are a matter of attitude rather than neurobiology.
+
+4. **Lack of professional confidence**: The therapist's casual, uncertain tone ("Hey! It's really great to hear...") does not inspire confidence in a patient experiencing psychotic beliefs and catatonia. Taaj needs a clinician who projects competence and clarity.
+
+Positive elements: The therapist was not hostile or demeaning, and did attempt to be encouraging. However, warmth without clinical competence is insufficient and potentially harmful.
+
+**Summary:**
+
+Inappropriate boundary violations, overly casual tone, false equivalence between therapist's experiences and patient's severe psychiatric illness, and lack of professional confidence undermine therapeutic effectiveness.
+
+---
+
+### 5. Collaboration
+### **Score: 1/6**
+
+**Explanation:**
+
+Collaboration was minimal and superficial. While the therapist asked some questions ("Have you had any fun experiences lately?" "What do you usually do to wind down before bed?"), these were not collaborative in the CBT sense of shared decision-making or collaborative empiricism.
+
+Critical failures in collaboration:
+
+1. **No shared problem definition**: The therapist never worked with Taaj to define the core problems collaboratively. What is the primary concern? Is it the inability to sleep? The racing thoughts? The catatonic episodes? The psychotic belief about being cured? Without this, there is no true collaboration.
+
+2. **No collaborative goal-setting**: The therapist imposed suggestions (sleep hygiene, positive thinking, routines) without asking Taaj what he wanted to work on or whether these interventions made sense to him.
+
+3. **No collaborative empiricism**: CBT relies on testing thoughts and beliefs together. Taaj stated "I tell myself I'm cured, like I beat cancer and can do anything"—a delusion requiring gentle exploration and reality-testing. Instead, the therapist said "just keep thinking positive," which reinforces the delusion rather than collaboratively examining it.
+
+4. **Patient as passive recipient**: Taaj was positioned as someone receiving advice rather than as an active partner in treatment. The therapist lectured; Taaj listened.
+
+5. **No solicitation of patient expertise**: The therapist never asked "What have you noticed helps?" "What makes things worse?" "What do you think is happening?" Taaj's own observations and insights were not valued.
+
+The one moment where Taaj showed some agency ("Maybe if I try a simple routine before bed...") was not built upon—the therapist simply affirmed it and moved on, rather than deepening the collaboration.
+
+**Summary:**
+
+Minimal true collaboration. Therapist imposed suggestions without shared problem definition, goal-setting, or collaborative empiricism. Patient positioned as passive recipient of advice.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 1/6**
+
+**Explanation:**
+
+The session lacked structure and efficient pacing. The therapist allowed the conversation to meander without clear direction or time management. Multiple topics were touched on superficially without depth or resolution: sleep, energy levels, catatonic episodes, psychotic beliefs, routines, and positive thinking.
+
+Specific pacing problems:
+
+1. **No prioritization**: With a patient in acute psychiatric crisis, the therapist should have prioritized the most urgent concerns (catatonia, psychosis, safety, medication). Instead, all topics received equal, shallow attention.
+
+2. **Repetitive tangents**: The therapist returned multiple times to the same generic advice ("keep your chin up," "think positive," "take care of yourself") without advancing the conversation or checking whether this was helpful.
+
+3. **Personal anecdotes consumed time**: The therapist's stories about his own experiences ("I remember when I started going for a walk every morning") took up session time without clinical purpose.
+
+4. **No time boundaries**: The session had no clear structure—no beginning, middle, or end. It simply drifted and concluded with generic encouragement.
+
+5. **Inefficient exploration**: When Taaj mentioned catatonic symptoms ("sometimes I just can't even talk or move"), the therapist did not explore this systematically. A clinician managing time efficiently would have asked clarifying questions: "How often does this happen? How long does it last? What triggers it? How frightening is it?"
+
+6. **Lack of focus on key issues**: The session spent considerable time on sleep hygiene and routines but never addressed the psychotic belief ("I've beaten cancer and can do anything") or the catatonic episodes, which are the most clinically urgent.
+
+**Summary:**
+
+Poor pacing with no prioritization of urgent concerns. Session meandered without clear structure, direction, or efficient use of time.
+
+---
+
+### 7. Guided Discovery
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist used no guided discovery. Instead of asking Socratic questions to help Taaj reach insights independently, the therapist lectured and gave direct advice throughout.
+
+Examples of what should have happened (guided discovery):
+
+- **On psychotic belief**: Rather than saying "keep thinking positive," the therapist could have asked: "You mentioned feeling like you've beaten cancer and can do anything. What evidence do you have for that? What evidence might suggest something different? How is that belief affecting how you're feeling and acting?"
+
+- **On catatonia**: Rather than suggesting sleep hygiene, the therapist could have asked: "You mentioned times when you can't talk or move. What's that like? When does it happen? What do you think might be causing it? How does it affect you?"
+
+- **On energy fluctuations**: Rather than normalizing ("everyone goes through ups and downs"), the therapist could have asked: "You described feeling super energized one moment and completely frozen the next. How extreme are these shifts? How quickly do they change? What patterns do you notice?"
+
+- **On routines**: Rather than prescribing a bedtime routine, the therapist could have asked: "What do you think might help you feel more stable? What have you tried before? What worked? What didn't?"
+
+Instead, the therapist used a directive, advice-giving approach:
+- "Maybe trying to rest more or stay hydrated could help"
+- "Just keep thinking positive"
+- "Sometimes just sticking to a routine...can make a difference"
+- "Just remember, you've got this!"
+
+This approach is antithetical to CBT's collaborative, discovery-based model. It positions the therapist as an expert dispensing wisdom rather than a partner helping the patient discover his own insights.
+
+**Summary:**
+
+No guided discovery used. Therapist lectured and gave direct advice rather than facilitating self-discovery through Socratic questioning.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist identified some cognitions and behaviors but failed to focus on the most clinically relevant ones. The session touched on multiple issues without systematically targeting the core problems driving Taaj's presentation.
+
+What was identified but not focused on:
+
+1. **Psychotic belief (CRITICAL)**: "I tell myself I'm cured, like I beat cancer and can do anything. That thought makes me feel invincible." This is a mood-congruent delusion requiring clinical intervention. The therapist never explored it, challenged it gently, or helped Taaj reality-test it. Instead, the therapist reinforced it by saying "keep thinking positive."
+
+2. **Catatonic episodes (CRITICAL)**: "Sometimes I just can't even talk or move" and "I get scared that something's wrong with me." These are severe psychiatric symptoms requiring exploration and explanation. The therapist never systematically addressed them.
+
+3. **Extreme mood oscillation (CRITICAL)**: Taaj described rapid shifts between hyperactivity/pressured speech and mutism/immobility. This is the core feature of his bipolar disorder with catatonic features. The therapist normalized it rather than focusing on it as the central problem.
+
+What was focused on (but less central):
+
+- Sleep problems
+- Energy levels
+- Routines
+- Positive thinking
+
+The therapist's focus was on peripheral, secondary issues (sleep hygiene, routines) rather than the core cognitions and behaviors driving the acute psychiatric crisis. A clinically competent therapist would have prioritized:
+1. The psychotic belief and its reality-testing
+2. The catatonic episodes and their triggers/management
+3. The extreme mood dysregulation and its impact on functioning
+
+**Summary:**
+
+Therapist identified some cognitions/behaviors but failed to focus on the most clinically relevant ones. Core issues (psychosis, catatonia, severe mood dysregulation) were minimized; peripheral issues (sleep, routines) were emphasized.
+
+---
+
+### 9. Strategy for Change
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist had no coherent strategy for change. There was no clear conceptualization of Taaj's condition, no logical treatment plan, and no systematic application of CBT principles to address his presenting problems.
+
+What a coherent strategy would include:
+
+1. **Accurate conceptualization**: Understanding that Taaj has steroid-induced bipolar disorder with severe mania, catatonic features, and mood-congruent psychosis. This requires psychiatric medication as the foundation of treatment, not lifestyle changes alone.
+
+2. **Clear treatment goals**: Identifying what needs to change (reduce manic symptoms, resolve catatonia, reality-test psychotic beliefs, restore functioning) and in what order.
+
+3. **Rationale for interventions**: Explaining why specific CBT techniques are being used and how they connect to the conceptualization.
+
+4. **Logical progression**: Moving from assessment → conceptualization → intervention → evaluation in a structured way.
+
+What the therapist actually did:
+
+- Offered generic advice (sleep, hydration, positive thinking, routines) without explaining how these address Taaj's specific condition
+- Did not acknowledge that Taaj's symptoms are psychiatric in nature and may require medication
+- Did not explain the rationale for any intervention
+- Did not connect interventions to a larger treatment plan
+- Suggested that attitude adjustment ("keep your chin up," "think positive") is the primary solution
+
+This is not a CBT strategy. It is generic life coaching that is inadequate and potentially harmful for a patient with severe bipolar disorder and psychosis.
+
+**Summary:**
+
+No coherent strategy for change. No accurate conceptualization, no clear treatment goals, no rationale for interventions, and no logical progression toward symptom improvement.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist applied no specific CBT techniques. While the session touched on topics that *could* be addressed with CBT (thoughts, behaviors, sleep, routines), no actual CBT methods were implemented.
+
+CBT techniques that should have been considered:
+
+1. **Thought records/cognitive restructuring**: For the psychotic belief "I've beaten cancer and can do anything," the therapist could have used a thought record to examine evidence for/against the thought, identify cognitive distortions, and develop more balanced thoughts. Instead, the therapist reinforced the delusion.
+
+2. **Behavioral activation**: For the catatonic episodes and mood dysregulation, behavioral activation (scheduling specific activities, monitoring mood/energy in relation to activities) could help. This was not attempted.
+
+3. **Behavioral experiments**: To reality-test the belief "I'm cured and invincible," the therapist could have designed experiments to test this belief. Not done.
+
+4. **Sleep hygiene protocol**: While the therapist mentioned sleep and routines, this was done informally without the structure of a formal sleep hygiene protocol (sleep log, stimulus control, sleep restriction, etc.).
+
+5. **Mood monitoring**: No mood chart or systematic tracking of mood/energy/catatonic episodes was introduced.
+
+6. **Psychoeducation**: No explanation of bipolar disorder, mania, catatonia, or the role of medication was provided.
+
+7. **Coping strategies**: No specific coping strategies for managing catatonic episodes or extreme mood shifts were developed.
+
+What the therapist did instead:
+
+- Gave generic advice
+- Shared personal anecdotes
+- Offered platitudes ("keep your chin up")
+- Asked open-ended questions without following up systematically
+
+**Summary:**
+
+No CBT techniques applied. Session consisted of generic advice-giving rather than evidence-based cognitive-behavioral interventions.
+
+---
+
+### 11. Homework
+### **Score: 1/6**
+
+**Explanation:**
+
+Homework was vaguely suggested but not formally assigned, clearly explained, or tracked. The therapist mentioned "trying to rest more," "staying hydrated," "doing the same calming things before bed," and "taking things one step at a time," but these were not structured as formal homework assignments.
+
+Critical gaps in homework:
+
+1. **No formal assignment**: The therapist never said, "Here's what I'd like you to do between now and our next session..." Homework was implied rather than explicitly assigned.
+
+2. **Lack of specificity**: "Try to rest more" and "do calming things before bed" are vague. Specific homework would be: "Keep a sleep log tracking bedtime, wake time, and mood/energy upon waking. Try a 10-minute wind-down routine (e.g., listening to music) 30 minutes before bed, 5 nights this week."
+
+3. **No rationale provided**: The therapist did not explain *why* these tasks matter or how they connect to Taaj's treatment goals.
+
+4. **No monitoring plan**: The therapist did not establish how homework would be reviewed or what success would look like.
+
+5. **No consideration of barriers**: The therapist did not ask "What might get in the way of doing this?" or "How confident are you that you can do this?" or "What support do you need?"
+
+6. **Inappropriate for severity**: For a patient with severe bipolar disorder, catatonia, and psychosis, homework should include: mood/catatonia tracking, reality-testing the psychotic belief, medication adherence monitoring, and safety planning. Generic sleep hygiene is insufficient.
+
+7. **No written summary**: No written homework sheet or summary was provided.
+
+The one moment where homework was slightly more concrete was: "Maybe if I try a simple routine before bed, even if it feels weird at first, it could help..." But the therapist did not build on this by asking "What specific routine?" "When will you start?" "How will you track it?" "What will you do if you struggle?"
+
+**Summary:**
+
+Vague homework suggestions rather than formal assignments. Lacking specificity, rationale, monitoring plan, and appropriateness for severity of condition.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- Therapist was warm and non-hostile
+- Therapist attempted to be encouraging and supportive
+- Therapist asked some open-ended questions
+- Therapist did not dismiss or minimize patient's concerns entirely
+
+### Critical Deficiencies:
+- **No agenda or session structure** (0/6): Session lacked goals, prioritization, or direction
+- **No guided discovery** (0/6): Therapist lectured and gave advice rather than facilitating self-discovery
+- **No CBT techniques applied** (0/6): Session was generic life coaching, not evidence-based CBT
+- **No coherent strategy for change** (0/6): No conceptualization, treatment plan, or rationale for interventions
+- **Fundamental misunderstanding of patient's condition**: Therapist normalized severe bipolar mania with catatonia and psychosis as "ups and downs everyone experiences"
+- **Inappropriate boundary violations**: Therapist shared personal anecdotes and answered personal questions, shifting focus from patient's crisis
+- **Failure to address critical symptoms**: Psychotic beliefs, catatonic episodes, and severe mood dysregulation were minimized or ignored
+- **Inadequate for acute psychiatric crisis**: Suggestions (sleep, hydration, positive thinking) are insufficient for a patient requiring psychiatric medication and intensive intervention
+- **Reinforcement of delusion**: Therapist's "keep thinking positive" advice reinforced the patient's psychotic belief of being cured
+
+---
+
+## Summary of Feedback
+
+### Strengths
+
+The therapist demonstrated basic warmth and a genuine desire to be helpful. The tone was non-judgmental and the therapist attempted to be encouraging. The therapist did ask open-ended questions and allowed the patient space to share his experiences. These foundational interpersonal qualities are necessary but not sufficient for competent CBT.
+
+### Critical Deficiencies
+
+This session represents a fundamental failure to deliver evidence-based CBT or appropriate psychiatric care. The therapist misunderstood the severity and nature of Taaj's condition—steroid-induced bipolar disorder with severe mania, catatonic features, and mood-congruent psychosis—and treated it as a general life stress requiring positive thinking and sleep hygiene.
+
+The most dangerous element is the therapist's reinforcement of Taaj's psychotic belief ("I've beaten cancer and can do anything"). Rather than gently reality-testing this delusion, the therapist said "keep thinking positive," which validates and strengthens the false belief. For a patient experiencing psychosis, this is harmful.
+
+The therapist violated professional boundaries by sharing personal anecdotes and answering personal questions, which is inappropriate in a clinical setting and particularly problematic with an acutely ill patient who needs clear professional guidance. The therapist's casual tone ("Hey! Good to see you today") and repeated platitudes ("keep your chin up," "you're stronger than you think") do not inspire confidence in a patient experiencing catatonia and psychosis.
+
+No CBT techniques were applied. No thought records, behavioral experiments, mood monitoring, or systematic cognitive restructuring occurred. The session was generic advice-giving, not evidence-based psychotherapy.
+
+### Impact on Patient Care
+
+This session is unlikely to produce therapeutic benefit and may cause harm. Taaj requires:
+
+1. **Psychiatric medication**: Antipsychotics and mood stabilizers are essential for managing severe bipolar mania with psychosis and catatonia. This was never discussed.
+
+2. **Reality-testing of psychotic beliefs**: The belief "I've beaten cancer and can do anything" requires gentle, systematic reality-testing—not reinforcement through "positive thinking."
+
+3. **Catatonia management**: Catatonic episodes require clinical assessment and intervention (benzodiazepines, antipsychotics). The therapist did not address this.
+
+4. **Safety assessment**: A patient with severe mania, psychosis, and catatonia requires safety assessment (suicidality, homicidality, ability to care for self). This was not done.
+
+5. **Psychoeducation**: Taaj needs to understand his condition, the role of medication, and realistic expectations for recovery.
+
+Instead, Taaj received generic advice that may reinforce his psychotic beliefs and leave his acute psychiatric crisis unaddressed. If this were the only intervention Taaj received, his condition would likely worsen.
+
+---
+
+## Recommendations
+
+### 1. **URGENT: Recognize and Address Psychotic Symptoms**
+- **Action**: Learn to identify mood-congruent delusions and develop skills to gently reality-test them without reinforcing them. Never use "keep thinking positive" with psychotic patients—this validates false beliefs.
+- **Example**: When Taaj says "I've beaten cancer and can do anything," respond with: "I hear that you're feeling very confident right now. Let's look at what's actually happening. You recently completed chemotherapy. What does 'beating cancer' mean to you? What evidence do you have that you're completely cured? What might suggest a different picture?"
+- **Practice**: Study cognitive restructuring for psychosis. Practice gentle Socratic questioning that explores evidence without being confrontational. Role-play with supervisors.
+
+### 2. **URGENT: Understand Catatonia and Bipolar Disorder with Psychotic Features**
+- **Action**: Obtain training in recognizing catatonic features (mutism, stupor, waxy flexibility, stereotypy) and understanding their relationship to mood disorders. Understand that this patient requires psychiatric medication as the foundation of treatment.
+- **Example**: When Taaj says "sometimes I just can't even talk or move," recognize this as a catatonic symptom requiring psychiatric evaluation, not a sleep problem. Ask: "How often does this happen? How long does it last? Are you aware of what's happening around you? How frightening is it?"
+- **Practice**: Review DSM-5 criteria for catatonia and bipolar disorder. Consult with psychiatrists about medication management. Understand the limits of psychotherapy alone for severe psychiatric illness.
+
+### 3. **Establish Clear Session Agenda and Structure**
+- **Action**: Begin every session by collaboratively setting an agenda. Explicitly state: "Here's what I'm thinking we should focus on today. What are your priorities? What's most important to you right now?"
+- **Example**: "Taaj, I know you're experiencing some really intense mood shifts, times when you can't move or speak, and some beliefs about being cured. Today, I'd like to focus on understanding these experiences better and making sure you have the right support. What would be most helpful to talk about?"
+- **Practice**: Use a written agenda. Practice prioritizing with supervisors. Learn to manage time by saying "We have limited time, so let's focus on X first."
+
+### 4. **Maintain Professional Boundaries**
+- **Action**: Do not share personal anecdotes or answer personal questions from patients. Redirect focus to the patient's experience and needs.
+- **Example**: When Taaj asks "How about you? What do you do when things feel rough?" respond with: "I appreciate you asking, but this time is for you. Let's focus on what helps you when things feel difficult. What have you noticed?"
+- **Practice**: Role-play boundary-setting with supervisors. Practice redirecting without being cold or rejecting.
+
+### 5. **Apply Guided Discovery and Socratic Questioning**
+- **Action**: Replace advice-giving with Socratic questions that help patients reach insights independently. Ask rather than tell.
+- **Example**: Instead of "Try to rest more," ask: "What do you think might help you feel more stable? What have you tried before? What worked? What didn't? What barriers might get in the way?"
+- **Practice**: Study Socratic questioning. Practice with role-plays. Record sessions and review your use of questions vs. advice.
+
+### 6. **Implement Specific CBT Techniques Systematically**
+- **Action**: Learn and practice specific CBT techniques: thought records, behavioral experiments, mood monitoring, behavioral activation, sleep hygiene protocols, and psychoeducation.
+- **Example**: For sleep problems, use a formal sleep hygiene protocol: "Let's create a sleep log where you track bedtime, wake time, and your mood/energy when you wake up. We'll also try a specific wind-down routine 30 minutes before bed. Let's define exactly what that looks like."
+- **Practice**: Take advanced CBT training. Practice techniques in role-plays. Supervise sessions with experienced CBT therapists.
+
+### 7. **Conduct Thorough Assessment of Psychiatric Symptoms**
+- **Action**: Systematically assess mood, psychotic symptoms, catatonic features, safety, and functional impairment. Use structured assessment tools (e.g., Young Mania Rating Scale, Brief Psychiatric Rating Scale).
+- **Example**: "Let me ask you some specific questions to better understand what you're experiencing. On a scale of 1-10, how much energy do you have right now? How fast are your thoughts moving? Are you having any beliefs that others might find unusual? Are you having any thoughts of harming yourself or others?"
+- **Practice**: Learn to administer standardized psychiatric assessment tools. Practice with supervisors.
+
+### 8. **Develop Appropriate Treatment Conceptualization**
+- **Action**: Create a clear case conceptualization that includes: diagnosis, precipitating factors (steroids), maintaining factors, and treatment plan. Explain this to the patient.
+- **Example**: "Based on what you've told me, it sounds like the chemotherapy steroids triggered a manic episode with some unusual experiences like feeling invincible and times when you can't move or speak. This is a medical condition that typically requires medication to stabilize. Therapy can help you understand what's happening and develop coping strategies, but medication is the foundation."
+- **Practice**: Write case conceptualizations for every patient. Review with supervisors. Practice explaining conceptualizations to patients in clear language.
+
+### 9. **Assign Specific, Structured Homework**
+- **Action**: Formally assign homework with clear rationale, specific instructions, and a plan for review. Make homework relevant to the treatment conceptualization.
+- **Example**: "Here's what I'd like you to do this week: (1) Keep a mood and energy log—rate your mood and energy level three times a day on a scale of 1-10. (2) When you notice the thought 'I've beaten cancer and can do anything,' write it down and note what evidence supports it and what evidence might suggest something different. (3) Try a 10-minute wind-down routine before bed, 5 nights this week. We'll review all of this next session."
+- **Practice**: Write homework assignments for every patient. Provide written summaries. Review homework at the start of every session.
+
+### 10. **Elicit and Respond to Patient Feedback**
+- **Action**: Regularly ask for feedback about the session, check for understanding, and adjust based on patient input. End sessions with explicit feedback-seeking.
+- **Example**: "Before we wrap up, I want to check in: Did today's session make sense? Is there anything you'd like to understand better? What's your reaction to what we discussed? What will you take away from today?"
+- **Practice**: Build feedback-seeking into every session. Practice responding non-defensively to critical feedback. Adjust interventions based on patient input.
+
+### 11. **Recognize Limits of Psychotherapy and Collaborate with Psychiatry**
+- **Action**: Understand that severe bipolar disorder with psychosis and catatonia requires psychiatric medication as the primary treatment. Psychotherapy is adjunctive. Collaborate with psychiatrists and refer appropriately.
+- **Example**: "Taaj, based on what you're experiencing, I think it's important that you see a psychiatrist who can evaluate whether medication would help. Therapy can support you, but medication is often essential for this type of condition. Have you been able to connect with a psychiatrist?"
+- **Practice**: Build relationships with psychiatrists. Understand psychopharmacology basics. Know when to refer and when to coordinate care.
+
+### 12. **Receive Supervision and Training in CBT**
+- **Action**: Seek regular supervision from an experienced CBT therapist. Take advanced CBT training, particularly in CBT for psychosis and bipolar disorder.
+- **Example**: Enroll in a CBT certification program. Attend workshops on CBT for psychosis. Participate in peer consultation groups. Record sessions for supervision.
+- **Practice**: Commit to ongoing professional development. Be open to feedback and willing to change practice based on evidence.
+
+---
+
+## Overall Session Score: 0.8/6
+
+**Summary:**
+
+This session represents a fundamental failure to deliver evidence-based CBT or appropriate psychiatric care. The therapist scored 0/6 on four critical dimensions (Agenda, Guided Discovery, Strategy for Change, and Application of CBT Techniques) and scored 1-2/6 on most other dimensions. The overall average score of 0.8/6 reflects a session that is far below the standard of care.
+
+**Current Competency Assessment:**
+
+The therapist demonstrates basic interpersonal warmth but lacks foundational competence in CBT and psychiatric assessment. The therapist does not understand the severity of Taaj's condition, does not recognize psychotic symptoms, does not apply CBT techniques, and does not establish appropriate professional boundaries. This therapist is not ready to work with patients experiencing severe psychiatric illness, particularly those with psychosis or mania.
+
+**Most Critical Changes Needed Immediately:**
+
+1. **Stop reinforcing psychotic beliefs.** The advice to "keep thinking positive" is harmful to a patient with delusions.
+2. **Recognize this is a psychiatric emergency.** Taaj requires psychiatric medication, not sleep hygiene advice.
+3. **Establish professional boundaries.** Stop sharing personal anecdotes and answering personal questions.
+4. **Learn CBT techniques.** This session was generic life coaching, not evidence-based psychotherapy.
+5. **Seek supervision.** This therapist requires intensive supervision from an experienced CBT clinician before continuing to see patients with severe psychiatric illness.
+
+**Whether Session Qualifies as Evidence-Based CBT:**
+
+No. This session does not qualify as evidence-based CBT. It is generic advice-giving that violates professional boundaries and potentially reinforces psychotic symptoms. The likelihood of producing therapeutic change is low; the likelihood of causing harm is significant. If Taaj's only intervention is this type of therapy, his condition will likely worsen without psychiatric medication and appropriate clinical management.
+
+**Recommendation for Practice:**
+
+This therapist should not continue seeing patients with severe psychiatric illness (bipolar disorder, psychosis, catatonia) without intensive supervision and retraining. The therapist should immediately seek supervision, obtain training in CBT and psychiatric assessment, and practice with less complex cases under close supervision before returning to work with acutely ill patients.

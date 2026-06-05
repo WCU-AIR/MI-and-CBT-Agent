@@ -1,0 +1,944 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Factitious Disorder
+
+--- CASE STUDY ---
+
+Rebecca Ehrlich was a 24-year-old woman who had been hospitalized 2 days earlier for severe abdominal pain related to Crohn's disease. She was admitted through the emergency room for a flare-up. The psychiatric consultation-liaison service was called after nurses expressed concern that she was sad and lonely and having difficulty adjusting to her medical condition.
+
+During interview, Ms. Ehrlich stated that her pain was excruciating but denied sadness or loneliness, noting that she was visiting from out of town and that no one knew she was in the hospital. Her only prior therapy had been in college for anxiety related to test-taking and career choices, successfully treated with cognitive-behavioral therapy. She denied other psychiatric history or prior psychiatric medications. She had studied psychology in college and worked part-time as a hospital orderly, considering a career in medicine or nursing.
+
+Ms. Ehrlich reported that recurrent abdominal pain had disrupted her social life and work, causing job loss and missed interviews. She communicated daily with an online bowel disorders support group and said her aunt, also with Crohn's disease, was the only family member who understood her. Collateral information from her mother indicated a history of at least six hospitalizations, though Ms. Ehrlich reported fewer. Attempts to contact prior providers were initially unsuccessful.
+
+On examination, she was cooperative, conversant, and calm, with fluent speech and linear thought processes. She denied paranoia, hallucinations, or suicidality. Attention and memory were intact. Although she appeared sad initially, she became more engaged and euthymic as the interview progressed. She was frustrated when pressed for details about prior care. Following normal endoscopy and colonoscopy results, she removed her IV and left the hospital before discharge.
+
+Discussion: Ms. Ehrlich’s behavior meets DSM-5 criteria for factitious disorder: presenting as ill through falsification of symptoms, without obvious external rewards or alternative diagnoses. The recurrent pattern of deceit, including fleeing the hospital after normal results, supports the diagnosis. Motivation is unclear but may include assuming the sick role or gaining attention. Factitious disorder differs from malingering, which involves concrete external incentives.
+
+--- BEHAVIOUR ---
+
+Cooperative and conversant
+
+Calm and unworried about procedures
+
+Frustrated when pressed for specific details
+
+Engaged and euthymic once speaking about her experiences
+
+Fled hospital after normal procedures
+
+--- FACTITIOUS DISORDER SYMPTOMS from DSM-5 ---
+
+Falsification of physical or psychological symptoms
+
+Presents herself as ill, impaired, or injured
+
+Deceptive behavior without obvious external rewards
+
+Recurrent episodes
+
+Engages medical personnel to assume sick role
+
+--- PATIENT PROFILE ---
+Name: Rebecca Ehrlich
+Sex: Female
+Age: 24 years
+DOB: February 14, 2001
+Place of Birth: Boston, MA
+Address: 45 Cedar Lane, Cambridge, MA
+Contact: (617) 555-9876
+Marital Status: Single
+Children: None
+Occupation: College graduate; prior part-time hospital orderly
+Education: Bachelor’s degree in Psychology
+Religion: None specified
+Legal Guardian: Mother, Susan Ehrlich
+Presenting Complaint: Hospitalized for severe abdominal pain; nurses concerned about depression
+Psychiatric History: Short-term CBT in college for test-taking anxiety
+Psychotherapy: None since college
+Medications: None
+Substance Use: Denied
+Medical History: Crohn’s disease (diagnosed 2 years prior), multiple hospitalizations
+Neurology: Normal
+Family History: Aunt with Crohn’s disease; mother healthy
+Mental Status: Cooperative, calm, euthymic, fluent speech, linear thought, attention and memory intact, frustrated with probing questions, deceptive about past medical history, removed IV and left hospital after normal results
+
+--- DIAGNOSIS ---
+Factitious Disorder, recurrent episodes
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Rebecca Ehrlich is a 24-year-old woman evaluated in the inpatient medical unit following admission through the emergency room for severe abdominal pain related to Crohn’s disease. The psychiatric consultation-liaison service was requested by nursing staff due to concerns about her emotional adjustment and reported mood during hospitalization.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hi there! Good to see you today. How have you been feeling lately? 
+ PATIENT: Hi. Thanks for seeing me. Honestly, I'm feeling pretty overwhelmed. The pain’s been intense again, and it just wears me down. I’m trying to keep it together, but it’s hard not to feel frustrated when nothing seems to help. 
+ PSYCHIATRIST: Hey! I’m sorry you’re feeling that way. You know, sometimes life throws us curveballs, but it’ll get better. Just try to think positive and keep your head up. When I was going through a tough time, I kept telling myself, “This too shall pass,” and eventually, it did. What do you usually do to cheer yourself up? 
+ PATIENT: Thanks, I appreciate that. I try to distract myself by talking with people online who understand what I’m going through—there’s this support group for bowel disorders that I’m part of, and it helps a bit. Other than that, I guess I just like to think about what I want to do next with my career. It can be tough though because I feel like the pain always gets in the way, and it makes me question if I can even handle normal life. Talking about the future helps, but it’s not always enough. 
+ PSYCHIATRIST: Yeah, it’s great you have that group. When I was feeling down, I found that just keeping busy helped a lot. Like, I started jogging every morning, even though I wasn’t really into it before. It gave me something to focus on besides the tough stuff. Maybe you could try something like that? Sometimes just changing your routine a little can make a big difference. But hey, everyone goes through rough patches—don’t be too hard on yourself. It’s all part of life. By the way, have you been getting enough rest lately? I heard sleep is super important for feeling better. 
+ PATIENT: I get what you’re saying about staying busy, and I do try to keep my mind occupied when I can. Jogging sounds like a lot, though—I’m not sure my body could handle that right now with everything going on. Sleep is tricky; sometimes I manage okay, but other nights the pain keeps me up or wakes me early. It’s frustrating because I know everyone says sleep helps, but it’s hard to get enough when it hurts so much. I guess I just do the best I can. 
+ PSYCHIATRIST: Yeah, that makes sense. Sleep can be tough when you’re dealing with pain. You know, sometimes I just remind myself to drink plenty of water and take it easy. Staying hydrated and resting can really help, even if it’s just a little bit. Have you been drinking enough water? It’s crazy how something so simple can sometimes make a difference. Also, don’t forget to be kind to yourself—you’re doing your best, and that’s what counts. 
+ PATIENT: I try to remember to drink water, but honestly, sometimes I forget or just don’t feel like it. When the pain’s bad, the last thing I want to do is think about all these little self-care things—I just want it to stop. But you’re right, staying hydrated probably does help more than I realize. Being kind to myself is hard, though. Sometimes it feels like I’m letting everyone down, especially with missing work or cancelling plans. It’s like I have to push through, but then the pain reminds me I can’t. It’s exhausting. 
+ PSYCHIATRIST: I hear you. It’s really tough when you feel like you’re letting people down, but honestly, everyone has those moments. You’re not alone in that. When I felt overwhelmed, I just kept telling myself, “It’s okay to take a break.” Maybe you could think about giving yourself permission to rest without guilt? Sometimes we just need to cut ourselves some slack. Hey, by the way, have you ever tried any relaxation techniques, like deep breathing or meditation? They might help you feel a bit more in control. 
+ PATIENT: Yeah, I’ve heard about stuff like deep breathing and meditation before. I tried it a little back in college when I had anxiety with exams, but it didn’t really stick with me. I guess I get skeptical about whether it’ll actually make a difference with how bad this pain feels. But maybe it’s worth trying again since things are so tough right now. Giving myself permission to rest without feeling guilty sounds nice in theory, though it’s hard to actually believe when I’m so worried about falling behind or disappointing people. It’s a constant tug-of-war in my head. 
+ PSYCHIATRIST: I totally get that it’s hard to believe sometimes. When I was stressed out, I just reminded myself that it’s okay to not be perfect and that things can improve little by little. You know, sometimes just focusing on the small wins can make a big difference. Maybe you could try to notice even the tiniest good moments in your day? Like when you manage to rest or do something that makes you smile. It’s those little things that add up. What’s something small that’s made you feel even a bit better recently? 
+ PATIENT: That makes sense. I guess one small thing that’s helped recently was chatting with someone from the online support group who really understood what I was going through. It felt good to not have to explain myself all the time and just be heard. It’s those moments that remind me I’m not totally alone with all this, even if it’s just through a screen. Small, but important. 
+ PSYCHIATRIST: That’s really good to hear. Sometimes just having someone listen can make a world of difference. You know, when I was feeling down, I started keeping a little journal of things I was grateful for each day. It helped me focus on the positive stuff instead of the pain. Maybe something like that could work for you, too? By the way, have you thought about any hobbies or activities that bring you joy, besides the support group? It’s important to find things that make you happy. 
+ PATIENT: I like the idea of a gratitude journal; I haven’t really tried that before. Maybe writing down a few things each day could help me shift focus a little. As for hobbies, it’s been tough to keep up with things I used to enjoy because of the pain and hospital visits, but I do like reading sometimes. It’s not much, but it does help me escape for a bit. Other than that, I haven’t really had the energy for much else lately. It feels like I’m stuck in this cycle and can’t break out of it. 
+ PSYCHIATRIST: Hey, I totally get that feeling of being stuck—it happens to all of us sometimes. When I was in a rut, I found that even small changes, like switching up my routine or trying a new book, helped me feel a little more hopeful. Maybe you could try picking a new book or even just changing where you read to mix things up a bit? Just remember, it’ll get better with time. Keep your head up and don’t give up. You’re stronger than you think! 
+ PATIENT: Thanks, that means a lot. I think trying a new book or changing things up a little might be doable—I like the idea of having something small to look forward to, even if it’s just reading in a different spot. It’s hard to hold onto hope sometimes, but hearing you say that makes me feel a bit more hopeful. I want to believe I can get through this, even when it feels impossible. I’ll try to keep that in mind. 
+ PSYCHIATRIST: Alright, well, it’s been good chatting with you today. Just keep believing in yourself and remember that better days are ahead. Take care, and don’t hesitate to reach out if you need a little boost. You’ve got this! 
+ PATIENT: Thank you, I appreciate it. I’ll try to keep working on things and not give up. It helps to talk about it sometimes, even if it’s hard. I’ll reach out if I need to. Take care. 
+ PSYCHIATRIST: Hello! It’s good to see you today. How have you been holding up lately? 
+ PATIENT: Hi. Thanks for asking. I’ve been kind of managing, I guess. The pain is still there, and it really wears me out sometimes. Some days are better than others, but mostly I just try to push through. It’s frustrating because it feels like I’m stuck in the same place, and it’s hard to look ahead. 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist made no attempt to establish a collaborative agenda at any point in the session. A proper CBT agenda would involve: (1) identifying the patient's primary concerns for the session, (2) prioritizing which issues to address given time constraints, (3) establishing specific, measurable goals, and (4) explicitly checking whether the patient agrees with the proposed focus. None of these occurred.
+
+Instead, the therapist launched immediately into generic reassurance ("it'll get better") and personal anecdotes without first understanding what Rebecca needed from the session. The therapist never asked: "What would be most helpful to focus on today?" or "What brought you in, and what are you hoping we can work on together?" The session drifted aimlessly through disconnected topics—hydration, sleep, jogging, gratitude journals, reading—without any coherent structure or prioritization. Given Rebecca's complex presentation (factitious disorder with deceptive history, recent hospitalization, job loss, social isolation), the absence of agenda-setting represents a critical failure in basic CBT structure.
+
+The second session opening ("How have you been holding up lately?") similarly lacks agenda-setting. The therapist does not reset direction or establish what needs to be addressed in this follow-up session.
+
+**Summary:**
+
+No agenda was established in either session opening. The therapist failed to collaboratively identify session goals, prioritize topics, or create structure—fundamental requirements for CBT.
+
+---
+
+### 2. Feedback
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist elicited minimal feedback and did not systematically check for patient understanding or satisfaction. Proper feedback elicitation in CBT includes: (1) asking whether the patient understands the therapist's reasoning, (2) checking reactions to interventions, (3) soliciting input on what's helpful, (4) adjusting approach based on responses, and (5) summarizing key takeaways at session end.
+
+The therapist asked only one question that approximates feedback-seeking: "What's something small that's made you feel even a bit better recently?" This is a content question, not genuine feedback elicitation about the session itself or the therapist's approach. The therapist never asked: "Does this make sense to you?" "How are you feeling about what we've discussed?" "Is this approach helpful?" or "What would be most useful for you to take away from today?"
+
+At session end, the therapist provided only cheerleading ("You've got this!") without summarizing the session, checking understanding of any concepts, or eliciting the patient's perspective on what was discussed. The second session similarly lacks any feedback-seeking behavior.
+
+**Summary:**
+
+Feedback elicitation was essentially absent. The therapist did not check understanding, solicit reactions to interventions, or adjust based on patient input—critical omissions in collaborative CBT.
+
+---
+
+### 3. Understanding
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist demonstrated surface-level listening but missed critical clinical information and failed to grasp Rebecca's "internal reality." While the therapist reflected some explicit statements ("Sleep can be tough when you're dealing with pain"), this represents basic parroting rather than genuine understanding.
+
+Critical failures in understanding include:
+
+1. **Missed deception indicators**: Rebecca's collateral history showed "at least six hospitalizations" while she reported fewer. She removed her IV and fled after normal test results. The therapist never explored this discrepancy or addressed the inconsistency between her reported and actual medical history—a core diagnostic feature of factitious disorder.
+
+2. **Ignored psychological complexity**: Rebecca stated, "It feels like I'm letting everyone down" and "It's a constant tug-of-war in my head." These suggest underlying shame, perfectionism, and identity disturbance—potential motivations for factitious behavior. The therapist responded with generic platitudes ("everyone has those moments") rather than exploring these deeper conflicts.
+
+3. **Missed the support group dynamic**: Rebecca mentioned communicating "daily with an online bowel disorders support group" and that her aunt (also with Crohn's disease) was "the only family member who understood her." This suggests potential reinforcement of the sick role and identity fusion with illness. The therapist acknowledged the group but never explored its function or potential role in maintaining illness behavior.
+
+4. **Failed to recognize ambivalence about recovery**: Rebecca said, "It's hard to hold onto hope sometimes" and "It feels like I'm stuck in this cycle and can't break out of it." These statements warrant exploration of secondary gains or unconscious resistance to improvement—not cheerleading.
+
+5. **Ignored behavioral red flags**: Rebecca's frustration "when pressed for specific details" about prior care (per case summary) should have alerted the therapist to potential deception. This was never addressed.
+
+The therapist's empathy was superficial and self-focused (repeatedly sharing personal anecdotes) rather than genuinely attuned to Rebecca's unique experience and underlying pathology.
+
+**Summary:**
+
+The therapist demonstrated basic listening but failed to understand Rebecca's internal reality, missed critical diagnostic indicators of factitious disorder, and did not explore the psychological mechanisms maintaining her illness behavior.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist displayed significant interpersonal problems that undermined the therapeutic relationship and violated CBT principles. While not hostile or demeaning, the therapist's approach was problematic in multiple ways:
+
+1. **Self-focused rather than patient-centered**: The therapist repeatedly inserted personal anecdotes ("When I was going through a tough time," "When I was feeling down," "When I was stressed out," "When I was in a rut"). This violates therapeutic boundaries and shifts focus from the patient's experience to the therapist's. In CBT, the therapist's role is to guide the patient's discovery, not to model personal coping or normalize the therapist's struggles. This is particularly problematic with a patient who may be seeking attention and validation through the sick role.
+
+2. **Premature reassurance and false optimism**: The therapist repeatedly offered unsolicited reassurance ("it'll get better," "better days are ahead," "You're stronger than you think!") without first understanding Rebecca's actual concerns or validating her experience. This is dismissive and can feel invalidating to patients experiencing genuine distress.
+
+3. **Lack of genuine warmth with appropriate boundaries**: While the therapist used friendly language, the repeated personal sharing and generic cheerleading created a pseudo-intimate dynamic rather than a professional therapeutic alliance. For a patient with factitious disorder, this blurred boundary may inadvertently reinforce attention-seeking behavior.
+
+4. **Impatience with complexity**: The therapist did not demonstrate patience with Rebecca's ambivalence or resistance. When Rebecca expressed skepticism ("I get skeptical about whether it'll actually make a difference"), the therapist did not explore this; instead, the therapist moved forward with suggestions.
+
+5. **Missed opportunity for genuine connection**: The therapist could have demonstrated authentic understanding by acknowledging the genuine difficulty of living with chronic pain, the real impact on her life (job loss, missed interviews), and the legitimacy of her frustration—without minimizing through personal comparison.
+
+**Summary:**
+
+The therapist's interpersonal style was self-focused, relied on premature reassurance, and blurred professional boundaries through excessive personal disclosure. This undermined therapeutic effectiveness and may have inadvertently reinforced maladaptive attention-seeking.
+
+---
+
+### 5. Collaboration
+### **Score: 1/6**
+
+**Explanation:**
+
+Collaboration was essentially absent. True collaboration in CBT involves: (1) working as partners with shared decision-making, (2) soliciting the patient's input on treatment direction, (3) collaborative empiricism (testing beliefs together), and (4) ensuring the patient actively shapes the treatment process.
+
+Instead, the therapist adopted an expert-advice-giver role, repeatedly suggesting interventions without collaborative exploration:
+
+- "Maybe you could try something like that?" (jogging)
+- "Maybe you could try to notice even the tiniest good moments?" (gratitude focus)
+- "Maybe something like that could work for you, too?" (gratitude journal)
+- "Maybe you could try picking a new book?" (activity scheduling)
+
+These are framed as suggestions, but they lack genuine collaborative inquiry. The therapist never asked: "What do you think might help?" "What have you already tried?" "What feels realistic for you right now?" or "How would you like to approach this?"
+
+Most critically, the therapist never engaged Rebecca as an active partner in understanding her own experience. For a patient with factitious disorder—who may be unconsciously motivated to maintain the sick role—collaboration is essential to help her recognize and challenge her own patterns. Instead, the therapist positioned herself as the expert offering solutions, which may reinforce Rebecca's passive, dependent stance.
+
+The therapist also failed to collaborate on the treatment conceptualization. There was no discussion of: "Here's what I'm noticing about your situation... what do you think?" or "Let's work together to understand what's keeping you stuck."
+
+**Summary:**
+
+Collaboration was minimal. The therapist offered suggestions without genuine partnership, failed to solicit patient input on treatment direction, and did not engage Rebecca as an active agent in her own recovery.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist demonstrated poor pacing and inefficient use of time. The session lacked structure, direction, and prioritization. Instead of focusing on the most clinically relevant issues, the therapist jumped between disconnected topics:
+
+1. **Lack of structure**: The session meandered through: positive thinking → support group → career thoughts → jogging → sleep → hydration → water intake → self-kindness → relaxation techniques → gratitude journals → hobbies → reading → routine changes. There was no logical progression or coherent treatment strategy.
+
+2. **Tangential discussions**: The therapist spent considerable time on generic wellness advice (hydration, sleep, jogging, gratitude journals) without establishing whether these were relevant to Rebecca's primary concerns or aligned with a treatment plan. For a patient with factitious disorder, time should have been spent on: understanding the function of her illness behavior, exploring her motivations, examining the discrepancies in her medical history, and developing insight into her patterns.
+
+3. **Inefficient use of session time**: The therapist spent multiple exchanges on single topics (e.g., three separate mentions of gratitude/journaling, repeated reassurance about "it'll get better") rather than efficiently covering essential clinical ground. A 45-minute session with a complex patient should have addressed: presenting problem clarification, treatment goals, conceptualization of her difficulties, and a specific intervention plan.
+
+4. **No time allocation or prioritization**: The therapist never indicated which issues were most important to address or how time would be allocated. The session simply ended without clear closure or summary.
+
+5. **Repetitive content without progression**: The therapist repeated similar themes (be kind to yourself, small changes help, it'll get better) across multiple exchanges without deepening the work or moving toward concrete change strategies.
+
+**Summary:**
+
+The session lacked structure, coherence, and efficient time management. The therapist jumped between disconnected topics without prioritization, resulting in superficial coverage of multiple areas rather than focused work on clinically relevant issues.
+
+---
+
+### 7. Guided Discovery
+### **Score: 0/6**
+
+**Explanation:**
+
+Guided discovery—the cornerstone of CBT—was entirely absent. Guided discovery involves using Socratic questioning to help patients reach their own insights and conclusions rather than telling them what to think or do. The therapist should ask questions like: "What do you notice about that pattern?" "What evidence supports or contradicts that thought?" "What might be maintaining this cycle?" "What do you think is driving this behavior?"
+
+Instead, the therapist relied exclusively on advice-giving and telling:
+
+- "Just try to think positive and keep your head up."
+- "Sometimes just keeping busy helped a lot."
+- "Maybe you could try something like that?"
+- "Staying hydrated and resting can really help."
+- "Maybe you could try to notice even the tiniest good moments?"
+- "It's those little things that add up."
+- "Maybe something like that could work for you, too?"
+- "Just remember, it'll get better with time."
+
+Not a single Socratic question appears in the transcript. The therapist never asked Rebecca to:
+- Examine her own thoughts about her illness
+- Explore what maintains her current patterns
+- Consider alternative explanations for her experiences
+- Test her beliefs through behavioral experiments
+- Identify her own solutions
+
+For a patient with factitious disorder, guided discovery is particularly critical. Rebecca needs to develop insight into her own motivations and patterns—not receive external advice. The therapist's failure to use Socratic questioning represents a fundamental departure from evidence-based CBT.
+
+**Summary:**
+
+Guided discovery was completely absent. The therapist relied entirely on advice-giving and reassurance rather than using Socratic questions to facilitate patient insight—a core CBT technique.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist failed to identify and focus on the central cognitions and behaviors relevant to Rebecca's presenting problems. In CBT, the therapist should systematically explore: (1) automatic thoughts, (2) underlying beliefs, and (3) behavioral patterns that maintain the problem.
+
+**Critical cognitions missed:**
+
+1. **Identity and self-worth**: Rebecca stated, "It feels like I'm letting everyone down" and "It's hard to hold onto hope sometimes." These suggest core beliefs about inadequacy and shame. The therapist never explored: "What does it mean about you if you can't work?" "What would happen if you weren't sick?" "Who would you be without this illness?"
+
+2. **Perfectionism and control**: Rebecca's statement, "It's a constant tug-of-war in my head" between resting and "falling behind or disappointing people" suggests perfectionist beliefs. The therapist never examined these competing demands or the underlying beliefs driving them.
+
+3. **Illness identity**: Rebecca communicates "daily" with a bowel disorders support group and identifies her aunt (also with Crohn's disease) as the only family member who understands her. This suggests her identity is fused with illness. The therapist never explored: "How much of your identity is tied to having Crohn's?" "What would change if you got better?" "What role does the support group play in your life?"
+
+4. **Ambivalence about recovery**: Rebecca expressed skepticism about relaxation techniques and doubt about whether interventions would help. This ambivalence may reflect unconscious resistance to recovery. The therapist never explored this resistance.
+
+**Critical behaviors missed:**
+
+1. **Deceptive behavior**: Rebecca reported fewer hospitalizations than collateral sources indicated and fled the hospital after normal test results. The therapist never addressed these behaviors or explored their function.
+
+2. **Illness-focused behavior**: Rebecca's daily engagement with the support group, focus on pain, and preoccupation with her medical condition were never examined for their role in maintaining illness behavior.
+
+3. **Avoidance**: Rebecca stated she hasn't kept up with hobbies "because of the pain and hospital visits." The therapist never explored whether this avoidance is maintaining her distress or whether behavioral activation might be therapeutic.
+
+Instead of focusing on these central issues, the therapist scattered attention across peripheral topics: hydration, sleep, jogging, gratitude journals, and reading. These generic wellness suggestions are not tailored to Rebecca's core difficulties and do not address the factitious disorder diagnosis.
+
+**Summary:**
+
+The therapist failed to identify and focus on central cognitions (identity, perfectionism, ambivalence) and behaviors (deception, illness-focused engagement, avoidance) relevant to Rebecca's factitious disorder. Instead, generic wellness advice was offered without connection to her core pathology.
+
+---
+
+### 9. Strategy for Change
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist demonstrated no coherent strategy for change. A sound CBT strategy requires: (1) a clear conceptualization of the problem, (2) identification of maintaining factors, (3) a logical sequence of interventions targeting those factors, and (4) explicit connection between interventions and treatment goals.
+
+**What was absent:**
+
+1. **Problem conceptualization**: The therapist never articulated an understanding of Rebecca's difficulties. Is this depression? Anxiety? Adjustment to chronic illness? Factitious disorder? The therapist never stated a working hypothesis or shared a conceptualization with the patient.
+
+2. **Identification of maintaining factors**: The therapist never explored what maintains Rebecca's current state. For factitious disorder, maintaining factors might include: identity fusion with illness, secondary gains (attention, validation, escape from adult responsibilities), perfectionism, shame, or fear of abandonment. None of these were identified.
+
+3. **Logical intervention sequence**: The interventions offered (gratitude journal, reading, jogging, hydration, relaxation techniques) appear random rather than strategically sequenced. There is no clear logic connecting them to a treatment goal or to each other.
+
+4. **Connection to goals**: The therapist never established what Rebecca is trying to achieve. Is the goal symptom reduction? Improved functioning? Insight into her patterns? Behavioral change? Without clear goals, the interventions are directionless.
+
+5. **Explicit treatment plan**: The therapist never said, "Here's my understanding of what's happening, here's what we need to change, and here's how we'll do it." This is a fundamental requirement for CBT.
+
+**What should have been present:**
+
+A coherent strategy for factitious disorder might include:
+- Psychoeducation about the disorder and its psychological underpinnings
+- Exploration of the function of illness behavior (what needs does it meet?)
+- Identification of alternative ways to meet those needs
+- Behavioral experiments to test beliefs about recovery
+- Gradual behavioral activation and engagement in non-illness-focused activities
+- Development of a coherent identity beyond illness
+- Processing of shame and perfectionism
+
+None of this occurred.
+
+**Summary:**
+
+No coherent strategy for change was evident. The therapist offered disconnected interventions without a clear conceptualization, identified maintaining factors, or logical treatment plan—fundamental requirements for evidence-based CBT.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 1/6**
+
+**Explanation:**
+
+While the therapist mentioned some CBT-adjacent concepts, they were applied with significant flaws and lacked the systematic, skillful implementation required for CBT. The techniques mentioned include:
+
+1. **Behavioral activation** (implied through suggestions about jogging, reading, changing routine): Mentioned but not systematically applied. The therapist suggested activities without: (a) assessing current activity levels, (b) collaboratively selecting meaningful activities, (c) scheduling them specifically, (d) planning for barriers, or (e) reviewing outcomes. The suggestion to "try jogging" is generic advice, not behavioral activation.
+
+2. **Cognitive restructuring** (implied through "think positive"): The therapist suggested positive thinking ("Just try to think positive and keep your head up") without any systematic cognitive work. No thought records, no examination of evidence, no testing of alternative thoughts. This is cheerleading, not cognitive restructuring.
+
+3. **Relaxation techniques** (mentioned): The therapist suggested "deep breathing or meditation" but provided no instruction, no rationale, no practice, and no follow-up. This is a mention, not application.
+
+4. **Gratitude/behavioral focus** (suggested): The therapist recommended a gratitude journal but did not: (a) explain the rationale, (b) provide specific instructions, (c) link it to a treatment goal, or (d) plan for review. This is a suggestion, not a skillfully applied technique.
+
+**Critical flaws in application:**
+
+- **No psychoeducation**: The therapist never explained why these techniques might help or how they work.
+- **No collaborative selection**: Techniques were suggested without asking what Rebecca thought might help.
+- **No specificity**: Instructions were vague ("try a gratitude journal," "try deep breathing").
+- **No barrier planning**: The therapist never addressed obstacles (e.g., "You said jogging sounds like a lot—what would be more realistic?").
+- **No follow-up**: The therapist never planned to review whether techniques were attempted or helpful.
+- **No systematic application**: Techniques were scattered across the session without coherent sequencing or connection to a treatment plan.
+
+**Most critically, no core CBT techniques for factitious disorder were applied:**
+- No thought records examining illness-related thoughts
+- No behavioral experiments testing beliefs about recovery
+- No exposure to non-illness-focused activities
+- No cognitive work on identity, perfectionism, or shame
+- No exploration of the function of illness behavior
+- No psychoeducation about factitious disorder
+
+**Summary:**
+
+CBT techniques were mentioned but not skillfully applied. Suggestions lacked rationale, specificity, collaboration, and follow-up. No systematic application of evidence-based techniques for factitious disorder occurred.
+
+---
+
+### 11. Homework
+### **Score: 0/6**
+
+**Explanation:**
+
+Homework was not formally assigned, reviewed, or structured in any evidence-based manner. Proper CBT homework requires: (1) review of prior assignments, (2) collaborative selection of new tasks, (3) clear rationale explaining why the homework matters, (4) specific, detailed instructions, (5) anticipation of barriers, (6) written documentation, and (7) explicit commitment from the patient.
+
+**What occurred:**
+
+The therapist made vague suggestions throughout the session ("Maybe you could try...") but never formally assigned homework. At session end, the therapist simply said, "Just keep believing in yourself and remember that better days are ahead. Take care, and don't hesitate to reach out if you need a little boost."
+
+This is not homework assignment. There is no:
+- Explicit task ("Between now and our next session, I'd like you to...")
+- Clear rationale ("The reason this matters is...")
+- Specific instructions ("Write down three things each day...")
+- Barrier planning ("What might get in the way?")
+- Commitment check ("Does this feel doable?")
+- Written record or documentation
+
+**Implied but never formalized:**
+
+Throughout the session, the therapist suggested:
+- Gratitude journal
+- Reading a new book
+- Changing where you read
+- Deep breathing/meditation
+- Staying hydrated
+- Getting rest
+- Jogging
+
+None of these were formally assigned as homework with rationale, specificity, or commitment.
+
+**Critical omission for factitious disorder:**
+
+For a patient with factitious disorder, homework might include:
+- Monitoring illness-related thoughts and behaviors
+- Engaging in non-illness-focused activities
+- Behavioral experiments testing beliefs about recovery
+- Thought records examining perfectionism or shame
+- Tracking the function of illness behavior
+
+None of this was assigned.
+
+**Summary:**
+
+No formal homework was assigned. Vague suggestions were made throughout the session but never structured as explicit, rationale-based, specific between-session tasks with commitment and follow-up planning.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- **Basic empathic tone**: The therapist maintained a warm, non-hostile demeanor and did not demean or criticize the patient.
+- **Patient engagement**: Rebecca remained engaged throughout the session and did not become defensive or withdrawn.
+- **Acknowledgment of struggle**: The therapist acknowledged that Rebecca's situation is difficult and that pain is real.
+
+### Critical Deficiencies:
+
+**1. Complete absence of CBT structure and framework:**
+- No agenda setting or collaborative goal-setting
+- No coherent treatment strategy or conceptualization
+- No systematic application of evidence-based techniques
+- No homework assignment or between-session planning
+
+**2. Failure to address the actual diagnosis (factitious disorder):**
+- No exploration of deceptive behavior or medical history discrepancies
+- No examination of the function of illness behavior
+- No psychoeducation about factitious disorder
+- No work on identity, perfectionism, shame, or secondary gains
+- No cognitive work on underlying beliefs maintaining the disorder
+
+**3. Inappropriate therapeutic approach:**
+- Excessive personal disclosure and self-focused anecdotes
+- Premature reassurance and false optimism
+- Advice-giving without collaboration or guided discovery
+- Generic wellness suggestions disconnected from Rebecca's core pathology
+
+**4. Fundamental CBT technique failures:**
+- Zero Socratic questioning (guided discovery completely absent)
+- No cognitive restructuring or thought examination
+- No behavioral experiments or systematic behavioral activation
+- No thought records or cognitive work
+- No psychoeducation or rationale for interventions
+
+**5. Missed critical clinical information:**
+- Ignored discrepancies between reported and actual medical history
+- Failed to explore the daily support group engagement and its function
+- Did not address ambivalence or resistance to recovery
+- Missed identity fusion with illness
+- Did not examine perfectionism or shame
+
+---
+
+## Summary of Feedback
+
+### Strengths
+
+The therapist maintained a warm, non-hostile therapeutic demeanor and demonstrated basic empathic listening. Rebecca remained engaged throughout both sessions and did not become defensive. The therapist acknowledged the genuine difficulty of living with chronic pain and did not minimize her experience through dismissal. The therapist also appropriately avoided pathologizing language or criticism.
+
+### Critical Deficiencies
+
+This session represents a fundamental departure from evidence-based CBT. The therapist failed to establish any coherent treatment structure, strategy, or conceptualization. Most critically, the therapist did not address Rebecca's actual diagnosis—factitious disorder—which requires specific, targeted intervention focused on understanding the psychological function of illness behavior, examining identity and perfectionism, and developing insight into deceptive patterns.
+
+Instead, the therapist offered generic wellness advice (gratitude journals, hydration, jogging, reading) disconnected from Rebecca's core pathology. The therapist relied exclusively on advice-giving and reassurance rather than using Socratic questioning to facilitate patient insight. No collaborative agenda was established, no treatment goals were clarified, and no coherent strategy for change was articulated. The therapist's repeated personal anecdotes ("When I was going through a tough time...") violated therapeutic boundaries and shifted focus from the patient's experience to the therapist's, which may inadvertently reinforce attention-seeking behavior in a patient with factitious disorder.
+
+Most fundamentally, the therapist did not apply any systematic CBT techniques. No thought records were used, no behavioral experiments were conducted, no cognitive restructuring occurred, and no guided discovery took place. Suggestions were vague, unspecific, and lacked rationale or follow-up planning. No homework was formally assigned with clear instructions and commitment.
+
+### Impact on Patient Care
+
+This session is unlikely to produce meaningful therapeutic change and may inadvertently reinforce maladaptive patterns. For a patient with factitious disorder, the therapist's warm, validating approach without clear boundaries or challenge may reinforce the sick role. The focus on generic wellness advice rather than the underlying psychological mechanisms maintaining illness behavior means the core problem remains unaddressed. Rebecca leaves the session without insight into her patterns, without a clear treatment plan, and without specific, actionable steps toward recovery.
+
+The therapist's failure to address the factitious disorder diagnosis directly represents a significant clinical gap. Rebecca's deceptive behavior (reporting fewer hospitalizations than actually occurred, fleeing the hospital after normal test results) was never explored or addressed. Her identity fusion with illness, her daily engagement with a bowel disorders support group, and her perfectionism were never examined. Without this work, the session cannot be considered adequate treatment for her actual condition.
+
+Furthermore, the therapist's approach may have inadvertently reinforced avoidance of the core issues. By offering reassurance and generic advice rather than collaborative exploration, the therapist may have allowed Rebecca to remain in her current patterns without developing the insight necessary for change.
+
+---
+
+## Recommendations
+
+### 1. **Establish a Clear Collaborative Agenda (HIGHEST PRIORITY)**
+
+**Action:** At the beginning of each session, explicitly set a collaborative agenda with the patient. Ask what brought them in, what they want to work on, and what would be most helpful. Prioritize topics and allocate time.
+
+**Example:**
+"Rebecca, I want to make sure we use our time together in the way that's most helpful for you. What's most important for us to focus on today? [Listen.] Okay, so you're dealing with pain, frustration about work, and feeling stuck. Of those, what feels most urgent to address right now? [Listen.] Let's start there and see how much time we have."
+
+**Practice:** Before your next session, write out three different agenda-setting questions and practice saying them naturally. Role-play with a colleague where they are the patient and you set an agenda collaboratively.
+
+---
+
+### 2. **Develop a Coherent CBT Conceptualization of Factitious Disorder (HIGHEST PRIORITY)**
+
+**Action:** Explicitly formulate a working hypothesis about Rebecca's factitious disorder. What psychological needs might the sick role be meeting? What beliefs or fears might be driving the behavior? Share this conceptualization with the patient collaboratively.
+
+**Example:**
+"Rebecca, I've been thinking about what you've shared. It sounds like being sick might be serving some important functions for you—maybe it explains why things are hard, maybe it gets you the attention and understanding you need, maybe it gives you a clear identity. I'm wondering if that resonates with you? What do you think?"
+
+**Practice:** Write out a one-paragraph conceptualization of Rebecca's factitious disorder addressing: (1) the function of illness behavior, (2) underlying beliefs or fears, (3) maintaining factors, (4) how this connects to her history. Discuss this with a supervisor.
+
+---
+
+### 3. **Eliminate Excessive Personal Disclosure and Maintain Professional Boundaries**
+
+**Action:** Stop sharing personal anecdotes about your own experiences. Redirect focus to the patient's experience. Use empathy without self-disclosure.
+
+**Example (Instead of: "When I was feeling down, I..."):**
+"That sounds really difficult—feeling stuck in a cycle where the pain keeps you from doing things, but then not doing things makes you feel more stuck. That's a tough position to be in. What do you think keeps that cycle going?"
+
+**Practice:** Record yourself in a practice session and count how many times you say "I" or share personal experience. Aim for zero. Practice empathic responses that focus entirely on the patient's experience.
+
+---
+
+### 4. **Implement Systematic Guided Discovery (Socratic Questioning)**
+
+**Action:** Replace advice-giving with Socratic questions. Ask questions that help Rebecca discover her own insights about her patterns, beliefs, and behaviors.
+
+**Example:**
+Instead of: "Maybe you could try a gratitude journal."
+Ask: "What do you think might happen if you started noticing the small good moments in your day? How might that change things? What would be hard about that?"
+
+Instead of: "Just try to think positive."
+Ask: "When you think about your situation, what thoughts go through your head? What do those thoughts mean to you? Is there another way to look at it?"
+
+**Practice:** Write out 10 Socratic questions you could ask Rebecca about: (1) her identity and illness, (2) her perfectionism, (3) her ambivalence about recovery, (4) the function of her illness behavior. Practice asking these naturally in role-play.
+
+---
+
+### 5. **Directly Address the Factitious Disorder Diagnosis and Deceptive Behavior**
+
+**Action:** Gently but directly explore the discrepancies in Rebecca's medical history and her behavior (fleeing the hospital after normal results). Use collaborative exploration rather than accusation.
+
+**Example:**
+"Rebecca, I want to check something with you. In our first conversation, you mentioned you'd been hospitalized a few times, but I also have information suggesting there have been more hospitalizations than that. I'm not trying to catch you in anything—I'm genuinely curious about what's going on. Can you help me understand that?"
+
+Or: "I noticed you left the hospital pretty quickly after the tests came back normal. What was that about? What were you feeling?"
+
+**Practice:** Develop a compassionate, non-accusatory way to explore these discrepancies. Practice with a supervisor or colleague. The goal is collaborative exploration, not confrontation.
+
+---
+
+### 6. **Explore the Function of Illness Behavior and Identity Fusion with Illness**
+
+**Action:** Use guided discovery to help Rebecca examine what the sick role provides for her and how her identity is connected to illness.
+
+**Example:**
+"You mentioned that your aunt is the only family member who really understands you because she also has Crohn's disease. What is it about that shared experience that makes her understand you? [Listen.] And I'm wondering—if you didn't have Crohn's, how would your relationship with her be different? [Listen.] What does that tell you about what the illness means to you?"
+
+Or: "You talk about the support group daily. What do you get from that connection? [Listen.] What would be different if you weren't part of that group? [Listen.] What would you lose?"
+
+**Practice:** Write out 5-7 questions exploring: (1) what the sick role provides, (2) how illness is connected to her identity, (3) what she fears would happen if she got better, (4) what needs the illness is meeting. Practice asking these with genuine curiosity.
+
+---
+
+### 7. **Implement Behavioral Experiments to Test Beliefs About Recovery**
+
+**Action:** Design collaborative behavioral experiments that help Rebecca test her beliefs about what happens when she engages in non-illness-focused activities or when she recovers.
+
+**Example:**
+"You said you're skeptical that relaxation techniques would help because the pain is so intense. What if we tested that? What if you tried deep breathing for 5 minutes when the pain is moderate—not when it's at its worst—and we see what actually happens? Not to make the pain go away, but to see if it changes anything. Would you be willing to try that and report back?"
+
+Or: "You mentioned you haven't kept up with hobbies because of the pain. What if we picked one small hobby—like reading for 15 minutes—and you did it even if the pain is there? Not to prove anything, just to see what happens. What would you predict would happen?"
+
+**Practice:** Design 3-4 behavioral experiments for Rebecca that test her beliefs about recovery, pain, and functioning. Write out the rationale for each and how you would present it collaboratively.
+
+---
+
+### 8. **Use Thought Records to Examine Perfectionism and Shame**
+
+**Action:** Introduce thought records to help Rebecca examine the thoughts driving her perfectionism ("I'm letting everyone down") and shame about her condition.
+
+**Example:**
+"Rebecca, you mentioned feeling like you're letting everyone down. That sounds like a really painful thought. What if we looked at that thought more carefully? When you have that thought, what evidence do you have that it's true? [Listen.] What evidence do you have against it? [Listen.] What would a friend say about that thought? [Listen.] What's a more balanced way to think about it?"
+
+**Practice:** Create a thought record template and practice filling it out with Rebecca's thoughts about: (1) "I'm letting everyone down," (2) "I can't handle normal life," (3) "No one understands me." Practice presenting this collaboratively.
+
+---
+
+### 9. **Assign Specific, Rationale-Based Homework with Clear Follow-Up**
+
+**Action:** Formally assign homework with explicit rationale, specific instructions, barrier planning, and commitment. Document it in writing.
+
+**Example:**
+"Between now and our next session, I'd like you to do something specific. Here's why: [rationale]. Here's what I want you to do: [specific task]. Here's how to do it: [detailed instructions]. What might get in the way? [Listen and problem-solve.] Does this feel doable? [Get commitment.] Let's write this down so you have it."
+
+**Practice:** Write out 3 specific homework assignments for Rebecca with: (1) clear rationale, (2) detailed instructions, (3) anticipated barriers, (4) commitment check. Practice assigning them in role-play.
+
+---
+
+### 10. **Develop a Coherent Treatment Strategy with Explicit Goals**
+
+**Action:** Create a clear, written treatment plan that outlines: (1) the problem conceptualization, (2) treatment goals, (3) the sequence of interventions, (4) how each intervention connects to the goals, (5) expected timeline.
+
+**Example:**
+"Rebecca, here's how I'm thinking about what we need to work on together:
+
+**Problem:** You've developed a pattern where being sick has become central to your identity and how you get your needs met. This is keeping you stuck and preventing you from building the life you want.
+
+**Goals:** (1) Develop insight into how the sick role is serving you, (2) Identify what needs it's meeting and find other ways to meet those needs, (3) Build an identity beyond illness, (4) Gradually increase engagement in non-illness-focused activities.
+
+**How we'll do it:** First, we'll explore together what the sick role provides. Then we'll look at your beliefs about recovery and test them. We'll work on your perfectionism and shame. And we'll gradually help you build a life that's not centered on illness.
+
+Does this make sense? What would you add or change?"
+
+**Practice:** Write out a complete treatment plan for Rebecca addressing all elements above. Discuss with a supervisor.
+
+---
+
+### 11. **Eliminate Generic Reassurance and Replace with Validation + Exploration**
+
+**Action:** Stop offering premature reassurance ("it'll get better," "you're stronger than you think"). Instead, validate the difficulty and explore it collaboratively.
+
+**Example (Instead of: "It'll get better with time"):**
+"This is really hard. You're dealing with genuine pain, you've lost your job, you're isolated. That's a lot. And on top of that, you're feeling stuck in a cycle where you can't see a way out. That makes sense that you'd feel hopeless sometimes. What do you think would need to change for things to feel different?"
+
+**Practice:** Write out 5 situations where you might be tempted to offer reassurance. For each, write a validating response that explores the difficulty instead. Practice saying these naturally.
+
+---
+
+### 12. **Establish Clear Professional Boundaries and Avoid Pseudo-Intimacy**
+
+**Action:** Maintain warm professionalism without blurred boundaries. Do not share personal experiences. Do not position yourself as a peer who has "been through it too."
+
+**Example (Instead of: "When I was stressed out..."):**
+"I appreciate you sharing that with me. My role is to help you understand what's happening and find a way forward. Let's focus on your experience and what might help you."
+
+**Practice:** Review recordings of your sessions and identify moments where boundaries blur. Practice redirecting to the patient's experience while maintaining warmth.
+
+---
+
+## Overall Session Score: 0.9/6
+
+**Summary:**
+
+This session represents a fundamental failure to deliver evidence-based CBT. While the therapist demonstrated basic warmth and did not harm the patient through hostility or criticism, the session lacked every core component of CBT: no agenda, no guided discovery, no systematic technique application, no coherent strategy, and no homework. Most critically, the therapist failed to address Rebecca's actual diagnosis—factitious disorder—which requires specific, targeted intervention focused on understanding the psychological function of illness behavior.
+
+The therapist's approach of offering generic wellness advice, excessive personal disclosure, and premature reassurance is not only ineffective for factitious disorder but may inadvertently reinforce maladaptive patterns. Rebecca leaves the session without insight into her condition, without a clear treatment plan, and without specific steps toward recovery.
+
+**This session does not qualify as evidence-based CBT.** It is more accurately described as supportive counseling with generic wellness suggestions. For a patient with factitious disorder—a complex condition requiring sophisticated psychological intervention—this approach is inadequate and unlikely to produce meaningful therapeutic change.
+
+**Immediate actions required:**
+1. Receive supervision on CBT conceptualization and treatment planning
+2. Learn and practice Socratic questioning and guided discovery
+3. Develop a specific treatment protocol for factitious disorder
+4. Establish clear professional boundaries and eliminate personal disclosure
+5. Practice formal agenda-setting and homework assignment
+6. Receive training on addressing deceptive behavior and identity issues in factitious disorder
+
+This therapist requires significant additional training before continuing to treat patients with complex presentations like factitious disorder.

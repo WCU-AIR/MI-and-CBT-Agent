@@ -1,0 +1,940 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Insomnia Disorder
+
+--- CASE STUDY ---
+
+Aidan Johns, a 30-year-old graduate student in English, visited a psychiatrist for difficulty staying asleep. The problem began 4 months earlier, with early morning awakenings at 3:00 AM and inability to return to sleep. Daytime fatigue and difficulty concentrating led him to worry about completing his doctoral dissertation and teaching responsibilities.
+
+He initially had no particular thoughts on waking, but the persistent sleep disturbance caused anticipatory anxiety about the day ahead. Some mornings he lay awake next to his fiancée, other mornings he got up early to work.
+
+After one month of interrupted sleep, he consulted a physician's assistant who prescribed a sedative-hypnotic, which was ineffective. Falling asleep was never the issue; the problem was staying asleep. He avoids caffeine after 2:00 PM, limits tennis to mornings, and consumes one to two glasses of wine nightly.
+
+Mental status examination: Aidan appeared slender, fit, pleasant, and open. He was not visibly tired and dressed as a young academic. He described his low-level anxiety regarding sleep and reported stress related to work and relationship strain. He had previously completed 3 years of psychodynamic psychotherapy in college. He has historically been an “easy sleeper.”
+
+Discussion: Aidan reports 4 months of dissatisfaction with sleep, difficulty maintaining sleep, early morning awakenings, daytime fatigue, impaired concentration, mild anxiety, and interpersonal and vocational impairment. No other medical, psychiatric, or substance use disorders are indicated. DSM-5 criteria for insomnia disorder are met. Behavioral patterns, including worry about sleep and use of wine and caffeine, may perpetuate the problem. Asthma and occasional use of β2-adrenergic agonists may contribute to arousal.
+
+--- BEHAVIOUR ---
+- Pleasant, open, and cooperative
+- Articulate and expressive
+- Not visibly fatigued
+- Mild low-level anxiety about sleep
+- Insightful about stress and sleep patterns
+- Maintains appropriate eye contact
+
+--- SYMPTOMS from DSM-5 ---
+- Difficulty maintaining sleep (frequent awakenings)
+- Early morning awakening
+- Daytime fatigue and impairment
+- Difficulty concentrating
+- Mild anxiety related to sleep
+- Sleep dissatisfaction despite adequate opportunity
+- Sleep disturbance causing distress or impairment
+
+--- PATIENT PROFILE ---
+Name: Aidan Johns
+Sex: Male
+Age: 30 years
+DOB: June 12, 1993
+Place of Birth: Vancouver, BC, Canada
+Address: 221 Willow Crescent, Vancouver, BC, V6B 1L5
+Contact: (604) 555-6732
+Marital Status: Engaged
+Children: None
+Occupation: Graduate student, English
+Education: Master’s program in English
+Religion: None specified
+Legal Guardian: N/A
+Presenting Complaint: Difficulty staying asleep; early morning awakenings
+Psychiatric History: 3-year psychodynamic psychotherapy in college
+Psychotherapy: Completed; none currently
+Medications: Occasional β2-adrenergic agonists for asthma; ineffective sedative-hypnotic previously
+Substance Use: 1–2 glasses of wine nightly; avoids caffeine after 2:00 PM
+Medical History: Asthma; mononucleosis 1 year prior
+Neurology: Normal
+Family History: Father is a child psychiatrist; other psychiatric history not specified
+Mental Status: Alert, cooperative, articulate; mild sleep-related anxiety; no evidence of depression; insightful; appropriate affect
+
+--- DIAGNOSIS ---
+Insomnia Disorder
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Aidan Johns, a 30-year-old graduate student in English, presents to the outpatient psychiatric clinic for evaluation of difficulty staying asleep and early morning awakenings, as reported by the patient himself. He seeks assessment following persistent sleep disturbances over the past four months that have impacted his daytime functioning.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hi there! It’s nice to see you today. How have you been feeling lately? 
+ PATIENT: Hi, thanks for asking. I've been feeling pretty tired most days because I keep waking up really early—like around 3:00 in the morning—and then I just can't get back to sleep. It’s frustrating because by the time morning actually comes, I'm already worn out and it’s been hard to concentrate on my work and dissertation. I guess I’ve been a bit anxious about how this is going to affect my progress. But overall, I’m managing okay. 
+ PSYCHIATRIST: Hey! It’s good you’re here. You know, stuff like that happens to everyone sometimes, so don’t sweat it too much. Just try to think positive—things usually get better on their own. When I was stressed out, I found that just taking a deep breath and telling myself “this too shall pass” helped a lot. Have you tried anything like that? 
+ PATIENT: Yeah, I get what you mean about not sweating it too much—it’s just easier said than done sometimes. I do try to remind myself that it’s temporary, especially when I’m awake in the middle of the night, but my mind kind of drifts toward all the things I need to get done and how I’m not getting enough rest to handle them well. The deep breathing thing sounds nice, though. I haven’t really focused on that much, but maybe it could help calm me down when I wake up. Most of the time, I just lie there and get more and more frustrated, which probably doesn’t help. 
+ PSYCHIATRIST: Oh yeah, frustration is such a pain, but you know, everybody goes through that kind of stuff. When I was in college, I had this phase where I was super stressed about exams and couldn’t sleep either. What helped me was just trying to distract myself with something fun, like watching a silly movie or chatting with friends. Maybe you could try that when you’re awake at night? Sometimes just taking your mind off things can make the stress fade a bit. What do you think? 
+ PATIENT: I like the idea of distracting myself with something fun—I guess sometimes I just get stuck in this loop of worrying about work and sleep, and it’s hard to break out of it. Watching a silly movie sounds nice, but I worry it might mess up my sleep even more if I’m looking at a screen right before bed or late at night. Chatting with friends might be good too, but usually when I wake up at 3:00 AM, nobody’s really awake. I do sometimes get up early and start working, hoping to use the time productively, but then I get even more tired the next day. I’m open to trying distractions though; maybe I can find something low-key that doesn’t mess with my sleep rhythm. 
+ PSYCHIATRIST: Yeah, screens can be tricky late at night, huh? Maybe you could try reading a book or listening to some calm music instead—something that’s not too stimulating but still takes your mind off the worries. It’s all about finding what works for you. Remember, it’s important to keep a positive mindset. Just keep telling yourself that you’re doing your best and things will improve. Sometimes, it just takes a little time. Have you been drinking enough water lately? Staying hydrated can really help with overall energy. 
+ PATIENT: That’s a good point about screens—I do love reading, so picking up a book when I wake up could be a good way to distract myself without making things worse. Calm music sounds nice, too. I hadn’t thought about hydration, but now that you mention it, I probably haven’t been drinking enough water throughout the day. I mostly have tea in the mornings and then wine in the evenings, but I don’t pay much attention to water. I’ll try to drink more water and see if that helps with my energy. It’s reassuring to hear that just giving myself time and being patient might make a difference. Sometimes it feels like I’m just stuck, though. Do you think this will really get better? 
+ PSYCHIATRIST: Oh, definitely! Things do get better, even if it doesn’t feel like it right now. I remember when I was going through a tough patch, I felt stuck too, but eventually, things started to turn around. Just keep focusing on the little things, like drinking water and trying to relax. You’re doing great by even talking about this stuff. Sometimes, just sharing what’s on your mind can make a big difference. Have you been able to get outside for some fresh air lately? That always helped me clear my head. 
+ PATIENT: Thanks, that really helps to hear. It’s reassuring to know other people have been through similar things and came out the other side. I’ve been trying to get outside, especially since I play tennis in the mornings. That usually helps clear my head, but I’ve had to cut back on my usual activity because I’m worried about my energy levels during the day. Sometimes I wonder if I'm pushing myself too hard or if I should be resting more. I guess fresh air does help—it’s just tough to balance everything when I’m feeling so tired. 
+ PSYCHIATRIST: Yeah, balancing everything can be really tricky. When I was feeling wiped out, I found that just making sure I got enough sleep and drank lots of water helped a ton. Sometimes, you just gotta listen to your body and take it easy when you need to. Oh, and speaking of tennis, I once tried to learn a new sport, but I kept messing up and it was frustrating. But I just kept at it, and eventually, it got better. So maybe you’re doing the right thing by adjusting your routine. Have you thought about trying some gentle stretching or relaxation exercises before bed? That might help you wind down. 
+ PATIENT: That makes a lot of sense—I probably do need to listen to my body more and not push myself too hard when I’m feeling wiped out. Tennis is usually a good outlet for me, but I’m trying to keep it to the mornings so it doesn’t mess with my sleep, like you said. The idea of gentle stretching or relaxation exercises sounds appealing. I haven’t tried that much, but I can imagine it might help me wind down without making me more alert. I think I’ll give that a shot before bed and see how it feels. It’s encouraging to hear about your experience with learning a new sport and sticking with it—maybe I can be a bit more patient with myself, too. 
+ PSYCHIATRIST: Hey, you’re really doing a great job just by being open and willing to try new things. Sometimes progress is slow, but it’s all about keeping a positive attitude and believing that you can get through this. I remember when I was trying to eat healthier, it took me a while to get used to it, but sticking with it made a big difference. So, just keep at it with the stretching and the water and the fresh air. You’ve got this! 
+ PATIENT: Thanks, I appreciate that a lot. It feels good to hear encouragement like that—it can be easy to get caught up in the “why isn’t this working yet?” thoughts. I’m definitely going to try to keep a more positive attitude, even on the tough nights. I want to keep making those small changes, like stretching and drinking more water, because I know they add up. It’s nice to be reminded that progress doesn’t have to be perfect or fast to be real. I’ll keep telling myself I’ve got this. Thanks for listening and supporting me. 
+ PSYCHIATRIST: Hey, it’s really good to see you trying to stay positive. You know, sometimes just believing things will get better is half the battle. When I was stressed, I’d remind myself that “this too shall pass,” and it helped me keep going. Just keep doing what you’re doing, and don’t forget to drink water and get some fresh air. You’re on the right track! Keep your head up! 
+ PATIENT: Thanks, that phrase—“this too shall pass”—really sticks with me. I think I’ll try to use that whenever I catch myself worrying about how long this will last. It’s easy to get overwhelmed and feel like the tiredness and frustration are permanent, but reminding myself it’s temporary could help me chill out a bit. I’m going to keep focusing on those small steps—water, fresh air, stretching—and try not to be too hard on myself. It means a lot to have your support. I’ll definitely keep my head up. 
+ PSYCHIATRIST: Hey, it’s good to see you again. You know, sometimes just keeping a positive mindset can really help when things feel tough. When I was stressed, I used to tell myself, “this too shall pass,” and it helped me get through. Just keep doing your best and remember, things usually get better with time. Have you been able to get outside for some fresh air lately? 
+ PATIENT: Hey, thanks for checking in again. Yeah, I’ve been trying to get outside more recently. Playing tennis in the mornings is still helping me clear my head, even if I’m doing a bit less than before. I’ve also started going for short walks when I can, just to get some fresh air and a change of scenery. It seems to help, though I still feel tired during the day. I’m trying to stick to my new habits like stretching before bed and drinking more water, but it’s definitely a work in progress. I’m hopeful things will improve over time, but it’s tough not to get discouraged sometimes. 
+ PSYCHIATRIST: Hey, it’s really great that you’re getting outside and keeping up with tennis and walks—that’s awesome! You know, sometimes life just throws us curveballs, and it’s all about hanging in there and staying positive. I remember when I was trying to eat healthier, it took me a while to get into the groove, but sticking with it made a big difference. Just keep doing what you’re doing with the stretching and water and fresh air. You’re on the right track! Keep your head up! 
+ PATIENT: Thanks, I really appreciate the encouragement. It’s good to be reminded that sticking with these small routines can make a difference, even if it takes a while to notice. I’m trying not to get too hard on myself when I don’t sleep well or feel exhausted, and instead focus on what I can control. The stretching, water, and fresh air are becoming part of my daily routine, and I can tell it’s helping, even if slowly. I’ll do my best to keep my head up and keep moving forward. It feels good to know I’m on the right track. 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist made no attempt to establish a collaborative agenda at any point in the session. A proper CBT agenda would involve: (1) explicitly identifying the session's target problems, (2) prioritizing which issues to address given time constraints, (3) establishing specific, measurable goals for the session, and (4) checking whether the patient agrees with the plan. None of these occurred.
+
+Instead, the therapist launched immediately into general advice ("try to think positive," "take a deep breath") without first clarifying what the session would focus on. When the patient mentioned early morning awakenings, daytime fatigue, difficulty concentrating, and anxiety about dissertation progress, the therapist never said anything like: "So I'm hearing several things affecting you—the 3 AM awakenings, the fatigue during the day, worry about your work. What feels most important to tackle today?" or "We have about 50 minutes. Should we focus on understanding what's keeping you awake, or would you rather start with strategies to manage the fatigue?"
+
+The session drifted without structure, with the therapist offering disconnected suggestions (water intake, movies, stretching, fresh air) that were never tied to a coherent treatment plan. By the end, it's unclear what the patient should prioritize or what the next session will address.
+
+**Summary:**
+
+No agenda was established. The session lacked structure, prioritization, or explicit goals. This is a fundamental CBT failure that undermines all subsequent work.
+
+---
+
+### 2. Feedback
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist elicited minimal feedback and did not systematically check for patient understanding or satisfaction. Evidence-based CBT requires regular feedback loops: "Does that make sense?" "How are you feeling about what we've discussed?" "Is this approach resonating with you?" "What's your reaction to this idea?"
+
+The therapist asked only one genuine feedback question: "What do you think?" after suggesting distraction techniques. The patient responded thoughtfully, raising legitimate concerns about screen time and 3 AM availability of friends—concerns the therapist acknowledged but never fully explored or addressed.
+
+The therapist never:
+- Asked whether the patient understood the rationale for suggested interventions
+- Checked whether the patient found the suggestions helpful or realistic
+- Solicited the patient's own ideas about what might help
+- Asked for reactions to the session at the end
+- Summarized key points and asked if the patient agreed
+- Assessed whether the patient felt heard or validated
+
+Instead, the therapist repeatedly shared personal anecdotes ("When I was stressed," "When I was in college," "When I was trying to eat healthier") without checking whether these were relevant or helpful to the patient. The patient's polite responses ("That makes a lot of sense," "Thanks, I appreciate that") may reflect social courtesy rather than genuine agreement.
+
+**Summary:**
+
+Minimal feedback elicitation. The therapist did not systematically check understanding, satisfaction, or agreement. This violates a core CBT principle of collaborative empiricism.
+
+---
+
+### 3. Understanding
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist demonstrated surface-level understanding of the patient's explicit statements but missed critical nuances and the patient's underlying concerns. The patient clearly articulated:
+
+1. **The core problem:** Early morning awakenings at 3 AM with inability to return to sleep (not difficulty falling asleep)
+2. **The consequence:** Daytime fatigue and impaired concentration affecting dissertation and teaching
+3. **The cognitive pattern:** Mind drifts to worries about work and rest deprivation; frustration escalates when lying awake
+4. **The behavioral pattern:** Sometimes gets up to work; sometimes lies in bed frustrated; has cut back on tennis due to energy concerns
+5. **The maintaining factors:** Anticipatory anxiety about the day; worry about sleep itself; possible use of wine (1-2 glasses nightly) and caffeine
+
+The therapist acknowledged these statements but never demonstrated deep understanding. For example:
+
+- The patient said: "my mind kind of drifts toward all the things I need to get done and how I'm not getting enough rest to handle them well." This is a classic cognitive-behavioral maintenance cycle (worry → arousal → inability to sleep → more worry). The therapist never reflected this back or explored it.
+
+- The patient said: "I just lie there and get more and more frustrated, which probably doesn't help." This is insight into how rumination and frustration perpetuate insomnia. The therapist never validated this or built on it.
+
+- The patient mentioned wine consumption (1-2 glasses nightly) almost in passing. The therapist never explored this as a potential sleep disruptor, despite it being highly relevant to insomnia maintenance.
+
+- The patient expressed ambivalence about activity: "I've had to cut back on my usual activity because I'm worried about my energy levels during the day. Sometimes I wonder if I'm pushing myself too hard or if I should be resting more." This suggests avoidance behavior that may worsen fatigue. The therapist never explored this tension.
+
+The therapist's responses were generic ("Yeah, balancing everything can be really tricky") rather than demonstrating specific comprehension of Aidan's situation. Empathy was present but superficial.
+
+**Summary:**
+
+The therapist grasped explicit content but missed critical cognitive and behavioral patterns maintaining the insomnia. Understanding remained at a surface level without demonstrating grasp of the patient's internal experience or the functional relationships between thoughts, behaviors, and sleep.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 3/6**
+
+**Explanation:**
+
+The therapist displayed adequate warmth and genuineness but with significant interpersonal problems that undermined the therapeutic relationship. Strengths included:
+
+- Friendly, welcoming tone ("Hi there! It's nice to see you today")
+- Consistent encouragement and validation ("You're doing great," "You've got this!")
+- Appropriate professional boundaries (no boundary violations)
+- Genuine interest in the patient's wellbeing
+
+However, critical problems emerged:
+
+1. **Excessive self-disclosure:** The therapist repeatedly shared personal anecdotes ("When I was stressed," "When I was in college," "When I was trying to eat healthier," "When I was trying to learn a new sport"). This violates therapeutic boundaries and shifts focus from the patient to the therapist. While occasional, appropriate self-disclosure can normalize experiences, this therapist did it excessively (at least 6 instances) and without clear therapeutic purpose. Each anecdote was tangentially related at best.
+
+2. **Minimization of patient's concerns:** Statements like "stuff like that happens to everyone sometimes, so don't sweat it too much" and "everybody goes through that kind of stuff" minimize the patient's distress. While normalizing can be helpful, it was paired with dismissal rather than validation of the patient's specific struggle.
+
+3. **Platitudes over genuine engagement:** Phrases like "this too shall pass," "just keep a positive attitude," and "things usually get better with time" are generic and repeated multiple times. They lack specificity to Aidan's situation and may feel dismissive of his real suffering.
+
+4. **Lack of curiosity:** The therapist never asked deeper questions about the patient's experience, thoughts, or feelings. Questions were minimal and often rhetorical ("What do you think?" followed immediately by the therapist's own suggestions).
+
+The overall effect is that the patient may feel supported but not truly understood or engaged with as a unique individual with a specific problem requiring targeted intervention.
+
+**Summary:**
+
+Adequate warmth and professionalism, but excessive self-disclosure, minimization, and lack of genuine curiosity undermined therapeutic effectiveness. The relationship felt supportive but superficial.
+
+---
+
+### 5. Collaboration
+### **Score: 1/6**
+
+**Explanation:**
+
+Collaboration was minimal and largely absent. True CBT collaboration involves:
+
+1. **Shared problem definition:** Therapist and patient jointly define the problem and agree on its nature
+2. **Collaborative empiricism:** Treating therapy as an experiment where both parties generate hypotheses and test them
+3. **Patient input on interventions:** Asking "What do you think might help?" or "Does this approach make sense to you?"
+4. **Shared decision-making:** Patient has genuine choice in treatment direction
+5. **Active patient role:** Patient is positioned as an active agent in their own recovery
+
+None of these occurred. Instead, the therapist adopted an expert-advice model:
+
+- **Therapist proposes; patient receives:** "Try to think positive," "take a deep breath," "try distracting yourself," "try reading a book," "try gentle stretching," "drink more water," "get outside for fresh air." The patient never proposed interventions; the therapist prescribed them.
+
+- **No exploration of patient's own ideas:** The therapist never asked, "What have you already tried?" "What do you think might help?" "What's worked for you in the past?" (Though the patient mentioned previous psychodynamic therapy, the therapist never explored what he learned or what helped.)
+
+- **Patient positioned as passive recipient:** The patient's role was to listen, agree, and promise to try things. There was no genuine partnership.
+
+- **No hypothesis testing:** The therapist never said, "Let's think about what might be keeping you awake. What do you notice about the nights when you wake up? Are there patterns?" Instead, suggestions were offered without investigation.
+
+- **No collaborative case conceptualization:** The therapist never worked with the patient to develop a shared understanding of *why* the insomnia is happening and *how* interventions would address it.
+
+The patient's statement—"I'm open to trying distractions though; maybe I can find something low-key that doesn't mess with my sleep rhythm"—shows politeness and compliance, not genuine collaboration. The patient is accommodating the therapist's suggestions rather than co-creating the treatment plan.
+
+**Summary:**
+
+Collaboration was essentially absent. The therapist adopted an expert-advice model rather than collaborative empiricism. The patient was positioned as a passive recipient of suggestions rather than an active partner in treatment.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 2/6**
+
+**Explanation:**
+
+The session had significant pacing problems. While the therapist maintained a conversational flow, the session lacked structure and efficiency:
+
+1. **Repetition without progress:** The therapist repeated the same suggestions and encouragements multiple times across the session:
+   - "This too shall pass" (mentioned at least 3 times)
+   - "Keep a positive attitude" (repeated throughout)
+   - "Drink water, get fresh air, do stretching" (cycled through repeatedly)
+   - Personal anecdotes about stress (6+ instances)
+   
+   By the final exchange, the therapist was essentially repeating earlier points verbatim: "Just keep doing what you're doing with the stretching and water and fresh air. You're on the right track! Keep your head up!" This is nearly identical to earlier statements.
+
+2. **No deepening of exploration:** The session never moved beyond surface-level discussion. When the patient mentioned key issues (wine consumption, avoidance of activity, rumination at 3 AM, worry about dissertation), the therapist did not explore them further. There was no progression from problem identification → functional analysis → intervention → planning.
+
+3. **Tangential discussions:** The therapist's personal anecdotes about eating healthier, learning sports, and college stress took up session time without advancing the patient's treatment. These were not used to illustrate a point but seemed to be genuine sharing.
+
+4. **No time boundaries:** The session appears to have continued without clear structure or time management. A therapist managing time efficiently would have said: "We have about 45 minutes. Let's focus on understanding what's happening at 3 AM and develop a specific plan. We can revisit other issues next session."
+
+5. **Lack of prioritization:** Multiple potential interventions were mentioned (distraction, stretching, water, fresh air, positive thinking, reading, music) without prioritizing which to focus on or in what order to implement them.
+
+The session felt like it could have been 20 minutes shorter without losing essential content. The repetition and lack of structural progression suggest poor time management.
+
+**Summary:**
+
+Significant pacing problems. The session repeated suggestions without deepening exploration, included tangential personal anecdotes, and lacked clear structure or time boundaries. Progress was minimal despite adequate session length.
+
+---
+
+### 7. Guided Discovery
+### **Score: 0/6**
+
+**Explanation:**
+
+Guided discovery was completely absent. This is a core CBT technique where the therapist uses skillful questioning to help the patient reach insights independently rather than telling them what to think or do.
+
+Evidence-based guided discovery would involve questions like:
+
+- "When you wake up at 3 AM, what's the first thing that goes through your mind?"
+- "You mentioned your mind drifts to things you need to get done. Can you walk me through what happens? What thoughts come up?"
+- "You said you sometimes get up to work and sometimes lie there frustrated. What's the difference between those nights? What determines which you do?"
+- "You're drinking 1-2 glasses of wine nightly. What's that about? How do you think that affects your sleep?"
+- "You mentioned cutting back on tennis because you're worried about energy. What would happen if you kept your normal routine?"
+- "When you lie awake frustrated, what are you telling yourself about what this means?"
+- "You've had 4 months of this. What patterns have you noticed? What seems to make it better or worse?"
+
+Instead, the therapist offered statements and suggestions:
+
+- "Try to think positive"
+- "Just take a deep breath"
+- "Try distracting yourself with something fun"
+- "Try reading a book or listening to calm music"
+- "Drink more water"
+- "Get outside for fresh air"
+- "Try gentle stretching before bed"
+
+The therapist never asked a single question designed to help the patient discover their own patterns, thoughts, or solutions. The patient was never invited to problem-solve collaboratively. When the patient did offer insight ("I just lie there and get more and more frustrated, which probably doesn't help"), the therapist acknowledged it but didn't build on it with discovery questions.
+
+This represents a fundamental departure from CBT methodology. Guided discovery is not optional—it's central to how CBT works. Without it, the therapy becomes advice-giving, which is less effective and less empowering.
+
+**Summary:**
+
+Guided discovery was completely absent. The therapist offered advice and suggestions rather than asking questions to help the patient discover patterns and solutions. This is a critical CBT failure.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist made minimal attempt to identify and explore the central cognitions and behaviors maintaining Aidan's insomnia. This is a critical failure in CBT case conceptualization.
+
+**Key cognitions present but unexplored:**
+
+1. **Anticipatory anxiety about the day:** The patient mentioned "anticipatory anxiety about the day ahead" (from case summary) and "my mind kind of drifts toward all the things I need to get done and how I'm not getting enough rest to handle them well." This is a core maintaining cognition. The therapist never explored: What specific thoughts? How realistic are they? What evidence supports or contradicts them?
+
+2. **Worry about sleep itself:** The patient said he worries about "completing his doctoral dissertation and teaching responsibilities" and gets "more and more frustrated" lying awake. This is classic performance anxiety and worry about sleep—a key maintaining factor in insomnia. The therapist never addressed this.
+
+3. **Catastrophic thinking:** The patient's concern that sleep deprivation will prevent him from functioning is implied but never explicitly explored. Does he believe one bad night means he can't work? That he's failing? These thoughts need examination.
+
+**Key behaviors present but unexplored:**
+
+1. **Getting out of bed to work:** The patient said "Some mornings he got up early to work" and later "I sometimes get up early and start working, hoping to use the time productively, but then I get even more tired the next day." This is a critical behavior—getting up to work reinforces the association between bed and wakefulness and may perpetuate the problem. The therapist never discussed this or explored alternatives (e.g., staying in bed, doing non-stimulating activities).
+
+2. **Lying in bed frustrated:** The patient said "I just lie there and get more and more frustrated." This rumination and frustration maintain arousal. The therapist never explored what happens during these periods or how to interrupt the cycle.
+
+3. **Avoidance of activity:** The patient said "I've had to cut back on my usual activity because I'm worried about my energy levels during the day." This avoidance may worsen fatigue and mood. The therapist never explored whether this is helpful or harmful.
+
+4. **Alcohol use:** The patient drinks "one to two glasses of wine nightly." While mentioned in the case summary, the therapist never asked about this or explored its relationship to sleep. Alcohol disrupts sleep architecture and is a key maintaining factor.
+
+5. **Caffeine timing:** The patient "avoids caffeine after 2:00 PM," showing some awareness, but the therapist never explored whether this is sufficient or whether other stimulants (tea, wine) are considered.
+
+**What the therapist focused on instead:**
+
+- General positive thinking
+- Distraction techniques
+- Hydration
+- Fresh air
+- Stretching
+- Personal anecdotes
+
+None of these address the core cognitive and behavioral patterns maintaining the insomnia. The therapist never developed a functional analysis: "What's keeping this insomnia going? What thoughts and behaviors are perpetuating it?"
+
+**Summary:**
+
+The therapist failed to identify and explore central cognitions (anticipatory anxiety, worry about sleep, catastrophic thinking) and critical behaviors (getting up to work, rumination, activity avoidance, alcohol use). Instead, generic suggestions were offered without addressing the functional maintenance of the problem.
+
+---
+
+### 9. Strategy for Change
+### **Score: 0/6**
+
+**Explanation:**
+
+No coherent strategy for change was evident. A sound CBT strategy would involve:
+
+1. **Clear case conceptualization:** Understanding how the problem developed and what maintains it
+2. **Logical treatment plan:** Specific interventions targeting the maintaining factors
+3. **Sequencing:** Interventions ordered logically (e.g., address behaviors first, then cognitions)
+4. **Rationale:** Explaining to the patient *why* each intervention should help
+5. **Measurement:** Clear ways to track progress
+
+The therapist offered disconnected suggestions without a coherent strategy:
+
+- Positive thinking
+- Deep breathing
+- Distraction (movies, books, music)
+- Hydration
+- Fresh air
+- Tennis/walks
+- Stretching before bed
+
+These suggestions are not organized around a treatment strategy. They're not sequenced logically. There's no rationale connecting them to the insomnia maintenance. There's no explanation of *why* these should help or *how* they address the underlying problem.
+
+**What a CBT strategy would look like for insomnia:**
+
+A proper CBT-I (Cognitive Behavioral Therapy for Insomnia) strategy would include:
+
+1. **Sleep restriction:** Limit time in bed to match actual sleep time, gradually expanding as sleep improves
+2. **Stimulus control:** Use bed only for sleep; get up if awake >15-20 minutes
+3. **Cognitive restructuring:** Identify and challenge catastrophic thoughts about sleep loss
+4. **Worry time:** Schedule a specific time to worry about work/dissertation, not at 3 AM
+5. **Behavioral experiments:** Test beliefs (e.g., "If I rest during the day, I'll sleep better at night")
+6. **Sleep hygiene:** Address alcohol, caffeine, exercise timing
+7. **Relaxation training:** Progressive muscle relaxation or other techniques with clear rationale
+
+The therapist used none of these evidence-based CBT-I strategies. Instead, generic wellness advice was offered.
+
+**Why this matters:**
+
+Without a coherent strategy, the patient doesn't understand what he's working toward or why. He's following suggestions without understanding the logic. This reduces compliance and effectiveness. The patient may try stretching and drinking water, feel no improvement, and become discouraged—not because the strategy is wrong, but because there *is* no strategy.
+
+**Summary:**
+
+No coherent strategy for change was evident. Suggestions were disconnected and not organized around a treatment plan targeting the maintaining factors of insomnia. This represents a fundamental failure in CBT case conceptualization and treatment planning.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 1/6**
+
+**Explanation:**
+
+CBT techniques were essentially not applied. While the therapist mentioned some concepts that *could* be CBT techniques, they were not applied with any skill or structure.
+
+**Techniques mentioned but not properly applied:**
+
+1. **Positive thinking/cognitive restructuring:** The therapist repeatedly suggested "keep a positive mindset" and "just keep telling yourself that you're doing your best and things will improve." This is not cognitive restructuring. True cognitive restructuring involves: (a) identifying specific automatic thoughts, (b) examining evidence for and against them, (c) developing balanced alternative thoughts, (d) testing them. The therapist never did any of this. "Think positive" is motivational advice, not CBT.
+
+2. **Relaxation/breathing:** The therapist suggested "take a deep breath" and "try gentle stretching or relaxation exercises before bed." These are mentioned but never taught, practiced, or structured. No specific relaxation technique was introduced. No rationale was provided. No homework was assigned with clear instructions.
+
+3. **Behavioral activation/distraction:** The therapist suggested "try distracting yourself with something fun, like watching a silly movie or chatting with friends" and "try reading a book or listening to calm music." These are behavioral suggestions but not applied as part of a systematic behavioral plan. No analysis of what activities might be most helpful. No consideration of timing or context. No follow-up on whether the patient tried them or how they worked.
+
+**Techniques NOT applied that should have been:**
+
+1. **Thought records:** No structured exploration of automatic thoughts at 3 AM
+2. **Behavioral experiments:** No hypothesis testing (e.g., "Let's test whether getting up to work helps or hurts your sleep")
+3. **Sleep diary:** No systematic tracking of sleep patterns to identify triggers
+4. **Stimulus control:** No discussion of using bed only for sleep
+5. **Sleep restriction:** No discussion of limiting time in bed
+6. **Worry postponement:** No structured technique for managing work-related worry
+7. **Cognitive restructuring:** No systematic examination and challenging of catastrophic thoughts
+8. **Exposure:** No gradual exposure to the anxiety of being awake
+
+**Why this matters:**
+
+CBT techniques are not just suggestions—they're structured interventions with specific steps, rationales, and expected outcomes. When applied skillfully, they produce measurable change. When mentioned casually ("try stretching," "think positive"), they're just advice. The therapist conflated general wellness suggestions with CBT techniques.
+
+**Summary:**
+
+CBT techniques were not applied. Suggestions were offered that could theoretically be part of CBT, but they were not structured, taught, or applied with any skill. This represents a fundamental failure in CBT implementation.
+
+---
+
+### 11. Homework
+### **Score: 0/6**
+
+**Explanation:**
+
+No formal homework was assigned. This is a critical failure in CBT, where between-session work is essential for progress.
+
+**What occurred instead:**
+
+The therapist made general suggestions that the patient should try:
+- "Try to think positive"
+- "Try distracting yourself"
+- "Try reading a book or listening to calm music"
+- "Try gentle stretching before bed"
+- "Drink more water"
+- "Get outside for fresh air"
+
+These are not homework assignments. They lack:
+
+1. **Specificity:** "Try stretching" is vague. Homework should specify: *What* stretching? *When* exactly? *For how long*? *What's the goal?*
+
+2. **Rationale:** The therapist never explained *why* these tasks would help. For example: "We're going to try stretching before bed because muscle tension can interfere with sleep. Progressive muscle relaxation helps your body recognize the difference between tension and relaxation, which can make it easier to fall asleep."
+
+3. **Structure:** Homework should be written down, reviewed, and tracked. The therapist never said, "Let me write this down for you" or "Let's make sure you understand what you're doing this week."
+
+4. **Measurement:** No way to track whether homework was done or whether it helped. The therapist never said, "Keep track of when you do the stretching and how you sleep that night."
+
+5. **Commitment:** The therapist never explicitly asked, "Are you willing to try this?" or "Does this feel doable for you?" The patient's agreement was assumed.
+
+6. **Follow-up plan:** The therapist never said, "Next session, we'll review how the stretching went and adjust if needed."
+
+**What proper CBT homework would look like:**
+
+- **Sleep diary:** "For the next week, keep a log of: what time you go to bed, what time you fall asleep, how many times you wake up, what time you wake up for the day, and how you feel. This will help us understand your sleep pattern."
+
+- **Behavioral experiment:** "This week, when you wake up at 3 AM, instead of getting up to work, try staying in bed and doing some gentle stretching or listening to calm music. Notice what happens. We'll discuss this next session."
+
+- **Thought record:** "When you wake up at 3 AM, write down: (1) What time is it? (2) What thoughts go through your head? (3) How anxious do you feel (0-10)? This will help us understand what's happening."
+
+- **Worry postponement:** "Set aside 15 minutes each evening to write down work worries. Tell yourself, 'I'll think about this during worry time, not at 3 AM.' If work thoughts come up at night, remind yourself you have a time for this."
+
+None of this occurred. The session ended without clear, specific, measurable homework assignments.
+
+**Why this matters:**
+
+Homework is where CBT happens. Between-session work is where the patient practices new skills, tests beliefs, and makes progress. Without homework, therapy is limited to the 50-minute session. The patient leaves without a clear plan for what to do during the week. Progress is likely to be minimal.
+
+**Summary:**
+
+No formal homework was assigned. General suggestions were made but without specificity, rationale, structure, measurement, or follow-up plan. This is a fundamental CBT failure that will severely limit treatment effectiveness.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- **Warmth and encouragement:** The therapist maintained a friendly, supportive tone throughout
+- **Professional boundaries:** No boundary violations; appropriate professional demeanor
+- **Patient engagement:** The patient remained engaged and cooperative throughout
+- **Validation:** The therapist acknowledged the patient's concerns and normalized some experiences
+- **Accessibility:** The therapist was easy to talk to and created a safe environment
+
+### Critical Deficiencies:
+
+**1. Complete absence of CBT structure:**
+- No agenda setting or session planning
+- No case conceptualization or functional analysis
+- No coherent treatment strategy
+- No systematic application of CBT techniques
+- No homework assignments
+
+**2. Failure to assess and target maintaining factors:**
+- Did not explore the 3 AM awakening pattern
+- Did not identify or challenge catastrophic thoughts about sleep loss
+- Did not address behavioral patterns (getting up to work, avoidance, rumination)
+- Did not explore alcohol use (1-2 glasses nightly) as a sleep disruptor
+- Did not develop understanding of what maintains the insomnia
+
+**3. Advice-giving rather than collaborative empiricism:**
+- Therapist prescribed solutions rather than discovering them with the patient
+- No guided discovery or Socratic questioning
+- Patient positioned as passive recipient rather than active partner
+- No hypothesis testing or behavioral experiments
+
+**4. Lack of specificity and structure:**
+- Suggestions were vague ("try stretching," "think positive")
+- No rationale provided for interventions
+- No measurement or tracking
+- No follow-up plan
+- No homework with clear instructions
+
+**5. Excessive self-disclosure and minimization:**
+- Therapist shared 6+ personal anecdotes without clear therapeutic purpose
+- Minimized patient's concerns ("don't sweat it," "everybody goes through that")
+- Shifted focus from patient to therapist
+- Reduced therapeutic effectiveness
+
+**6. Repetition without progress:**
+- Same suggestions and encouragements repeated throughout
+- No deepening of exploration
+- Session could have been 20 minutes shorter
+- No advancement toward treatment goals
+
+---
+
+## Impact on Patient Care
+
+This session represents a significant departure from evidence-based CBT and will likely produce minimal therapeutic benefit. While the patient left feeling supported and encouraged, he did not receive the structured, targeted intervention necessary to treat insomnia disorder.
+
+**Specific harms:**
+
+1. **Missed opportunity for assessment:** The therapist did not systematically assess what maintains the insomnia. Without this understanding, interventions cannot be targeted effectively.
+
+2. **Ineffective interventions:** Generic suggestions like "think positive" and "drink water" are unlikely to resolve insomnia disorder. The patient may try them, see no improvement, and become discouraged—not because the interventions are wrong, but because they don't address the underlying problem.
+
+3. **Lack of patient agency:** By positioning the patient as a passive recipient of advice rather than an active partner in treatment, the therapist reduced the patient's sense of control and self-efficacy. CBT works partly because patients learn to become their own therapists. This session did not support that.
+
+4. **No between-session work:** Without homework, the patient has no structured practice or experimentation. Progress will be limited to insights gained during the session—which were minimal.
+
+5. **Potential for deterioration:** If the patient tries the suggested interventions and they don't work, he may become more hopeless about treatment. He may also continue problematic behaviors (like getting up to work at 3 AM) that perpetuate the insomnia.
+
+6. **Wasted session:** This session did not move the patient closer to recovery. It provided support and encouragement but not the targeted intervention necessary for insomnia disorder.
+
+**Likelihood of therapeutic change:** Low. Without a coherent CBT strategy, systematic assessment of maintaining factors, and structured homework, the patient is unlikely to experience significant improvement. The session was supportive but not therapeutic in the CBT sense.
+
+---
+
+## Recommendations
+
+### 1. **Establish a Collaborative Agenda (HIGHEST PRIORITY)**
+- **Action:** At the start of the next session, explicitly set an agenda with the patient. Identify target problems, prioritize them, and establish session goals.
+- **Example:** "Aidan, I want to make sure we use our time well. I'm hearing that you're struggling with waking up at 3 AM and not being able to get back to sleep, which is affecting your energy and concentration during the day. You're also worried about your dissertation and teaching. Today, I'd like to focus on understanding what's happening at 3 AM—what you're thinking and doing—so we can develop a plan to address it. Does that sound good? Is there anything else you'd like to prioritize?"
+- **Practice:** Before each session, write down the agenda items and time allocations. Review them with the patient at the start. Refer back to the agenda throughout the session to maintain focus.
+
+---
+
+### 2. **Conduct a Functional Analysis of the Insomnia (HIGHEST PRIORITY)**
+- **Action:** Systematically explore what maintains the insomnia. Use guided discovery to help the patient identify patterns, thoughts, and behaviors.
+- **Example:** "Let's think about what happens at 3 AM. Walk me through a typical night. What time do you go to bed? What's going through your mind as you're falling asleep? When you wake up at 3 AM, what's the first thing you notice—a thought, a feeling, a physical sensation? What do you tell yourself about what this means? What do you do then—do you stay in bed, get up, check the time? How does that affect your sleep?"
+- **Practice:** Develop a functional analysis template: Trigger → Thought → Feeling → Behavior → Consequence. Use this to map out the insomnia cycle. Share this with the patient so he understands the pattern.
+
+---
+
+### 3. **Eliminate Excessive Self-Disclosure**
+- **Action:** Stop sharing personal anecdotes unless they directly illustrate a therapeutic point. Focus the session on the patient's experience, not the therapist's.
+- **Example:** Instead of "When I was stressed, I used to tell myself, 'this too shall pass,'" say: "Many people find it helpful to remind themselves that difficult periods are temporary. Have you tried anything like that? What do you tell yourself when you're lying awake?"
+- **Practice:** Before responding, ask yourself: "Is this about the patient or about me? Does this illustrate a point relevant to their treatment?" If the answer is no, don't share it.
+
+---
+
+### 4. **Implement Guided Discovery Systematically**
+- **Action:** Replace advice-giving with skillful questioning. Help the patient discover patterns and solutions rather than telling them what to do.
+- **Example:** Instead of "Try distracting yourself with something fun," ask: "When you wake up at 3 AM, what have you tried? What's helped, even a little? What hasn't helped? What do you think would be most realistic for you to try at that time of night?"
+- **Practice:** For every suggestion you want to make, first ask a question. Let the patient generate ideas. Only offer suggestions if the patient hasn't thought of them.
+
+---
+
+### 5. **Develop a Coherent CBT-I Treatment Strategy**
+- **Action:** Create a structured plan for treating insomnia using evidence-based CBT-I techniques. Explain the strategy to the patient.
+- **Example:** "Based on what we've discussed, here's my understanding of what's happening: You're waking up at 3 AM, and then your mind goes to work worries. You feel frustrated lying in bed, so sometimes you get up to work. But that teaches your brain that bed is a place to be awake and worry, not sleep. Here's what we're going to do: (1) We'll work on managing the work worries so they don't keep you awake. (2) We'll develop a plan for what to do if you wake up—something that doesn't involve work. (3) We'll track your sleep to see if these changes help. Does this make sense?"
+- **Practice:** Study CBT-I protocols (e.g., Perlis et al., Morin). Familiarize yourself with: sleep restriction, stimulus control, cognitive restructuring for sleep anxiety, worry postponement, and relaxation training. Develop a treatment plan that incorporates these elements.
+
+---
+
+### 6. **Address Alcohol Use Explicitly**
+- **Action:** Explore the patient's nightly wine consumption (1-2 glasses) and its relationship to sleep. Provide psychoeducation about alcohol's effects on sleep architecture.
+- **Example:** "You mentioned drinking 1-2 glasses of wine in the evening. I'm curious about that. What's that about? How do you think it affects your sleep? Alcohol can actually disrupt sleep in the second half of the night—it helps you fall asleep initially, but then it fragments your sleep and causes early morning awakenings. Does that match what you're experiencing?"
+- **Practice:** Develop a brief psychoeducation handout about alcohol and sleep. Discuss with the patient whether reducing or eliminating evening alcohol might help. If the patient is resistant, explore the function of the wine (relaxation, anxiety management) and develop alternatives.
+
+---
+
+### 7. **Assign Specific, Structured Homework with Clear Rationale**
+- **Action:** At the end of each session, assign 1-2 specific homework tasks with written instructions, rationale, and measurement plan.
+- **Example:** "This week, I'd like you to keep a sleep diary. Each morning, write down: (1) What time you went to bed, (2) How long it took to fall asleep, (3) How many times you woke up, (4) What time you woke up for the day, (5) How you felt. The reason we're doing this is so we can see patterns—maybe certain nights are better than others, and we can figure out why. Can you do that? Do you have a place to write it down?"
+- **Practice:** Create a homework template for each intervention. Include: (1) Task description, (2) Rationale, (3) Instructions, (4) Measurement plan, (5) When to do it. Review homework at the start of each session.
+
+---
+
+### 8. **Implement Stimulus Control Principles**
+- **Action:** Teach the patient to use bed only for sleep (and sex), and to get out of bed if awake for >15-20 minutes.
+- **Example:** "One thing that might be keeping your insomnia going is that you sometimes get up to work when you can't sleep. I understand the impulse—you want to use the time productively. But from a sleep perspective, this teaches your brain that bed is a place to be awake and work. Instead, here's what we're going to try: If you're awake for more than 15-20 minutes, get out of bed and go to another room. Do something quiet and non-stimulating—read, listen to music, stretch. When you feel sleepy, go back to bed. This helps your brain learn that bed = sleep."
+- **Practice:** Teach this principle clearly. Have the patient practice the decision rule: "If I'm awake for 15-20 minutes, I get up." Troubleshoot barriers (e.g., "My fiancée is sleeping; I don't want to disturb her").
+
+---
+
+### 9. **Develop a Worry Postponement Strategy**
+- **Action:** Help the patient manage work-related worry that occurs at 3 AM by scheduling a specific "worry time" during the day.
+- **Example:** "You mentioned that when you wake up at 3 AM, your mind goes to things you need to do and how you're not getting enough rest. That's understandable—your brain is trying to solve problems. But 3 AM is not the time to solve them. Here's what we're going to do: Each evening, set aside 15 minutes to write down work worries and think about them. Tell yourself, 'I'll handle this during worry time.' If work thoughts come up at 3 AM, remind yourself that you have a time for this, and redirect your attention. This trains your brain that 3 AM is not for worrying."
+- **Practice:** Teach the patient to use a "worry postponement" script. Practice it in session. Have the patient identify a specific time for worry (e.g., 7 PM) and a specific place (e.g., at the desk). Track whether this reduces nighttime worry.
+
+---
+
+### 10. **Elicit and Respond to Feedback Regularly**
+- **Action:** Throughout each session, check for understanding, agreement, and reactions. Adjust based on feedback.
+- **Example:** "Does this make sense so far?" "How are you feeling about this plan?" "Is there anything that doesn't feel right or realistic?" "What's your reaction to what we've discussed?" "At the end of the session, what's the one thing you want to remember?"
+- **Practice:** Build feedback checks into your session structure. Ask at least 3-4 times per session. Listen carefully to the patient's responses and adjust your approach accordingly.
+
+---
+
+### 11. **Reduce Minimization; Validate the Patient's Experience**
+- **Action:** Acknowledge the real difficulty of insomnia without dismissing it. Validate that this is a genuine problem requiring targeted intervention.
+- **Example:** Instead of "Don't sweat it; everybody goes through that," say: "Insomnia is really frustrating and exhausting. It's affecting your work and your mood. I'm glad you're here, because we have effective treatments for this. Let's work together to figure out what's keeping it going and how to fix it."
+- **Practice:** When the patient expresses frustration or worry, resist the urge to minimize. Instead, validate: "That makes sense. That would be frustrating for anyone." Then move to problem-solving: "Let's think about what we can do about it."
+
+---
+
+### 12. **Teach Specific Relaxation Techniques with Practice**
+- **Action:** Don't just suggest relaxation; teach a specific technique, explain the rationale, and have the patient practice it in session.
+- **Example:** "One thing that can help is progressive muscle relaxation. This is a technique where you tense and then relax different muscle groups. The reason this helps is that it teaches your body the difference between tension and relaxation. When you're lying awake at 3 AM, your body is probably tense. By practicing this technique before bed, you train your body to relax. Let me teach you how to do it. We'll start with your feet..."
+- **Practice:** Learn progressive muscle relaxation, autogenic training, or guided imagery. Practice these techniques with the patient in session. Assign them as homework with clear instructions (e.g., "Do this for 10 minutes before bed, 5 nights this week").
+
+---
+
+## Overall Session Score: 0.8/6
+
+**Summary:**
+
+This session represents a fundamental failure to deliver evidence-based CBT. While the therapist was warm, supportive, and created a safe environment, the session lacked the core components of CBT: structured agenda, functional analysis, guided discovery, targeted interventions, and homework. Instead, generic wellness advice was offered without coherent strategy or systematic application of CBT techniques.
+
+**Current competency assessment:** The therapist demonstrates basic interpersonal skills and warmth but lacks competence in CBT methodology. The approach is more consistent with supportive counseling or life coaching than with evidence-based CBT. The therapist would benefit from intensive training in CBT fundamentals, particularly: case conceptualization, guided discovery, CBT-I protocols, and structured homework assignment.
+
+**Most critical changes needed immediately:**
+
+1. **Learn and apply CBT case conceptualization:** Understand how to conduct a functional analysis and develop a coherent treatment strategy.
+2. **Master guided discovery:** Replace advice-giving with skillful questioning that helps patients discover their own patterns and solutions.
+3. **Implement structured homework:** Assign specific, measurable, rationale-based tasks between sessions.
+4. **Study CBT-I protocols:** Familiarize yourself with evidence-based treatments for insomnia (sleep restriction, stimulus control, cognitive restructuring, worry postponement).
+
+**Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change:**
+
+This session does **not** qualify as evidence-based CBT. It is supportive counseling with some CBT-adjacent language ("think positive," "try relaxation"). The likelihood of producing meaningful therapeutic change is **low**. The patient may feel supported and encouraged, but without targeted intervention addressing the maintaining factors of insomnia, he is unlikely to experience significant symptom improvement. He may try some suggestions (stretching, water, fresh air) and see minimal benefit, leading to discouragement. A more structured, systematic CBT-I approach is necessary for this patient to recover.
+
+**Recommendation:** The therapist should pursue formal training in CBT and CBT-I before continuing to treat patients with insomnia disorder. Supervision with an experienced CBT therapist is strongly recommended.

@@ -1,0 +1,822 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Major Depressive Disorder
+--- CASE STUDY ---
+ Helena Bates was a 27-year-old single white woman who presented for psychiatric evaluation and treatment for depression.
+ She had recently begun an intensive outpatient program following her first-ever psychiatric hospitalization, which occurred after an impulsive overdose following the breakup of a two-year romantic relationship.
+She reported that her mood had been “increasingly sad and hopeless” for 1–2 months leading up to the breakup.
+ Throughout those weeks, she experienced moderate depression most of the day on most days, with no daily variation and intact mood reactivity.
+She had gained about 10 pounds from “overeating comfort food and junk.”
+ She denied irritability or argumentativeness.
+ She reported “no” self-esteem and described a significant lack of motivation and difficulty concentrating on routine tasks.
+ She experienced intrusive, racing thoughts and periods of “nonstop thinking” about her ex-boyfriend, including purchasing a full-page newspaper ad as an “open letter” to him.
+ She also reported staying awake journaling or calling friends until 5:00 or 6:00 AM, and yet reported no fatigue during the following day, despite only 2–3 hours of sleep. These symptoms preceded her hospitalization.
+She was horrified by her own suicide attempt and denied any prior history of suicidal thoughts or gestures.
+ She had no history of self-injury or substance misuse.
+Past psychiatric history included counseling in high school for “moodiness” and a brief trial of escitalopram and psychotherapy during college for depression.
+ These were discontinued after a few weeks when symptoms improved.
+At the time of hospitalization, she was started on vilazodone and quetiapine.
+Family history was notable for a brother with substance use issues, a sister treated for panic attacks and depression, and multiple extended family members with suspected depression.
+Mental status exam revealed a pleasant, appropriately dressed, moderately overweight woman, who made good eye contact.
+ Speech was somewhat rapid and verbose but not pressured.
+ No abnormal movements were noted, though she used exaggerated gestures.
+ Mood was depressed and affect tense and dysphoric, but with a full range and normal responsivity.
+ Thought processes were circumstantial but coherent, linear, and logical.
+ She reported passive thoughts that she might be better off dead, but denied intent or plan.
+ She had no hallucinations, delusions, or homicidal ideation.
+ Insight and judgment were grossly intact, though some recent behaviors suggested impaired judgment.
+Discussion:
+ Ms. Bates met criteria for major depressive disorder with at least five depressive symptoms. She also displayed subthreshold hypomanic symptoms (racing thoughts, rapid speech, decreased need for sleep, and increased goal-directed activity), present prior to medication initiation.
+ Thus, she met criteria for Major Depressive Disorder with mixed features.
+ Her presentation had been previously mischaracterized as borderline personality disorder, but her history lacked the chronic instability or interpersonal chaos required for that diagnosis.
+
+--- BEHAVIOUR ---
+Verbose, somewhat circumstantial speech
+
+Dramatic and animated gestures
+
+Good eye contact, cooperative
+
+No psychomotor retardation; possible agitation through nocturnal activity
+
+--- MDD SYMPTOMS from DSM-5 ---
+Depressed mood most of the day, nearly every day
+
+Significant weight gain
+
+Insomnia (staying awake until early morning hours)
+
+Loss of energy (difficulty motivating)
+
+Trouble concentrating
+
+Thoughts of death
+
+--- PATIENT PROFILE ---
+ Name: Helena Bates
+ Sex: Female
+ Age: 27 years
+ DOB: July 12, 1997
+ Place of Birth: Portland, OR
+ Address: 1413 Hawthorne Blvd, Portland, OR
+ Contact: (555) 928-1142
+ Marital Status: Single
+ Children: None
+ Occupation: Administrative Assistant
+ Education: Bachelor’s degree from a state college
+ Religion: Agnostic
+ Legal Guardian: N/A
+ Presenting Complaint: “I’ve been really depressed, and I overdosed after my boyfriend left me.”
+ Psychiatric History: Brief counseling in high school; short-term antidepressant use in college
+ Psychotherapy: Currently in intensive outpatient program
+ Medications: Vilazodone, Quetiapine
+ Substance Use: Denies alcohol or drug use
+ Medical History: None
+ Neurology: Normal
+ Family History: Brother with substance use disorder, sister with depression and panic attacks, extended family with possible depression
+ Mental Status: Depressed mood, tense and dysphoric affect, rapid and verbose speech, circumstantial thought, passive death wishes, no delusions or hallucinations, good insight overall
+
+--- DIAGNOSIS ---
+ Major Depressive Disorder, with mixed features
+--- END CASE STUDY ---
+
+Clinical Summary:
+Helena Bates, a 27-year-old single woman, presents to the outpatient psychiatric clinic for evaluation following recent hospitalization and initiation of an intensive outpatient program, brought in by referral due to concerns related to a recent suicide attempt after a relationship breakup. She is currently receiving medication management and psychotherapy for mood symptoms.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hey there! How’s it going today? Hope you’re feeling okay. Sometimes just talking things out can help a bit, you know? What’s been on your mind lately? 
+ PATIENT: Hey... thanks for asking. Um, honestly, it’s been a bit of a roller coaster these days. I keep getting stuck in these spirals of thoughts about my ex — like, I can’t stop replaying everything that went wrong between us. It’s exhausting. Like, I’ll stay up until the early morning hours just thinking or writing in my journal, trying to make sense of it all. Then during the day, I’m so drained that even simple stuff feels like climbing a mountain. It’s frustrating, you know? I want to feel better but it just feels so heavy all the time. 
+ PSYCHIATRIST: Yeah, I totally get that. Life can be tough sometimes, but you know what? It’ll get better. Just try to think positive, even when it feels hard. When I was going through a rough patch, I found that keeping busy helped me a lot — like, distracting yourself with things you enjoy or hanging out with friends. Everyone goes through stuff like this, so you’re definitely not alone. Have you been able to get outside or do something fun recently? 
+ PATIENT: I appreciate you saying that. I really want to believe it’ll get better. But, honestly, when I’m in those dark moments, it’s so hard to think positively — it feels like my mind just drags me down. As for getting outside or having fun... not really. I keep telling myself I should go for a walk or something, but then the energy just isn’t there. Plus, sometimes when I’m around other people, I feel this knot of anxiety — like I’m pretending to be alright when really everything inside is all tangled up. So instead, I usually stay home and just journal or call friends late at night, even though I know staying up that late messes with my mood more. It’s like this cycle I can’t quite break. 
+ PSYCHIATRIST: Yeah, I hear you. It’s tough when your mind just won’t let you be positive. But hey, you know, sometimes just pushing through a little bit can make a difference. Like, I remember this one time when I felt super down, I forced myself to get out for a walk even though I didn’t want to. And honestly, it helped clear my head a bit. Maybe you could try something like that? Just a little step outside, even if it’s just for a few minutes. Sometimes the small things add up. And about the anxiety around people, that’s totally normal — everyone feels that way sometimes. Just remember, you’re stronger than you think. So, what’s something small you think you might be able to do today? 
+ PATIENT: Hmm, maybe... I could try stepping outside for a few minutes after work. Not sure if I’ll actually feel better, but at least it’s something, right? I guess sometimes I get so caught up in thinking about everything all at once that doing just one small thing feels like an accomplishment. It’s just hard to fight the pull to stay inside where it feels safe, even though I know that safety is kind of a trap too. Also, sometimes when my mind races, I feel like if I don’t keep moving or talking, the thoughts overwhelm me. So, it’s like I need that distraction just to survive the night. It’s complicated. But yeah, maybe a short walk could be a start. 
+ PSYCHIATRIST: That sounds like a really good idea. Starting with a short walk is a great step—you don’t have to do anything big right away. It’s all about those little wins. I totally get what you mean about feeling safer inside but also feeling trapped. That’s a tricky spot to be in. You know, sometimes when my mind races at night, I try to drink a glass of water or just focus on my breathing for a bit. It’s not perfect, but it helps me slow down a little. Maybe something like that could work for you too? Just little things to help calm the mind. What do you think? 
+ PATIENT: Yeah, focusing on breathing sounds doable. I’ve never really tried that seriously before, but maybe it could help. Sometimes, when I’m caught up in those racing thoughts at night, it feels like my brain won’t stop no matter what I do. I end up journaling or calling friends to keep my mind busy so it doesn’t spiral out of control. But maybe slowing down with breathing could be a different way to handle it instead of fighting the thoughts all the time. It feels a bit scary to let myself slow down because then the silence makes the thoughts louder, you know? But I’m willing to give it a shot. Trying something new feels scary, but I want to find a way to feel less overwhelmed. 
+ PSYCHIATRIST: Hey, that’s really brave of you to try something new like focusing on your breathing. It’s totally normal to feel scared when you change things up, but sometimes stepping out of the comfort zone is where the magic happens. You know, when I was stressed, I found that just reminding myself to “take it one moment at a time” helped me get through tough nights. It’s like breaking the big scary stuff into tiny, manageable pieces. And hey, if breathing exercises don’t work perfectly right away, that’s okay — it’s all about practice and patience. Just keep being kind to yourself. So, what’s something fun or relaxing you might want to do this week, besides the walk? Maybe a favorite show or hobby? 
+ PATIENT: Okay, one moment at a time... I like that. It feels less overwhelming when I think of it that way. Um, besides the walk... I guess I miss drawing. I used to really enjoy sketching, but I haven’t done it in a long time. Maybe I could try pulling out my sketchbook and doodling something simple. I don’t need it to be perfect or anything, just something to get my mind off the heaviness for a little bit. I’m hoping it’ll be kind of like a little escape. But honestly, sometimes even that feels like too much effort, so I’m trying to be patient with myself. It’s hard feeling like I want to do things but then not having the motivation. But yeah, I think drawing could be a nice, gentle way to distract myself this week. 
+ PSYCHIATRIST: Hey, that sounds like a really nice idea! Drawing can be such a great way to relax and get your mind off things. Sometimes just letting yourself do something creative, without worrying about how it turns out, can be really freeing. I remember when I tried doodling during a stressful time, it helped me feel a bit lighter. Just take it easy and don’t pressure yourself. And about the motivation, that’s totally normal — it comes and goes. Just keep reminding yourself that it’s okay to have ups and downs. You’re doing great by even thinking about trying. So, how are you feeling about the walk and drawing plan for this week? Do you think it’s something you can manage? 
+ PATIENT: Thanks, that means a lot. I think I can try the walk and drawing. I’m nervous about sticking to it because sometimes my energy just crashes out of nowhere, but having a simple plan feels better than nothing. Like, if one day feels too tough, maybe I can just do the breathing exercises instead. I’m hoping that starting with these small steps might help me feel a little less overwhelmed and maybe even bring a bit of calm. It’s strange how much just deciding to try something new can feel really big when you’re in this kind of mood. But yeah, I’m willing to give it a shot and see if it helps. 
+ PSYCHIATRIST: Hey, that sounds like a really good idea. Starting with a short walk is a great step—you don’t have to do anything big right away. It’s all about those little wins. I totally get what you mean about feeling safer inside but also feeling trapped. That’s a tricky spot to be in. You know, sometimes when my mind races at night, I try to drink a glass of water or just focus on my breathing for a bit. It’s not perfect, but it helps me slow down a little. Maybe something like that could work for you too? Just little things to help calm the mind. What do you think? 
+ PATIENT: Yeah, focusing on breathing sounds doable. I’ve never really tried that seriously before, but maybe it could help. Sometimes, when I’m caught up in those racing thoughts at night, it feels like my brain won’t stop no matter what I do. I end up journaling or calling friends to keep my mind busy so it doesn’t spiral out of control. But maybe slowing down with breathing could be a different way to handle it instead of fighting the thoughts all the time. It feels a bit scary to let myself slow down because then the silence makes the thoughts louder, you know? But I’m willing to give it a shot. Trying something new feels scary, but I want to find a way to feel less overwhelmed. 
+ PSYCHIATRIST: Hello! It’s nice to see you today. How have things been going for you since we last talked? Sometimes just chatting can help lighten the load a bit. What’s been on your mind lately? 
+ PATIENT: Hey, yeah, it’s good to see you too. Since we last talked, I’ve been trying to keep up with the little plans we made — the walks, the drawing. Some days are better than others, but mostly it still feels like there’s this heavy cloud over me that won’t lift. At night, the racing thoughts still come, though I’ve been trying some breathing exercises like we discussed. It sort of helps, but the silence is still tricky — it feels like all those painful memories get louder when there’s nothing else to distract me. During the day, it’s a lot about just trying to push through even when everything feels exhausting. I guess I just wish I could stop feeling so stuck in this cycle. Does that make sense? 
+ PSYCHIATRIST: Hey! It’s nice to see you today. Before we dive in, I want to make sure we focus on what feels most important to you right now. What’s the main thing you’d like to work on today? We have about 50 minutes, so maybe we can spend some time understanding the problem and then work on some strategies together. Does that sound good? Also, are you having any thoughts about harming yourself or feeling unsafe? It’s important we check in on that so we can keep you safe. 
+ PATIENT: Thanks for checking in. Honestly, the main thing on my mind is this constant feeling of being stuck in sadness and hopelessness. It’s like no matter what I do, I can’t shake this heaviness. I want to find a way to feel less overwhelmed and more in control of my thoughts. And to be honest, sometimes I do have these fleeting, passive thoughts that life might be easier if I wasn’t here, but I don’t have any plans or intentions to hurt myself. It scares me when those thoughts come up, but I just try to push them away. I’d really like to focus on finding some practical ways to manage these feelings so they don’t feel so crushing. Does that make sense? 
+ PSYCHIATRIST: Thanks for sharing that with me. It sounds really tough to feel that heaviness all the time. I’m glad you’re here and willing to work on it. Since you mentioned those tough thoughts, it’s really important we keep you safe. Do you have people you can reach out to when those thoughts come up? Maybe friends, family, or a counselor? And if things ever feel too much, there are hotlines and emergency services you can call. We can also think about some steps to help you cope when you feel overwhelmed. How does that sound? 
+ PATIENT: Yeah, I do have a few close friends I can call if things get really bad, and I’m trying to keep my therapist’s number handy too. I know those hotlines are there if I ever need them, which is a little comforting. But honestly, it’s hard because sometimes when the thoughts come, I just feel so overwhelmed that reaching out feels like this huge hurdle, like I have to force myself to do it. Having a plan for those moments sounds helpful, though. Maybe we could talk about some things I could do in those times? Like, small steps or distractions that might feel manageable when everything feels like too much? That would make me feel a bit safer. 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist made a single, brief attempt to establish an agenda midway through the session ("Before we dive in, I want to make sure we focus on what feels most important to you right now. What's the main thing you'd like to work on today? We have about 50 minutes..."). However, this occurred only after multiple unstructured exchanges and was not revisited or actively managed throughout the session. The therapist did not establish priorities collaboratively, did not allocate time to specific topics, and did not reference the agenda to maintain session structure. The patient identified her main concern (feeling stuck in sadness and hopelessness, managing racing thoughts), but the therapist never explicitly confirmed this as the session focus or created a structured plan for addressing it within the available time.
+
+Most critically, the therapist failed to establish an agenda at the beginning of the session. The first three exchanges were entirely unstructured, with the therapist offering generic reassurance and personal anecdotes rather than collaboratively defining session goals. Even after the brief agenda-setting attempt, the therapist immediately pivoted to safety assessment without confirming whether the patient agreed this was the priority or how time would be allocated between safety planning and skill-building for managing depressive symptoms.
+
+The session lacked any evidence of time management or prioritization. With a patient presenting with active passive suicidal ideation, recent hospitalization, and significant functional impairment, a structured agenda addressing both safety and evidence-based intervention targets was essential but absent.
+
+**Summary:**
+
+The therapist made a minimal, late attempt at agenda-setting but failed to establish collaborative priorities, allocate time, or maintain structural reference to the agenda throughout the session. This represents inadequate foundational CBT practice.
+
+---
+
+### 2. Feedback
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist elicited virtually no feedback from the patient about the session itself, the helpfulness of interventions, or the patient's understanding of the therapist's reasoning. The therapist asked "Does that sound good?" once when proposing the session structure, and "Does that make sense?" twice when explaining concepts, but these were perfunctory yes/no questions that did not constitute genuine feedback elicitation.
+
+The therapist never asked: "How is this session feeling for you so far?" "Are these suggestions actually helpful, or do they feel disconnected from what you're experiencing?" "What's your reaction to the breathing exercise idea?" "Do you feel understood?" "What would be most useful for us to focus on?" The patient was never asked to summarize key points, identify takeaways, or provide input on the relevance or feasibility of suggestions.
+
+Most problematically, the therapist shared multiple personal anecdotes ("when I was going through a rough patch," "when I was stressed," "when I tried doodling") without checking whether these were helpful or whether the patient felt the therapist was centering their own experience rather than the patient's. This represents a significant missed opportunity to elicit feedback about therapeutic effectiveness and appropriateness.
+
+**Summary:**
+
+The therapist made no meaningful attempt to elicit patient feedback about session content, understanding, or satisfaction. This represents a critical gap in collaborative practice and prevents the therapist from adjusting interventions based on patient response.
+
+---
+
+### 3. Understanding
+### **Score: 3/6**
+
+**Explanation:**
+
+The therapist demonstrated partial understanding of the patient's explicit presenting concerns but missed critical nuances and the underlying cognitive-behavioral patterns. The therapist accurately reflected that the patient experiences: racing thoughts at night, difficulty with motivation, and a desire to feel less overwhelmed. The therapist also appropriately identified and assessed passive suicidal ideation.
+
+However, the therapist significantly missed or minimized several key clinical features that should have shaped intervention:
+
+1. **The avoidance-maintenance cycle**: The patient explicitly stated that staying up late journaling and calling friends is a safety behavior ("I need that distraction just to survive the night") and that silence makes thoughts "louder." The therapist suggested breathing exercises without exploring this avoidance pattern or helping the patient understand how nighttime distraction-seeking maintains the sleep disruption and rumination cycle. A CBT-informed therapist would recognize this as a critical behavioral pattern to address.
+
+2. **The anxiety component**: The patient mentioned "a knot of anxiety" when around people and feeling like she's "pretending to be alright." The therapist did not explore this or recognize it as potentially distinct from depression and worthy of targeted intervention.
+
+3. **The mixed features presentation**: The case summary notes "subthreshold hypomanic symptoms (racing thoughts, rapid speech, decreased need for sleep, increased goal-directed activity)." The therapist did not assess or acknowledge the racing thoughts as potentially distinct from depressive rumination, which has different treatment implications.
+
+4. **The thought content**: The patient described "intrusive, racing thoughts" about her ex-boyfriend and previously purchased a full-page newspaper ad as an "open letter" to him. The therapist never explored the specific content of these thoughts, their triggers, or their relationship to the breakup—all essential for cognitive restructuring or behavioral experiments.
+
+5. **Motivation and behavioral activation**: The patient stated "even simple stuff feels like climbing a mountain" and "sometimes even that feels like too much effort." The therapist suggested activities (walk, drawing) but did not assess baseline functioning, establish a behavioral activation hierarchy, or explore the relationship between inactivity and mood maintenance.
+
+The therapist's empathic statements were generic ("Yeah, I totally get that," "I hear you") rather than demonstrating specific understanding of Helena's unique experience. The therapist normalized her experience ("everyone goes through stuff like this," "everyone feels that way sometimes") rather than validating the severity of her presentation (recent hospitalization, suicide attempt, ongoing passive ideation).
+
+**Summary:**
+
+The therapist grasped surface-level concerns but missed critical cognitive-behavioral patterns, the specific thought content driving distress, and the functional impairment severity. Understanding remained at a basic level without the depth necessary for effective CBT case conceptualization.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 3/6**
+
+**Explanation:**
+
+The therapist demonstrated adequate warmth and basic professionalism but exhibited significant interpersonal problems that undermined therapeutic effectiveness. The therapist was not hostile or demeaning, and maintained a generally supportive tone. However, several problematic patterns emerged:
+
+1. **Self-focused sharing**: The therapist repeatedly shared personal anecdotes ("when I was going through a rough patch," "when I was stressed," "when I tried doodling," "when my mind races at night, I try to drink a glass of water"). While intended to normalize and build rapport, this pattern shifted focus from the patient's experience to the therapist's experience. For a patient with depression and recent suicidality, this can feel invalidating—as though the therapist is suggesting their experience is equivalent to the therapist's stress or rough patch. This is particularly problematic given the severity of Helena's presentation.
+
+2. **Premature reassurance**: The therapist repeatedly offered reassurance without first fully understanding the problem ("It'll get better," "You're stronger than you think," "You're doing great"). Research on depression shows that premature reassurance can feel dismissive and may reinforce the patient's sense that their concerns are not being taken seriously.
+
+3. **Minimization through normalization**: Statements like "everyone goes through stuff like this" and "everyone feels that way sometimes" minimize the severity of Helena's presentation. She is not experiencing typical sadness; she is experiencing Major Depressive Disorder with mixed features following a suicide attempt. Normalizing this as universal experience is clinically inappropriate and potentially harmful.
+
+4. **Lack of genuine curiosity**: The therapist asked surface-level questions ("What's been on your mind lately?" "What do you think?" "How are you feeling?") but did not demonstrate deep curiosity about Helena's internal experience, the specific thoughts driving her distress, or the functional impact of her symptoms. Questions felt formulaic rather than genuinely interested.
+
+5. **Appropriate boundaries maintained**: The therapist did appropriately maintain professional boundaries, did not engage in inappropriate self-disclosure beyond the anecdotes, and did not blur the therapeutic relationship.
+
+**Summary:**
+
+The therapist maintained basic warmth and professionalism but undermined effectiveness through excessive self-focused sharing, premature reassurance, and minimization of severity. Interpersonal approach felt generic rather than tailored to a patient with serious depression and recent suicidality.
+
+---
+
+### 5. Collaboration
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist made minimal genuine attempts at collaboration. While the therapist used collaborative language ("we can," "let's work on"), the actual decision-making process was therapist-driven rather than truly collaborative.
+
+**Examples of inadequate collaboration:**
+
+1. **Unilateral suggestion of interventions**: The therapist suggested breathing exercises, walks, drawing, and "taking it one moment at a time" without exploring what Helena had already tried, what she believed might help, or whether these suggestions aligned with her values and preferences. The therapist stated "Maybe you could try something like that?" and "Maybe something like that could work for you too?" but these were presented as therapist recommendations rather than collaboratively developed options.
+
+2. **No exploration of patient expertise**: The therapist did not ask Helena what she has learned about herself through her hospitalization, what she has already attempted, what has helped in the past, or what barriers she anticipates. The patient is the expert on her own experience; the therapist treated her as a passive recipient of suggestions.
+
+3. **Lack of shared decision-making on priorities**: When the patient identified her main concern (feeling stuck in sadness and hopelessness, managing racing thoughts), the therapist immediately pivoted to safety assessment without confirming whether addressing safety first was acceptable to the patient or whether she wanted to focus on skill-building for managing depressive symptoms.
+
+4. **No discussion of treatment rationale**: The therapist suggested interventions without explaining the CBT rationale. Why breathing exercises? How do they relate to her racing thoughts? What is the mechanism of change? The patient was left to infer the logic rather than understanding it collaboratively.
+
+5. **Patient as passive recipient**: Throughout the session, Helena actively engaged and offered insights ("It's like this cycle I can't quite break," "the silence makes the thoughts louder," "reaching out feels like this huge hurdle"). The therapist did not build on these insights collaboratively or invite Helena to problem-solve with the therapist as a team.
+
+**Summary:**
+
+The therapist used collaborative language but made unilateral decisions about interventions, priorities, and focus. The patient was positioned as a passive recipient of suggestions rather than an active partner in treatment planning.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist demonstrated poor pacing and inefficient use of time. The session lacked clear structure, and time was allocated inefficiently across competing clinical priorities.
+
+**Specific problems:**
+
+1. **Repetition and redundancy**: The therapist repeated the same exchange twice. The therapist's response "Hey, that sounds like a really good idea. Starting with a short walk is a great step..." appears verbatim twice in the transcript, suggesting either a transcription error or that the therapist recycled the same response without tracking session flow. This indicates poor attention to pacing and session management.
+
+2. **Unstructured early exchanges**: The first three therapist-patient exchanges were entirely unstructured, with the therapist offering generic reassurance and personal anecdotes rather than efficiently gathering information or establishing direction. With a 50-minute session and a patient with active suicidal ideation and significant functional impairment, this time was wasted.
+
+3. **No time allocation to priorities**: The therapist did not allocate specific time to safety assessment, skill-building, homework planning, or feedback. The session drifted from topic to topic without clear transitions or time boundaries.
+
+4. **Tangential focus on therapist experience**: The repeated personal anecdotes consumed time that could have been spent understanding Helena's specific thought patterns, triggers, and functional impairment. Each anecdote ("when I was going through a rough patch," "when I was stressed," "when I tried doodling") diverted focus from the patient's experience.
+
+5. **Insufficient depth on critical issues**: The therapist spent minimal time exploring the racing thoughts, the nighttime rumination cycle, the avoidance patterns, or the specific content of thoughts about the ex-boyfriend. These are central to Helena's presentation and require adequate time for effective intervention.
+
+6. **Rushed safety assessment**: The safety assessment, while appropriate, was compressed into the final exchange without adequate exploration of protective factors, crisis planning, or means restriction. For a patient with recent hospitalization and ongoing passive ideation, this deserved more time and depth.
+
+**Summary:**
+
+The therapist demonstrated poor pacing with repetition, unstructured early exchanges, tangential focus, and insufficient depth on critical clinical issues. Time was not efficiently allocated to competing priorities.
+
+---
+
+### 7. Guided Discovery
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist relied almost exclusively on direct advice and suggestion rather than guided discovery. This represents a fundamental departure from CBT methodology and significantly undermines treatment effectiveness.
+
+**Examples of directive advice rather than guided discovery:**
+
+1. **"Just try to think positive"**: This is direct advice without exploration of why positive thinking feels impossible, what thoughts are blocking it, or what evidence contradicts the patient's hopelessness.
+
+2. **"Try to keep busy... distracting yourself with things you enjoy or hanging out with friends"**: Direct suggestion without exploring what activities Helena values, what barriers prevent engagement, or what the function of her current avoidance might be.
+
+3. **"Just pushing through a little bit can make a difference"**: Direct exhortation without exploring what "pushing through" means, what resistance she experiences, or what would make it feel more manageable.
+
+4. **"Maybe you could try something like that? Just a little step outside"**: Direct suggestion without exploring her thoughts about going outside, what she anticipates will happen, or what she has already tried.
+
+5. **"Just little things to help calm the mind"**: Vague directive without exploring what calming strategies she has attempted, what works for her, or what the mechanism of change is.
+
+6. **"Just keep being kind to yourself"**: Platitude without exploring self-criticism, what kindness means to her, or how to practice it.
+
+**What guided discovery would look like:**
+
+Instead of "try breathing exercises," the therapist might ask: "You mentioned that silence makes the racing thoughts louder. What do you think happens when you try to sit with those thoughts without distraction? What are you afraid might happen? Have you ever tried just observing the thoughts without fighting them?" This invites the patient to discover the avoidance pattern and consider alternatives.
+
+Instead of "try a walk," the therapist might ask: "You mentioned that even simple things feel like climbing a mountain. What specifically makes a walk feel so difficult right now? What would need to be true for it to feel more manageable? What's the smallest possible version of getting outside that you could imagine doing?"
+
+**Summary:**
+
+The therapist relied entirely on direct advice and suggestion, completely abandoning guided discovery. This represents a fundamental failure to implement core CBT methodology and prevents the patient from developing insight into her own patterns and solutions.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist failed to identify, explore, or focus on the central cognitions and behavioral patterns driving Helena's depression and maintaining her symptoms. This represents a critical failure in CBT case conceptualization.
+
+**Key cognitions and behaviors that should have been targeted but were not:**
+
+1. **Rumination about the ex-boyfriend**: The patient explicitly stated she experiences "intrusive, racing thoughts" about her ex and previously engaged in goal-directed behavior (purchasing a full-page newspaper ad as an "open letter"). The therapist never explored: What specific thoughts about him occupy her mind? What is she trying to accomplish through rumination? What evidence contradicts her thoughts about him? What would happen if she stopped ruminating? This is a central maintaining factor.
+
+2. **Hopelessness and helplessness cognitions**: The patient stated "no self-esteem" and "increasingly sad and hopeless." The therapist never explored the specific thoughts underlying hopelessness: "I'll never feel better," "Nothing I do matters," "I'm broken," "I'm alone." These are core depressive cognitions requiring cognitive restructuring.
+
+3. **The avoidance-maintenance cycle**: The patient described staying awake until 5-6 AM journaling and calling friends, stating "I need that distraction just to survive the night" and "the silence makes the thoughts louder." This is a critical behavioral pattern: nighttime avoidance of silence → rumination → sleep disruption → daytime fatigue and low mood → increased avoidance. The therapist never explored this cycle or helped the patient understand how avoidance maintains the problem.
+
+4. **Safety behaviors and their cost**: The patient's nighttime activities (journaling, calling friends) are safety behaviors that provide short-term relief but maintain long-term distress. The therapist suggested breathing exercises without exploring whether this represents another safety behavior or a genuine change in approach.
+
+5. **Behavioral inactivity and its relationship to mood**: The patient stated "significant lack of motivation and difficulty concentrating" and "even simple stuff feels like climbing a mountain." The therapist suggested activities (walk, drawing) but never explored: What activities did she enjoy before? What is preventing engagement? What is the relationship between inactivity and her mood? This is behavioral activation, a core CBT intervention, but it was not systematically applied.
+
+6. **Anxiety in social situations**: The patient mentioned "a knot of anxiety" when around people and feeling like she's "pretending to be alright." The therapist did not explore this or recognize it as a potential target for exposure or cognitive work.
+
+7. **Thoughts about the suicide attempt**: The patient was "horrified by her own suicide attempt" but the therapist never explored her thoughts about it: "I'm dangerous," "I'm out of control," "I can't trust myself," "I'm broken." These thoughts likely maintain depression and require attention.
+
+**What should have happened:**
+
+The therapist should have asked: "When you're lying awake at night with racing thoughts about your ex, what specifically are you thinking? What are you afraid will happen if you don't keep yourself distracted? What do those thoughts tell you about yourself, about him, about your future?" This would identify key cognitions for intervention.
+
+**Summary:**
+
+The therapist completely failed to identify, explore, or focus on central cognitions and behavioral patterns. No systematic cognitive or behavioral assessment occurred. This represents a fundamental failure in CBT case conceptualization and prevents targeted intervention.
+
+---
+
+### 9. Strategy for Change
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist demonstrated no coherent strategy for change and no clear CBT conceptualization guiding interventions. Suggestions appeared random and disconnected from a systematic understanding of Helena's depression.
+
+**Problems with the change strategy:**
+
+1. **No explicit conceptualization**: The therapist never articulated a case formulation. What is maintaining Helena's depression? Is it rumination? Behavioral inactivity? Avoidance of painful emotions? Hopeless cognitions? Safety behaviors? The answer is likely "all of the above," but the therapist never explored this or created a coherent model.
+
+2. **Disconnected interventions**: The therapist suggested: breathing exercises, taking walks, drawing, "taking it one moment at a time," drinking water, and focusing on breathing. These are presented as isolated suggestions rather than components of a coherent strategy. How do these interventions relate to each other? How do they address the core maintaining factors? What is the logical progression?
+
+3. **No clear treatment targets**: The therapist never explicitly identified what needs to change. Is the goal to reduce rumination? Increase behavioral activation? Challenge hopeless thoughts? Reduce avoidance? Improve sleep? All of these are relevant, but without prioritization and a clear strategy, interventions feel scattered.
+
+4. **No connection to CBT theory**: The interventions suggested (breathing, walks, drawing) are not inherently CBT-specific. They could be suggested in any therapeutic modality. There is no evidence of cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, or other CBT-specific techniques. The strategy is generic wellness advice, not CBT.
+
+5. **No progression or sequencing**: A coherent CBT strategy would involve: (1) assessment and case formulation, (2) psychoeducation about the cognitive-behavioral model, (3) identifying and challenging key cognitions, (4) behavioral activation and exposure, (5) relapse prevention. The therapist skipped directly to vague suggestions without foundational work.
+
+6. **No explicit rationale**: The therapist never explained why these interventions might help. "Breathing exercises help calm the mind" is vague. A CBT rationale would be: "Racing thoughts at night are maintained by your attempts to distract yourself from them. When you try to suppress thoughts, they often become more intrusive. By practicing observing your thoughts without judgment, you can reduce their power over you. This is called mindfulness, and research shows it helps with rumination."
+
+**What a coherent strategy would look like:**
+
+"Helena, based on what you've told me, I think your depression is being maintained by several things working together: (1) You're ruminating about your ex at night, which keeps you awake; (2) You're using distraction as a safety behavior, which temporarily helps but actually strengthens the rumination cycle; (3) During the day, you're so fatigued from poor sleep that you withdraw from activities, which worsens your mood; (4) Your hopelessness about the future makes it hard to believe things can change. Our strategy will be to: first, understand these patterns better; second, gradually reduce nighttime avoidance and build tolerance for difficult thoughts; third, increase daytime activity to improve mood and sleep; fourth, challenge the hopeless thoughts with evidence. Does this make sense?"
+
+**Summary:**
+
+The therapist presented no coherent strategy for change, no explicit case conceptualization, and no CBT-specific approach. Interventions appeared random and disconnected from a systematic understanding of maintaining factors.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist applied virtually no CBT-specific techniques. The session contained generic wellness advice rather than evidence-based cognitive-behavioral interventions.
+
+**CBT techniques that should have been used but were not:**
+
+1. **Cognitive restructuring / Thought records**: No exploration of automatic thoughts, evidence for/against thoughts, or development of alternative thoughts. The therapist never asked Helena to identify specific thoughts or examine their validity.
+
+2. **Behavioral activation / Activity scheduling**: While the therapist suggested activities (walk, drawing), this was not systematic behavioral activation. No baseline assessment of current activity, no hierarchy of activities by difficulty, no explicit link between activity and mood, no scheduling with specific times and days.
+
+3. **Behavioral experiments**: No experiments designed to test Helena's predictions or beliefs. For example: "You predict that if you go for a walk, you'll feel worse. Let's test that prediction. What would count as evidence that the walk helped? What would count as evidence that it didn't?"
+
+4. **Exposure**: No exposure to feared situations or avoided thoughts. The patient avoids silence because "the thoughts get louder." Exposure would involve deliberately sitting with silence and observing what happens. This was not suggested.
+
+5. **Thought records**: No structured tool for identifying thoughts, examining evidence, and developing alternatives. The patient is journaling at night, but the therapist never suggested using this as a thought record or analyzing the content.
+
+6. **Behavioral analysis of safety behaviors**: The patient's nighttime journaling and friend-calling are safety behaviors maintaining the rumination cycle. The therapist never explored this or helped Helena understand how these behaviors, while providing short-term relief, maintain long-term distress.
+
+7. **Sleep hygiene / Sleep restriction**: The patient is staying awake until 5-6 AM. The therapist never addressed sleep as a treatment target or suggested evidence-based sleep interventions.
+
+8. **Psychoeducation about depression**: No explanation of the cognitive-behavioral model of depression, how thoughts, behaviors, and mood interact, or how CBT works. The patient has no framework for understanding her symptoms or the rationale for interventions.
+
+9. **Agenda-setting and collaborative empiricism**: No systematic agenda, no collaborative hypothesis-testing, no "let's see what happens" experimental approach.
+
+10. **Relapse prevention**: No discussion of warning signs, coping strategies for future difficulties, or how to maintain gains.
+
+**What CBT technique application would look like:**
+
+Instead of "try breathing exercises," the therapist might say: "I'd like to teach you a technique called 'thought observation.' When racing thoughts come at night, instead of trying to distract yourself or fight them, we'll practice just noticing them like clouds passing in the sky. You don't have to believe them or act on them. Let's try it right now. Close your eyes and notice whatever thoughts come up. Don't try to change them, just observe them. What do you notice?" This is a specific, teachable CBT technique with a clear rationale.
+
+Instead of "try a walk," the therapist might say: "Let's create an activity schedule. You mentioned you used to enjoy drawing and that simple things feel overwhelming. Let's identify activities that are meaningful to you and schedule them in small doses. We'll track your mood before and after to see if there's a connection between activity and mood. This is called behavioral activation, and research shows it's one of the most effective treatments for depression."
+
+**Summary:**
+
+The therapist applied no CBT-specific techniques. The session contained generic wellness suggestions rather than evidence-based cognitive-behavioral interventions. This represents a fundamental failure to implement CBT.
+
+---
+
+### 11. Homework
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist assigned vague, unstructured homework without clear rationale, specificity, or explicit commitment from the patient. While homework was mentioned, it did not meet CBT standards for effectiveness.
+
+**Problems with homework assignment:**
+
+1. **Lack of clarity and specificity**: The therapist suggested "a short walk," "drawing," and "breathing exercises" but never specified: When? How long? How often? What time of day? What if you don't feel like it? What counts as success? The patient said "maybe I could try stepping outside for a few minutes after work," but the therapist never confirmed this or made it more specific (e.g., "Tuesday, Wednesday, and Thursday after work, 5-10 minutes, even if you don't feel like it").
+
+2. **No explicit rationale**: The therapist never explained why these assignments would help or how they relate to the treatment goals. The patient was left to infer the logic. A CBT rationale would be: "The goal of the walk is to test your prediction that you'll feel worse. We're also trying to break the cycle where low mood leads to inactivity, which worsens mood. By scheduling activity even when you don't feel like it, we're using behavior to change mood."
+
+3. **No behavioral activation hierarchy**: The therapist suggested activities without assessing baseline functioning or creating a hierarchy. For a patient who finds "simple stuff feels like climbing a mountain," suggesting a walk and drawing without first establishing what she can currently do is not strategic.
+
+4. **No monitoring or tracking**: The therapist did not ask Helena to track her mood before and after activities, to record her thoughts during breathing exercises, or to journal about her experience. Without tracking, there is no data to review and no way to assess whether interventions are working.
+
+5. **No explicit commitment**: The therapist asked "Do you think it's something you can manage?" but did not establish a clear commitment. The patient said "I think I can try," which is tentative. A stronger approach would be: "Are you willing to commit to a 10-minute walk on Tuesday, Wednesday, and Thursday after work? What barriers might get in the way? How will you overcome them?"
+
+6. **No review of prior homework**: In the final exchange, the therapist asked "How have things been going for you since we last talked?" and the patient mentioned "trying to keep up with the little plans we made — the walks, the drawing. Some days are better than others." The therapist did not systematically review what the patient actually did, what worked, what didn't, and why. This is a critical missed opportunity to assess homework compliance and adjust interventions.
+
+7. **No problem-solving about barriers**: The patient stated "sometimes my energy just crashes out of nowhere" and "reaching out feels like this huge hurdle." The therapist did not problem-solve about these barriers or help Helena develop strategies to overcome them.
+
+8. **Vague contingency planning**: The patient said "if one day feels too tough, maybe I can just do the breathing exercises instead." The therapist did not help her develop a specific plan for what to do on difficult days or how to maintain commitment despite low motivation.
+
+**What effective homework would look like:**
+
+"Helena, I'd like to assign you some homework to practice between now and our next session. First, I want you to schedule a 10-minute walk three times this week—let's say Tuesday, Wednesday, and Thursday after work. Before you go, rate your mood on a scale of 0-10. After the walk, rate it again. Write down what you notice. The goal is to test whether activity affects your mood. Second, I want you to practice the breathing exercise we discussed for 5 minutes each night before bed. Notice what happens to your racing thoughts. Third, I want you to keep a thought record—when you notice racing thoughts about your ex, write down: (1) the situation, (2) the thought, (3) your mood, (4) evidence for and against the thought. We'll review these together next session. Does this feel doable? What barriers might get in the way? How will you remember to do these?"
+
+**Summary:**
+
+The therapist assigned vague, unstructured homework without clear rationale, specificity, or explicit commitment. Homework was not reviewed systematically, and barriers were not addressed. This represents inadequate homework practice.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- **Safety assessment**: The therapist appropriately assessed for suicidal ideation and asked about protective factors and crisis resources. This is essential given Helena's recent hospitalization and ongoing passive ideation.
+- **Basic warmth and professionalism**: The therapist maintained a generally supportive tone and did not engage in hostile or demeaning behavior.
+- **Patient engagement**: The therapist kept the patient engaged in conversation and the patient remained cooperative throughout.
+- **Acknowledgment of difficulty**: The therapist made statements like "It sounds really tough" and "I hear you," demonstrating basic empathic awareness.
+
+### Critical Deficiencies:
+
+**1. Complete absence of CBT-specific techniques**: The session contained no cognitive restructuring, behavioral activation, thought records, exposure, behavioral experiments, or other evidence-based CBT interventions. The therapist offered generic wellness advice (breathing, walks, drawing) that could be provided by any untrained person. This is a fundamental failure to implement CBT.
+
+**2. No case conceptualization or coherent treatment strategy**: The therapist never articulated an understanding of what is maintaining Helena's depression or how interventions relate to each other. The session lacked a logical progression toward treatment goals. Interventions appeared random and disconnected.
+
+**3. Failure to identify and focus on key cognitions and behaviors**: The therapist did not explore Helena's specific thoughts about her ex-boyfriend, her hopelessness, her avoidance patterns, or the rumination-distraction cycle maintaining her symptoms. These are central to her presentation and require targeted intervention.
+
+**4. Excessive therapist self-disclosure**: The therapist repeatedly shared personal anecdotes ("when I was going through a rough patch," "when I was stressed," "when I tried doodling") that shifted focus from the patient's experience and potentially minimized the severity of her presentation. For a patient with recent suicidality, this approach is clinically inappropriate.
+
+**5. Premature reassurance and minimization**: The therapist offered reassurance ("It'll get better," "You're stronger than you think") and normalized Helena's experience ("everyone goes through stuff like this") without first fully understanding her concerns or validating the severity of her presentation. This can feel dismissive to a patient with serious depression.
+
+**6. Inadequate agenda-setting and session structure**: The therapist did not establish a collaborative agenda at the beginning of the session, did not allocate time to competing priorities, and did not maintain structural reference to session goals. The first three exchanges were entirely unstructured.
+
+**7. Minimal feedback elicitation**: The therapist asked perfunctory yes/no questions but never genuinely elicited patient feedback about session helpfulness, understanding, or satisfaction. This prevents the therapist from adjusting interventions based on patient response.
+
+**8. Lack of guided discovery**: The therapist relied entirely on direct advice and suggestion rather than using Socratic questioning to help Helena discover her own insights and solutions. This is a fundamental departure from CBT methodology.
+
+**9. Vague, unstructured homework**: Homework was suggested without clear rationale, specificity, or explicit commitment. The therapist did not review prior homework systematically or problem-solve about barriers.
+
+**10. Inadequate collaboration**: While the therapist used collaborative language, actual decision-making was therapist-driven. The patient was positioned as a passive recipient of suggestions rather than an active partner in treatment planning.
+
+---
+
+## Impact on Patient Care
+
+**Likelihood of therapeutic change**: This session is unlikely to produce meaningful symptom improvement. While the therapist maintained safety and basic rapport, the absence of evidence-based CBT interventions means the patient is not receiving treatment with demonstrated efficacy for Major Depressive Disorder. Research shows that CBT is highly effective for depression, but only when properly implemented. This session represents generic supportive counseling, not CBT.
+
+**Risk of harm**: The excessive self-disclosure and premature reassurance, while not overtly harmful, risk making the patient feel misunderstood or minimized. For a patient with recent suicidality and ongoing passive ideation, feeling that the therapist does not fully grasp the severity of her experience could undermine therapeutic alliance and reduce likelihood of help-seeking during future crises.
+
+**Missed opportunities**: The therapist had multiple opportunities to identify and intervene on key maintaining factors (rumination, avoidance, behavioral inactivity, hopeless cognitions) but missed them. Each missed opportunity represents a lost chance to help the patient develop insight and skills.
+
+**Sustainability of gains**: Even if the patient follows through on the suggested activities (walk, drawing, breathing), without understanding the CBT rationale or developing systematic skills, any improvements are likely to be temporary. The patient will not have learned how to manage her symptoms independently or prevent relapse.
+
+---
+
+## Recommendations
+
+### 1. **Implement Systematic Case Conceptualization and CBT Formulation**
+- **Action**: Before the next session, develop an explicit written case formulation that identifies: (1) precipitating factors (breakup), (2) maintaining factors (rumination, avoidance, behavioral inactivity, hopeless cognitions, sleep disruption), (3) predisposing factors (family history, prior depression), (4) protective factors (friends, therapist, insight). Use this formulation to guide all interventions.
+- **Example**: "Helena's depression is maintained by a cycle in which: (1) intrusive thoughts about her ex trigger sadness and hopelessness; (2) she attempts to escape these thoughts through nighttime distraction (journaling, calling friends), which provides short-term relief but strengthens the rumination cycle; (3) poor sleep from staying awake until 5-6 AM leads to daytime fatigue; (4) fatigue and low mood reduce motivation for activity; (5) inactivity worsens mood, creating a vicious cycle. Treatment will target: (1) reducing nighttime avoidance and building tolerance for difficult thoughts, (2) increasing daytime activity to improve mood and sleep, (3) challenging hopeless cognitions with evidence, (4) developing skills to manage racing thoughts."
+- **Practice**: Develop formulations for 3-5 cases and discuss with a supervisor. Practice articulating the formulation to patients and explaining how interventions address specific maintaining factors.
+
+### 2. **Master Cognitive Restructuring and Thought Records**
+- **Action**: Learn to systematically identify automatic thoughts, examine evidence for and against them, and develop alternative thoughts. Practice using structured thought records with patients.
+- **Example**: When Helena mentions "I can't shake this heaviness," ask: "What specific thoughts go through your mind when you feel that heaviness? For example, are you thinking 'I'll never feel better' or 'There's something wrong with me' or 'I'm broken'?" Once identified, explore: "What evidence do you have that this thought is true? What evidence contradicts it? What would a friend say? What would you say to a friend in this situation? What's a more balanced way to think about this?"
+- **Practice**: Complete 10 thought records with a supervisor, focusing on identifying core depressive thoughts (hopelessness, helplessness, worthlessness) and developing evidence-based alternatives. Practice the Socratic method of questioning rather than telling patients what to think.
+
+### 3. **Implement Behavioral Activation Systematically**
+- **Action**: Assess baseline activity level, identify valued activities, create a hierarchy of activities by difficulty, and schedule them systematically. Track mood before and after activities to establish the behavior-mood connection.
+- **Example**: "Helena, let's create an activity schedule. First, what activities did you enjoy before you felt depressed? What activities feel meaningful to you now, even if you don't feel like doing them? Let's rank them by difficulty from easiest to hardest. This week, I want you to schedule three activities from the easier end of the list. Before each activity, rate your mood 0-10. After, rate it again. We're testing whether activity affects mood."
+- **Practice**: Conduct behavioral activation with 3-5 depressed patients. Practice creating hierarchies, scheduling activities, and reviewing mood data. Learn to help patients overcome the barrier of "I don't feel like it" by explaining that behavior can change mood, not just the reverse.
+
+### 4. **Eliminate Excessive Therapist Self-Disclosure**
+- **Action**: Stop sharing personal anecdotes about your own experiences. Instead, focus entirely on understanding the patient's experience. If you feel the urge to share a personal story, pause and ask yourself: "Does this serve the patient's treatment, or does it shift focus to me? Is this normalizing in a helpful way, or is it minimizing the severity of their experience?"
+- **Example**: Instead of "When I was stressed, I found that keeping busy helped," say: "Many people find that activity helps with mood. Let's explore what activities might help you specifically. What did you enjoy before you felt depressed?"
+- **Practice**: Record yourself in role-plays or actual sessions and count instances of self-disclosure. Aim for zero personal anecdotes per session. Practice redirecting the focus back to the patient when you feel the urge to share.
+
+### 5. **Establish Collaborative Agenda-Setting at the Beginning of Every Session**
+- **Action**: At the start of each session, explicitly ask: "What would be most helpful to focus on today? We have about 50 minutes. What are your priorities?" Establish 2-3 specific agenda items, allocate time, and reference the agenda throughout the session to maintain structure.
+- **Example**: "Helena, I want to make sure we use our time well today. What's most important for you to work on? [Listen] Okay, so you want to focus on managing the racing thoughts at night and figuring out how to get better sleep. We also need to check in on safety. Let's spend about 20 minutes understanding the racing thoughts pattern, 15 minutes on sleep strategies, and 10 minutes on safety. Does that work for you?"
+- **Practice**: Establish a collaborative agenda in every session for the next month. Have a supervisor review recordings and provide feedback on how well you maintained the agenda throughout the session.
+
+### 6. **Implement Guided Discovery Through Socratic Questioning**
+- **Action**: Replace direct advice with skillful questioning that helps patients discover their own insights. Ask open-ended questions, explore the patient's thoughts and beliefs, and help them reach conclusions independently.
+- **Example**: Instead of "Try breathing exercises," ask: "You mentioned that silence makes the racing thoughts louder. What do you think happens when you try to push the thoughts away or distract yourself? What if we tried a different approach—just noticing the thoughts without fighting them? What do you think might happen?"
+- **Practice**: Practice Socratic questioning in role-plays with a supervisor. Record yourself and count how many times you give direct advice vs. ask questions. Aim for at least 70% questions, 30% or less direct advice.
+
+### 7. **Assess and Target Avoidance Behaviors and Safety Behaviors**
+- **Action**: Identify behaviors the patient uses to escape or avoid difficult emotions or thoughts (nighttime distraction, staying home, etc.). Help the patient understand how these behaviors provide short-term relief but maintain long-term distress. Gradually reduce avoidance through exposure.
+- **Example**: "Helena, I notice that when racing thoughts come at night, you journal and call friends to distract yourself. That makes sense—it helps you feel better in the moment. But I wonder if it might also be keeping the problem going. When you distract yourself, the thoughts might actually get stronger because you're telling your brain 'these thoughts are dangerous and I need to escape them.' What if we tried a different approach? What if, instead of fighting the thoughts, we practiced just observing them without judgment? This is called exposure, and it can help reduce the power of the thoughts over time."
+- **Practice**: Identify avoidance behaviors in 3-5 cases. Develop exposure hierarchies and practice explaining the rationale to patients. Practice tolerating the patient's discomfort during exposure rather than reassuring them out of it.
+
+### 8. **Develop Specific, Measurable, Achievable Homework with Clear Rationale**
+- **Action**: Assign homework that is specific (what, when, how often), measurable (how will you know if you did it?), achievable (realistic given the patient's current functioning), and clearly linked to treatment goals. Always explain the rationale and ensure the patient understands and commits.
+- **Example**: "Helena, I'd like to assign you three homework tasks. First, schedule a 10-minute walk three times this week—Tuesday, Wednesday, and Thursday after work. Before and after each walk, rate your mood 0-10. The goal is to test whether activity affects your mood. Second, practice the breathing exercise we discussed for 5 minutes each night before bed. Notice what happens to your racing thoughts. Third, keep a thought record—when you notice racing thoughts about your ex, write down: (1) the situation, (2) the thought, (3) your mood, (4) evidence for and against the thought, (5) an alternative thought. We'll review these together next session. Does this feel doable? What barriers might get in the way? How will you remember to do these?"
+- **Practice**: Assign specific homework in every session for the next month. Review homework at the beginning of the next session and adjust based on what the patient actually did. Practice problem-solving about barriers.
+
+### 9. **Elicit and Respond to Patient Feedback Throughout the Session**
+- **Action**: Regularly ask for feedback about the session, the therapist's understanding, and the helpfulness of interventions. Adjust your approach based on patient response.
+- **Example**: "How is this session feeling for you so far? Am I understanding your experience correctly? Is this approach making sense? What would be most helpful for us to focus on?"
+- **Practice**: Ask for feedback at least 3-4 times per session. Record yourself and review whether you actually adjusted your approach based on patient feedback or if you continued with your original plan regardless.
+
+### 10. **Eliminate Premature Reassurance; Validate Severity Instead**
+- **Action**: Before offering reassurance, first fully understand the patient's concerns and validate the difficulty of their experience. Reassurance should come after understanding, not before.
+- **Example**: Instead of "It'll get better," say: "It sounds like you're experiencing something really difficult right now. You've been hospitalized, you're having thoughts that life might be easier if you weren't here, and even simple things feel overwhelming. That's serious, and I want you to know I take it seriously. I also want you to know that depression is treatable, and there are specific things we can do to help you feel better. Let's work together on this."
+- **Practice**: In your next 5 sessions, practice validating the severity of the patient's experience before offering any reassurance. Have a supervisor review recordings and provide feedback.
+
+### 11. **Learn and Practice Exposure Therapy for Rumination and Avoidance**
+- **Action**: Develop skills in exposure therapy, particularly for interoceptive exposure (tolerating uncomfortable internal experiences like racing thoughts) and situational exposure (staying in situations that trigger anxiety or sadness).
+- **Example**: "Helena, we're going to practice something called exposure. I want you to sit quietly for 5 minutes and just notice whatever thoughts come up. Don't try to change them or fight them. Just observe them like clouds passing in the sky. You don't have to believe them or act on them. Let's try it together right now."
+- **Practice**: Practice exposure exercises in role-plays with a supervisor. Learn to tolerate the patient's discomfort and resist the urge to reassure them out of it. Practice explaining the rationale for exposure in a way that helps patients understand why it works.
+
+### 12. **Develop Competence in Sleep Interventions**
+- **Action**: Learn evidence-based sleep interventions for depression, including sleep hygiene, sleep restriction, and stimulus control. Helena's sleep disruption (staying awake until 5-6 AM) is a critical maintaining factor that requires targeted intervention.
+- **Example**: "Helena, your sleep is really important. Staying awake until 5-6 AM is likely making your depression worse. Let's work on this. First, let's establish a consistent bedtime and wake time, even on weekends. Second, let's limit your time in bed to only sleep—no journaling or calling friends in bed. Third, if you can't fall asleep after 20 minutes, get out of bed and do something boring in another room until you feel sleepy. The goal is to strengthen the association between bed and sleep."
+- **Practice**: Learn about sleep restriction therapy and stimulus control. Practice explaining sleep interventions to patients. Develop a sleep protocol for Helena that includes specific bedtime, wake time, and behavioral guidelines.
+
+---
+
+## Overall Session Score: 1.8/6
+
+**Summary:**
+
+This session represents a fundamental failure to implement evidence-based Cognitive Behavioral Therapy. While the therapist maintained basic safety assessment and professional demeanor, the session lacked virtually all core CBT components: no systematic case conceptualization, no identification of key cognitions or behaviors, no CBT-specific techniques, no guided discovery, no structured homework, and no coherent treatment strategy. Instead, the therapist offered generic wellness advice (breathing, walks, drawing) that could be provided by an untrained person.
+
+The therapist's excessive self-disclosure, premature reassurance, and minimization of severity further undermined therapeutic effectiveness. For a patient with Major Depressive Disorder with mixed features, recent hospitalization, and ongoing passive suicidal ideation, this approach is clinically inadequate and unlikely to produce meaningful symptom improvement.
+
+**Critical assessment**: This session does not qualify as evidence-based CBT. The patient is not receiving treatment with demonstrated efficacy for her condition. Immediate, intensive supervision and retraining are necessary before this therapist should continue treating depressed patients. The therapist must develop competence in: (1) case conceptualization and CBT formulation, (2) cognitive restructuring and thought records, (3) behavioral activation, (4) guided discovery through Socratic questioning, (5) exposure therapy, (6) structured homework assignment and review, and (7) elimination of excessive self-disclosure and premature reassurance.
+
+**Recommendation**: This therapist requires immediate remedial training in CBT fundamentals. Consider pairing with an experienced CBT supervisor for weekly case consultation, recording review, and skills practice. Do not allow this therapist to continue treating depressed patients without significant improvement in CBT competence. The current approach risks patient harm through inadequate treatment and potential therapeutic alliance rupture.

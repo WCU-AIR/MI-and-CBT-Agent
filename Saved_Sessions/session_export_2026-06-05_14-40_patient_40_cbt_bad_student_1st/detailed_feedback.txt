@@ -1,0 +1,834 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Female Sexual Interest/Arousal Disorder
+
+--- CASE STUDY ---
+
+Elizabeth Olsen and Finn Nelson, both successful attorneys in their late 30s, presented for couples counseling due to increased arguments prior to their wedding in six months. They had known each other since high school, dated for 2 years, and both denied prior psychiatric treatment or diagnosis.
+
+During joint sessions, both reported being in love but argued frequently. Ms. Olsen admired Mr. Nelson's intelligence and steadiness and was unsure why they fought. Mr. Nelson described Ms. Olsen’s lack of sexual interest and reliance on alcohol, which caused him distress. He reported difficulty arousing her or bringing her to orgasm and had begun initiating sex less frequently. Ms. Olsen’s scheduling of time together (one weekday night and one weekend night) was perceived by him as avoidance, though she stated it was to manage her time and social life.
+
+In individual sessions, Mr. Nelson expressed concern about her lack of sexual desire and satisfaction. Ms. Olsen admitted she used alcohol to tolerate intercourse, had primarily sexual experiences while drunk, and rarely found sexual arousal tolerable. She had avoided disclosing her sexual history to Mr. Nelson to maintain a “near-virginal” image. She also noted she persisted in the relationship due to her desire for a child before age 40. She declined to explain the underlying reasons for her sexual difficulties.
+
+Discussion: The couple sought therapy primarily for sexual issues, but broader relationship concerns are also present. Ms. Olsen’s diminished sexual interest, reduced enjoyment, inability to orgasm, and reliance on alcohol suggest female sexual interest/arousal disorder, with possible consideration for female orgasmic disorder or genito-pelvic pain/penetration disorder if further assessment supports these. Her sexual issues may be lifelong and possibly related to past trauma. Alcohol use may contribute to relationship problems. A thorough assessment of psychological, relational, and health-related factors is indicated.
+
+--- BEHAVIOUR ---
+
+Reluctant to disclose personal sexual history fully
+
+Avoidant when discussing reasons for sexual difficulties
+
+Uses humor or deflection (“I’m not going to tell you”)
+
+Cooperative in sessions but reserved
+
+Reports distress primarily related to partner’s sexual expectations
+
+--- DSM-5 SYMPTOMS ---
+
+Diminished sexual interest/arousal
+
+Reduced sexual enjoyment
+
+Difficulty achieving orgasm
+
+Avoidance of sexual activity
+
+Reliance on alcohol to tolerate intercourse
+
+Possible distress related to sexual function (primarily partner-focused)
+
+--- PATIENT PROFILE ---
+Name: Elizabeth Olsen
+Sex: Female
+Age: 38 years
+DOB: February 12, 1987
+Place of Birth: Seattle, WA
+Address: 456 Pine Street, Seattle, WA
+Contact: (555) 987-6543
+Marital Status: Engaged
+Children: None
+Occupation: Attorney, corporate law (15 years)
+Education: JD, University of Washington
+Religion: None
+Legal Guardian: N/A
+Presenting Complaint: Relationship difficulties and sexual dysfunction
+Psychiatric History: None
+Psychotherapy: None
+Medications: None
+Substance Use: Alcohol use primarily in sexual context
+Medical History: None reported
+Neurology: Normal
+Family History: No psychiatric history reported
+Mental Status: Reserved, cooperative, avoids personal disclosure, distress about partner’s expectations
+
+--- DIAGNOSIS ---
+Female Sexual Interest/Arousal Disorder
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Elizabeth Olsen is a 38-year-old female attorney presenting to an outpatient couples counseling setting with her fiancé, Finn Nelson, for evaluation of relationship difficulties and sexual dysfunction prior to their upcoming wedding. The couple sought therapy due to increased arguments and concerns raised by Mr. Nelson regarding Ms. Olsen’s sexual interest and related issues.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hey there! How’s it going today? Nice to see you. Just take it easy, no pressure or anything. 
+ PATIENT: Hi. Thanks for having me. I guess I’m doing okay. A little nervous, maybe. Not really sure where to start, but I’m willing to try. 
+ PSYCHIATRIST: You know, sometimes life just throws curveballs, but it always gets better if you just hang in there. When I was in school, I felt super overwhelmed too, but I just told myself to keep going and things worked out. Have you ever had a time where things felt tough but then turned around? 
+ PATIENT: Yeah, I get what you mean. There have definitely been times when things felt really overwhelming—especially balancing work and trying to keep my relationship going without, well, making things worse. I try to remind myself it can get better, but with some stuff, like… the stuff with Finn, it’s hard not to feel stuck. It’s like no matter what I try, it doesn’t really change. Sometimes I just want to hit pause. 
+ PSYCHIATRIST: Oh, that sounds rough. But you know, everyone goes through tough patches like that. It’s just part of life, really. I remember this one time I was super stressed about exams, and I just kept telling myself, “This too shall pass.” And guess what? It did! So maybe try to think positive, you know? It can really help to focus on the good stuff instead of the bad. What do you usually do to cheer yourself up? 
+ PATIENT: I wish I could just flip a switch and think positive all the time. Usually, I just try to keep busy—work mostly. It’s easier to focus on something else than on all the tension with Finn or… well, the stuff we don’t talk about. Sometimes I have a few drinks; it helps take the edge off. I know it’s probably not the best way, but it feels like the only way I can get through certain moments, especially when sex comes up. It’s easier to tolerate then. But honestly, it doesn’t really cheer me up, just… dulls things down enough to function. 
+ PSYCHIATRIST: Oh, I totally get that. Sometimes just distracting yourself or having a drink can feel like the best option. When I was stressed out, I used to binge-watch my favorite shows or eat way too much ice cream. It’s all about finding those little things that make you feel better, right? You know, maybe just try to get some good sleep and drink plenty of water. That always helps me feel a bit more on track. What’s your favorite way to unwind after a tough day? 
+ PATIENT: Honestly, after a tough day, I usually just flop on the couch with some wine or maybe binge something mindless on TV. I’m not much for ice cream or anything sweet—it’s more just the wine that helps me slow down. Sleep is hit or miss, though; sometimes my mind just won’t stop spinning, especially when I’m thinking about Finn or what we’re dealing with. It’d be nice to have some real quiet time without feeling like I’m avoiding things or pretending everything’s okay when it’s not. 
+ PSYCHIATRIST: Yeah, I hear you. It’s tough when your mind won’t give you a break. But hey, you’re doing your best, and that’s what counts. Sometimes, just reminding yourself that you’re okay, even if things feel messy, can help a little. You’re stronger than you think. Life’s a rollercoaster, but you’ll get through the dips. Have you ever tried just getting outside for a bit? Fresh air can do wonders, even if it’s just a quick walk around the block. 
+ PATIENT: Yeah, I guess fresh air might help. I don’t get outside as much as I should. Between work and, well, everything that’s sort of hanging over me with Finn, it’s easy to just stay inside where it feels safer. But you’re right, maybe a walk could clear my head a little. It’s just hard to find the motivation when I’m feeling stuck, you know? Sometimes I wonder if things will ever get better or if I’m just fooling myself. 
+ PSYCHIATRIST: I totally get that feeling of being stuck. You know, I once went through a phase where I felt the same way—like nothing was changing no matter what I did. But then one day, I just decided to take a little trip to the park nearby, and it really helped me reset. Sometimes, small changes like that can make a big difference, even if it doesn’t seem like it at first. Maybe you could give that a try sometime. It’s all about those little steps, you know? 
+ PATIENT: Yeah, little steps… that makes sense. I’ll try to remember that next time I’m feeling overwhelmed. I guess it’s just hard because sometimes even the little things feel like huge obstacles. But maybe if I can push myself just a bit more, things won’t feel so heavy. I’m not great at asking for help or being open about what I’m really feeling—especially with Finn—but maybe talking here is a start. 
+ PSYCHIATRIST: Hey, that’s a great attitude to have. It’s all about trying and not giving up, right? I remember when I was trying to eat healthier, and it was tough at first, but sticking with it made a difference. You’re doing something good just by being here and talking. Keep focusing on the positives, and don’t be too hard on yourself. Things will get better with time, I’m sure of it. Just keep your head up! 
+ PATIENT: Thanks. I appreciate that. It’s not always easy to stay positive, especially when Finn’s expectations feel like pressure. I know he’s frustrated with how things are, especially with, you know, the sex stuff. It’s hard because I want to meet him halfway, but it’s also exhausting and sometimes painful for me. I haven’t really talked about that side of things with him. Makes me feel like I’m letting him down or that I’m really different than he thinks I am. I’m scared it might change how he sees me. But I guess being here and talking is a start, like you said. 
+ PSYCHIATRIST: Hey, it’s really brave of you to share that. Relationships can be tricky, especially when things don’t go as expected, but you’re not alone in feeling that way. Sometimes just reminding yourself that you’re doing your best is enough. And you know, everyone’s a little different, and that’s okay. Maybe try to focus on the good moments you share with Finn rather than the tough ones. It’s all about keeping a positive outlook. You got this! 
+ PATIENT: Yeah, focusing on the good moments sounds nice. We do have those sometimes—like when we’re laughing over something silly or just hanging out without any pressure. It feels a bit like a relief then, like maybe there’s still hope. I guess the hard part is balancing that with the stuff we struggle with, especially near the wedding coming up. Sometimes I wonder if I’m just putting on a show to keep things moving forward. But I don’t want to mess this up. I want it to work. 
+ PSYCHIATRIST: Hey, that’s a really hopeful way to look at it. It’s great you have those good moments to hold onto. Weddings can be super stressful, but they’re also a fresh start in a way. Just keep believing in the good stuff and try to take things one day at a time. You’re stronger than you realize, and things will find their way. Keep your chin up—you’ve got this! 
+ PATIENT: Thanks. Taking it one day at a time seems like good advice. Sometimes I just wish I had the courage to be more open with Finn about what I’m really feeling and what’s been hard for me down the road. But for now, I guess this is a step. Thanks for listening and not pushing too hard. It helps more than I thought it would. 
+ PSYCHIATRIST: Hey, no problem at all! Sometimes just having someone to listen makes all the difference. Remember, you’re doing great by just showing up and talking. Keep taking care of yourself and try to stay positive. Things have a way of working out when you least expect it. You’ve got this! Take care! 
+ PATIENT: Thanks again. I’ll try to keep that in mind. Take care. 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 0/6**
+
+**Explanation:**
+
+No agenda was established at any point during this session. The therapist opened with a casual greeting ("Hey there! How's it going today?") and immediately pivoted to personal anecdotes without collaboratively identifying session goals, target problems, or priorities. A structured CBT agenda should have included: (1) clarification of Elizabeth's primary concerns regarding sexual dysfunction and relationship distress, (2) identification of specific symptoms to address (diminished arousal, alcohol use in sexual contexts, avoidance of disclosure), (3) time allocation for different topics, and (4) explicit agreement on session focus.
+
+The patient attempted to signal readiness ("I'm willing to try") and vulnerability ("A little nervous, maybe"), which were ideal openings for agenda-setting. Instead, the therapist responded with personal narrative. Throughout the 11 exchanges, no structured agenda emerged. The session drifted from general stress management to positive thinking to outdoor activities, with no clear connection to Elizabeth's presenting diagnosis of Female Sexual Interest/Arousal Disorder or the relational context requiring intervention.
+
+This absence is clinically significant because without agenda-setting, the therapist cannot prioritize the most impactful interventions, cannot allocate time efficiently, and cannot ensure the patient's core concerns are addressed. For a patient with sexual dysfunction and avoidant coping patterns, an explicit agenda creates psychological safety and demonstrates that the therapist understands the presenting problem.
+
+**Summary:**
+No agenda was established. The therapist failed to collaboratively identify session goals, target problems, or priorities despite multiple opportunities to do so.
+
+---
+
+### 2. Feedback
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist never elicited feedback from the patient about the session, her understanding of the therapist's reasoning, or her reactions to interventions. Across all 11 therapist responses, there is no instance of: (1) asking whether the patient understood explanations, (2) checking if suggestions felt relevant or helpful, (3) soliciting reactions to the session direction, (4) asking what the patient found most useful, or (5) adjusting approach based on patient input.
+
+The patient provided multiple implicit feedback cues that were ignored. When Elizabeth stated, "It's hard because I want to meet him halfway, but it's also exhausting and sometimes painful for me," this was a critical disclosure about physical/emotional distress during sexual activity—directly relevant to her diagnosis. The therapist's response was generic reassurance ("Hey, it's really brave of you to share that") without checking whether the patient felt heard or whether this disclosure warranted deeper exploration.
+
+Similarly, when the patient said, "I haven't really talked about that side of things with him. Makes me feel like I'm letting him down," the therapist offered platitudes rather than asking: "What would it feel like to share this with Finn?" or "What's your biggest fear about him knowing this?" This represents a fundamental failure to use feedback as a clinical tool.
+
+In CBT, feedback elicitation is not optional—it ensures the patient remains an active collaborator and that interventions are tailored to her needs. The absence of feedback-seeking suggests the therapist was operating from a generic, non-collaborative framework.
+
+**Summary:**
+No feedback was elicited at any point. The therapist never checked understanding, solicited reactions, or adjusted approach based on patient input.
+
+---
+
+### 3. Understanding
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist demonstrated minimal understanding of Elizabeth's "internal reality" and repeatedly missed critical clinical information. While the therapist acknowledged surface-level statements ("I hear you," "that sounds rough"), there was no evidence of grasping the deeper psychological and relational dynamics at play.
+
+Specific failures in understanding:
+
+1. **Alcohol use mischaracterization**: Elizabeth explicitly stated, "I use alcohol to tolerate intercourse" and "it helps take the edge off... especially when sex comes up. It's easier to tolerate then." This is a critical clinical indicator of sexual aversion and possible trauma history. The therapist normalized this ("Sometimes just distracting yourself or having a drink can feel like the best option") and compared it to personal ice cream consumption—a false equivalence that missed the pathological function of alcohol in her sexual life.
+
+2. **Avoidance pattern ignored**: Elizabeth disclosed, "I haven't really talked about that side of things with him... I'm scared it might change how he sees me." This reveals core avoidance and shame—central to her diagnosis. The therapist offered generic encouragement rather than exploring the fear, shame, or underlying beliefs driving this avoidance.
+
+3. **Pain disclosure missed**: Elizabeth stated intercourse is "exhausting and sometimes painful for me." This suggests possible genito-pelvic pain/penetration disorder or trauma-related pain responses. The therapist did not acknowledge, explore, or validate this disclosure.
+
+4. **Distress source misidentified**: Elizabeth's distress stems from internal sexual dysfunction and possible trauma, not merely from "Finn's expectations." The therapist framed her problem as external pressure management ("Finn's expectations feel like pressure") rather than internal sexual pathology.
+
+5. **Motivation misunderstood**: Elizabeth stated, "I persist in the relationship due to my desire for a child before age 40" and "I'm scared it might change how he sees me." These reveal complex motivations (biological clock, fear of abandonment, identity protection) that the therapist never explored.
+
+The therapist's repeated personal anecdotes ("When I was in school," "When I was stressed," "I once went through a phase") further demonstrate lack of focus on the patient's unique experience. Empathy requires understanding the patient's specific context, not relating it back to the therapist's life.
+
+**Summary:**
+The therapist demonstrated surface-level listening but fundamentally misunderstood Elizabeth's internal experience, missed critical clinical information (alcohol use function, pain, avoidance patterns), and failed to grasp the severity of her sexual dysfunction.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist displayed adequate warmth and was not hostile or demeaning, which prevents a score of 0. However, significant interpersonal problems undermined the therapeutic relationship and created barriers to deeper work.
+
+**Problems identified:**
+
+1. **Excessive self-disclosure**: The therapist shared personal anecdotes in 6 of 11 responses ("When I was in school," "When I was stressed," "I remember this one time," "I used to binge-watch," "I once went through a phase," "I remember when I was trying to eat healthier"). This violates professional boundaries and shifts focus from the patient to the therapist. For a patient with avoidant patterns and difficulty disclosing, therapist self-disclosure models that the session is about the therapist's experiences, not hers.
+
+2. **Minimization of serious concerns**: When Elizabeth disclosed alcohol use in sexual contexts and pain during intercourse, the therapist normalized these ("Sometimes just distracting yourself or having a drink can feel like the best option") rather than treating them as clinical concerns requiring exploration. This communicates that her symptoms are unremarkable, potentially increasing shame and reducing disclosure.
+
+3. **Insincerity and platitudes**: Phrases like "You got this!" and "Things have a way of working out when you least expect it" feel generic and disconnected from Elizabeth's specific struggles. For a patient with sexual dysfunction and relationship distress, generic cheerleading can feel dismissive.
+
+4. **Lack of genuine curiosity**: The therapist asked questions but did not follow up on answers. When Elizabeth mentioned pain during intercourse, the therapist did not ask clarifying questions. When she disclosed fear of Finn's judgment, the therapist did not explore this fear. This suggests the therapist was following a script rather than genuinely engaging with the patient's experience.
+
+5. **Missed opportunity for safety**: Elizabeth stated, "Thanks for listening and not pushing too hard. It helps more than I thought it would." This suggests she expected pressure or judgment. A genuinely effective therapist would have explicitly addressed this fear and created explicit safety around disclosure of sexual history and trauma.
+
+**Positive elements**: The therapist was warm in tone, did not interrupt, and maintained a supportive demeanor. However, warmth without genuine understanding and appropriate boundaries is insufficient for effective therapy.
+
+**Summary:**
+The therapist displayed adequate warmth but undermined the relationship through excessive self-disclosure, minimization of serious symptoms, generic platitudes, and lack of genuine curiosity about the patient's experience.
+
+---
+
+### 5. Collaboration
+### **Score: 1/6**
+
+**Explanation:**
+
+Collaboration was minimal and largely absent. True collaboration in CBT requires: (1) shared decision-making about session focus and interventions, (2) soliciting patient input on problems and solutions, (3) positioning the patient as an active agent in treatment, and (4) explicit partnership language ("we," "together," "what do you think").
+
+**Failures in collaboration:**
+
+1. **Unilateral direction-setting**: The therapist repeatedly offered suggestions without collaborative exploration: "Maybe try to think positive," "Maybe just try to get some good sleep and drink plenty of water," "Have you ever tried just getting outside for a bit?" These are prescriptive recommendations, not collaborative hypotheses. A collaborative approach would be: "What do you think might help you manage stress? Let's explore options together."
+
+2. **Patient input not solicited on treatment approach**: Elizabeth never participated in identifying her core problems or agreeing on treatment strategy. The therapist did not ask: "What do you think is the biggest barrier to your sexual satisfaction?" or "What would need to change for you to feel more comfortable with Finn?" or "What approach do you think might help?"
+
+3. **No shared conceptualization**: In CBT, collaboration includes developing a shared understanding of how thoughts, feelings, and behaviors interact. This session contained no such conceptualization. For example, the therapist could have explored: "It sounds like when you feel anxious about sex, you use alcohol to manage that anxiety. Let's think together about what happens in that cycle."
+
+4. **Patient positioned as passive recipient**: Elizabeth is positioned as someone receiving advice ("You got this!" "Keep your chin up!") rather than as an active problem-solver. This is particularly problematic for a patient with avoidant coping patterns—she needs to practice active engagement, not passive reception of reassurance.
+
+5. **No explicit partnership language**: The therapist never used collaborative language such as "Let's work together on this," "What's your sense of what might help?" or "I'd like to understand your perspective on this."
+
+**Impact**: For a patient with sexual dysfunction and avoidant disclosure patterns, lack of collaboration reinforces passivity and external locus of control. She needs to practice active participation in identifying problems and generating solutions—this session provided no such practice.
+
+**Summary:**
+Collaboration was minimal. The therapist offered unilateral suggestions, did not solicit patient input on treatment approach, failed to develop shared conceptualization, and positioned the patient as a passive recipient of advice rather than an active partner.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 1/6**
+
+**Explanation:**
+
+The session lacked structure, clear priorities, and efficient time use. While the therapist did not appear rushed, the session drifted without direction, covering multiple tangential topics without depth on any clinically critical issue.
+
+**Pacing problems:**
+
+1. **No prioritization**: The therapist moved from general stress ("sometimes life just throws curveballs") to positive thinking to sleep/hydration to outdoor activities to ice cream to park visits—without establishing which issues were most urgent. For a patient with Female Sexual Interest/Arousal Disorder presenting 6 months before her wedding, the session should have prioritized: (1) assessment of sexual dysfunction severity, (2) exploration of alcohol use patterns, (3) trauma screening, (4) relationship dynamics around sex.
+
+2. **Tangential exploration**: The therapist spent time on personal anecdotes about exams, ice cream, binge-watching, and park visits. While attempting to build rapport, these tangents consumed time that should have been devoted to understanding Elizabeth's sexual history, trauma history, and current sexual difficulties.
+
+3. **Insufficient depth on critical issues**: When Elizabeth disclosed pain during intercourse ("exhausting and sometimes painful for me"), the therapist did not pause to explore this. When she disclosed alcohol use in sexual contexts, the therapist normalized it rather than conducting a thorough assessment. When she disclosed fear of Finn's judgment, the therapist offered reassurance rather than exploring the fear.
+
+4. **No time allocation**: A structured session would have allocated time: "We have 50 minutes. I'd like to spend the first 15 minutes understanding your sexual history, the next 20 on your current relationship dynamics, and the last 15 on developing a plan. Does that work for you?" This session had no such structure.
+
+5. **Repetitive content without progression**: The therapist repeated similar messages across multiple exchanges ("keep positive," "you got this," "things will work out") without building on previous content or moving toward specific interventions or homework.
+
+**Impact**: Inefficient pacing means critical clinical information is not gathered, treatment planning cannot occur, and the patient leaves without a clear understanding of next steps or how to address her sexual dysfunction.
+
+**Summary:**
+The session lacked structure and prioritization. The therapist covered multiple tangential topics without depth on clinically critical issues, failed to explore key disclosures, and did not allocate time efficiently.
+
+---
+
+### 7. Guided Discovery
+### **Score: 0/6**
+
+**Explanation:**
+
+Guided discovery—the cornerstone of CBT—was entirely absent. Guided discovery involves asking questions that help the patient reach insights independently, rather than telling them what to think or do. It requires Socratic questioning: asking about evidence, exploring alternatives, examining consequences, and helping the patient draw conclusions.
+
+**Failures in guided discovery:**
+
+1. **No Socratic questioning**: The therapist asked surface-level questions ("What do you usually do to cheer yourself up?" "What's your favorite way to unwind?") but never asked questions designed to facilitate insight. Examples of Socratic questions that should have been asked:
+   - "When you use alcohol before sex, what do you notice about your ability to feel aroused?"
+   - "What do you think would happen if you told Finn about the pain you experience?"
+   - "How do you think your avoidance of talking about sex affects your relationship?"
+   - "What beliefs do you hold about what a 'good partner' should be sexually?"
+
+2. **Prescriptive advice instead of discovery**: The therapist told Elizabeth what to do ("try to think positive," "get some good sleep," "try getting outside") rather than helping her discover solutions. A guided discovery approach: "You mentioned feeling stuck. What have you tried so far? What happened? What might be worth experimenting with?"
+
+3. **No exploration of automatic thoughts or beliefs**: Elizabeth revealed several core beliefs ("I'm letting him down," "I'm really different than he thinks I am," "I'm putting on a show") but the therapist never explored these. Guided discovery would involve: "You mentioned feeling like you're letting him down. Where does that belief come from? What evidence supports it? What evidence contradicts it?"
+
+4. **No behavioral experimentation framing**: The therapist suggested activities (walks, fresh air) as prescriptions, not as experiments to test hypotheses. A guided discovery approach: "You mentioned that staying inside feels safer. What if we thought of a short walk as an experiment to see what happens? What would you be testing?"
+
+5. **No examination of consequences**: When Elizabeth disclosed alcohol use in sexual contexts, the therapist did not help her examine consequences through questioning: "What do you notice about your relationship with Finn when you use alcohol before sex? What happens to your ability to be present? What does this pattern tell you about what might need to change?"
+
+**Impact**: Without guided discovery, the patient remains passive and dependent on the therapist for answers. For Elizabeth, who struggles with avoidance and disclosure, guided discovery is essential—it teaches her to examine her own thoughts, beliefs, and patterns, building self-efficacy and insight.
+
+**Summary:**
+Guided discovery was completely absent. The therapist used prescriptive advice and surface-level questions rather than Socratic questioning designed to facilitate patient insight and self-discovery.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist failed to identify and focus on the central cognitions and behaviors relevant to Elizabeth's presenting problem (Female Sexual Interest/Arousal Disorder). Instead, the session remained at a generic level of stress management and positive thinking.
+
+**Critical cognitions and behaviors that should have been targeted:**
+
+1. **Core avoidance behavior**: Elizabeth avoids disclosing her sexual history and difficulties to Finn. She stated: "I haven't really talked about that side of things with him" and "I avoided disclosing her sexual history to Mr. Nelson to maintain a 'near-virginal' image." This avoidance is central to her diagnosis and relationship distress. The therapist never explored this behavior or its consequences.
+
+2. **Alcohol use as coping mechanism**: Elizabeth uses alcohol to tolerate intercourse ("I use alcohol to tolerate intercourse," "it helps take the edge off... especially when sex comes up"). This is a critical behavioral pattern maintaining her sexual dysfunction. The therapist normalized this rather than exploring it as a maladaptive coping strategy.
+
+3. **Automatic thoughts about sexuality**: Elizabeth revealed thoughts like "I'm letting him down," "I'm really different than he thinks I am," and "I'm putting on a show." These are core automatic thoughts related to shame, identity, and sexual self-perception. The therapist did not explore these thoughts or help Elizabeth examine their validity.
+
+4. **Avoidant cognitions about pain**: Elizabeth disclosed pain during intercourse but did not elaborate. The therapist did not explore cognitions such as: "Sex will hurt," "I can't handle this," "Something is wrong with me," which may be maintaining avoidance.
+
+5. **Relationship-focused distress**: Elizabeth's distress is framed as external ("Finn's expectations feel like pressure") rather than internal (her own sexual dysfunction). The therapist accepted this external framing without exploring her internal experience of sexual desire, arousal, and satisfaction.
+
+**What was focused on instead**: The therapist focused on generic stress management (positive thinking, sleep, hydration, outdoor activities) rather than the specific cognitions and behaviors maintaining her sexual dysfunction.
+
+**Impact**: Without targeting key cognitions and behaviors, treatment cannot address the root causes of her sexual dysfunction. Generic stress management may provide temporary relief but will not resolve Female Sexual Interest/Arousal Disorder.
+
+**Summary:**
+The therapist failed to identify and focus on central cognitions (shame, identity concerns, avoidant thoughts) and behaviors (disclosure avoidance, alcohol use, sexual avoidance) relevant to Elizabeth's sexual dysfunction diagnosis.
+
+---
+
+### 9. Strategy for Change
+### **Score: 0/6**
+
+**Explanation:**
+
+No coherent CBT strategy for change was developed or communicated. A strategy for change requires: (1) a clear conceptualization of the problem, (2) identification of maintaining factors, (3) a logical sequence of interventions targeting those factors, and (4) explicit connection between interventions and symptom improvement.
+
+**Failures in strategy development:**
+
+1. **No problem conceptualization**: The therapist never articulated an understanding of Elizabeth's sexual dysfunction. A proper conceptualization would address: What maintains her low sexual interest? What role does alcohol play? What is the relationship between avoidance and sexual dysfunction? What trauma or beliefs underlie her sexual aversion? None of this was explored.
+
+2. **No identification of maintaining factors**: CBT strategy requires identifying what keeps the problem going. For Elizabeth, maintaining factors likely include: (1) avoidance of sexual situations and disclosure, (2) alcohol use preventing genuine arousal, (3) shame and identity concerns, (4) possible trauma history, (5) relationship communication patterns. The therapist identified none of these.
+
+3. **Generic interventions disconnected from diagnosis**: The interventions offered (positive thinking, sleep, hydration, outdoor activities) are generic stress-management strategies, not targeted interventions for Female Sexual Interest/Arousal Disorder. There is no logical connection between "take a walk" and "increase sexual arousal."
+
+4. **No treatment sequencing**: A coherent strategy would sequence interventions logically. For example: (1) first, assess trauma history and sexual beliefs, (2) then, address avoidance through gradual exposure, (3) then, reduce alcohol use, (4) then, work on sexual communication with partner. This session had no such sequence.
+
+5. **No explicit connection to goals**: The therapist never stated: "Here's what I think is maintaining your sexual dysfunction. Here's how we'll address it. Here's what you can expect to change." Without this, the patient cannot understand the rationale for interventions or track progress.
+
+6. **No differentiation from general counseling**: The strategy employed could apply to any patient with stress or low mood. It does not address the specific diagnosis of Female Sexual Interest/Arousal Disorder or the specific maintaining factors in Elizabeth's case.
+
+**Impact**: Without a coherent strategy, treatment is unlikely to produce meaningful change in sexual function. The patient may feel heard and supported but will not develop the specific skills and insights needed to address her sexual dysfunction.
+
+**Summary:**
+No coherent CBT strategy for change was developed. The therapist offered generic stress-management interventions disconnected from Elizabeth's specific diagnosis and maintaining factors.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 0/6**
+
+**Explanation:**
+
+No specific CBT techniques were applied. The session consisted entirely of supportive listening, reassurance, and generic advice—not evidence-based CBT interventions.
+
+**CBT techniques that should have been used:**
+
+1. **Behavioral activation**: For a patient with avoidance patterns and low motivation, behavioral activation (scheduling specific activities and tracking mood/arousal changes) would be appropriate. This was not used.
+
+2. **Thought records**: To help Elizabeth examine her automatic thoughts ("I'm letting him down," "I'm putting on a show"), thought records would help her identify thoughts, examine evidence, and develop alternative perspectives. This was not used.
+
+3. **Exposure/habituation**: For sexual avoidance, graduated exposure (starting with non-sexual physical affection, progressing to sexual situations) combined with response prevention (not using alcohol to cope) would be indicated. This was not used.
+
+4. **Cognitive restructuring**: To address core beliefs about sexuality, shame, and identity, cognitive restructuring would help Elizabeth examine and modify unhelpful beliefs. This was not used.
+
+5. **Behavioral experiments**: To test hypotheses about alcohol use, sexual arousal, and relationship communication, behavioral experiments would be valuable. For example: "What if you tried being intimate with Finn without alcohol? What would you notice?" This was not used.
+
+6. **Communication skills training**: Given relationship distress and avoidance of sexual disclosure, communication skills training would help Elizabeth practice disclosing her needs and fears to Finn. This was not used.
+
+7. **Psychoeducation about sexual response**: Elizabeth would benefit from education about sexual arousal, the role of anxiety and alcohol in sexual function, and the connection between avoidance and desire. This was not provided.
+
+8. **Functional analysis**: To understand the function of alcohol use in her sexual life, a functional analysis would be valuable: What does alcohol do for her? What would happen without it? What alternative coping strategies could serve the same function? This was not conducted.
+
+**What was used instead**: Supportive listening, reassurance, personal anecdotes, and generic advice (positive thinking, sleep, outdoor activities). While supportive, these are not CBT techniques.
+
+**Impact**: Without CBT techniques, the session does not constitute evidence-based CBT. The patient may feel supported but will not develop the specific skills needed to address her sexual dysfunction.
+
+**Summary:**
+No specific CBT techniques were applied. The session consisted of supportive listening and generic advice rather than evidence-based CBT interventions such as thought records, behavioral experiments, exposure, or cognitive restructuring.
+
+---
+
+### 11. Homework
+### **Score: 0/6**
+
+**Explanation:**
+
+No homework was assigned. The session ended with generic encouragement ("Keep taking care of yourself and try to stay positive") without any specific between-session task, rationale, or commitment.
+
+**Homework that should have been assigned:**
+
+1. **Self-monitoring of alcohol use**: Track when and how much alcohol is used in sexual contexts, mood before/after, and any changes in arousal or satisfaction. Rationale: To increase awareness of the pattern and its effects.
+
+2. **Thought record on shame/identity**: Identify situations where Elizabeth thinks "I'm letting him down" or "I'm putting on a show." Write down the thought, evidence for/against, and alternative perspectives. Rationale: To begin examining core beliefs about sexuality and identity.
+
+3. **Behavioral experiment with non-sexual intimacy**: Spend 15 minutes with Finn on non-sexual physical affection (cuddling, massage) without alcohol. Notice what you feel, think, and experience. Rationale: To begin gradual exposure to intimacy without alcohol as a coping mechanism.
+
+4. **Disclosure practice**: Write down 2-3 things you'd like Finn to know about your sexual experience (pain, anxiety, avoidance). Practice saying one of these in a low-stakes conversation. Rationale: To begin addressing avoidance and building communication skills.
+
+5. **Reading assignment**: Provide psychoeducational material about sexual response, the role of anxiety in sexual dysfunction, or the effects of alcohol on arousal. Rationale: To build understanding of her condition.
+
+6. **Outdoor activity as behavioral experiment**: Take a 20-minute walk and notice mood, energy, and any changes in how you feel. Rationale: To test the hypothesis that activity affects mood (though this should be framed as an experiment, not a prescription).
+
+**What happened instead**: The therapist suggested activities (walks, fresh air, sleep) but did not frame these as formal homework with specific rationale or tracking. No explicit assignment was made, no written materials were provided, and no commitment was obtained.
+
+**Impact**: Without homework, the patient has no between-session practice to consolidate learning or test new behaviors. For a patient with avoidance patterns, homework is essential—it provides structure, accountability, and opportunities to practice new skills in real-world contexts.
+
+**Summary:**
+No homework was assigned. The session ended without specific between-session tasks, rationale, or commitment, missing a critical opportunity for consolidation and skill-building.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- **Warm, non-judgmental tone**: The therapist maintained a supportive demeanor and did not shame or criticize the patient.
+- **Patient felt heard**: Elizabeth stated, "Thanks for listening and not pushing too hard. It helps more than I thought it would," suggesting she experienced basic acceptance.
+- **No overt harm**: The therapist did not make statements that were directly harmful or contraindicated.
+- **Availability and presence**: The therapist was present and available, which has some therapeutic value.
+
+### Critical Deficiencies:
+
+**1. Complete absence of CBT structure and technique**
+- No agenda, no guided discovery, no CBT techniques applied
+- Session resembles supportive counseling, not evidence-based CBT
+- Generic stress-management advice disconnected from sexual dysfunction diagnosis
+
+**2. Failure to assess and understand the patient's sexual dysfunction**
+- No exploration of sexual history, trauma, or beliefs
+- Alcohol use in sexual contexts normalized rather than explored
+- Pain during intercourse mentioned but not investigated
+- No assessment of sexual desire, arousal, or satisfaction
+
+**3. Inappropriate therapist self-disclosure**
+- 6 of 11 therapist responses included personal anecdotes
+- Shifts focus from patient to therapist
+- Violates professional boundaries
+- Models that therapy is about therapist's experiences, not patient's
+
+**4. Failure to establish collaborative relationship**
+- Unilateral advice-giving rather than shared decision-making
+- Patient positioned as passive recipient, not active partner
+- No solicitation of patient input on problems or solutions
+- Particularly problematic for avoidant patient who needs to practice active engagement
+
+**5. Missed critical clinical information**
+- Alcohol use function in sexual context not explored
+- Pain during intercourse not investigated
+- Fear of partner's judgment not explored
+- Shame and identity concerns not addressed
+- Possible trauma history not screened
+
+**6. No treatment planning or strategy**
+- No conceptualization of maintaining factors
+- No logical sequence of interventions
+- No connection between interventions and symptom improvement
+- No homework or between-session practice
+
+---
+
+## Summary of Feedback
+
+### Strengths
+
+The therapist demonstrated genuine warmth and created a non-judgmental environment where the patient felt safe enough to disclose sensitive information about alcohol use, sexual difficulties, and relationship concerns. The therapist's availability, attentiveness, and supportive demeanor provided basic therapeutic support. The patient explicitly acknowledged feeling heard ("Thanks for listening and not pushing too hard"), which indicates the therapist succeeded in creating a minimally safe space. These foundational interpersonal skills are necessary but insufficient for effective CBT.
+
+### Critical Deficiencies
+
+This session fundamentally fails to constitute evidence-based CBT. The therapist provided supportive counseling with generic stress-management advice rather than targeted, structured intervention for Female Sexual Interest/Arousal Disorder. The most serious deficiencies are:
+
+**Absence of CBT structure**: No agenda was established, no collaborative problem-formulation occurred, and no coherent treatment strategy was developed. The session drifted across multiple tangential topics (positive thinking, sleep, ice cream, park visits) without prioritizing the patient's core presenting problem—sexual dysfunction and relationship distress.
+
+**Failure to assess sexual dysfunction**: Despite Elizabeth's diagnosis of Female Sexual Interest/Arousal Disorder, the therapist conducted no systematic assessment of sexual history, current sexual function, trauma history, or beliefs about sexuality. When Elizabeth disclosed pain during intercourse and alcohol use in sexual contexts, these critical clinical findings were normalized rather than explored. This represents a fundamental failure in clinical assessment.
+
+**Inappropriate self-disclosure**: The therapist shared personal anecdotes in 6 of 11 responses, violating professional boundaries and shifting focus from the patient's experience to the therapist's. For a patient with avoidant patterns and difficulty disclosing, this models that the therapeutic space is not primarily about her needs.
+
+**Absence of CBT techniques**: No thought records, behavioral experiments, exposure hierarchies, cognitive restructuring, or other evidence-based CBT techniques were applied. The session consisted entirely of supportive listening and generic advice—not CBT.
+
+**Failure to establish collaboration**: The therapist offered unilateral advice rather than collaborative exploration. For a patient with avoidant coping patterns, this reinforces passivity rather than building active problem-solving skills.
+
+### Impact on Patient Care
+
+This session is unlikely to produce meaningful improvement in Elizabeth's sexual dysfunction or relationship distress. While the patient may feel temporarily supported, she leaves without: (1) understanding what maintains her sexual dysfunction, (2) specific skills to address avoidance or alcohol use, (3) a plan for improving sexual communication with her partner, (4) between-session practice or homework, or (5) a coherent treatment strategy.
+
+More concerning, the therapist's normalization of alcohol use in sexual contexts ("Sometimes just distracting yourself or having a drink can feel like the best option") may inadvertently reinforce maladaptive coping. The patient's critical disclosures about pain and fear of judgment were met with generic reassurance rather than exploration, potentially increasing shame and reducing future disclosure.
+
+For a patient presenting 6 months before her wedding with significant sexual dysfunction and relationship distress, this session represents a missed opportunity for targeted intervention. The patient's presenting problem requires structured assessment, trauma screening, cognitive-behavioral intervention, and explicit treatment planning—none of which occurred.
+
+---
+
+## Recommendations
+
+### 1. **Establish Structured CBT Agenda and Assessment**
+- **Action**: Begin every session by collaboratively setting a specific agenda with time allocation. Conduct systematic assessment of sexual dysfunction using validated measures (e.g., Female Sexual Function Index) and trauma screening.
+- **Example**: "Elizabeth, I want to make sure we use our time well. Today I'd like to spend 15 minutes understanding your sexual history and current sexual concerns, 15 minutes on your relationship with Finn, and 15 minutes on developing a plan. Does that work for you? And I'd like to ask some questions about your past experiences with sex and relationships—is that okay?"
+- **Practice**: Role-play agenda-setting with a supervisor. Practice trauma screening questions. Develop a standardized assessment protocol for sexual dysfunction cases.
+
+### 2. **Eliminate Inappropriate Therapist Self-Disclosure**
+- **Action**: Remove personal anecdotes from clinical work. When tempted to share personal experience, pause and redirect focus to the patient. Use supervision to identify triggers for self-disclosure.
+- **Example**: Instead of "When I was stressed, I used to binge-watch shows," say: "I'm curious—when you use alcohol or TV to manage stress, what do you notice about your mood afterward? Does it help in the moment? What happens later?"
+- **Practice**: Record sessions and count instances of self-disclosure. Set a goal of zero personal anecdotes per session. Review recordings with supervisor to identify patterns.
+
+### 3. **Implement Guided Discovery Through Socratic Questioning**
+- **Action**: Replace prescriptive advice with Socratic questions designed to facilitate patient insight. Ask about evidence, alternatives, consequences, and implications.
+- **Example**: Instead of "Try to think positive," ask: "You mentioned feeling stuck. What do you think keeps you stuck? What have you tried? What happened? What might be worth experimenting with?"
+- **Practice**: Develop a list of Socratic questions for common presenting problems. Practice asking questions without providing answers. Use supervision to review recordings and identify missed opportunities for guided discovery.
+
+### 4. **Conduct Thorough Sexual History and Trauma Assessment**
+- **Action**: Systematically assess sexual history, trauma, beliefs about sexuality, and current sexual function. Use open-ended questions followed by specific follow-up.
+- **Example**: "Tell me about your first sexual experience. What was that like? How did you feel? What messages did you receive about sex growing up? Have you experienced any sexual trauma or coercion? When did you first notice difficulty with sexual desire or arousal?"
+- **Practice**: Develop a structured sexual history interview. Practice with role-plays. Consult with a sex therapist or trauma specialist to refine assessment skills.
+
+### 5. **Develop Explicit Conceptualization and Treatment Strategy**
+- **Action**: After assessment, explicitly articulate your understanding of what maintains the patient's sexual dysfunction. Develop a logical sequence of interventions targeting maintaining factors. Share this conceptualization with the patient.
+- **Example**: "Based on what you've shared, here's how I understand your situation: You experience anxiety about sex, which you manage by using alcohol. Alcohol prevents genuine arousal, which reinforces your belief that something is wrong with you. You avoid talking about this with Finn because you fear judgment. This avoidance increases isolation and relationship tension. Here's what I think we should work on: First, we'll understand your sexual beliefs and history. Then we'll work on gradually reducing alcohol use and increasing non-sexual intimacy. Then we'll practice communicating with Finn. Does this make sense?"
+- **Practice**: Develop case conceptualizations for several patients. Present these to supervisors for feedback. Practice explaining conceptualizations to patients in clear, collaborative language.
+
+### 6. **Apply Specific CBT Techniques for Sexual Dysfunction**
+- **Action**: Use evidence-based techniques including thought records (for shame/identity concerns), behavioral experiments (testing alcohol use effects), graduated exposure (to intimacy without alcohol), and communication skills training.
+- **Example**: "Let's create a thought record. You mentioned thinking 'I'm letting Finn down.' Let's write down that thought, look for evidence for and against it, and develop a more balanced perspective. Then we can test this new perspective through an experiment."
+- **Practice**: Take a specialized training in sex therapy or sexual dysfunction treatment. Develop protocol templates for common techniques. Practice applying techniques in role-plays with supervisors.
+
+### 7. **Establish Genuine Collaboration and Shared Decision-Making**
+- **Action**: Actively solicit patient input on problems, goals, and interventions. Use collaborative language ("Let's think about this together," "What's your sense of...?"). Position patient as active agent in treatment.
+- **Example**: "You mentioned feeling stuck. What do you think would need to change for you to feel less stuck? What ideas do you have? Let's brainstorm together and see what feels most doable for you."
+- **Practice**: Review recordings and count instances of collaborative language vs. prescriptive advice. Set a goal of 70%+ collaborative language. Practice with supervisors.
+
+### 8. **Elicit and Respond to Patient Feedback Throughout Session**
+- **Action**: Regularly check understanding, solicit reactions, and adjust approach based on feedback. Ask explicitly: "Does this make sense?" "How does this land for you?" "What's your reaction to what I'm suggesting?"
+- **Example**: After explaining a concept, ask: "I want to make sure I'm explaining this clearly. What's your understanding of what I just said? Does this fit with your experience?"
+- **Practice**: Set a goal of eliciting feedback at least 3 times per session. Practice responding to feedback by adjusting approach. Review recordings with supervisors.
+
+### 9. **Assign Specific, Rationale-Based Homework**
+- **Action**: Assign concrete between-session tasks with clear rationale and tracking. Ensure patient understands and commits to homework.
+- **Example**: "I'd like you to keep a brief log this week of when you use alcohol and what you notice about your mood and arousal. This will help us understand the pattern. Can you commit to doing this? Do you have questions about how to track it?"
+- **Practice**: Develop homework templates for sexual dysfunction cases. Practice explaining rationale clearly. Practice checking patient understanding and commitment.
+
+### 10. **Manage Time Efficiently and Maintain Session Structure**
+- **Action**: Allocate time to different topics, avoid tangents, and maintain focus on priority issues. Use time management explicitly.
+- **Example**: "We have 50 minutes. I'd like to spend the first 20 minutes on your sexual history, the next 20 on your relationship with Finn, and the last 10 on developing a plan for next week. Let's start with your sexual history. What would be helpful for me to understand?"
+- **Practice**: Plan sessions in advance with time allocations. Use a timer during sessions. Review recordings to assess pacing. Discuss time management with supervisors.
+
+### 11. **Receive Specialized Training in Sex Therapy and Sexual Dysfunction**
+- **Action**: Pursue advanced training in sex therapy, sexual dysfunction assessment and treatment, and trauma-informed care. This case requires specialized knowledge beyond general CBT.
+- **Example**: Enroll in a sex therapy certification program, attend workshops on sexual dysfunction, consult with sex therapy specialists, read evidence-based literature on sexual dysfunction treatment.
+- **Practice**: Identify training opportunities. Commit to ongoing education in sexual dysfunction treatment. Seek consultation on complex cases.
+
+### 12. **Establish Supervision and Accountability**
+- **Action**: Engage in regular clinical supervision with a CBT-trained supervisor. Record sessions and review with supervisor. Discuss cases before and after sessions.
+- **Example**: "I'm working with a patient with Female Sexual Interest/Arousal Disorder. Before our next session, I'd like to review my assessment plan with you. After the session, I'd like to review the recording to get feedback on my use of guided discovery and homework assignment."
+- **Practice**: Schedule regular supervision. Prepare cases in advance. Bring recordings for review. Implement supervisor feedback systematically.
+
+---
+
+## Overall Session Score: 0.8/6
+
+**Summary:**
+
+This session represents a fundamental failure to deliver evidence-based CBT. While the therapist demonstrated basic interpersonal warmth and created a minimally safe environment, the session lacks every core component of structured CBT: no agenda, no guided discovery, no CBT techniques, no collaboration, no assessment, no treatment strategy, and no homework.
+
+The therapist provided supportive counseling with generic stress-management advice rather than targeted intervention for Female Sexual Interest/Arousal Disorder. Critical clinical information (alcohol use in sexual contexts, pain during intercourse, trauma history, shame and identity concerns) was either missed or normalized rather than explored. The therapist's frequent self-disclosure violated professional boundaries and shifted focus from the patient's needs.
+
+**Current Competency Assessment**: This therapist is not currently competent to deliver evidence-based CBT for sexual dysfunction. While foundational interpersonal skills are present, the therapist lacks knowledge of CBT structure, sexual dysfunction assessment, trauma-informed care, and specialized CBT techniques for sexual dysfunction. The therapist appears to be operating from a generic supportive counseling framework rather than a structured CBT model.
+
+**Most Critical Changes Needed Immediately**: 
+1. Establish structured agenda and systematic assessment of sexual dysfunction
+2. Eliminate inappropriate self-disclosure
+3. Implement guided discovery through Socratic questioning
+4. Apply specific CBT techniques rather than generic advice
+5. Establish genuine collaboration and shared decision-making
+6. Assign specific, rationale-based homework
+
+**Likelihood of Therapeutic Change**: This session is unlikely to produce meaningful improvement in Elizabeth's sexual dysfunction or relationship distress. While the patient may feel temporarily supported, she leaves without understanding what maintains her sexual dysfunction, specific skills to address avoidance or alcohol use, or a coherent treatment plan. The normalization of alcohol use in sexual contexts may inadvertently reinforce maladaptive coping. For a patient presenting 6 months before her wedding with significant sexual dysfunction, this represents a missed opportunity for targeted, evidence-based intervention.
+
+**Qualification as Evidence-Based CBT**: This session does not qualify as evidence-based CBT. It constitutes supportive counseling with generic stress-management advice. To qualify as CBT, the session would need to include: structured agenda, systematic assessment, guided discovery, application of specific CBT techniques, explicit treatment strategy, collaboration, and homework. None of these were present.
+
+**Recommendation**: This therapist requires immediate training in CBT fundamentals, sexual dysfunction assessment and treatment, and trauma-informed care before continuing to work with this patient. Supervision with a CBT-trained specialist is essential. Consider referral to a sex therapist or CBT specialist with expertise in sexual dysfunction.

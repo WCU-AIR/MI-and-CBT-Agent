@@ -1,0 +1,664 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Alcohol Use Disorder; Alcohol-Induced Depressive Disorder
+
+--- CASE STUDY ---
+
+Matthew Tucker, a 45-year-old European American plumber, was referred for psychiatric evaluation after his family held an intervention expressing concern that his alcohol use was out of control. Mr. Tucker had abstained for 3 days prior to the evaluation.
+
+For 20 years post–high school, he typically drank 3–5 beers per evening, five times per week. Over the last 7 years, he consumed alcohol almost daily: 6 beers on weeknights and 12 beers on weekends/holidays. Despite efforts to limit intake, he spent much of weekends drinking, sometimes missing family events, and frequently passed out watching TV, though he remained productive at work. He had achieved two 30-day periods of abstinence in the past 4 years without withdrawal symptoms.
+
+In the 6 months prior, Mr. Tucker became irritable, fatigued, dysphoric, and worried. He lost interest in usual activities including food and sex, had difficulty concentrating, reacted more emotionally to stress, and expressed unsubstantiated concern about his business. He often awoke at 2:00 A.M. and struggled to return to sleep. He and his wife reported several similar episodes over the past 5 years, lasting 4–6 weeks each.
+
+He had been married 18 years with one 17-year-old daughter. Education: high school graduate with 2 years of community college. Occupation: owner of a successful plumbing company. No prior psychiatric or medical problems, no history of mania or suicide attempts, and had never seen a psychiatrist.
+
+Recent labs: mildly elevated blood pressure (135/92), GGT 47 IU/L, MCV 92.5 μm3, all other labs normal. Physical exam: neatly dressed, good eye contact, no confusion or psychotic symptoms, eyes teary when discussing future, cognition within normal limits, insight into alcohol’s effects.
+
+Discussion: Mr. Tucker meets criteria for moderate alcohol use disorder (unsuccessful attempts to cut down, excessive time intoxicated/recovering, missed social activities, continued use despite problems). No clinically significant withdrawal symptoms. His depressive episode meets criteria for alcohol-induced depressive disorder: persistent depressed mood, reduced interest, insomnia, diminished concentration, fatigue. Past episodes resolved spontaneously after 4–6 weeks abstinence. Depressive symptoms are expected to diminish with ongoing sobriety.
+
+--- BEHAVIOUR ---
+
+Neatly dressed
+
+Maintains good eye contact
+
+Cooperative
+
+Cognition intact
+
+Shows tearfulness when discussing concerns
+
+Insightful regarding alcohol use
+
+--- SYMPTOMS from DSM-5 ---
+Alcohol Use Disorder
+
+Unsuccessful efforts to cut down
+
+Excessive time intoxicated or recovering
+
+Missed important social activities
+
+Continued use despite problems
+
+Alcohol-Induced Depressive Disorder
+
+Depressed mood
+
+Loss of interest or pleasure
+
+Interval insomnia
+
+Diminished concentration
+
+Fatigue
+
+Irritability and dysphoria
+
+--- PATIENT PROFILE ---
+Name: Matthew Tucker
+Sex: Male
+Age: 45 years
+DOB: February 12, 1980
+Place of Birth: Denver, CO
+Address: 457 Oak Street, Denver, CO
+Contact: (555) 987-6543
+Marital Status: Married (18 years)
+Children: One daughter, 17 years old
+Occupation: Owner, plumbing company
+Education: High school diploma; 2 years community college
+Religion: Protestant
+Legal Guardian: None
+Presenting Complaint: Family concerned about alcohol use
+Psychiatric History: None
+Psychotherapy: None
+Medications: None
+Substance Use: Heavy alcohol use; currently 3 days abstinent
+Medical History: None significant; mild elevated BP
+Neurology: Normal
+Family History: Not specified
+Mental Status: Depressed mood, tearfulness, good insight, cooperative, intact cognition, no psychotic symptoms
+
+--- DIAGNOSIS ---
+
+Alcohol Use Disorder, moderate
+
+Alcohol-Induced Depressive Disorder
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Matthew Tucker, a 45-year-old married male plumbing business owner, presents for outpatient psychiatric evaluation following a family-initiated intervention due to concerns about his alcohol consumption. He has abstained from alcohol for three days prior to this intake.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hi there! It’s good to see you today. How have you been doing lately? Anything new or interesting going on? 
+ PATIENT: Hi. Thanks for asking. Honestly, it’s been pretty tough these past few weeks. I’m still sober — three days now — but I’ve been feeling pretty down and tired. It’s hard to get motivated, and I keep waking up in the middle of the night. Nothing really feels enjoyable like it used to. My family’s been worried about me, which makes me feel even worse sometimes. So, not much new, really, just trying to get through each day without drinking. 
+ PSYCHIATRIST: Hey, it’s really great that you’ve made it three days sober — that’s something to be proud of! You know, sometimes life just throws these rough patches at us, but it’ll get better, I promise. When I was going through a tough time, I found that just trying to think positive helped me a lot. Like, focusing on the good stuff, even if it’s small. Have you tried doing that? 
+ PATIENT: Yeah, I guess I want to think positive, but it’s hard. My mind just keeps going back to all the stuff that worries me—like whether my business will be okay, or if I’m disappointing my wife and daughter. I know I should focus on the good stuff, but right now it feels like there’s not much good to hold on to. Even when I try, the negative thoughts kind of take over, and then I just feel worse. I’m not sure if it’s just me being weak or if that’s normal. 
+ PSYCHIATRIST: I totally get that. You know, everyone goes through stuff like that. When I was stressed out, I just tried to drink more water and get some sleep—that really helped me feel a bit better. Maybe you should try that too? It’s amazing how something simple like that can make a difference. And hey, remember, things always look brighter after a good night’s rest. So just hang in there and keep your head up! 
+ PATIENT: Yeah, I’ve heard that before about sleep and staying hydrated. The problem is, I keep waking up at 2 a.m., and then it’s tough to get back to sleep. I end up just lying there, my mind racing about work or how I’m letting everyone down. It’s frustrating because I want to rest, but I can’t shut off those thoughts. I’m trying not to drink to help with sleep, but it feels like I’m stuck in this cycle. Some nights are just really rough. The water part, though—I haven’t really paid much attention to that. Maybe I could try drinking more, at least during the day. I’ll give that a shot. 
+ PSYCHIATRIST: Oh, that sounds really tough, but you’re doing great just by sticking with it. I remember when I had a rough patch, I just kept reminding myself that things don’t stay bad forever. It’s like the sun always comes up after a storm. So just keep going, and try not to be too hard on yourself. Sometimes, talking to friends or family helps, too. You’re not alone in this. By the way, have you been able to get outside at all? Fresh air can do wonders for your mood. 
+ PATIENT: Yeah, I try not to be too hard on myself, but it’s tough when things feel so heavy. The sun coming up after a storm is a nice thought... I want to believe that. As for talking to family, I know they're worried, and sometimes they bring it up, but I don’t always want to talk about it because I feel like I’m letting them down even more. I don’t want to add to their stress.
+
+I haven’t really gotten outside much these past few days. Mostly just been inside, trying to rest or keep the business running. It's hard to find the energy or motivation to get up and go outside. But maybe some fresh air would help. I’m willing to try if it might make a difference. 
+ PSYCHIATRIST: Hey, that’s a really good idea to try getting outside. You know, when I was feeling down, I started going for short walks in the park near my place, and it actually helped me clear my head a bit. Sometimes just a little change of scenery can make a big difference. Also, when I was struggling, I found that listening to some uplifting music helped lift my spirits. Maybe you could try that too? It’s all about finding those little things that can brighten your day. Keep at it—you’re stronger than you think! 
+ PATIENT: Thanks. That sounds like something I can manage—a short walk in the park. I haven’t really been doing much like that lately. Usually, after work, I just go home and end up sitting on the couch, sometimes feeling guilty for how much I’ve been drinking before. Maybe music would help too. I usually listen to the radio or news, but I could try finding some songs that are a bit more uplifting. It’s just hard to get started when I feel so low. But I guess if I can get out for a little walk and put on some good music, it might help break the cycle a bit. I’m willing to try. 
+ PSYCHIATRIST: Hey, that’s awesome you’re willing to try those things! Sometimes, just taking that first step is the hardest part, but once you do, things can start to look up. You know, when I was feeling stuck, I reminded myself that every little effort counts. Like, even just getting out of bed and moving around is a win. So keep doing that, and don’t forget to give yourself credit. You’re doing better than you think! 
+ PATIENT: Thanks, really. I don’t usually give myself much credit, but hearing that helps. I guess just getting out of bed some days feels like a big deal lately. I’d like to keep that in mind—every little effort counts. It’s nice to feel like maybe I’m making progress, even if it’s small. I want to get back to a place where things aren’t so heavy all the time. It won’t be easy, but I’m willing to keep trying. 
+ PSYCHIATRIST: Hey, before we wrap up, I just want to say you’re doing a great job sticking with this. Remember, tough times don’t last, but tough people do. Just keep your chin up and take it one day at a time. You’ve got this! 
+ PATIENT: Thank you. I really appreciate the support. It means a lot, especially when things feel so overwhelming. I’m taking it one day at a time, like you said. Hopefully, with time, things will get better. I just want to be a better husband, dad, and business owner again. I’m going to keep working at it. Thanks for being here and listening. 
+ PSYCHIATRIST: Hey, it’s good to see you again. Before we dive in, I want to make sure we spend our time in a way that really helps you. Can we take a few minutes to figure out what’s most important to focus on today? Maybe we can look at a couple of things that are bothering you most, like your sleep troubles, staying sober, or how things are going with your family. What do you think? What feels like the biggest priority to tackle first? 
+ PATIENT: Thanks for asking. I think the biggest thing right now is the sleep. Waking up in the middle of the night and not being able to get back to sleep really throws me off. When I don’t sleep well, everything else just feels harder—like staying sober or handling stress with the family. So, if we could talk about that and maybe figure out ways to improve my sleep, that would be really helpful. It feels like the foundation for everything else. 
+ PSYCHIATRIST: That's a really important area to focus on. Improving your sleep could definitely help with the other challenges you're facing. Let's spend some time talking about your sleep patterns and what might be keeping you awake. After that, we can also look at how your sleep affects your mood and daily functioning. Does that sound good to you? And if there’s anything else you want to add or prioritize, just let me know. 
+ PATIENT: Yeah, that sounds good. I appreciate talking about sleep because it’s been rough lately. Like I said, I usually wake up around 2 a.m., and then my mind just won’t stop racing. I start thinking about work—whether I’ve got enough jobs lined up or if I’m going to mess things up—and then I worry about my family and how they see me. Sometimes I just lie there for hours. It’s frustrating because I want to rest and feel better, but the worries keep pulling me away from sleep. I haven’t noticed much that’s different with my mood during the day except more tired and irritable, but I’m sure sleep has something to do with it. That’s why I want to figure out how to get better at sleeping through the night. 
+ PSYCHIATRIST: I hear you, and sleep troubles can be really frustrating. You know, when I had trouble sleeping, I found that just trying to think positive helped a lot. Like, telling myself, “It’ll get better,” even if I didn’t feel it right away. Maybe you could try that too? Also, drinking plenty of water and making sure to get some rest can really make a difference. Sometimes, just focusing on the good things in your day helps to quiet the mind. Hang in there—you’re doing great! 
+ PATIENT: I’m trying the positive thinking, but it’s hard when my mind keeps going back to what if the business fails or what if I’m letting my family down. It feels like there’s always something to worry about, and the “it’ll get better” doesn’t always stick when I’m lying awake and those thoughts won’t quit. 
+
+I do try to stay hydrated during the day, but sometimes I forget if I get busy. Rest is what I want, but the worrying makes it tough to relax enough to fall back asleep when I wake up. Focusing on the good things sounds nice, but they’re kind of in the background for me right now—I just keep circling back to the worries. I want to hang in there, but it’s exhausting. 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist made a single attempt to establish an agenda midway through the session ("Can we take a few minutes to figure out what's most important to focus on today?"), which represents minimal collaborative agenda-setting. While the patient identified sleep as the priority, the therapist never established time allocation, prioritized multiple problems systematically, or created a structured session plan. The initial exchanges lacked any agenda-setting whatsoever—the therapist opened with a vague, social question ("How have you been doing lately? Anything new or interesting going on?") rather than a collaborative problem identification. Critically, there was no discussion of session length, number of sessions, treatment goals, or how today's work connects to broader treatment objectives. The therapist did not revisit the agenda after the patient identified sleep as priority, nor did they establish concrete session structure or time boundaries. For a patient with moderate alcohol use disorder and alcohol-induced depressive disorder presenting with multiple acute symptoms (insomnia, depressed mood, concentration difficulties, irritability, fatigue), the absence of systematic agenda-setting represents a fundamental failure in CBT structure. The patient's presenting problems—sleep disturbance, sobriety maintenance, family relationships, work anxiety, and depressive symptoms—were never prioritized or organized into a coherent treatment plan.
+
+**Summary:**
+
+Minimal agenda-setting occurred only after substantial unstructured conversation. No time allocation, treatment goals, or session structure were established. This represents inadequate foundational CBT practice.
+
+---
+
+### 2. Feedback
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist demonstrated virtually no systematic feedback-seeking throughout the session. There were no explicit checks for understanding ("Does that make sense?"), no solicitation of patient reactions to interventions ("How does that land for you?"), no verification that instructions were clear, and no end-of-session summary or feedback elicitation. The single agenda-setting question ("What feels like the biggest priority to tackle first?") represents the only instance of collaborative input-seeking, and even this was not followed by feedback checks about whether the proposed approach was acceptable or helpful. The therapist never asked whether the patient found the suggestions (positive thinking, hydration, fresh air, music, walks) helpful, realistic, or applicable to his situation. When the patient expressed difficulty with positive thinking ("It's hard when my mind keeps going back to what if..."), the therapist did not elicit feedback about why this approach wasn't working or adjust based on patient response. There was no checking of comprehension about sleep hygiene, no verification that homework assignments were understood, and no solicitation of the patient's perspective on session usefulness. For a patient with intact cognition and good insight, systematic feedback-seeking is essential to ensure collaborative engagement and treatment adherence. The absence of this skill represents a critical gap in evidence-based CBT practice.
+
+**Summary:**
+
+Virtually no feedback elicitation occurred. No checks for understanding, no verification of patient reactions to interventions, and no end-of-session summary. This represents a fundamental failure in collaborative CBT practice.
+
+---
+
+### 3. Understanding
+### **Score: 3/6**
+
+**Explanation:**
+
+The therapist demonstrated basic empathic listening but missed critical clinical nuances and failed to demonstrate deep understanding of the patient's internal experience. The therapist accurately reflected surface-level content (acknowledging sleep troubles, recognizing the patient's willingness to try suggestions, validating effort), which represents adequate basic empathy. However, the therapist repeatedly failed to grasp the patient's core cognitive and emotional patterns. Most critically, when the patient explicitly stated that negative thoughts dominate his mind ("my mind just keeps going back to all the stuff that worries me," "the negative thoughts kind of take over"), the therapist responded with generic positive thinking advice rather than exploring the specific content and function of these thoughts. The patient clearly articulated a rumination pattern centered on business failure and family disappointment, yet the therapist never inquired about these specific thoughts, their frequency, or their relationship to sleep disruption. When the patient described lying awake for hours with racing thoughts, the therapist suggested hydration and sleep rather than exploring the cognitive content maintaining wakefulness. The therapist also missed the connection between alcohol use, depressive symptoms, and sleep disturbance—a critical clinical understanding for this case. The patient's statement about guilt ("sometimes feeling guilty for how much I've been drinking before") was not explored. The therapist's repeated self-disclosure ("When I was going through a tough time," "When I was stressed out," "When I had trouble sleeping") shifted focus from understanding the patient's experience to the therapist's experience, which represents a significant empathic failure. The therapist did not demonstrate understanding of how alcohol-induced depression manifests differently from primary depression, or how early abstinence affects mood and sleep.
+
+**Summary:**
+
+Basic empathic listening present but significant gaps in understanding patient's cognitive patterns, the relationship between alcohol use and depressive symptoms, and the specific content of rumination maintaining insomnia. Excessive therapist self-disclosure undermined focus on patient's experience.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 3/6**
+
+**Explanation:**
+
+The therapist displayed adequate warmth and supportiveness but demonstrated significant interpersonal problems that undermined therapeutic effectiveness. Positive elements include consistent encouragement ("you're doing great," "you're stronger than you think"), appropriate tone (not hostile or demeaning), and genuine-sounding support. However, multiple interpersonal failures occurred. Most problematically, the therapist engaged in excessive self-disclosure, repeatedly centering personal experiences in a session focused on a patient with serious psychiatric illness. Statements like "When I was going through a tough time," "When I was stressed out," "When I had trouble sleeping," and "When I was feeling down" shift the therapeutic focus inappropriately and suggest the therapist's experience is comparable to the patient's moderate alcohol use disorder and alcohol-induced depressive disorder. This represents a boundary violation and reduces the patient's sense of being understood in his unique situation. The therapist's repeated use of platitudes ("tough times don't last, but tough people do," "the sun always comes up after a storm," "things always look brighter after a good night's rest") conveys a lack of genuine engagement with the patient's suffering and may feel dismissive to someone experiencing depressive symptoms and insomnia. The therapist did not acknowledge the genuine difficulty of the patient's situation or validate the legitimacy of his concerns about business and family. While the therapist maintained professional demeanor, the combination of excessive self-disclosure, platitudes, and failure to deeply engage with the patient's experience represents interpersonal ineffectiveness that would likely reduce therapeutic alliance and patient engagement.
+
+**Summary:**
+
+Adequate warmth and supportiveness undermined by excessive self-disclosure, platitudes, and failure to deeply engage with patient's unique experience. Boundary issues present that reduce therapeutic effectiveness.
+
+---
+
+### 5. Collaboration
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist made minimal attempts at genuine collaboration and instead adopted an expert-advice-giving stance that contradicts core CBT principles. While the therapist asked "What feels like the biggest priority to tackle first?" and "Does that sound good to you?", these represent surface-level collaboration attempts without true shared decision-making. The therapist did not invite the patient to generate solutions collaboratively; instead, the therapist repeatedly offered prescriptive advice: "try thinking positive," "drink more water and get some sleep," "try getting outside," "listen to uplifting music," "give yourself credit." This represents a directive, expert-driven approach rather than collaborative empiricism. The patient was positioned as a passive recipient of the therapist's suggestions rather than an active partner in developing treatment strategies. When the patient expressed difficulty with positive thinking ("It's hard... the negative thoughts kind of take over"), the therapist did not invite collaborative problem-solving ("What do you think might help with those thoughts?" or "Let's figure out together what might work better"). Instead, the therapist repeated the same ineffective suggestion. The therapist never asked the patient about his previous attempts to manage sleep, what he had already tried, or what barriers he anticipated. There was no discussion of the patient's preferences, values, or what he believed might help. The phrase "You've got this!" represents cheerleading rather than collaboration. For a patient with good insight and intact cognition who explicitly stated his concerns about business and family, the failure to invite him into collaborative problem-solving represents a significant missed opportunity and a fundamental departure from CBT principles.
+
+**Summary:**
+
+Minimal genuine collaboration; therapist adopted expert-advice-giving stance rather than collaborative empiricism. Patient positioned as passive recipient rather than active partner in treatment planning.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist demonstrated poor time management and inefficient session structure. The session began with extended unstructured conversation (approximately 40% of the transcript) before any agenda-setting occurred. The therapist asked open-ended social questions ("How have you been doing lately? Anything new or interesting going on?") that allowed the patient to provide extensive narrative without therapeutic direction. While patient narrative is valuable, the therapist failed to efficiently extract clinically relevant information or move toward intervention. After finally establishing an agenda focused on sleep, the therapist did not maintain focus on this priority. Instead, the therapist continued offering generic suggestions (positive thinking, hydration, fresh air, music) without systematically exploring the sleep problem. The therapist spent considerable time on self-disclosure and platitudes rather than focused clinical work. There was no time allocation discussion ("We have 45 minutes; let's spend 20 on sleep patterns, 15 on behavioral strategies, and 10 on planning"), no prioritization of which sleep interventions to address first, and no efficient movement toward concrete, testable strategies. The therapist did not use time to conduct a detailed sleep assessment (sleep onset latency, sleep maintenance insomnia specifics, pre-sleep cognitions, sleep environment factors, caffeine/alcohol effects on sleep architecture). For a patient with alcohol-induced depressive disorder and insomnia, a thorough sleep assessment is essential but was entirely absent. The session structure was reactive rather than proactive, with the therapist responding to patient statements rather than directing the conversation toward specific clinical objectives.
+
+**Summary:**
+
+Poor time management with extended unstructured conversation, failure to maintain focus on stated agenda, and absence of systematic sleep assessment. Session lacked structure and efficiency.
+
+---
+
+### 7. Guided Discovery
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist demonstrated virtually no use of Socratic questioning or guided discovery—core CBT techniques essential for helping patients reach independent insights. Instead, the therapist consistently employed direct advice-giving and persuasion. Examples of the therapist's directive approach include: "try thinking positive," "drink more water and get some sleep," "try getting outside," "listen to uplifting music," "give yourself credit." These represent telling rather than asking. Genuine guided discovery would involve questions such as: "What thoughts go through your mind when you wake up at 2 a.m.?" "What have you noticed about the relationship between those thoughts and your ability to fall back asleep?" "What do you think might happen if you challenged one of those worries?" "What evidence do you have that your business will fail?" "What evidence contradicts that worry?" "What would be a more balanced way to think about the business situation?" None of these discovery-oriented questions appeared in the session. When the patient stated "the negative thoughts kind of take over," the therapist did not ask exploratory questions to help the patient understand the thought patterns; instead, the therapist suggested positive thinking. When the patient described lying awake with racing thoughts, the therapist did not ask what specific thoughts were racing or help the patient examine their validity. The therapist never asked the patient to consider alternative explanations for his concerns or to examine evidence for and against his worries. This represents a fundamental failure in CBT technique. Guided discovery is particularly important for this patient because he has good insight and intact cognition—he is capable of reaching sophisticated insights if guided appropriately. The therapist's reliance on advice-giving undermines the patient's capacity for self-directed change and reduces the likelihood of sustained behavioral and cognitive modification.
+
+**Summary:**
+
+Virtually no Socratic questioning or guided discovery. Therapist relied entirely on direct advice-giving and persuasion rather than facilitating patient self-discovery. Fundamental CBT technique absent.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist failed to identify, explore, or focus on the central cognitions and behaviors maintaining the patient's presenting problems. This represents a critical clinical failure for a patient with alcohol-induced depressive disorder and insomnia. The patient explicitly identified key cognitions: "my mind just keeps going back to all the stuff that worries me," "whether my business will be okay," "if I'm disappointing my wife and daughter," "what if the business fails," "what if I'm letting my family down." These represent core automatic thoughts and worry patterns directly maintaining insomnia and depressive symptoms. The therapist never explored these thoughts, never asked about their frequency or intensity, never examined their validity, and never helped the patient develop strategies to address them. Instead, the therapist offered generic suggestions about positive thinking without targeting the specific worry content. The patient also identified a critical behavioral pattern: "After work, I just go home and end up sitting on the couch, sometimes feeling guilty for how much I've been drinking before." This represents behavioral withdrawal and rumination—key maintaining factors in depression. The therapist did not explore this pattern, did not assess its frequency or consequences, and did not develop a behavioral activation strategy. The patient's sleep-related behaviors were never systematically assessed: What does he do when he wakes at 2 a.m.? Does he get out of bed or lie there ruminating? Does he check the time? Does he use alcohol to return to sleep? The therapist never asked about pre-sleep routines, sleep environment, or sleep-incompatible behaviors. The relationship between alcohol use and sleep disruption was never explored—critical for understanding alcohol-induced depressive disorder. The therapist focused on peripheral issues (hydration, fresh air, music) rather than the core cognitions and behaviors maintaining the patient's symptoms. For a patient with good insight who articulated his central concerns clearly, the failure to focus on these key cognitions and behaviors represents a profound clinical oversight.
+
+**Summary:**
+
+Therapist failed to identify or explore central cognitions (business failure worries, family disappointment concerns) and key behaviors (couch-sitting, rumination, withdrawal) maintaining insomnia and depression. Focused on peripheral rather than core issues.
+
+---
+
+### 9. Strategy for Change
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist demonstrated no coherent, evidence-based strategy for change. There was no clear conceptualization of the patient's problems, no logical progression of interventions, and no systematic application of CBT principles to address the presenting disorders. For a patient with moderate alcohol use disorder and alcohol-induced depressive disorder, an evidence-based strategy would include: (1) psychoeducation about the relationship between alcohol and depression/sleep; (2) cognitive interventions targeting worry and rumination; (3) behavioral activation to counter withdrawal and anhedonia; (4) sleep-specific interventions (sleep hygiene, stimulus control, cognitive techniques for pre-sleep rumination); (5) relapse prevention planning; (6) family involvement strategies. The therapist's approach consisted of disconnected, generic suggestions: positive thinking, hydration, sleep, fresh air, music, self-credit. These suggestions lack coherence, lack specificity to the patient's problems, and lack evidence-based rationale. There was no discussion of how these interventions address the underlying mechanisms of alcohol-induced depression or insomnia. The therapist never explained why positive thinking might help with sleep-maintenance insomnia or how it addresses the specific worry content the patient identified. There was no strategy for addressing the patient's alcohol use disorder—no discussion of triggers, coping strategies, relapse prevention, or the relationship between sobriety and mood improvement. The therapist did not explain that depressive symptoms often improve with sustained abstinence, which would provide hope and motivation. There was no strategy for addressing family relationships or the patient's guilt and shame. The interventions appeared random rather than strategically sequenced. A coherent CBT strategy would involve: (1) first, psychoeducation about alcohol-induced depression and expected timeline for improvement; (2) then, cognitive work on worry patterns; (3) then, behavioral activation; (4) then, sleep-specific interventions; (5) finally, relapse prevention. The therapist's approach lacked this logical progression and strategic coherence.
+
+**Summary:**
+
+No coherent, evidence-based strategy for change. Disconnected, generic suggestions lacking specificity to patient's problems or clear rationale. Fundamental failure in CBT case conceptualization and treatment planning.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist demonstrated minimal application of specific CBT techniques and what little was attempted was poorly executed. The only identifiable CBT technique attempted was cognitive restructuring through positive thinking ("try to think positive," "focusing on the good stuff," "tell myself it'll get better"). However, this was applied with significant flaws: (1) no assessment of the patient's specific negative thoughts; (2) no collaborative examination of thought validity; (3) no guided discovery to help the patient generate alternative thoughts; (4) no discussion of how to implement positive thinking; (5) repetition of the same ineffective suggestion despite the patient's explicit statement that it wasn't working ("It's hard... the negative thoughts kind of take over"). This represents poor technique application. No other CBT techniques were evident: no behavioral activation planning despite clear depressive withdrawal; no sleep-specific interventions (stimulus control, sleep restriction, cognitive techniques for pre-sleep rumination); no thought records or structured cognitive work; no behavioral experiments; no exposure work; no activity scheduling; no relapse prevention planning; no functional analysis of alcohol use; no values clarification; no problem-solving training. The suggestions about hydration, fresh air, and music represent general wellness advice rather than specific CBT techniques. The therapist never used any structured CBT tools (thought records, behavioral logs, worry records, sleep diaries). For a patient with insomnia, a structured sleep diary would be a basic, evidence-based intervention—entirely absent. For a patient with worry and rumination, a worry record or thought record would be standard—not used. For a patient with depressive withdrawal, behavioral activation planning would be essential—not implemented. The therapist's approach represents general supportive counseling rather than evidence-based CBT. The application of CBT techniques was so minimal and poorly executed that it does not constitute meaningful CBT intervention.
+
+**Summary:**
+
+Minimal CBT technique application; only positive thinking attempted and poorly executed. No behavioral activation, sleep interventions, thought records, behavioral experiments, or relapse prevention. Represents general counseling rather than CBT.
+
+---
+
+### 11. Homework
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist failed to systematically assign, structure, or follow up on between-session homework—a core CBT component. While the therapist made several suggestions that could function as homework (getting outside, listening to music, drinking water, positive thinking, giving yourself credit), these were not formally assigned as structured homework tasks. There was no explicit homework assignment ("Here's what I'd like you to do between now and our next session"), no clear rationale for each task, no specificity about frequency or duration, and no verification of patient understanding or commitment. The suggestions were presented as general advice rather than as specific, measurable, time-limited behavioral experiments. For example, "try getting outside" lacks specificity: How often? For how long? At what time of day? What should he do outside? Should he track mood before and after? The suggestion to "listen to uplifting music" lacks rationale: Why would this help with sleep-maintenance insomnia? How does it address the worry content? Should he listen before bed, during the day, or when he wakes at 2 a.m.? The suggestion to "drink more water" lacks connection to the presenting problem: How does hydration address insomnia or depressive symptoms? There was no discussion of potential barriers to homework completion, no problem-solving about how to implement suggestions, and no explicit commitment from the patient. The therapist did not ask "Do you think you can do this?" or "What might get in the way?" or "How will you remember to do this?" There was no structured homework review at the beginning of the next session (though the transcript shows a second session beginning, the therapist did not ask about the previous session's suggestions). The patient's statement "I'm willing to try" represents passive acceptance rather than active commitment to specific homework tasks. For a patient with moderate alcohol use disorder and depressive symptoms, structured homework is essential for maintaining progress between sessions and building self-efficacy. The absence of systematic homework assignment and follow-up represents a significant gap in CBT practice.
+
+**Summary:**
+
+No systematic homework assignment, rationale, or follow-up. Suggestions presented as general advice rather than specific, measurable tasks. No verification of understanding or commitment. Represents failure in a core CBT component.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- Maintained appropriate professional demeanor and tone throughout
+- Demonstrated basic empathic listening and supportiveness
+- Showed genuine concern for patient's wellbeing
+- Attempted to establish agenda midway through session
+- Patient remained engaged and expressed willingness to try suggestions
+- Avoided hostile, demeaning, or destructive interpersonal behavior
+
+### Critical Deficiencies:
+- **Fundamental absence of CBT structure and technique**: Session lacked systematic agenda-setting, collaborative empiricism, guided discovery, and specific CBT interventions. Represents general supportive counseling rather than evidence-based CBT.
+- **Failure to identify and target core cognitions**: Patient explicitly articulated central worry patterns (business failure, family disappointment) that maintain insomnia and depression; therapist never explored these thoughts or helped patient examine their validity.
+- **No coherent treatment strategy**: Disconnected suggestions (positive thinking, hydration, fresh air, music) lack strategic coherence, specificity to patient's problems, or evidence-based rationale. No conceptualization of alcohol-induced depressive disorder or its treatment.
+- **Excessive therapist self-disclosure**: Repeated personal anecdotes ("When I was...") shifted focus from patient's experience and violated therapeutic boundaries. Suggests therapist's experience is comparable to patient's serious psychiatric illness.
+- **Reliance on advice-giving rather than guided discovery**: Therapist told rather than asked, undermining patient's capacity for self-directed insight and change.
+- **Poor time management and session structure**: Extended unstructured conversation, failure to maintain focus on stated agenda, no systematic assessment of sleep problem.
+- **Inadequate homework assignment**: Suggestions presented as general advice rather than specific, measurable, time-limited tasks with clear rationale and commitment verification.
+- **No assessment of alcohol use disorder**: Despite moderate AUD diagnosis, therapist never discussed triggers, coping strategies, relapse prevention, or relationship between sobriety and mood improvement.
+- **Minimal feedback-seeking**: No checks for understanding, no verification of patient reactions to interventions, no end-of-session summary.
+
+### Impact on Patient Care:
+
+This session represents a significant departure from evidence-based CBT and is unlikely to produce meaningful therapeutic change. The patient presents with moderate alcohol use disorder and alcohol-induced depressive disorder—serious conditions requiring systematic, structured intervention. Instead, he received generic supportive counseling with platitudes and advice-giving. The patient's core cognitive patterns (worry about business failure and family disappointment) that directly maintain his insomnia and depressive symptoms were never explored or addressed. Without targeted cognitive intervention, the patient will likely continue ruminating during nighttime awakenings, perpetuating sleep disruption and depressive symptoms. Without behavioral activation planning, the patient will likely continue withdrawing to the couch, deepening anhedonia and depression. Without relapse prevention planning, the patient faces high risk of returning to alcohol use as a coping mechanism for sleep and mood disturbance. The therapist's repeated suggestion that "things will get better" and "the sun always comes up after a storm" may feel dismissive to a patient experiencing genuine depressive symptoms and may reduce therapeutic alliance. The excessive self-disclosure suggests the therapist does not fully appreciate the severity of the patient's condition. Most critically, the patient was not engaged in collaborative, evidence-based treatment. He was positioned as a passive recipient of advice rather than an active partner in developing strategies for change. For a patient with good insight and intact cognition, this represents a missed opportunity for meaningful therapeutic engagement. The patient's statement "I'm willing to try" suggests he remains hopeful and engaged, but without systematic CBT intervention, this motivation is unlikely to translate into sustained behavioral and cognitive change. The risk of treatment failure and relapse is substantial.
+
+---
+
+## Recommendations
+
+### 1. **Establish Systematic Agenda-Setting and Session Structure**
+- **Action:** Begin every session with explicit collaborative agenda-setting. Identify 2-3 specific problems to address, establish time allocation, and explain how today's work connects to broader treatment goals.
+- **Example:** "We have 50 minutes today. I know sleep is your top priority. I'd like to spend about 20 minutes understanding your sleep pattern in detail, 20 minutes developing some specific strategies to try, and 10 minutes planning what you'll work on between sessions. Does that sound okay? Is there anything else you'd like to make sure we cover?"
+- **Practice:** Role-play agenda-setting with supervisor or colleague. Practice with 3-5 patients, recording sessions and reviewing for explicit agenda statements, time allocation, and collaborative language.
+
+### 2. **Develop Competence in Guided Discovery and Socratic Questioning**
+- **Action:** Replace advice-giving with systematic Socratic questioning. When patient identifies a problem, ask questions to help him reach insights rather than telling him solutions.
+- **Example:** Instead of "Try thinking positive," ask: "When you wake up at 2 a.m., what specific thoughts go through your mind? Let's write those down. Now, for each thought, what evidence do you have that it's true? What evidence contradicts it? What would be a more balanced way to think about this?"
+- **Practice:** Study Socratic questioning techniques (Padesky's "Thought Records" and "Downward Arrow" techniques). Practice with supervisor using role-plays. Record sessions and count instances of questions vs. advice-giving. Goal: 80% questions, 20% directive statements.
+
+### 3. **Conduct Systematic Assessment of Core Cognitions and Behaviors**
+- **Action:** When patient identifies a problem area (insomnia, worry, withdrawal), conduct detailed functional analysis. Identify specific thoughts, behaviors, and maintaining factors.
+- **Example:** For sleep: "When you wake at 2 a.m., what thoughts go through your mind? How long do you lie there? Do you get out of bed or stay in bed? Do you check the time? What do you do to try to fall back asleep? How often does this happen? What do you notice about the relationship between your worries and your ability to sleep?"
+- **Practice:** Develop assessment templates for insomnia, worry, and behavioral withdrawal. Use these templates with every patient presenting with these problems. Practice with supervisor until you can conduct thorough 15-minute assessments.
+
+### 4. **Develop Coherent, Evidence-Based Treatment Strategy for Alcohol-Induced Depressive Disorder**
+- **Action:** Create a written case conceptualization for this patient that explains: (1) how alcohol use maintains depression and sleep disruption; (2) how depressive symptoms maintain alcohol use; (3) specific interventions to address each maintaining factor; (4) expected timeline for improvement.
+- **Example:** "Matthew's moderate alcohol use disorder has led to alcohol-induced depressive disorder. His heavy drinking disrupts sleep architecture and depletes neurotransmitters, causing depression. Depression increases anxiety and worry, which disrupts sleep further. Poor sleep increases irritability and reduces coping capacity, increasing relapse risk. Treatment will focus on: (1) psychoeducation about alcohol-depression-sleep relationships; (2) cognitive work on worry patterns maintaining insomnia; (3) behavioral activation to counter withdrawal; (4) sleep-specific interventions; (5) relapse prevention. Depressive symptoms typically improve within 2-4 weeks of sustained abstinence."
+- **Practice:** Develop written case conceptualizations for 5 patients with alcohol-induced depression. Review with supervisor. Ensure each conceptualization includes: diagnosis, maintaining factors, specific interventions, and expected timeline.
+
+### 5. **Eliminate Excessive Therapist Self-Disclosure**
+- **Action:** Recognize that sharing personal experiences shifts focus from patient and violates therapeutic boundaries. When tempted to share personal experience, instead ask patient-focused questions.
+- **Example:** Instead of "When I was stressed, I found positive thinking helped," say: "Many people find it challenging to shift their thinking when they're stressed. What do you think might help you with the worries that keep you awake?"
+- **Practice:** Review recordings of your sessions. Count instances of self-disclosure. For each instance, identify what patient-focused question could have been asked instead. Discuss with supervisor. Goal: eliminate unnecessary self-disclosure.
+
+### 6. **Implement Specific CBT Techniques for Insomnia**
+- **Action:** Learn and apply evidence-based sleep interventions: sleep hygiene, stimulus control, sleep restriction, cognitive techniques for pre-sleep rumination, and sleep diaries.
+- **Example:** "Let's create a sleep diary where you track: what time you go to bed, what time you wake up, how many times you wake, how long you're awake, what you're thinking about when you wake, and your mood the next day. This will help us understand your sleep pattern and test whether certain strategies help."
+- **Practice:** Study CBT for Insomnia (CBT-I) protocols. Complete training in sleep assessment and intervention. Practice with supervisor using role-plays. Implement with 3-5 patients with insomnia, recording sessions for review.
+
+### 7. **Develop Competence in Cognitive Restructuring for Worry and Rumination**
+- **Action:** Learn systematic cognitive restructuring: identify specific thoughts, examine evidence, develop balanced alternatives, and test new thoughts through behavioral experiments.
+- **Example:** "You mentioned worrying that your business will fail. Let's examine that thought carefully. What evidence do you have that it will fail? What evidence contradicts that? What would be a more balanced way to think about your business? How could we test whether this new thought is more accurate?"
+- **Practice:** Study cognitive restructuring techniques (thought records, evidence examination, alternative thought generation). Practice with supervisor. Implement with 5 patients, recording sessions for review.
+
+### 8. **Implement Behavioral Activation for Depression**
+- **Action:** Systematically assess behavioral withdrawal, identify valued activities, and schedule specific behavioral activation tasks with clear rationale and tracking.
+- **Example:** "I notice you've been spending most evenings on the couch. Research shows that when we're depressed, we withdraw from activities, which actually makes depression worse. Let's identify activities you used to enjoy or that align with your values—like time with your family, outdoor activities, or work projects. We'll schedule specific times to do these activities and track your mood before and after to see if they help."
+- **Practice:** Study behavioral activation protocols. Develop activity schedules with 5 patients. Track mood ratings before and after activities. Review with supervisor.
+
+### 9. **Establish Systematic Homework Assignment and Follow-Up**
+- **Action:** Assign specific, measurable, time-limited homework tasks with clear rationale. Verify understanding and commitment. Review homework at every session.
+- **Example:** "Here's what I'd like you to do between now and our next session: (1) Keep a sleep diary every night—write down what time you go to bed, wake up, and what you're thinking about when you wake. (2) When you wake at 2 a.m., instead of lying in bed worrying, get up and write down your worries on paper. This helps get them out of your head. (3) Go for a 15-minute walk three times this week, preferably in the morning. Track your mood before and after. Does this seem doable? What might get in the way?"
+- **Practice:** Develop homework assignment templates. Practice assigning homework with supervisor. Review homework at beginning of every session. Track homework completion rates. Goal: 80%+ completion.
+
+### 10. **Develop Competence in Relapse Prevention for Alcohol Use Disorder**
+- **Action:** Learn relapse prevention: identify high-risk situations, develop coping strategies, plan for lapses, and build self-efficacy for maintaining sobriety.
+- **Example:** "Let's think about situations where you might be tempted to drink. What are your high-risk situations? For each one, let's develop a specific coping strategy. For example, if stress about work triggers urges to drink, we could practice problem-solving about work or use the cognitive techniques we've learned to manage worry."
+- **Practice:** Study relapse prevention protocols for alcohol use disorder. Develop relapse prevention plans with 5 patients. Review with supervisor.
+
+### 11. **Increase Feedback-Seeking Throughout Sessions**
+- **Action:** Systematically elicit patient feedback about session content, interventions, and therapeutic relationship. Check understanding regularly. Summarize at end of session.
+- **Example:** "Does this make sense? How are you feeling about what we've discussed? Is there anything that didn't feel helpful or that you'd like to revisit? What's one thing you're taking away from today's session?"
+- **Practice:** Add feedback-seeking to every session. Use checklist: (1) Check understanding of interventions, (2) Elicit reactions to suggestions, (3) Ask about session helpfulness, (4) Summarize main points, (5) Verify homework understanding. Record sessions and review for feedback-seeking frequency.
+
+### 12. **Receive Supervision and Training in Evidence-Based CBT**
+- **Action:** Engage in regular clinical supervision with a CBT-trained supervisor. Complete formal CBT training (certification program or intensive workshop). Review recordings of your sessions with supervisor.
+- **Example:** Enroll in a CBT certification program, attend monthly supervision, and have supervisor review recordings of your sessions using the Cognitive Therapy Rating Scale.
+- **Practice:** Commit to 12 weeks of weekly supervision focused on CBT competence. Complete at least one formal CBT training course. Review 2-3 session recordings per month with supervisor.
+
+---
+
+## Overall Session Score: 1.5/6
+
+**Summary:**
+
+This session represents a fundamental failure to deliver evidence-based CBT. The therapist demonstrated minimal competence across all 11 CBT domains, with particularly severe deficiencies in agenda-setting (2/6), feedback-seeking (1/6), guided discovery (1/6), focusing on key cognitions/behaviors (1/6), strategy for change (1/6), CBT technique application (1/6), and homework assignment (1/6). The overall score of 1.5/6 reflects that the session fell below the threshold of adequate CBT practice and represents general supportive counseling rather than evidence-based cognitive-behavioral therapy.
+
+**Current Competency Assessment:**
+
+The therapist demonstrates basic interpersonal warmth and supportiveness but lacks fundamental CBT competencies. The therapist appears to have received minimal formal CBT training and relies on generic advice-giving and platitudes rather than systematic, evidence-based intervention. The excessive self-disclosure and reliance on personal anecdotes suggest the therapist has not internalized core CBT principles about collaborative empiricism and guided discovery. Most concerning, the therapist failed to identify or target the patient's core cognitive patterns (worry about business failure and family disappointment) that directly maintain his presenting symptoms. For a patient with moderate alcohol use disorder and alcohol-induced depressive disorder—serious conditions with significant morbidity and mortality risk—this represents inadequate clinical care.
+
+**Most Critical Changes Needed Immediately:**
+
+1. **Eliminate advice-giving and develop Socratic questioning skills.** The therapist must learn to ask rather than tell, facilitating patient self-discovery rather than imposing solutions.
+
+2. **Develop systematic assessment and case conceptualization.** The therapist must conduct detailed functional analysis of the patient's problems and develop coherent, evidence-based treatment strategies rather than offering disconnected suggestions.
+
+3. **Implement specific CBT techniques.** The therapist must move beyond general supportive counseling to apply specific, evidence-based interventions: cognitive restructuring for worry, behavioral activation for depression, sleep-specific interventions for insomnia, and relapse prevention for alcohol use disorder.
+
+4. **Establish clear session structure with agenda-setting and homework assignment.** Every session must begin with collaborative agenda-setting and end with specific, measurable homework tasks with clear rationale.
+
+5. **Reduce self-disclosure and maintain therapeutic boundaries.** The therapist must recognize that personal anecdotes shift focus from the patient and violate professional boundaries.
+
+**Whether Session Qualifies as Evidence-Based CBT and Likelihood of Producing Therapeutic Change:**
+
+This session does **not** qualify as evidence-based CBT. It represents general supportive counseling with some CBT-adjacent language (positive thinking) but lacks the systematic structure, guided discovery, specific techniques, and collaborative empiricism that define CBT. The likelihood of producing meaningful therapeutic change is **low to very low**. The patient's core cognitive patterns maintaining his insomnia and depression were never identified or addressed. Without targeted cognitive intervention, the patient will likely continue ruminating during nighttime awakenings, perpetuating sleep disruption. Without behavioral activation, the patient will likely continue withdrawing, deepening depression. Without relapse prevention planning, the patient faces high risk of returning to alcohol use as a coping mechanism. The patient's statement "I'm willing to try" suggests he remains engaged, but without systematic CBT intervention, this motivation is unlikely to translate into sustained change. The risk of treatment failure and relapse is substantial. The therapist requires immediate, intensive training in evidence-based CBT before continuing to treat patients with serious psychiatric illness.

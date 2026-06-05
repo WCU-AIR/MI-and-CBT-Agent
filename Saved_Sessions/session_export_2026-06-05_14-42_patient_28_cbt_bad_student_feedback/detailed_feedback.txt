@@ -1,0 +1,787 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Cocaine Use Disorder, Moderate
+
+--- CASE STUDY ---
+
+Oliver Vincent, a 35-year-old gay man and independent clothing franchise owner in New York City, sought psychiatric help for substance use issues, acknowledging that his behavior was out of control despite previously seeing himself as “on top of things.” He lived with an ex-partner in a comfortable apartment, worked out daily, maintained friendships, and hoped to find a long-term partner.
+
+His substance use pattern centered around weekend “party and play” activities. On Friday and Saturday evenings—and occasionally during the week—he went out to dinner with friends, then to clubs or private parties, consuming 2–3 cocktails and 4–5 glasses of wine. Alcohol often led to cocaine use; he reported that after a “good buzz,” he almost always used cocaine if available. He used stimulants via social apps (Scruff, Grindr) and had occasional exposure to crystal methamphetamine (“Tina”) and bath salts. Overall, he used alcohol and cocaine 3–4 times per week, with occasional use of other stimulants.
+
+Substance use had caused several problems: difficulty attending or preparing for Monday morning work meetings, insomnia, weight loss, decreased work effectiveness, and engagement in unprotected sexual activity, raising HIV concerns. He had attempted to reduce cocaine use over the prior 6 months without success.
+
+No other psychiatric disorders were noted. His substance use appeared primarily driven by social determinants, specifically a subculture that normalized stimulant use in sexualized social contexts.
+
+Discussion: Mr. Vincent meets DSM-5 criteria for cocaine use disorder, moderate severity. Criteria met include persistent desire to cut down without success, continued use despite social and occupational problems, risky sexual behavior while high, and withdrawal-like symptoms (dysphoria, fatigue) after weekend use. Alcohol use appeared to facilitate stimulant use but did not rise to the level of an alcohol use disorder. No major mood, anxiety, personality, or trauma-related disorders were present.
+
+--- BEHAVIOUR ---
+
+Socially confident, high-functioning
+
+Insightful about substance use problem
+
+Cooperative
+
+Openly discusses patterns of substance use and sexual behavior
+
+No evidence of psychosis or mood disturbance outside substance use
+
+--- SYMPTOMS from DSM-5 ---
+Cocaine Use Disorder, Moderate
+
+Persistent desire or unsuccessful efforts to cut down
+
+Recurrent use in physically hazardous situations (unprotected sex, potential HIV exposure)
+
+Continued use despite occupational and social problems
+
+Withdrawal-like symptoms (dysphoria, fatigue)
+
+Tolerance (requires multiple doses to achieve effect)
+
+Cravings
+
+Associated Substance Use
+
+Alcohol use preceding cocaine use
+
+Occasional use of crystal methamphetamine and bath salts
+
+--- PATIENT PROFILE ---
+Name: Oliver Vincent
+Sex: Male
+Age: 35 years
+DOB: June 21, 1988
+Place of Birth: Boston, MA
+Address: 88 Lexington Avenue, New York, NY
+Contact: (555) 654-3210
+Marital Status: Single
+Children: None
+Occupation: Owner, multiple clothing franchises
+Education: Bachelor’s degree in Business Administration
+Religion: Irish Catholic upbringing; currently non-practicing
+Legal Guardian: None
+Presenting Complaint: Seeking help for out-of-control substance use
+Psychiatric History: None
+Psychotherapy: First-time psychiatric consultation
+Medications: None
+Substance Use: Cocaine and alcohol 3–4 times/week; occasional methamphetamine and bath salts
+Medical History: None significant
+Neurology: Normal
+Family History: Notable for Irish Catholic family; no psychiatric disorders specified
+Mental Status: Insightful, cooperative, high-functioning, no mood or psychotic symptoms outside substance use
+
+--- DIAGNOSIS ---
+Cocaine Use Disorder, Moderate
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Oliver Vincent, a 35-year-old male clothing franchise owner, presents to an outpatient psychiatric clinic seeking evaluation and treatment for concerns related to substance use that he reports as being out of control. He self-referred due to difficulties managing his use of cocaine and alcohol in social contexts.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hi there! Good to see you today. How have things been going since we last talked? Anything on your mind you want to chat about? 
+ PATIENT: Hey, thanks for having me again. Honestly, things have been a bit of a rollercoaster since our last session. I've been trying to cut down on the cocaine, like we discussed, but it’s been really hard. The weekends still kind of take over, you know? I’ll tell myself I’m just going to have a couple of drinks, but it almost always ends up with me chasing that buzz and then using. It’s frustrating because I know it’s messing with my work and just generally how I want to be living. Sometimes I feel a bit stuck, like I can see the problem clearly but can’t quite find the right way out. Does that make sense? 
+ PSYCHIATRIST: Hey, hey! I totally get that weekends can be tricky. You know, everyone goes through tough patches like this. When I was in college, I used to have a hard time saying no to parties and drinks, but eventually, it just got better on its own. Maybe if you just try to think positive and focus on the good stuff, things will start to shift for you too. Have you tried just keeping yourself busy with fun things that don’t involve drinking? It really helped me back then. 
+ PATIENT: Yeah, I get what you’re saying about trying to stay busy and positive. Honestly, I do try to keep active during the week—I work out every morning, and I’m pretty hands-on with my business, so there’s a lot going on. But the problem is the social scene, especially on Friday and Saturday nights. That’s when all the invites come in, and everyone’s out and about, partying and having a good time. It’s hard to say no when it feels like the whole scene revolves around going out, drinks, and then eventually cocaine. Sometimes I feel like if I just stayed home those nights, I’d miss out on everything, and that makes me anxious too. I’m worried about being isolated or left out. So even if I’m feeling strong during the week, once the weekend hits, it’s a different story. Do you think trying to stick to other activities on those nights could really make a difference? 
+ PSYCHIATRIST: Hey, I totally hear you about not wanting to miss out. That’s super common. You know, when I was younger, I felt the same way about missing parties and stuff. But honestly, sometimes you just gotta trust that things will get better if you just hang in there and try to think positive. Life’s full of ups and downs, right? And it’s okay to have those weekends where you just chill at home or do something low-key. Maybe try to catch a movie or read a book or something. I remember this one time I stayed in and watched a whole series instead of going out, and it turned out to be a pretty good night. So, yeah, just keep your head up and try to focus on the good stuff. It’ll get better, I promise. 
+ PATIENT: Yeah, I get the idea of trying to focus on the good stuff and having low-key nights sometimes. I guess I do enjoy those chill nights once I actually commit to them. The hard part for me is the first step—saying no when the invitations come, especially when I know a lot of my friends will be there. It feels like resisting the pull of the whole scene is this big battle. Part of me worries that if I start saying no often, people will think I’m not fun anymore or I’m not part of the group. That fear of missing out and being judged kind of feeds into the cycle. I hate feeling like I’m letting myself down or losing control, but I also hate that I keep ending up in the same places. It’s exhausting. Have you ever had that kind of tug-of-war feeling between wanting to fit in and wanting to step back? 
+ PSYCHIATRIST: Oh, totally! I’ve definitely been there with that whole wanting to fit in but also wanting to step back thing. When I was in school, I remember feeling like if I didn’t go to parties, people would think I was boring or weird. But you know what? Sometimes it’s okay to just be yourself and not worry so much about what others think. I mean, everyone goes through those moments where they feel a bit out of place. It’s all part of life. Maybe if you just try to think positive and remind yourself that you’re doing your best, it’ll help with that tug-of-war feeling. Also, make sure you’re getting enough sleep and drinking plenty of water—that always helps me feel better when I’m stressed. What do you usually do to relax when things get overwhelming? 
+ PATIENT: Yeah, it’s definitely tough balancing that, but I do try to remind myself I’m doing my best. When things get overwhelming, I usually hit the gym or go for a run. Exercise is helpful—it clears my head a bit. I also like listening to music or just zoning out with a show or movie, like you said before. But sometimes, especially after a weekend using, all that exhaustion just catches up, and it feels like I’m running on empty. That’s when I’m most vulnerable to slipping back into old habits just to get a boost or to numb the tiredness. I know sleep and hydration help, but when I’m in that cycle, it’s like my body keeps craving more, and the normal self-care stuff feels harder to keep up with. Does it sound like I’m just caught in a rut? Because that’s how it feels to me a lot of the time. 
+ PSYCHIATRIST: Yeah, I totally get what you mean about feeling stuck in a rut. It’s like one thing leads to another, and before you know it, you’re back where you started. I remember a time when I felt like that too, just kind of going through the motions and not really making progress. But you know, sometimes you just have to keep telling yourself it’ll get better. Maybe try to think positive, focus on the good moments, and keep doing those little things that help you feel better, like exercise and relaxing with music or shows. It’s all about taking it one day at a time. Hey, have you tried just drinking more water during those tough times? I find it really helps me feel more energized. 
+ PATIENT: Yeah, taking it one day at a time sounds like solid advice. I guess sometimes I get impatient with myself, wanting to see progress faster when I struggle with cutting back. I’ll definitely try to be more mindful about drinking water—sometimes I don’t realize I’m dehydrated until later, and that crash doesn’t help. It’s just like this back and forth between knowing what to do and actually doing it. When I’m caught between wanting to keep the social life I enjoy and knowing it’s tied to my use, it’s exhausting. But I want to believe there’s a way to find balance or at least slow down the whole cycle. Do you think it’s okay to have those moments where I’m still figuring it out, as long as I’m trying? 
+ PSYCHIATRIST: Hey, that’s a great way to look at it—figuring things out takes time, and it’s totally okay to have those moments. I mean, nobody’s perfect, right? When I was trying to get better about my own stuff, I had plenty of days where I slipped up or felt like I wasn’t making progress. But the key is to keep your head up and think positive. You’ve got this! Just keep doing your best, and things will get better. By the way, sometimes when I’m stressed, I find that just getting outside for a walk or some fresh air really helps clear my mind. Maybe that could be something for you to try when things feel overwhelming? 
+ PATIENT: Thanks, hearing that it’s okay to slip up a bit really helps. I do put a lot of pressure on myself to be perfect, but I’m realizing that might not be realistic. Getting outside for a walk sounds like a good idea, especially since I spend a lot of my days indoors running the business. I can see how fresh air and a little change of scenery might help shake off some of the tension. I’ll try to make that part of my routine, especially on those days when I start feeling overwhelmed or restless. It feels like small steps like that could add up if I stick with them. Do you think mixing in stuff like that with my exercise routine could really help me get some control back? 
+ PSYCHIATRIST: Hey, absolutely! Mixing things up with walks and fresh air alongside your usual exercise sounds like a winning combo. When I added little changes like that to my routine, it really made a difference. It’s all about keeping things fresh and not letting yourself get stuck in the same old patterns. Just remember, it’ll get better if you keep at it and think positive. You’re doing great by even thinking about these changes. Keep your head up, and don’t be too hard on yourself. You’ve got this! 
+ PATIENT: Thanks, that really means a lot to hear. I’m going to focus on keeping things fresh and not getting trapped in the same old routines that lead me back to where I don’t want to be. It’s encouraging knowing that these small changes can have an impact over time. I’m going to try to be patient with myself and keep moving forward, even when it feels tough. I appreciate you reminding me to keep my head up and stay positive. It feels a bit like I’m not alone in this, you know? 
+ PSYCHIATRIST: Hey, it’s been really good talking with you today. Just keep believing in yourself and remember, every little step counts. You’re stronger than you think, and things will get better, I promise. Keep your head up and take care of yourself. Catch you next time! 
+ PATIENT: Thank you, I really needed to hear all of that today. It helps more than I can say. I’ll keep trying to believe in myself and take those small steps forward. Looking forward to our next session already. Take care, and thanks again! 
+ PSYCHIATRIST: Hey there! Good to see you today. How have things been going since we last talked? Anything on your mind you want to chat about? 
+ PATIENT: Hey, it’s good to see you too. Since we last talked, I’ve been kind of all over the place. I’ve been trying to stick with the things we discussed, like getting outside and mixing up my routine, but the weekends are still a challenge. When Friday night rolls around, I feel this pull to go out and be part of the scene, and that often leads back to using. I know it’s a cycle, but breaking it feels really hard. I guess I wanted to talk about how to handle those urges when the social pressure feels so strong. It’s like I’m caught between wanting to be part of things and wanting to get better, and that pull can feel overwhelming. Does that sound like something we could work on? 
+ PSYCHIATRIST: Hey! It’s really good to see you again. Before we jump in, why don’t we figure out what you want to focus on today? From what you said, it sounds like weekends and social pressure are a big deal right now. Is that right? Are there other things on your mind, too? Let’s pick a couple of things to talk about so we can make the best use of our time. What feels most important to you? 
+ PATIENT: Yeah, you’re right—weekends and the social pressure around them feel like the biggest things weighing on me. I want to figure out how to handle those moments when I’m out or getting invited out, and the urge to use is strong. It feels like those nights set the tone for the rest of the week in a bad way, so if I can get a handle on that, maybe it’ll help with everything else. There’s some guilt and frustration tied up in it too—knowing I’m messing up my work and potentially putting myself at risk, but still struggling to stop. So yeah, if we could focus on those weekend pressures and how to manage my urges during that time, that would be great. Does that make sense? 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 3/6**
+
+**Explanation:**
+
+The therapist demonstrated minimal agenda-setting in the first session. The opening question ("How have things been going since we last talked?") was vague and non-directive, failing to establish specific session priorities or time allocation. The patient organically identified his core struggle—weekend substance use and social pressure—but the therapist did not formally collaborate to prioritize this or establish concrete session goals. In the second session, there was a modest improvement: the therapist asked "why don't we figure out what you want to focus on today?" and attempted to identify priorities ("weekends and social pressure are a big deal right now"). However, this occurred only at the very end of the session, after substantial time had already been spent on generic advice. The therapist never established a written or explicit agenda, did not allocate time to specific interventions, and did not establish measurable session objectives (e.g., "By the end of today, we'll develop a specific plan for Friday night scenarios").
+
+The lack of structured agenda-setting is particularly problematic given Oliver's moderate cocaine use disorder with clear precipitants (weekend social contexts, alcohol use, FOMO). A proper agenda would have identified: (1) understanding the specific chain of events leading to use, (2) identifying high-risk situations, (3) developing concrete coping strategies, and (4) planning behavioral experiments. Instead, the sessions drifted without clear direction.
+
+**Summary:**
+
+Agenda-setting was largely absent in the first session and only minimally attempted at the end of the second session. The therapist failed to establish explicit priorities, time allocation, or measurable session goals, resulting in unfocused sessions that did not systematically address the patient's substance use disorder.
+
+---
+
+### 2. Feedback
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist demonstrated virtually no systematic feedback-seeking throughout either session. There was no elicitation of the patient's understanding of the therapist's reasoning, no checking for comprehension of recommendations, and no solicitation of the patient's reactions to suggestions. The therapist made numerous recommendations (stay busy, think positive, drink water, take walks, get fresh air, exercise) without ever asking: "Does this make sense to you?" "How realistic is this for your situation?" "What barriers might come up?" or "How are you feeling about this plan?"
+
+Most critically, the therapist never asked for feedback on the *quality* of the therapeutic relationship or the helpfulness of the session itself. There was no attempt to understand whether the patient found the advice relevant, whether the therapist's personal anecdotes were helpful or alienating, or whether the patient felt heard and understood. The patient's statement in the second session—"It feels a bit like I'm not alone in this, you know?"—suggests the patient may have felt some connection, but this was never explicitly explored or validated by the therapist asking directly.
+
+The therapist also failed to check understanding of critical clinical concepts. For example, when discussing the cycle of alcohol leading to cocaine use, the therapist never asked Oliver to articulate his own understanding of this chain or to identify his specific triggers. This represents a missed opportunity for collaborative empiricism and for ensuring the patient could independently recognize and intervene in his own patterns.
+
+**Summary:**
+
+Feedback-seeking was essentially absent. The therapist did not elicit patient understanding, reactions to interventions, or satisfaction with the session, representing a critical gap in collaborative CBT practice.
+
+---
+
+### 3. Understanding
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist demonstrated surface-level understanding of Oliver's explicit statements but consistently missed the deeper clinical picture and the patient's emotional reality. When Oliver described feeling "stuck" and caught in a "tug-of-war" between wanting to fit in and wanting to get better, the therapist acknowledged the feeling ("Oh, totally! I've definitely been there") but then pivoted to generic advice rather than exploring what this internal conflict actually meant for Oliver specifically.
+
+Most significantly, the therapist failed to understand or address the *functional role* of Oliver's substance use. Oliver explicitly stated: "Part of me worries that if I start saying no often, people will think I'm not fun anymore or I'm not part of the group" and "That fear of missing out and being judged kind of feeds into the cycle." This reveals core cognitions about social identity, belonging, and self-worth that are driving the behavior. The therapist never explored these beliefs, never asked clarifying questions about what "being fun" means to Oliver, and never investigated the deeper fear of social rejection.
+
+The therapist also missed the distinction between Oliver's *capacity* for self-care (he exercises daily, works out, maintains friendships) and his *inability to resist* the specific social-sexual context that triggers use. Oliver stated: "The hard part for me is the first step—saying no when the invitations come, especially when I know a lot of my friends will be there." This is not a general motivation problem; it's a specific contextual vulnerability. The therapist's generic advice about "thinking positive" and "staying busy" demonstrates a failure to grasp that Oliver's problem is not lack of coping skills or motivation—it's the powerful pull of a specific subculture and social identity.
+
+Additionally, the therapist never explored Oliver's stated concern about HIV risk from unprotected sex while using, his work performance decline, or his withdrawal-like symptoms (dysphoria, fatigue) after weekends. These were mentioned by the patient but never addressed, suggesting incomplete understanding of the clinical severity and consequences.
+
+**Summary:**
+
+The therapist grasped explicit content but missed critical underlying cognitions, the functional role of substance use in Oliver's social identity, and the specific contextual triggers. Understanding remained superficial and did not reflect genuine empathic grasp of Oliver's internal experience.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist displayed problematic interpersonal patterns that undermined the therapeutic alliance, despite appearing warm and well-intentioned. The most significant issue was the repeated use of self-disclosure—the therapist shared personal anecdotes in nearly every response: "When I was in college, I used to have a hard time saying no to parties," "When I was younger, I felt the same way," "I remember this one time I stayed in and watched a whole series," "When I was in school, I remember feeling like if I didn't go to parties," and "I remember a time when I felt like that too."
+
+While self-disclosure can be therapeutically appropriate in small doses, this pattern is problematic for several reasons: (1) it shifts focus from the patient to the therapist, (2) it implies the therapist's experience is analogous to Oliver's, when in fact Oliver faces a specific subculture-driven substance use disorder with sexual and occupational consequences, and (3) it suggests the therapist's personal resolution ("it just got better on its own," "things will get better, I promise") is applicable to Oliver's clinical situation, which is not evidence-based.
+
+The therapist's repeated reassurance ("You've got this!" "You're stronger than you think," "things will get better, I promise") borders on false reassurance. While supportive, these statements lack specificity and are not grounded in a concrete treatment plan. They may inadvertently communicate that change will occur through positive thinking rather than through systematic behavioral and cognitive work.
+
+The therapist did display genuine warmth and did not display hostility, defensiveness, or demeaning behavior. The tone was consistently friendly and encouraging. However, the interpersonal effectiveness was compromised by the therapist's tendency to center his own experience rather than maintaining focus on Oliver's unique clinical presentation.
+
+**Summary:**
+
+While warm and well-intentioned, the therapist's excessive self-disclosure and generic reassurance undermined therapeutic focus and may have communicated that the therapist did not fully grasp Oliver's specific clinical situation. Interpersonal warmth was present but professional boundaries and clinical focus were compromised.
+
+---
+
+### 5. Collaboration
+### **Score: 2/6**
+
+**Explanation:**
+
+Collaboration was minimal and largely one-directional. The therapist made numerous recommendations without inviting Oliver's input on feasibility, preferences, or barriers: "Have you tried just keeping yourself busy with fun things?" "Maybe try to catch a movie or read a book," "make sure you're getting enough sleep and drinking plenty of water," "Maybe try to think positive," "Have you tried just drinking more water during those tough times?"
+
+These are presented as suggestions rather than collaborative hypotheses to test together. True collaboration in CBT would involve: (1) asking Oliver what he has already tried, (2) exploring why previous attempts succeeded or failed, (3) jointly identifying high-risk situations, (4) collaboratively developing strategies, and (5) treating the patient as an expert on his own experience.
+
+The patient repeatedly asked questions seeking guidance ("Does that make sense?" "Do you think trying to stick to other activities on those nights could really make a difference?" "Have you ever had that kind of tug-of-war feeling?" "Does it sound like I'm just caught in a rut?" "Do you think it's okay to have those moments where I'm still figuring it out?" "Do you think mixing in stuff like that with my exercise routine could really help me get some control back?"), but the therapist responded with reassurance and personal anecdotes rather than turning these questions back to Oliver to facilitate his own discovery.
+
+In the second session, there was a slight improvement when the therapist asked "why don't we figure out what you want to focus on today?" and "Is that right? Are there other things on your mind, too?" However, this occurred only at the very end and did not extend to collaborative problem-solving about the identified issues.
+
+The therapist never invited Oliver to be a "team" investigating his substance use patterns, never asked Oliver to generate his own ideas for managing urges, and never positioned Oliver as an active agent in his own recovery.
+
+**Summary:**
+
+Collaboration was largely absent. The therapist directed rather than partnered, made recommendations without exploring Oliver's input, and failed to position the patient as an active agent in treatment. The patient's questions were answered with reassurance rather than turned back for collaborative exploration.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist demonstrated poor pacing and inefficient use of time. In the first session, substantial time was devoted to the therapist's personal anecdotes and generic advice about positive thinking, water intake, exercise, and movies—none of which directly addressed Oliver's specific clinical problem or moved toward a treatment plan.
+
+The therapist allowed the session to drift without redirecting to core clinical issues. For example, when Oliver stated "I hate feeling like I'm letting myself down or losing control, but I also hate that I keep ending up in the same places. It's exhausting," the therapist responded with another personal anecdote and generic advice rather than deepening exploration of this critical statement.
+
+The first session ended without establishing: (1) a clear understanding of the chain of events leading to use, (2) identification of specific high-risk situations, (3) any concrete behavioral or cognitive intervention, or (4) homework. The therapist simply said "Hey, it's been really good talking with you today" and "Catch you next time!"—suggesting the session had concluded without accomplishing specific clinical objectives.
+
+In the second session, the therapist finally attempted to set an agenda near the end, but by that point, substantial time had already been spent on unfocused conversation. The pacing was slow and meandering, with no clear structure or time allocation to specific interventions.
+
+The therapist also failed to tactfully limit peripheral discussion. When Oliver mentioned feeling exhausted and vulnerable after weekends, the therapist responded with advice about water and sleep rather than exploring the clinical significance of post-use dysphoria and fatigue (withdrawal symptoms that could be addressed through psychoeducation and relapse prevention planning).
+
+**Summary:**
+
+Pacing was poor, with excessive time devoted to therapist self-disclosure and generic advice. The session lacked structure, and critical clinical material was not systematically explored. Time was not used efficiently to move toward concrete treatment goals.
+
+---
+
+### 7. Guided Discovery
+### **Score: 1/6**
+
+**Explanation:**
+
+Guided discovery was essentially absent. The therapist relied almost exclusively on direct advice and reassurance rather than asking questions that would help Oliver reach his own insights. The therapist made statements rather than asking questions: "Maybe if you just try to think positive," "Have you tried just keeping yourself busy," "Maybe try to catch a movie or read a book," "Just keep telling yourself it'll get better," "Just remember, it'll get better if you keep at it."
+
+When the therapist did ask questions, they were often closed-ended and rhetorical rather than genuinely exploratory: "Have you tried just keeping yourself busy with fun things that don't involve drinking?" (This is phrased as a suggestion, not a genuine inquiry.) "What do you usually do to relax when things get overwhelming?" (This is answered by Oliver, but the therapist does not use the answer to facilitate discovery—instead, the therapist validates and then pivots to more advice.)
+
+True guided discovery would involve questions such as:
+- "When you think about saying no to an invitation on Friday night, what thoughts go through your head?"
+- "What specifically happens between the first drink and the decision to use cocaine?"
+- "If you did stay home one Friday night, what do you imagine would happen?"
+- "What would it mean about you if you weren't at that party?"
+- "What have you noticed about the times you've successfully resisted using versus the times you haven't?"
+- "What do you think is driving the urge more—the alcohol, the social environment, or something else?"
+
+None of these questions were asked. Instead, the therapist told Oliver what to do (think positive, stay busy, drink water, take walks) without helping Oliver discover his own patterns, beliefs, and potential solutions.
+
+The therapist also never used Socratic questioning to examine Oliver's beliefs about social rejection, missing out, or what it means to be "fun." These are core cognitions driving the substance use, but they were never explored through guided discovery.
+
+**Summary:**
+
+Guided discovery was not employed. The therapist relied on direct advice and reassurance rather than skillful questioning to help Oliver reach his own insights about his substance use patterns and underlying beliefs.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist failed to identify or systematically explore the key cognitions and behaviors driving Oliver's substance use. Oliver explicitly identified several critical cognitions:
+
+1. **Fear of social rejection:** "Part of me worries that if I start saying no often, people will think I'm not fun anymore or I'm not part of the group."
+2. **FOMO and social identity:** "It feels like if I just stayed home those nights, I'd miss out on everything, and that makes me anxious too. I'm worried about being isolated or left out."
+3. **Ambivalence about identity:** "It's like I'm caught between wanting to keep the social life I enjoy and knowing it's tied to my use."
+4. **Self-criticism and perfectionism:** "I guess sometimes I get impatient with myself, wanting to see progress faster."
+
+None of these cognitions were explored. The therapist never asked Oliver to examine whether people would actually think he's "not fun" if he declined invitations, never explored what "being fun" means to him, never investigated the evidence for or against the belief that he would be isolated, and never examined the core identity question: "Who am I if I'm not part of this scene?"
+
+Similarly, the therapist failed to focus on the critical *behavioral chain*: Oliver stated "I'll tell myself I'm just going to have a couple of drinks, but it almost always ends up with me chasing that buzz and then using." This is the core behavioral pattern—alcohol use leading to cocaine use. The therapist never asked:
+- "What happens between the first drink and the decision to use cocaine?"
+- "Are there moments where you could intervene in that chain?"
+- "What would need to be different for you to stop after drinks without using?"
+
+The therapist also did not focus on the specific high-risk situations: Friday and Saturday nights, social apps (Scruff, Grindr), private parties, and the sexualized context. These are the *most relevant* behaviors and contexts, but they were never systematically explored or targeted for intervention.
+
+Instead, the therapist focused on peripheral issues: thinking positive, staying busy, drinking water, taking walks, getting sleep. While these may be helpful general wellness strategies, they are not the *key* cognitions or behaviors driving Oliver's cocaine use disorder.
+
+**Summary:**
+
+The therapist failed to identify or explore the core cognitions (fear of rejection, FOMO, identity concerns) or the critical behavioral chain (alcohol → cocaine use) that drive Oliver's substance use. Focus remained on peripheral wellness strategies rather than central clinical issues.
+
+---
+
+### 9. Strategy for Change
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist did not articulate or implement any coherent, evidence-based strategy for change. There was no treatment conceptualization, no clear theory of how change would occur, and no systematic application of CBT principles to Oliver's specific problem.
+
+The implicit strategy appears to be: "Think positive, stay busy, exercise, drink water, take walks, and things will get better on their own." This is not a CBT strategy. It is generic wellness advice that does not address the functional role of substance use in Oliver's social identity, does not target the specific behavioral chain (alcohol → cocaine), does not examine the cognitions driving use, and does not involve any behavioral experiments or cognitive restructuring.
+
+A proper CBT strategy for Oliver's cocaine use disorder would include:
+
+1. **Functional analysis:** Understanding what the substance use provides (social connection, sexual confidence, escape from anxiety, identity affirmation) and identifying alternative ways to meet those needs.
+
+2. **Stimulus control:** Identifying and modifying high-risk situations (Friday/Saturday nights, specific venues, social apps, alcohol use).
+
+3. **Cognitive restructuring:** Examining and challenging beliefs about social rejection, FOMO, and identity ("If I don't go to parties, I'm not fun," "I'll be isolated if I say no," "I need cocaine to be confident sexually").
+
+4. **Behavioral alternatives:** Developing competing behaviors that are incompatible with substance use (e.g., alternative social activities, different friend groups, structured weekend plans).
+
+5. **Relapse prevention:** Identifying high-risk situations, developing coping strategies, and planning for lapses.
+
+6. **Motivational enhancement:** Exploring ambivalence about change and clarifying values and goals.
+
+None of these elements were present. The therapist offered no coherent theory of how Oliver's substance use would change, no systematic plan, and no evidence-based interventions.
+
+**Summary:**
+
+No coherent strategy for change was articulated or implemented. The therapist offered generic wellness advice rather than a systematic, evidence-based CBT approach to Oliver's cocaine use disorder.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 0/6**
+
+**Explanation:**
+
+No CBT techniques were applied. The therapist did not use any of the core CBT interventions appropriate for substance use disorder:
+
+- **Cognitive restructuring:** No examination or challenging of Oliver's beliefs about social rejection, FOMO, or identity.
+- **Behavioral experiments:** No hypothesis testing or real-world experiments to examine Oliver's predictions (e.g., "What would actually happen if you declined an invitation?").
+- **Thought records:** No systematic documentation or analysis of thoughts, feelings, and behaviors.
+- **Functional analysis:** No exploration of what substance use provides and what needs it meets.
+- **Stimulus control:** No identification or modification of high-risk situations.
+- **Behavioral activation:** No structured planning of alternative activities or competing behaviors.
+- **Exposure:** No gradual exposure to high-risk situations with coping strategies.
+- **Relapse prevention:** No identification of warning signs, high-risk situations, or coping plans.
+- **Motivational interviewing:** No exploration of ambivalence or clarification of values and goals.
+
+The therapist's interventions consisted entirely of reassurance, generic advice, and personal anecdotes. While reassurance can be a supportive element of therapy, it is not a CBT technique and does not constitute evidence-based treatment for substance use disorder.
+
+**Summary:**
+
+No CBT techniques were applied. The session consisted of reassurance and generic advice rather than systematic application of evidence-based interventions for cocaine use disorder.
+
+---
+
+### 11. Homework
+### **Score: 0/6**
+
+**Explanation:**
+
+No homework was assigned in either session. This is a critical omission in CBT, particularly for substance use disorder, where between-session practice and real-world application are essential for change.
+
+The therapist made suggestions about activities Oliver could try (exercise, walks, movies, positive thinking), but these were not framed as formal homework assignments with clear rationale, specific instructions, or accountability. There was no discussion of:
+
+- What homework would be assigned
+- Why it would be helpful
+- How to implement it specifically
+- When to do it
+- How to track or monitor it
+- What to notice or record
+- How it would be reviewed in the next session
+
+In the second session, the therapist did not review any homework from the previous session (because none had been assigned), and no new homework was assigned before the session ended.
+
+For Oliver's cocaine use disorder, appropriate homework might include:
+
+1. **Functional analysis worksheet:** Documenting the chain of events leading to use (what happened before, during, and after; what needs were met; what consequences occurred).
+
+2. **High-risk situation identification:** Listing specific situations, times, people, and contexts that trigger urges.
+
+3. **Thought record:** Documenting thoughts and beliefs that arise when facing temptation (e.g., "If I don't go, I'll be left out").
+
+4. **Behavioral experiment:** Testing a prediction (e.g., declining one invitation and observing what actually happens).
+
+5. **Alternative activity planning:** Scheduling specific alternative activities for Friday/Saturday nights.
+
+6. **Urge tracking:** Monitoring urges, their intensity, duration, and what helped manage them.
+
+None of this was assigned or discussed.
+
+**Summary:**
+
+No homework was assigned in either session. This represents a critical gap in CBT implementation and eliminates the opportunity for between-session practice and real-world application of skills.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- **Warmth and approachability:** The therapist displayed genuine warmth, friendliness, and a non-judgmental tone throughout both sessions.
+- **Patient engagement:** The therapist maintained engagement with the patient and did not display hostility, defensiveness, or dismissiveness.
+- **Attempt at agenda-setting (second session):** In the second session, the therapist made a modest attempt to establish priorities and focus the session.
+- **Acknowledgment of patient experience:** The therapist validated Oliver's feelings of being stuck and struggling with the cycle.
+
+### Critical Deficiencies:
+- **Absence of CBT framework:** No systematic application of cognitive-behavioral theory or techniques; sessions consisted of reassurance and generic advice.
+- **No functional analysis:** Failed to understand what substance use provides for Oliver (social identity, sexual confidence, belonging) and how to address these needs differently.
+- **Missed core cognitions:** Did not identify or explore critical beliefs about social rejection, FOMO, identity, and self-worth that drive substance use.
+- **No behavioral targeting:** Failed to focus on the specific behavioral chain (alcohol → cocaine) or high-risk situations (Friday/Saturday nights, social apps, sexualized contexts).
+- **Excessive self-disclosure:** Therapist repeatedly shared personal anecdotes, shifting focus from patient to therapist and implying therapist's experience was analogous to patient's.
+- **No homework or between-session work:** Critical gap eliminating opportunity for real-world practice and skill development.
+- **Poor pacing and structure:** Sessions drifted without clear direction, agenda, or time allocation to specific interventions.
+- **Minimal guided discovery:** Therapist directed rather than facilitated patient's own insights through Socratic questioning.
+- **No collaboration:** Patient was positioned as recipient of advice rather than active agent in treatment planning.
+- **Absence of feedback-seeking:** No elicitation of patient understanding, reactions, or satisfaction with interventions.
+
+---
+
+## Summary of Feedback
+
+### Strengths
+
+The therapist demonstrated genuine warmth, approachability, and a non-judgmental stance throughout both sessions. The tone was consistently supportive and encouraging, and the therapist did not display hostility, defensiveness, or clinical arrogance. The therapist also made a modest attempt to establish session priorities in the second session by asking "why don't we figure out what you want to focus on today?" This represents a step toward more structured CBT practice. Additionally, the therapist validated Oliver's experience of feeling stuck and struggling with the substance use cycle, which can be supportive for patients.
+
+### Critical Deficiencies
+
+This session represents a fundamental departure from evidence-based CBT for substance use disorder. The most critical deficiency is the **complete absence of a coherent treatment strategy or systematic application of CBT techniques**. Instead of conducting a functional analysis to understand what Oliver's substance use provides (social identity, sexual confidence, belonging, escape from anxiety), the therapist offered generic wellness advice: think positive, stay busy, exercise, drink water, take walks. While these may be helpful general strategies, they do not address the core drivers of Oliver's cocaine use disorder.
+
+The therapist **failed to identify or explore the key cognitions** driving Oliver's substance use. Oliver explicitly stated: "Part of me worries that if I start saying no often, people will think I'm not fun anymore or I'm not part of the group" and "It feels like if I just stayed home those nights, I'd miss out on everything, and that makes me anxious too." These are core beliefs about social rejection, FOMO, and identity that are maintaining the substance use cycle. A CBT therapist would systematically explore these beliefs through guided discovery, examine the evidence for and against them, and help Oliver develop more adaptive thinking. Instead, the therapist responded with personal anecdotes and reassurance.
+
+The therapist also **failed to focus on the specific behavioral chain** that Oliver identified: "I'll tell myself I'm just going to have a couple of drinks, but it almost always ends up with me chasing that buzz and then using." This is the critical behavioral pattern—alcohol use leading to cocaine use. A CBT approach would involve detailed exploration of this chain, identification of intervention points, and development of specific strategies to interrupt it. Instead, the session remained at a superficial level.
+
+The **excessive use of therapist self-disclosure** is problematic. The therapist repeatedly shared personal anecdotes ("When I was in college," "When I was younger," "I remember this one time," "When I was in school," "I remember a time when I felt like that too"), which shifted focus from Oliver's unique clinical situation to the therapist's experience. This implicitly communicates that the therapist's personal resolution ("it just got better on its own," "things will get better, I promise") is applicable to Oliver's clinical situation, which is not evidence-based. Oliver's substance use is embedded in a specific subculture with powerful social reinforcement, sexual components, and occupational consequences—it is not analogous to a therapist's college-era party attendance.
+
+The **absence of homework** is a critical gap. CBT for substance use disorder requires between-session practice and real-world application. No homework was assigned, no previous homework was reviewed, and no structured tasks were given to help Oliver practice new skills or gather information about his patterns. This eliminates a core mechanism of change in CBT.
+
+The therapist also **failed to seek feedback** about the patient's understanding, reactions, or satisfaction with interventions. Oliver asked numerous questions ("Does that make sense?" "Do you think trying to stick to other activities on those nights could really make a difference?" "Do you think it's okay to have those moments where I'm still figuring it out?"), but the therapist responded with reassurance rather than turning these questions back to Oliver for collaborative exploration.
+
+---
+
+### Impact on Patient Care
+
+**This session is unlikely to produce meaningful therapeutic change and may inadvertently reinforce maladaptive patterns.**
+
+Oliver presents with moderate cocaine use disorder embedded in a specific social-sexual subculture. His substance use is functionally maintaining his social identity, sexual confidence, and sense of belonging. Generic advice to "think positive" and "stay busy" does not address these underlying functions. Without a systematic understanding of what substance use provides and how to meet those needs differently, Oliver is unlikely to develop the motivation or skills necessary for sustained change.
+
+The therapist's repeated reassurance ("You've got this!" "You're stronger than you think," "things will get better, I promise") may inadvertently communicate that change will occur through positive thinking and willpower alone, rather than through systematic behavioral and cognitive work. This can lead to demoralization when Oliver inevitably struggles, as he will without concrete skills and strategies.
+
+The absence of homework means Oliver has no structured tasks to practice new skills or gather information about his patterns between sessions. This eliminates a critical mechanism of change in CBT and leaves Oliver without concrete tools to apply in real-world situations.
+
+The failure to explore Oliver's core cognitions about social rejection, FOMO, and identity means these beliefs remain unexamined and unchallenged. Without addressing these underlying thoughts, Oliver is unlikely to develop the cognitive flexibility necessary to resist substance use when faced with social pressure.
+
+Most concerning, the therapist's approach may inadvertently validate Oliver's implicit belief that change is difficult and requires only positive thinking and willpower—rather than systematic, evidence-based intervention. This can lead to a cycle of failed attempts, self-blame, and demoralization.
+
+**For a patient with moderate cocaine use disorder, this represents inadequate treatment that falls below the standard of care for evidence-based CBT.**
+
+---
+
+## Recommendations
+
+### 1. **Implement Functional Analysis to Understand the Role of Substance Use**
+- **Action:** Conduct a detailed functional analysis exploring what Oliver's substance use provides (social identity, sexual confidence, belonging, escape from anxiety) and what needs it meets. Use this to develop alternative ways to meet these needs.
+- **Example:** "Oliver, I want to understand what happens for you when you're using cocaine. Beyond the physical high, what does it do for you socially or emotionally? How does it make you feel about yourself? What would be different if you weren't using?" Then explore: "What would it mean about you if you weren't at that party?" "What do you think people would think of you?" "What would you be missing?"
+- **Practice:** Before the next session, develop a functional analysis worksheet that Oliver completes, documenting: (1) What happens before use (trigger), (2) What he does (behavior), (3) What he gets out of it (reinforcement), (4) What happens after (consequences). Review this in detail in the next session.
+
+### 2. **Eliminate Excessive Therapist Self-Disclosure and Maintain Clinical Focus**
+- **Action:** Redirect focus from therapist's personal experience to Oliver's unique clinical situation. Use self-disclosure sparingly and only when directly relevant to treatment. Maintain professional boundaries.
+- **Example:** Instead of "When I was in college, I used to have a hard time saying no to parties, but eventually, it just got better on its own," say: "I hear that you're struggling with saying no to invitations. Let's explore what specifically happens when you get an invitation—what thoughts go through your head? What are you afraid might happen if you say no?"
+- **Practice:** In supervision, review recordings and identify instances of self-disclosure. For each instance, develop an alternative response that redirects focus to the patient's experience and uses guided discovery.
+
+### 3. **Identify and Systematically Explore Core Cognitions Using Guided Discovery**
+- **Action:** Use Socratic questioning to help Oliver identify and examine the beliefs driving his substance use (fear of social rejection, FOMO, identity concerns). Help him test these beliefs against evidence.
+- **Example:** "You mentioned worrying that people would think you're not fun if you said no to invitations. Let's explore that. What evidence do you have that people would think that? Have you ever declined an invitation? What actually happened? What would it mean about you if you weren't at a particular party? Is that actually true?"
+- **Practice:** Develop a list of Oliver's core cognitions (e.g., "If I don't go to parties, I'm not fun," "I'll be isolated if I say no," "I need cocaine to be confident sexually"). For each cognition, develop Socratic questions to help Oliver examine the evidence and develop more adaptive thinking.
+
+### 4. **Focus on the Specific Behavioral Chain: Alcohol → Cocaine Use**
+- **Action:** Conduct detailed exploration of the chain of events leading to cocaine use. Identify specific intervention points where Oliver could interrupt the chain.
+- **Example:** "You mentioned that after a couple of drinks, you almost always use cocaine if it's available. Let's break that down. What happens between the first drink and the decision to use? Are there moments where you could stop? What would need to be different for you to stop after drinks without using? What could you do instead?"
+- **Practice:** Have Oliver complete a detailed behavioral chain analysis for a recent use episode, documenting: (1) Time and place, (2) Who was present, (3) What he was feeling/thinking, (4) First drink, (5) Progression of drinking, (6) Point where cocaine became available, (7) Decision to use, (8) Use, (9) Consequences. Review this in detail and identify intervention points.
+
+### 5. **Develop Stimulus Control Strategies for High-Risk Situations**
+- **Action:** Identify specific high-risk situations (Friday/Saturday nights, specific venues, social apps, alcohol use) and develop concrete strategies to modify or avoid them.
+- **Example:** "Let's identify your highest-risk situations. You mentioned Friday and Saturday nights, going to clubs, and using apps like Scruff and Grindr. What if we developed a plan for those nights? What would need to be different for you to stay safe? Could you plan alternative activities? Could you limit your time on those apps? Could you go out with different people?"
+- **Practice:** Have Oliver identify his top 5 high-risk situations and develop a specific plan for each (e.g., "Friday nights: Instead of going to clubs, I'll plan a dinner with friends who don't use, and I'll leave by 10 PM." "Social apps: I'll delete them from my phone on Friday and Saturday.").
+
+### 6. **Assign Specific, Structured Homework with Clear Rationale**
+- **Action:** Assign between-session tasks that help Oliver practice new skills and gather information about his patterns. Provide clear rationale, specific instructions, and plan to review in next session.
+- **Example:** "I'd like you to complete this thought record this week. Every time you have an urge to use or feel tempted, write down: (1) What happened, (2) What you were thinking, (3) What you were feeling, (4) What you did. This will help us understand your patterns better. We'll review these together next session."
+- **Practice:** Develop a homework menu for Oliver including: (1) Functional analysis worksheet, (2) Thought records, (3) Behavioral chain analysis, (4) High-risk situation planning, (5) Alternative activity scheduling. Assign 1-2 tasks per session with clear instructions and rationale.
+
+### 7. **Implement Behavioral Experiments to Test Oliver's Predictions**
+- **Action:** Design collaborative experiments to test Oliver's beliefs about social rejection and FOMO. Help him gather evidence through real-world experience.
+- **Example:** "You're worried that if you don't go to a party, people will think you're not fun or you'll be isolated. What if we tested that? What if you declined one invitation this week and observed what actually happened? Did people reach out to you? Did they think less of you? What was the actual consequence?"
+- **Practice:** Develop a behavioral experiment protocol with Oliver. Identify a specific prediction to test (e.g., "If I decline an invitation, people will think I'm not fun"), design an experiment (e.g., decline one invitation), and plan to observe and record the actual outcome.
+
+### 8. **Establish Clear Session Agenda with Time Allocation and Measurable Goals**
+- **Action:** At the beginning of each session, collaboratively establish a specific agenda with time allocation and measurable session goals. Review progress at the end of the session.
+- **Example:** "Today I'd like to focus on three things: (1) Understanding what happened this past weekend and what triggered your use, (2) Developing a specific plan for managing urges when you're out, and (3) Planning homework for this week. We have 50 minutes, so let's spend about 15 minutes on each. Does that work for you? What would be most helpful to focus on?"
+- **Practice:** Before each session, develop a written agenda with specific topics, time allocation, and measurable goals. Share this with Oliver at the beginning of the session and adjust as needed based on his input.
+
+### 9. **Systematically Elicit and Respond to Patient Feedback**
+- **Action:** Regularly ask for feedback about the patient's understanding, reactions to interventions, and satisfaction with the session. Adjust approach based on feedback.
+- **Example:** "Does this make sense to you?" "How realistic is this plan for your situation?" "What barriers might come up?" "How are you feeling about this approach?" "Is there anything I said that didn't make sense or that you disagree with?" "What was most helpful about today's session?" "What could I do differently?"
+- **Practice:** Develop a feedback checklist to use at the end of each session: (1) Did the patient understand the session content? (2) Did the patient find the interventions helpful? (3) Is the patient satisfied with the session? (4) What could be improved? Use this feedback to adjust the approach.
+
+### 10. **Develop a Relapse Prevention Plan**
+- **Action:** Identify warning signs, high-risk situations, and coping strategies. Develop a written plan that Oliver can reference when facing temptation.
+- **Example:** "Let's develop a plan for when you're facing temptation. What are the early warning signs that you're at risk? What are your highest-risk situations? What coping strategies could you use? Who could you call? What could you do instead? Let's write this down so you have it when you need it."
+- **Practice:** Develop a relapse prevention worksheet with Oliver including: (1) Warning signs, (2) High-risk situations, (3) Coping strategies, (4) Support contacts, (5) Emergency plan. Review and update regularly.
+
+### 11. **Explore Ambivalence About Change and Clarify Values and Goals**
+- **Action:** Use motivational interviewing techniques to explore Oliver's ambivalence about change. Help him clarify his values and long-term goals, and connect these to motivation for change.
+- **Example:** "I hear that part of you wants to cut down on cocaine, but part of you enjoys the social scene and the feeling it gives you. That's normal—most people have mixed feelings about change. Let me ask you: What's important to you in life? What do you want your life to look like in 5 years? How does your current substance use fit with that vision?"
+- **Practice:** Develop a values clarification exercise with Oliver. Have him identify his core values (e.g., health, relationships, career success, authenticity) and explore how his current substance use aligns or conflicts with these values. Use this to build motivation for change.
+
+---
+
+## Overall Session Score: 1.2/6
+
+**Summary:**
+
+This session represents a **fundamental failure to deliver evidence-based CBT for cocaine use disorder**. While the therapist displayed warmth and good intentions, the session consisted almost entirely of generic reassurance and wellness advice rather than systematic application of cognitive-behavioral principles and techniques. The therapist failed to conduct a functional analysis, identify core cognitions, focus on the specific behavioral chain driving substance use, or assign any homework. The excessive use of therapist self-disclosure shifted focus from Oliver's unique clinical situation to the therapist's personal experience, and the absence of guided discovery meant Oliver was positioned as a recipient of advice rather than an active agent in his own treatment.
+
+**This session falls well below the standard of care for evidence-based CBT and is unlikely to produce meaningful therapeutic change.** Oliver presents with moderate cocaine use disorder embedded in a specific social-sexual subculture. Without systematic understanding of what substance use provides and how to meet those needs differently, without examination of the core cognitions driving use, and without concrete skills and strategies, Oliver is unlikely to develop the motivation or capacity for sustained change.
+
+**The most urgent priority is to shift from generic reassurance to systematic, evidence-based CBT.** This requires: (1) conducting a functional analysis to understand what substance use provides, (2) identifying and exploring core cognitions through guided discovery, (3) focusing on the specific behavioral chain (alcohol → cocaine), (4) developing stimulus control and behavioral alternatives, (5) assigning specific homework with clear rationale, and (6) establishing clear session agendas with measurable goals. The therapist must also eliminate excessive self-disclosure, maintain clinical focus, and position Oliver as an active partner in treatment planning.
+
+**Without these changes, this therapy is unlikely to be effective, and the patient may experience demoralization and treatment failure.**

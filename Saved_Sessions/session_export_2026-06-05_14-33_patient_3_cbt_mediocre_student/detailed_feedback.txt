@@ -1,0 +1,795 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Adjustment Disorder with Depressed Mood
+Suicidal Behavior Disorder (current, high lethality, impulsive)
+
+--- CASE STUDY ---
+
+Hannah, a 16-year-old white girl with no prior psychiatric history, was brought to the emergency department following an overdose of unknown sedating medications. She arrived with a Glasgow Coma Scale score of 8, requiring intubation and admission to the pediatric intensive care unit. After stabilization, she was transferred to an inpatient psychiatric unit.
+
+Collateral information from her parents and best friend indicated she had been in her usual cheerful mood until the evening of the overdose, when she received a text that her boyfriend had been seen kissing another girl. Within hours, she was found by her parents, barely arousable, with a note stating: "I just want to sleep forever." Hannah had no previous psychiatric symptoms, suicidal ideation, self-injurious behaviors, trauma, or substance use.
+
+During psychiatric evaluation, Hannah reported that suicidal thoughts arose suddenly after reading the text and were immediately followed by the overdose. She denied ongoing mood, anxiety, sleep, appetite, or concentration disturbances. She expressed horror and relief after surviving the overdose. Hannah remained euthymic and free of suicidal ideation throughout hospitalization and was discharged to outpatient cognitive-behavioral therapy focused on coping skills for anger and disappointment. She remained well for 6 months, at which point treatment was concluded with plans to resume if future difficulties arose.
+
+Discussion: Hannah’s symptoms represent a marked, disproportionate reaction to a psychosocial stressor, without evidence of underlying psychiatric disorder, consistent with adjustment disorder with depressed mood. Her impulsive, high-lethality suicide attempt qualifies as suicidal behavior disorder per DSM-5-TR. Collateral and family history highlight maternal anxiety and past suicide attempts but no direct psychiatric predisposition in Hannah. Treatment focused on skill-building and coping strategies, with full recovery and remission.
+
+--- BEHAVIOUR ---
+
+Sudden onset of suicidal behavior after acute stressor
+
+Impulsive overdose requiring intubation
+
+No prior mood or behavioral disturbances
+
+Cooperative and articulate after stabilization
+
+Motivated to engage in therapy
+
+Expressed remorse and relief post-attempt
+
+--- ADJUSTMENT DISORDER SYMPTOMS from DSM-5 ---
+
+Depressed mood triggered by acute stressor (romantic disappointment)
+
+Marked emotional distress disproportionate to stressor
+
+Impairment in social/academic functioning
+
+No prior psychiatric history
+
+--- PATIENT PROFILE ---
+Name: Hannah [Last Name Redacted]
+Sex: Female
+Age: 16 years
+DOB: July 2, 2008
+Place of Birth: [City, State]
+Address: 789 Maple Lane, [City, State]
+Contact: (555) 234-5678
+Marital Status: Single
+Children: None
+Occupation: High school student (11th grade)
+Education: Current junior in public school
+Religion: None reported
+Legal Guardian: Parents
+Presenting Complaint: Overdose after acute emotional stress
+Psychiatric History: None
+Psychotherapy: Cognitive-behavioral therapy (post-overdose)
+Medications: None psychiatric
+Substance Use: None
+Medical History: None
+Family Psychiatric History: Mother with anxiety disorder and history of two suicide attempts; father with chronic pain managed with oxycodone; paternal uncle with alcohol use disorder
+Mental Status: Euthymic post-stabilization, cooperative, cognitively intact, good insight, remorseful regarding overdose
+
+--- DIAGNOSIS ---
+
+Adjustment Disorder with Depressed Mood
+
+Suicidal Behavior Disorder (current, impulsive, high lethality)
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Hannah, a 16-year-old female high school student, presents to the outpatient psychiatric clinic following stabilization and discharge from the pediatric intensive care unit after an overdose of sedating medications. She was brought to the emergency department by her parents due to an impulsive suicide attempt triggered by an acute emotional stressor.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hello! Good to see you today. So, I thought maybe we could talk about what's been on your mind lately, just kind of generally. Does that sound okay? I was thinking we could focus on any recent difficulties you've had, maybe try to figure something out together. How does that sound? 
+ PATIENT: Hi. Yeah, that sounds okay. I guess things have been a bit tough lately. I keep thinking about what happened with my boyfriend and the whole overdose thing. It’s like I can’t stop replaying it in my head. Sometimes it feels like it all happened so fast and I didn’t even really think before doing it. It’s scary to think about. I want to feel normal again, you know? But it’s hard. 
+ PSYCHIATRIST: I see, that sounds really tough. When you think about the overdose and what happened, what kind of thoughts usually come up for you? Like, what do you tell yourself in those moments? Maybe you think something like, "I should have done something differently," or "I’m a bad person"? Or is it something else? Sometimes just naming those thoughts can help us start to understand them better. 
+ PATIENT: Yeah, when I think about it, I guess I feel really ashamed of what I did. I tell myself things like, "I’m so stupid," or "How could I let myself get so overwhelmed?" Sometimes I think, maybe if I’d just ignored the text or didn’t care so much, none of this would have happened. But it’s hard because I cared a lot, and it feels like I lost control. And then I think, maybe I’m weak or broken for reacting like I did. Those thoughts just spiral, and I end up feeling worse. 
+ PSYCHIATRIST: Yeah, that sounds really hard. Feeling ashamed and like you’re weak must be pretty painful. It’s kind of natural to feel that way after something like this, but maybe it would help to try thinking about it differently. Like, maybe instead of “I’m stupid,” you could think, “I did the best I could under really tough circumstances.” Do you think that might help you feel a bit better? Sometimes changing the way we think about things can change how we feel. 
+ PATIENT: I guess... maybe that could help. It’s hard to believe that sometimes because it feels like I messed up big time. But thinking that I did the best I could does sound a bit kinder than beating myself up. It’s just hard to be that gentle with myself after everything. Usually, I just focus on how badly I screwed things up and how disappointed everyone must be. But I want to try seeing it differently because the way I’m thinking now only makes me want to shut down or hide. Maybe if I’m kinder to myself, I won’t feel so stuck. 
+ PSYCHIATRIST: Yeah, that makes sense. Being kinder to yourself is important, and maybe it would help to practice that more. You could try reminding yourself of that “best I could” thought when you start feeling down. Also, sometimes doing something small and positive, like going for a walk or calling a friend, can help distract you and lift your mood a bit. It’s not a fix-all, but it might make things feel a little easier. Do you think trying something like that could be helpful for you? 
+ PATIENT: Yeah, I think trying to remind myself that I did the best I could could help. And going for a walk or calling a friend sounds doable. I sometimes get stuck inside my head, and it’s hard to get out of it, but maybe if I make a little effort to do something else, it could break the cycle. I don’t always feel like talking to people, but maybe with close friends, it would feel okay. It’s worth a try, at least. I just don’t want to feel so alone with all these thoughts all the time. 
+ PSYCHIATRIST: Okay, that sounds like a good start. So, maybe for this week, you could try to notice when those harsh thoughts come up and remind yourself that you did your best. Also, try to do at least one small positive thing each day, like a walk or a call to a friend. It’s not about fixing everything, just little steps to feel a bit better. How does that sound? Do you think you can do that? 
+ PATIENT: Yeah, I think I can do that. Noticing those thoughts and trying to say something kinder to myself sounds like something I need to work on. And doing at least one small positive thing each day feels manageable. I don’t expecting miracles or anything; just something to make things a little less heavy. I’m willing to try. Thanks for suggesting it. 
+ PSYCHIATRIST: Great, I’m glad you’re willing to try. Before we finish, I just want to check in—how are you feeling right now about what we talked about? Is there anything you want to add or ask about? It’s okay if not; I just want to make sure we’re on the same page. 
+ PATIENT: Right now, I feel a little hopeful, actually. It’s nice to have a plan that doesn’t feel overwhelming. I still get scared thinking about the overdose and all that happened, but talking about being kinder to myself and taking small steps feels like something I can handle. I don’t really have any questions right now, but I appreciate you listening. It helps just to say it out loud. 
+ PSYCHIATRIST: Thanks for sharing how you feel. It’s good to hear you’re feeling a bit hopeful. Remember, it’s okay if things don’t change right away—just keep trying those small steps. Maybe next time we can talk about other things that come up or how these ideas are working for you. Take care, and keep practicing being kind to yourself. See you next time! 
+ PATIENT: Thank you. I’ll try to keep at it and be patient with myself. It’s not easy, but I want to get better. I’ll see you next time. Take care. 
+ PSYCHIATRIST: Hi, good to see you today. So, I thought maybe we could just chat a bit about whatever’s been bothering you recently. Maybe we can try to figure something out or help you feel a bit better. How does that sound? 
+ PATIENT: Hi. Thanks for asking. Lately, I’ve been feeling kind of on edge when I think about my boyfriend. I still get really upset when I imagine him with someone else. It’s like this knot in my stomach that won’t go away. I don’t want to feel like this, but I get stuck in these thoughts even when I’m trying not to. It makes me feel kind of hopeless sometimes. 
+ PSYCHIATRIST: Yeah, that sounds really tough. When you notice those upsetting thoughts about your boyfriend and the other person, what kind of things usually go through your mind? Like, do you think, "He doesn’t care about me," or "I’m not good enough," or something else? Sometimes just naming those thoughts can help us start to understand them better. 
+ PATIENT: Yeah, mostly I think stuff like, "He doesn’t care about me anymore," or "Maybe I’m not good enough for him." Sometimes I wonder if he was just pretending to like me in the first place. Those thoughts hit me hard, and it feels like they’re true even though I’m not sure they really are. It’s like I’m trying to convince myself, but then I just end up feeling worse. It’s really painful. 
+ PSYCHIATRIST: That sounds really hard to deal with. It’s understandable to feel hurt and doubtful when those thoughts come up. Maybe it would help to think about whether there’s any real proof that he doesn’t care or that you’re not good enough. Like, have there been times when he showed he cares, or when you felt valued? Sometimes looking at the good stuff can balance out the negative thoughts. Do you think you might be able to think about it that way? 
+ PATIENT: I guess... there were times when he seemed to care, and he did nice things for me. But those moments feel overshadowed by what I saw in that text. I keep telling myself that maybe those good things weren’t real or that they don’t matter anymore. It’s hard to hold onto the good when something like that feels so huge. But maybe trying to remember the good could help a little. It just takes a lot of effort to convince myself. 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist made minimal effort to establish a structured, collaborative agenda. In the first session, the opening statement ("I thought maybe we could talk about what's been on your mind lately, just kind of generally") is vague and lacks specificity. There is no explicit prioritization of problems, no time allocation discussion, and no clear delineation of session goals. The therapist does not ask Hannah to identify her top concerns or establish what she hopes to accomplish in treatment. In the second session, the therapist repeats this pattern with an even more generic opening ("just chat a bit about whatever's been bothering you recently"), demonstrating no learning or refinement.
+
+Critically, given Hannah's recent high-lethality suicide attempt and current adjustment disorder with ongoing suicidal risk, the therapist should have established a specific safety agenda including: (1) current suicidal ideation assessment, (2) identification of triggers and warning signs, (3) safety planning, and (4) crisis resources. Instead, the therapist drifts into cognitive work without establishing whether Hannah is currently safe or at imminent risk. The agenda should have prioritized acute safety concerns before addressing relationship rumination.
+
+The therapist does not establish time boundaries, does not collaboratively prioritize which issues to address first, and does not check whether the patient's goals align with the therapist's conceptualization. This represents a fundamental failure in CBT structure, particularly dangerous given the clinical presentation.
+
+**Summary:**
+
+Agenda-setting was inadequate and generic in both sessions, with no explicit safety planning despite high-risk presentation. The therapist failed to establish priorities, time allocation, or collaborative goal-setting, representing a critical gap in CBT structure.
+
+---
+
+### 2. Feedback
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist elicits minimal feedback and does so inconsistently. In Session 1, the therapist asks only once: "How does that sound?" at the beginning and "Do you think you can do that?" regarding homework. These are closed-ended compliance checks rather than genuine feedback elicitation. The therapist does not ask Hannah whether the interventions make sense, whether she understands the rationale, or whether she has concerns about the proposed strategies.
+
+In Session 2, the pattern repeats with "How does that sound?" but no systematic checking for understanding throughout the session. The therapist does not ask Hannah to summarize what she learned, does not check whether the previous week's homework was attempted or helpful, and does not solicit her reaction to the cognitive restructuring suggestions.
+
+Most critically, the therapist does not elicit feedback about the session's helpfulness, does not ask whether Hannah feels heard or understood, and does not check for any concerns about the therapeutic approach. At the end of Session 1, the therapist asks "Is there anything you want to add or ask about?" which is a minimal attempt, but this is the only substantive feedback question in both sessions combined.
+
+For a 16-year-old with recent suicidal behavior, regular feedback elicitation is essential to maintain engagement and ensure the patient feels safe and understood. The absence of this represents a missed opportunity to strengthen the therapeutic alliance and identify potential barriers to treatment.
+
+**Summary:**
+
+Feedback elicitation was minimal and inconsistent, limited to brief compliance checks rather than genuine exploration of patient understanding, satisfaction, or concerns about the therapeutic approach.
+
+---
+
+### 3. Understanding
+### **Score: 4/6**
+
+**Explanation:**
+
+The therapist demonstrates adequate but incomplete understanding of Hannah's internal experience. The therapist accurately reflects that Hannah feels ashamed, overwhelmed, and stuck in negative thought patterns. Statements like "Feeling ashamed and like you're weak must be pretty painful" and "It's kind of natural to feel that way after something like this" show basic empathic attunement.
+
+However, the therapist misses several critical nuances in Hannah's presentation. First, the therapist does not acknowledge the distinction between Hannah's adjustment disorder (acute, reactive response to stressor) and potential ongoing depressive symptoms or rumination patterns. Hannah describes feeling "on edge," having intrusive thoughts, and experiencing hopelessness—symptoms that warrant deeper exploration regarding their frequency, intensity, and functional impact.
+
+Second, the therapist does not demonstrate understanding of the impulsive nature of Hannah's suicide attempt. She explicitly states: "it feels like it all happened so fast and I didn't even really think before doing it." This is critical information suggesting poor impulse control and rapid escalation from emotional pain to lethal action. The therapist does not explore this temporal sequence, warning signs, or the gap between thought and action—all essential for safety planning and relapse prevention.
+
+Third, the therapist does not explore Hannah's current suicidal ideation, passive death wishes, or ongoing safety concerns. Hannah mentions feeling "hopeless sometimes" and "stuck in these thoughts," but the therapist does not assess whether these represent passive ideation, active ideation, or intent. This is a serious clinical oversight.
+
+Fourth, the therapist does not understand the context of Hannah's shame and self-blame. She attributes her reaction to being "weak" or "broken," which may reflect internalized stigma about mental health or suicidal behavior. The therapist does not explore whether Hannah has received messages from family, peers, or media that reinforce this shame, nor does the therapist normalize her reaction as a common adolescent response to acute rejection.
+
+**Summary:**
+
+The therapist demonstrates basic empathy and reflects explicit content accurately, but misses critical clinical nuances including impulsivity patterns, current safety status, and the deeper meaning of Hannah's shame and self-blame.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrates strong interpersonal skills overall. The tone is warm, non-judgmental, and genuinely concerned. The therapist normalizes Hannah's feelings ("It's kind of natural to feel that way after something like this"), which is appropriate and reduces shame. The therapist is patient, allows Hannah to express herself fully, and does not interrupt or rush her.
+
+The therapist maintains appropriate professional boundaries and does not overshare or become inappropriately informal. The language is accessible to a 16-year-old without being condescending. The therapist conveys confidence in Hannah's ability to change ("Yeah, that sounds like a good start") and expresses genuine interest in her wellbeing.
+
+However, there is one minor interpersonal gap: the therapist does not explicitly validate Hannah's courage in surviving the overdose, seeking help, or engaging in therapy despite her fear and shame. A statement like, "It took real courage to come here today and talk about this, especially after what happened," could have strengthened the therapeutic alliance and reinforced her motivation for change. Additionally, the therapist could have more explicitly acknowledged the difficulty of the work ahead and normalized that recovery is not linear.
+
+The therapist's warmth is genuine but somewhat generic—it could be more personalized to Hannah's specific situation and struggles. For example, acknowledging her fear about the overdose ("I know thinking about what happened is scary") before moving to solutions would deepen the connection.
+
+**Summary:**
+
+The therapist demonstrates warm, genuine, and appropriately boundaried interpersonal skills with good accessibility for an adolescent. Minor gaps include insufficient validation of Hannah's courage and slightly generic empathic statements that could be more personalized.
+
+---
+
+### 5. Collaboration
+### **Score: 3/6**
+
+**Explanation:**
+
+The therapist attempts collaboration but inconsistently implements it. In Session 1, the therapist uses collaborative language: "I thought maybe we could... try to figure something out together" and "Does that sound okay?" These are positive opening moves that invite Hannah's input.
+
+However, the collaboration breaks down in the intervention phase. When the therapist suggests cognitive restructuring ("Maybe instead of 'I'm stupid,' you could think, 'I did the best I could under really tough circumstances'"), this is presented as the therapist's idea rather than collaboratively developed. The therapist does not ask Hannah to generate alternative thoughts, does not explore whether this particular reframe resonates with her, and does not invite her to develop her own coping strategies.
+
+Similarly, when the therapist suggests behavioral activation ("going for a walk or calling a friend"), these are therapist-generated suggestions rather than collaboratively identified. The therapist does not ask Hannah what activities she finds meaningful, what has helped her in the past, or what she thinks might work for her. The therapist does not explore barriers to these activities or invite Hannah to problem-solve obstacles.
+
+In Session 2, the therapist asks Hannah to identify her thoughts ("what kind of things usually go through your mind?"), which is collaborative. However, when Hannah expresses difficulty holding onto positive memories, the therapist again suggests a solution ("Maybe it would help to think about whether there's any real proof") rather than asking Hannah what she thinks might help or inviting her to explore this dilemma together.
+
+The therapist does not establish a true "team" dynamic where Hannah is an active agent in her recovery. Instead, the therapist functions more as an expert dispensing advice, which is inconsistent with collaborative empiricism—a core CBT principle. For a 16-year-old who has experienced a traumatic event and may feel a loss of control, this expert-driven approach may inadvertently reinforce helplessness.
+
+**Summary:**
+
+The therapist uses collaborative language but does not consistently implement collaborative decision-making. Interventions are therapist-generated rather than collaboratively developed, and Hannah is positioned as a recipient of advice rather than an active partner in treatment planning.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 4/6**
+
+**Explanation:**
+
+The therapist demonstrates reasonable pacing and time management overall. The sessions flow logically from problem identification to intervention to homework assignment. The therapist does not allow excessive tangential discussion and maintains focus on the presenting concerns (rumination about the boyfriend, shame about the overdose).
+
+However, there are inefficiencies. In Session 1, the therapist spends considerable time on cognitive restructuring without first establishing a comprehensive safety plan or conducting a thorough risk assessment. Given Hannah's recent high-lethality suicide attempt, this represents a prioritization error—safety should precede other interventions. The therapist could have used time more efficiently by addressing safety first, then moving to other concerns.
+
+Additionally, the therapist does not review homework from the previous session before Session 2. This is a critical CBT component that was omitted. The therapist should have asked: "How did the homework go last week? Were you able to notice those harsh thoughts? Did you do any of the positive activities?" This review would have taken only 2-3 minutes but would have provided essential information about Hannah's progress, barriers, and engagement.
+
+The therapist also does not establish a clear session structure or time allocation. For example: "We have about 45 minutes today. I'd like to spend the first 10 minutes checking in on how you've been, then about 20 minutes working on some strategies, and the last 15 minutes planning homework. Does that work for you?" This would improve efficiency and transparency.
+
+The sessions are relatively brief and do not appear to address all necessary clinical content. For instance, there is no discussion of triggers, warning signs, coping skills beyond thought-challenging and behavioral activation, or relapse prevention—all critical for someone with recent suicidal behavior.
+
+**Summary:**
+
+Pacing is generally appropriate and sessions maintain focus, but there are significant prioritization errors (safety before other interventions), missing homework review, and insufficient coverage of critical clinical content for this high-risk population.
+
+---
+
+### 7. Guided Discovery
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist relies heavily on direct suggestion and advice-giving rather than guided discovery. This is a critical gap in CBT technique. Guided discovery involves asking questions that help the patient reach insights independently, rather than the therapist providing answers.
+
+In Session 1, when Hannah expresses shame and self-criticism, the therapist immediately suggests an alternative thought: "Maybe instead of 'I'm stupid,' you could think, 'I did the best I could under really tough circumstances.'" This is direct suggestion, not guided discovery. A guided discovery approach would involve asking: "When you think about that night, what do you think was happening for you emotionally? What was going on in your life that made you so vulnerable to that text? If a friend had reacted the same way, what would you think about them?"
+
+Similarly, when the therapist suggests behavioral activation ("going for a walk or calling a friend"), this is prescriptive rather than exploratory. Guided discovery would involve: "What kinds of activities have helped you feel better in the past? What do you think might help break the cycle of being stuck in your head? What feels manageable to you right now?"
+
+In Session 2, the therapist asks Hannah to identify her thoughts ("what kind of things usually go through your mind?"), which is good. However, when Hannah struggles to hold onto positive memories, the therapist suggests: "Maybe it would help to think about whether there's any real proof that he doesn't care or that you're not good enough." This is again direct suggestion. Guided discovery would involve: "What would it mean if those good things were real? How might you know whether he cares or not? What evidence would help you figure that out?"
+
+The therapist does not use Socratic questioning to help Hannah examine her thoughts, test assumptions, or develop her own insights. Instead, the therapist functions as an advice-giver, which is less effective for learning and may reduce Hannah's sense of agency and mastery.
+
+This is particularly problematic for a 16-year-old who has experienced a loss of control (impulsive suicide attempt). Guided discovery would help her develop problem-solving skills and confidence in her own thinking, whereas direct advice may inadvertently reinforce dependence on external authority.
+
+**Summary:**
+
+The therapist relies predominantly on direct suggestion and advice-giving rather than guided discovery. Socratic questioning is minimal, and Hannah is not guided to reach insights independently—a critical CBT technique that was largely absent.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 3/6**
+
+**Explanation:**
+
+The therapist identifies some relevant cognitions but does not systematically focus on the most central ones related to Hannah's presenting problems and suicide attempt.
+
+The therapist does address Hannah's shame-based thoughts ("I'm stupid," "I'm weak," "I'm broken") and her rumination about the boyfriend ("He doesn't care about me," "I'm not good enough"). These are relevant to her current distress and warrant exploration.
+
+However, the therapist misses several critical cognitions that are more directly related to her suicide attempt and ongoing risk:
+
+1. **Thoughts about control and impulsivity**: Hannah states, "it feels like it all happened so fast and I didn't even really think before doing it." This suggests a critical cognition about her inability to control her impulses or think before acting. The therapist does not explore this or help Hannah develop strategies to slow down the action-impulse sequence.
+
+2. **Thoughts about permanence and hopelessness**: Hannah mentions feeling "hopeless sometimes" and describes thoughts spiraling. The therapist does not explore whether Hannah has thoughts like "This will never get better," "I can't handle this," or "There's no way out"—thoughts that are directly linked to suicide risk.
+
+3. **Thoughts about burdensomeness**: Hannah mentions worrying that "everyone must be disappointed" in her. This relates to the cognitive model of suicide (Joiner's Interpersonal Theory), where perceived burdensomeness is a risk factor. The therapist does not explore this.
+
+4. **Thoughts about the meaning of the overdose**: Hannah may be developing narratives about what the overdose means about her ("I'm broken," "I'm dangerous to myself," "I can't be trusted"). These identity-level cognitions are not explored.
+
+5. **Thoughts about the boyfriend and rejection**: While the therapist addresses some of these, the therapist does not explore catastrophic thoughts like "If he doesn't want me, no one will," or "I can't survive without him"—thoughts that may have contributed to the acute suicidality.
+
+The therapist focuses on relatively surface-level cognitions (shame, self-criticism) rather than the deeper, more central beliefs that may be maintaining her distress and risk. For someone with recent suicidal behavior, identifying and addressing the specific thoughts that preceded the attempt is essential.
+
+**Summary:**
+
+The therapist identifies some relevant cognitions but does not systematically focus on the most central ones related to the suicide attempt, impulsivity, hopelessness, or perceived burdensomeness. Deeper, identity-level beliefs are not explored.
+
+---
+
+### 9. Strategy for Change
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist's strategy for change is vague, reactive, and not clearly connected to Hannah's presenting problems or suicide risk. There is no coherent conceptualization guiding the interventions.
+
+The implicit strategy appears to be: (1) identify negative thoughts, (2) replace them with more positive thoughts, and (3) engage in behavioral activation. This is a basic cognitive restructuring + behavioral activation approach, which is appropriate for depression but is insufficient for someone with recent high-lethality suicidal behavior.
+
+**Critical gaps in strategy:**
+
+1. **No safety planning**: Given Hannah's impulsive suicide attempt, a comprehensive safety plan should be the foundation of treatment. This should include: identifying warning signs, internal coping strategies, people to reach out to, professional resources, and means restriction. The therapist does not address any of these.
+
+2. **No assessment of current risk**: The therapist does not assess whether Hannah is currently experiencing suicidal ideation, passive death wishes, or intent. Without this assessment, the strategy cannot be appropriately tailored to her current risk level.
+
+3. **No focus on impulsivity and impulse control**: Hannah's suicide attempt was impulsive—she acted within hours of the stressor with minimal deliberation. The strategy should include techniques to slow down the action-impulse sequence, such as distress tolerance skills, delay strategies, or problem-solving. These are not addressed.
+
+4. **No exploration of triggers and warning signs**: The strategy does not include identifying specific triggers (e.g., contact with the boyfriend, social media use, rejection) or developing a plan to manage them.
+
+5. **No relapse prevention**: The therapist does not discuss what Hannah should do if she experiences suicidal thoughts again, how to recognize early warning signs of relapse, or how to access help in crisis.
+
+6. **Limited behavioral activation**: While the therapist suggests "a walk or calling a friend," there is no systematic behavioral activation plan. The therapist does not help Hannah identify values-aligned activities, schedule them, or problem-solve barriers.
+
+7. **No cognitive conceptualization of the suicide attempt**: The therapist does not help Hannah understand the sequence of events that led to the attempt (stressor → thoughts → emotions → impulsive action) or develop a plan to interrupt this sequence in the future.
+
+The strategy is essentially: "Think more positively and do more activities." For a 16-year-old with recent high-lethality suicidal behavior, this is inadequate and potentially unsafe. A more comprehensive strategy would integrate safety planning, impulsivity management, emotion regulation, problem-solving, and relapse prevention.
+
+**Summary:**
+
+The strategy for change is vague and reactive, lacking a coherent conceptualization. Critical components are missing, including safety planning, risk assessment, impulsivity management, and relapse prevention—all essential for someone with recent suicidal behavior.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 3/6**
+
+**Explanation:**
+
+The therapist applies some basic CBT techniques but with limited skill and incomplete implementation. The techniques used are:
+
+1. **Cognitive Restructuring (Thought Records)**: The therapist identifies Hannah's negative thoughts ("I'm stupid," "I'm weak," "He doesn't care about me") and suggests alternative thoughts ("I did the best I could"). However, this is done superficially. The therapist does not use a structured thought record format, does not systematically examine evidence for and against the thought, does not explore the thought's origin or function, and does not help Hannah develop a conviction in the alternative thought. Hannah herself expresses doubt: "It's hard to believe that sometimes because it feels like I messed up big time." The therapist does not address this doubt or help Hannah build evidence for the alternative thought.
+
+2. **Behavioral Activation**: The therapist suggests "going for a walk or calling a friend" as ways to "distract" and "lift your mood." However, this is presented as distraction rather than as values-aligned activity. The therapist does not help Hannah identify meaningful activities, does not schedule them, does not problem-solve barriers, and does not explain the rationale (that behavioral activation can interrupt rumination and improve mood through engagement in valued activities). The suggestion is vague ("at least one small positive thing each day") and lacks specificity.
+
+3. **Thought Challenging**: The therapist asks Hannah to consider "whether there's any real proof" that her boyfriend doesn't care. This is a basic thought-challenging question, but it is not systematic. The therapist does not use a structured format (e.g., "What's the evidence for this thought? What's the evidence against it? What's an alternative explanation?") and does not help Hannah develop a balanced perspective.
+
+**Techniques NOT used that should have been:**
+
+1. **Safety Planning**: No safety plan was developed despite high-risk presentation.
+
+2. **Behavioral Experiments**: The therapist could have suggested experiments to test Hannah's thoughts (e.g., "What would happen if you reached out to a friend? What would that tell you about whether you're a burden?").
+
+3. **Exposure**: If Hannah is avoiding reminders of the overdose or the boyfriend, graded exposure could be helpful. This is not addressed.
+
+4. **Problem-Solving**: Hannah is struggling with the aftermath of the breakup and the overdose. Structured problem-solving could help her develop concrete solutions. This is not used.
+
+5. **Emotion Regulation Skills**: For someone with impulsive suicidal behavior, emotion regulation skills (e.g., distress tolerance, emotion identification, opposite action) are essential. These are not taught.
+
+6. **Relapse Prevention**: No relapse prevention plan was developed.
+
+7. **Behavioral Monitoring**: The therapist does not ask Hannah to monitor her mood, thoughts, or behaviors to identify patterns.
+
+The techniques that are used are applied with moderate skill but lack depth, structure, and systematic implementation. The therapist does not explain the rationale for techniques, does not check Hannah's understanding, and does not ensure she can apply them independently.
+
+**Summary:**
+
+The therapist applies basic cognitive restructuring and behavioral activation techniques but with limited skill and incomplete implementation. Critical techniques for suicide prevention (safety planning, emotion regulation, behavioral experiments) are absent. Applied techniques lack structure, rationale, and systematic follow-through.
+
+---
+
+### 11. Homework
+### **Score: 2/6**
+
+**Explanation:**
+
+Homework is assigned but with significant deficiencies in specificity, rationale, and follow-up.
+
+**Session 1 Homework:**
+
+The therapist assigns:
+1. "Notice when those harsh thoughts come up and remind yourself that you did your best."
+2. "Try to do at least one small positive thing each day, like a walk or a call to a friend."
+
+**Problems:**
+
+- **Lack of specificity**: The first assignment is vague. How will Hannah "notice" thoughts? Should she write them down? When during the day? The therapist does not provide a structured format (e.g., thought record, monitoring sheet).
+- **Insufficient rationale**: The therapist does not explain *why* these assignments are important or how they connect to Hannah's goals. The therapist says "It's not a fix-all, but it might make things feel a little easier," which is weak and does not build motivation.
+- **No problem-solving**: The therapist does not anticipate barriers. For example, if Hannah is isolating, "call a friend" may be difficult. The therapist does not explore what might get in the way or develop a plan to overcome obstacles.
+- **No written instructions**: The therapist does not provide written homework instructions, which is important for adolescents who may forget or misunderstand verbal instructions.
+- **Weak commitment check**: The therapist asks "Do you think you can do that?" which is a compliance check but not a genuine commitment exploration. The therapist does not ask Hannah to identify potential barriers, rate her confidence, or problem-solve challenges.
+
+**Session 2 Homework:**
+
+The therapist does not explicitly assign new homework. The therapist does not review whether the previous week's homework was completed, what Hannah learned, or what barriers she encountered. This is a critical omission. Homework review is essential in CBT to reinforce learning, troubleshoot problems, and maintain momentum.
+
+**Additional issues:**
+
+- **No monitoring**: The therapist does not ask Hannah to monitor her mood, thoughts, or behaviors to identify patterns or track progress.
+- **No behavioral experiments**: The therapist could have assigned experiments to test Hannah's thoughts (e.g., "Notice what happens when you reach out to a friend—does it actually make you feel worse or better?").
+- **No safety planning homework**: The therapist could have assigned Hannah to develop a safety plan or identify warning signs.
+
+For someone with recent high-lethality suicidal behavior, homework should be carefully designed, clearly explained, and systematically reviewed. The homework assigned here is too vague and lacks the structure and follow-up necessary for effective treatment.
+
+**Summary:**
+
+Homework is assigned but lacks specificity, clear rationale, and systematic review. Critical homework components (safety planning, behavioral experiments, monitoring) are absent. No homework review occurred in Session 2, representing a significant gap in CBT structure.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- **Warm, genuine interpersonal style**: The therapist creates a safe, non-judgmental environment and demonstrates genuine concern for Hannah's wellbeing.
+- **Basic empathic attunement**: The therapist accurately reflects Hannah's emotional experience (shame, feeling overwhelmed, hopelessness) and normalizes her reactions.
+- **Identifies relevant cognitions**: The therapist recognizes Hannah's negative self-talk and rumination about the boyfriend.
+- **Attempts collaborative language**: The therapist uses phrases like "figure something out together" and "Does that sound okay?" to invite collaboration.
+- **Maintains appropriate boundaries**: The therapist is professional, accessible to an adolescent, and does not overshare or become inappropriately informal.
+
+### Critical Deficiencies:
+- **Absent safety planning**: Despite Hannah's recent high-lethality suicide attempt, no safety plan was developed. No assessment of current suicidal ideation, warning signs, or crisis resources was conducted. This is a serious clinical and ethical gap.
+- **No risk assessment**: The therapist does not assess Hannah's current suicide risk, passive death wishes, or ongoing safety concerns. Hannah mentions feeling "hopeless sometimes," but this is not explored.
+- **Inadequate conceptualization of suicide attempt**: The therapist does not help Hannah understand the sequence of events leading to the attempt (stressor → thoughts → emotions → impulsive action) or develop a plan to interrupt this sequence. The impulsive nature of the attempt is not addressed.
+- **Therapist-driven rather than collaborative**: Interventions are suggested by the therapist rather than collaboratively developed. Hannah is positioned as a recipient of advice rather than an active agent in her recovery.
+- **Minimal guided discovery**: The therapist relies on direct suggestion and advice-giving rather than Socratic questioning. Hannah is not guided to reach insights independently.
+- **Vague, incomplete strategy**: The strategy lacks coherence and is insufficient for high-risk presentation. Critical components (safety planning, impulsivity management, emotion regulation, relapse prevention) are missing.
+- **Superficial technique application**: Cognitive restructuring and behavioral activation are applied with limited skill and incomplete implementation. Techniques lack structure, rationale, and systematic follow-through.
+- **No homework review**: Session 2 does not include review of previous homework, a critical CBT component.
+- **Insufficient assessment of current functioning**: The therapist does not assess Hannah's current mood, sleep, appetite, concentration, social functioning, or other symptoms to determine whether adjustment disorder symptoms are resolving or whether depressive symptoms are emerging.
+- **Missing critical content**: No discussion of triggers, warning signs, coping skills beyond thought-challenging, relapse prevention, or means restriction.
+
+---
+
+## Impact on Patient Care
+
+These deficiencies have serious implications for Hannah's safety and treatment outcomes:
+
+1. **Increased suicide risk**: Without a safety plan, Hannah lacks concrete strategies to manage suicidal crises. If she experiences suicidal ideation again, she may not know how to access help or manage the urge to act. The absence of risk assessment means the therapist does not know whether Hannah is currently safe, which is a fundamental clinical responsibility.
+
+2. **Reduced engagement and efficacy**: The therapist-driven approach may reduce Hannah's sense of agency and mastery, which is particularly problematic for someone who has experienced a loss of control (impulsive suicide attempt). Guided discovery would help her develop problem-solving skills and confidence in her own thinking.
+
+3. **Incomplete understanding of the suicide attempt**: Without exploring the impulsive nature of the attempt and the rapid escalation from emotional pain to lethal action, Hannah and the therapist lack a shared understanding of what happened. This makes it difficult to develop a plan to prevent recurrence.
+
+4. **Superficial intervention**: The cognitive restructuring and behavioral activation are applied without sufficient depth or structure. Hannah expresses doubt about the alternative thoughts ("It's hard to believe that sometimes"), but the therapist does not address this or help her build conviction. This reduces the likelihood that the interventions will be effective.
+
+5. **Missed opportunity for skill-building**: For someone with impulsive suicidal behavior, emotion regulation and distress tolerance skills are essential. These are not taught, leaving Hannah without concrete tools to manage intense emotions.
+
+6. **Lack of continuity**: Without homework review in Session 2, the therapist does not know whether Hannah completed the assignments, what she learned, or what barriers she encountered. This breaks the continuity of treatment and reduces accountability.
+
+Overall, while the therapist demonstrates good interpersonal skills and basic empathy, the clinical approach is insufficient for Hannah's level of risk and complexity. The sessions do not qualify as evidence-based CBT for suicide prevention and may not produce meaningful therapeutic change or risk reduction.
+
+---
+
+## Recommendations
+
+### 1. **Implement Comprehensive Safety Planning (HIGHEST PRIORITY)**
+- **Action**: Develop a detailed, written safety plan with Hannah that includes: (1) warning signs of suicidal crisis, (2) internal coping strategies (e.g., distress tolerance skills), (3) people to reach out to with contact information, (4) professional resources (crisis line, emergency department), (5) means restriction (removing access to medications, sharp objects), and (6) a plan for what to do if she cannot keep herself safe.
+- **Example**: "Hannah, I want to make sure you have a concrete plan if you start having thoughts about hurting yourself again. Let's identify what warning signs you might notice—like what thoughts, feelings, or situations might tell you that you're in danger. Then we'll come up with specific things you can do to keep yourself safe, like people you can call or places you can go. We'll write this down so you have it when you need it."
+- **Practice**: Use the Stanley-Brown Safety Planning Intervention (SPI) or a similar evidence-based format. Practice the plan with Hannah in session, role-playing how she would use it in a crisis. Review and update the plan regularly.
+
+### 2. **Conduct Thorough Risk Assessment and Ongoing Monitoring**
+- **Action**: Assess Hannah's current suicidal ideation, intent, and plan using a structured assessment tool (e.g., Columbia-Suicide Severity Rating Scale). Ask directly about passive death wishes, active ideation, and any thoughts about methods. Repeat this assessment at each session.
+- **Example**: "I want to check in about your safety. Have you had any thoughts about hurting yourself since we last met? Any thoughts about wanting to be dead or wishing you could go to sleep and not wake up? I ask this because it's important for me to understand how you're doing and make sure we're addressing your needs."
+- **Practice**: Develop a standardized risk assessment protocol to use at the beginning of each session. Document findings clearly in the chart. If risk increases, adjust the treatment plan and consider higher level of care.
+
+### 3. **Teach Emotion Regulation and Distress Tolerance Skills**
+- **Action**: Introduce Hannah to specific skills for managing intense emotions and urges to self-harm, such as: TIPP skills (Temperature, Intense exercise, Paced breathing, Paired muscle relaxation), distraction techniques, self-soothing, and opposite action. Teach these skills explicitly, explain the rationale, and practice them in session.
+- **Example**: "When you're feeling really overwhelmed and have the urge to hurt yourself, we need concrete tools to help you get through that moment safely. One skill is called TIPP—it uses physical sensations to help calm your nervous system. Let's try the temperature part: if you hold ice or splash cold water on your face, it can interrupt the urge and give you time to think. Let's practice this together."
+- **Practice**: Assign one skill per week as homework. Have Hannah practice in session and then practice at home. Review which skills work best for her and refine the toolkit.
+
+### 4. **Shift to Collaborative, Guided Discovery Approach**
+- **Action**: Replace therapist-driven suggestions with Socratic questioning that helps Hannah reach insights independently. Ask questions that help her explore her thoughts, test assumptions, and develop her own solutions.
+- **Example**: Instead of "Maybe instead of 'I'm stupid,' you could think, 'I did the best I could,'" ask: "When you think about that night, what was happening for you emotionally? What do you think was going on in your life that made you so vulnerable to that text? If a friend had reacted the same way, what would you think about them? What does that tell you about yourself?"
+- **Practice**: In supervision, practice asking open-ended questions and resisting the urge to provide answers. Record sessions and review for instances where you suggested solutions versus asked questions. Aim for a 70/30 ratio of questions to suggestions.
+
+### 5. **Develop a Coherent Treatment Conceptualization and Strategy**
+- **Action**: Create a clear case formulation that explains: (1) Hannah's vulnerability factors (recent breakup, impulsive temperament, family history of suicide), (2) the precipitating stressor (boyfriend text), (3) the cognitive-emotional-behavioral sequence that led to the attempt, and (4) the specific CBT interventions that will address each component. Share this conceptualization with Hannah.
+- **Example**: "Hannah, I want to make sure we're on the same page about what happened and how we're going to help you. It seems like you have a tendency to react quickly when you're hurt—you don't always have time to think before you act. When you got that text about your boyfriend, you felt rejected and hurt, and your mind went to very dark places very quickly. Before you knew it, you had taken the pills. Our work together is going to focus on three things: (1) helping you slow down that reaction so you have time to think, (2) building skills to manage intense emotions, and (3) developing a safety plan so you know what to do if you have thoughts about hurting yourself again. Does that make sense?"
+- **Practice**: Write out the case formulation and review it with Hannah. Update it as you learn more about her. Use it to guide all treatment decisions.
+
+### 6. **Systematically Address the Impulsive Nature of the Suicide Attempt**
+- **Action**: Explore the temporal sequence of the attempt (stressor → thoughts → emotions → action) and identify the gap between thought and action. Teach Hannah to recognize warning signs and develop strategies to slow down the action-impulse sequence (e.g., delay strategies, problem-solving, reaching out to support).
+- **Example**: "Let's talk about what happened that night. You got the text, and then what? How quickly did you go from feeling hurt to taking the pills? What was going through your mind? Did you think about other options, or did it feel like the only thing you could do? Let's figure out: if this happens again, how can we slow things down so you have time to think and reach out for help?"
+- **Practice**: Use a timeline to map out the sequence of events. Identify the moment when Hannah could have done something different (called a friend, talked to a parent, gone for a walk). Develop a plan for what she will do at that moment next time.
+
+### 7. **Implement Structured Cognitive Restructuring with Depth and Conviction-Building**
+- **Action**: Use a structured thought record format (situation → thought → emotion → evidence for → evidence against → alternative thought → conviction rating). Help Hannah build evidence for alternative thoughts through behavioral experiments and real-world testing, not just logical debate.
+- **Example**: "You think 'I'm broken' because of what happened. Let's look at the evidence. What would a broken person do? Would they come to therapy? Would they want to get better? Let's also think about what you were like before this happened—were you broken then? What changed? And let's do an experiment: this week, notice times when you do something that shows you're not broken—like being kind to yourself, reaching out to someone, or getting through a difficult moment. Write these down and we'll look at them together."
+- **Practice**: Use thought records consistently. Have Hannah practice in session and then assign as homework. Review homework and help her refine the process. Aim for conviction ratings to increase over time.
+
+### 8. **Develop Systematic Behavioral Activation Plan**
+- **Action**: Help Hannah identify values-aligned activities (not just distraction), schedule them concretely, problem-solve barriers, and monitor mood changes. Use a behavioral activation worksheet to track activities and mood.
+- **Example**: "Let's think about what matters to you—what brings you joy or a sense of accomplishment? Maybe it's time with friends, creative activities, exercise, helping others? Let's pick one or two and schedule them for specific times this week. We'll also think about what might get in the way—like not feeling like doing it—and come up with a plan for that. Then we'll track how your mood changes when you do these activities."
+- **Practice**: Assign one scheduled activity per day. Have Hannah use a behavioral activation worksheet to record the activity, predicted mood, actual mood, and any barriers. Review in the next session and adjust the plan.
+
+### 9. **Establish Clear Agenda-Setting and Session Structure**
+- **Action**: At the beginning of each session, collaboratively set an agenda with time allocation. Prioritize safety and current risk first, then address other concerns. Explicitly state the session structure and check for agreement.
+- **Example**: "We have about 45 minutes today. I'd like to start by checking in on how you've been and whether you've had any thoughts about hurting yourself—that's always my first priority. Then we can talk about how the homework went and what you learned. Then we'll work on a new skill or strategy. And we'll end by planning homework for next week. Does that sound okay? Is there anything else you want to make sure we cover?"
+- **Practice**: Use a session agenda template. Write it down or have Hannah write it. Refer back to it during the session to maintain structure. At the end, review what you covered and what you'll focus on next time.
+
+### 10. **Implement Systematic Homework Review and Assignment**
+- **Action**: Begin each session (after risk assessment) by reviewing the previous week's homework. Ask what Hannah completed, what she learned, what barriers she encountered, and how the homework affected her mood or thoughts. Then assign new, specific homework with clear rationale and written instructions.
+- **Example**: "Before we start, I want to check in on the homework from last week. You were going to notice harsh thoughts and remind yourself that you did your best. How did that go? Were you able to notice any thoughts? What did you learn? What got in the way? [Listen to response.] Great, so this week I want you to continue that, but I also want you to write down one harsh thought and one kind thought each day. Here's a worksheet to help you. The reason we're doing this is so you can start to see the pattern of your thoughts and practice the kind thoughts more regularly. Does this make sense? Do you have any questions?"
+- **Practice**: Create homework assignment forms with space for: (1) specific assignment, (2) rationale, (3) frequency/timing, (4) potential barriers and solutions, (5) how to monitor completion. Review homework at the start of each session before moving to new content.
+
+### 11. **Assess and Address Ongoing Adjustment Disorder Symptoms and Emerging Depression**
+- **Action**: Systematically assess Hannah's current mood, sleep, appetite, concentration, social functioning, and academic performance. Determine whether adjustment disorder symptoms are resolving or whether depressive symptoms are emerging. Adjust treatment accordingly.
+- **Example**: "I want to check in on how you're doing overall. How's your mood been this week? Are you sleeping okay? How's your appetite? Are you able to concentrate in school? Are you spending time with friends? Have you noticed any changes since we started working together?"
+- **Practice**: Use a brief symptom checklist at each session to track mood, sleep, appetite, concentration, and functioning. Graph these over time to visualize progress. If symptoms are not improving or worsening, consider whether additional interventions (e.g., medication evaluation, higher level of care) are needed.
+
+### 12. **Develop Relapse Prevention Plan**
+- **Action**: As treatment progresses, develop a relapse prevention plan that identifies: (1) early warning signs of relapse, (2) high-risk situations, (3) coping strategies for each situation, (4) people to reach out to, and (5) what to do if relapse occurs. Review this plan regularly and update as needed.
+- **Example**: "As we get closer to ending therapy, I want to make sure you have a plan for staying well. What are the early signs that you're starting to struggle? What situations are most risky for you? What will you do if you notice those signs? Who will you reach out to? What will you do if you have thoughts about hurting yourself again?"
+- **Practice**: Create a relapse prevention worksheet. Review it with Hannah monthly. Update it as her life circumstances change.
+
+---
+
+## Overall Session Score: 3.1/6
+
+**Summary:**
+
+These sessions represent below-average CBT practice with significant gaps in clinical competence and safety. While the therapist demonstrates warm, genuine interpersonal skills and basic empathy, the clinical approach is fundamentally inadequate for Hannah's level of risk and complexity.
+
+**Current Competency Assessment:**
+
+The therapist is functioning at a novice to early-intermediate level in CBT. Foundational skills (empathy, rapport-building, basic agenda-setting) are present, but core CBT competencies are underdeveloped. Most critically, the therapist lacks competence in suicide risk assessment and safety planning—essential skills for anyone treating suicidal patients. The therapist's approach is more consistent with general supportive counseling than evidence-based CBT.
+
+**Most Critical Changes Needed Immediately:**
+
+1. **Implement comprehensive safety planning** with explicit assessment of current suicidal ideation, warning signs, and crisis resources. This is non-negotiable for ethical and safe practice.
+2. **Shift from therapist-driven advice-giving to collaborative, guided discovery** to increase Hannah's agency and skill-building.
+3. **Develop a coherent treatment conceptualization** that addresses the impulsive nature of the suicide attempt and includes specific CBT interventions for suicide prevention (emotion regulation, distress tolerance, behavioral experiments).
+4. **Teach emotion regulation and distress tolerance skills** explicitly, with practice and homework.
+5. **Establish clear session structure** with agenda-setting, homework review, and systematic intervention.
+
+**Likelihood of Producing Therapeutic Change:**
+
+These sessions do not qualify as evidence-based CBT for suicide prevention. While the basic cognitive restructuring and behavioral activation may provide some symptom relief, they are insufficient to address Hannah's core vulnerabilities (impulsivity, emotion dysregulation, suicidal behavior). Without safety planning, risk assessment, and targeted interventions for suicide prevention, the risk of recurrence remains high.
+
+The therapist's warm, supportive approach may help Hannah feel heard and reduce shame, which is valuable. However, without the structured, evidence-based interventions outlined above, the likelihood of meaningful, sustained therapeutic change is limited. The sessions are more likely to provide temporary emotional support than to produce lasting symptom improvement or risk reduction.
+
+**Recommendation for Supervision:**
+
+This therapist requires intensive supervision focused on: (1) suicide risk assessment and safety planning, (2) guided discovery and Socratic questioning, (3) case conceptualization and treatment planning, and (4) systematic application of CBT techniques. Recommend weekly supervision with recorded session review, role-plays, and direct feedback. Consider additional training in CBT for suicide prevention (e.g., Collaborative Assessment and Management of Suicidality [CAMS], Safety Planning Intervention [SPI]).

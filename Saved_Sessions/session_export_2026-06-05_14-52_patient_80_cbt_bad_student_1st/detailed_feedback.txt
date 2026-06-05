@@ -1,0 +1,794 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Provisional Tic Disorder; Separation Anxiety Disorder
+
+--- CASE STUDY ---
+
+Ethan, a 9-year-old fourth grader at a private school for boys, was referred by his teacher due to declining attention and academic performance. Ethan had previously been among the best students but grades slipped in the spring semester. He became fidgety and distracted with more challenging academic work.
+
+At home, Ethan appeared more emotional and clingy, following parents around and climbing into bed with them at night. He refused to attend sleepovers. Ethan had a few friends but avoided independent social activities. His mother noted frequent shrugging, grimacing, blinking, and throat-clearing movements, which worsened with frustration or fatigue and decreased during focused tasks such as homework or clarinet practice. Ethan also developed a superstition, touching doorjambs in a ritualistic way.
+
+Ethan was an easy child, born after an uncomplicated pregnancy, with normal developmental milestones. No medical problems were reported, although he made frequent visits to the school nurse complaining of stomachaches.
+
+On examination, Ethan was slightly built, fair-skinned, and blond. He was fidgety, tugging at his pants and shifting in his seat. Occasional blinks, eye rolls, and throat-clearing noises were observed. He expressed vague worries about harm coming to his parents, primarily fears of burglary.
+
+Discussion: Ethan exhibits anxiety and ritualistic behaviors that impact attention and school performance. He meets DSM-5 criteria for separation anxiety disorder, as symptoms persist for more than 1 month in a child. He also demonstrates motor and vocal tics that have been present for about 6 months, consistent with provisional tic disorder. His attention difficulties are likely secondary to anxiety and tics rather than ADHD. OCD-like behaviors (doorway rituals) were noted but not sufficiently impairing for diagnosis.
+
+--- BEHAVIOUR ---
+
+Fidgety, shifts in seat, tugs at clothing
+
+Shoulder shrugging, blinking, grimacing, throat clearing
+
+Clingy with parents, reluctance to be alone or attend sleepovers
+
+Performs ritualistic behaviors (doorway superstition)
+
+--- DSM-5 SYMPTOMS ---
+Provisional Tic Disorder
+
+Motor tics: blinks, shoulder rolls, grimaces
+
+Vocal tics: chirps, grunts, throat clearing
+
+Duration < 1 year
+
+Tics worsen with anxiety or fatigue, improve during focused activity
+
+Separation Anxiety Disorder
+
+Excessive distress when anticipating separation from parents
+
+Clinginess and reluctance to be alone
+
+Repeated complaints of physical symptoms when separation is expected
+
+Persistent worry about harm coming to parents
+
+--- PATIENT PROFILE ---
+Name: Ethan Miller
+Sex: Male
+Age: 9 years
+DOB: August 12, 2015
+Place of Birth: Boston, MA
+Address: 45 Cedar Lane, Boston, MA
+Contact: (555) 987-6543
+Marital Status: Single
+Children: None
+Occupation: Student, fourth grade
+Education: Private school
+Religion: None specified
+Legal Guardian: Jennifer Miller (mother)
+Presenting Complaint: Declining attention and academic performance; fidgety and distracted
+Psychiatric History: None prior
+Psychotherapy: None
+Medications: None
+Substance Use: None
+Medical History: None
+Neurology: Normal
+Family History: Notable for a stable, happy family; no psychiatric history reported
+Mental Status: Slightly built, fair-skinned, blond; fidgety; occasional tics; anxious about parental safety; cooperative; no suicidal ideation
+
+--- DIAGNOSIS ---
+
+Provisional Tic Disorder
+
+Separation Anxiety Disorder
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Ethan Miller, a 9-year-old male fourth grader at a private boys’ school, presents for outpatient evaluation following a referral from his teacher due to declining attention and academic performance. His mother accompanies him and reports concerns about increased fidgetiness, distractibility, clinginess at home, and ritualistic behaviors.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hey there! Good to see you today. How’s your day been so far? 
+ PATIENT: Hi. Umm, my day’s been okay, I guess. School was kind of hard today. I had trouble paying attention in class, and I kept getting distracted. I felt really fidgety and kept blinking a lot. It’s like I can’t sit still sometimes. How about you? 
+ PSYCHIATRIST: Oh, I totally get that! Sometimes when I’m feeling all antsy, I just remind myself that it’ll get better. You know, like when I was nervous about a big test last month, I kept telling myself to think positive and just do my best. Maybe you could try that too? Just keep your head up! 
+ PATIENT: Yeah, I’ve tried to do that before, like telling myself it’ll be okay, but sometimes it’s really hard. My stomach even hurts sometimes when I worry a lot, especially about stuff at home. Like, I keep thinking something bad might happen to my mom and dad when I’m at school. It makes it really hard to concentrate. I don’t know how to stop those thoughts. 
+ PSYCHIATRIST: Oh wow, that sounds tough. You know, I remember when I was a kid, I used to worry about my dog getting lost all the time. I would just tell myself, “It’s gonna be fine,” and try to focus on other stuff. Maybe you could try thinking about something happy when those worries come up? Like thinking about your favorite movie or a fun day you had. That always helped me chill out a bit. By the way, have you seen any good movies lately? 
+ PATIENT: Hmm, I haven’t really been able to watch many movies lately because sometimes I worry I won’t get home in time, or something might happen while I’m gone. But I did like that one superhero movie from a while back—the one with the guy who can climb walls. I think about that sometimes when I’m at home. It’s kind of nice to imagine being brave like him. But when the worries get bad, it’s hard to think about anything else. Do you think that’s normal? 
+ PSYCHIATRIST: Yeah, totally normal! Everyone goes through stuff like that. I mean, who doesn’t get a little nervous or worried sometimes, right? It’s just part of life. You just gotta keep telling yourself it’s gonna be okay, even when it feels tough. Sometimes I just remind myself that worrying doesn’t change anything, so why stress? Maybe try to think positive and focus on the good stuff around you. That always helps me out. Oh, by the way, have you been sleeping okay? Getting enough rest can really make a difference. 
+ PATIENT: I haven’t been sleeping too well. I usually end up climbing into bed with my mom and dad at night because I’m scared something might happen to them when I’m alone. I don’t like sleeping by myself. Sometimes I try to stay in my own bed, but I just feel too nervous, and so I go to them. It makes me feel safer, but I also feel a little bad about it because I know I should probably try to sleep on my own. Do you think there’s a way to get better at that? 
+ PSYCHIATRIST: Oh, that’s totally understandable. You know, I used to have a hard time sleeping alone too. I’d just think about happy things, or sometimes I’d drink a glass of water before bed, and that seemed to help me relax a bit. Maybe you could try that? Just little things like that can make a difference. Don’t worry too much about it; it’ll get better over time. Just keep trying and stay positive! By the way, have you been drinking enough water during the day? Staying hydrated can really help with feeling calm. 
+ PATIENT: I don’t really remember to drink water a lot during the day. Sometimes I just forget because I get so busy or distracted. Maybe if I try to drink more, it could help me feel less jittery, huh? I like the idea of thinking about happy things before bed. I might try to think about that superhero again or fun times with my friends. I wish I wasn’t so scared, though. It’s hard to stay calm when I’m worried all the time. 
+ PSYCHIATRIST: Yeah, I totally get that. Staying calm can be super tough sometimes. You know, I once had a friend who was really scared of thunderstorms, and she just kept telling herself, “This will pass,” and eventually, she felt better. Maybe you can do the same with your worries—just remind yourself it won’t last forever. It’s all about keeping a positive mindset. Oh, by the way, have you had any fun or exciting things happen recently? Sometimes focusing on good stuff can really lift your mood. 
+ PATIENT: Not really. I mostly just try to get through school and come home to my parents. I don’t like to do sleepovers or hang out without my parents because I get worried something bad might happen. It feels safer to stay close to them. Sometimes I wish I could just have fun like the other kids without worrying so much. I’m scared that if I’m away from my parents too long, something might go wrong. It’s hard to explain. 
+ PSYCHIATRIST: Yeah, I hear you. It’s tough feeling like that, but you know, lots of kids feel that way sometimes. I remember when I was little, I didn’t like being away from my family either. But over time, I just tried to think positive and remind myself that everything would be okay. Maybe you can try to do the same? Just take it one step at a time. And hey, it’s okay to feel scared sometimes. You’ll get through it! 
+ PATIENT: Yeah, I want to try that. Taking things one step at a time sounds easier. Maybe next time I could try staying at a friend’s house for a little while, just for a bit. I’m scared, but I think if I try, I might be okay. It’s just hard to stop worrying all the time about my parents. But I want to get better. Thanks for listening. It helps to talk about it. 
+ PSYCHIATRIST: You’re doing great just by trying, seriously. Remember, it’ll get better with time. Just keep thinking positive and don’t give up. Sometimes life throws us curveballs, but you’re stronger than you think. Keep your head up, and things will start looking up soon. Take care! 
+ PATIENT: Thanks. I’ll try to remember that. It’s nice to know someone understands. I’ll keep trying to be brave. See you next time. 
+ PSYCHIATRIST: Hi there! Great to see you today. How’s everything going with you? 
+ PATIENT: Hi. Umm, things are okay, I guess. I’ve been trying to do what we talked about last time, like thinking about happy things and not worrying so much. But sometimes, my tics get worse, especially when I’m tired or feeling stressed. It’s hard to stay calm all the time. How about you? 
+ PSYCHIATRIST: Hey! Good to see you too. I’m doing alright, thanks for asking. You know, sometimes life just throws those curveballs at you, but we gotta keep our chin up, right? I remember one time I was super stressed about a big presentation, and just telling myself “It’ll get better” really helped me get through it. Maybe you could try that too? Just keep your head up and think positive! 
+ PATIENT: Yeah, I’m trying to do that. But sometimes, I feel like the worries don’t really go away. Like when I’m at school, I keep thinking about what if something bad happens to my mom or dad while I’m not there. It makes me nervous, and then my tics get worse. I don’t want to feel like this, but it’s hard to stop. Do you think that’s normal? 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 0/6**
+
+**Explanation:**
+
+No agenda was established at any point during either session. The therapist did not collaboratively identify target problems, prioritize concerns, or establish session goals with Ethan. In a first session with a 9-year-old presenting with separation anxiety disorder and provisional tic disorder, establishing a clear agenda is foundational—particularly given the complexity of his presentation (academic decline, tics, ritualistic behaviors, sleep disturbance, and anxiety about parental harm).
+
+The therapist opened with a generic social greeting ("How's your day been so far?") but never transitioned into structured agenda-setting. When Ethan spontaneously mentioned school difficulties and fidgetiness, the therapist responded with personal anecdotes rather than exploring what Ethan wanted to work on. No time allocation was discussed, no priorities were negotiated, and no explicit session structure was communicated. In the second session, the therapist again opened with "How's everything going with you?" without establishing what would be addressed that day.
+
+For a child with anxiety and tics, agenda-setting is clinically critical because it: (1) reduces anxiety by providing predictability and structure, (2) helps the child feel heard and respected, (3) allows the therapist to focus on the most impairing symptoms, and (4) models collaborative problem-solving. The complete absence of this foundational skill undermines the entire therapeutic process.
+
+**Summary:**
+
+No agenda was set in either session. The therapist failed to collaboratively identify, prioritize, or structure work around Ethan's presenting problems, representing a fundamental breach of CBT protocol.
+
+---
+
+### 2. Feedback
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist did not elicit feedback from Ethan at any point across both sessions. There were no explicit checks for understanding, no solicitation of Ethan's reactions to interventions, no verification that Ethan grasped the therapist's reasoning, and no assessment of whether the session was helpful or relevant to his concerns.
+
+Specific examples of missed feedback opportunities:
+- After suggesting "think positive" and "think about happy things," the therapist never asked whether Ethan found this advice helpful or realistic
+- When Ethan disclosed that worries "don't really go away," the therapist did not ask what Ethan thought about the suggestions offered
+- No end-of-session summary or check-in occurred
+- No inquiry about Ethan's comfort level, safety, or therapeutic alliance
+
+For a 9-year-old with separation anxiety and tics, feedback elicitation is essential because: (1) children may not spontaneously report confusion or disagreement, (2) the therapist needs to verify that interventions are developmentally appropriate and credible to the child, (3) early alliance ruptures can be detected and repaired, and (4) the child's voice must be centered in treatment planning.
+
+The complete absence of feedback-seeking represents a critical failure to monitor treatment engagement and effectiveness.
+
+**Summary:**
+
+No feedback was elicited from Ethan throughout either session. The therapist made no attempt to check understanding, assess reactions, or verify that interventions were helpful or appropriate.
+
+---
+
+### 3. Understanding
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist demonstrated minimal understanding of Ethan's internal experience and the clinical complexity of his presentation. While the therapist acknowledged Ethan's statements at a surface level ("Oh wow, that sounds tough"), there was no evidence of deeper comprehension of the anxiety disorder, tic disorder, or their interaction.
+
+Specific failures in understanding:
+- Ethan explicitly stated: "I keep thinking something bad might happen to my mom and dad when I'm at school. It makes it really hard to concentrate." The therapist responded with a personal anecdote about worrying about a dog, completely missing the specific content and severity of Ethan's separation anxiety
+- Ethan disclosed ritualistic doorway-touching behavior (implied through "touching doorjambs") and sleep disturbance (climbing into parents' bed due to fear). The therapist normalized this as universal childhood experience ("Everyone goes through stuff like that") rather than recognizing it as clinically significant anxiety symptoms
+- Ethan described tics worsening with stress ("my tics get worse, especially when I'm tired or feeling stressed") and the therapist did not acknowledge or explore this connection
+- Ethan expressed that "worries don't really go away" despite trying positive thinking. The therapist did not recognize this as a sign that cognitive coping alone is insufficient and that the child may need behavioral or exposure-based interventions
+
+The therapist's repeated use of personal anecdotes ("I remember when I was a kid," "I once had a friend," "I used to have a hard time") suggests the therapist was relating to Ethan as a peer rather than understanding him as a child with specific, diagnosable anxiety and tic disorders requiring specialized intervention.
+
+**Summary:**
+
+The therapist demonstrated surface-level acknowledgment but failed to grasp the clinical significance of Ethan's symptoms, the distinction between normative worry and separation anxiety disorder, or the relationship between anxiety and tics.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist displayed some warmth and friendliness but significant interpersonal problems undermined the therapeutic relationship. While not hostile or demeaning, the therapist's approach was inappropriate for the clinical context and the patient's developmental level.
+
+Problematic interpersonal patterns:
+- **Inappropriate self-disclosure:** The therapist repeatedly shared personal experiences (worrying about a dog, having trouble sleeping alone, stress about presentations, a friend afraid of thunderstorms). This violates professional boundaries and shifts focus from the patient to the therapist. For a child with separation anxiety, excessive therapist self-disclosure may increase anxiety about the therapist's availability and stability
+- **Peer-like relating:** Asking Ethan "How about you?" in response to the therapist's own experiences treats the child as an equal rather than a patient. This is developmentally inappropriate and confusing for a 9-year-old
+- **Minimization of distress:** Statements like "It's just part of life" and "Lots of kids feel that way sometimes" minimize Ethan's clinically significant anxiety rather than validating his experience
+- **Superficial cheerleading:** "You're doing great just by trying," "You're stronger than you think," and "Keep your head up" are generic encouragements that lack specificity and don't demonstrate understanding of Ethan's actual struggles
+- **Lack of genuine empathic attunement:** The therapist did not reflect back Ethan's emotional experience with depth. When Ethan said "It's hard to explain" his fear of separation, the therapist did not explore or validate this difficulty
+
+While the therapist was not cold or rejecting, the interpersonal stance was more like a well-meaning peer than a competent clinician. This undermines the therapeutic alliance and may increase Ethan's anxiety about whether the therapist truly understands his condition.
+
+**Summary:**
+
+The therapist displayed friendliness but inappropriate self-disclosure, peer-like relating, and minimization of symptoms undermined professional boundaries and genuine empathic attunement.
+
+---
+
+### 5. Collaboration
+### **Score: 1/6**
+
+**Explanation:**
+
+Collaboration was minimal and largely absent. The therapist did not establish a genuine partnership with Ethan or invite him to actively participate in treatment planning. Instead, the therapist adopted a directive, advice-giving stance that positioned the therapist as an expert dispensing solutions rather than working collaboratively.
+
+Specific failures in collaboration:
+- **Unilateral advice-giving:** The therapist repeatedly offered suggestions without exploring Ethan's preferences, concerns, or input: "Maybe you could try that too? Just keep your head up!" "Maybe you could try thinking about something happy," "Maybe you could try that?" These are presented as therapist directives, not collaborative hypotheses
+- **No shared problem definition:** The therapist never asked Ethan what he most wanted to work on, what felt most urgent, or what he thought might help. The therapist assumed the problem was "negative thinking" without collaborative exploration
+- **No collaborative empiricism:** CBT emphasizes testing beliefs and hypotheses together. The therapist never said, "Let's figure this out together" or "What do you think would happen if...?" or "Should we try an experiment to see if that works?"
+- **Patient passivity:** Ethan remained passive throughout, responding to therapist suggestions rather than actively generating solutions. The therapist did not invite Ethan to brainstorm, problem-solve, or take an active role
+- **No negotiation of goals:** When Ethan mentioned wanting to attend sleepovers and have fun like other kids, the therapist did not explicitly agree to work toward this goal or discuss how to approach it collaboratively
+
+The therapist's approach is fundamentally non-collaborative. For a child with anxiety, collaboration is particularly important because it: (1) reduces power imbalance and anxiety about authority figures, (2) increases buy-in and motivation, (3) teaches the child that their voice matters, and (4) models problem-solving skills the child can use independently.
+
+**Summary:**
+
+The therapist adopted a directive, advice-giving stance with minimal genuine collaboration. Ethan remained passive, and no shared problem-solving or collaborative empiricism occurred.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist demonstrated poor pacing and inefficient use of time. Sessions lacked structure, drifted into tangential topics, and failed to cover essential clinical material systematically.
+
+Specific pacing problems:
+- **Tangential discussions:** The therapist asked about movies ("By the way, have you seen any good movies lately?"), water intake ("have you been drinking enough water during the day?"), and hydration ("Staying hydrated can really help with feeling calm"). While hydration may have minor relevance to anxiety, these topics consumed session time without advancing treatment
+- **Repetitive content without progression:** Both sessions followed nearly identical patterns: therapist shares personal anecdote → therapist suggests "think positive" → therapist asks tangential question. There was no progression, no deepening of understanding, no movement toward intervention
+- **No prioritization:** With Ethan presenting with separation anxiety, tics, ritualistic behaviors, academic decline, and sleep disturbance, the therapist did not prioritize which symptoms to address first or create a treatment sequence
+- **Excessive personal narrative:** The therapist's repeated personal stories consumed significant session time without clinical benefit. Time spent on "I remember when I was a kid" is time not spent on functional assessment, psychoeducation, or intervention
+- **No structured assessment:** The therapist did not systematically assess the severity, frequency, or triggers of Ethan's anxiety or tics. No timeline was established, no functional impact was quantified, no triggers were identified
+- **Aimless closing:** Sessions ended abruptly without summary, without homework assignment, without clear next steps
+
+For a child with multiple diagnoses, efficient time use is critical. The therapist wasted substantial time on peripheral topics and personal anecdotes while failing to conduct adequate assessment or implement evidence-based interventions.
+
+**Summary:**
+
+Sessions lacked structure and drifted into tangential topics. The therapist failed to prioritize symptoms, conduct systematic assessment, or progress toward intervention, resulting in inefficient use of time.
+
+---
+
+### 7. Guided Discovery
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist did not employ guided discovery at any point. Instead of asking questions to help Ethan reach his own insights, the therapist lectured, advised, and told Ethan what to do.
+
+Specific failures in guided discovery:
+- **Direct advice instead of questions:** Rather than asking "What do you think happens when you worry?" the therapist stated "Maybe try to think positive and focus on the good stuff around you"
+- **No Socratic questioning:** The therapist never asked: "What happens in your body when you worry about your parents?" "When you try to think positive, what happens?" "What do you notice about your tics?" "When do they get better or worse?" "What would it look like if you felt safer?"
+- **No exploration of beliefs:** Ethan expressed belief that "something bad might happen" to his parents. The therapist did not explore this belief through questions like "What specifically are you worried might happen?" "How likely do you think that is?" "What evidence do you have?" "What would help you feel more confident they're safe?"
+- **No hypothesis testing:** The therapist suggested "think happy thoughts" but never asked Ethan to test this: "Let's try that right now. Think about that superhero movie. What happens to your worry?" "Did that help? What did you notice?"
+- **No collaborative problem-solving:** When Ethan said he climbs into his parents' bed at night, the therapist did not ask "What would help you feel safer in your own bed?" or "What do you think might work?" Instead, the therapist told him to "think about happy things" or "drink water"
+
+Guided discovery is a core CBT skill, particularly for children. It helps children develop insight, agency, and problem-solving skills. The complete absence of this technique means Ethan is receiving advice-giving rather than therapy.
+
+**Summary:**
+
+No guided discovery was employed. The therapist lectured and advised rather than asking questions to facilitate Ethan's own insights and problem-solving.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist failed to identify, explore, or focus on the central cognitions and behaviors maintaining Ethan's anxiety and tics. Instead, the therapist offered generic advice about "thinking positive" without targeting specific, clinically relevant thoughts or behaviors.
+
+Specific failures in focus:
+- **Central cognition not explored:** Ethan's core anxiety-driving thought is "Something bad might happen to my parents when I'm away." This is the key cognition maintaining separation anxiety. The therapist never explicitly identified this thought, explored its content, examined evidence for/against it, or developed a plan to address it
+- **Avoidance behaviors not addressed:** Ethan avoids sleepovers, independent activities, and sleeping alone. These avoidance behaviors maintain anxiety by preventing disconfirmation of feared outcomes. The therapist did not identify these as key behavioral targets
+- **Ritualistic behavior not mentioned:** Ethan engages in doorway-touching rituals. This compulsive behavior was not discussed, explored, or addressed
+- **Tics not conceptualized:** The therapist acknowledged tics ("my tics get worse") but did not explore their relationship to anxiety, their triggers, or behavioral strategies to manage them
+- **Sleep disturbance not targeted:** Ethan's nighttime anxiety and bed-sharing with parents is a key maintaining behavior. The therapist suggested "think happy thoughts" and "drink water" rather than developing a systematic plan to address sleep anxiety
+- **Academic decline not addressed:** Ethan's presenting problem is declining attention and academic performance. The therapist did not explore how anxiety and tics interfere with concentration or develop strategies to improve school functioning
+
+The therapist's generic advice about "thinking positive" is not focused on Ethan's specific, clinically relevant cognitions and behaviors. This represents a fundamental failure of CBT case conceptualization.
+
+**Summary:**
+
+The therapist failed to identify or focus on key cognitions (fear of parental harm) or behaviors (avoidance, rituals, sleep disturbance) maintaining Ethan's anxiety and tics.
+
+---
+
+### 9. Strategy for Change
+### **Score: 0/6**
+
+**Explanation:**
+
+No coherent strategy for change was articulated or implemented. The therapist offered disconnected, generic suggestions ("think positive," "think happy thoughts," "drink water," "stay hydrated") without a systematic treatment plan, theoretical rationale, or logical progression toward symptom improvement.
+
+Specific failures in strategy:
+- **No case conceptualization:** The therapist did not articulate how Ethan's anxiety and tics are related, what maintains them, or what needs to change. Without conceptualization, there can be no coherent strategy
+- **No treatment plan:** The therapist did not explain: "Here's what we're going to do to help you feel better. First, we'll... Then we'll... This will help because..."
+- **Mismatch between diagnosis and intervention:** Ethan has separation anxiety disorder and provisional tic disorder. Evidence-based treatments include: cognitive-behavioral therapy with exposure (for anxiety), psychoeducation about tics, habit reversal training (for tics), and parent involvement. The therapist offered none of these
+- **Generic cognitive coping without behavioral intervention:** The therapist repeatedly suggested cognitive strategies ("think positive," "think happy thoughts") without any behavioral component. For a 9-year-old with separation anxiety, behavioral exposure (gradually increasing time away from parents) is essential
+- **No exposure hierarchy:** The therapist did not develop a plan to gradually expose Ethan to separation (e.g., staying in a different room, attending school without parent, attending a short playdate, eventually a sleepover). This is the core intervention for separation anxiety
+- **No parent involvement:** Ethan's parents are maintaining his anxiety by allowing bed-sharing and accommodating avoidance. The therapist did not involve parents or discuss changing these patterns
+- **No tic management strategy:** The therapist did not discuss habit reversal, competing response training, or other evidence-based tic interventions
+- **Vague and unpromising:** Ethan explicitly stated "worries don't really go away" despite trying to think positive. The therapist's response was to repeat the same ineffective strategy rather than pivoting to a different approach
+
+The therapist's approach is not a strategy; it is a collection of generic platitudes. There is no logical progression, no theoretical coherence, and no promise of symptom improvement.
+
+**Summary:**
+
+No coherent strategy for change was articulated. The therapist offered disconnected, generic suggestions without case conceptualization, treatment planning, or evidence-based interventions for separation anxiety or tics.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 0/6**
+
+**Explanation:**
+
+No CBT techniques were applied. The therapist did not use any of the core, evidence-based interventions that define cognitive-behavioral therapy.
+
+Specific CBT techniques that were NOT used:
+- **Cognitive restructuring/thought records:** No systematic examination of Ethan's anxious thoughts, no evidence evaluation, no development of alternative thoughts
+- **Behavioral experiments:** No hypothesis testing, no behavioral trials to disconfirm feared outcomes
+- **Exposure/graded exposure:** No systematic plan to gradually expose Ethan to separation from parents
+- **Behavioral activation:** No activity scheduling or reinforcement of approach behaviors
+- **Psychoeducation:** No explanation of the anxiety cycle, the relationship between thoughts/feelings/behaviors, or how tics relate to anxiety
+- **Relaxation training:** No progressive muscle relaxation, breathing exercises, or other somatic interventions
+- **Habit reversal training:** No intervention for tics despite their clinical significance
+- **Problem-solving training:** No systematic approach to identifying and solving problems
+- **Parent involvement/coaching:** No discussion of how parents can support exposure or reduce accommodation of anxiety
+- **Thought records/monitoring:** No systematic tracking of anxious thoughts, triggers, or patterns
+
+What the therapist DID do:
+- Offered generic advice ("think positive")
+- Shared personal anecdotes
+- Provided reassurance ("It'll get better")
+- Asked tangential questions about movies and water intake
+
+Generic reassurance and advice-giving are not CBT techniques. They are often contraindicated in anxiety treatment because they reinforce avoidance and prevent the patient from developing mastery through exposure.
+
+**Summary:**
+
+No CBT techniques were applied. The therapist offered generic advice and reassurance rather than evidence-based interventions such as cognitive restructuring, exposure, behavioral experiments, or psychoeducation.
+
+---
+
+### 11. Homework
+### **Score: 0/6**
+
+**Explanation:**
+
+No homework was assigned in either session. The therapist did not review prior homework, assign new homework, provide rationale for homework, or ensure Ethan's understanding and commitment.
+
+Specific failures in homework:
+- **No assignment:** The therapist ended both sessions without assigning any between-session tasks
+- **No review:** In the second session, the therapist did not ask whether Ethan had tried the suggestions from the first session or what happened
+- **No rationale:** Even the vague suggestions ("think positive," "think happy thoughts") were not framed as homework with explicit rationale
+- **No specificity:** If homework had been assigned, it would need to be specific (e.g., "Practice thinking about the superhero movie for 5 minutes each morning" rather than "think happy thoughts")
+- **No monitoring:** The therapist did not establish a system to track homework completion or troubleshoot barriers
+
+For a child with separation anxiety and tics, homework is critical because: (1) most therapeutic change occurs between sessions, (2) homework provides opportunities for exposure and behavioral practice, (3) homework helps generalize skills to real-world contexts, and (4) homework completion predicts treatment outcome.
+
+Appropriate homework for Ethan might include:
+- Monitoring anxiety triggers and tic patterns (behavioral tracking)
+- Graded exposure practice (e.g., staying in a different room for increasing durations)
+- Parent-assisted exposure (e.g., parents leaving for short periods)
+- Thought records examining anxious predictions
+- Relaxation practice
+
+The complete absence of homework represents a critical failure to leverage the most powerful mechanism of change in CBT.
+
+**Summary:**
+
+No homework was assigned, reviewed, or discussed. The therapist failed to assign between-session tasks, provide rationale, or establish accountability for practice.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- The therapist was warm and non-hostile, creating a minimally safe environment
+- The therapist acknowledged Ethan's statements and did not dismiss his concerns
+- The therapist demonstrated willingness to listen and engage with the patient
+
+### Critical Deficiencies:
+
+**Foundational CBT Skills:**
+- No agenda setting or session structure
+- No feedback elicitation or alliance monitoring
+- No guided discovery or Socratic questioning
+- No homework assignment or between-session practice
+
+**Clinical Conceptualization:**
+- No case formulation linking anxiety, tics, and avoidance behaviors
+- No identification of key maintaining cognitions (fear of parental harm) or behaviors (avoidance, rituals, accommodation)
+- No coherent treatment strategy or logical progression toward symptom improvement
+
+**Evidence-Based Interventions:**
+- No CBT techniques applied (no cognitive restructuring, exposure, behavioral experiments, psychoeducation, habit reversal, etc.)
+- No exposure hierarchy or behavioral plan for separation anxiety
+- No parent involvement or discussion of accommodation reduction
+- No tic management strategy
+
+**Professional Boundaries and Therapeutic Stance:**
+- Excessive self-disclosure and peer-like relating
+- Advice-giving rather than collaborative problem-solving
+- Minimization of clinically significant symptoms
+- Generic reassurance that may reinforce avoidance
+
+---
+
+## Summary of Feedback
+
+### Strengths
+
+The therapist demonstrated basic warmth and willingness to engage with Ethan. The therapist did not dismiss or minimize Ethan's concerns and maintained a non-hostile, friendly demeanor throughout both sessions. The therapist showed interest in Ethan's wellbeing and attempted to be encouraging. These foundational interpersonal qualities are necessary but not sufficient for effective CBT.
+
+### Critical Deficiencies
+
+This session represents a fundamental failure to deliver evidence-based cognitive-behavioral therapy. The therapist did not establish an agenda, conduct systematic assessment, identify key cognitions or behaviors, develop a coherent treatment strategy, apply any CBT techniques, or assign homework. Instead, the therapist offered generic advice ("think positive," "think happy thoughts") and repeatedly shared personal anecdotes, which violates professional boundaries and shifts focus from the patient's needs to the therapist's experiences.
+
+Most critically, the therapist failed to address the core maintaining factors of Ethan's separation anxiety disorder: (1) the catastrophic cognition that "something bad will happen to my parents when I'm away," (2) avoidance behaviors (refusing sleepovers, staying close to parents, bed-sharing), and (3) parental accommodation of these behaviors. Without targeting these factors through exposure and cognitive work, Ethan's anxiety will not improve. The therapist's repeated suggestion to "think positive" is not only ineffective but potentially harmful, as it may increase Ethan's sense of failure when positive thinking does not eliminate his anxiety.
+
+The therapist also failed to address Ethan's tics or their relationship to anxiety. No psychoeducation about tics was provided, no habit reversal training was offered, and no behavioral management strategies were discussed. The tics were acknowledged but not treated.
+
+### Impact on Patient Care
+
+This approach is unlikely to produce meaningful therapeutic change. Ethan will leave these sessions with generic advice that he has already tried and found ineffective. He will not have developed new skills, tested anxious predictions, or engaged in exposure practice. His parents will not have received guidance on reducing accommodation. His tics will remain unaddressed. Most importantly, Ethan may develop the belief that therapy is unhelpful, reducing his willingness to engage in future evidence-based treatment.
+
+The excessive therapist self-disclosure and peer-like relating may also increase Ethan's anxiety about the therapist's availability and stability, potentially worsening his separation anxiety. For a child with separation anxiety, the therapist must be a stable, predictable, professional figure—not a peer sharing personal stories.
+
+If this approach continues, Ethan's symptoms are likely to persist or worsen, his academic performance will continue to decline, and his anxiety about separation will generalize to other contexts. The opportunity for early intervention in a child with emerging anxiety and tic disorders is being missed.
+
+---
+
+## Recommendations
+
+### 1. **Establish a Structured Agenda and Session Framework**
+- **Action:** At the beginning of each session, collaboratively set a specific agenda with Ethan and his parents. Identify 2-3 target problems, prioritize them, and allocate time accordingly. Use a visual agenda (written on whiteboard or paper) so Ethan can see the structure.
+- **Example:** "Today, I want to make sure we talk about three things: (1) what's been happening with your worries about your parents, (2) how your tics have been, and (3) what we can practice this week. Does that sound good? Is there anything else you want to talk about?"
+- **Practice:** Practice agenda-setting with a supervisor or peer before the next session. Role-play with a colleague playing a 9-year-old to develop comfort with this skill.
+
+### 2. **Conduct Systematic Functional Assessment**
+- **Action:** Use structured questions to understand the triggers, frequency, intensity, and consequences of Ethan's anxiety and tics. Create a clear timeline of symptom onset. Identify what maintains the symptoms (avoidance, accommodation, reassurance-seeking).
+- **Example:** "When you worry about your parents, what exactly are you worried might happen? How often does this worry come up during the day? What do you do when you feel worried? Does it help? What happens if you try NOT to do that?"
+- **Practice:** Develop a functional assessment template for anxiety and tics. Practice asking open-ended questions that elicit specific, behavioral information rather than vague responses.
+
+### 3. **Develop and Communicate a Clear Case Conceptualization**
+- **Action:** Explicitly explain to Ethan and his parents how his anxiety and tics are related and what maintains them. Use simple language and visual aids (e.g., a diagram showing how worry → avoidance → more worry).
+- **Example:** "Ethan, your brain is trying to protect you by worrying about your parents. When you worry, you feel scared, so you stay close to them or go to their room at night. That feels better right away, but it teaches your brain that there IS something to be scared of. So the worry gets stronger. We're going to help your brain learn that you and your parents are safe even when you're apart."
+- **Practice:** Write out a one-paragraph case formulation for Ethan before the next session. Practice explaining it in simple, concrete language.
+
+### 4. **Eliminate Excessive Self-Disclosure and Establish Professional Boundaries**
+- **Action:** Stop sharing personal anecdotes, experiences, and stories. Redirect focus to Ethan's experience. If tempted to share a personal story, ask yourself: "Does this serve Ethan's treatment goals, or does it serve my need to relate?" If the latter, don't share it.
+- **Example:** Instead of "I remember when I was a kid, I used to worry about my dog," say: "That sounds really scary. Tell me more about what you're worried might happen."
+- **Practice:** Record yourself in a practice session and count how many times you share personal information. Set a goal of zero personal anecdotes per session. Have a supervisor review recordings and provide feedback.
+
+### 5. **Implement Guided Discovery and Socratic Questioning**
+- **Action:** Replace advice-giving with questions that help Ethan discover insights and solutions. Ask about his thoughts, feelings, behaviors, and predictions. Help him test his beliefs through questions and behavioral experiments.
+- **Example:** Instead of "Just think positive," ask: "When you think about your parents, what's the scariest thing you imagine might happen? How likely do you think that really is? What evidence do you have? What would help you feel more confident they're safe?"
+- **Practice:** Develop a list of Socratic questions for anxiety and tics. Practice asking questions in supervision. Role-play with a colleague to develop comfort with this skill.
+
+### 6. **Develop a Graded Exposure Hierarchy for Separation Anxiety**
+- **Action:** Work with Ethan and his parents to create a step-by-step plan for gradually increasing time away from parents. Start with small, manageable steps and progress to more challenging situations. Use behavioral experiments to test anxious predictions.
+- **Example:** "Let's make a list of times when you're away from your parents, from easiest to hardest. Maybe it starts with staying in a different room for 5 minutes, then 10 minutes, then going to school without worrying, then staying at a friend's house for an hour, then a sleepover. We'll practice each step until it feels easier."
+- **Practice:** Learn the principles of exposure therapy. Develop a sample exposure hierarchy for a child with separation anxiety. Practice explaining the rationale for exposure to a parent who may be resistant.
+
+### 7. **Provide Psychoeducation About Anxiety and Tics**
+- **Action:** Teach Ethan and his parents about the anxiety cycle (trigger → thought → feeling → behavior), how avoidance maintains anxiety, and how tics relate to anxiety and stress. Use age-appropriate language and visual aids.
+- **Example:** "Your worry is like a smoke alarm that's too sensitive. It goes off even when there's no real fire. When you avoid things, the alarm stays sensitive. When you practice being brave and staying in situations, the alarm learns to calm down."
+- **Practice:** Develop a psychoeducation handout for a 9-year-old with separation anxiety and tics. Practice delivering this in simple, engaging language.
+
+### 8. **Involve Parents as Treatment Partners**
+- **Action:** Meet with Ethan's parents to discuss how their accommodation of his anxiety (allowing bed-sharing, permitting avoidance of sleepovers) maintains his symptoms. Develop a plan to gradually reduce accommodation while supporting Ethan through exposure.
+- **Example:** "Right now, when Ethan gets scared at night, he comes to your bed. That helps him feel better right away, but it teaches his brain that his room isn't safe. We need to help him practice staying in his room and learning that he's okay. Here's how we can do that together..."
+- **Practice:** Learn about parent-coached CBT for childhood anxiety. Practice having difficult conversations with parents about reducing accommodation. Role-play with a supervisor.
+
+### 9. **Implement Cognitive Restructuring for Key Anxious Thoughts**
+- **Action:** Systematically identify Ethan's anxious thoughts (e.g., "Something bad will happen to my parents"), examine evidence for and against these thoughts, and develop more balanced alternatives. Use thought records or simple worksheets.
+- **Example:** "You think something bad might happen to your parents. Let's look at that thought. Has something bad happened before? How many days have your parents been safe? What's the evidence that they're actually okay?"
+- **Practice:** Learn cognitive restructuring techniques for children. Develop a simple thought record template for a 9-year-old. Practice this skill in supervision.
+
+### 10. **Assign Specific, Monitored Homework**
+- **Action:** At the end of each session, assign specific between-session tasks with clear rationale and instructions. Review homework at the beginning of the next session. Troubleshoot barriers to completion.
+- **Example:** "This week, I want you to practice staying in your room for 10 minutes after bedtime while your parents are in the living room. We'll use a timer. If you get scared, you can remind yourself that you're safe and your parents are nearby. Let's write down what you'll do if you feel scared. Can you commit to trying this 3 times this week?"
+- **Practice:** Develop a homework assignment template. Practice explaining homework rationale in simple language. Role-play troubleshooting homework barriers.
+
+### 11. **Elicit and Monitor Feedback Throughout Sessions**
+- **Action:** Regularly ask Ethan for feedback about the session, the interventions, and the therapeutic relationship. Check for understanding, ask if suggestions are helpful, and adjust based on his input.
+- **Example:** "Does this make sense? Is this something you think you could try? What do you think about what we talked about today? Is there anything that didn't feel right or that you want to change?"
+- **Practice:** Develop a habit of asking for feedback at multiple points in each session (beginning, middle, end). Practice responding non-defensively to critical feedback.
+
+### 12. **Eliminate Generic Reassurance and Replace with Behavioral Coping**
+- **Action:** Stop offering reassurance ("It'll get better," "Don't worry") and instead teach behavioral coping skills. Help Ethan practice approaching feared situations rather than avoiding them.
+- **Example:** Instead of "Don't worry, everything will be fine," say: "I know this is scary. Let's practice what you can do when you feel scared. You can take three deep breaths, remind yourself that you're safe, and stay in the situation until the scared feeling gets smaller."
+- **Practice:** Learn about the limitations of reassurance in anxiety treatment. Practice offering behavioral coping strategies instead. Role-play with a supervisor.
+
+---
+
+## Overall Session Score: 0.5/6
+
+**Summary:**
+
+This session represents a fundamental failure to deliver evidence-based cognitive-behavioral therapy. The therapist scored 0/6 on 9 of 11 criteria (agenda, feedback, guided discovery, focusing on cognitions/behaviors, strategy for change, CBT techniques, and homework) and 1/6 on understanding, collaboration, and pacing. The only criterion with a score above 1 was interpersonal effectiveness (2/6), which reflects basic warmth but significant boundary violations and inappropriate self-disclosure.
+
+The therapist is not currently competent to treat childhood anxiety and tic disorders. The approach offered—generic advice about "thinking positive" combined with excessive self-disclosure—is not evidence-based CBT and is unlikely to produce therapeutic change. Most concerning, this approach may reinforce Ethan's avoidance and increase his sense of failure when positive thinking does not eliminate his anxiety.
+
+**Immediate Actions Required:**
+
+1. **Suspend independent practice** with anxiety cases until competency is demonstrated
+2. **Engage in intensive supervision** focused on CBT fundamentals (agenda-setting, guided discovery, exposure, cognitive restructuring)
+3. **Complete formal CBT training** in childhood anxiety and tic disorders
+4. **Record and review sessions** with a supervisor to identify and correct errors in real-time
+5. **Develop a competency plan** with specific, measurable goals and timelines
+
+**Likelihood of Therapeutic Change:**
+
+Without significant changes to the therapist's approach, Ethan's symptoms are unlikely to improve. His anxiety will likely persist or worsen, his academic performance will continue to decline, and his tics will remain unaddressed. The opportunity for early intervention in a child with emerging anxiety and tic disorders is being missed. Ethan requires evidence-based CBT delivered by a competent clinician to achieve meaningful symptom improvement.

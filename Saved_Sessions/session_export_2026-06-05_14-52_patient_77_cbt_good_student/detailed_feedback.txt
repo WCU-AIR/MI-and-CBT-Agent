@@ -1,0 +1,768 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Pica
+--- CASE STUDY ---
+
+Thomas, an 8-year-old boy with mild to moderate intellectual developmental disorder, was brought to the emergency room by his parents due to worsening abdominal pain over the prior 24 hours. He had developed constipation, with only one bowel movement in the past week, and had vomited earlier in the day.
+
+Teachers at his special education classroom reported difficulties since transferring from a similar school 4 months earlier. Thomas often appeared distressed, rocking, crying, and clutching his stomach. One week prior, a pediatrician diagnosed an acute exacerbation of chronic constipation; over-the-counter laxatives were ineffective. Thomas also began complaining of nighttime pain, resulting in diminished interest in hobbies such as video games and sports, instead spending time alone playing with inherited army men figurines. When not complaining, he ate well and maintained growth at the 40th percentile for height and weight.
+
+Past medical history included constipation, stomachaches, and intermittent headaches, worsening after a family move from semirural Florida to an urban apartment. He shared a room with his 6-year-old biological brother, whom he described as his "best friend." Thomas was adopted at birth; little is known about his biological parents.
+
+In the ER, Thomas was well-groomed, sitting on his mother's lap, crying, irritable, and refusing to speak to the examiner, repeating that his stomach hurt. Vital signs were stable, and he was afebrile. Physical examination revealed generalized abdominal tenderness, but was limited due to his crying.
+
+Abdominal X-ray showed multiple small metallic particles, suspected to be lead paint flakes, and three 2-cm-long metallic objects in the stomach. Blood lead level was 20 μg/dL (normal <5 μg/dL). Endoscopy removed the three toy soldiers from his stomach.
+
+Discussion: Thomas is a child with intellectual developmental disorder presenting with abdominal pain, constipation, irritability, and behavioral changes following a move. Imaging revealed ingestion of nonfood objects, consistent with pica. Pica is often comorbid with intellectual developmental disorder and can be dangerous, particularly with ingestion of lead-containing objects. Psychological stress from the move may also contribute to mood and behavioral changes.
+
+--- BEHAVIOUR ---
+- Crying and irritable
+- Refuses to speak to examiner
+- Clings to parents
+- Rocking and clutching stomach
+- Isolates from peers and siblings
+- Demonstrates interest only in preferred toys during distress
+
+--- PICA SYMPTOMS from DSM-5 ---
+- Persistent eating of nonnutritive, nonfood substances
+- Behavior severe enough to warrant clinical attention
+- Comorbid with intellectual developmental disorder
+- Potential medical complications (lead ingestion, GI obstruction)
+
+--- PATIENT PROFILE ---
+Name: Thomas Mercer
+Sex: Male
+Age: 8 years
+DOB: January 14, 2017
+Place of Birth: Tampa, FL
+Address: 45 Elm Street, Apartment 3B, New York, NY
+Contact: (555) 987-6543
+Marital Status: N/A (child)
+Siblings: Younger brother, age 6
+Adopted: Yes
+Occupation/School: Special education student
+Education: 2nd grade, special education classroom
+Hobbies: Video games, sports, army men figurines
+Medical History: Constipation, stomachaches, intermittent headaches
+Medications: None currently
+Substance Use: None
+Family History: Unknown biological parents; brother healthy
+Mental Status: Crying, irritable, clings to parents, verbalizes abdominal pain, isolates, fixates on toys, limited communication
+
+--- DIAGNOSIS ---
+Pica
+Intellectual developmental disorder, mild to moderate
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Thomas Mercer, an 8-year-old boy with mild to moderate intellectual developmental disorder, presents to the emergency room accompanied by his parents due to worsening abdominal pain and recent vomiting. The intake is prompted by parental concern following a history of constipation and behavioral changes noted by his teachers and family.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hello, it’s good to see you today. Before we get started, I’d like to check in with you about how you’re feeling right now. On a scale from 0 to 10, with 0 being very low and 10 being very high, how would you rate your current mood? Also, for today’s session, I was thinking we could focus on exploring any recent situations that felt challenging for you and the thoughts that came up during those moments. Does that sound okay, or is there something else you’d prefer to focus on? 
+ PATIENT: Um, I guess maybe... like a 3? I'm feeling kinda sad and my tummy still hurts a lot. It's hard to play or do stuff when my stomach feels all ouchy. 
+
+Talking about stuff that’s hard sounds okay. Sometimes I just want to be alone with my army men, but I don’t always know why I feel so upset. I’m not sure if I wanna talk about other things. I just wanna feel better so I can play again. 
+ PSYCHIATRIST: Thank you for sharing that with me. It sounds like your tummy pain and feeling sad are really affecting your day and making it hard to do the things you enjoy, like playing with your army men. 
+
+Since you mentioned feeling sad and having tummy pain, and wanting to understand those feelings better, would it be okay if we start by looking at a recent time when you felt this way? Maybe you could tell me what was happening just before you started feeling sad or upset? This will help us understand the situation and the thoughts that came up. Does that sound alright to you? 
+ PATIENT: Okay... um, there was one time at school last week. I was sitting with some kids, but then I felt my tummy hurting real bad. I wanted to leave but I didn’t know how to tell the teacher. I felt kinda scared and mad because the pain wouldn’t stop. 
+
+I just wanted to be alone with my army men after that, but sometimes I feel lonely even then. I wished the pain would go away so I could play and not feel yucky. 
+ PSYCHIATRIST: Thank you for sharing that. It sounds like the tummy pain during school was really uncomfortable and made you feel scared and mad, and that it made you want to be alone with your army men. 
+
+When you noticed your tummy hurting and felt scared and mad, what were you thinking at that moment? What was going through your mind about the pain or the situation? 
+ PATIENT: I was thinking maybe my tummy was broken or something really bad was wrong inside me. I thought maybe I would have to go to the hospital again and get stuck with needles. That made me scared. 
+
+I also thought maybe the other kids would think I was weird or different because I needed to leave. That made me mad and sad too. I just wanted the pain to stop so I could feel okay like before. 
+ PSYCHIATRIST: Thank you for sharing those thoughts. It sounds like you were worried that your tummy pain might mean something very serious, and that made you scared. You also felt concerned about what the other kids might think, which made you feel mad and sad. 
+
+Let’s take a moment to look at those thoughts together. What evidence do you have that your tummy is broken or that you’ll have to go to the hospital again? And what evidence might suggest that these thoughts might not be completely true? 
+ PATIENT: Well... I did have to go to the hospital before because my tummy hurt, so maybe it could hurt bad again. But the doctor helped me get the toys out of my belly, so maybe it’s not broken like I thought. And my mom says I’m okay now and to tell her if it hurts. 
+
+About the other kids, I don’t really know if they think I’m weird. But sometimes they don’t play with me much, so maybe they do. But some kids still talk to me sometimes, so maybe not everyone thinks that. 
+
+I guess maybe sometimes I’m just scared and don’t really know what’s going on. 
+ PSYCHIATRIST: That’s a very thoughtful reflection. You’re noticing that while your tummy has hurt before, the doctors have helped, and your mom is there to support you. You’re also recognizing that some kids do play with you, even if others don’t as much, and that feeling scared can make things feel more confusing. 
+
+If your friend were feeling scared about their tummy hurting and worried about what others think, what might you say to them? 
+ PATIENT: I’d tell them it’s okay to be scared, but that the doctors and moms are there to help, and the pain can get better. I’d say they’re not alone and that some friends care about them no matter what. 
+
+I think I’d tell them to try to tell someone how they feel, even if it’s hard, so they won’t have to be scared by themselves. Just like I try to tell my mom, even if it’s hard sometimes. 
+ PSYCHIATRIST: That’s a really kind and wise thing to say to a friend. It sounds like you already have a lot of helpful ideas about how to cope with these feelings and who can support you. 
+
+Thinking about what you would say to your friend, can we try to come up with a new thought you might tell yourself the next time your tummy hurts or you feel scared at school? Something that feels more balanced and supportive, like what you’d say to your friend? How does that sound? 
+ PATIENT: Yeah, I can try that. Maybe next time I can tell myself, "The doctors helped me before, and my mom is here too. The pain might go away soon, and some friends still like me." 
+
+It feels kind of hard to say sometimes, but I want to try. It might help me stop feeling so scared and sad. 
+ PSYCHIATRIST: That sounds like a very balanced and supportive thought. It acknowledges the help you’ve had, the support around you, and the positive relationships you have. How do you feel now when you say that thought to yourself? Does it change how scared or sad you feel a little? 
+ PATIENT: When I say that thought, I feel a tiny bit braver, like maybe the pain isn’t as big or scary. It helps me feel like I’m not all alone even when my tummy hurts. But sometimes I still feel scared because it’s hard to stop thinking about the pain. 
+
+I want to get better at saying that thought when I feel scared. Maybe then it won’t hurt my feelings as much. 
+ PSYCHIATRIST: That’s a really important insight — noticing that the new thought helps a bit, even if the scary feelings don’t go away right away. It’s normal for it to take some practice. 
+
+To help with this, what do you think about trying a small experiment between now and our next session? For example, the next time your tummy hurts at school or you feel scared, you could try saying that new thought to yourself and notice what happens to your feelings. How does that sound? Do you think you could try that? 
+ PATIENT: I think I can try that. It might be hard, but I want to see if it makes me feel less scared like you said. I’ll try to say the thought in my head when my tummy hurts or I feel bad at school. 
+
+If I forget, maybe my mom or my teacher can help remind me. I want to feel better so I can play more and not be so sad. 
+ PSYCHIATRIST: That sounds like a great plan. Having your mom or teacher remind you can be really helpful too. So just to be clear, your homework is: the next time your tummy hurts or you feel scared at school, try saying your new thought to yourself — “The doctors helped me before, and my mom is here too. The pain might go away soon, and some friends still like me.” Then notice how it affects your feelings. Does that sound right? 
+
+Also, how confident do you feel about trying this on a scale from 0 to 10, where 0 is not confident at all and 10 is very confident? 
+ PATIENT: Yes, that’s right. I’ll try to say the new thought when my tummy hurts or if I feel scared. Then I’ll pay attention to how I feel. 
+
+I think I’m about a 6 on the confidence scale. I want to do it, but sometimes it’s really hard to remember or to not feel scared anyway. But I’ll try my best. 
+ PSYCHIATRIST: Thank you for sharing your confidence level. A 6 is a good place to start, and it’s completely okay if it feels challenging at times. Remember, practice helps, and you’re not alone in this.
+
+To summarize, today we talked about a recent situation when your tummy hurt at school and how that made you feel scared and sad. We explored the thoughts you had about the pain and what others might think, and you came up with a helpful new thought to try next time. Your homework is to practice saying this new thought when you feel scared or your tummy hurts and notice how it changes your feelings.
+
+Before we finish, what part of today’s session stood out most to you or felt most helpful? Was there anything that felt less useful? Also, do you have any questions for me? 
+ PATIENT: I think what stood out most was thinking about the new thought to say to myself. It feels good to have something to try when I get scared or my tummy hurts. It’s nice to remember that the doctors helped and my mom is there too. 
+
+Nothing really felt not useful today. I don’t have questions right now. I just want to keep getting better so I can play more and not feel so sad or scared. Thank you for helping me. 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist established a collaborative agenda early in the session by proposing a focus on "recent situations that felt challenging" and "thoughts that came up during those moments," then explicitly asked if this was acceptable or if Thomas preferred something else. This demonstrates appropriate agenda-setting with patient input. The therapist maintained reasonable focus throughout, returning to the identified problem (school situation triggering anxiety and somatic complaints) and working systematically through cognitive exploration and thought restructuring.
+
+However, the agenda lacked explicit time allocation or prioritization discussion. The therapist did not establish specific, measurable session goals (e.g., "By the end of today, we'll identify one coping thought you can use when your stomach hurts"). Additionally, the therapist did not address the pica behavior itself—the core presenting problem—at any point in the session. While exploring anxiety and catastrophic thinking about pain is relevant, the actual ingestion of nonfood objects (the defining feature of Thomas's diagnosis) was completely absent from the session focus. For an 8-year-old with intellectual developmental disorder presenting with pica and lead ingestion, this is a significant clinical oversight.
+
+**Summary:**
+
+The therapist set a collaborative agenda focused on anxiety and catastrophic thoughts, which was appropriate for building rapport. However, the agenda failed to address the primary presenting problem (pica behavior), lacked explicit goals and time structure, and did not establish clear priorities for treatment.
+
+---
+
+### 2. Feedback
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated strong feedback-seeking behavior throughout the session. Specific examples include: (1) opening with "how would you rate your current mood?" using a 0-10 scale; (2) asking "Does that sound okay, or is there something else you'd prefer to focus on?"; (3) checking understanding with "Does that sound alright to you?"; (4) asking "How does that sound?" multiple times; (5) explicitly requesting confidence rating ("How confident do you feel about trying this on a scale from 0 to 10?"); and (6) concluding with direct feedback solicitation: "What part of today's session stood out most to you or felt most helpful? Was there anything that felt less useful?"
+
+The therapist also adjusted pacing based on Thomas's responses and validated his emotional experience throughout. However, the therapist did not systematically check for understanding of the cognitive model itself—Thomas was never asked to explain back the connection between thoughts, feelings, and behaviors in his own words. Additionally, the therapist did not elicit feedback about the specific homework assignment's clarity or feasibility beyond the confidence rating. The therapist could have asked, "Can you tell me back what you're going to do this week?" to verify comprehension rather than assuming understanding.
+
+**Summary:**
+
+The therapist consistently elicited feedback and adjusted responsively, with strong use of scaling questions and open-ended inquiry. Minor gap: did not verify patient's understanding of core CBT concepts or homework through teach-back methods.
+
+---
+
+### 3. Understanding
+### **Score: 6/6**
+
+**Explanation:**
+
+The therapist demonstrated excellent understanding of Thomas's internal experience throughout the session. Specific evidence includes: (1) accurate reflection of the presenting problem: "It sounds like your tummy pain and feeling sad are really affecting your day and making it hard to do the things you enjoy, like playing with your army men"; (2) recognition of the emotional cascade: "the tummy pain during school was really uncomfortable and made you feel scared and mad"; (3) validation of Thomas's ambivalence about disclosure: "I just wanted to be alone with my army men after that, but sometimes I feel lonely even then"; (4) empathic acknowledgment of the difficulty: "It's normal for it to take some practice."
+
+The therapist also demonstrated sophisticated understanding by recognizing that Thomas's catastrophic thoughts about hospitalization were rooted in actual prior experience, and that social anxiety was layered with somatic anxiety. The therapist's use of the "friend perspective" technique showed understanding that Thomas could access wisdom he couldn't apply to himself—a developmentally appropriate insight for an 8-year-old with intellectual developmental disorder. Non-verbal empathy is evident in the therapist's gentle pacing, validation of effort, and consistent affirmation of Thomas's insights.
+
+**Summary:**
+
+The therapist demonstrated exemplary empathic understanding, accurately grasping Thomas's emotional experience, validating his concerns, and tailoring interventions to his developmental level. No significant gaps identified.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 6/6**
+
+**Explanation:**
+
+The therapist displayed optimal warmth, genuineness, and professionalism throughout the session. Evidence includes: (1) warm opening: "Hello, it's good to see you today"; (2) consistent validation: "That's a very thoughtful reflection," "That's a really kind and wise thing to say," "That's a really important insight"; (3) normalizing struggle: "It's normal for it to take some practice"; (4) encouraging tone: "A 6 is a good place to start, and it's completely okay if it feels challenging"; (5) explicit reassurance: "Remember, practice helps, and you're not alone in this."
+
+The therapist maintained appropriate professional boundaries while creating safety—never becoming overly familiar or dismissive of Thomas's concerns. The therapist's language was consistently age-appropriate and accessible for an 8-year-old with intellectual developmental disorder, avoiding jargon while maintaining clinical sophistication. The therapist also demonstrated confidence and competence, which likely contributed to Thomas's willingness to engage despite initial distress (mood 3/10, stomach pain, recent hospitalization).
+
+**Summary:**
+
+The therapist demonstrated exemplary interpersonal skills with optimal warmth, genuineness, and professionalism. Created a safe, validating environment that facilitated Thomas's engagement and disclosure. No deficiencies identified.
+
+---
+
+### 5. Collaboration
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist established strong collaborative partnership throughout most of the session. Evidence includes: (1) explicit invitation for patient input on agenda: "Does that sound okay, or is there something else you'd prefer to focus on?"; (2) collaborative problem-solving: "can we try to come up with a new thought you might tell yourself"; (3) shared decision-making on homework: "what do you think about trying a small experiment"; (4) recognition of patient expertise: "You're noticing that while your tummy has hurt before, the doctors have helped"; (5) involving support system: "If I forget, maybe my mom or my teacher can help remind me."
+
+However, collaboration could have been strengthened in several ways: (1) The therapist did not explicitly invite Thomas to help identify the problem or generate alternative explanations—the therapist primarily guided discovery rather than true collaborative empiricism; (2) Thomas was not invited to help design the behavioral experiment or suggest alternative coping strategies; (3) The therapist did not discuss treatment goals collaboratively or ask Thomas what he wanted to achieve beyond "feel better"; (4) The therapist did not involve parents/caregivers in the session despite their critical role in supporting an 8-year-old's treatment.
+
+**Summary:**
+
+The therapist established good collaborative rapport and invited patient input on key decisions. Could have deepened collaboration by more actively involving Thomas in problem identification, strategy development, and involving caregivers in treatment planning.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated generally efficient time management with appropriate pacing for an 8-year-old with intellectual developmental disorder. The session followed a logical progression: (1) mood check-in and agenda-setting; (2) identifying a specific recent situation; (3) exploring thoughts and feelings; (4) examining evidence; (5) developing alternative thoughts; (6) behavioral experiment assignment; (7) summary and feedback. The therapist avoided tangents and maintained focus on the identified problem (school anxiety and catastrophic thinking).
+
+However, there are minor pacing concerns: (1) The therapist spent considerable time on cognitive restructuring (examining evidence, developing alternative thoughts) but did not address the behavioral component of pica or establish behavioral interventions; (2) The session did not include psychoeducation about pica, lead exposure, or the connection between anxiety and pica behavior—critical information for an 8-year-old and family; (3) No time was allocated to discussing environmental modifications or safety planning related to lead exposure or object ingestion; (4) The therapist did not discuss the role of the recent move/transition in triggering both anxiety and pica, despite this being noted in the case formulation.
+
+**Summary:**
+
+The therapist maintained good session flow and avoided unnecessary tangents. However, critical clinical content (pica behavior, lead safety, environmental factors) was not addressed, suggesting either poor time allocation or incomplete case conceptualization.
+
+---
+
+### 7. Guided Discovery
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist skillfully employed Socratic questioning to facilitate Thomas's self-discovery throughout most of the session. Specific examples include: (1) "What evidence do you have that your tummy is broken or that you'll have to go to the hospital again? And what evidence might suggest that these thoughts might not be completely true?"—This is classic Socratic examination of evidence; (2) "If your friend were feeling scared about their tummy hurting and worried about what others think, what might you say to them?"—This uses perspective-taking to access Thomas's own wisdom; (3) "How do you feel now when you say that thought to yourself? Does it change how scared or sad you feel a little?"—This invites experiential discovery rather than telling.
+
+The therapist generally asked rather than told, allowing Thomas to reach conclusions independently. However, there are limitations: (1) The therapist could have asked more questions about the origin of catastrophic thoughts: "Where did you get the idea that your tummy might be broken?"; (2) The therapist did not explore the connection between anxiety and pica: "What happens right before you feel like eating something that's not food?"; (3) The therapist did not use guided discovery to explore triggers for the school situation or what Thomas was doing/thinking before the pain started; (4) The alternative thought was somewhat co-constructed rather than purely discovered by Thomas—the therapist guided heavily toward the "doctors helped" and "mom is here" themes.
+
+**Summary:**
+
+The therapist demonstrated good use of Socratic questioning and perspective-taking to facilitate self-discovery. Could have deepened guided discovery by exploring thought origins, behavioral triggers, and allowing more independent thought generation.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 3/6**
+
+**Explanation:**
+
+The therapist identified and explored relevant automatic thoughts: catastrophic thinking about the stomach ("my tummy was broken"), fear of hospitalization ("I would have to go to the hospital again and get stuck with needles"), and social anxiety ("the other kids would think I was weird or different"). These are legitimate cognitions contributing to Thomas's distress and avoidance.
+
+However, this represents a significant clinical gap: **The therapist completely failed to identify or address the core behavioral problem—pica (eating nonfood objects).** This is the primary diagnosis and the reason for the emergency room visit, lead exposure, and endoscopy. The therapist focused exclusively on anxiety-related cognitions and somatic complaints while ignoring the actual maladaptive behavior. Critical cognitions related to pica were never explored: What thoughts precede the urge to eat nonfood objects? What does Thomas believe will happen if he eats them? What function does pica serve (self-soothing, sensory seeking, anxiety regulation)? What triggers the behavior?
+
+Additionally, the therapist did not identify or address: (1) Avoidance behaviors (isolating with army men, withdrawing from peers and siblings); (2) Safety-related cognitions about lead exposure; (3) Beliefs about the move/transition and its relationship to symptom onset; (4) Possible reinforcement patterns maintaining the behavior. For an 8-year-old with intellectual developmental disorder and pica, focusing on general anxiety while ignoring the specific behavioral target represents inadequate case conceptualization.
+
+**Summary:**
+
+The therapist identified anxiety-related cognitions but completely failed to address the primary presenting problem (pica behavior) or explore cognitions directly related to nonfood ingestion. This represents a critical clinical gap that undermines treatment effectiveness.
+
+---
+
+### 9. Strategy for Change
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist's strategy for change is poorly conceptualized and incomplete. The explicit strategy appears to be: (1) identify catastrophic thoughts about stomach pain; (2) examine evidence for/against these thoughts; (3) develop alternative, more balanced thoughts; (4) practice the alternative thought when anxiety arises. This is a standard cognitive restructuring approach appropriate for anxiety disorders.
+
+However, this strategy has several critical problems in this case: (1) **It does not address the primary diagnosis (pica).** Cognitive restructuring for anxiety may be helpful, but it is not a primary intervention for pica in children with intellectual developmental disorder; (2) **The strategy lacks a clear behavioral component.** There is no plan to reduce pica behavior, identify triggers, or establish alternative behaviors; (3) **The strategy does not address environmental factors.** No discussion of removing lead-containing objects, supervising access to nonfood items, or modifying the environment; (4) **The strategy does not incorporate the child's developmental level or intellectual disability.** Cognitive restructuring relies on abstract thought and metacognition—skills that may be limited in a child with mild-to-moderate intellectual developmental disorder; (5) **The strategy ignores functional analysis.** What does pica accomplish for Thomas? Self-soothing? Sensory input? Anxiety regulation? Without understanding function, behavioral interventions cannot be designed.
+
+A more appropriate strategy would include: behavioral monitoring of pica episodes, functional analysis, environmental modification, teaching alternative coping behaviors (especially for anxiety regulation), parent training, and potentially habit reversal or competing response training. The current strategy is generic anxiety treatment, not pica-specific intervention.
+
+**Summary:**
+
+The therapist's strategy focuses on cognitive restructuring for anxiety but completely fails to address the primary diagnosis (pica) or incorporate evidence-based interventions for pica in children with intellectual developmental disorder. The strategy lacks behavioral specificity, environmental modification, and functional analysis.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 4/6**
+
+**Explanation:**
+
+The therapist applied several CBT techniques with moderate skill: (1) **Thought Record/Cognitive Examination:** The therapist systematically identified automatic thoughts ("my tummy was broken," "kids think I'm weird"), examined evidence for and against them, and helped Thomas recognize alternative perspectives. This was done competently; (2) **Perspective-Taking/Compassionate Mind:** The therapist asked "If your friend were feeling scared... what might you say to them?" This is a sophisticated technique that accessed Thomas's own wisdom; (3) **Thought Replacement:** The therapist helped Thomas develop an alternative thought: "The doctors helped me before, and my mom is here too. The pain might go away soon, and some friends still like me"; (4) **Behavioral Experiment Assignment:** The therapist assigned homework to practice the new thought and observe effects.
+
+However, there are significant limitations: (1) **No behavioral techniques were applied.** No activity scheduling, behavioral activation, exposure, habit reversal, or competing response training—all potentially relevant for pica; (2) **Techniques were applied to anxiety, not the primary diagnosis.** While the cognitive techniques were executed adequately, they targeted a secondary problem rather than pica; (3) **Limited skill in application.** The alternative thought was somewhat therapist-generated rather than purely discovered by Thomas. The therapist could have asked more questions to help Thomas generate it independently; (4) **No psychoeducation.** The therapist did not explain the cognitive model, the relationship between thoughts/feelings/behaviors, or how these techniques work—important for treatment engagement and generalization; (5) **No functional analysis.** The therapist did not use behavioral analysis to understand triggers, maintaining factors, or consequences of pica.
+
+**Summary:**
+
+The therapist applied cognitive techniques (thought examination, perspective-taking, thought replacement) with moderate competence but focused on anxiety rather than pica. No behavioral techniques were applied. Limited psychoeducation and functional analysis.
+
+---
+
+### 11. Homework
+### **Score: 4/6**
+
+**Explanation:**
+
+The therapist assigned homework that was relevant to the session focus and provided clear instructions. Specific strengths include: (1) **Explicit assignment:** "Your homework is: the next time your tummy hurts or you feel scared at school, try saying your new thought to yourself... Then notice how it affects your feelings"; (2) **Clear rationale:** The therapist explained that practice helps and that noticing effects is important; (3) **Specificity:** The exact thought to practice was stated clearly; (4) **Feasibility check:** The therapist asked about confidence level (6/10) and discussed involving parents/teachers as reminders; (5) **Relevance:** The homework directly relates to the session content.
+
+However, there are notable gaps: (1) **No review of prior homework.** The therapist did not ask if Thomas had any previous assignments or what he's been working on—important for continuity and building on progress; (2) **Limited behavioral specificity.** The homework is purely cognitive (practice a thought). For an 8-year-old with intellectual developmental disorder, more concrete behavioral tasks might be more effective; (3) **No written materials.** The therapist did not provide a written copy of the thought or homework instructions—important for memory and follow-through; (4) **No monitoring plan.** The therapist did not establish how Thomas will track practice or record observations (e.g., "Write down or draw when you practice the thought"); (5) **No pica-related homework.** No assignment to monitor pica episodes, identify triggers, or practice alternative behaviors; (6) **Limited parent involvement.** While the therapist mentioned parents could help remind Thomas, there was no explicit parent homework or discussion of how parents should support the assignment.
+
+**Summary:**
+
+The therapist assigned relevant, clearly-stated homework with appropriate rationale and feasibility check. However, homework lacked written materials, monitoring plan, behavioral specificity, and parent involvement. No pica-related homework was assigned.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- **Excellent interpersonal skills:** Warm, genuine, validating, age-appropriate communication that created safety and engagement
+- **Strong empathic understanding:** Accurately grasped Thomas's emotional experience and internal reality
+- **Consistent feedback-seeking:** Regularly checked understanding, elicited reactions, and adjusted responsively
+- **Appropriate use of Socratic questioning:** Facilitated self-discovery through perspective-taking and evidence examination
+- **Competent cognitive techniques:** Applied thought examination and thought replacement with moderate skill
+- **Clear homework assignment:** Provided explicit, relevant homework with rationale and feasibility check
+- **Good session structure:** Logical flow from problem identification through intervention to summary
+- **Collaborative approach:** Invited patient input on agenda and key decisions
+
+### Critical Deficiencies:
+- **Complete failure to address primary diagnosis:** Pica behavior was never mentioned, explored, or targeted for intervention despite being the reason for emergency room visit and lead exposure
+- **Inadequate case conceptualization:** Focused on anxiety as primary problem rather than recognizing pica as primary diagnosis with anxiety as potential maintaining factor
+- **No functional analysis:** Did not explore triggers, maintaining factors, or functions of pica behavior
+- **No behavioral interventions:** Applied only cognitive techniques; no behavioral activation, habit reversal, competing response training, or environmental modification
+- **Missing psychoeducation:** Did not explain cognitive model, pica etiology, or connection between anxiety and pica
+- **Incomplete agenda:** Did not address environmental safety (lead exposure), recent move/transition, or behavioral targets
+- **Limited consideration of developmental/intellectual factors:** Cognitive restructuring may exceed capabilities of child with mild-to-moderate intellectual developmental disorder; more concrete behavioral approaches needed
+- **No parent/caregiver involvement:** Session did not include or explicitly plan for parental involvement despite critical importance for child treatment
+- **No safety planning:** No discussion of lead exposure risks, environmental modifications, or emergency protocols
+
+---
+
+## Summary of Feedback
+
+### Strengths
+
+This therapist demonstrated exemplary foundational therapeutic skills. The interpersonal effectiveness was outstanding—Thomas, a recently hospitalized 8-year-old in acute distress (mood 3/10, stomach pain, recent trauma), engaged meaningfully in the session and reported feeling "a tiny bit braver" by the end. This is a significant achievement. The therapist's empathic accuracy, consistent validation, and age-appropriate communication created genuine safety. The use of Socratic questioning—particularly the "friend perspective" technique—was sophisticated and facilitated Thomas's access to his own coping resources. The therapist demonstrated strong collaborative instincts, repeatedly inviting Thomas's input and adjusting based on his responses. The cognitive techniques (thought examination, evidence review, thought replacement) were executed competently. The homework assignment was clear, relevant, and included a feasibility check. Overall, this therapist has strong foundational skills in general therapeutic work.
+
+### Critical Deficiencies
+
+However, this session represents a fundamental failure in CBT case conceptualization and treatment planning. **The therapist completely ignored the primary presenting problem—pica—and instead treated this as a straightforward anxiety disorder.** This is a critical clinical error with serious consequences.
+
+Thomas presents with pica (persistent eating of nonfood objects), which resulted in lead ingestion (blood lead level 20 μg/dL, normal <5), emergency endoscopy, and acute medical complications. Pica is the diagnosis. Anxiety about stomach pain is a secondary symptom. Yet the entire session focused on cognitive restructuring for anxiety while pica was never mentioned, explored, or targeted for intervention.
+
+This represents inadequate case formulation. The therapist did not: (1) Conduct functional analysis of pica behavior—what triggers it? What does it accomplish? What maintains it?; (2) Explore the relationship between the recent move, anxiety, and pica onset; (3) Identify or address avoidance behaviors (isolation, withdrawal); (4) Implement behavioral interventions appropriate for pica (environmental modification, habit reversal, competing response training, behavioral monitoring); (5) Provide psychoeducation about pica, lead exposure, or the cognitive-behavioral model; (6) Involve parents/caregivers in treatment planning despite their critical role; (7) Address safety concerns related to lead exposure or object ingestion.
+
+Additionally, the therapist did not adequately consider Thomas's developmental level and intellectual disability. Cognitive restructuring relies on abstract thought, metacognition, and the ability to generate and evaluate alternative thoughts—skills that may be significantly limited in a child with mild-to-moderate intellectual developmental disorder. More concrete, behaviorally-focused interventions (activity scheduling, behavioral activation, habit reversal, environmental modification) would likely be more effective and appropriate.
+
+The session represents competent general therapy but inadequate CBT for this specific diagnosis. The therapist applied anxiety-focused cognitive techniques to a child whose primary problem is pica with secondary anxiety. This is like treating a patient's anxiety about their diabetes while ignoring blood glucose management—the wrong target.
+
+### Impact on Patient Care
+
+**This session is unlikely to produce meaningful improvement in Thomas's pica or lead exposure risk.** While the cognitive work on anxiety may provide some short-term emotional relief, it does not address the behavior that caused the medical emergency. Thomas will likely continue ingesting nonfood objects, with ongoing risk of lead exposure, gastrointestinal obstruction, and medical complications.
+
+Furthermore, the session may inadvertently reinforce avoidance. By focusing exclusively on managing anxiety through thought replacement, the therapist implicitly communicated that the solution is "think better thoughts" rather than "change the behavior." For a child with intellectual developmental disorder, this cognitive-focused approach may be ineffective or even counterproductive. Thomas needs concrete behavioral strategies, environmental modifications, and parental involvement—not primarily cognitive restructuring.
+
+The lack of parent involvement is particularly concerning. An 8-year-old with intellectual developmental disorder cannot implement treatment independently. Parents must be trained to: monitor pica episodes, identify triggers, remove access to dangerous objects, teach alternative behaviors, and reinforce progress. This session did not establish that foundation.
+
+Finally, the failure to address lead exposure represents a potential safety issue. Thomas has elevated blood lead levels (20 μg/dL). The therapist did not discuss lead risks, environmental modification, or follow-up testing. This is a public health concern that should have been explicitly addressed.
+
+---
+
+## Recommendations
+
+### 1. **Conduct Comprehensive Functional Analysis of Pica Behavior (HIGHEST PRIORITY)**
+
+**Action:** Before the next session, complete a detailed functional analysis. Systematically explore: (1) What happens immediately before Thomas eats nonfood objects? (2) What does he eat? (3) Where does it happen? (4) What happens immediately after? (5) What does the behavior accomplish (anxiety reduction, sensory input, attention, escape)?
+
+**Example:** Ask Thomas and parents: "Tell me about the last time you ate something that wasn't food. What were you doing right before? How were you feeling? What happened after? Did it help you feel better? Did it help you not think about something?"
+
+**Practice:** Use the ABC model (Antecedent-Behavior-Consequence) to map 3-5 pica episodes. Identify patterns. Is pica triggered by anxiety? Boredom? Sensory seeking? Transition/change? Once you understand the function, you can design targeted interventions.
+
+---
+
+### 2. **Redesign Treatment Plan to Target Pica as Primary Problem**
+
+**Action:** Develop a pica-specific treatment plan incorporating: (1) Environmental modification (remove access to lead-containing objects, paint chips, small toys); (2) Behavioral monitoring (track pica episodes, triggers, consequences); (3) Habit reversal or competing response training (teach alternative behaviors when urge arises); (4) Anxiety management as secondary intervention (anxiety may maintain pica, but is not the primary target); (5) Parent training (parents are the primary agents of change for an 8-year-old).
+
+**Example:** "Thomas, we're going to work together to help you stop eating things that aren't food. First, we need to understand what makes you want to eat those things. Then we'll make it harder to find those things, and teach you something else to do instead when you get the urge."
+
+**Practice:** Review evidence-based pica interventions. Habit reversal training, competing response training, and environmental modification are established approaches. Cognitive restructuring alone is insufficient.
+
+---
+
+### 3. **Involve Parents/Caregivers as Primary Treatment Partners**
+
+**Action:** Schedule a session with Thomas and his parents to: (1) Explain pica and its risks; (2) Conduct functional analysis together; (3) Develop environmental modification plan; (4) Train parents in behavioral monitoring and reinforcement; (5) Establish parent-led interventions between sessions.
+
+**Example:** "Mr. and Mrs. Mercer, Thomas's pica—eating nonfood objects—is the main thing we need to work on. It's causing him to ingest lead, which can harm his brain and body. We need to work as a team. Here's what we'll do: First, we'll remove access to dangerous objects. Second, we'll teach Thomas what to do instead when he gets the urge. Third, you'll help him practice and reward his progress."
+
+**Practice:** Develop a parent handout explaining pica, lead risks, and specific strategies they can implement. Schedule regular parent check-ins. Make parents active collaborators, not passive observers.
+
+---
+
+### 4. **Implement Environmental Modification and Safety Planning**
+
+**Action:** Conduct a home safety assessment. Identify and remove: (1) Lead-containing objects (paint chips, old toys, contaminated soil); (2) Small objects that could cause obstruction; (3) Non-food items that are accessible. Establish safe spaces where Thomas can be supervised.
+
+**Example:** "Let's walk through your apartment and identify anything that Thomas might eat that could hurt him. We'll remove those things or put them somewhere he can't reach. We'll also make sure he has safe things to chew or play with instead."
+
+**Practice:** Create a written safety plan. Photograph the modified environment. Provide parents with a checklist of items to monitor. Establish a protocol for what to do if Thomas ingests something dangerous.
+
+---
+
+### 5. **Teach Behavioral Monitoring and Data Collection**
+
+**Action:** Establish a simple system for tracking pica episodes. Parents should record: (1) Date/time; (2) What was eaten; (3) Trigger/what happened before; (4) Duration; (5) Consequence/what happened after.
+
+**Example:** Provide a simple chart: "Each time Thomas eats something that's not food, write it down. What was he doing? How was he feeling? What happened after? This helps us understand the pattern."
+
+**Practice:** Review data weekly. Look for patterns. Use data to refine interventions. Celebrate decreases in frequency or severity.
+
+---
+
+### 6. **Develop Concrete Behavioral Alternatives to Pica**
+
+**Action:** Identify specific, concrete behaviors Thomas can do instead of eating nonfood objects. These should be: (1) Immediately available; (2) Sensory-satisfying (if pica serves sensory function); (3) Anxiety-reducing (if pica serves anxiety regulation); (4) Age-appropriate; (5) Safe.
+
+**Example:** "When you feel like eating something that's not food, try one of these instead: chew gum, eat a crunchy snack, squeeze a stress ball, play with your army men, ask for a hug from your mom, take deep breaths."
+
+**Practice:** Create a visual "alternatives menu" with pictures. Practice the alternatives in session. Have parents reinforce use of alternatives. Gradually build Thomas's repertoire of coping behaviors.
+
+---
+
+### 7. **Address Anxiety as Secondary Intervention Using Developmentally-Appropriate Methods**
+
+**Action:** Continue anxiety work, but adapt to Thomas's developmental level and intellectual disability. Use more concrete, behavioral approaches: (1) Behavioral activation (schedule enjoyable activities); (2) Exposure (gradual exposure to anxiety triggers with support); (3) Relaxation training (deep breathing, progressive muscle relaxation with simplified instructions); (4) Thought work (simplified, concrete thought replacement—less abstract).
+
+**Example:** "When your tummy hurts and you feel scared, you can: take three deep breaths, tell your mom, do something you like, or use your new thought. Let's practice each one."
+
+**Practice:** Teach relaxation skills in session. Have Thomas practice and demonstrate. Provide parents with simplified instructions. Use repetition and concrete examples.
+
+---
+
+### 8. **Provide Psychoeducation About Pica, Lead Exposure, and the Cognitive-Behavioral Model**
+
+**Action:** Explain to Thomas (in age-appropriate language) and parents: (1) What pica is and why it happens; (2) Why lead is dangerous; (3) How thoughts, feelings, and behaviors are connected; (4) How the treatment plan will help; (5) What to expect.
+
+**Example:** "Pica means eating things that aren't food. Your body doesn't need those things, and some of them—like paint—can make you sick. We're going to help you stop eating those things and feel better. Here's how: We'll remove the things you might eat, teach you what to do instead, and help you feel less scared."
+
+**Practice:** Create a simple handout with pictures. Use concrete language. Avoid jargon. Repeat key points. Check understanding frequently.
+
+---
+
+### 9. **Establish Lead Exposure Monitoring and Medical Follow-Up**
+
+**Action:** Coordinate with pediatrician to: (1) Repeat blood lead testing; (2) Provide lead exposure reduction counseling; (3) Monitor for lead-related health effects; (4) Ensure environmental lead assessment if home contamination is suspected.
+
+**Example:** "Thomas's blood lead level is elevated. We need to make sure he doesn't ingest more lead. His doctor will recheck his blood lead level in [timeframe]. We'll work together to reduce his exposure."
+
+**Practice:** Communicate with medical team. Ensure behavioral interventions are coordinated with medical management. Document lead exposure risks and interventions in treatment plan.
+
+---
+
+### 10. **Reassess Case Conceptualization and Differential Diagnosis**
+
+**Action:** Consider whether anxiety is primary or secondary. Explore alternative explanations for pica: (1) Sensory seeking (pica may serve sensory function, not anxiety regulation); (2) Intellectual disability-related factors (limited understanding of danger, impulse control); (3) Transition/adjustment reaction (pica onset coincided with move); (4) Possible nutritional deficiency (though less likely given normal growth); (5) Learned behavior or attention-seeking.
+
+**Example:** "Is Thomas eating nonfood objects because he's anxious, or because he enjoys the sensation, or because he doesn't understand it's dangerous, or because of the move? The answer changes our treatment approach."
+
+**Practice:** Conduct thorough assessment. Interview parents about pica onset, triggers, and function. Observe Thomas's behavior. Consider multiple hypotheses. Design interventions based on most likely explanation.
+
+---
+
+### 11. **Incorporate the Recent Move/Transition as Treatment Focus**
+
+**Action:** Explore the connection between the move from Florida to New York and symptom onset. Pica began after the move. Anxiety increased. Behavioral changes noted at new school. Address adjustment to new environment: (1) New school; (2) New apartment; (3) Shared room with brother; (4) Loss of familiar environment.
+
+**Example:** "Thomas, moving to a new place can be really hard. You had to leave your old school and your old home. That can make kids feel sad and scared. We're going to help you feel better about your new home and new school."
+
+**Practice:** Validate the difficulty of transition. Help Thomas process the move. Facilitate adjustment to new environment. Consider whether pica is anxiety response to transition (if so, anxiety work is more relevant) or sensory/behavioral response (if so, behavioral interventions are primary).
+
+---
+
+### 12. **Develop Relapse Prevention and Long-Term Monitoring Plan**
+
+**Action:** Establish plan for: (1) Ongoing behavioral monitoring; (2) Regular parent check-ins; (3) Booster sessions if pica recurs; (4) Transition to maintenance phase once pica is controlled; (5) Long-term follow-up for lead exposure and developmental monitoring.
+
+**Example:** "We'll keep tracking pica episodes. If they go down and stay down for [timeframe], we'll celebrate and move to checking in less often. If they go back up, we'll figure out what changed and adjust our plan."
+
+**Practice:** Establish clear criteria for progress and relapse. Plan for maintenance. Prepare for setbacks. Ensure continuity of care.
+
+---
+
+## Overall Session Score: 4.3/6
+
+**Summary:**
+
+This therapist demonstrated strong foundational therapeutic skills (interpersonal effectiveness 6/6, understanding 6/6, feedback 5/6) but critical deficiencies in CBT case conceptualization and treatment planning. The session represents competent general therapy applied to the wrong problem. While the cognitive techniques were executed with moderate skill and the therapeutic relationship was excellent, the therapist failed to identify and target the primary diagnosis (pica) and instead treated this as a straightforward anxiety disorder.
+
+**Current Competency Assessment:** The therapist has strong general therapeutic skills but inadequate CBT competence for complex cases requiring differential diagnosis and multi-modal intervention. The therapist can build rapport, conduct Socratic questioning, and apply basic cognitive techniques. However, the therapist lacks: (1) comprehensive case formulation skills; (2) functional analysis ability; (3) behavioral intervention expertise; (4) understanding of pica etiology and treatment; (5) ability to adapt interventions for intellectual disability; (6) systems-level thinking (parent involvement, medical coordination).
+
+**Most Critical Changes Needed Immediately:** (1) **Redesign treatment plan to target pica as primary problem, not anxiety.** Conduct functional analysis. Implement environmental modification, behavioral monitoring, and habit reversal training. (2) **Involve parents as primary treatment partners.** Schedule parent session. Train parents in behavioral strategies. Establish parent-led interventions. (3) **Address lead exposure safety.** Coordinate with medical team. Implement environmental modifications. Monitor blood lead levels.
+
+**Will This Session Produce Therapeutic Change?** Unlikely to produce meaningful improvement in pica or lead exposure risk. The cognitive work on anxiety may provide short-term emotional relief, but does not address the behavior causing medical complications. Without behavioral intervention, environmental modification, and parent involvement, Thomas will likely continue pica behavior with ongoing health risks. The session represents a missed opportunity to implement evidence-based pica treatment and establish a foundation for meaningful change.
+
+**Recommendation:** This therapist should receive supervision focused on: (1) comprehensive case formulation and differential diagnosis; (2) functional analysis and behavioral assessment; (3) evidence-based interventions for pica and other behavioral disorders; (4) adaptation of CBT for children with intellectual disability; (5) systems-level intervention (parent training, medical coordination). The therapist has strong foundational skills and should be encouraged to continue developing expertise in complex cases.

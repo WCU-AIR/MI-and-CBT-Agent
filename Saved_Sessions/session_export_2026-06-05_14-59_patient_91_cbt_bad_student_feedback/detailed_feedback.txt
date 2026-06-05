@@ -1,0 +1,937 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Social Anxiety Disorder, Hypersomnolence Disorder
+
+--- CASE STUDY ---
+
+Bernadette Kleber was a 34-year-old divorced, unemployed white mother of three school-age children, living with a new companion. She presented to a psychiatrist for anxiety and excessive sleepiness.
+
+Ms. Kleber had experienced anxiety much of her life, worsening since the birth of her first child 10 years ago. She was "okay at home" but anxious in social situations, avoiding new people for fear of embarrassment or judgment. She wanted to lose weight (current BMI 27.7) but feared ridicule at the gym. She had withdrawn from social and professional interactions, making it almost impossible to interview or maintain a job. She had been successfully treated for social anxiety disorder 5 years earlier with psychotherapy, an SSRI, and clonazepam 0.25 mg twice daily, but her symptoms had recurred over the prior year. She denied changing her medication dose or taking other medications.
+
+She denied periods of significant depression or manic symptoms but reported feeling frustrated with her limited effectiveness. She was concerned about maintaining her new romantic relationship.
+
+Ms. Kleber reported sleeping excessively: at least 9 hours per night plus two 2.5-hour naps daily. She had difficulty functioning in the mornings, feeling disoriented for at least 30 minutes after waking, and often fell asleep during quiet social situations, while reading, or watching TV. She quit driving alone due to sleepiness. Late afternoon naps were nonrestorative, and hypnopompic hallucinations occurred several times per year since adolescence.
+
+On examination, she was overweight, cooperative, and coherent, preoccupied with her sleep problems, denying depression, suicidality, psychosis, and memory complaints. Insight and judgment were intact. Physical exam was noncontributory. Medical history included hypercholesterolemia, occasional migraines, and exertion-related musculoskeletal complaints. She used marijuana occasionally for pain and clonazepam for anxiety. No family history of sleep or mood disorders, though multiple relatives were anxious.
+
+Sleep studies: polysomnography showed apnea hypopnea index of 3 events/hour. MSLT indicated mean sleep latency of 7 minutes with one sleep-onset REM period. CSF hypocretin-1 levels were normal. Findings were consistent with hypersomnolence disorder. Social anxiety disorder was recurrent.
+
+--- BEHAVIOUR ---
+- Cooperative and coherent
+- Preoccupied with sleep problems
+- Insight and judgment intact
+- No signs of depression, suicidality, or psychosis
+
+--- SYMPTOMS from DSM-5 ---
+- Social anxiety: fear of embarrassment, avoidance of social interactions, impaired occupational functioning
+- Hypersomnolence: excessive sleep duration, multiple naps, daytime sleepiness, sleep inertia, nonrestorative sleep, brief sleep latency
+
+--- PATIENT PROFILE ---
+Name: Bernadette Kleber
+Sex: Female
+Age: 34 years
+DOB: February 14, 1991
+Place of Birth: Dayton, OH
+Address: 456 Cedar Street, Dayton, OH
+Contact: (555) 987-6543
+Marital Status: Divorced
+Children: Three, school-aged
+Occupation: Unemployed
+Education: Some college
+Religion: None specified
+Legal Guardian: Self
+Presenting Complaint: Anxiety and excessive sleepiness
+Psychiatric History: Social anxiety disorder (treated 5 years ago)
+Psychotherapy: Completed previously
+Medications: SSRI, Clonazepam 0.25 mg twice daily
+Substance Use: Occasional marijuana for pain
+Medical History: Hypercholesterolemia, migraines, exertion-related musculoskeletal pain
+Neurology: Normal
+Family History: Multiple relatives anxious
+Mental Status: Cooperative, coherent, preoccupied with sleep, no depression, no suicidality, insight and judgment intact
+
+--- DIAGNOSIS ---
+- Social Anxiety Disorder
+- Hypersomnolence Disorder
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Bernadette Kleber, a 34-year-old divorced mother of three, presents to the outpatient psychiatric clinic for evaluation of anxiety and excessive sleepiness, referred by herself due to concerns about her social anxiety and daytime somnolence. She has a history of social anxiety disorder treated five years prior and reports ongoing symptoms alongside new complaints of prolonged sleep duration and difficulty with daytime alertness.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hi there! It’s really good to see you today. How have you been feeling since the last time we talked? 
+ PATIENT: Hi. Thanks for seeing me again. Honestly, I’m still feeling really tired all the time. I’m sleeping a lot, but it doesn’t seem to help. And I still get nervous around people, especially new people. It’s hard to even imagine going back to work or doing things outside the house. I feel stuck. 
+ PSYCHIATRIST: Hey, I’m really sorry to hear you’re feeling stuck. You know, everyone goes through rough patches like this. It’ll get better, just try to think positive. When I was feeling down, I found that just telling myself things would improve helped me a lot. Have you tried to focus on the good stuff around you? Like, maybe little things that make you smile? 
+ PATIENT: Yeah, I mean, I know I should try to think positive, but it’s tough when every time I think about going somewhere or meeting someone new, my mind just goes to all the things that could go wrong. Like, what if I mess up or people laugh at me? Sometimes I try to notice small things that are nice, like when my kids do something funny, but then I still feel anxious about everything else. It’s like a constant worry that doesn’t go away. So, focusing on the good feels a little useless most of the time. 
+ PSYCHIATRIST: Oh, I totally get that. You know, when I was in a similar spot, I just told myself to hang in there and that things would turn around eventually. Sometimes, I would just watch funny videos or hang out with friends to distract myself. It’s important to keep busy and not let those worries take over. You might want to try doing something fun or relaxing, like watching a favorite show or going for a walk. That always helped me feel better. Speaking of walks, have you been able to get outside much lately? 
+ PATIENT: Not really. With the way I feel so sleepy all the time, it’s hard to get motivated to do much, even a walk. I know it would probably help, but I end up feeling so wiped out I just stay inside. And when I’m inside, I still feel anxious, like I’m waiting for something bad to happen if I go out. It’s like my body is tired, but my mind won’t stop worrying. So I guess I’ve been stuck inside mostly, trying to keep up with the kids but not doing much for me. 
+ PSYCHIATRIST: Yeah, I hear you. Everyone has those days where they just want to stay in and rest. It’s totally normal. You know what they say, “this too shall pass.” Just try to keep your head up and remember that things will get better. Maybe just try to think positive thoughts when you can. That’s what helps me when I’m feeling down. By the way, are you drinking enough water? Staying hydrated can make a big difference in how you feel, especially when you’re tired. 
+ PATIENT: I guess I drink some water during the day, but I’m probably not very good at keeping up with it. Sometimes I forget or get distracted with the kids. I don’t know if that really makes much of a difference for me though. The tiredness feels deeper than just not drinking enough water. It’s like no matter what I do, I am just exhausted. But maybe I could try to pay more attention to it. I don’t want to feel worse than I already do. 
+ PSYCHIATRIST: That’s a good thought. You know, sometimes just reminding yourself to take it easy and be kind to yourself can help. It’s important not to be too hard on yourself when things feel tough. I remember when I was stressed out, just telling myself “You’re doing your best” helped me get through. So, keep being gentle with yourself. You’re stronger than you think. Have you had any chance to do something just for you recently, something that makes you feel a little better? 
+ PATIENT: Honestly, not really. Between the kids and feeling so tired, I haven’t made time for myself. Sometimes I think about reading or watching a show I like, but I usually end up falling asleep or just feeling too anxious to enjoy it. It’s frustrating because I know I need a break, but I can’t seem to get one for myself. I just feel like I’m barely holding everything together most days. 
+ PSYCHIATRIST: I get that. Life gets so busy, and it’s hard to find time for yourself. You know, I once tried to start a hobby like painting to relax, but I was so bad at it, I gave up quickly. Still, it was fun while it lasted, and it helped me forget about stress for a little while. Maybe you could try something simple, like doodling or listening to music, just something easy that doesn’t take much energy. Changing the subject a bit, have you had any good meals lately? Eating well can sometimes lift your mood a bit. 
+ PATIENT: I’ve been trying to cook healthy meals for the kids and me, but to be honest, sometimes I just grab whatever’s easy, like frozen dinners or takeout, because it’s hard to find the energy to cook from scratch. I know eating better might help, but it feels like one more thing I have to worry about. Some days I don’t even feel hungry until later. So, no fancy meals or anything lately. Just trying to get through the day, really. 
+ PSYCHIATRIST: Yeah, I hear you. Sometimes just getting through the day is an achievement in itself. You know, when I was going through a tough time, I found that focusing on small wins helped me feel a bit better. Like, just making it to the end of the day without giving up was something to be proud of. Keep reminding yourself that you’re doing your best, and that’s enough. Things will get better, even if it doesn’t feel like it right now. Just hang in there. 
+ PATIENT: Thanks. It’s good to hear that from someone. Sometimes it just feels like no matter what I do, I’m not moving forward. But maybe celebrating little things can help. Some days, getting the kids to school and back without a meltdown feels like a win. I just wish I could feel more energy or less worried so I could do more. But for now, I guess I’ll try to notice those small moments. It’s hard, but maybe it’s something. 
+ PSYCHIATRIST: Absolutely, those little victories count a lot. You’re doing a great job managing everything, even if it feels tough. Just keep taking things one step at a time, and remember, you’re not alone in this. Sometimes life throws us challenges, but with time and patience, things can improve. Keep your chin up, and don’t forget to be kind to yourself. You’ve got this! 
+ PATIENT: Thank you. I really needed to hear that today. I’ll try to be kinder to myself and remember that it’s okay to have tough days. I want to get better and be more present for my kids and my partner, but I know it won’t happen overnight. I’m glad to have someone to talk to who understands. It makes a difference. 
+ PSYCHIATRIST: Hey! Good to see you again. How’s everything been going since we last talked? 
+ PATIENT: Hi. Thanks for checking in. It’s been kind of the same, really. I still feel really tired most days, even though I’m sleeping a lot. And the anxiety around people hasn’t really gotten better. I’m still mostly staying home because I’m afraid I’ll embarrass myself if I have to talk to new people. It’s frustrating because I want to do more, but I just get stuck. 
+ PSYCHIATRIST: Hey! I’m glad you’re here. You know, it’s normal to have ups and downs. When I’ve felt stuck, I just remind myself that things will get better if I keep a positive outlook. Maybe try to focus on the little good things around you, like a sunny day or a kind word. That always helps me feel a bit better. Have you noticed anything good recently? 
+ PATIENT: I try to look for those little things, like when my kids make me laugh or a nice moment with my partner, but even then, the worry sticks around. Like, I enjoy those moments but then I start thinking about all the things that could go wrong if I had to be around people outside my family. It feels like the anxiety creeps back in right after something good happens. So, it’s hard to really hold on to the positive feelings for long. 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 0/6**
+
+**Explanation:**
+
+No agenda was established at any point in this session. The therapist did not collaboratively identify target problems, prioritize concerns, or establish time-bound goals with the patient. Bernadette presented with two distinct, complex diagnoses (Social Anxiety Disorder and Hypersomnolence Disorder) requiring careful prioritization, yet the therapist never asked which problem should be addressed first, what the patient most wanted to work on, or what would be most helpful to focus on given the session time.
+
+The session drifted aimlessly across multiple tangential topics: hydration, meals, hobbies, small wins, and positive thinking—none of which were systematically connected to either diagnosis or a coherent treatment plan. A proper agenda would have sounded like: "Bernadette, I see you're dealing with both significant anxiety around social situations and excessive daytime sleepiness. Both are affecting your ability to work and maintain relationships. What feels most urgent to address today? Should we focus on understanding your anxiety patterns, your sleep issues, or both? How can I best help you in our time together?"
+
+This represents a fundamental failure of CBT structure. Without agenda-setting, sessions become unfocused support conversations rather than targeted interventions.
+
+**Summary:**
+
+No collaborative agenda was established. The session lacked structure, prioritization, or clear treatment targets. This is a critical foundational failure in CBT delivery.
+
+---
+
+### 2. Feedback
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist made minimal attempt to elicit or respond to patient feedback throughout the session. There were no explicit checks for understanding ("Does that make sense?"), no solicitation of the patient's reaction to suggestions ("How does that land with you?"), and no assessment of whether interventions were helpful or relevant.
+
+The therapist offered multiple suggestions (positive thinking, watching funny videos, going for walks, staying hydrated, doodling, eating well, celebrating small wins) without ever asking: "Did that suggestion feel helpful?" "Do you think that's something you could actually do?" "What's your reaction to what I'm suggesting?" The patient's responses consistently indicated the suggestions weren't landing—she said positive thinking feels "useless," she can't motivate herself to walk due to sleepiness, she forgets to hydrate, she falls asleep trying to enjoy activities—yet the therapist never adjusted course based on this implicit feedback.
+
+At the end of the session, there was no explicit feedback elicitation: no "What was most helpful today?" no "Is there anything we should have discussed that we didn't?" no "How are you feeling about our work together?" The therapist's final statement was purely reassurance without checking whether the patient felt heard, understood, or equipped with actionable tools.
+
+**Summary:**
+
+Feedback was essentially absent. The therapist did not check understanding, solicit reactions to interventions, or adjust based on patient responses. This prevented course-correction and left the patient's actual needs unaddressed.
+
+---
+
+### 3. Understanding
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist demonstrated surface-level understanding of explicit statements but consistently missed the core clinical picture and the patient's actual experience. Bernadette clearly articulated that:
+
+1. **Her anxiety is anticipatory and pervasive**: "Every time I think about going somewhere or meeting someone new, my mind just goes to all the things that could go wrong."
+2. **Her sleepiness is severe and functionally impairing**: "No matter what I do, I am just exhausted" and "I quit driving alone due to sleepiness."
+3. **These problems interact**: "It's like my body is tired, but my mind won't stop worrying."
+4. **Generic suggestions don't work**: "Focusing on the good feels a little useless most of the time."
+
+Yet the therapist's responses showed minimal grasp of this internal reality. When Bernadette said positive thinking feels useless, the therapist responded by recommending more positive thinking. When she described pervasive anxiety about social situations, the therapist suggested watching funny videos and going for walks—interventions that don't address the core cognitive distortions driving her avoidance. When she described exhaustion "deeper than just not drinking enough water," the therapist pivoted to hydration advice.
+
+The therapist also repeatedly self-disclosed personal anecdotes ("When I was feeling down," "When I was in a similar spot," "When I was stressed out," "I once tried to start a hobby like painting") that centered the therapist's experience rather than deepening understanding of the patient's specific situation. This is empathic failure—true empathy requires understanding the patient's unique cognitive and behavioral patterns, not comparing them to the therapist's generic stress management.
+
+The therapist did not explore: What specific thoughts occur when Bernadette imagines social situations? What is the feared catastrophe? What maintains her avoidance? What is the relationship between her anxiety and her sleep problems? What has she tried before that worked (she was successfully treated 5 years ago—why not explore that)?
+
+**Summary:**
+
+The therapist grasped explicit content but missed the patient's core clinical presentation, the severity of functional impairment, and the interaction between her two diagnoses. Repeated self-disclosure substituted for genuine empathic understanding.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 3/6**
+
+**Explanation:**
+
+The therapist displayed adequate warmth and was not destructive, but interpersonal effectiveness was undermined by several problems:
+
+**Strengths:** The therapist was friendly, used the patient's name, expressed concern ("I'm really sorry to hear you're feeling stuck"), and maintained a supportive tone throughout. There were no hostile, demeaning, or dismissive moments.
+
+**Significant Problems:**
+
+1. **Excessive self-disclosure**: The therapist shared personal experiences at least 5 times ("When I was feeling down," "When I was in a similar spot," "When I was stressed out," "I once tried to start a hobby like painting," "When I was going through a tough time"). This violates professional boundaries and centers the therapist rather than the patient. It can communicate: "Your problems are like my problems, so my solutions should work for you"—which is clinically inaccurate and dismissive of her unique presentation.
+
+2. **Tone-deafness to severity**: The therapist repeatedly normalized Bernadette's experience ("Everyone goes through rough patches," "Everyone has those days where they just want to stay in and rest," "It's totally normal") without acknowledging the clinical severity of her symptoms. Social Anxiety Disorder and Hypersomnolence Disorder are not "rough patches"—they are diagnosable conditions causing significant functional impairment (unemployment, social withdrawal, inability to drive safely).
+
+3. **Platitudes over presence**: Statements like "this too shall pass," "You're stronger than you think," "You've got this!" are generic reassurance, not genuine engagement with her specific struggles. They communicate: "I hear you, but I don't have specific tools to help, so here's encouragement instead."
+
+4. **Lack of professional confidence**: A therapist confident in CBT would say, "I understand you're struggling with anxiety and sleep issues. Here's how we can work together to address these systematically." Instead, the therapist offered vague encouragement, suggesting uncertainty about treatment approach.
+
+**Summary:**
+
+Interpersonal warmth was present but undermined by excessive self-disclosure, normalization of clinical severity, and reliance on platitudes. Professional boundaries and clinical confidence were compromised.
+
+---
+
+### 5. Collaboration
+### **Score: 1/6**
+
+**Explanation:**
+
+Collaboration was minimal and largely illusory. While the therapist used collaborative language ("I hear you," "I get that"), the actual process was therapist-directed and paternalistic.
+
+**What was missing:**
+
+1. **No shared problem definition**: The therapist never asked Bernadette which problem she wanted to prioritize or what her goals were. The therapist simply offered suggestions without collaborative agreement on what to work toward.
+
+2. **No collaborative empiricism**: CBT collaboration involves testing beliefs together ("Let's examine whether that thought is true," "What evidence supports or contradicts that worry?"). Instead, the therapist offered prescriptive advice: "Try positive thinking," "Keep busy," "Stay hydrated," "Try doodling."
+
+3. **No solicitation of patient expertise**: Bernadette has lived with anxiety for 10 years and was successfully treated 5 years ago. The therapist never asked, "What helped you before?" "What have you already tried?" "What do you think might help now?" This missed the opportunity to activate her own problem-solving capacity.
+
+4. **Unilateral suggestion-giving**: The therapist offered 8+ suggestions (positive thinking, watching videos, hanging out with friends, going for walks, staying hydrated, doodling, listening to music, eating well, celebrating small wins) without ever asking, "What do you think might help?" or "What have you considered trying?"
+
+5. **Patient passivity**: By the end of the session, Bernadette is in a passive recipient role: "I'll try to be kinder to myself," "I'll try to notice those small moments." She is not an active agent in her treatment; she is following the therapist's suggestions.
+
+True collaboration would sound like: "Bernadette, you mentioned you were successfully treated for anxiety 5 years ago. What was helpful then? How is your situation different now? What do you think we should focus on first? What are you willing to try between now and our next session?"
+
+**Summary:**
+
+The therapist used collaborative language but practiced directive advice-giving. The patient remained passive, and no genuine shared decision-making occurred. This violates a core CBT principle.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 2/6**
+
+**Explanation:**
+
+The session lacked structure and efficient time management. Multiple problems:
+
+1. **Tangential drift**: The therapist jumped across unrelated topics without systematic exploration: anxiety → sleepiness → positive thinking → walks → hydration → hobbies → meals → small wins. None of these were connected to a coherent treatment strategy. A structured session would have identified one or two key problems and explored them systematically.
+
+2. **Repetitive cycling**: The therapist cycled through the same intervention (positive thinking/encouragement) approximately 5 times without recognizing it wasn't working. After the patient said positive thinking feels "useless," the therapist recommended it again. This is inefficient and suggests the therapist wasn't tracking the session flow.
+
+3. **No depth on critical issues**: The therapist never explored:
+   - Specific automatic thoughts in social situations
+   - The feared catastrophe ("people laugh at me")
+   - Avoidance patterns and their consequences
+   - The relationship between anxiety and hypersomnolence
+   - Previous successful treatment (what worked 5 years ago?)
+   - Current medication compliance and efficacy
+   - Sleep hygiene or behavioral factors affecting sleep
+
+4. **Excessive time on peripheral topics**: Significant time was spent on hydration, meals, hobbies, and self-compassion—topics that may be relevant but were not prioritized or connected to treatment goals. A 50-minute session with two complex diagnoses requires ruthless prioritization.
+
+5. **No time boundaries**: The therapist did not indicate how much time was available, did not check in about pacing, and did not manage the session toward closure with clear next steps.
+
+**Summary:**
+
+The session drifted across multiple topics without systematic exploration of key clinical issues. Repetitive interventions and lack of prioritization wasted time. No clear structure or time management was evident.
+
+---
+
+### 7. Guided Discovery
+### **Score: 0/6**
+
+**Explanation:**
+
+Guided discovery—the cornerstone of CBT—was completely absent. The therapist did not ask a single Socratic question designed to help the patient discover her own insights, examine evidence, or generate alternatives.
+
+**What should have happened:**
+
+Guided discovery in this case would involve questions like:
+- "When you imagine going to the gym, what specific thoughts go through your mind?"
+- "You mentioned fear of embarrassment. What's the worst thing you think could happen?"
+- "Has that worst thing actually happened before? What was the outcome?"
+- "When you stay home to avoid anxiety, does the anxiety get better or worse?"
+- "You were successfully treated 5 years ago. What was different then? What changed?"
+- "You mentioned your mind goes to 'all the things that could go wrong.' Can we look at one specific worry together and examine whether it's likely?"
+- "What evidence do you have that people will laugh at you or judge you?"
+- "What would happen if you went to the gym and nobody laughed? What would that mean?"
+
+**What actually happened:**
+
+The therapist told the patient what to do: "Try to think positive," "Keep busy," "Watch funny videos," "Go for a walk," "Stay hydrated," "Try doodling," "Eat well," "Celebrate small wins." This is didactic instruction, not guided discovery. It positions the therapist as the expert with answers and the patient as the passive recipient of advice.
+
+The patient's response to this approach is telling: "Focusing on the good feels a little useless most of the time" and "It's like the anxiety creeps back in right after something good happens." These statements suggest the therapist's suggestions are not addressing the core cognitive and behavioral patterns maintaining her anxiety.
+
+**Summary:**
+
+No Socratic questioning occurred. The therapist lectured and prescribed rather than facilitating self-discovery. This is a fundamental departure from evidence-based CBT.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist made minimal attempt to identify and explore the central automatic thoughts, core beliefs, or critical behavioral patterns maintaining Bernadette's anxiety and hypersomnolence.
+
+**What was identified but not explored:**
+
+The patient explicitly mentioned key cognitions:
+- "What if I mess up or people laugh at me?" (automatic thought)
+- "My mind just goes to all the things that could go wrong" (catastrophic thinking pattern)
+- "It's like I'm waiting for something bad to happen if I go out" (anticipatory anxiety)
+- "The anxiety creeps back in right after something good happens" (intrusive worry pattern)
+
+**What the therapist did:** Acknowledged these statements but did not explore them. No questions about the content of the catastrophic thoughts, the evidence for them, or the behavioral patterns they drive.
+
+**What was not explored:**
+
+1. **Core beliefs about social situations**: Does Bernadette believe she is fundamentally flawed, unlikeable, or incompetent? These core beliefs typically drive social anxiety and would be critical to identify and address.
+
+2. **Behavioral avoidance patterns**: She avoids the gym, social situations, job interviews, and driving alone. What maintains this avoidance? What are the short-term and long-term consequences? How does avoidance reinforce her anxiety?
+
+3. **The anxiety-hypersomnolence connection**: Is she sleeping excessively to escape anxiety? Is anxiety preventing restorative sleep? Is hypersomnolence reducing her opportunity to practice social situations? These connections were never explored.
+
+4. **Safety behaviors**: Does she use any behaviors to manage anxiety (reassurance-seeking, checking, mental rituals)? These maintain anxiety and should be identified.
+
+5. **Previous successful treatment**: She was treated successfully 5 years ago. What specific techniques worked? Why did symptoms recur? This information is clinically crucial and was never elicited.
+
+**Summary:**
+
+Key cognitions and behaviors were mentioned but not systematically explored. No focus on the central thoughts and patterns maintaining her anxiety. This represents a critical gap in CBT case conceptualization.
+
+---
+
+### 9. Strategy for Change
+### **Score: 0/6**
+
+**Explanation:**
+
+No coherent strategy for change was evident. The therapist offered disconnected suggestions without a unifying treatment plan or clear rationale for how interventions would lead to symptom improvement.
+
+**What a strategy for change should include:**
+
+1. **Clear case conceptualization**: "Your anxiety is maintained by catastrophic thoughts about social judgment and avoidance behaviors that prevent you from testing whether those thoughts are accurate. Your hypersomnolence may be partly driven by anxiety-related sleep disruption and partly by a primary sleep disorder. We'll address both."
+
+2. **Logical sequence of interventions**: "First, we'll identify your specific anxiety-triggering thoughts. Then we'll examine the evidence for and against those thoughts. Then we'll gradually expose you to social situations to test your predictions. We'll also address sleep hygiene and behavioral factors affecting your sleep."
+
+3. **Connection between interventions and outcomes**: "The reason we're doing this is because research shows that when people with social anxiety examine their catastrophic thoughts and gradually face feared situations, their anxiety decreases significantly."
+
+4. **Explicit treatment goals**: "By the end of treatment, you should be able to attend social situations without overwhelming anxiety, apply for jobs, and go to the gym without fear of judgment."
+
+**What actually happened:**
+
+The therapist offered 8+ disconnected suggestions (positive thinking, distraction, hydration, hobbies, self-compassion, celebrating small wins) without explaining how these address her anxiety or hypersomnolence, why these specific interventions were chosen, or how they connect to a larger treatment plan. The suggestions appear to be generic stress-management advice rather than targeted CBT interventions.
+
+There is no indication that the therapist has a conceptualization of her case or a strategy for change. The session reads as supportive counseling, not CBT.
+
+**Summary:**
+
+No coherent strategy for change was articulated. Interventions were disconnected and not linked to a treatment plan. This represents a fundamental failure of CBT case formulation and treatment planning.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 0/6**
+
+**Explanation:**
+
+No specific CBT techniques were applied. The session contained supportive counseling and generic advice but no evidence-based CBT interventions.
+
+**CBT techniques that should have been used for Social Anxiety Disorder:**
+
+1. **Cognitive restructuring**: Identifying automatic thoughts ("People will laugh at me"), examining evidence, generating balanced alternatives ("Most people are focused on themselves, not judging me").
+
+2. **Behavioral experiments**: Testing predictions ("Let's plan a small social interaction and see what actually happens").
+
+3. **Exposure/graded exposure**: Gradually facing feared social situations (starting with lower-anxiety situations, progressing to higher-anxiety ones).
+
+4. **Thought records**: Systematically tracking situations, thoughts, feelings, and outcomes to identify patterns.
+
+5. **Behavioral activation**: Scheduling valued activities despite anxiety to break the avoidance cycle.
+
+6. **Safety behavior identification and reduction**: Identifying behaviors that temporarily reduce anxiety but maintain it long-term (e.g., avoiding eye contact, staying silent).
+
+**CBT techniques that should have been used for Hypersomnolence Disorder:**
+
+1. **Sleep hygiene assessment and modification**: Identifying factors affecting sleep quality and duration.
+
+2. **Behavioral sleep restriction**: Limiting time in bed to consolidate sleep and reduce daytime sleepiness.
+
+3. **Stimulus control**: Using bed only for sleep, not for worry or rumination.
+
+4. **Activity scheduling**: Increasing daytime activity to promote alertness and better nighttime sleep.
+
+5. **Thought records for sleep-related anxiety**: Identifying and addressing catastrophic thoughts about sleep ("If I don't sleep 9 hours, I'll be useless tomorrow").
+
+**What the therapist did instead:**
+
+- Offered generic encouragement ("You're stronger than you think")
+- Suggested distraction ("Watch funny videos")
+- Recommended self-compassion ("Be kind to yourself")
+- Advised lifestyle changes without systematic assessment (hydration, meals, hobbies)
+- Normalized her experience ("Everyone has those days")
+- Shared personal anecdotes
+
+None of these are CBT techniques. They are supportive counseling strategies that may be helpful but are not sufficient for treating Social Anxiety Disorder or Hypersomnolence Disorder.
+
+**Summary:**
+
+No CBT techniques were applied. The session lacked the specific, evidence-based interventions necessary to produce symptom change. This is a critical failure of CBT delivery.
+
+---
+
+### 11. Homework
+### **Score: 0/6**
+
+**Explanation:**
+
+No homework was assigned. The therapist did not review prior homework, did not assign new between-session tasks, and did not establish a structure for the patient to practice skills or test predictions outside the session.
+
+**What should have happened:**
+
+Homework in CBT serves critical functions:
+1. **Extends learning beyond the session**: Skills practiced between sessions consolidate learning and produce real-world change.
+2. **Tests predictions**: Behavioral experiments conducted as homework provide evidence that challenges anxious thoughts.
+3. **Builds self-efficacy**: Successfully completing homework demonstrates to the patient that they can manage their anxiety.
+4. **Maintains momentum**: Regular homework keeps treatment focused and progressing.
+
+**Appropriate homework for Bernadette might have included:**
+
+1. **Thought record**: "This week, notice one situation where you felt anxious. Write down: (a) the situation, (b) the thought that went through your mind, (c) how anxious you felt (0-100), (d) what happened. Bring this to our next session."
+
+2. **Behavioral experiment**: "This week, go to one place where you might encounter new people (e.g., a coffee shop, a park). Spend 10 minutes there. Notice what actually happens. Does anyone judge you? What's the actual outcome? Write down what you observe."
+
+3. **Graded exposure**: "This week, make one phone call to a friend or family member. Notice your anxiety before, during, and after. What did you predict would happen? What actually happened?"
+
+4. **Sleep log**: "This week, keep track of: (a) what time you go to bed, (b) how long you sleep, (c) how many naps you take, (d) how alert you feel during the day. Bring this to our next session so we can identify patterns."
+
+5. **Activity scheduling**: "This week, schedule one 15-minute activity that you enjoy or that's important to you. Do it even if you don't feel like it. Notice how you feel afterward."
+
+**What actually happened:**
+
+The therapist ended the session with encouragement ("You've got this!") but assigned no specific homework. The patient left without a clear between-session task, no structure for practicing skills, and no mechanism for testing her anxious predictions.
+
+The patient's statement at the end—"I'll try to be kinder to myself and remember that it's okay to have tough days"—is not homework; it's a vague intention without specificity, rationale, or mechanism for tracking.
+
+**Summary:**
+
+No homework was assigned. This represents a critical gap in CBT structure. Without between-session practice, symptom change is unlikely.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- **Warmth and non-hostility**: The therapist was friendly, used the patient's name, and maintained a supportive tone throughout.
+- **Explicit concern**: The therapist expressed care ("I'm really sorry to hear you're feeling stuck") and checked in about the patient's wellbeing.
+- **Consistency in engagement**: The therapist remained engaged across multiple sessions and did not dismiss or minimize the patient's concerns.
+
+### Critical Deficiencies:
+
+**1. Complete absence of CBT structure and technique:**
+- No agenda-setting, no guided discovery, no cognitive restructuring, no behavioral experiments, no exposure planning, no thought records, no homework.
+- The session is supportive counseling, not evidence-based CBT.
+
+**2. Fundamental misunderstanding of the patient's clinical presentation:**
+- The therapist normalized severe clinical symptoms ("Everyone has those days") rather than recognizing Social Anxiety Disorder and Hypersomnolence Disorder as diagnosable conditions requiring targeted intervention.
+- The therapist offered generic stress-management advice rather than disorder-specific treatment.
+
+**3. Therapist-centered rather than patient-centered approach:**
+- Excessive self-disclosure (5+ personal anecdotes) centered the therapist's experience rather than the patient's unique presentation.
+- Unilateral advice-giving (8+ suggestions) without collaborative problem-solving.
+- No solicitation of patient expertise or activation of the patient's own problem-solving capacity.
+
+**4. Failure to identify and explore key cognitive and behavioral patterns:**
+- The patient mentioned catastrophic thoughts ("What if I mess up or people laugh at me?"), anticipatory anxiety, and avoidance patterns, but these were never systematically explored.
+- No assessment of core beliefs, safety behaviors, or the relationship between anxiety and hypersomnolence.
+
+**5. Lack of case conceptualization and treatment strategy:**
+- No coherent plan for how interventions lead to symptom improvement.
+- No connection between suggestions and treatment goals.
+- No indication that the therapist understands the mechanisms maintaining her anxiety and hypersomnolence.
+
+**6. No between-session structure or accountability:**
+- No homework assigned, no behavioral experiments planned, no mechanism for testing predictions or practicing skills.
+- The patient leaves without a clear action plan or structure for change.
+
+---
+
+## Summary of Feedback
+
+### Strengths
+
+The therapist demonstrated genuine warmth, maintained a supportive and non-judgmental tone, and expressed authentic concern for the patient's wellbeing. The therapist was consistently engaged, checked in about the patient's experience, and did not dismiss or minimize her struggles. These foundational interpersonal qualities are necessary for effective therapy but are not sufficient for evidence-based CBT delivery.
+
+### Critical Deficiencies
+
+This session represents a fundamental departure from evidence-based CBT. The therapist provided supportive counseling rather than structured cognitive-behavioral intervention. Across 11 core CBT competencies, the session scored 0/6 on five critical dimensions: agenda-setting, guided discovery, strategy for change, application of CBT techniques, and homework assignment. The therapist offered generic stress-management advice (positive thinking, distraction, hydration, self-compassion) without identifying the specific cognitive distortions and behavioral patterns maintaining Bernadette's anxiety and hypersomnolence. No case conceptualization was evident, no treatment plan was articulated, and no between-session structure was established.
+
+The therapist's repeated self-disclosure (5+ personal anecdotes) violated professional boundaries and centered the therapist's experience rather than the patient's unique clinical presentation. The therapist normalized severe clinical symptoms ("Everyone has those days") rather than recognizing them as diagnosable disorders requiring targeted intervention. The patient remained passive throughout, following the therapist's suggestions rather than actively collaborating in her own treatment. By the end of the session, Bernadette had received encouragement but no specific tools, no clear understanding of her anxiety patterns, no behavioral experiments to test her predictions, and no homework to practice skills between sessions.
+
+### Impact on Patient Care
+
+This session is unlikely to produce meaningful symptom improvement. Bernadette presented with two complex, functionally impairing diagnoses (Social Anxiety Disorder and Hypersomnolence Disorder) that require targeted, evidence-based intervention. She has been unemployed and socially withdrawn due to anxiety, has quit driving due to excessive sleepiness, and is struggling to maintain her new romantic relationship. She was successfully treated 5 years ago but has relapsed—this suggests she needs more than encouragement; she needs systematic reactivation of the cognitive and behavioral skills that previously helped her.
+
+Instead, she received generic advice that she has already tried and found ineffective ("Focusing on the good feels a little useless most of the time"). She left the session without a clear understanding of why her anxiety persists, what maintains her avoidance, how her sleep problems relate to her anxiety, or what specific steps she should take to improve. Without a coherent treatment plan, between-session practice, and systematic exploration of her cognitive patterns, her symptoms are likely to persist or worsen. The risk is that she will become discouraged by the lack of progress, disengage from treatment, and remain trapped in the anxiety-avoidance cycle that has cost her employment, social relationships, and quality of life.
+
+---
+
+## Recommendations
+
+### 1. **Establish a Structured CBT Agenda and Case Conceptualization (HIGHEST PRIORITY)**
+
+**Action:** Before the next session, develop a clear case conceptualization and treatment plan. At the start of the next session, collaboratively establish an agenda with Bernadette.
+
+**Example:**
+- "Bernadette, I want to make sure we're using our time together in the most helpful way. You mentioned two main concerns: anxiety in social situations that's keeping you from work and relationships, and excessive sleepiness that's affecting your functioning. Both are important. Which one feels most urgent to address first? Or should we work on both together?"
+- "Here's how I'm thinking about your situation: Your anxiety seems to be driven by thoughts about what others might think of you, and you've learned to avoid social situations to manage that anxiety. But avoidance actually keeps the anxiety going because you never get to test whether your worries are accurate. Your sleep issues may be partly related to anxiety and partly to other factors we should explore. Does that match your understanding?"
+- "Here's my plan for how we can work together: First, we'll identify the specific thoughts that trigger your anxiety. Then we'll look at the evidence for and against those thoughts. Then we'll gradually practice social situations so you can see that your predictions don't come true. We'll also address your sleep. Does that sound like a reasonable approach?"
+
+**Practice:** Before your next session, write out your case conceptualization in 2-3 sentences. What maintains her anxiety? What maintains her hypersomnolence? How do they interact? What is your treatment strategy? This will guide your session structure.
+
+---
+
+### 2. **Replace Self-Disclosure with Genuine Empathic Understanding**
+
+**Action:** Eliminate personal anecdotes. Instead, demonstrate understanding by reflecting back the patient's specific experience and asking questions that show you grasp her unique situation.
+
+**Example (Instead of "When I was feeling down, I found that..."):**
+- "It sounds like you're caught in a difficult pattern: when you think about social situations, your mind goes to all the things that could go wrong, and then you avoid those situations. But when you avoid them, the anxiety doesn't get better—it actually stays the same or gets worse. Is that accurate?"
+- "You mentioned that positive thinking feels useless. That makes sense because just trying to think positive doesn't address the underlying worry. Let's look at what's actually driving that worry."
+- "You were successfully treated for anxiety 5 years ago. I'm curious: what was different then? What helped? What changed since then?"
+
+**Practice:** In your next session, count how many times you share a personal anecdote. The goal is zero. Instead, ask questions that demonstrate you understand her specific situation.
+
+---
+
+### 3. **Implement Guided Discovery Through Socratic Questioning**
+
+**Action:** Replace advice-giving with questions that help Bernadette discover her own insights about her anxiety patterns and test her predictions.
+
+**Example:**
+- "You mentioned fear of embarrassment at the gym. What specifically do you imagine happening? What's the worst-case scenario in your mind?"
+- "Has that worst thing actually happened before? Tell me about a time you felt embarrassed. What was the actual outcome?"
+- "When you stay home to avoid anxiety, does the anxiety get better or worse over time?"
+- "You said your mind goes to 'all the things that could go wrong.' Can you tell me one specific thing you're worried about? Let's look at the evidence for and against that worry."
+- "What would it mean about you if someone did judge you? Is that actually true?"
+
+**Practice:** In your next session, aim for at least 5 Socratic questions designed to help her examine her anxious thoughts. Write these questions in advance if needed.
+
+---
+
+### 4. **Conduct a Detailed Cognitive Assessment of Her Anxiety**
+
+**Action:** Systematically identify the automatic thoughts, core beliefs, and behavioral patterns maintaining her social anxiety.
+
+**Example:**
+- "Let's pick a specific situation where you feel anxious. You mentioned the gym. Imagine you're walking into the gym. What thoughts go through your mind?"
+- "What do you think people are thinking about you?"
+- "What's the evidence that people are actually thinking that? What's the evidence against it?"
+- "What do you do to manage that anxiety? Do you avoid eye contact? Stay quiet? Leave early?"
+- "When you do those things, does it help in the moment? Does it help long-term?"
+
+**Practice:** Conduct a full cognitive assessment in your next session. Use a thought record format: Situation → Automatic Thought → Emotion → Behavior → Outcome. This will guide your treatment planning.
+
+---
+
+### 5. **Assess and Address the Anxiety-Hypersomnolence Connection**
+
+**Action:** Explore whether anxiety is contributing to her sleep problems and whether hypersomnolence is maintaining her avoidance.
+
+**Example:**
+- "When you're lying in bed at night, what goes through your mind? Are you worrying about social situations or other things?"
+- "Does your anxiety affect your sleep quality? Do you wake up during the night? Have racing thoughts?"
+- "When you're sleeping 9+ hours and taking naps, what happens to your anxiety? Does it get better or worse?"
+- "When you're very sleepy, does that make it harder to face social situations? Does it give you an excuse to stay home?"
+- "Let's look at your sleep log together. What patterns do you notice?"
+
+**Practice:** Develop a sleep assessment protocol. Ask about sleep onset, sleep quality, daytime alertness, and the relationship between sleep and anxiety. This will inform whether you need to address sleep hygiene, behavioral sleep restriction, or anxiety-related sleep disruption.
+
+---
+
+### 6. **Assign Specific, Rationale-Based Homework**
+
+**Action:** At the end of each session, assign 1-2 specific between-session tasks with clear rationale and tracking mechanism.
+
+**Example:**
+- "This week, I'd like you to keep a thought record. When you feel anxious, write down: (1) What situation triggered the anxiety? (2) What thought went through your mind? (3) How anxious did you feel (0-100)? (4) What actually happened? This will help us identify patterns in your thinking. Can you do that?"
+- "This week, let's do a behavioral experiment. I'd like you to go to one place where you might encounter new people—a coffee shop, a park, a store. Spend 10 minutes there. Before you go, predict what will happen. After, write down what actually happened. Did anyone judge you? Did anyone even notice you? This will help us test whether your predictions are accurate."
+- "This week, let's start tracking your sleep. Write down: (1) What time you go to bed, (2) How long you sleep, (3) How many naps you take, (4) How alert you feel during the day (0-10). This will help us see if there are patterns we can change."
+
+**Practice:** Before your next session, write out 2-3 homework options. Choose the one most relevant to her case. Explain the rationale: "The reason I'm asking you to do this is because..." Ensure she understands and agrees. Check her understanding: "Can you tell me what you're going to do this week?"
+
+---
+
+### 7. **Implement Behavioral Experiments to Test Anxious Predictions**
+
+**Action:** Design and assign behavioral experiments that help Bernadette test whether her catastrophic predictions actually come true.
+
+**Example:**
+- "You're worried that people will laugh at you at the gym. Let's design an experiment. This week, go to the gym for 15 minutes. Wear whatever you normally would. Notice: Does anyone laugh at you? Does anyone even look at you? What actually happens? Write down your predictions before you go and what actually happened after. We'll review this together."
+- "You're worried about embarrassing yourself in social situations. Let's do a smaller experiment first. This week, make one phone call to a friend or family member. Notice your anxiety before, during, and after. What did you predict would happen? What actually happened? Did you embarrass yourself?"
+- "You're worried that if you don't sleep 9 hours, you'll be useless the next day. Let's test that. One night this week, try to sleep 7-8 hours instead of 9+. Notice how you actually feel and function the next day. Is your prediction accurate?"
+
+**Practice:** Design 2-3 behavioral experiments tailored to her specific anxious predictions. Explain the rationale: "We're doing this to test whether your worry is actually accurate." Ensure she understands the experiment and agrees to try it.
+
+---
+
+### 8. **Develop a Graded Exposure Hierarchy for Social Anxiety**
+
+**Action:** Collaboratively create a list of social situations ranked by anxiety level (0-100). Use this to plan gradual exposure.
+
+**Example:**
+- "Let's make a list of social situations that make you anxious, ranked from least to most anxiety-provoking. For example: (1) Making eye contact with a cashier (30 anxiety), (2) Asking a question in a group (50 anxiety), (3) Going to the gym (70 anxiety), (4) Attending a social event with new people (90 anxiety). We'll start with lower-anxiety situations and gradually work up. Does that make sense?"
+- "This week, let's start with a lower-anxiety situation. You mentioned making eye contact with a cashier. This week, when you're at a store, make eye contact with the cashier for 2-3 seconds. Notice your anxiety before, during, and after. What happens? Does the cashier react negatively? What's the actual outcome?"
+
+**Practice:** Create an exposure hierarchy with Bernadette. Rank situations from 0-100 anxiety. Start with situations in the 30-50 range. Plan one exposure per week, gradually increasing difficulty.
+
+---
+
+### 9. **Address Sleep Hygiene and Behavioral Factors Affecting Sleep**
+
+**Action:** Conduct a detailed sleep assessment and develop a behavioral sleep plan.
+
+**Example:**
+- "Let's talk about your sleep in detail. What time do you go to bed? What time do you wake up? How many naps do you take? How long are they? When do you take them? What's your bedroom like? Is it dark? Quiet? Cool? What do you do in bed besides sleep—do you watch TV, use your phone, worry?"
+- "I'm wondering if some of your sleep issues might be related to anxiety. When you're in bed, do you worry about social situations or other things? Does that keep you awake or make it hard to fall asleep?"
+- "Let's try some behavioral changes: (1) Use your bed only for sleep, not for watching TV or worrying. (2) Limit your naps to 20 minutes in the early afternoon. (3) Get some sunlight exposure in the morning to help regulate your sleep-wake cycle. (4) Avoid caffeine after 2 PM. Let's try these for a week and see if your sleep improves."
+
+**Practice:** Develop a sleep assessment and behavioral sleep plan. Address sleep hygiene, stimulus control, and the relationship between anxiety and sleep. Consider whether sleep restriction (limiting time in bed) might be appropriate.
+
+---
+
+### 10. **Activate Behavioral Activation and Activity Scheduling**
+
+**Action:** Help Bernadette schedule valued activities despite anxiety and sleepiness to break the avoidance cycle.
+
+**Example:**
+- "You mentioned wanting to be more present for your kids and your partner. What are some activities that are important to you or that you used to enjoy? Let's schedule one this week, even if you don't feel like doing it."
+- "I know you're tired, but sometimes doing an activity actually helps with energy and mood. This week, let's schedule a 15-minute activity that's important to you. It could be playing with your kids, spending time with your partner, reading, or something else. Do it even if you don't feel motivated. Notice how you feel afterward."
+- "We'll track this: (1) What activity did you do? (2) How much did you do it (0-100%)? (3) How did you feel before? (4) How did you feel after? This will help us see if activity actually helps your mood and energy."
+
+**Practice:** Identify 3-5 valued activities with Bernadette. Schedule one per week. Track completion and mood/energy before and after. Use this to demonstrate that behavioral activation can improve mood and energy despite anxiety and sleepiness.
+
+---
+
+### 11. **Elicit and Respond to Patient Feedback Throughout Sessions**
+
+**Action:** Regularly check for understanding, solicit reactions to interventions, and adjust based on feedback.
+
+**Example:**
+- "Does that make sense? Do you have questions about what I'm suggesting?"
+- "How does that land with you? Does that feel like something you could try?"
+- "I suggested positive thinking last time, and you said it felt useless. I hear that. Let's try a different approach. Instead of just thinking positive, let's look at what's actually driving your worry. Does that sound better?"
+- "At the end of our session today, I want to check in: Was this session helpful? Is there anything we should have discussed that we didn't? What's your takeaway from today?"
+
+**Practice:** In your next session, aim for at least 3 explicit feedback checks. Ask: "Does that make sense?" "How does that feel?" "Is this helpful?" Adjust your approach based on her responses.
+
+---
+
+### 12. **Educate Bernadette About the CBT Model and Her Diagnoses**
+
+**Action:** Provide psychoeducation about Social Anxiety Disorder and Hypersomnolence Disorder, and explain how CBT addresses them.
+
+**Example:**
+- "Social anxiety disorder is maintained by a cycle: (1) You have a thought that people will judge you, (2) That thought makes you anxious, (3) You avoid social situations to manage the anxiety, (4) Avoiding actually keeps the anxiety going because you never test whether your worry is accurate. CBT breaks this cycle by helping you examine your thoughts and gradually face feared situations."
+- "Your hypersomnolence might be partly related to anxiety—when you're anxious, your sleep quality suffers, so you sleep longer trying to feel rested. It might also be partly a primary sleep disorder. We'll address both the anxiety and the sleep behaviors."
+- "Here's how we'll work together: We'll identify your anxious thoughts, examine the evidence for and against them, and gradually practice social situations. We'll also improve your sleep through behavioral changes. Research shows this approach is very effective for social anxiety."
+
+**Practice:** Develop a 5-minute psychoeducation segment for your next session. Explain her diagnoses, the CBT model, and your treatment approach. Ensure she understands and agrees.
+
+---
+
+## Overall Session Score: 1.0/6
+
+**Summary:**
+
+This session represents a fundamental failure of evidence-based CBT delivery. Across 11 core competencies, the therapist scored 0/6 on five critical dimensions (agenda, guided discovery, strategy for change, CBT techniques, homework) and 1-3/6 on the remaining six. The average score of 1.0/6 reflects that while the therapist demonstrated basic warmth and engagement, the session lacked the structured, technique-driven approach necessary for treating Social Anxiety Disorder and Hypersomnolence Disorder.
+
+The therapist provided supportive counseling rather than CBT. No case conceptualization was evident, no treatment plan was articulated, no cognitive or behavioral assessment was conducted, and no between-session structure was established. The patient left the session with encouragement but without specific tools, clear understanding of her anxiety patterns, or a mechanism for testing her predictions. Without immediate and substantial changes to the therapist's approach, this treatment is unlikely to produce meaningful symptom improvement and risks reinforcing Bernadette's belief that her anxiety and hypersomnolence are intractable problems rather than treatable conditions.
+
+**Critical immediate actions required:**
+
+1. Develop a clear case conceptualization and treatment plan before the next session.
+2. Establish a structured agenda at the start of the next session.
+3. Eliminate personal self-disclosure and replace it with genuine empathic understanding.
+4. Implement Socratic questioning and guided discovery.
+5. Conduct a detailed cognitive assessment of her anxiety.
+6. Assign specific, rationale-based homework with tracking mechanisms.
+7. Design behavioral experiments to test her anxious predictions.
+8. Develop a graded exposure hierarchy for social situations.
+9. Address sleep through behavioral assessment and intervention.
+10. Elicit and respond to patient feedback throughout sessions.
+
+Without these changes, this therapist is not delivering evidence-based CBT and should not continue treating patients with CBT diagnoses without intensive supervision and retraining.

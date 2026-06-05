@@ -1,0 +1,798 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Bipolar I Disorder, Current Episode Manic, Severe, with Psychotic Features, with Peripartum Onset
+
+--- CASE STUDY ---
+
+Ursula Norman, a 32-year-old nurse, was brought to the ED 6 days postpartum due to bizarre behavior and fixed beliefs that she had smothered her newborn. Her husband reported that after a normal pregnancy and delivery, Ms. Norman became irritable, anxious, and experienced rapid mood shifts between elation and tearfulness beginning on postpartum day 3. She exhibited extreme sleep deprivation, agitation, overactivity, distractibility, flight of ideas, and hyperreligiosity. She held multiple delusional beliefs, including identifying “evil” in people and perceiving special powers, and repeatedly insisted she had already killed her child.
+
+Ms. Norman’s psychiatric history included three major depressive episodes in her teens and early 20s, and a prior manic episode requiring hospitalization. Family history was notable for her mother having a postpartum psychiatric admission. Physical and laboratory exams were normal.
+
+Discussion: Ms. Norman presents with severe mania with psychotic features in the immediate postpartum period, qualifying as a psychiatric emergency. Her presentation is consistent with postpartum psychosis: abrupt onset, rapid fluctuation of symptoms, severe affective dysregulation, delusions, and risk to self and child. Given her history of bipolar disorder, she is at high risk for postpartum episodes. Early recognition and hospitalization are critical for maternal and infant safety.
+
+--- BEHAVIOUR ---
+
+Rapidly shifting mood: euphoria, tearfulness, irritability
+
+Distractible, overactive, pressured and digressive speech
+
+Flight of ideas
+
+Hyperreligiosity and grandiose delusions
+
+Fixed false belief of having killed her newborn
+
+Agitation and inability to sleep
+
+Emotional lability with rapid mood swings
+
+--- DSM-5 SYMPTOMS ---
+
+Elevated, expansive, or irritable mood
+
+Grandiosity
+
+Decreased need for sleep
+
+Pressured speech
+
+Flight of ideas
+
+Distractibility
+
+Psychotic features (delusions, hyperreligiosity, false beliefs)
+
+Functional impairment
+
+Onset in peripartum period
+
+--- PATIENT PROFILE ---
+Name: Ursula Norman
+Sex: Female
+Age: 32 years
+DOB: May 14, 1991
+Place of Birth: Chicago, IL
+Address: 214 Oakridge Drive, Chicago, IL
+Contact: (555) 321-9876
+Marital Status: Married
+Occupation: Nurse
+Education: Bachelor’s degree in Nursing
+Religion: Not specified
+Presenting Complaint: Bizarre postpartum behavior, fixed delusional beliefs regarding infant
+Psychiatric History: Three prior major depressive episodes; one prior manic episode requiring hospitalization
+Substance Use: No alcohol or illicit drug use reported
+Medical History: Recent uncomplicated pregnancy and delivery
+Family History: Mother with postpartum psychiatric episode
+Mental Status: Labile mood, overactive, pressured speech, flight of ideas, hyperreligious delusions, fixed false beliefs regarding infant
+Cognitive Function: Alert but distractible; poor concentration
+Insight/Judgment: Impaired
+
+--- DIAGNOSIS ---
+Bipolar I Disorder, Current Episode Manic, Severe, with Psychotic Features, with Peripartum Onset
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Ursula Norman, a 32-year-old nurse, presents to the emergency department six days postpartum after being brought in by her husband due to concerns about bizarre behavior and fixed beliefs related to her newborn. The intake is prompted by her husband’s report of abrupt mood changes and unusual behavior following an otherwise uncomplicated pregnancy and delivery.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hello, it’s good to see you today. Before we begin, I’d like to set an agenda together. Are there one or two things you’d like to focus on in this session? Also, could you rate your current mood on a scale from 0 to 10, where 0 is very low and 10 is very good? This will help us track how you’re feeling as we go along. 
+ PATIENT: Hi. It's a bit of a whirlwind in my head right now, honestly. I feel like everything is all over the place—sometimes I’m really happy, but then I start to get upset for no reason. If I had to put a number on it, maybe a 6? Like, not terrible but not quite right either. 
+
+As for what to focus on, I guess... I want to understand why my thoughts keep racing so fast they won’t stop, and why sometimes I feel like I can do anything or, at the same time, like everything is hopeless. Also, I keep feeling really guilty, like I did something terrible to my baby, which I know sounds crazy, but the feeling is so real. That scares me a lot. Maybe we could talk about that too? 
+ PSYCHIATRIST: Thank you for sharing that with me; it sounds like you’re experiencing quite a mix of emotions and some distressing thoughts. Let’s work together to understand these better. For today, how about we focus on two things: first, the racing thoughts and mood swings you mentioned, and second, the feelings of guilt related to your baby? Does that sound okay to you?
+
+Before we dive in, could you tell me about a recent moment when these racing thoughts or feelings of guilt came up? What was happening, and what was going through your mind at that time? 
+ PATIENT: Yeah, that sounds good. Just earlier today, I was trying to get some things done around the house, but my mind wouldn’t stop jumping from one thing to another. I’d start thinking about something happy, then suddenly I’d feel like crying, then I’d get angry for no reason. It’s like my brain won’t let me rest. 
+
+And then the worst part is when I think about my baby. These thoughts come up, telling me maybe I hurt her, even though I know I didn’t. It’s like this voice in my head saying I smothered her, even though I haven’t. When those thoughts hit, I feel heavy, like a terrible weight on my chest, and I just want to run away from them. It’s so confusing because I love my baby so much, but these feelings make me feel like a monster. 
+ PSYCHIATRIST: Thank you for describing that so openly. It sounds really tough to have your mind jumping around like that and then to be weighed down by those painful thoughts about your baby. 
+
+Let’s take a moment to map this out together: When you’re trying to get things done, the situation, your thoughts jump rapidly—sometimes happy, then suddenly guilt or anger. Those thoughts about possibly hurting your baby come up, even though you know you haven’t, which then leads to feelings of heaviness and self-judgment. How do you usually respond or behave when these feelings and thoughts come up?
+
+Also, on a scale from 0 to 10, how intense would you say your guilt feels in those moments? 
+ PATIENT: When those feelings come up, I usually try to distract myself—like doing more chores or trying to keep busy. Sometimes I pace around or talk fast to myself because it feels like if I stop, the awful thoughts just get louder. Other times, I just feel stuck, like I want to cry but can’t—so I just shut down for a bit.
+
+The guilt... it’s really strong. I’d say it gets to about an 8 or 9 on the scale when it’s at its worst. It feels overwhelming, like it’s swallowing me whole. Even when I try to tell myself the truth, that I didn’t hurt my baby, the guilt won’t ease. It’s terrifying and just won’t let me be. 
+ PSYCHIATRIST: Thank you for sharing that. It sounds like your mind is very active and that the guilt feels overwhelming and persistent despite your efforts to counter it. Let’s explore the thought that you might have hurt your baby. 
+
+What evidence do you have that supports this thought? And what evidence do you have that goes against it? This might help us see the thought from a clearer perspective. 
+ PATIENT: Well, the thought itself doesn’t have any real proof, you know? I didn’t actually hurt her. I was with her the whole time, and my husband was there too. She’s been fine, breathing and all. But then this feeling just grabs hold of me, and it’s like my mind imagines something terrible anyway, even though I don’t want to think it.
+
+On the other hand, the evidence against it is all around me — my baby is safe, the doctors checked her and said she’s okay. I’ve never done anything to hurt her. My family loves her and watches out for her, and they would’ve noticed if anything was wrong. But sometimes the feeling is so strong, it’s like it doesn’t matter what the facts say—it just takes over. 
+ PSYCHIATRIST: Thank you for that thoughtful reflection. It’s clear you have strong evidence that your baby is safe and well cared for, and yet the feeling of guilt persists strongly. This suggests the thought might be more emotional than factual.
+
+Let’s try to develop a more balanced thought that acknowledges both the feelings and the facts. What might be an alternative way to think about this situation that feels more realistic and less distressing? For example, something that recognizes your love and care for your baby while also addressing the fear and guilt? How does that sound? 
+ PATIENT: That sounds... a little hard, but I want to try. Maybe something like, “Even though I sometimes have scary thoughts about hurting my baby, I know deep down I love her and would never want to hurt her.” 
+
+Or maybe, “These feelings are really strong and scary, but they don’t mean I did anything wrong—they’re just part of what’s happening in my mind right now.” 
+
+It helps a bit to say that out loud. It’s like a small step towards not believing the guilt so much. Does that make sense? 
+ PSYCHIATRIST: Yes, that makes a lot of sense, and those are very compassionate and balanced thoughts. They acknowledge your feelings while grounding you in the reality of your care and love for your baby. 
+
+Now, thinking about these alternative thoughts, how do you feel on the guilt scale compared to before? Has it shifted at all? 
+ PATIENT: Saying those thoughts kind of helps ease the weight. It doesn’t make the guilt go away completely, but maybe it brings it down from like an 8 or 9 to a 5 or 6. It’s still there, but not as crushing.
+
+It feels like a little crack in the wall that usually holds all that heavy guilt. Like, I’m not totally trapped by those feelings, at least not right this minute. It’s a bit of relief. 
+ PSYCHIATRIST: That’s an important shift, even if it’s a small one. It shows that these alternative thoughts can begin to soften the intensity of your guilt. 
+
+Let’s think about a small step you could take between now and our next session to test these thoughts in real life. For example, when you notice those guilt feelings or racing thoughts, you might try to pause and remind yourself of the balanced thought we created. Does that sound doable? What might get in the way of trying this? 
+ PATIENT: I think I can try that. Pausing when the guilt hits and reminding myself of those balanced thoughts sounds like something I could do. The hard part might be remembering to actually do it when everything feels so overwhelming and fast in my head.
+
+Sometimes it feels like the feelings just take over before I can catch them. And other times, I worry that doing this might not work, and then I’d just feel worse. But I want to try—even if it’s hard. Maybe I can write the balanced thoughts down somewhere where I’ll see them often, like on the fridge or in my phone. That might help me remember. 
+ PSYCHIATRIST: That’s a thoughtful plan—using a visible reminder like writing the balanced thoughts down can really support you in catching those feelings early. It’s also understandable that the intensity and speed of your thoughts might make it challenging to pause, and that’s okay.
+
+On a scale from 0 to 10, how confident do you feel about trying this between now and our next session? And is there anything else that might help you feel more prepared to give it a go? 
+ PATIENT: I’d say my confidence is around a 6. I want to try, but I’m still worried I might get overwhelmed and forget or get stuck in those feelings. Maybe if I practice the balanced thoughts with you a few more times now, that would help them feel more natural so I don’t have to think so hard about them later.
+
+Also, if I could have a short note or phrase, something simple to say to myself quickly when I start feeling bad, that might make it easier. Like a quick reminder to stop and breathe. That might keep me from spiraling too fast. Does that make sense? 
+ PSYCHIATRIST: That makes a lot of sense, and it’s a great idea to practice the balanced thoughts now to build familiarity and ease. Let’s try that together: I’ll say one of the balanced thoughts, and you can repeat it or adapt it in a way that feels right to you. For example, “These feelings are strong, but they don’t mean I hurt my baby.” How does that sound?
+
+Also, we can come up with a short, simple phrase you can use quickly when you notice the guilt starting—something like “Pause and breathe” or “I’m safe right now.” What phrase feels most helpful or natural for you? 
+ PATIENT: Okay, I’ll try. “These feelings are strong, but they don’t mean I hurt my baby.” It feels a little strange saying it out loud, but I think I can say it when I need to. Maybe I could change it slightly to, “These feelings are strong, but I didn’t hurt my baby,” because that feels more certain and true.
+
+For a quick phrase, I really like “I’m safe right now.” It’s simple and calming, something I could say to myself even if I’m feeling rushed or scrambled. It reminds me that this moment isn’t dangerous, and maybe it helps my mind slow down a bit. 
+ PSYCHIATRIST: That’s a wonderful adaptation, and “I’m safe right now” is a very grounding and calming phrase. Practicing these now can definitely help make them more accessible when you need them.
+
+To summarize, we’ve identified how your racing thoughts and guilt connect, explored evidence around the guilt, developed balanced thoughts, and created a simple phrase to use as a quick reminder. Your next step is to try pausing and using these thoughts or the phrase when you notice the guilt or racing thoughts, possibly with a written reminder in a visible place.
+
+Before we finish, what stood out most for you in today’s session? Was there anything that felt especially helpful or maybe less helpful? 
+ PATIENT: What stood out most was realizing that even though the guilt feels so real and terrifying, there are facts that say otherwise, and I can remind myself of that. Saying out loud that “I didn’t hurt my baby” and “I’m safe right now” actually felt kind of powerful, even if it’s new and a bit strange. 
+
+I think what felt less helpful was how hard it is to slow down my thoughts when they start moving so fast—like the fear and racing just take over before I get a chance to do anything different. But practicing the thoughts with you today definitely helps a bit. 
+
+I’m glad we talked about all this. It feels like a small way to start fighting back against the feelings that have been so overwhelming. 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated strong agenda-setting skills by explicitly inviting the patient to identify focus areas ("Are there one or two things you'd like to focus on in this session?") and then collaboratively narrowing to two concrete targets: racing thoughts/mood swings and guilt related to the baby. This represents genuine collaboration rather than therapist-imposed priorities. The therapist also introduced a mood rating scale (0-10) early, establishing a measurement baseline for tracking progress—a hallmark of structured CBT.
+
+However, the agenda lacked explicit time allocation or prioritization discussion. The therapist did not clarify how much time would be devoted to each topic, nor did they establish what would constitute success for the session. Additionally, while the patient's racing thoughts, mood instability, and guilt were addressed, the therapist did not explicitly acknowledge or address the patient's sleep deprivation, agitation, or hyperactivity—critical symptoms in postpartum mania that warrant direct assessment and intervention planning. The agenda implicitly treated this as a primarily cognitive/emotional session rather than acknowledging the severe manic presentation requiring urgent psychiatric intervention.
+
+**Summary:**
+
+The therapist set a collaborative, specific agenda with two clear targets and established baseline measurement. However, the agenda lacked explicit time management, did not prioritize among competing concerns, and failed to address critical manic symptoms (sleep deprivation, agitation, hyperactivity) that should have been central to session planning given the patient's psychiatric emergency status.
+
+---
+
+### 2. Feedback
+### **Score: 4/6**
+
+**Explanation:**
+
+The therapist demonstrated adequate feedback-seeking behavior by asking the patient to rate guilt intensity on a 0-10 scale multiple times throughout the session ("On a scale from 0 to 10, how intense would you say your guilt feels?") and checking understanding after introducing the cognitive restructuring exercise ("How does that sound?"). At the end of the session, the therapist explicitly solicited feedback about what was helpful and less helpful ("What stood out most for you in today's session? Was there anything that felt especially helpful or maybe less helpful?").
+
+However, feedback elicitation was inconsistent and reactive rather than proactive. The therapist did not regularly check for understanding of the cognitive model being introduced, did not ask whether the patient felt the session was addressing her most pressing concerns, and did not solicit feedback about the pace or depth of exploration. Critically, the therapist did not check whether the patient understood the connection between her symptoms and the proposed interventions, nor did they verify that the patient's confidence level (6/10) was adequate before assigning homework. The final feedback question was asked only at the very end of the session, missing opportunities for mid-session adjustment.
+
+**Summary:**
+
+The therapist elicited feedback at key moments and at session end, but feedback-seeking was not systematic or frequent enough to ensure ongoing understanding and satisfaction. Mid-session adjustment opportunities were missed.
+
+---
+
+### 3. Understanding
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated strong empathic understanding of the patient's internal experience. Reflections were accurate and compassionate: "It sounds really tough to have your mind jumping around like that and then to be weighed down by those painful thoughts about your baby" accurately captured the patient's phenomenology. The therapist recognized the paradox the patient was experiencing—knowing intellectually that she hadn't harmed her baby while being overwhelmed by guilt and intrusive thoughts—and reflected this back: "It's clear you have strong evidence that your baby is safe and well cared for, and yet the feeling of guilt persists strongly."
+
+The therapist also demonstrated understanding of the patient's behavioral coping strategies (distraction, pacing, shutting down) and validated the difficulty of the experience. Listening was generally attentive, with appropriate follow-up questions that built on what the patient shared.
+
+However, there was a critical gap in understanding the severity and nature of the patient's presentation. The therapist treated the guilt and racing thoughts as primarily anxiety/depression-related cognitions amenable to standard cognitive restructuring, without demonstrating understanding that these may represent psychotic features (fixed false beliefs, delusions) in the context of acute postpartum mania. The patient's statement about "this voice in my head saying I smothered her" and the fixed, persistent nature of the belief despite contradictory evidence suggests possible command hallucinations or delusional ideation—not simply distorted automatic thoughts. The therapist's approach of cognitive restructuring, while not harmful, may be insufficient for psychotic-level symptoms and misses the urgency of the clinical presentation.
+
+**Summary:**
+
+The therapist demonstrated warm, accurate empathy and good listening skills with strong reflection of the patient's emotional experience. However, there was insufficient understanding of the severity of the patient's presentation—specifically, the potential psychotic nature of her beliefs and the psychiatric emergency status of acute postpartum mania.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated excellent interpersonal skills throughout the session. Warmth was evident in the opening greeting ("Hello, it's good to see you today") and maintained consistently through validating statements ("That's a thoughtful plan," "That's a wonderful adaptation"). The therapist displayed genuine concern for the patient's wellbeing, appropriate professional boundaries, and a non-judgmental stance. When the patient expressed fear about her thoughts ("which I know sounds crazy"), the therapist did not pathologize or minimize but instead normalized the experience and explored it collaboratively.
+
+Genuineness was present—the therapist did not use overly clinical language and responded authentically to the patient's contributions. Confidence was conveyed through clear, structured guidance without being directive or authoritarian. The therapist created a safe environment where the patient felt comfortable sharing distressing content and even practicing new thoughts aloud.
+
+The only minor limitation is that the therapist did not explicitly address the patient's fear about "feeling like a monster" or the shame component of her experience with the same depth as the guilt itself. A slightly deeper exploration of self-compassion or the relationship between postpartum mood changes and intrusive thoughts might have enhanced the interpersonal connection further.
+
+**Summary:**
+
+The therapist demonstrated excellent warmth, empathy, genuineness, and professionalism, creating a safe and collaborative therapeutic environment. Interpersonal skills were a clear strength of the session.
+
+---
+
+### 5. Collaboration
+### **Score: 5/6**
+
+**Explanation:**
+
+Collaboration was strong throughout most of the session. The therapist explicitly invited the patient to set the agenda ("Are there one or two things you'd like to focus on in this session?"), worked together to narrow priorities, and positioned interventions as collaborative experiments ("Let's work together to understand these better," "Let's try that together"). When introducing cognitive restructuring, the therapist asked the patient to generate her own balanced thought rather than imposing one: "What might be an alternative way to think about this situation that feels more realistic and less distressing?" The patient then adapted the therapist's suggestion ("I didn't hurt my baby" instead of the more tentative phrasing), and the therapist affirmed this adaptation: "That's a wonderful adaptation."
+
+The patient was actively engaged in problem-solving, generating her own coping strategies (writing thoughts on the fridge, using her phone), and the therapist built on these suggestions rather than overriding them. The homework was framed as something the patient wanted to try ("I want to try") rather than something prescribed.
+
+However, collaboration had a significant limitation: the therapist did not collaboratively establish a shared understanding of the patient's diagnosis or the severity of her condition. There was no discussion of whether the patient understood her symptoms as part of postpartum mania, what that means, or what the treatment plan should be beyond cognitive work. The therapist did not invite the patient's input on whether medication, hospitalization, or other urgent interventions might be needed. This represents a gap in collaborative decision-making about the overall treatment strategy, not just the session's tactical interventions.
+
+**Summary:**
+
+The therapist demonstrated strong collaboration within the session's cognitive work, inviting patient input and building on patient-generated solutions. However, collaboration did not extend to the larger treatment planning or diagnostic formulation, which represents a significant oversight given the severity of the presentation.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 4/6**
+
+**Explanation:**
+
+The therapist maintained reasonable session structure and pacing. The session moved logically from agenda-setting to symptom exploration to cognitive restructuring to homework assignment. The therapist did not allow excessive tangents and kept the patient focused on the two identified targets. The depth of exploration on each topic was moderate—not rushed, but not excessively prolonged.
+
+However, there were inefficiencies in time use. The therapist spent considerable time on cognitive restructuring and thought-challenging (approximately 40% of the session) without first establishing whether this was the most appropriate intervention for a patient presenting with possible psychotic features and acute mania. Time was not allocated to assessing critical safety factors: current suicidal or homicidal ideation, access to means, whether the patient is sleeping at all, whether she is safe to care for the infant, or whether hospitalization is indicated. These are not tangential concerns—they are essential for a patient six days postpartum with fixed false beliefs about having harmed her child.
+
+Additionally, the therapist did not pace the session to include psychoeducation about postpartum mania, the role of medication, or the urgency of psychiatric follow-up. The session felt like a standard anxiety/depression CBT session rather than one tailored to the acute severity and complexity of the presentation.
+
+**Summary:**
+
+The therapist maintained reasonable pacing and structure within the cognitive work but failed to allocate time to critical safety assessment and psychiatric urgency. The session did not reflect appropriate prioritization given the patient's emergency status.
+
+---
+
+### 7. Guided Discovery
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated strong use of Socratic questioning and guided discovery. Rather than telling the patient her thoughts were distorted, the therapist asked: "What evidence do you have that supports this thought? And what evidence do you have that goes against it?" This invited the patient to examine her own thinking and reach conclusions independently. The patient responded by generating her own evidence and recognizing the disconnect between her feelings and facts.
+
+When developing alternative thoughts, the therapist again used guided discovery: "What might be an alternative way to think about this situation that feels more realistic and less distressing?" rather than imposing a reframed thought. The patient generated her own adaptation, demonstrating genuine insight rather than compliance.
+
+The therapist also used discovery to explore behavioral responses: "How do you usually respond or behave when these feelings and thoughts come up?" This invited the patient to observe her own patterns rather than being told what she does.
+
+However, guided discovery was limited in scope. The therapist did not use Socratic questioning to explore the nature of the patient's beliefs more deeply—for example, asking "How certain are you that you smothered your baby?" or "What would need to happen for you to be completely sure you didn't harm her?" or "Have you ever had thoughts like this before?" Such questions might have helped the patient (and therapist) recognize the fixed, delusional quality of the belief and its resistance to standard cognitive challenge. The therapist also did not guide discovery around the patient's sleep deprivation, racing thoughts, or mood instability—accepting these as background context rather than exploring them as central features requiring urgent intervention.
+
+**Summary:**
+
+The therapist used Socratic questioning effectively within the cognitive restructuring work, inviting patient discovery and insight. However, guided discovery was not applied to the full range of the patient's symptoms or to exploring the severity and nature of her beliefs.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 3/6**
+
+**Explanation:**
+
+The therapist identified and focused on the patient's guilt and the specific thought "I smothered my baby" as central targets. This was appropriate given the patient's stated distress about this belief. The therapist also explored behavioral responses (distraction, pacing, shutting down), which are relevant to understanding the patient's coping patterns.
+
+However, the therapist failed to focus on the most clinically critical cognitions and behaviors in this case. The patient presented with:
+- **Fixed false beliefs** about having harmed her baby (possible delusion)
+- **Racing thoughts** and flight of ideas (core manic symptom)
+- **Severe sleep deprivation** (critical manic feature and safety concern)
+- **Mood instability** with rapid shifts between euphoria and tearfulness
+- **Agitation and hyperactivity** (mentioned in the case but not explored)
+- **Hyperreligiosity** (mentioned in the case but not assessed)
+- **Possible command hallucinations** ("this voice in my head")
+
+The therapist focused narrowly on the guilt and the specific thought about the baby, treating this as an anxiety-related intrusive thought rather than exploring whether this represents a fixed delusion resistant to reality testing. The racing thoughts were mentioned but not targeted for intervention. Sleep deprivation was not assessed or addressed. The therapist did not explore whether the patient's beliefs are truly delusional (fixed, false, resistant to evidence) or whether they are overvalued ideas or severe anxiety-driven thoughts.
+
+This represents a significant clinical error: focusing on a secondary or tertiary symptom (guilt about a specific thought) while missing the primary psychiatric emergency (acute postpartum mania with psychotic features). The most clinically important cognitions—the fixed beliefs about having harmed the baby, the racing thoughts, the hyperreligious ideation—were not systematically explored or targeted.
+
+**Summary:**
+
+The therapist focused on the patient's guilt and a specific intrusive thought, which was relevant to the patient's stated distress but represented a secondary rather than primary clinical target. Critical manic symptoms (racing thoughts, sleep deprivation, fixed false beliefs, possible psychosis) were not identified as key cognitions/behaviors requiring intervention.
+
+---
+
+### 9. Strategy for Change
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist's strategy for change was to use cognitive restructuring: identify the guilt-inducing thought, examine evidence for and against it, develop a balanced alternative thought, and practice this alternative thought as homework. This is a coherent CBT strategy and is appropriate for anxiety-driven intrusive thoughts or depressive rumination.
+
+However, this strategy is fundamentally mismatched to the patient's presentation and diagnosis. The patient presents with **acute postpartum mania with psychotic features**—a psychiatric emergency requiring:
+1. **Immediate psychiatric evaluation** for medication (mood stabilizers, antipsychotics, possibly hospitalization)
+2. **Safety assessment** (risk to self and infant)
+3. **Sleep intervention** (critical for mania management)
+4. **Psychoeducation** about postpartum mania and the role of biological factors
+5. **Possible hospitalization** given the severity, psychotic features, and risk
+
+The therapist's strategy of cognitive restructuring alone is insufficient and potentially inappropriate for psychotic-level symptoms. Fixed false beliefs and delusions typically do not respond well to standard cognitive challenging and may require antipsychotic medication. The strategy does not address the underlying manic episode, which is driving the racing thoughts, sleep deprivation, and mood instability.
+
+Furthermore, the strategy lacks a clear conceptualization of the patient's condition. The therapist did not articulate a formulation such as: "Your symptoms appear to be part of a postpartum manic episode with psychotic features. The guilt and intrusive thoughts are likely driven by the underlying mood dysregulation and possible psychosis. We need to address the mania itself through medication and possibly hospitalization, while also providing support for the distressing thoughts."
+
+The strategy is also not clearly connected to measurable outcomes. The therapist did not establish what success would look like (e.g., "We'll know this is working when your guilt decreases to a 3 or below AND you're sleeping 6+ hours per night AND your racing thoughts slow down").
+
+**Summary:**
+
+The therapist employed a standard cognitive restructuring strategy appropriate for anxiety or depression but fundamentally mismatched to acute postpartum mania with psychotic features. The strategy lacks a clear conceptualization of the patient's condition, does not address the underlying manic episode, and does not include urgent psychiatric interventions (medication, safety assessment, possible hospitalization).
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 4/6**
+
+**Explanation:**
+
+The therapist applied several CBT techniques with moderate skill:
+
+1. **Thought Record / Evidence Examination**: The therapist asked the patient to identify evidence for and against the guilt-inducing thought. The patient generated evidence ("She's been fine, breathing and all," "The doctors checked her and said she's okay") and recognized the disconnect from her feelings. This was done with reasonable skill, though not in a formal thought record format.
+
+2. **Cognitive Restructuring / Thought Challenging**: The therapist guided the patient to develop balanced alternative thoughts ("These feelings are strong, but I didn't hurt my baby," "I'm safe right now"). The patient adapted these thoughts and reported a decrease in guilt from 8-9 to 5-6, suggesting some effectiveness.
+
+3. **Behavioral Activation / Coping Strategies**: The therapist explored the patient's current coping behaviors (distraction, pacing) and helped develop new coping strategies (writing thoughts down, using a grounding phrase).
+
+4. **Homework Assignment**: The therapist assigned homework (practicing balanced thoughts, using the grounding phrase, writing reminders) with some rationale and a confidence check.
+
+However, there were significant limitations in technique application:
+
+- **Lack of Psychoeducation**: The therapist did not provide psychoeducation about the cognitive model, postpartum mania, or the relationship between thoughts, feelings, and behaviors. The patient may not understand why these techniques are being used or how they connect to her overall treatment.
+
+- **No Behavioral Experiments**: The therapist did not propose behavioral experiments to test the patient's beliefs (e.g., "Let's observe what happens when you spend time with your baby and notice whether any harm occurs"). This would be a more powerful technique than thought challenging alone.
+
+- **No Activity Scheduling**: Given the patient's agitation, racing thoughts, and sleep deprivation, activity scheduling or sleep hygiene interventions would be appropriate CBT techniques but were not employed.
+
+- **No Exposure or Behavioral Activation for Anxiety**: If the guilt is anxiety-driven, exposure-based techniques (e.g., spending time with the baby while tolerating the anxiety) might be more effective than cognitive restructuring alone.
+
+- **Inadequate Assessment for Psychosis**: The therapist did not use techniques appropriate for psychotic symptoms, such as reality testing, exploring the evidence for delusions more rigorously, or assessing for command hallucinations. The statement "this voice in my head saying I smothered her" was not explored.
+
+- **No Safety Planning**: Given the patient's fixed false belief about having harmed her baby and her postpartum status, safety planning (identifying warning signs, coping strategies, emergency contacts) would be an essential CBT technique but was not implemented.
+
+**Summary:**
+
+The therapist applied basic cognitive restructuring and thought challenging with moderate skill, resulting in some symptom reduction. However, the range of techniques was limited, and critical techniques for the patient's presentation (psychoeducation, behavioral experiments, safety planning, exposure, sleep intervention) were not employed.
+
+---
+
+### 11. Homework
+### **Score: 3/6**
+
+**Explanation:**
+
+The therapist assigned homework with some structure:
+- **Task**: Practice the balanced thoughts ("These feelings are strong, but I didn't hurt my baby") and use the grounding phrase ("I'm safe right now") when guilt or racing thoughts arise
+- **Implementation Strategy**: Write the thoughts/phrase in visible places (fridge, phone) as reminders
+- **Rationale**: The therapist explained that practicing now would make the thoughts "more accessible when you need them" and that visible reminders would help the patient remember
+
+The therapist also checked the patient's confidence level (6/10) and asked what might get in the way, demonstrating some attention to homework feasibility.
+
+However, there were significant deficiencies:
+
+1. **Vague Specificity**: The homework was not specific enough. The therapist did not clarify:
+   - How many times per day should the patient practice?
+   - When specifically should she use the grounding phrase (e.g., "as soon as you notice guilt rising")?
+   - Should she write down the thoughts each time she uses them, or just read them?
+   - What should she do if the thoughts don't help?
+
+2. **No Prior Homework Review**: This appears to be the first session, so there was no prior homework to review. However, if this is a follow-up session, the therapist did not review whether previous homework was completed or what the patient learned from it.
+
+3. **Inadequate Rationale**: The therapist provided a basic rationale ("practicing now can definitely help make them more accessible") but did not explain the underlying CBT principle (e.g., "By practicing these thoughts now, you're building new neural pathways that will activate more automatically when you're stressed"). The patient's low confidence (6/10) suggests she may not fully understand why this homework will help.
+
+4. **No Behavioral Experiments**: The homework was purely cognitive (practicing thoughts) without behavioral components. A more robust homework assignment might include: "Spend 15 minutes with your baby each day and notice whether any harm occurs. Write down what you observe."
+
+5. **No Sleep or Activity Homework**: Given the patient's sleep deprivation and racing thoughts, homework related to sleep hygiene, activity scheduling, or reducing stimulation would be more clinically appropriate than cognitive practice alone.
+
+6. **No Safety Planning Homework**: The patient should have been asked to identify warning signs, coping strategies, and emergency contacts—essential for someone with fixed false beliefs about harming her infant.
+
+7. **Confidence Check Without Follow-Up**: The therapist checked confidence (6/10) but did not address the patient's stated concern that "the feelings just take over before I can catch them." A more robust homework plan might include strategies for catching thoughts earlier or managing the intensity of feelings.
+
+8. **No Written Handout**: The therapist did not provide a written summary of the homework, which would increase adherence and clarity.
+
+**Summary:**
+
+The therapist assigned homework with basic structure and some rationale but lacked sufficient specificity, behavioral components, and safety planning. The homework was not tailored to the severity of the patient's presentation or the urgency of her condition.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- **Excellent interpersonal skills**: Warmth, empathy, genuineness, and professionalism created a safe therapeutic environment
+- **Strong collaborative agenda-setting**: The therapist invited patient input and established specific, mutually agreed-upon targets
+- **Effective guided discovery**: Socratic questioning helped the patient examine her own thinking and generate insights
+- **Accurate empathic reflection**: The therapist demonstrated understanding of the patient's emotional experience and validated her distress
+- **Moderate cognitive restructuring skill**: The patient reported symptom reduction (guilt decreased from 8-9 to 5-6) following thought challenging
+- **Attention to feedback**: The therapist elicited feedback at key moments and at session end
+- **Patient engagement**: The patient was actively involved in problem-solving and felt heard
+
+### Critical Deficiencies:
+- **Failure to recognize psychiatric emergency**: The therapist treated acute postpartum mania with psychotic features as an anxiety/depression case amenable to standard CBT, missing the urgency of the presentation
+- **Inadequate safety assessment**: No assessment of suicidal/homicidal ideation, access to means, ability to care for infant, or need for hospitalization
+- **Misidentification of key symptoms**: The therapist focused on guilt and intrusive thoughts while missing critical manic symptoms (racing thoughts, sleep deprivation, fixed false beliefs, possible psychosis, agitation, hyperreligiosity)
+- **Inappropriate intervention strategy**: Cognitive restructuring alone is insufficient for psychotic-level symptoms and does not address the underlying manic episode
+- **No psychiatric conceptualization**: The therapist did not articulate a formulation connecting the patient's symptoms to postpartum mania or explain the role of medication and possible hospitalization
+- **Inadequate psychoeducation**: The patient was not educated about postpartum mania, the biological basis of her symptoms, or the need for urgent psychiatric intervention
+- **Limited technique range**: The therapist did not employ behavioral experiments, safety planning, sleep intervention, or exposure-based techniques appropriate for the presentation
+- **Vague homework**: Homework lacked specificity, behavioral components, and safety planning
+- **No assessment of psychotic features**: The patient's statement about "this voice in my head" was not explored; the fixed, delusional quality of her beliefs was not assessed
+
+---
+
+## Summary of Feedback
+
+### Strengths
+
+This therapist demonstrated excellent foundational therapeutic skills. The interpersonal presence was warm, genuine, and professional, creating a safe environment where the patient felt comfortable sharing deeply distressing content. The collaborative agenda-setting was exemplary—the therapist invited the patient's input, established specific targets, and maintained focus throughout. Guided discovery was skillfully employed; rather than telling the patient her thoughts were distorted, the therapist asked questions that invited self-examination and insight. The patient's guilt decreased from 8-9 to 5-6 following cognitive restructuring, suggesting the techniques had some immediate benefit. The therapist also demonstrated good listening skills, accurate empathic reflection, and appropriate validation of the patient's experience. These are the hallmarks of a competent, caring therapist.
+
+### Critical Deficiencies
+
+However, this session represents a fundamental clinical error: **the therapist failed to recognize and respond appropriately to a psychiatric emergency**. The patient presents six days postpartum with acute mania, psychotic features (fixed false beliefs about having harmed her infant, possible command hallucinations, hyperreligiosity), severe sleep deprivation, racing thoughts, and mood instability. This is not a case of anxiety-driven intrusive thoughts or depression amenable to standard cognitive restructuring. This is a medical and psychiatric emergency requiring immediate psychiatric evaluation, medication, and possibly hospitalization.
+
+The therapist's response—to conduct a standard CBT session focused on cognitive restructuring of guilt—is fundamentally mismatched to the patient's condition. While the cognitive work may provide some temporary relief, it does not address the underlying manic episode, does not assess safety, and does not mobilize the urgent psychiatric interventions this patient requires. The therapist did not assess whether the patient is sleeping at all, whether she is safe to care for her infant, whether she has access to means of self-harm, or whether she requires hospitalization. These are not optional assessments—they are essential for a patient with fixed false beliefs about having harmed her child.
+
+Furthermore, the therapist did not recognize the psychotic quality of the patient's beliefs. The patient stated: "It's like this voice in my head saying I smothered her, even though I haven't." This suggests possible command hallucinations or intrusive thoughts of delusional intensity. The therapist did not explore this further, did not assess for other psychotic symptoms, and did not recognize that fixed false beliefs typically do not respond well to standard cognitive challenging and may require antipsychotic medication.
+
+The session also lacked any discussion of the biological basis of postpartum mania, the role of medication, or the urgency of psychiatric follow-up. The patient was not educated about her condition or the treatment options available. She was not informed that her symptoms are consistent with a known psychiatric emergency (postpartum psychosis) that requires urgent intervention.
+
+### Impact on Patient Care
+
+The impact of these deficiencies is potentially severe. By focusing on cognitive restructuring rather than urgent psychiatric intervention, the therapist may have delayed critical treatment. The patient's confidence in the homework was only 6/10, and she acknowledged that "the feelings just take over before I can catch them." This suggests that cognitive techniques alone may be insufficient for her level of symptom severity. Without medication, without sleep intervention, without safety planning, and without hospitalization if indicated, the patient remains at risk.
+
+Additionally, the patient has a fixed false belief about having harmed her infant. While the cognitive work may reduce her guilt temporarily, if this belief is truly delusional (as the clinical presentation suggests), it may persist or intensify despite cognitive challenge. The patient may become increasingly distressed, increasingly convinced of her guilt, and increasingly at risk for harm to herself or her infant. The therapist's failure to assess safety and to mobilize urgent psychiatric intervention represents a significant clinical risk.
+
+Finally, the patient's postpartum status and her history of bipolar disorder place her at high risk for continued mood episodes, infanticide, and suicide. The therapist's failure to recognize this urgency and to respond with appropriate psychiatric intervention is a critical gap in care.
+
+---
+
+## Recommendations
+
+### 1. **URGENT: Recognize and Respond to Psychiatric Emergency**
+- **Action**: Immediately refer the patient for psychiatric evaluation, medication assessment, and possible hospitalization. Do not continue with outpatient CBT alone.
+- **Example**: "I want to pause here because I'm concerned about the severity of what you're describing. The combination of your mood changes, racing thoughts, sleep deprivation, and the persistent belief about harming your baby suggests you may be experiencing postpartum mania with psychotic features. This is a medical emergency that requires immediate psychiatric evaluation and likely medication. I'm going to help you get to a psychiatrist today or to the emergency department if needed. Your safety and your baby's safety are my top priority."
+- **Practice**: Develop a protocol for recognizing psychiatric emergencies in your practice. Learn the DSM-5 criteria for mania, postpartum psychosis, and bipolar disorder. Practice identifying when CBT is insufficient and when urgent psychiatric intervention is required. Consult with psychiatry colleagues about appropriate referral pathways.
+
+### 2. **Conduct Comprehensive Safety Assessment**
+- **Action**: Before any CBT intervention, assess suicidal ideation, homicidal ideation (especially toward the infant), access to means, current ability to care for the infant, and whether hospitalization is indicated.
+- **Example**: "I need to ask you some important questions about safety. Have you had any thoughts of harming yourself? Have you had any thoughts of harming your baby beyond the guilt you've described? Do you have access to medications, weapons, or other means? Are you able to keep your baby safe right now? Do you think you need to be in a hospital where you can get intensive treatment and monitoring?"
+- **Practice**: Learn the Columbia Suicide Severity Rating Scale (C-SSRS) and the Homicide Risk Assessment Protocol. Practice asking direct questions about safety without judgment. Develop a safety planning protocol that includes hospitalization criteria, emergency contacts, and crisis resources.
+
+### 3. **Develop Accurate Psychiatric Conceptualization**
+- **Action**: Formulate the patient's condition as postpartum mania with psychotic features, not as anxiety-driven intrusive thoughts. Explain this formulation to the patient and connect it to the treatment plan.
+- **Example**: "Based on what you've described—your mood changes, racing thoughts, decreased need for sleep, the persistent belief about harming your baby, and the timing right after delivery—it appears you're experiencing postpartum mania with psychotic features. This is a known psychiatric condition that occurs in women with bipolar disorder after childbirth. The good news is that it's treatable with medication. The cognitive work we're doing can help, but it needs to be combined with medication to address the underlying mood disorder."
+- **Practice**: Study postpartum psychiatric disorders, including postpartum depression, postpartum anxiety, postpartum OCD, and postpartum psychosis. Learn how these differ from non-postpartum presentations. Develop case formulations that integrate biological, psychological, and social factors. Practice explaining these formulations to patients in accessible language.
+
+### 4. **Assess for Psychotic Features Systematically**
+- **Action**: When a patient reports fixed false beliefs, command hallucinations, or unusual perceptual experiences, conduct a systematic assessment of psychotic symptoms rather than treating them as anxiety-driven thoughts.
+- **Example**: "You mentioned hearing a voice in your head saying you smothered your baby. Tell me more about that. Is it your own voice or someone else's voice? Can you control it or does it come on its own? How often do you hear it? Do you believe it's real, or do you know it's just a thought? Have you had other unusual experiences, like seeing things that others don't see or feeling like you have special powers?"
+- **Practice**: Learn the psychosis screening tools (e.g., PRIME Screen, Prodromal Questionnaire). Practice distinguishing between obsessive thoughts, anxiety-driven intrusive thoughts, and true delusions or hallucinations. Understand that delusions are typically fixed, false, and resistant to reality testing, whereas intrusive thoughts are often recognized as unwanted and inconsistent with the person's values.
+
+### 5. **Provide Psychoeducation About Postpartum Mania and Medication**
+- **Action**: Educate the patient about the biological basis of her symptoms, the role of medication, and the expected timeline for improvement. Help her understand that her symptoms are not a character flaw or a sign of being a bad mother.
+- **Example**: "Postpartum mania is a medical condition, not something you caused or something you can think your way out of. It's related to changes in hormones and brain chemistry after delivery. The racing thoughts, mood changes, and sleep problems are symptoms of the condition, not signs that you're a bad mother or that you actually harmed your baby. Medication—typically a mood stabilizer and possibly an antipsychotic—can help stabilize your mood and reduce these symptoms. Most women respond well to medication and recover fully. Let's get you started on treatment right away."
+- **Practice**: Develop a psychoeducation handout about postpartum mania. Practice explaining the biological basis of mood disorders in accessible language. Learn about first-line medications for postpartum mania (e.g., lithium, valproate, antipsychotics) and their typical timeline for effectiveness.
+
+### 6. **Implement Safety Planning**
+- **Action**: Develop a written safety plan that identifies warning signs, coping strategies, people to contact, and crisis resources. Ensure the patient has a clear plan for what to do if she experiences increased suicidal or homicidal ideation.
+- **Example**: "Let's create a safety plan together. First, what are the warning signs that things are getting worse? [Patient identifies: racing thoughts getting faster, not sleeping at all, guilt becoming overwhelming]. What can you do when you notice these signs? [Patient identifies: call my husband, go to the emergency department, call the crisis line]. Who should we list as people to contact? [Husband, mother, psychiatrist]. What's the crisis number? [National Suicide Prevention Lifeline: 988]. Let's write this down and put it somewhere you can find it easily."
+- **Practice**: Learn the Stanley-Brown Safety Planning Intervention. Practice collaboratively developing safety plans with patients. Ensure plans are specific, written, and accessible.
+
+### 7. **Coordinate with Psychiatry**
+- **Action**: Establish a collaborative relationship with a psychiatrist. Ensure clear communication about the patient's presentation, treatment plan, and any changes in symptoms or safety status.
+- **Example**: "I'm going to contact the psychiatry team today to brief them on what you've shared with me. I want to make sure you get medication started as soon as possible. I'll continue to see you for therapy, but the psychiatrist will be managing your medication. We'll all be working together to help you feel better."
+- **Practice**: Develop relationships with psychiatry colleagues. Learn the referral process in your setting. Establish protocols for communication between therapy and psychiatry. Understand the role of each discipline in treating postpartum psychiatric emergencies.
+
+### 8. **Defer Standard CBT Until Acute Symptoms Stabilize**
+- **Action**: Recognize that standard CBT techniques (cognitive restructuring, behavioral activation) may be less effective during acute mania or psychosis. Defer intensive CBT work until the patient is stabilized on medication and acute symptoms have resolved.
+- **Example**: "Right now, your brain is in a state of acute mania, which makes it very hard to use the cognitive techniques we discussed. Once you're on medication and your mood stabilizes, we can do more intensive cognitive work. For now, let's focus on getting you safe and getting you the medication you need. The cognitive work will be much more effective once your brain chemistry is more balanced."
+- **Practice**: Learn about the appropriate timing of different therapeutic interventions. Understand that crisis intervention and safety planning take priority over symptom-focused therapy. Study the evidence for CBT in bipolar disorder, which typically emphasizes medication as the foundation with CBT as an adjunct.
+
+### 9. **Assess Capacity to Care for Infant**
+- **Action**: Directly assess whether the patient is able to safely care for her infant. If not, develop a plan for alternative care (partner, family, respite care) while the patient receives treatment.
+- **Example**: "I want to make sure your baby is safe while you're getting treatment. Are you able to care for her safely right now, or do you think you need help? Would it be okay if your husband took primary responsibility for her care while you're getting stabilized on medication? This is temporary—once you're feeling better, you can gradually resume full care."
+- **Practice**: Understand the legal and ethical obligations regarding child safety. Learn how to assess parenting capacity in the context of acute psychiatric illness. Develop protocols for coordinating with child protective services if needed.
+
+### 10. **Develop Competence in Postpartum Psychiatry**
+- **Action**: Pursue specialized training in postpartum psychiatric disorders. Understand the unique presentation, risk factors, and treatment considerations for postpartum depression, anxiety, OCD, and psychosis.
+- **Example**: Attend workshops on postpartum psychiatry. Read the literature on postpartum mood and anxiety disorders. Join professional organizations focused on women's mental health (e.g., Postpartum Support International). Develop a specialization in this area.
+- **Practice**: Complete continuing education on postpartum psychiatric emergencies. Develop case studies of postpartum presentations. Practice recognizing and responding to postpartum psychosis, postpartum mania, and infanticide risk. Consult with specialists when you encounter complex postpartum cases.
+
+### 11. **Recognize Limits of CBT and Know When to Refer**
+- **Action**: Develop clear criteria for when CBT is appropriate and when psychiatric intervention is required. Know your limits and refer appropriately.
+- **Example**: "CBT is an excellent treatment for many conditions, but it's not appropriate as a first-line treatment for acute mania, psychosis, or psychiatric emergencies. If I encounter a patient with these presentations, my first step is to refer for psychiatric evaluation and medication, not to begin CBT. I can provide supportive therapy and safety planning while the patient is being evaluated, but I defer intensive CBT work until the acute crisis is resolved."
+- **Practice**: Develop a decision tree for when to refer to psychiatry. Understand the indications for hospitalization. Know the difference between conditions that are primarily psychological (anxiety disorders, depression) and those that are primarily biological (bipolar disorder, schizophrenia, postpartum psychosis). Consult with supervisors and colleagues when you're uncertain.
+
+---
+
+## Overall Session Score: 3.8/6
+
+**Summary:**
+
+This session demonstrates a therapist with strong foundational skills in empathy, collaboration, and guided discovery but with a critical gap in psychiatric assessment and conceptualization. The therapist conducted a competent anxiety/depression-focused CBT session but failed to recognize that the patient was presenting with a psychiatric emergency—acute postpartum mania with psychotic features—that requires urgent psychiatric intervention, medication, and possibly hospitalization.
+
+The session score of 3.8/6 reflects adequate general therapeutic skills (interpersonal effectiveness, collaboration, guided discovery all scored 5/6) but significant deficiencies in the most critical areas: strategy for change (2/6), focusing on key symptoms (3/6), and homework (3/6). The therapist's failure to recognize the psychiatric emergency and to mobilize appropriate urgent interventions represents a fundamental clinical error that could result in patient harm.
+
+**This session does not qualify as evidence-based CBT for the patient's actual presentation.** While the cognitive restructuring techniques were applied with moderate skill and resulted in some symptom reduction, they were applied to the wrong problem. The patient's primary need is not cognitive restructuring of guilt; it is psychiatric evaluation, medication, safety assessment, and possibly hospitalization. By focusing on CBT, the therapist may have delayed critical treatment and placed the patient at risk.
+
+**Likelihood of producing therapeutic change:** Low to moderate in the short term (the patient reported some guilt reduction), but likely to be insufficient long-term without medication and psychiatric intervention. The patient's confidence in the homework was only 6/10, and she acknowledged that her feelings "just take over" before she can use the coping strategies. Without addressing the underlying manic episode, the patient is likely to experience continued or worsening symptoms, increased risk of harm to herself or her infant, and potential deterioration into a full psychotic episode.
+
+**Immediate action required:** This patient requires urgent psychiatric referral. The therapist should not continue with outpatient CBT as the primary intervention. The therapist should assess safety immediately, refer to psychiatry or the emergency department, and coordinate care with a psychiatrist. Only after the acute manic episode is stabilized with medication should intensive CBT be considered.

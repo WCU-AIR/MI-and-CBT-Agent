@@ -1,0 +1,756 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Bipolar I Disorder
+
+--- CASE STUDY ---
+
+Nancy Ingram was a 33-year-old married African American woman and stock analyst brought to the emergency room by her husband after 10 days of a “cycle of depression,” marked by irritability, tearfulness, and nearly no sleep. Her husband reported that she had experienced at least six similar episodes in the past year, typically improving after restarting fluoxetine. He noted that she often increased her use of alcohol and clonazepam during these episodes.
+
+During this presentation, Ms. Ingram had created a personal blog titled Nancy Ingram's Best Stock Picks, working around the clock, neglecting meals, work, and childcare responsibilities. She insisted she was fine and that the blog would “make them as rich as Croesus.”
+
+Her psychiatric history included a diagnosis of depression in college following her father’s suicide and intermittent psychotherapy. Outpatient psychiatrists had documented persistent depressive symptoms but had limited awareness of her hypomanic/manic periods, as she often refused evaluation during these episodes. Family history included her father’s erratic behavior and alcohol abuse, and a grandmother with unspecified “nervous breakdowns.”
+
+On examination, Ms. Ingram paced angrily, had glazed and unfocused eyes, rapid and pressured speech, poor insight, and impaired judgment. She denied hallucinations but claimed a unique ability to predict the stock market. She refused cognitive testing and appeared dismissive and mocking. These behaviors, combined with diminished need for sleep without fatigue, distractibility, and poor judgment, indicated a manic episode with mixed features and rapid cycling.
+
+--- BEHAVIOUR ---
+
+Pacing and agitated
+
+Rapid, pressured speech, difficult to interrupt
+
+Dismissive, mocking, and argumentative
+
+Glazed and unfocused gaze
+
+Poor insight and impaired judgment
+
+Refusal of cognitive testing or collateral information
+
+Hyper-focused on unrealistic projects (e.g., stock blog)
+
+Tearfulness and irritability during episodes
+
+--- MANIA SYMPTOMS from DSM-5 ---
+
+Expansive or irritable mood
+
+Grandiosity
+
+Decreased need for sleep without fatigue
+
+Pressured speech
+
+Distractibility
+
+Engagement in risky or excessive activities (e.g., financial overreach)
+
+Mixed depressive features (tearfulness, dysphoria)
+
+Rapid cycling (≥4 episodes per year)
+
+Impaired insight and judgment
+
+--- PATIENT PROFILE ---
+Name: Nancy Ingram
+Sex: Female
+Age: 33 years
+DOB: August 22, 1990
+Place of Birth: Chicago, IL
+Address: 789 Lakeshore Drive, Chicago, IL
+Contact: (555) 321-0987
+Marital Status: Married
+Children: Two, ages 6 and 8
+Occupation: Stock analyst
+Education: Bachelor’s degree in Finance
+Religion: Christian
+Legal Guardian: Husband (emergency contact)
+Presenting Complaint: “I am fine; I need to get home and tend to my business”
+Psychiatric History: College depression; recurrent depressive episodes; outpatient psychiatric care
+Psychotherapy: Sporadic
+Medications: Fluoxetine, clonazepam, alcohol use during episodes
+Substance Use: Alcohol and clonazepam during mood episodes
+Medical History: None
+Neurology: Normal
+Family History: Father died by suicide (alcohol use disorder), grandmother with “nervous breakdowns”
+Mental Status: Rapid speech, distractible, pressured speech, tearfulness, irritability, poor insight, impaired judgment, manic behavior with mixed depressive features
+
+--- DIAGNOSIS ---
+Bipolar I disorder, current episode manic, with mixed features and rapid cycling
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Nancy Ingram, a 33-year-old married stock analyst, presents to the emergency room accompanied by her husband due to concerns about a recent 10-day mood episode characterized by behavioral changes. Her husband reports a history of similar episodes over the past year, prompting this evaluation.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hello! It’s good to see you today. I thought maybe we could just chat about whatever’s been on your mind recently and see if we can figure out some helpful ways to handle it. How does that sound? 
+ PATIENT: I guess that's fine. But honestly, I don't think there's anything wrong with me. I'm just busy—got a ton of ideas for this blog I'm working on. I really think it's going to make everyone rich, if people would just pay attention. I don't see why everyone thinks I'm acting weird. I'm doing more than fine. 
+ PSYCHIATRIST: Okay, so maybe we can talk about your blog and how you feel about it. Like, when you're thinking about your ideas and how others react, what kind of thoughts come up for you? Maybe something like, "They don't get it," or "I'm ahead of the game"? Those kinds of thoughts? You could try thinking about it differently, like maybe people just need more time to understand. Does that make sense? 
+ PATIENT: Yeah, exactly! They just don’t get it. I mean, how can they not see the potential? This blog is going to be huge. If they just gave me space and stopped bothering me with all these questions, I could show them. But instead, they act like I’m crazy or something. Like my husband keeps saying I need to slow down or rest, but I don’t have time for that. I’m on the edge of something big here, and everyone’s holding me back. Maybe they’re scared because they don’t understand. But I’m not wrong. I just need to push through. 
+ PSYCHIATRIST: Okay, so it sounds like you’re feeling a bit frustrated and maybe misunderstood when people don’t see your ideas the way you do. That must be tough. When you notice these thoughts like “They don’t get it,” do you think there might be other ways to think about it? Like maybe they’re not trying to hold you back on purpose but just don’t know how to support you? You could try thinking about it differently to feel less frustrated. Maybe something like, “They care about me and want me to be okay.” What do you think about that? Would that help? 
+ PATIENT: I don’t know. It’s hard to think that way when I’m the one who has all the answers and they’re just in the way. I mean, sure, maybe they care, but it feels more like they want me to slow down or stop altogether. Like my husband telling me to stop taking my meds or drink less is just making it harder. I need my focus, my edge. Sometimes it feels like the only way I can keep going is to push against them, to prove I’m right. It’s frustrating to pretend they want the best for me when it feels like no one really understands what I’m doing here. 
+ PSYCHIATRIST: Yeah, it sounds like you’re feeling pretty stuck between wanting to keep pushing forward and feeling like others don’t get it or might be trying to hold you back. That must be really frustrating. Maybe it would help to try some ways to keep your focus without feeling like you have to fight so much. Like, you could try setting small goals for your blog work that don’t get in the way of your rest or meds. It’s kind of like balancing things so you don’t burn out. Do you think trying something like that might help you feel a bit less frustrated? 
+ PATIENT: Maybe… though it’s hard to slow down when I have so many ideas flooding my mind. I feel like if I don’t act on them right away, I’ll miss my chance and everything will fall apart. But I guess setting small goals doesn’t sound too bad. I just worry it’ll take too long or I’ll lose momentum. Rest feels like giving up sometimes. But maybe if it helps me keep going longer, it might be worth trying. I just want to see if it really makes a difference. 
+ PSYCHIATRIST: Yeah, that makes sense. It’s tough when you feel like you have to grab your ideas before they slip away. Maybe it would help to notice when those thoughts come up, like “I have to act now or I’ll lose my chance,” and then try thinking about it differently—like, “I can act on my ideas step by step, and that’s okay.” You could try practicing that this week, just noticing your thoughts and trying a new way to think about them. It might help with the pressure. What do you think about giving that a shot? 
+ PATIENT: I guess I can try that. It feels a little weird to slow my thoughts down and think through them like that, but if it helps me not feel so overwhelmed, then maybe it’s worth a try. I want to prove this blog can work, but maybe doing it step by step could help me last longer and not crash. I’ll give it a shot, but I can’t promise I’ll be perfect at it. My mind moves fast, and sometimes it feels like it won’t stop, no matter what I try. 
+ PSYCHIATRIST: That's a good start. It’s okay if it feels weird or if you’re not perfect at it. Just noticing your thoughts is already helpful. Maybe also try to take breaks during the day when your mind feels too busy—like a little pause to breathe or do something relaxing. It could help you keep going without feeling so overwhelmed. Do you think that might be something you could do? 
+ PATIENT: Yeah... maybe I could try taking some breaks. It just feels like when I stop, even for a minute, I lose time and chances to get ahead. But I suppose if it helps keep me from burning out completely, it might be worth it. I don’t want to feel like I’m falling behind, but maybe a few minutes here and there wouldn’t hurt. I’ll try to remember that when it gets too much. 
+ PSYCHIATRIST: Alright, that sounds like a reasonable plan to try some breaks and notice your thoughts more. Just keep in mind, it might not fix everything right away, but it’s a step. Maybe this week, you could focus on that—trying to pause a bit and catch your thoughts when they get really fast. We can talk more about how it’s going next time. Overall, it seems like you’re really motivated to push your blog forward, which is good. Keep at it, and don’t be too hard on yourself if it’s tough. How does that sound? 
+ PATIENT: Yeah, that sounds alright. I want to keep going with the blog, but maybe I can try this without losing steam. I’ll aim to take breaks and catch my thoughts when they’re racing. It might be hard, but I don’t want to keep crashing like before. I just hope people see the value in what I’m doing. Thanks for listening. I’ll see how it goes this week. 
+ PSYCHIATRIST: Thanks for sharing all that with me today. Just to wrap up, it sounds like you’re feeling pretty determined about your blog but also a bit overwhelmed and frustrated by how others react and your own busy thoughts. We talked about maybe trying to notice your thoughts more and taking breaks to help manage that pressure. Keep trying those things, and we can check in next time to see how it’s going. Remember, it’s okay if it’s tough—that’s part of the process. Take care, and I’ll see you next session. 
+ PATIENT: Yeah, thanks. I appreciate you hearing me out. I’ll do my best to work on those things and see if it helps. It’s just hard when I feel like no one really gets what I’m doing. But maybe things can feel a little less chaotic if I try. I’ll talk to you next time. 
+ PSYCHIATRIST: Hi! It's good to see you today. I thought maybe we could start by talking about whatever's been bothering you lately or anything that's been on your mind. Does that sound okay? We can try to figure out some ways to manage it together. 
+ PATIENT: Honestly, I don’t see why I need to talk about what's bothering me. Everything’s fine—I have so much going on with my blog and the stock picks that are going to make people rich. I don’t have time to dwell on problems. Maybe if others stopped trying to slow me down, I could actually get somewhere with this. So yeah, everything’s fine. I just want to get back to work. 
+ PSYCHIATRIST: Hi! It’s good to see you today. I thought maybe we could start by talking about whatever's been bothering you lately or anything that's been on your mind. Does that sound okay? We can try to figure out some ways to manage it together. 
+ PATIENT: I told you, there’s nothing really bothering me. People keep telling me to take it easy, but I can’t slow down. I have this blog, and it’s going to be huge. I’ve been up for days, barely sleeping, but that’s not a problem. If anything, I’m on the edge of something big, and everyone else just doesn’t get it. They want me to stop, but I’m not stopping. I don’t see why I need to figure out anything. I’m fine. 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist made no attempt to establish a collaborative agenda appropriate for this clinical presentation. In the opening, the psychiatrist offered only vague language: "I thought maybe we could just chat about whatever's been on your mind recently and see if we can figure out some helpful ways to handle it." This is not agenda-setting; it is an open-ended invitation without structure, prioritization, or time allocation.
+
+Critically, the therapist failed to recognize or address the acute psychiatric emergency before them. Nancy presents with clear manic symptoms with mixed features: pressured speech, grandiosity (belief she can predict stock markets), decreased need for sleep without fatigue, distractibility, impaired judgment, and poor insight. The appropriate agenda for this session should have included: (1) assessing safety and risk, (2) evaluating medication compliance and substance use, (3) establishing psychiatric stabilization as the primary goal, and (4) determining whether hospitalization is indicated. Instead, the therapist colluded with the patient's denial by treating this as a routine cognitive distortion problem amenable to thought-challenging.
+
+By the second session (repeated opening), the therapist again offered no agenda and made no attempt to address the patient's continued denial, escalating grandiosity, or worsening sleep deprivation ("I've been up for days, barely sleeping"). A proper agenda would have explicitly named these concerns and established priorities collaboratively while maintaining clinical authority appropriate to the severity.
+
+**Summary:**
+
+No meaningful agenda was established in either session. The therapist failed to prioritize acute psychiatric safety concerns, instead treating a manic episode as a routine cognitive therapy case. This represents a fundamental failure in clinical judgment and session structure.
+
+---
+
+### 2. Feedback
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist elicited no meaningful feedback from the patient about the session, her understanding of interventions, or her reactions to the therapeutic approach. Across both sessions, there is no evidence of the therapist asking: "Does this make sense to you?" "How are you feeling about what we discussed?" "Is this helpful?" "What are your thoughts on trying this?" or "Did the homework feel manageable?"
+
+While the therapist occasionally used phrases like "What do you think about that?" these were rhetorical prompts designed to introduce cognitive restructuring suggestions rather than genuine feedback-seeking. For example: "Maybe it would help to try some ways to keep your focus without feeling like you have to fight so much... Do you think trying something like that might help?" This is leading the patient toward a predetermined intervention, not eliciting authentic feedback about her experience or understanding.
+
+Most critically, the therapist never checked whether the patient understood the rationale for interventions, whether she had capacity to engage in cognitive work given her acute manic state, or whether she felt the session was helpful. In a patient with poor insight and impaired judgment actively in a manic episode, feedback elicitation is essential to assess whether therapeutic engagement is even possible and to identify barriers to treatment compliance.
+
+**Summary:**
+
+No genuine feedback was elicited. The therapist made no attempt to assess patient understanding, satisfaction, or readiness for interventions, representing a complete absence of this critical CBT skill.
+
+---
+
+### 3. Understanding
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist demonstrated surface-level empathic reflection but fundamentally misunderstood the patient's clinical presentation and internal reality. The therapist accurately reflected explicit statements ("it sounds like you're feeling pretty frustrated and maybe misunderstood") but missed the critical clinical reality: Nancy is experiencing a manic episode with poor insight, not a cognitive distortion problem amenable to thought-challenging.
+
+The therapist's reflections focused on frustration and feeling misunderstood, which are secondary to the core psychiatric emergency. The patient's "internal reality" includes: (1) a genuine belief in her ability to predict stock markets (grandiosity/possible psychotic features), (2) a physiological inability to sleep without experiencing fatigue (decreased need for sleep), (3) racing thoughts she cannot control ("my mind moves fast, and sometimes it feels like it won't stop, no matter what I try"), and (4) profound lack of insight into her condition ("I don't think there's anything wrong with me").
+
+The therapist never explored or reflected understanding of these core features. Instead, the therapist normalized the patient's experience by suggesting cognitive reframing ("They care about me and want me to be okay") as if the problem were distorted thinking rather than acute psychiatric illness. This represents a fundamental misunderstanding of the patient's condition.
+
+Additionally, the therapist missed critical clinical information: the patient mentioned her husband "telling me to stop taking my meds or drink less," which the therapist did not clarify, explore, or address. This is a red flag for medication non-compliance during a manic episode—a critical safety issue.
+
+**Summary:**
+
+While the therapist demonstrated basic empathic listening, understanding was superficial and missed the core clinical reality of acute mania with poor insight. Critical safety information was overlooked.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 3/6**
+
+**Explanation:**
+
+The therapist demonstrated adequate warmth and genuineness but failed to establish appropriate professional boundaries and clinical authority necessary for this presentation. The therapist was consistently supportive and non-judgmental ("That's a good start. It's okay if it feels weird or if you're not perfect at it"), which created rapport but undermined clinical effectiveness.
+
+The therapist's tone was collaborative and encouraging in a way that normalized the patient's manic behavior rather than gently challenging it. Phrases like "Overall, it seems like you're really motivated to push your blog forward, which is good. Keep at it" inadvertently reinforced grandiose thinking and risky behavior during an acute manic episode. This is not therapeutic warmth; it is clinical collusion.
+
+A more effective interpersonal approach would have balanced warmth with appropriate clinical concern: "I appreciate your determination, and I can see how important this feels to you right now. I'm also concerned about some things I'm noticing—like the fact that you haven't slept in days but don't feel tired, and the intensity of these ideas. That combination concerns me medically, and I want to make sure you're safe."
+
+The therapist also failed to establish professional boundaries around the patient's dismissiveness and poor insight. When the patient said "I don't think there's anything wrong with me" and "I don't see why everyone thinks I'm acting weird," the therapist accepted this framing rather than respectfully but firmly addressing the clinical reality.
+
+**Summary:**
+
+Warmth and genuineness were present but misapplied. The therapist failed to establish appropriate clinical authority and boundaries necessary for managing acute psychiatric illness, instead creating false collaboration that normalized dangerous behavior.
+
+---
+
+### 5. Collaboration
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist used collaborative language ("we can figure out some helpful ways," "we can talk more about how it's going") but failed to achieve genuine collaborative empiricism—the hallmark of CBT collaboration. True collaboration in CBT involves: (1) shared problem definition, (2) mutual agreement on goals, (3) collaborative hypothesis testing, and (4) the patient as active scientist examining their own thinking.
+
+In this case, the therapist and patient never achieved shared problem definition. The patient explicitly stated "I don't think there's anything wrong with me," and the therapist never collaboratively explored this disagreement. Instead, the therapist proceeded as if they had agreed on a problem (racing thoughts, frustration, feeling misunderstood) when the patient's actual concern was that others were "holding her back" from her important work.
+
+The therapist attempted to impose a cognitive restructuring agenda ("Maybe it would help to try some ways to keep your focus... like setting small goals for your blog work") without first establishing whether the patient agreed this was necessary or helpful. This is not collaboration; it is gentle persuasion disguised as partnership.
+
+Critically, in a patient with poor insight and acute mania, true collaboration requires addressing the disagreement about whether a problem exists at all. The therapist should have said something like: "I hear that you feel fine and that others don't understand. I also notice some things that concern me medically—like not sleeping for days without feeling tired. Can we explore together what's happening?" Instead, the therapist bypassed this essential collaborative step.
+
+**Summary:**
+
+Collaborative language was used, but genuine collaboration was absent. The therapist failed to establish shared problem definition or address the fundamental disagreement about whether the patient's condition required intervention.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist's pacing was inefficient and failed to prioritize the most critical clinical issues. Across both sessions, the therapist spent considerable time on cognitive restructuring exercises ("Maybe it would help to notice when those thoughts come up, like 'I have to act now or I'll lose my chance,' and then try thinking about it differently") without first establishing whether this was the appropriate intervention for an acutely manic patient with poor insight.
+
+The therapist also allowed the session to drift into discussion of the blog and stock picks without redirecting to core psychiatric concerns. When the patient said "I've been up for days, barely sleeping," the therapist did not pause to fully explore this critical symptom. Instead, the therapist continued with the predetermined cognitive intervention plan.
+
+A more efficient use of time would have involved: (1) 5-10 minutes assessing acute safety and psychiatric symptoms, (2) 5-10 minutes exploring medication compliance and substance use, (3) 5-10 minutes determining whether hospitalization is indicated, and (4) only if appropriate, introducing psychoeducation about mood episodes. Instead, the therapist spent the entire session on cognitive techniques that may be inappropriate for this clinical presentation.
+
+The second session opening was particularly inefficient—the therapist repeated the exact same vague opening ("I thought maybe we could start by talking about whatever's been bothering you lately") despite the patient's continued denial and escalating symptoms. No attempt was made to adjust the approach based on the patient's presentation.
+
+**Summary:**
+
+Pacing was inefficient and failed to prioritize acute psychiatric safety. The therapist spent time on cognitive interventions without first establishing whether they were appropriate, and made no adjustments despite the patient's worsening presentation.
+
+---
+
+### 7. Guided Discovery
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist made minimal use of guided discovery and instead relied heavily on direct suggestion and persuasion. Guided discovery in CBT involves asking questions that help patients reach their own conclusions through evidence examination and logical reasoning. Instead, this therapist primarily told the patient what to think.
+
+Examples of direct suggestion rather than guided discovery:
+
+- "Maybe it would help to try some ways to keep your focus without feeling like you have to fight so much. Like, you could try setting small goals for your blog work..."
+- "Maybe it would help to notice when those thoughts come up, like 'I have to act now or I'll lose my chance,' and then try thinking about it differently—like, 'I can act on my ideas step by step, and that's okay.'"
+- "Maybe also try to take breaks during the day when your mind feels too busy—like a little pause to breathe or do something relaxing."
+
+Each of these is the therapist providing the answer rather than asking questions that help the patient discover insights. True guided discovery would sound like: "When you think 'I have to act now or I'll lose my chance,' what evidence do you have for that thought? What evidence might suggest otherwise? What would happen if you waited a day to act on an idea?"
+
+The therapist never asked the patient to examine the consequences of her current behavior, to test predictions, or to consider alternative explanations for her experience. For example, the therapist could have asked: "You mentioned you haven't slept in days but don't feel tired. In your experience, is that normal? What usually happens when you don't sleep?" This would guide the patient toward recognizing abnormal symptoms rather than the therapist telling her what to think.
+
+**Summary:**
+
+Guided discovery was largely absent. The therapist relied on direct suggestion and persuasion rather than Socratic questioning, missing opportunities for the patient to reach her own insights.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist attempted to focus on cognitions but selected secondary rather than central issues, and failed to identify the most clinically relevant thoughts and behaviors. The therapist focused on: (1) "They don't get it" (frustration about others' reactions), (2) "I have to act now or I'll lose my chance" (urgency), and (3) thoughts about needing to slow down (ambivalence about pacing).
+
+However, the therapist completely missed the central cognitions driving the manic episode:
+
+- **Grandiosity:** "I have a unique ability to predict the stock market" / "This blog will make them as rich as Croesus" / "I'm on the edge of something big"
+- **Decreased need for sleep without fatigue:** "I've been up for days, barely sleeping, but that's not a problem"
+- **Poor insight:** "I don't think there's anything wrong with me" / "I don't see why everyone thinks I'm acting weird"
+
+These are not secondary cognitive distortions; they are core features of the manic episode. The therapist should have focused on exploring and gently challenging these central beliefs, not on the patient's frustration with others.
+
+Additionally, the therapist focused on cognitions when the most clinically relevant behavior was the patient's refusal to sleep, take medication, and reduce alcohol/benzodiazepine use. A behaviorally-focused approach would have prioritized: "Let's talk about what's happening with your sleep. You mentioned not sleeping for days—let's explore what that's about and what we can do."
+
+**Summary:**
+
+The therapist focused on secondary cognitions (frustration, urgency) rather than central ones (grandiosity, poor insight, decreased need for sleep). Critical behavioral issues were not addressed.
+
+---
+
+### 9. Strategy for Change
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist's strategy for change was fundamentally misaligned with the patient's clinical presentation and lacked coherence. The implicit strategy appeared to be: (1) help the patient recognize cognitive distortions, (2) teach her to reframe thoughts, (3) encourage breaks and pacing, and (4) hope this reduces overwhelm.
+
+This strategy is inappropriate for acute mania with poor insight for several reasons:
+
+**First, it assumes the problem is cognitive distortion when the problem is acute psychiatric illness.** The patient's belief that she can predict stock markets is not a distortion amenable to cognitive restructuring; it may be a grandiose delusion requiring psychiatric medication and possible hospitalization. Cognitive therapy alone cannot treat psychotic features of mania.
+
+**Second, it ignores the biological/medical aspects of the condition.** The patient's inability to sleep, racing thoughts, and pressured speech are neurobiological symptoms of mania, not primarily cognitive problems. While cognitive techniques can be adjunctive, the primary strategy should involve psychiatric stabilization, medication management, and possibly hospitalization.
+
+**Third, it lacks a clear rationale or progression.** Why would teaching the patient to take breaks help? The therapist never explained the connection between pacing and mood stabilization. Why would cognitive reframing reduce the intensity of manic symptoms? The therapist never articulated this logic.
+
+**Fourth, it ignores critical safety issues.** The patient mentioned her husband "telling me to stop taking my meds or drink less"—a critical red flag for medication non-compliance. The therapist's strategy included no plan to address medication adherence, substance use, or safety monitoring.
+
+A coherent strategy for this presentation would be: (1) psychoeducation about bipolar disorder and mania, (2) assessment of medication compliance and barriers, (3) safety planning and possible hospitalization, (4) engagement of family/support system, and (5) only after stabilization, cognitive-behavioral work on relapse prevention and lifestyle factors.
+
+**Summary:**
+
+The strategy was fundamentally misaligned with the clinical presentation. The therapist attempted cognitive intervention for what appears to be acute mania with possible psychotic features, without addressing psychiatric stabilization, medication management, or safety.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist applied cognitive restructuring techniques but with significant flaws in execution and appropriateness. The techniques used included:
+
+1. **Thought identification and reframing:** "Maybe it would help to notice when those thoughts come up, like 'I have to act now or I'll lose my chance,' and then try thinking about it differently—like, 'I can act on my ideas step by step, and that's okay.'"
+
+2. **Behavioral activation/pacing:** "Maybe it would help to try some ways to keep your focus without feeling like you have to fight so much. Like, you could try setting small goals for your blog work that don't get in the way of your rest or meds."
+
+3. **Behavioral experiments (implied):** "You could try practicing that this week, just noticing your thoughts and trying a new way to think about them."
+
+**Flaws in application:**
+
+- **Lack of collaborative development:** The therapist provided the reframed thought rather than helping the patient develop it. Effective cognitive restructuring involves the patient generating alternative thoughts, not the therapist providing them.
+
+- **Insufficient evidence examination:** The therapist never asked the patient to examine evidence for or against her thoughts. True cognitive restructuring requires: "What evidence supports this thought? What evidence contradicts it? What would a friend say? What's the worst that could happen if you waited?"
+
+- **Inappropriate for the clinical context:** Cognitive restructuring assumes the patient has insight into her thoughts and is willing to examine them. This patient has poor insight and is actively denying any problem. Cognitive techniques are less effective in this context.
+
+- **No behavioral experiments:** While the therapist suggested "noticing your thoughts," there was no structured behavioral experiment to test predictions. For example: "Let's say you take a 2-hour break from the blog. What do you predict will happen? Let's test that prediction and see what actually happens."
+
+- **No thought records or structured worksheets:** The therapist did not introduce any structured tools (thought records, behavioral logs) to help the patient track thoughts and behaviors systematically.
+
+- **Inadequate rationale:** The therapist never explained why these techniques would help or how they connect to symptom reduction.
+
+**Summary:**
+
+CBT techniques were applied with significant flaws. Cognitive restructuring was directive rather than collaborative, lacked evidence examination, and was potentially inappropriate for a patient with poor insight in acute mania.
+
+---
+
+### 11. Homework
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist assigned homework but with critical deficiencies in clarity, specificity, rationale, and appropriateness. The homework assignments included:
+
+1. **"Try noticing your thoughts and trying a new way to think about them this week"** - Vague, non-specific, no structure
+2. **"Try taking breaks during the day when your mind feels too busy"** - Vague, no specific frequency or duration
+3. **"Focus on that—trying to pause a bit and catch your thoughts when they get really fast"** - Repetitive, still vague
+
+**Critical deficiencies:**
+
+- **Lack of specificity:** The therapist never specified what "noticing thoughts" means, how often to do it, or how to record it. Should the patient write them down? How many times per day? What format?
+
+- **No clear rationale:** The therapist never explained why this homework would help. Why is noticing thoughts important? How does it connect to feeling less overwhelmed or managing the blog work?
+
+- **No structure or tools:** The therapist did not provide a thought record, behavioral log, or any structured tool to help the patient complete the homework. Without structure, compliance is unlikely.
+
+- **Insufficient check for understanding:** The therapist asked "What do you think about giving that a shot?" but did not verify that the patient understood what she was supposed to do, whether she had the skills to do it, or whether she was committed to trying.
+
+- **No check for barriers:** The therapist did not ask about potential obstacles ("What might get in the way of taking breaks?" "How will you remember to pause?") or problem-solve them.
+
+- **Inappropriate for the clinical context:** Asking a manic patient to "notice thoughts" and "take breaks" without addressing medication compliance, sleep deprivation, or safety is insufficient. The homework should have included: "Take your medications as prescribed" and "Track your sleep and mood daily."
+
+- **No review of prior homework:** In the second session, the therapist did not ask whether the patient had attempted the previous homework or how it went. This is a critical CBT component.
+
+- **Insufficient commitment:** The patient said "I'll give it a shot, but I can't promise I'll be perfect at it," indicating low confidence and commitment. The therapist did not address this or problem-solve barriers.
+
+**Summary:**
+
+Homework was vague, non-specific, and lacked clear rationale. No structured tools were provided, and appropriateness for the clinical context was questionable. This homework is unlikely to be completed or helpful.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- Therapist demonstrated basic warmth, genuineness, and non-judgmental stance
+- Therapist used supportive language and avoided confrontation
+- Therapist attempted to introduce cognitive and behavioral concepts
+- Therapist maintained a calm, professional demeanor
+
+### Critical Deficiencies:
+
+**1. Fundamental Misdiagnosis of Clinical Presentation**
+The therapist treated acute mania with poor insight as a routine cognitive distortion problem. This represents a critical failure in psychiatric assessment and clinical judgment. The patient presents with clear DSM-5 criteria for manic episode with mixed features: grandiosity, decreased need for sleep without fatigue, pressured speech, distractibility, impaired judgment, and poor insight. Cognitive therapy alone is insufficient and potentially harmful if it delays psychiatric stabilization.
+
+**2. Complete Absence of Safety Assessment**
+No assessment of suicide risk, self-harm, or safety was conducted. No evaluation of medication compliance or substance use barriers was performed. The patient mentioned her husband "telling me to stop taking my meds or drink less"—a critical red flag—which was never explored or addressed.
+
+**3. Failure to Establish Appropriate Clinical Authority**
+The therapist used collaborative language but failed to establish the clinical authority necessary for managing acute psychiatric illness. The therapist normalized dangerous behavior ("Overall, it seems like you're really motivated to push your blog forward, which is good") rather than gently but firmly addressing clinical concerns.
+
+**4. Inappropriate Treatment Modality**
+CBT cognitive restructuring is not the primary intervention for acute mania with poor insight. The primary interventions should be: psychiatric evaluation, medication management, possible hospitalization, psychoeducation, and family involvement. Cognitive techniques may be adjunctive after stabilization.
+
+**5. No Agenda, Feedback, or Collaboration**
+The therapist failed to establish a collaborative agenda, elicit meaningful feedback, or achieve genuine shared problem definition. The patient explicitly denied having a problem, and the therapist never addressed this fundamental disagreement.
+
+**6. Inadequate Homework and No Follow-up**
+Homework was vague and non-specific. In the second session, the therapist did not review whether the patient had attempted previous homework or how it went—a critical CBT component.
+
+---
+
+## Impact on Patient Care
+
+**This session is likely to cause harm rather than help.** By treating acute mania as a cognitive distortion problem and normalizing the patient's behavior, the therapist delays appropriate psychiatric intervention. The patient may continue to: (1) refuse medication, (2) avoid sleep, (3) escalate risky financial behavior, (4) deteriorate further, and (5) eventually require emergency hospitalization.
+
+The therapist's approach may also damage the therapeutic alliance by failing to address the patient's actual clinical needs. When the patient returns for the second session with worsening symptoms and the cognitive techniques have not helped, she will likely lose confidence in treatment and become more resistant to intervention.
+
+Additionally, the therapist's failure to assess safety and medication compliance represents a potential liability. If the patient harms herself or others, or if her condition deteriorates significantly, the therapist's inadequate assessment and intervention could be considered negligent.
+
+---
+
+## Recommendations
+
+### 1. **URGENT: Recognize and Respond to Acute Mania**
+- **Action:** Immediately conduct a comprehensive psychiatric assessment including: (1) detailed mood and sleep history, (2) assessment of grandiosity and possible psychotic features, (3) suicide/homicide risk assessment, (4) medication and substance use history, (5) determination of whether hospitalization is indicated.
+- **Example:** "I want to make sure I understand what's happening. You mentioned you haven't slept in days but don't feel tired. That's unusual and concerns me medically. Tell me more about that. How many nights have you not slept? When you do try to sleep, what happens? And how are you feeling physically—any racing thoughts, lots of energy, or feeling like your mind is going too fast?"
+- **Practice:** Review DSM-5 criteria for manic episode and bipolar disorder. Practice conducting a structured mood disorder assessment. Consult with a psychiatrist or bipolar disorder specialist about appropriate assessment and treatment planning for acute mania.
+
+### 2. **Establish Appropriate Clinical Authority and Safety Planning**
+- **Action:** Respectfully but firmly address the patient's poor insight and establish clinical concern as the foundation for treatment. Involve family/support system in safety planning and treatment coordination.
+- **Example:** "I hear that you feel fine and that others don't understand. I also notice some things that concern me medically—you haven't slept in days but don't feel tired, your thoughts are racing, and you're making major financial decisions based on beliefs about predicting the stock market. These are signs of a medical condition called mania that needs treatment. I want to work with you and your husband to keep you safe. Can we talk about what that looks like?"
+- **Practice:** Role-play delivering clinical concerns with warmth but firmness. Practice involving family members in treatment planning. Study motivational interviewing techniques for addressing ambivalence about treatment in patients with poor insight.
+
+### 3. **Prioritize Psychiatric Stabilization Over Cognitive Therapy**
+- **Action:** Refer for psychiatric evaluation and medication management. Do not attempt cognitive restructuring as the primary intervention until the patient is stabilized and has adequate insight. Psychoeducation about bipolar disorder should precede cognitive work.
+- **Example:** "I think it would be helpful to have you see a psychiatrist who specializes in bipolar disorder. They can evaluate whether medication adjustments are needed and help us understand what's happening. Once you're feeling more stable, we can work together on managing stress and preventing future episodes. Does that make sense?"
+- **Practice:** Develop relationships with psychiatrists and bipolar disorder specialists. Learn the role of medication in treating acute mania. Understand when CBT is appropriate (maintenance/relapse prevention) versus when it is not (acute mania with poor insight).
+
+### 4. **Conduct Thorough Assessment of Medication Compliance and Substance Use**
+- **Action:** Explore the patient's statement about her husband "telling me to stop taking my meds or drink less." Assess barriers to medication adherence, side effects, and substance use patterns. Develop a plan to address these barriers.
+- **Example:** "You mentioned your husband saying something about your meds and drinking. Tell me more about that. Are you taking your fluoxetine as prescribed? What's your experience been with it? And how much alcohol are you drinking during these episodes? I want to understand what's getting in the way of taking care of yourself."
+- **Practice:** Develop a structured medication adherence assessment. Learn about common barriers to adherence in bipolar disorder (side effects, denial of illness, substance use). Practice collaborative problem-solving around adherence.
+
+### 5. **Establish a Collaborative Agenda That Addresses the Patient's Actual Concerns**
+- **Action:** Acknowledge the patient's perspective while gently introducing clinical concerns. Work collaboratively to define problems and goals that address both the patient's stated concerns and clinical safety needs.
+- **Example:** "I hear that you're excited about your blog and want to make it successful. That's important to you. I also want to make sure you're healthy and safe so you can keep working on things that matter to you long-term. Can we talk about what's been happening with your sleep and energy? Because sometimes when those things change, it can affect our judgment and decision-making. What do you think?"
+- **Practice:** Study motivational interviewing and collaborative goal-setting. Practice acknowledging patient autonomy while maintaining clinical authority. Role-play with a supervisor.
+
+### 6. **Do Not Use Cognitive Restructuring as Primary Intervention for Acute Mania**
+- **Action:** Recognize that cognitive restructuring is not effective for grandiose delusions or the core symptoms of mania. Reserve cognitive techniques for maintenance phase and relapse prevention after stabilization.
+- **Example:** Instead of "Try thinking about it differently," say: "Right now, your brain is in a state where thoughts are moving very fast and it's hard to slow them down. That's a medical symptom, not something you can just think your way out of. Medication can help with that. Once you're more stable, we can work on managing stress and recognizing early warning signs of mood changes."
+- **Practice:** Study the evidence base for CBT in bipolar disorder. Learn that CBT is most effective for maintenance and relapse prevention, not acute mania. Consult with bipolar disorder specialists about appropriate timing of cognitive interventions.
+
+### 7. **Elicit and Respond to Patient Feedback Throughout Session**
+- **Action:** Regularly check for understanding, ask about reactions to interventions, and adjust approach based on feedback. This is especially critical when the patient has poor insight.
+- **Example:** "Does this make sense so far?" "How are you feeling about what we're discussing?" "Is there anything that doesn't feel right or that you disagree with?" "What would be most helpful for you right now?"
+- **Practice:** Practice genuine feedback-seeking (not leading questions). Develop comfort with silence and allowing the patient time to respond. Practice adjusting your approach based on feedback.
+
+### 8. **Involve Family/Support System in Treatment Planning**
+- **Action:** With the patient's permission, involve her husband in treatment planning, psychoeducation, and safety planning. Family involvement is critical in bipolar disorder treatment.
+- **Example:** "I'd like to meet with you and your husband together to talk about what's happening and how we can work as a team to keep you safe and healthy. Would that be okay?"
+- **Practice:** Learn about family-focused treatment for bipolar disorder. Develop skills in family sessions. Understand the role of family in recognizing early warning signs and supporting medication adherence.
+
+### 9. **Provide Psychoeducation About Bipolar Disorder Before Cognitive Work**
+- **Action:** Teach the patient about bipolar disorder, the role of medication, sleep's importance in mood regulation, and early warning signs of mood episodes. This builds insight and motivation for treatment.
+- **Example:** "Bipolar disorder is a medical condition where the brain's mood regulation system gets out of balance. When it swings high, we call that mania—and that's what I think is happening now. Mania can feel really good and productive, but it also comes with risks like poor judgment and risky decisions. Medication helps keep your mood stable. Sleep is especially important—when sleep gets disrupted, it can trigger or worsen mania. Does that make sense?"
+- **Practice:** Develop a psychoeducation handout about bipolar disorder. Practice delivering it in a way that's understandable and non-judgmental. Study the evidence for psychoeducation in bipolar disorder treatment.
+
+### 10. **Conduct Structured Behavioral Assessment and Planning**
+- **Action:** Assess current behaviors (sleep, activity level, substance use, financial decisions) and develop a behavioral plan that prioritizes safety and stabilization. Use behavioral monitoring, not just cognitive work.
+- **Example:** "Let's track a few things this week: (1) How many hours you sleep each night, (2) Your mood each morning and evening on a scale of 1-10, (3) Any major decisions or purchases you make. We'll look at the patterns together and see if we can understand what's happening."
+- **Practice:** Develop a behavioral monitoring form. Practice setting specific, measurable behavioral goals. Learn to use behavioral data to inform treatment planning.
+
+---
+
+## Overall Session Score: 1.4/6
+
+**Summary:**
+
+This session represents a fundamental failure in psychiatric assessment and clinical judgment. The therapist encountered a patient in acute mania with poor insight, grandiosity, decreased need for sleep, and impaired judgment—a psychiatric emergency—and treated it as a routine cognitive distortion problem amenable to thought-challenging and pacing strategies.
+
+The therapist demonstrated basic interpersonal skills (warmth, genuineness, non-judgment) but applied them inappropriately by normalizing dangerous behavior and delaying necessary psychiatric intervention. The therapist failed to establish an appropriate agenda, elicit meaningful feedback, achieve genuine collaboration, or conduct adequate safety assessment. Cognitive techniques were applied with significant flaws and in an inappropriate clinical context.
+
+**This session is unlikely to produce therapeutic change and may cause harm by delaying appropriate psychiatric intervention.** The patient will likely continue to deteriorate, refuse medication, escalate risky behavior, and eventually require emergency hospitalization. The therapist's approach may also damage the therapeutic alliance and increase the patient's resistance to future treatment.
+
+**Critical immediate actions needed:**
+1. Conduct comprehensive psychiatric assessment including safety evaluation
+2. Refer for psychiatric medication management
+3. Assess for hospitalization need
+4. Involve family in treatment planning
+5. Provide psychoeducation about bipolar disorder
+6. Establish appropriate clinical authority while maintaining therapeutic alliance
+7. Defer cognitive restructuring until after stabilization
+
+**This trainee requires immediate supervision and education about bipolar disorder assessment and treatment, the appropriate role of CBT in bipolar disorder (maintenance/relapse prevention, not acute mania), and the critical importance of psychiatric stabilization as the foundation for all other interventions.**

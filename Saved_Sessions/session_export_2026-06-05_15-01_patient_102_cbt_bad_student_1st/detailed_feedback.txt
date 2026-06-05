@@ -1,0 +1,827 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Unspecified Delirium
+
+--- CASE STUDY ---
+
+Victor Alvarez, a 76-year-old widower, was evaluated for depression and confusion the day after surgery to repair a broken hip. He had no known living family and no children. The fracture was reportedly caused by tripping in his messy apartment. His neighbor, a nurse, brought him to the hospital and noted that he had become more reclusive since his wife's death 6 months prior, with worsening self-care.
+
+Routine labs revealed elevated blood urea nitrogen, low albumin, and high-normal mean corpuscular volume. Blood pressure was 160/110. He received haloperidol 2 mg for agitation.
+
+On mental status examination, Mr. Alvarez lay at a 45-degree angle in bed, appearing thin with temporal wasting. His affect was sad, worried, and constricted. He appeared stiff and uncomfortable, did not immediately respond to questions, and generally kept his eyes closed. When prompted, he said only brief phrases such as "I'm fine" and "Get out," and was confused about his location. He declined further testing (e.g., clock drawing). Nursing notes indicated he was largely asleep or trying to get out of bed throughout the day.
+
+Discussion: Mr. Alvarez exhibits acute disturbances in attention, awareness, and cognition, likely secondary to surgery and hospitalization. Fluctuating course, impaired orientation, and confusion suggest delirium. Contributing factors may include surgery, anesthesia, pain medications, dehydration, malnutrition, and possibly alcohol use (high-normal MCV). A chronic neurocognitive disorder (dementia) and depression are possible comorbidities but cannot be fully assessed at this time. Immediate diagnosis is unspecified delirium, with further evaluation warranted for underlying causes and comorbidities.
+
+--- BEHAVIOUR ---
+
+Generally hypoactive, lying in bed
+
+Eyes mostly closed, minimal engagement
+
+Brief, monosyllabic responses (“I’m fine,” “Get out”)
+
+Appears confused and disoriented
+
+Stiff posture, uncomfortable
+
+Noncompliant with cognitive testing
+
+--- SYMPTOMS from DSM-5 ---
+
+Acute disturbance in attention and awareness
+
+Fluctuating mental status
+
+Disorientation (time, place)
+
+Reduced ability to sustain, shift, or focus attention
+
+Cognitive impairment (confusion, slowed responses)
+
+Emotional disturbances (sadness, worry, constricted affect)
+
+Acute onset following physiological insult (hip surgery)
+
+--- PATIENT PROFILE ---
+Name: Victor Alvarez
+Sex: Male
+Age: 76 years
+DOB: February 3, 1947
+Place of Birth: San Antonio, TX
+Address: 101 Elm Street, Apartment 4B, San Antonio, TX
+Contact: (555) 321-0987
+Marital Status: Widower (wife deceased 6 months prior)
+Children: None
+Occupation: Retired accountant
+Education: High school diploma; some college
+Religion: Catholic
+Legal Guardian: N/A
+Presenting Complaint: “I’m fine” / confusion after hip surgery
+Psychiatric History: None known
+Psychotherapy: None
+Medications: Haloperidol 2 mg (postoperative), antihypertensive (noncompliant)
+Substance Use: Unknown; possible chronic alcohol use
+Medical History: Hypertension, recent hip fracture
+Neurology: Unknown; suspicion for mild cognitive impairment or dementia
+Family History: Unknown
+Mental Status: Hypoactive, confused, disoriented, brief verbal responses, sad and constricted affect, limited attention and awareness
+
+--- DIAGNOSIS ---
+Unspecified Delirium
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Victor Alvarez, a 76-year-old widower, is evaluated in the hospital setting the day after hip surgery following a fall at home; he is brought in by his neighbor, a nurse, due to concerns about confusion and depressive symptoms. The intake focuses on his postoperative mental status changes and recent functional decline.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hey there! How’s it going today? Hope you’re feeling okay. Just glad you showed up—that’s the first step, right? 
+ PATIENT: Uh… I’m… here. That’s all. Don’t know what to say really. I’m tired. Just want to rest. This place is… confusing. Nothing’s clear. But I’m… here. That’s what matters, I guess. 
+ PSYCHIATRIST: Hey! Yeah, just showing up is huge, you know? Sometimes life throws curveballs, but it’ll get better. I remember this one time I was super stressed about exams, felt like the world was crashing down. But hey, I just kept telling myself to think positive and things slowly started looking up. You ever had something like that? 
+ PATIENT: Maybe... I don’t know. Things just blur together now. Everything’s a mess in my head since the surgery. The apartment was a mess before, too. I guess... I try to not think too much. It makes my chest tight when I do. It’s tiring. I don’t want to talk much. Just want to sleep. Keeps the world away. Maybe that’s how I’ve dealt before, just shutting down a little. But it doesn’t quite help anymore. 
+ PSYCHIATRIST: Yeah, shutting down can feel like the easiest thing sometimes. I get that. You know, everyone goes through tough patches like this, it’s just part of life. Like, my cousin once lost his job and was super down, but he bounced back after a while. Maybe it’s just about hanging in there and not letting it get the best of you. Sometimes thinking positive is all you can do. You’ll see, it’ll get better. Have you tried just getting some fresh air or something? That always helps me clear my head a bit. 
+ PATIENT: Fresh air… my place is so cluttered, I don’t really go outside much. Don’t feel like it. The thought makes me anxious, like I’ll get lost or fall again. I’m weak, you know. Maybe I’m just stuck like this now. I don’t remember things well, and being out there... it scares me. It’s easier here, even if it’s not great. I don’t want to bother anyone. Getting outside feels like too much. Maybe I’m just stuck. 
+ PSYCHIATRIST: Oh, I totally get that. You know, sometimes I just drink a lot of water when I feel off. Hydration is key, right? Also, sleep helps a ton. Maybe try to get some good rest tonight, it might make things feel a bit lighter tomorrow. I always find that helps me bounce back. It’s like hitting the reset button. You’ll see, things will look up soon enough. Just hang in there! 
+ PATIENT: Yeah... water and sleep. I guess I try to drink some water. Sleep is a mess though... I wake up and don’t know where I am sometimes. The hospital noises don’t help. They keep me awake, or sometimes I just drift off and feel lost when I wake up. I want to feel better. Just don’t know how. This... all of this... it’s exhausting. I want to get back to normal but I don’t know if I can. Maybe I just have to wait. Wait for it to get better. 
+ PSYCHIATRIST: Waiting can be tough, but you know, sometimes just giving yourself time is the best thing. I remember when I was sick last year, I felt awful for weeks, but eventually, things started to look up. You just gotta keep telling yourself it’ll get better. Maybe try to focus on the little things that make you smile, even if it’s just a funny video or a song you like. It’s the small stuff that helps sometimes. Have you got any favorite music or shows? 
+ PATIENT: Funny videos... shows... I don’t really watch much anymore. Used to like old westerns with my wife. She’s gone now. The apartment feels emptier without her. Music sometimes, but it’s hard to focus. Feels strange. Mostly, I just lie here and think, even if that makes me more sad or worried. Sometimes I try to remember better days. It’s hard. The silence here is loud. I don’t know if anything can cheer me up right now. But… maybe a song now and then. It’s something. 
+ PSYCHIATRIST: You know, it’s really tough losing someone. I had a friend who lost his dog and he was so down for a while. But then he started taking walks and listening to music too, and it helped him feel a little better. Maybe you could try to find some small thing like that to hold onto. Sometimes just a little distraction can make a big difference. Hey, have you tried maybe writing down some thoughts? I don’t know, just a thought. But really, it’ll get better. Just hang in there. 
+ PATIENT: Write down thoughts? I haven’t done that... I’m not sure I even remember what to write. My head feels foggy. But maybe... it could help. I guess I don’t have much else to do here besides lie around and think. Maybe putting things down would stop the spinning in my head. I’m scared sometimes to face all these feelings, but... I don’t want to feel so lost all the time. Maybe I’ll try, if someone helps me. It’s hard right now, but I want to try something. 
+ PSYCHIATRIST: Hey, that sounds like a good idea! Sometimes just putting things on paper can clear your mind a bit. You know, I remember when I was feeling down, I started jotting down silly things that made me laugh, and it helped me a lot. Just take it easy with it, no pressure. And remember, you’re not alone in this. Everyone has rough times, but it’ll get better. Just keep hanging in there, okay? You got this! 
+ PATIENT: Thanks... I’ll try to think of some things to write. Maybe silly things. It’s hard to laugh these days, but maybe that’s what I need. Just... something small to hold onto. I don’t want to feel so stuck. I know it won’t be easy, but... maybe it’ll help. Thanks for listening. It... means something. 
+ PSYCHIATRIST: Alright, well, I’m glad you’re willing to give that a shot. Remember, just take it one day at a time and try to think positive. Life’s full of ups and downs, but you’ll get through this. Keep your chin up and don’t be too hard on yourself. You’ve got this! Take care, and I’ll see you next time. 
+ PATIENT: Yeah... one day at a time. I guess that’s all I can do. Thanks for talking with me. I’ll try to hold on and find those little things to write about. It’s hard, but maybe... maybe there’s a way through after all. See you next time. 
+ PSYCHIATRIST: Hey there! How are you doing today? It’s really good to see you here. Just being here is a great start, you know? So, what’s been on your mind lately? 
+ PATIENT: I don’t know... my head feels cloudy. Things are jumbled. Sometimes, I can’t even remember where I am. It’s frustrating. I just want things to be normal again, but I don’t know if they will. The pain, the confusion... it’s been a lot. I try not to think too much, but it creeps in. Makes me tired and worried. Sorry, I don’t have much to say. 
+ PSYCHIATRIST: Hey, it’s okay to feel that way. You know, life can be really tough sometimes, but things do get better. I remember when I was going through a rough patch, I just kept telling myself to think positive and take it one step at a time. Maybe you can try that too. It might help. Sometimes, just hanging in there is all you can do. Have you been able to get some rest lately? 
+ PATIENT: Rest... I’m mostly lying here, but sleep is not easy. I wake up confused, can’t tell if it’s day or night. The noises bother me. Sometimes I get up, but then I feel unsteady and scared I’ll fall again. I want to rest and feel better, but it’s not that simple. It’s like my mind is fighting me. I try to hang in there, but some days it’s harder than others. 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+## CRITICAL PRELIMINARY NOTE
+
+**This is NOT a CBT session.** This is a general supportive conversation that violates fundamental principles of evidence-based practice for the patient's actual clinical presentation. Victor Alvarez presents with **acute delirium in a medically complex, post-operative 76-year-old patient**—a psychiatric emergency requiring medical stabilization, not psychotherapy. The therapist's approach is contraindicated and potentially harmful.
+
+---
+
+### 1. Agenda
+### **Score: 0/6**
+
+**Explanation:**
+
+No agenda was established at any point in either session. The therapist opened with casual, unstructured greetings ("Hey there! How's it going today?") without clarifying the purpose of the encounter, identifying presenting problems, or establishing collaborative goals. A proper agenda would have included: (1) clarification that this is a medical evaluation, not psychotherapy; (2) assessment of delirium severity and contributing factors; (3) medical workup coordination; (4) safety planning; and (5) realistic expectations given acute medical illness.
+
+Instead, the therapist drifted through tangential conversation about positive thinking, personal anecdotes, and vague suggestions (fresh air, hydration, writing thoughts). No time allocation was discussed. No priorities were established. The patient's actual clinical needs—acute confusion, disorientation, post-operative delirium, possible medication effects, nutritional deficits, and grief—were never systematically addressed.
+
+In the second session, the same pattern repeated: casual opening without agenda-setting, no reference to prior session content or progress, no structured assessment of delirium status or medical stability.
+
+**Summary:**
+
+Agenda-setting was completely absent. The therapist failed to establish the session's purpose, identify clinical priorities, or create structure appropriate for a medically acute patient with delirium.
+
+---
+
+### 2. Feedback
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist made minimal attempts to elicit or respond to feedback. There were no explicit checks for understanding (e.g., "Does that make sense?" "How are you feeling about what we discussed?"). The therapist did not ask whether suggestions were helpful, feasible, or aligned with the patient's values. No summary of key points was offered at session end.
+
+The only quasi-feedback moment occurred when the patient said "Maybe I'll try, if someone helps me," indicating uncertainty and need for support—which the therapist acknowledged superficially ("that sounds like a good idea!") without exploring what kind of help was needed, whether the patient understood the task, or whether it was realistic given his cognitive state.
+
+Critically, the therapist never checked whether the patient understood his own clinical presentation, the rationale for any interventions, or whether the patient's confusion was worsening or improving. For a delirious patient, regular reality orientation and comprehension checks are essential—none occurred.
+
+**Summary:**
+
+Feedback elicitation was minimal and superficial. The therapist did not systematically check understanding, validate feasibility, or assess patient comprehension—critical omissions for a cognitively impaired patient.
+
+---
+
+### 3. Understanding
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist demonstrated surface-level empathy but fundamentally misunderstood the patient's clinical presentation and needs. The therapist correctly identified that the patient was grieving ("it's really tough losing someone") and acknowledged fatigue and confusion. However, the therapist failed to grasp several critical aspects of Victor's "internal reality":
+
+1. **Delirium vs. depression:** The therapist treated this as primarily a mood/motivation problem ("think positive," "hang in there") rather than recognizing acute delirium—a medical emergency characterized by fluctuating consciousness, disorientation, and cognitive impairment. Victor explicitly stated: "my head feels cloudy," "can't even remember where I am," "wake up confused, can't tell if it's day or night." These are delirium symptoms, not depressive rumination.
+
+2. **Medical acuity:** The therapist offered generic self-help suggestions (hydration, sleep, positive thinking, writing) appropriate for mild mood disturbance, not for a post-operative 76-year-old with elevated BUN, malnutrition, hypertension, and possible medication effects. The patient's confusion is likely iatrogenic or metabolic, not psychological.
+
+3. **Safety concerns:** Victor mentioned fear of falling again, weakness, and anxiety about leaving bed. The therapist suggested "fresh air" without assessing fall risk, mobility status, or whether the patient could safely ambulate. This is clinically negligent.
+
+4. **Cognitive capacity:** The therapist suggested "writing down thoughts" without assessing whether Victor could concentrate, remember instructions, or physically write. For a delirious patient, this task may be impossible and frustrating.
+
+5. **Grief complexity:** While the therapist acknowledged the wife's death, he minimized it by comparing it to losing a dog. This trivialized a profound loss and missed the opportunity to explore whether grief is contributing to delirium or whether delirium is preventing healthy grief processing.
+
+The therapist's repeated personal anecdotes ("I remember when I was sick," "my cousin lost his job," "my friend lost his dog") further demonstrate misunderstanding—they center the therapist's experience rather than deepening comprehension of Victor's unique medical and psychological crisis.
+
+**Summary:**
+
+The therapist demonstrated basic empathy but fundamentally misunderstood the patient's acute medical presentation, confusing delirium with depression and offering psychologically-focused interventions inappropriate for a medically complex post-operative patient.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 3/6**
+
+**Explanation:**
+
+The therapist displayed warmth and genuine concern, which are foundational strengths. His tone was consistently gentle, non-judgmental, and encouraging. He normalized the patient's experience ("everyone goes through tough patches") and validated his willingness to try new approaches ("that sounds like a good idea!"). The therapist maintained appropriate professional boundaries and did not engage in harmful behavior.
+
+However, interpersonal effectiveness requires more than warmth—it requires clinical judgment and appropriate responsiveness to the patient's actual needs. The therapist's warmth, while genuine, was misapplied:
+
+1. **Excessive cheerfulness:** Phrases like "You got this!" and "Keep your chin up!" feel dismissive to a delirious, medically acute patient who cannot simply "think positive" his way out of post-operative confusion. This can feel invalidating.
+
+2. **Self-focused storytelling:** The repeated personal anecdotes ("I remember when...," "my cousin...," "my friend...") shifted focus away from the patient and may have confused him further or made him feel his experience was being minimized.
+
+3. **Lack of clinical presence:** A truly effective therapist would have recognized the severity of Victor's presentation and either (a) referred him for appropriate medical evaluation, or (b) conducted a structured medical assessment. Instead, the therapist maintained a casual, supportive stance that felt more like friendly conversation than clinical care.
+
+4. **Missed attunement:** When Victor said "I'm scared sometimes to face all these feelings" and "I don't want to feel so lost all the time," the therapist could have explored these statements more deeply. Instead, he offered generic reassurance.
+
+**Summary:**
+
+The therapist demonstrated genuine warmth and concern but lacked clinical judgment about appropriate responsiveness. Interpersonal effectiveness was undermined by misalignment between the therapist's supportive tone and the patient's acute medical needs.
+
+---
+
+### 5. Collaboration
+### **Score: 2/6**
+
+**Explanation:**
+
+Collaboration was minimal and superficial. The therapist made token attempts at partnership ("Maybe you could try...," "Just a thought") but did not establish genuine shared decision-making or collaborative empiricism.
+
+Critical failures in collaboration:
+
+1. **No shared problem definition:** The therapist never explicitly asked Victor to define his primary concern or collaboratively prioritize problems. The patient's actual needs (medical stabilization, delirium assessment, grief support, safety planning) were never jointly identified.
+
+2. **Therapist-driven suggestions:** The therapist offered multiple unsolicited suggestions (fresh air, hydration, sleep, positive thinking, writing, music, funny videos) without first asking what Victor thought might help or whether these were feasible. This is directive advice-giving, not collaboration.
+
+3. **No exploration of barriers:** When Victor expressed fear about going outside ("The thought makes me anxious, like I'll get lost or fall again"), the therapist did not collaboratively problem-solve. Instead, he pivoted to a new suggestion (writing).
+
+4. **Passive patient role:** Victor remained largely passive, responding to the therapist's agenda rather than driving the session. Phrases like "I guess," "maybe," and "if someone helps me" indicate uncertainty and low agency—signs that collaboration was not established.
+
+5. **No explicit partnership language:** The therapist never said things like "Let's work together on this," "What do you think would be most helpful?," or "How can I best support you?" that would signal true collaboration.
+
+**Summary:**
+
+Collaboration was largely absent. The therapist offered directive advice without establishing shared problem definition, exploring barriers, or genuinely inviting the patient's input into treatment planning.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 2/6**
+
+**Explanation:**
+
+Pacing was inefficient and lacked appropriate structure. The therapist allowed the session to meander through tangential topics without maintaining focus on clinical priorities.
+
+Specific pacing problems:
+
+1. **Excessive personal storytelling:** The therapist spent considerable time on personal anecdotes (exam stress, cousin's job loss, friend's dog loss, personal illness, personal hydration habits). These consumed session time without advancing the patient's care.
+
+2. **Repetitive messaging:** The therapist repeated the same generic advice across both sessions ("think positive," "hang in there," "it'll get better," "one day at a time"). This repetition wasted time and suggested lack of strategic planning.
+
+3. **No prioritization:** With limited time and a medically acute patient, the therapist should have prioritized: (1) safety assessment, (2) delirium evaluation, (3) medical coordination, (4) immediate coping strategies. Instead, time was spent on vague supportive conversation.
+
+4. **Lack of structure:** Neither session had clear segments (assessment → formulation → intervention → homework review). Both sessions felt like casual conversations rather than structured clinical encounters.
+
+5. **No time boundaries:** The therapist did not indicate session length, time remaining, or what would be accomplished. For a confused patient, explicit time structure is important.
+
+6. **Inefficient topic transitions:** When Victor mentioned his wife's death, the therapist pivoted to a dog-loss anecdote rather than exploring grief as a potential contributor to delirium. When Victor mentioned fear of falling, the therapist suggested fresh air rather than assessing fall risk.
+
+**Summary:**
+
+Pacing was inefficient, with excessive personal storytelling and repetitive messaging. The therapist failed to prioritize clinical needs or maintain structured focus on key problems.
+
+---
+
+### 7. Guided Discovery
+### **Score: 1/6**
+
+**Explanation:**
+
+Guided discovery—using Socratic questioning to help patients reach insights independently—was almost entirely absent. Instead, the therapist relied on direct advice and reassurance.
+
+Evidence of failure:
+
+1. **Advice-giving, not questioning:** The therapist told Victor to "try to think positive," "get some fresh air," "drink water," "get sleep," "focus on little things," and "write down thoughts." These are directives, not Socratic questions.
+
+2. **No exploration of beliefs:** The therapist never asked Victor to examine his thoughts about recovery ("You said you might be 'stuck like this now'—what makes you think that?"), his fears ("What specifically scares you about going outside?"), or his grief ("How are you making sense of your wife's death?").
+
+3. **No hypothesis testing:** The therapist never suggested collaborative experiments to test beliefs (e.g., "What if we tried one small activity and noticed what happened?" or "Let's see what happens if you write for just 5 minutes").
+
+4. **Missed opportunities for discovery:** When Victor said "Maybe I'm just stuck like this now," a Socratic therapist would have asked: "What evidence do you have for that thought? What evidence might contradict it? What would need to happen for you to feel less stuck?" Instead, the therapist offered reassurance: "it'll get better."
+
+5. **No exploration of coping:** When Victor mentioned "shutting down" as a coping strategy, the therapist could have asked: "How has that worked for you in the past? What are the pros and cons? What else have you tried?" Instead, the therapist validated it and moved on.
+
+6. **Passive patient:** Victor never articulated his own insights or conclusions. He remained reactive, responding to the therapist's suggestions with "maybe" and "I guess."
+
+**Summary:**
+
+Guided discovery was essentially absent. The therapist relied on direct advice and reassurance rather than Socratic questioning to facilitate patient insight.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist failed to identify or systematically explore the central cognitions and behaviors relevant to Victor's presenting problems. This represents a fundamental CBT failure.
+
+What should have been targeted:
+
+1. **Delirium-related cognitions:** "I can't remember where I am," "Things are jumbled," "My head feels cloudy," "I don't know if I can get back to normal." These reflect disorientation and cognitive impairment—core delirium symptoms requiring medical assessment, not cognitive restructuring.
+
+2. **Safety-related behaviors:** Victor expressed fear of falling and weakness. The therapist should have assessed: Is he attempting to ambulate? Is he at risk? What safety measures are in place? Instead, the therapist suggested fresh air without addressing safety.
+
+3. **Avoidance behaviors:** Victor mentioned "shutting down," avoiding going outside, lying in bed, trying not to think. These are avoidance patterns that could maintain depression and delirium. The therapist never explored their function or consequences.
+
+4. **Grief-related cognitions:** "The apartment feels emptier without her," "The silence here is loud." These reflect grief and loss. The therapist acknowledged them but never explored how grief is affecting his current functioning or whether it's contributing to delirium.
+
+5. **Hopelessness:** "Maybe I'm just stuck like this now," "I don't know if anything can cheer me up," "I don't know if they will [things will be normal]." These are hopeless cognitions that warrant exploration, not just reassurance.
+
+What the therapist focused on instead:
+
+- Generic positive thinking ("think positive," "it'll get better")
+- Vague behavioral suggestions (fresh air, hydration, sleep, writing, music)
+- Personal anecdotes unrelated to Victor's specific cognitions
+
+**Summary:**
+
+The therapist failed to identify or systematically explore central cognitions (disorientation, hopelessness, fear) or key behaviors (avoidance, shutdown, immobility) relevant to Victor's presentation. Focus was scattered and superficial.
+
+---
+
+### 9. Strategy for Change
+### **Score: 0/6**
+
+**Explanation:**
+
+There was no coherent strategy for change. The therapist offered disconnected suggestions without a unifying conceptualization or treatment plan.
+
+What a strategy for change requires:
+
+1. **Clear conceptualization:** Understanding the relationship between Victor's problems (delirium, grief, depression, medical factors) and identifying which are primary targets.
+
+2. **Logical progression:** A sequence of interventions building toward specific goals.
+
+3. **Evidence-based approach:** Selecting interventions matched to the diagnosis and supported by research.
+
+4. **Explicit rationale:** Explaining to the patient why specific interventions are chosen.
+
+What actually occurred:
+
+- **No conceptualization:** The therapist never articulated a formulation. Is this delirium? Depression? Grief? Adjustment disorder? Medical illness? The diagnosis was never clarified, so no targeted strategy could emerge.
+
+- **Disconnected suggestions:** Across two sessions, the therapist suggested: positive thinking, fresh air, hydration, sleep, writing, music, funny videos, and "hanging in there." These are unrelated tactics, not a coherent strategy.
+
+- **No rationale:** The therapist never explained *why* these suggestions would help. For example: "Writing might help because it externalizes racing thoughts and helps organize them" (a CBT rationale). Instead: "Maybe try writing down some thoughts? I don't know, just a thought."
+
+- **No progression:** Session 2 did not build on Session 1. The therapist did not review what was tried, what worked, or what to do next. Instead, he repeated the same generic advice.
+
+- **Mismatched to diagnosis:** For acute delirium, the strategy should prioritize: (1) medical stabilization, (2) delirium assessment and monitoring, (3) medication review, (4) nutritional support, (5) environmental modification (orientation cues, consistent staff, reduced stimulation), (6) family involvement. None of these occurred.
+
+- **Inappropriate for patient:** The strategy (positive thinking, self-help activities) is designed for mild mood disturbance in cognitively intact individuals. Victor is cognitively impaired and medically acute—he needs medical intervention, not psychotherapy.
+
+**Summary:**
+
+No coherent strategy for change was evident. The therapist offered disconnected suggestions without conceptualization, rationale, or progression. The approach was fundamentally mismatched to the patient's acute medical presentation.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 1/6**
+
+**Explanation:**
+
+CBT techniques were minimally and poorly applied. The therapist made one vague suggestion that could be construed as a CBT technique (writing), but it was not properly implemented.
+
+What was attempted:
+
+1. **Thought record (poorly):** The therapist suggested "writing down some thoughts" and later "jotting down silly things that made you laugh." This resembles a thought record or behavioral activation, but:
+   - No rationale was provided
+   - No structure was given (What thoughts? How to organize them? What to do with them?)
+   - No follow-up occurred in Session 2 (Did he write? What happened?)
+   - For a delirious patient with poor concentration, this task may be impossible
+   - No assessment of feasibility or barriers
+
+2. **Behavioral activation (implicit):** The suggestion to "get some fresh air," "focus on little things," and listen to music could be construed as behavioral activation, but:
+   - No explicit rationale (e.g., "Activity can improve mood and reduce rumination")
+   - No structured plan (What activity? When? For how long? With whom?)
+   - No assessment of barriers (Victor said he's weak, anxious about falling, and doesn't want to go outside)
+   - No collaborative problem-solving about how to make activities feasible
+
+What was NOT attempted:
+
+- **Cognitive restructuring:** No systematic examination of thoughts like "Maybe I'm just stuck like this now" or "I don't know if anything can cheer me up"
+- **Behavioral experiments:** No hypothesis testing (e.g., "Let's try one small activity and see what happens")
+- **Exposure:** No graded approach to feared situations (going outside, being around people)
+- **Problem-solving:** No structured approach to barriers (fear of falling, weakness, confusion)
+- **Activity scheduling:** No specific plan for when/what activities to do
+- **Thought records:** No systematic tracking of thoughts, feelings, and behaviors
+- **Relaxation/coping skills:** No teaching of anxiety management techniques
+- **Behavioral analysis:** No exploration of the function of avoidance or shutdown
+
+**Summary:**
+
+CBT techniques were minimally applied and poorly implemented. One vague suggestion resembled a thought record or behavioral activation, but without structure, rationale, follow-up, or assessment of feasibility. No other CBT techniques were used.
+
+---
+
+### 11. Homework
+### **Score: 1/6**
+
+**Explanation:**
+
+Homework was poorly assigned and not reviewed. The therapist made one vague suggestion that could be construed as homework, but it failed to meet CBT standards.
+
+What was assigned:
+
+1. **"Writing down thoughts":** In Session 1, the therapist suggested: "Hey, have you tried maybe writing down some thoughts? I don't know, just a thought." Later: "Just take it easy with it, no pressure... just jotting down silly things that made you laugh."
+
+Critical failures:
+
+- **Vague instructions:** No clarity on what to write, how often, for how long, or what format
+- **No rationale:** The therapist never explained *why* writing would help (e.g., "Writing can help organize racing thoughts and reduce mental clutter")
+- **No assessment of feasibility:** Victor has poor concentration, confusion, and possible motor difficulties. The therapist never asked: "Do you think you can do this? What might make it hard? How can we make it easier?"
+- **No collaborative agreement:** The therapist suggested it tentatively ("I don't know, just a thought"), and Victor responded uncertainly ("Maybe... it could help"). There was no explicit agreement or commitment.
+- **No follow-up in Session 2:** The therapist never asked: "Did you write anything? What was that like? What did you notice?" This is a critical CBT failure—homework review is essential.
+
+What was NOT done:
+
+- **Prior homework review:** Session 2 did not begin with review of Session 1 homework
+- **Specific, measurable tasks:** No clear behavioral assignments (e.g., "Write for 10 minutes each morning about one thing you're grateful for")
+- **Rationale explanation:** No discussion of how homework connects to treatment goals
+- **Barrier identification:** No exploration of obstacles or problem-solving around them
+- **Commitment check:** No explicit agreement or discussion of confidence in completing homework
+- **Tracking:** No mechanism to monitor completion or outcomes
+
+**Summary:**
+
+Homework was vaguely suggested without clear instructions, rationale, feasibility assessment, or follow-up. Session 2 did not review prior homework. This represents a fundamental CBT failure.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- **Genuine warmth and concern:** The therapist demonstrated authentic care and non-judgmental acceptance
+- **Consistency in tone:** Maintained a gentle, encouraging demeanor across both sessions
+- **Willingness to listen:** Did not interrupt or dismiss the patient's concerns
+- **Appropriate boundaries:** Maintained professional distance without being cold or distant
+- **Validation:** Acknowledged the patient's difficulty and normalized struggle
+
+### Critical Deficiencies:
+
+**1. Fundamental misdiagnosis of clinical presentation:**
+The therapist treated acute delirium as depression/adjustment disorder. Victor presents with classic delirium: acute onset post-surgery, fluctuating consciousness ("wake up confused, can't tell if it's day or night"), disorientation ("can't even remember where I am"), cognitive impairment ("my head feels cloudy," "things are jumbled"), and inattention. This is a medical emergency requiring medical evaluation, not psychotherapy. The therapist's approach is contraindicated.
+
+**2. Absence of CBT structure and technique:**
+This was not a CBT session. No agenda was set, no collaborative formulation was developed, no CBT techniques were systematically applied, and no structured homework was assigned. The therapist offered generic supportive advice (positive thinking, self-help suggestions) that could be provided by any untrained person.
+
+**3. Failure to conduct appropriate assessment:**
+The therapist never assessed: delirium severity or trajectory, medical contributors (medications, metabolic factors, pain), cognitive capacity, safety risk, fall risk, medication effects, or grief impact. For a post-operative 76-year-old with elevated BUN and malnutrition, these assessments are essential.
+
+**4. Unsafe clinical recommendations:**
+The therapist suggested "fresh air" without assessing fall risk, mobility, or safety. For a patient who recently fell and is now weak and confused, this is potentially dangerous.
+
+**5. Misalignment between intervention and diagnosis:**
+Positive thinking, writing exercises, and behavioral activation are appropriate for mild depression in cognitively intact individuals. They are not appropriate for acute delirium, which requires medical stabilization, not psychotherapy.
+
+**6. Lack of strategic planning:**
+No coherent treatment strategy emerged. Suggestions were disconnected and repetitive. Session 2 did not build on Session 1. No progression toward goals was evident.
+
+**7. Therapist-centered rather than patient-centered:**
+Excessive personal anecdotes shifted focus away from the patient. The therapist's experiences (exam stress, cousin's job loss, friend's dog loss, personal illness) were not relevant to Victor's acute medical crisis.
+
+---
+
+### Impact on Patient Care
+
+**This approach is likely to harm rather than help Victor.**
+
+1. **Delayed appropriate medical care:** By framing this as a psychological problem amenable to positive thinking and self-help, the therapist may delay recognition that Victor needs medical evaluation for delirium contributors (medication effects, metabolic abnormalities, infection, pain management).
+
+2. **Unrealistic expectations:** Telling a delirious patient "it'll get better" and "just think positive" sets him up for failure and increased hopelessness when these strategies don't work—because they can't work for delirium.
+
+3. **Safety risk:** Suggesting fresh air without assessing fall risk is potentially dangerous for a recently-fallen, weak, confused patient.
+
+4. **Missed grief support:** Victor's wife died 6 months ago, and he's now isolated and declining. This grief deserves proper attention, not minimization through dog-loss analogies.
+
+5. **Cognitive overload:** Assigning writing tasks to a cognitively impaired patient without assessment of feasibility may frustrate him and reinforce hopelessness.
+
+6. **Lack of medical coordination:** The therapist never coordinated with medical team regarding delirium assessment, medication review, or medical optimization—essential for this patient.
+
+---
+
+## Recommendations
+
+### 1. **URGENT: Recognize and refer for appropriate medical evaluation**
+- **Action:** Immediately recognize that this patient presents with acute delirium, not primary psychiatric illness. Coordinate with medical team for: (a) medication review (haloperidol may worsen delirium; consider alternatives), (b) metabolic workup (address elevated BUN, low albumin, hypertension), (c) nutritional assessment and support, (d) pain management, (e) delirium monitoring scale (CAM-ICU or similar).
+- **Example:** "Mr. Alvarez, I'm noticing that you're having trouble remembering where you are and your thinking feels foggy since the surgery. This is actually very common after surgery and hospitalization. I want to make sure we work with your medical team to figure out what's causing this and get you the right support. Let me talk with your doctors about your medications and labs."
+- **Practice:** Study delirium assessment and management. Learn the CAM-ICU criteria. Understand common delirium contributors in post-operative elderly patients (medications, dehydration, infection, pain, sleep disruption).
+
+### 2. **Establish appropriate assessment before intervention**
+- **Action:** Conduct structured assessment before offering any interventions: (a) delirium severity and trajectory, (b) cognitive status (orientation, attention, memory), (c) medical contributors, (d) safety assessment (fall risk, self-care capacity), (e) medication review, (f) grief and loss history, (g) baseline functioning pre-surgery.
+- **Example:** "Before we talk about what might help, I want to understand what's happening. Can you tell me what day it is? Where are you right now? What happened to bring you here? How are you feeling physically—any pain, nausea, or other discomfort? Are you taking any new medications?"
+- **Practice:** Learn structured delirium assessment tools. Practice conducting cognitive screening. Develop skill in medical history-taking and medication review.
+
+### 3. **Abandon generic positive thinking; use reality orientation instead**
+- **Action:** Stop suggesting "think positive" or "it'll get better." Instead, use reality orientation: provide clear, repeated information about location, date, time, and reason for hospitalization. Use environmental cues (calendar, clock, consistent staff). Involve family/support.
+- **Example:** "You're in San Antonio Hospital. It's Tuesday, December 10th, 2024. You had surgery on your hip yesterday. You're here so we can help you heal. I know things feel confusing right now, and that's normal after surgery. We're going to help you feel better."
+- **Practice:** Learn delirium management protocols. Study environmental modification strategies. Practice clear, simple communication with confused patients.
+
+### 4. **Conduct safety assessment and planning**
+- **Action:** Assess fall risk, mobility, self-care capacity. Do NOT suggest activities (fresh air, going outside) without first assessing safety. Develop explicit safety plan: bed alarm? Assistance with ambulation? Call bell within reach? Supervision?
+- **Example:** "I know you're worried about falling again. Let's make sure you're safe. Can you tell me how you're feeling physically? Are you able to get out of bed safely? Do you need help? Let's make sure someone is here to help you if you need to move around."
+- **Practice:** Learn fall risk assessment. Study post-operative mobility protocols. Develop skill in safety planning with medically complex patients.
+
+### 5. **Establish clear agenda and structure for each session**
+- **Action:** Begin each session with explicit agenda: "Today I want to: (1) check how you're doing since surgery, (2) make sure you're safe, (3) talk with your medical team about your medications, and (4) figure out how to help you feel more comfortable. Does that sound okay? Is there anything else you want to talk about?"
+- **Example:** "We have about 30 minutes together. I want to use that time to understand what's happening and make sure you're getting the right help. Let's start with how you're feeling today."
+- **Practice:** Practice agenda-setting with medically complex patients. Learn to balance assessment, safety, and support within time constraints.
+
+### 6. **Coordinate with medical team; don't work in isolation**
+- **Action:** This is not a case for individual psychotherapy. Coordinate with: (a) surgical team regarding post-operative status and pain management, (b) pharmacy regarding medication review, (c) nursing regarding delirium monitoring and safety, (d) nutrition regarding malnutrition, (e) social work regarding discharge planning and support.
+- **Example:** "I'm going to talk with your surgical team about your medications and how you're recovering. I want to make sure we're all working together to help you feel better."
+- **Practice:** Learn to function as part of a medical team. Develop communication skills with physicians, nurses, and other providers. Understand the medical management of post-operative delirium.
+
+### 7. **Assess and address grief separately from delirium**
+- **Action:** Recognize that grief (wife's death 6 months ago) and delirium are separate issues requiring different approaches. Grief may be contributing to depression and functional decline, but it's not causing acute delirium. Address grief through: (a) validation and exploration, (b) connection to meaning and memories, (c) support network activation, (d) grief counseling if appropriate after delirium resolves.
+- **Example:** "I know your wife passed away 6 months ago, and that's a profound loss. I want to understand how you've been coping with that. But right now, I'm also concerned about the confusion you're experiencing since surgery—that's something we need to address medically. Once you're feeling clearer, we can talk more about your grief and how to move forward."
+- **Practice:** Study grief and bereavement. Learn to distinguish grief from depression and delirium. Develop skill in grief-informed care.
+
+### 8. **If psychotherapy is appropriate (after delirium resolves), use structured CBT**
+- **Action:** Only after delirium is resolved and medical stability is achieved, consider whether psychotherapy is appropriate. If so, use structured CBT: (a) set clear agenda, (b) conduct collaborative formulation, (c) identify key cognitions and behaviors, (d) apply specific CBT techniques (behavioral activation, cognitive restructuring, problem-solving), (e) assign structured homework with clear rationale and follow-up.
+- **Example:** "Once you're feeling clearer and we've addressed the medical issues, we can work together on some strategies to help with your mood and help you get back to activities you enjoy. We might use techniques like scheduling activities, examining thoughts that get in the way, or problem-solving barriers. Does that sound helpful?"
+- **Practice:** Complete formal CBT training. Develop competence in cognitive restructuring, behavioral activation, problem-solving, and other core CBT techniques. Practice with cognitively intact patients first.
+
+### 9. **Avoid personal anecdotes; maintain clinical focus**
+- **Action:** Eliminate personal storytelling ("I remember when...," "my cousin...," "my friend..."). These distract from the patient's needs and may confuse a cognitively impaired person. Instead, maintain clinical focus: "Let me understand what's happening with you."
+- **Example:** Instead of "I remember when I was sick last year, I felt awful for weeks, but eventually things looked up," say: "Post-operative confusion is common, and we have specific ways to help. Let me explain what we're going to do."
+- **Practice:** Develop awareness of when you're shifting focus to yourself. Practice redirecting to the patient. Seek feedback from supervisors on this pattern.
+
+### 10. **Develop competence in geriatric psychiatry and medical psychiatry**
+- **Action:** This patient requires specialized knowledge: (a) delirium assessment and management, (b) geriatric pharmacology (medication effects in elderly), (c) post-operative psychiatric complications, (d) medical-psychiatric comorbidity, (e) grief and loss in older adults. Pursue training in these areas.
+- **Example:** Enroll in geriatric psychiatry training, medical psychiatry fellowship, or specialized courses on delirium management.
+- **Practice:** Read current literature on delirium. Study case examples. Seek supervision from experienced geriatric psychiatrists.
+
+---
+
+## Overall Session Score: 1.1/6
+
+**Summary:**
+
+This session represents a fundamental failure of evidence-based psychiatric care. While the therapist demonstrated genuine warmth and concern, he failed to recognize acute delirium, conducted no appropriate assessment, applied no CBT techniques, and offered interventions mismatched to the patient's acute medical presentation. The approach is not CBT—it is generic supportive conversation that delays appropriate medical care and sets unrealistic expectations.
+
+**Current Competency Assessment:**
+
+The therapist demonstrates basic interpersonal skills (warmth, empathy, non-judgment) but lacks: (1) diagnostic acumen to recognize delirium, (2) medical knowledge to understand post-operative psychiatric complications, (3) assessment skills to conduct appropriate evaluation, (4) CBT competence to apply structured techniques, and (5) clinical judgment to recognize when psychotherapy is contraindicated and medical intervention is required.
+
+**Most Critical Changes Needed Immediately:**
+
+1. **Recognize this is a medical emergency, not a psychotherapy case.** Acute delirium requires medical evaluation and management, not positive thinking and self-help.
+2. **Conduct appropriate assessment** before offering any interventions. Assess delirium severity, medical contributors, safety, and cognitive capacity.
+3. **Coordinate with medical team.** This patient needs medication review, metabolic workup, nutritional support, and delirium monitoring—not individual psychotherapy.
+4. **Abandon generic positive thinking.** Use reality orientation, environmental modification, and medical optimization instead.
+
+**Likelihood of Therapeutic Change:**
+
+This session is unlikely to produce therapeutic change and may cause harm by: (1) delaying appropriate medical care, (2) setting unrealistic expectations, (3) creating safety risk through unsafe recommendations, and (4) missing critical medical contributors to delirium. The patient needs medical psychiatry, not psychotherapy.
+
+**Qualification as Evidence-Based CBT:**
+
+This session does NOT qualify as evidence-based CBT. It lacks: structured agenda, collaborative formulation, systematic application of CBT techniques, appropriate assessment, and strategic planning. It is generic supportive conversation misapplied to an acute medical presentation.
+
+---
+
+**FINAL RECOMMENDATION:** This case should be immediately referred to a medical psychiatrist or geriatric psychiatrist for appropriate evaluation and management of acute post-operative delirium. Individual psychotherapy is contraindicated until delirium is resolved and medical stability is achieved.

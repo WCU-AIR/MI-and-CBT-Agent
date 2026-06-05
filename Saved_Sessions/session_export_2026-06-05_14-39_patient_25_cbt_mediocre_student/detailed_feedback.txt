@@ -1,0 +1,842 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Bulimia Nervosa; Major Depressive Disorder
+
+--- CASE STUDY ---
+
+Wanda Hoffman was a 24-year-old woman referred to a psychiatrist by her internist for feelings of sadness, worthlessness, and loneliness. She reported low energy, poor sleep, stomachaches, and difficulty exercising. She had been living alone since college graduation 2 years earlier and recently received a promotion as an accountant. She maintained some social contacts but felt too fatigued and sad to engage in activities beyond brief dinners with friends.
+
+Ms. Hoffman expressed concern about weight gain and requested an antidepressant that would not cause weight gain, hoping for one that might promote weight loss. She disclosed that she was a "failed anorexic," describing a long-standing pattern of dieting since age 13, followed by episodes of binge eating and self-induced vomiting that began in college. Her typical eating pattern included skipping breakfast, light lunch, average dinner, followed by a late-night binge and purging.
+
+Discussion: Ms. Hoffman exhibits symptoms of major depressive disorder, including depressed mood, anhedonia, poor sleep, low energy, somatic complaints, feelings of worthlessness, and diminished concentration. She denies suicidal intent but has thoughts of death. Her eating history is consistent with bulimia nervosa (BN), characterized by recurrent binge eating, inappropriate compensatory behaviors (self-induced vomiting), and undue influence of body weight and shape on self-evaluation. The binge/purge cycle occurs at least weekly and has persisted for several years. BN is commonly comorbid with MDD, which is reflected in Ms. Hoffman's presentation.
+
+--- BEHAVIOUR ---
+
+Cooperative but initially reluctant to discuss eating behavior
+
+Euthymic mood with underlying sadness and guilt
+
+Open when prompted about binge-purge behavior
+
+Answers questions fully once engaged
+
+Expresses concern about weight and appearance
+
+--- BN/MDD SYMPTOMS from DSM-5 ---
+
+Recurrent binge eating episodes
+
+Recurrent inappropriate compensatory behaviors (self-induced vomiting)
+
+Overvaluation of body shape and weight
+
+Depressed mood
+
+Anhedonia
+
+Low energy/fatigue
+
+Poor sleep
+
+Physical complaints (stomachaches)
+
+Feelings of worthlessness
+
+Diminished concentration
+
+Thoughts of death
+
+--- PATIENT PROFILE ---
+Name: Wanda Hoffman
+Sex: Female
+Age: 24 years
+DOB: October 3, 1999
+Place of Birth: Albany, NY
+Address: 112 Oak Lane, Albany, NY
+Contact: (555) 246-8102
+Marital Status: Single
+Children: None
+Occupation: Accountant (recently promoted)
+Education: Bachelor’s degree
+Religion: None specified
+Legal Guardian: N/A
+Presenting Complaint: "I feel sad, worthless, and out of control with my eating"
+Psychiatric History: None formally treated; longstanding eating concerns
+Psychotherapy: None reported
+Medications: None at time of evaluation
+Substance Use: Denies alcohol or illicit drugs
+Medical History: Recurrent stomachaches, fatigue
+Neurology: Normal
+Family History: Not specified
+Mental Status: Euthymic but sad, cooperative, forthcoming about binge-purge behavior, concerned about weight, low energy, poor sleep, diminished concentration
+
+--- DIAGNOSIS ---
+
+Bulimia Nervosa
+
+Major Depressive Disorder, single episode, moderate
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Wanda Hoffman is a 24-year-old woman evaluated in an outpatient psychiatric setting following referral from her internist due to concerns about persistent sadness, feelings of worthlessness, and difficulties with eating behaviors. She presents for assessment and management after reporting longstanding issues with mood and eating patterns.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hello! Good to see you today. I thought maybe we could talk about some things that have been bothering you lately and see if we can figure out some ways to feel a bit better. How does that sound? 
+ PATIENT: Hi, thanks for seeing me. Yeah, I guess that sounds okay. I've been feeling pretty down and kind of stuck, so maybe talking about it could help. I just don't really know where to start. There's a lot on my mind. 
+ PSYCHIATRIST: Yeah, that makes sense. Maybe we can just start with something recent that felt tough for you. Like, was there a moment in the last few days where you felt especially down or upset? Just anything that comes to mind. That could be a good place to begin. 
+ PATIENT: Well, actually, just last night I had one of those episodes again. I skipped most of the day, like usual, and then I ended up binge eating late at night. It’s like this out-of-control urge that just takes over. Afterward, I felt so awful and guilty that I made myself throw up. It’s embarrassing to admit, but it’s been happening a lot lately. And afterward, I just felt worse... like I’m never going to get a handle on this. 
+ PSYCHIATRIST: I see, that sounds really tough. So, when you had that urge to binge eat and then throw up, what kind of thoughts were going through your mind at that time? Maybe something like "I can't control myself" or "I'm a failure"? Sometimes noticing these thoughts can help us understand the feelings better. You could try thinking about it differently, like maybe reminding yourself that urges come and go and don't define you. Does that make sense? 
+ PATIENT: Yeah, that makes sense. When I’m in the middle of it, I pretty much think, "I’m so weak for doing this again," or "I’ve completely ruined whatever progress I might’ve made." It feels like I’m trapped in this cycle I can’t break out of. I guess I don’t really believe that urges come and go—more like they’re there to stay, and I’m stuck with them. It’s hard to imagine anything different because it feels so permanent. But I do like the idea of maybe reminding myself that urges don’t define me. That sounds... hopeful. 
+ PSYCHIATRIST: It sounds like you're feeling pretty stuck and frustrated with this cycle, which makes a lot of sense. Maybe it would help to think about times when the urge wasn’t as strong or when you managed to resist it, even just a little. Like, what do you think was different about those moments? You could try thinking about those times to remind yourself that the urges aren’t always overwhelming. Does that seem like something that might help? 
+ PATIENT: Yeah, I guess there have been a few times when the urge wasn’t as bad. Like, sometimes I’m really tired or distracted with work, and I don’t even notice it as much. Or when I’ve been with friends or out doing something, it’s easier to keep it under control. I suppose those moments show that it isn’t always this intense. Maybe thinking about those times could help me remember that it doesn’t have to be overwhelming all the time. That feels a little comforting to think about, actually. 
+ PSYCHIATRIST: That's good to hear you noticed those moments. So, maybe next time you feel the urge, you could try to distract yourself or do something to get your mind off it, like when you’re busy or with friends. You should practice doing things that keep you engaged so the urges might not feel so strong. Do you think you could try that? It might help you feel more in control. 
+ PATIENT: Yeah, I think I could try that. It’s hard, though, because sometimes at night I’m alone and the urges hit hardest then. But maybe I could plan some small distractions for those times—like watching a show or calling a friend, something to keep my mind busy instead of focusing on food. It sounds like it might help me feel less out of control if I have something else to do. I’m willing to give it a shot. 
+ PSYCHIATRIST: Okay, that sounds like a reasonable plan to try. Also, maybe it would help to notice your thoughts when the urges come up, just to get a sense of what you’re thinking and feeling in those moments. You could try to catch those thoughts and remind yourself that urges are temporary and don’t have to control you. It’s not a perfect fix, but it might be useful to practice this awareness during the week. How does that sound? 
+ PATIENT: That sounds like a good idea. If I can catch myself thinking those negative thoughts, maybe I can remind myself they’re not the whole truth. It’s just hard because the feelings and urges feel so real and urgent at the time. But if I start paying more attention to what I’m thinking when the urges come, maybe that will give me some space to respond differently. I can try to do that this week and see how it feels. 
+ PSYCHIATRIST: Great, so to kind of wrap up, it sounds like you’re going to try distracting yourself when the urges hit and also notice your thoughts more to remind yourself that urges don’t have to control you. Those seem like good steps. Maybe next time we meet, you can tell me how it went or if there were any times it was hard to do. Keep practicing, and hopefully, you’ll feel a bit more in control. Does that sound okay? 
+ PATIENT: Yeah, that sounds okay. I’m a little nervous about how it’s going to go, but I’ll try the distractions and paying attention to my thoughts like we talked about. It feels good to have a plan, even if it’s just small steps. I’ll let you know how it goes next time. Thanks for listening. 
+ PSYCHIATRIST: You're welcome. Remember, it’s okay if it’s hard sometimes—progress isn’t always straight forward. Just keep trying to notice your thoughts and find distractions that work for you. We’ll check in next time and see how things are going. Take care until then. 
+ PATIENT: Thanks, I appreciate that. It helps to know it’s normal to have setbacks. I’ll do my best to keep at it. See you next time. 
+ PSYCHIATRIST: Hi, good to see you today. I thought maybe we could talk about some things that have been on your mind recently and see if we can come up with some ways to feel a bit better. How does that sound? 
+ PATIENT: Hi, thanks for seeing me again. Yeah, I guess talking about what’s been on my mind could help. It’s been a tough week—I’ve been feeling kind of stuck and stressed, especially with work and... well, my eating habits. It’s hard to shake the feeling that I’m not doing enough to get better. 
+ PSYCHIATRIST: Hi, thanks for seeing me again. Yeah, I guess talking about what’s been on my mind could help. It’s been a tough week—I’ve been feeling kind of stuck and stressed, especially with work and... well, my eating habits. It’s hard to shake the feeling that I’m not doing enough to get better. 
+ PATIENT: Yeah, that’s exactly it. I keep trying to use the distractions we talked about last time when those urges to binge come up, but sometimes it just feels like nothing really works. Like, I’ll start watching a show or calling a friend, but the thoughts keep creeping back. It’s frustrating because I want to improve, but part of me just feels trapped in this cycle. And on top of that, I’m still really worried about gaining weight or just not looking how I want to. It’s a lot to deal with. 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist made minimal effort to establish a structured, collaborative agenda. In the opening statement ("I thought maybe we could talk about some things that have been bothering you lately"), the therapist used vague language without identifying specific target problems, time allocation, or session priorities. When the patient stated "There's a lot on my mind," the therapist responded with "Maybe we can just start with something recent that felt tough for you"—a reactive, unstructured approach rather than collaborative agenda-setting.
+
+The session lacked explicit prioritization. While the patient disclosed binge-purge episodes and depressive symptoms, the therapist never clarified which problem to focus on first, how much time to allocate to each issue, or what the session's concrete goals were. The therapist did not address the comorbid presentation (bulimia nervosa AND major depressive disorder) or establish which symptoms to target. By the end of the session, the therapist summarized vaguely ("it sounds like you're going to try distracting yourself...") without confirming whether this was the patient's priority or the therapist's clinical judgment.
+
+This matters because without a clear agenda, sessions become unfocused and inefficient. Patients with comorbid eating disorders and depression need explicit prioritization—should the session target mood regulation, eating behavior, or both? The lack of agenda-setting also prevents the therapist from managing time effectively or ensuring that critical clinical issues (e.g., medical safety of purging, suicidal ideation) are adequately addressed.
+
+**Summary:**
+Agenda-setting was absent. The therapist used reactive, vague language and failed to collaboratively establish priorities, target problems, or time allocation. This represents a fundamental gap in CBT structure.
+
+---
+
+### 2. Feedback
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist elicited virtually no feedback throughout the session. There were no explicit checks for understanding (e.g., "Does that make sense?" or "How does that land for you?"), no solicitation of the patient's reactions to interventions, and no assessment of whether the patient found the session helpful or relevant.
+
+The only quasi-feedback moment occurred when the therapist asked, "Does that seem like something that might help?" after suggesting the patient recall times when urges were weaker. However, this was a leading question designed to confirm the therapist's suggestion rather than genuinely elicit the patient's perspective. The patient's response ("That feels a little comforting to think about, actually") was not followed up with deeper exploration of whether this intervention actually resonated or felt feasible.
+
+At session end, the therapist asked, "Does that sound okay?" but this was a perfunctory closing question, not genuine feedback elicitation. The therapist never asked: "What was most helpful today?" "What didn't make sense?" "How confident do you feel about trying these strategies?" "What concerns do you have about the plan?" These omissions mean the therapist has no data on whether the patient understood the rationale, felt heard, or genuinely committed to homework.
+
+This is clinically problematic because without feedback, the therapist cannot adjust interventions, identify misunderstandings, or ensure the patient feels validated. For a patient with bulimia and depression—conditions involving shame and self-criticism—the absence of feedback-seeking may reinforce the patient's sense of not being truly understood.
+
+**Summary:**
+Feedback elicitation was minimal and superficial. The therapist did not systematically check understanding, solicit reactions to interventions, or assess session helpfulness. This represents a critical gap in collaborative practice.
+
+---
+
+### 3. Understanding
+### **Score: 3/6**
+
+**Explanation:**
+
+The therapist demonstrated partial understanding of the patient's explicit presenting problems but missed critical nuances and the patient's internal experience. When the patient disclosed the binge-purge cycle ("I skipped most of the day... ended up binge eating late at night... made myself throw up"), the therapist acknowledged this ("I see, that sounds really tough") but did not explore the functional relationship between these behaviors or the patient's emotional state preceding the episode.
+
+The therapist grasped that the patient experienced guilt and self-criticism ("I'm so weak," "I've completely ruined whatever progress") and attempted to normalize these thoughts. However, the therapist missed several critical elements: (1) the patient's sense of permanence and hopelessness ("It's hard to imagine anything different because it feels so permanent"), (2) the distinction between the patient's intellectual understanding (urges are temporary) and emotional conviction (urges feel permanent), and (3) the patient's underlying depressive cognitions (worthlessness, hopelessness) that likely fuel the eating disorder.
+
+When the patient stated, "It's hard to shake the feeling that I'm not doing enough to get better," the therapist did not explore this—a missed opportunity to understand perfectionism, self-blame, or depressive thinking patterns. The therapist also did not inquire about the patient's mood, sleep, energy, or other depressive symptoms mentioned in the intake, suggesting incomplete assessment of the comorbid presentation.
+
+The therapist's empathic statements were generic ("that sounds really tough," "that makes a lot of sense") rather than demonstrating deep understanding of the patient's specific struggle with control, shame, and the cyclical nature of the disorder.
+
+**Summary:**
+The therapist demonstrated surface-level understanding of explicit symptoms but missed deeper emotional content, depressive cognitions, and the functional relationships between mood and eating behavior. Empathy was present but not deeply informed.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 4/6**
+
+**Explanation:**
+
+The therapist demonstrated adequate warmth, concern, and professionalism. The opening was welcoming ("Good to see you today"), the tone remained supportive throughout, and the therapist did not display hostility, impatience, or demeaning behavior. The therapist's language was gentle and non-judgmental, which likely helped the patient feel safe disclosing sensitive eating disorder behaviors.
+
+However, interpersonal effectiveness was limited by the therapist's failure to convey genuine curiosity or deep understanding. Statements like "that sounds really tough" and "that makes a lot of sense" are supportive but somewhat formulaic. The therapist did not ask exploratory questions that would demonstrate authentic interest in the patient's internal experience (e.g., "What does that feel like in your body?" "What's going through your mind right before the urge hits?" "How does this connect to your mood?").
+
+The therapist's approach shifted toward directive advice-giving ("You should practice doing things that keep you engaged," "You could try to catch those thoughts") rather than collaborative exploration. While not harsh, this reduces the sense of partnership and may feel prescriptive to a patient already struggling with control and perfectionism.
+
+The therapist did not address the patient's expressed nervousness ("I'm a little nervous about how it's going to go") with genuine exploration or reassurance grounded in the therapeutic relationship. The closing statement ("Remember, it's okay if it's hard sometimes") was supportive but generic.
+
+**Summary:**
+The therapist displayed adequate warmth and professionalism without significant interpersonal problems. However, genuine curiosity and deep empathic attunement were limited, and the shift toward directive advice reduced collaborative warmth.
+
+---
+
+### 5. Collaboration
+### **Score: 2/6**
+
+**Explanation:**
+
+Collaboration was minimal and deteriorated as the session progressed. Initially, the therapist used collaborative language ("Maybe we can just start with something recent..."), but this was superficial—the therapist was guiding the patient toward the therapist's agenda rather than genuinely exploring the patient's priorities.
+
+By the middle of the session, the therapist shifted to directive mode: "Maybe it would help to think about times when the urge wasn't as strong" (therapist's suggestion), "You should practice doing things that keep you engaged" (directive), "You could try to distract yourself" (prescriptive). The patient was positioned as a recipient of advice rather than an active collaborator in problem-solving.
+
+Critically, the therapist never asked: "What do you think might help?" "What have you already tried?" "What feels most important to address first?" "What barriers do you anticipate?" These questions would have positioned the patient as an expert on their own experience and created genuine partnership.
+
+The homework assignment exemplifies the lack of collaboration. The therapist told the patient to "try distracting yourself" and "notice your thoughts," but did not collaboratively develop these strategies with the patient. When the patient mentioned "sometimes at night I'm alone and the urges hit hardest," the therapist did not use this as an opportunity for collaborative problem-solving. Instead, the therapist accepted the patient's suggestion ("I could plan some small distractions") without exploring whether this was realistic, what specific distractions might work, or what obstacles might arise.
+
+In the second session, when the patient reported that distractions "just feels like nothing really works," the therapist did not respond with curiosity ("What happened when you tried?" "What got in the way?" "What did you learn?"). This represents a missed opportunity for collaborative reflection and adjustment.
+
+**Summary:**
+Collaboration was superficial and declined into directive advice-giving. The patient was positioned as a recipient of suggestions rather than an active partner. Critical collaborative opportunities were missed, particularly around homework development and troubleshooting.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 3/6**
+
+**Explanation:**
+
+The therapist's pacing was inconsistent and inefficient. The session began reactively, with the therapist asking the patient to "start with something recent that felt tough"—a broad, unstructured opening that allowed the patient to introduce multiple issues (mood, eating, work stress, weight concerns) without prioritization.
+
+The therapist spent considerable time on a single intervention (distraction and thought-catching) without efficiently covering other critical clinical material. For a patient with comorbid bulimia nervosa and major depressive disorder, the session should have addressed: (1) the relationship between mood and eating behavior, (2) depressive symptoms (sleep, energy, concentration, suicidal ideation), (3) the medical safety of purging, (4) the patient's motivation for change, and (5) the role of body image concerns in maintaining the disorder.
+
+Instead, the therapist focused narrowly on urge management through distraction—a reasonable intervention but insufficient for the complexity of this case. The session lacked depth on any single issue; the therapist touched on thoughts, urges, and distractions but did not systematically explore the functional relationships between these elements.
+
+The closing was rushed and vague. The therapist summarized the plan in two sentences without ensuring the patient understood the rationale, felt confident about implementation, or had identified potential obstacles. There was no discussion of what to do if the strategies failed or how to contact the therapist between sessions.
+
+The second session opening was similarly inefficient. The therapist did not review the previous session's homework systematically ("How did the distractions go?" "What did you notice about your thoughts?"). Instead, the therapist accepted the patient's global statement ("It's been a tough week") and allowed the session to drift without re-establishing focus.
+
+**Summary:**
+Pacing was reactive and inefficient. The therapist did not prioritize critical clinical material, spent time on a single intervention without depth, and failed to systematically review homework or establish clear session structure. Sessions felt somewhat aimless despite the patient's complex presentation.
+
+---
+
+### 7. Guided Discovery
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist relied heavily on suggestion and advice rather than guided discovery. A hallmark of CBT is helping patients reach insights through Socratic questioning—asking rather than telling. This therapist primarily told.
+
+Examples of directive statements (not guided discovery):
+- "You could try thinking about it differently, like maybe reminding yourself that urges come and go"
+- "Maybe it would help to think about times when the urge wasn't as strong"
+- "You should practice doing things that keep you engaged"
+- "You could try to distract yourself or do something to get your mind off it"
+- "Maybe it would help to notice your thoughts when the urges come up"
+
+In contrast, genuine guided discovery would involve questions like:
+- "When you have the urge to binge, what do you think happens if you don't act on it?"
+- "You mentioned that urges are weaker when you're with friends—what's different about those situations?"
+- "What do you think would happen if you sat with the urge for 10 minutes without acting on it?"
+- "How do you think your mood affects your eating patterns?"
+
+The therapist did ask one semi-Socratic question: "What do you think was different about those moments?" when the patient identified times urges were weaker. The patient responded thoughtfully ("I'm really tired or distracted with work... when I've been with friends"). However, the therapist did not follow up with deeper discovery: "What is it about being with friends that makes it easier?" "How could you create that sense of connection or distraction on nights when you're alone?" "What does that tell us about what you actually need?"
+
+Instead, the therapist pivoted to advice: "So, maybe next time you feel the urge, you could try to distract yourself." This cut short the discovery process and imposed the therapist's solution rather than allowing the patient to generate insights.
+
+The second session exemplifies this further. When the patient reported that distractions "just feels like nothing really works," the therapist did not use guided discovery to explore why ("What happened when you tried?" "What got in the way?" "What did you notice?"). This was a critical moment for collaborative problem-solving and learning, but it was missed.
+
+**Summary:**
+The therapist relied on advice-giving and suggestion rather than guided discovery. Socratic questioning was minimal, and opportunities to help the patient generate insights were replaced with therapist-directed solutions. This undermines the patient's autonomy and learning.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist identified some relevant cognitions but failed to focus on the most central ones, and the selection of target behaviors was superficial and potentially misguided.
+
+**Cognitions identified:**
+- "I'm so weak for doing this again"
+- "I've completely ruined whatever progress I might've made"
+- "Urges are there to stay, and I'm stuck with them"
+
+These are important automatic thoughts, but the therapist did not explore deeper, more central cognitions that likely maintain both the eating disorder and depression:
+- Core beliefs about self-worth and control
+- Perfectionism and all-or-nothing thinking ("one binge means I've ruined everything")
+- The relationship between body image and self-evaluation
+- Hopelessness about change ("It's hard to imagine anything different because it feels so permanent")
+- Depressive cognitions (worthlessness, inadequacy: "I'm not doing enough to get better")
+
+The therapist's response to the patient's thoughts was to suggest reframing ("reminding yourself that urges come and go and don't define you") without exploring the deeper belief system. The patient's statement—"I don't really believe that urges come and go—more like they're there to stay, and I'm stuck with them"—signals a core belief about permanence and helplessness. This is a critical target for cognitive work, but the therapist did not pursue it.
+
+**Behaviors targeted:**
+The therapist focused on distraction as the primary behavioral intervention. While distraction can be useful for acute urge management, it is not the most central behavioral target for bulimia nervosa. More critical behavioral targets would include:
+- Establishing regular eating patterns (the patient skips breakfast and lunch, then binges at night)
+- Reducing dietary restriction (which precipitates binge episodes)
+- Increasing valued activities (the patient reports low energy and anhedonia)
+- Reducing avoidance behaviors (the patient isolates when depressed)
+- Addressing the purging behavior directly (through exposure and response prevention)
+
+The therapist never discussed the patient's eating pattern (skipping meals, then binging), which is a central maintaining factor in bulimia. Addressing this pattern—through behavioral experiments and structured eating—would be more effective than distraction alone.
+
+Additionally, the therapist did not address the comorbid depression through behavioral activation, which is a first-line CBT intervention for depression and would likely improve mood and reduce binge-purge episodes.
+
+**Summary:**
+The therapist identified some relevant automatic thoughts but missed deeper, more central cognitions (core beliefs, hopelessness, perfectionism). Behavioral targets were superficial (distraction) rather than addressing central maintaining factors (restriction-binge cycle, behavioral activation for depression, exposure to purging urges).
+
+---
+
+### 9. Strategy for Change
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist did not articulate a coherent, evidence-based strategy for change. Instead, the session consisted of isolated interventions without a clear conceptualization or treatment plan.
+
+**What was missing:**
+
+1. **Conceptualization of the disorder:** The therapist did not explain how bulimia nervosa develops or is maintained. For example: "Bulimia is maintained by a cycle of dietary restriction, which leads to intense hunger and urges to binge. After binging, shame and fear of weight gain lead to purging. This temporarily relieves anxiety but reinforces the cycle. Additionally, your depression—low mood, low energy, isolation—makes it harder to resist urges and maintain regular eating."
+
+2. **Integrated treatment strategy:** The therapist did not address the comorbidity. A coherent strategy would recognize that depression and eating disorder are interrelated and require coordinated intervention. For example: "We'll work on three things together: (1) establishing regular eating patterns to reduce binge-purge episodes, (2) increasing activities that improve your mood and sense of control, and (3) changing the thoughts that keep you stuck in this cycle."
+
+3. **Sequencing of interventions:** The therapist jumped to distraction and thought-catching without establishing the foundation. A more strategic approach would begin with: psychoeducation about the disorder, functional analysis of binge-purge episodes, assessment of motivation, and then graduated interventions.
+
+4. **Evidence-based approach:** For bulimia nervosa, the gold standard is Cognitive Behavioral Therapy for Eating Disorders (CBT-E), which includes: psychoeducation, behavioral experiments, exposure and response prevention (resisting purging), cognitive restructuring of eating disorder beliefs, and relapse prevention. This therapist used generic CBT techniques (distraction, thought-catching) without the eating disorder-specific framework.
+
+5. **Clear goals and milestones:** The therapist did not establish what success looks like. Are we aiming to reduce binge-purge frequency? Establish regular eating? Improve mood? Reduce body image concerns? Without clear goals, progress cannot be measured.
+
+The strategy that emerged was: "Try distracting yourself and notice your thoughts." This is vague, lacks rationale, and does not address the core maintaining factors of the disorder.
+
+**Summary:**
+No coherent strategy for change was articulated. The therapist did not conceptualize the disorder, integrate treatment for comorbidity, sequence interventions logically, or apply evidence-based approaches (CBT-E). Isolated techniques were offered without a unifying plan.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist attempted to apply CBT techniques but did so with significant flaws and limited skill. The techniques used were generic rather than eating disorder-specific.
+
+**Techniques attempted:**
+
+1. **Thought identification and reframing:** The therapist asked the patient to identify thoughts ("what kind of thoughts were going through your mind?") and suggested reframing ("reminding yourself that urges come and go and don't define you"). However, this was done superficially. The therapist did not use structured cognitive restructuring (examining evidence for/against thoughts, generating alternatives, testing predictions). The suggestion to "remind yourself" is vague and unlikely to shift deeply held beliefs.
+
+2. **Behavioral activation through distraction:** The therapist suggested distraction as an urge management strategy. While this can be useful, the application was poorly executed. The therapist did not: (a) explain the rationale, (b) help the patient identify specific, personalized distractions, (c) discuss timing or duration, (d) plan for situations where distraction might fail, or (e) distinguish between healthy coping and avoidance.
+
+3. **Thought records (implied but not explicit):** The therapist suggested "notice your thoughts" but did not introduce a structured thought record or provide clear instructions on how to do this. The patient's response ("If I can catch myself thinking those negative thoughts, maybe I can remind myself they're not the whole truth") suggests confusion about the purpose—the patient seems to think the goal is to convince herself thoughts are false, rather than to examine them systematically.
+
+**Critical flaws:**
+
+- **No psychoeducation:** The therapist did not explain how bulimia works or why the suggested interventions might help. Without rationale, patients are less likely to engage.
+
+- **No functional analysis:** The therapist did not conduct a detailed analysis of a specific binge-purge episode (triggers, thoughts, feelings, consequences). This is essential for understanding the patient's unique pattern and tailoring interventions.
+
+- **No behavioral experiments:** The therapist did not propose testing predictions (e.g., "What if you ate breakfast regularly for a week? What would happen to your urges?").
+
+- **No exposure and response prevention:** For bulimia, a critical intervention is resisting the urge to purge after a binge—sitting with the discomfort and anxiety. This was not addressed.
+
+- **No eating pattern intervention:** The therapist did not address the patient's restriction (skipping breakfast and lunch), which is a primary maintaining factor.
+
+- **No behavioral activation for depression:** Despite the patient's clear depressive symptoms (low energy, anhedonia, isolation), the therapist did not use behavioral activation—a first-line CBT intervention for depression.
+
+- **Vague homework:** The homework ("try distracting yourself," "notice your thoughts") lacked specificity. Effective CBT homework includes: specific behavior, frequency, timing, and clear instructions.
+
+**Summary:**
+CBT techniques were applied with significant flaws. Thought identification was superficial, behavioral interventions lacked rationale and specificity, and eating disorder-specific techniques (functional analysis, exposure/response prevention, eating pattern intervention) were absent. Application skill was below adequate.
+
+---
+
+### 11. Homework
+### **Score: 2/6**
+
+**Explanation:**
+
+Homework was assigned but with significant deficiencies in clarity, rationale, specificity, and follow-up.
+
+**What was assigned:**
+
+1. "Try distracting yourself when the urges hit"
+2. "Notice your thoughts more to remind yourself that urges don't have to control you"
+
+**Critical deficiencies:**
+
+1. **Lack of clear rationale:** The therapist did not explain *why* these strategies might help. For example: "Distraction works because urges typically peak and then decrease if you don't act on them. By distracting yourself for 15-20 minutes, you'll likely notice the urge diminish. This teaches your brain that you can tolerate the urge without acting on it." Without rationale, patients are less motivated and less likely to understand the purpose.
+
+2. **Insufficient specificity:** "Try distracting yourself" is vague. Effective homework specifies: What exactly will you do? When? For how long? The patient suggested "watching a show or calling a friend," but the therapist did not help develop a concrete plan. Better homework: "This week, when you notice the urge to binge (especially between 8-10 PM), you will call a friend or watch a specific show for 20 minutes. Write down: (a) what time the urge occurred, (b) what you did, (c) whether the urge decreased."
+
+3. **No baseline or monitoring:** The therapist did not ask the patient to track binge-purge episodes, urge intensity, or thought patterns. Without baseline data, progress cannot be measured. Better homework: "Keep a brief log of each time you have an urge to binge. Write: time, what triggered it, what you were thinking, what you did, and what happened."
+
+4. **No anticipation of obstacles:** The therapist did not discuss barriers. The patient mentioned "sometimes at night I'm alone and the urges hit hardest," but the therapist did not problem-solve: "What if your friend doesn't answer? What if you're too tired to watch a show? What if the urge comes at 2 AM?" Anticipating obstacles increases success.
+
+5. **No commitment or confidence check:** The therapist did not ask: "How confident are you that you can do this?" "What might get in the way?" "What support do you need?" These questions increase accountability and identify potential problems.
+
+6. **Poor homework review in session 2:** In the second session, the therapist did not systematically review homework. The patient reported "I've been feeling kind of stuck and stressed" and "I'll start watching a show or calling a friend, but the thoughts keep creeping back," but the therapist did not ask: "How many times did you try the distraction? What happened? What did you learn?" This represents a missed opportunity to troubleshoot and adjust the plan.
+
+7. **No written instructions:** The therapist did not provide written homework instructions or a worksheet. For a patient with depression and cognitive difficulties, written materials improve compliance and clarity.
+
+**Summary:**
+Homework was assigned but lacked clear rationale, specificity, baseline monitoring, obstacle anticipation, and commitment checks. Homework review in the second session was superficial. These deficiencies reduce the likelihood of compliance and learning.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- **Adequate interpersonal warmth:** The therapist was supportive, non-judgmental, and created a safe environment for the patient to disclose sensitive eating disorder behaviors.
+- **Identified relevant automatic thoughts:** The therapist recognized key thoughts ("I'm weak," "I've ruined everything") that contribute to the patient's distress.
+- **Attempted to normalize urges:** The therapist's suggestion that "urges come and go and don't define you" was a reasonable reframe, even if poorly executed.
+- **Patient engagement:** The patient remained cooperative and engaged throughout, suggesting the therapist did not create a hostile or dismissive environment.
+
+### Critical Deficiencies:
+
+**1. Absence of structured agenda and prioritization**
+- No collaborative goal-setting or problem prioritization
+- Comorbid presentation (bulimia + depression) not explicitly addressed
+- Session structure was reactive rather than planned
+
+**2. Minimal collaborative practice**
+- Therapist shifted to directive advice-giving rather than partnership
+- Patient positioned as recipient of suggestions, not active problem-solver
+- Missed opportunities for collaborative troubleshooting
+
+**3. Superficial cognitive work**
+- Automatic thoughts identified but not systematically explored
+- Deeper cognitions (core beliefs, hopelessness, perfectionism) missed
+- Thought reframing was suggestion-based, not evidence-based
+
+**4. Inadequate behavioral intervention**
+- Central maintaining factors (dietary restriction, binge-purge cycle) not addressed
+- Distraction offered without rationale or specificity
+- No functional analysis of binge-purge episodes
+- No exposure and response prevention (critical for bulimia)
+- No behavioral activation for depression
+
+**5. Lack of eating disorder-specific expertise**
+- No psychoeducation about bulimia or how it's maintained
+- No eating pattern intervention (addressing restriction)
+- No CBT-E framework or eating disorder-specific techniques
+- Medical safety of purging not discussed
+
+**6. Inadequate assessment of comorbidity**
+- Depression symptoms (sleep, energy, suicidal ideation) not systematically assessed
+- Relationship between mood and eating behavior not explored
+- No integrated treatment strategy for comorbid conditions
+
+**7. Poor homework design and review**
+- Vague, non-specific assignments
+- No rationale provided
+- No baseline monitoring or tracking
+- Superficial review in second session
+- No obstacle anticipation or commitment checks
+
+**8. Minimal feedback elicitation**
+- No systematic checks for understanding
+- No assessment of session helpfulness
+- No solicitation of patient concerns or barriers
+- Perfunctory closing questions only
+
+---
+
+## Summary of Feedback
+
+### Strengths
+
+The therapist demonstrated adequate interpersonal warmth and created a safe, non-judgmental environment that allowed the patient to disclose sensitive eating disorder behaviors. The therapist's tone was supportive throughout, and there were no instances of hostility, impatience, or demeaning language. The therapist also demonstrated some ability to identify relevant automatic thoughts ("I'm weak," "I've ruined everything") and attempted to normalize the patient's experience by suggesting that urges are temporary and don't define the person. The patient remained engaged and cooperative, which suggests the therapist did not create barriers to the therapeutic relationship.
+
+### Critical Deficiencies
+
+This session represents a significant departure from evidence-based CBT practice, particularly for eating disorders. The most critical deficiency is the absence of a coherent treatment strategy. The therapist did not articulate a conceptualization of how bulimia nervosa develops or is maintained, did not integrate treatment for the comorbid depression, and did not apply eating disorder-specific CBT techniques (CBT-E). Instead, the therapist offered generic CBT interventions (distraction, thought-catching) without the framework necessary for eating disorder treatment.
+
+The therapist's approach shifted from collaborative to directive, positioning the patient as a recipient of advice rather than an active partner in problem-solving. This is particularly problematic for a patient struggling with control and perfectionism. The therapist did not use guided discovery—the hallmark of CBT—to help the patient generate insights. Instead, the therapist told the patient what to do: "You should practice doing things that keep you engaged," "You could try to distract yourself," "Maybe it would help to notice your thoughts." This undermines the patient's autonomy and reduces the likelihood of sustained behavior change.
+
+The behavioral interventions were superficial and did not address central maintaining factors. The patient's eating pattern (skipping breakfast and lunch, then binging at night) is a primary driver of the binge-purge cycle, but this was never discussed. The therapist did not conduct a functional analysis of a specific binge-purge episode, did not propose behavioral experiments, and did not introduce exposure and response prevention—a critical intervention for bulimia. Additionally, despite clear depressive symptoms (low energy, anhedonia, isolation), the therapist did not use behavioral activation, a first-line CBT intervention for depression.
+
+Homework was assigned but with critical deficiencies. The assignments ("try distracting yourself," "notice your thoughts") lacked specificity, rationale, and baseline monitoring. The therapist did not help the patient develop a concrete plan, anticipate obstacles, or commit to the strategy. In the second session, homework review was superficial—the therapist did not systematically explore what happened, what the patient learned, or how to adjust the plan.
+
+---
+
+## Impact on Patient Care
+
+The deficiencies in this session significantly reduce the likelihood of therapeutic progress. The patient presents with comorbid bulimia nervosa and major depressive disorder—complex conditions requiring a coordinated, evidence-based approach. Instead, the patient received generic CBT techniques without the eating disorder-specific framework or integration of depression treatment.
+
+The absence of a clear treatment strategy means the patient does not understand how her symptoms are connected or how the proposed interventions address the root causes of her disorder. Without this understanding, the patient is less likely to engage fully or persist when interventions are difficult. The patient's statement in the second session—"I'll start watching a show or calling a friend, but the thoughts keep creeping back"—suggests the distraction strategy is not working. However, the therapist did not explore why or adjust the approach. This represents a missed opportunity for learning and adaptation.
+
+The lack of attention to the eating pattern is particularly concerning. Bulimia is maintained by a cycle of dietary restriction (skipping meals) followed by intense hunger and urges to binge. By not addressing this pattern, the therapist is leaving a primary maintaining factor untouched. The patient will likely continue to struggle with urges because the underlying restriction persists.
+
+The minimal feedback elicitation means the therapist has no data on whether the patient understood the interventions, felt heard, or genuinely committed to change. For a patient with depression and shame around eating behaviors, the absence of feedback-seeking may reinforce feelings of not being understood or valued.
+
+Finally, the superficial homework review in the second session suggests the therapist is not systematically tracking progress or adjusting the treatment plan. Without this, the therapy risks becoming repetitive and ineffective.
+
+---
+
+## Recommendations
+
+### 1. **Develop a Coherent, Evidence-Based Treatment Strategy for Eating Disorders**
+- **Action:** Learn and apply CBT-E (Cognitive Behavioral Therapy for Eating Disorders), the gold standard for bulimia nervosa. This includes: psychoeducation about the disorder, behavioral experiments, exposure and response prevention, cognitive restructuring of eating disorder beliefs, and relapse prevention.
+- **Example:** In the next session, explain to the patient: "Bulimia is maintained by a cycle. You restrict food during the day (skipping breakfast and lunch), which creates intense hunger and urges to binge. When you binge, you feel guilty and afraid of weight gain, so you purge. This temporarily relieves anxiety but reinforces the cycle. We're going to break this cycle by: (1) establishing regular eating patterns, (2) resisting the urge to purge (which teaches your brain that you can tolerate the anxiety), and (3) changing the thoughts that keep you stuck."
+- **Practice:** Complete CBT-E training (e.g., through the Center for Eating Disorders or formal supervision). Review case conceptualization for eating disorders. Practice articulating a clear treatment plan in supervision before each session.
+
+### 2. **Integrate Treatment for Comorbid Depression**
+- **Action:** Recognize that depression and eating disorder are interrelated. Use behavioral activation as a first-line intervention for depression, which will also reduce binge-purge episodes by increasing engagement in valued activities and improving mood.
+- **Example:** "I notice you're feeling low energy and isolated, which makes it harder to resist urges. Let's work on increasing activities that give you a sense of accomplishment or pleasure. This might include: going for a walk, calling a friend, working on a hobby, or spending time in nature. As your mood improves, you'll likely find it easier to manage the eating urges."
+- **Practice:** In supervision, develop integrated case conceptualizations that address both the eating disorder and depression. Practice identifying behavioral activation targets specific to each patient.
+
+### 3. **Conduct Functional Analysis of Binge-Purge Episodes**
+- **Action:** Before proposing interventions, systematically analyze a specific binge-purge episode to understand triggers, thoughts, feelings, and consequences. This informs tailored interventions.
+- **Example:** "Let's look at last night's episode in detail. What time did it start? What were you doing before? What were you thinking and feeling? What triggered the urge? What did you eat? How did you feel afterward? What happened after you purged?" Map this on a functional analysis worksheet to identify the maintaining factors.
+- **Practice:** In every session, conduct a detailed functional analysis of at least one binge-purge episode. Use this to guide intervention selection and help the patient understand their own patterns.
+
+### 4. **Address Dietary Restriction Directly**
+- **Action:** Recognize that restriction is a primary maintaining factor in bulimia. Work collaboratively with the patient to establish regular eating patterns (e.g., three meals + snacks) to reduce hunger and urges to binge.
+- **Example:** "One reason you're having such strong urges at night is that you're skipping breakfast and lunch. This creates intense hunger. Let's work on eating breakfast and lunch regularly. I know this might feel scary because of concerns about weight, but research shows that regular eating actually reduces binge episodes. Would you be willing to try eating a small breakfast this week and see what happens?"
+- **Practice:** Develop a structured eating plan collaboratively with the patient. Use behavioral experiments to test predictions (e.g., "If I eat breakfast, will I binge more?" Answer: typically no—regular eating reduces binges). Track eating patterns and binge-purge frequency to demonstrate the relationship.
+
+### 5. **Use Guided Discovery Instead of Directive Advice**
+- **Action:** Replace "You should..." and "You could..." with Socratic questions that help the patient generate insights and solutions.
+- **Example:** Instead of "You should practice doing things that keep you engaged," ask: "You mentioned that urges are weaker when you're with friends or busy with work. What do you think is different about those situations? How could you create that sense of engagement or connection on nights when you're alone? What would that look like?"
+- **Practice:** In supervision, record sessions and count the ratio of therapist questions to therapist statements. Aim for at least 60% questions. Practice Socratic questioning techniques (asking about evidence, alternatives, consequences, predictions).
+
+### 6. **Implement Exposure and Response Prevention for Purging**
+- **Action:** Introduce the concept that resisting purging after a binge is a critical intervention. This teaches the patient that anxiety decreases naturally over time and that purging is not necessary.
+- **Example:** "One of the most important things we can do is help you resist the urge to purge after a binge. I know this sounds scary, but research shows that if you sit with the anxiety for 20-30 minutes without purging, the anxiety will naturally decrease. This teaches your brain that you can tolerate the discomfort. We'll start small and build up gradually."
+- **Practice:** Introduce this concept gradually, with psychoeducation and collaborative planning. Start with a binge episode where the patient is willing to resist purging for a short period (e.g., 10 minutes). Debrief the experience and build from there.
+
+### 7. **Establish Clear, Collaborative Agenda and Goals**
+- **Action:** At the beginning of each session, collaboratively set an agenda with specific, prioritized topics and time allocation. Ensure the patient's priorities are included.
+- **Example:** "Today we have about 50 minutes. I'd like to check in on how the eating plan went this week, and I also want to talk about the thoughts that come up when you feel the urge to binge. Is there anything else you'd like to cover? How should we prioritize these?"
+- **Practice:** Use an agenda-setting worksheet at the start of each session. Practice asking the patient what they want to focus on and why. Ensure the agenda reflects both the patient's and therapist's priorities.
+
+### 8. **Elicit and Respond to Feedback Throughout the Session**
+- **Action:** Systematically check for understanding, solicit reactions to interventions, and assess session helpfulness. This ensures the patient feels heard and allows for real-time adjustment.
+- **Example:** "Does that make sense?" "How does that land for you?" "What was most helpful today?" "What didn't make sense?" "What concerns do you have about trying this?"
+- **Practice:** Identify 3-4 moments in each session to elicit feedback. Record sessions and review to ensure feedback is genuine (not leading) and that you respond to the patient's input.
+
+### 9. **Design Specific, Rationale-Based Homework with Baseline Monitoring**
+- **Action:** Assign homework that is specific, has clear rationale, includes baseline monitoring, and anticipates obstacles. Ensure the patient understands and commits.
+- **Example:** "This week, I'd like you to keep a brief log of each time you have an urge to binge. Write: (1) the time, (2) what triggered it, (3) what you were thinking, (4) what you did, and (5) what happened. This will help us understand your patterns. I'm also asking you to try eating breakfast three days this week—just something small, like toast or cereal. The reason is that regular eating reduces hunger and urges. How confident are you about doing this? What might get in the way?"
+- **Practice:** Develop a homework template that includes: specific behavior, frequency, timing, rationale, and space for tracking. Practice explaining homework rationale clearly. In supervision, review homework assignments to ensure they are specific and evidence-based.
+
+### 10. **Systematically Review and Troubleshoot Homework in Each Session**
+- **Action:** Begin each session by reviewing the previous week's homework in detail. Explore what worked, what didn't, and why. Adjust the plan based on what you learn.
+- **Example:** "How did the eating log go? Did you track all the urges? What patterns did you notice? You mentioned the thoughts kept creeping back when you tried distraction—let's talk about that. What were the thoughts? What happened? What did you learn? Based on this, let's adjust our plan for this week."
+- **Practice:** Create a homework review checklist for each session. Ask specific questions about compliance, obstacles, and learning. Use this information to adjust interventions.
+
+### 11. **Assess and Address Medical Safety of Purging**
+- **Action:** Discuss the medical risks of purging (electrolyte imbalances, cardiac arrhythmias, dental erosion, esophageal damage) and establish safety parameters. Consider medical monitoring if appropriate.
+- **Example:** "I want to make sure you're safe. Purging can cause serious medical problems, including heart problems and damage to your teeth and throat. Have you experienced any symptoms like chest pain, irregular heartbeat, or tooth sensitivity? I'd like to recommend that you see your internist for a check-up, including blood work to check your electrolytes. In the meantime, we're going to work on reducing purging through the strategies we discussed."
+- **Practice:** Include medical safety assessment in your initial evaluation and periodically throughout treatment. Coordinate with medical providers as needed.
+
+### 12. **Develop Competence in Eating Disorder-Specific Cognitive Restructuring**
+- **Action:** Learn to identify and challenge eating disorder-specific beliefs (e.g., "I must be thin to be worthy," "One binge means I've failed," "I can't tolerate weight gain"). Use evidence-based cognitive restructuring, not just suggestion.
+- **Example:** Instead of "Just remind yourself that urges don't define you," use structured cognitive work: "You said 'I've completely ruined whatever progress I might've made' after one binge. Let's examine that thought. What evidence do you have for it? What evidence against it? If a friend had one binge, would that mean they've ruined everything? What would you tell them? What's a more balanced thought?"
+- **Practice:** Learn the cognitive model specific to eating disorders. Practice identifying core beliefs (perfectionism, control, self-worth tied to appearance). In supervision, practice structured cognitive restructuring using thought records.
+
+---
+
+## Overall Session Score: 2.3/6
+
+**Summary:**
+
+This session represents inadequate CBT practice for a complex, comorbid presentation. While the therapist demonstrated adequate interpersonal warmth and created a safe environment, the clinical work was significantly below standard. The therapist did not articulate a coherent treatment strategy, did not apply eating disorder-specific techniques, and did not integrate treatment for comorbid depression. The approach shifted from collaborative to directive, and critical maintaining factors (dietary restriction, purging behavior, depressive symptoms) were not addressed.
+
+The session consisted of isolated, generic CBT interventions (distraction, thought-catching) without the framework necessary for eating disorder treatment. Homework was vague and lacked rationale or specificity. Feedback elicitation was minimal, and homework review in the second session was superficial. These deficiencies significantly reduce the likelihood of therapeutic progress and may reinforce the patient's sense of being misunderstood or not helped.
+
+**Most Critical Changes Needed Immediately:**
+
+1. **Learn and apply CBT-E** (Cognitive Behavioral Therapy for Eating Disorders), the evidence-based treatment for bulimia nervosa. This requires specialized training and supervision.
+2. **Conduct functional analysis** of binge-purge episodes to understand maintaining factors and tailor interventions.
+3. **Address dietary restriction** directly, as this is a primary driver of the binge-purge cycle.
+4. **Integrate depression treatment** through behavioral activation and mood-focused interventions.
+5. **Use guided discovery** instead of directive advice to promote patient autonomy and insight.
+6. **Design specific, rationale-based homework** with baseline monitoring and obstacle anticipation.
+
+**Likelihood of Producing Therapeutic Change:**
+
+As currently delivered, this therapy is unlikely to produce sustained symptom improvement. The patient may experience temporary relief from feeling heard and supported, but without evidence-based eating disorder treatment, the binge-purge cycle will likely persist. The patient's statement in the second session—"the thoughts keep creeping back"—suggests the current interventions are insufficient. Without significant changes to the therapist's approach, the patient risks becoming discouraged and disengaging from treatment.
+
+**Recommendation:** This therapist requires immediate supervision and specialized training in CBT for eating disorders. Sessions should be recorded and reviewed in supervision. The therapist should not continue treating eating disorder patients without this training and ongoing supervision.

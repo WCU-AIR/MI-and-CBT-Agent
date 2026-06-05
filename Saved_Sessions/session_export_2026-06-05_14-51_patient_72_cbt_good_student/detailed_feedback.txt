@@ -1,0 +1,804 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Other Specified Dissociative Disorder (Acute Dissociative Reactions to Stressful Events)
+
+--- CASE STUDY ---
+
+Lourdes Zayas, a 33-year-old Puerto Rican woman born in the United States, was brought to the emergency room after attempting to swallow bleach in response to the sudden murder of her fiancé in Puerto Rico. She initially appeared unusually calm, then engaged in repetitive, unnecessary behaviors (folding and unfolding clothes) and later attempted self-harm. She experienced shaking, crying, screaming, and a brief period of apparent stupor, followed by partial unresponsiveness.
+
+In the ER, she described feeling numb, disconnected from her body, emotions, and surroundings, and reported amnesia for the period surrounding the bleach incident. She continued to experience transient dissociative symptoms, depersonalization, derealization, nightmares, and intrusive memories over the following days. Physical, neurological, and laboratory evaluations were normal. She was oriented, without psychotic symptoms, and denied ongoing suicidal ideation.
+
+Ms. Zayas was hospitalized for 10 days, during which her symptoms improved significantly. She required no medications and was discharged with outpatient follow-up. One month later, she had largely returned to baseline functioning. The acute dissociative reaction was brief, stress-related, and resolved with minimal sequelae, consistent with ataque de nervios, culturally recognized in Puerto Rican populations.
+
+Discussion: Ms. Zayas’s acute dissociative episode included constriction of consciousness, depersonalization, derealization, transient stupor, micro-amnesia, and autonomic arousal. These acute dissociative reactions are typically self-limiting but may indicate vulnerability to future stress-induced psychiatric sequelae.
+
+--- BEHAVIOUR ---
+
+Initially calm and unresponsive to questions
+
+Engaged in repetitive, unnecessary tasks (folding/unfolding clothes)
+
+Episodes of agitation, crying, and screaming
+
+Brief stupor (“lay as if dead”)
+
+Gradually became responsive during observation
+
+Cooperative after initial acute episode
+
+Emotionally labile but oriented
+
+--- SYMPTOMS from DSM-5 ---
+
+Depersonalization (disconnected from body and emotions)
+
+Derealization (environment feels unreal)
+
+Transient stupor
+
+Micro-amnesia for acute episode
+
+Emotional numbness / constriction of consciousness
+
+Repetitive, purposeless behaviors
+
+Acute stress-related functional impairment
+
+--- PATIENT PROFILE ---
+Name: Lourdes Zayas
+Sex: Female
+Age: 33 years
+DOB: March 22, 1990
+Place of Birth: New York, NY
+Address: 117 Willow Avenue, Brooklyn, NY
+Contact: (555) 753-9182
+Marital Status: Engaged (fiancé deceased)
+Children: None
+Occupation: Administrative assistant
+Education: Bachelor’s degree
+Religion: Catholic
+Legal Guardian: N/A
+Presenting Complaint: Attempted suicide after learning of fiancé’s murder
+Psychiatric History: None prior
+Psychotherapy: None prior
+Medications: None
+Substance Use: None
+Medical History: None significant
+Neurology: Normal
+Family History: No psychiatric history reported
+Mental Status: Sad mood, tearful, amnesia for acute event, transient depersonalization/derealization, episodic stupor, oriented, no psychosis
+
+--- DIAGNOSIS ---
+Other Specified Dissociative Disorder (Acute Dissociative Reactions to Stressful Events)
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Lourdes Zayas, a 33-year-old woman, presents to the emergency room following an ingestion of bleach after learning of her fiancé’s sudden death. She is brought in by emergency responders due to concerns about self-harm and acute distress related to this recent traumatic event.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hello, it’s good to see you today. Before we begin, I’d like to set an agenda for our session together. Are there one or two main issues you’d like to focus on today? Also, on a scale from 0 to 10, how would you rate your current mood or any particular feeling you want to address? 
+ PATIENT: Hi. Thanks for seeing me. I guess… I want to talk about feeling kind of numb sometimes, like I’m not really here or like everything around me isn’t real. It’s been happening on and off lately, and it scares me. I’m afraid it’ll get worse or I’ll lose control again like before. 
+
+Right now… I’d say maybe a 5? I’m not really sad or happy—just kind of empty. Like I’m here but not really. Does that make sense? 
+ PSYCHIATRIST: Thank you for sharing that with me; it does make sense, and I appreciate your openness. So, to make sure I understand, you want to focus on these feelings of numbness or unreality, which feel scary and bring fears of losing control. Is that right? 
+
+Before we dive deeper, would you like to add anything else to our agenda, or shall we focus on exploring these experiences today?
+
+Also, just to get a clearer picture, you rated your mood at a 5 out of 10, feeling mostly empty or disconnected. Are there any other feelings or thoughts that stand out for you right now? 
+ PATIENT: Yes, that’s exactly it. I want to understand why I feel so numb and unreal sometimes, and why it makes me so afraid. I don’t want to feel like I’m losing myself again. 
+
+I don’t have anything else to add right now. I think just focusing on this is okay.
+
+Besides the numbness, sometimes I get this sinking feeling in my chest, like a heavy tightness, and my mind races with worries. Mostly I’m scared of… I guess I’m scared something bad will happen again, or that I won’t be able to handle it. Like I’m waiting for the next bad thing. But then, when I think about it too much, that’s when the numbness or spacing out happens, I feel like escaping in my mind. It’s confusing. 
+ PSYCHIATRIST: Thank you for sharing that. It sounds like the numbness and the racing worries are connected, and the fear of something bad happening again is very present for you. That tightness in your chest and the urge to escape mentally seem to be part of this experience too.
+
+To help us explore this together, could you tell me about a recent specific situation when you noticed feeling numb or unreal? What was happening around you, and what thoughts were going through your mind at that moment? 
+ PATIENT: I remember last week, I was at work, just answering emails. It was a normal day, but suddenly I felt like the room got quiet and everything around me seemed kind of foggy, like I was watching from far away. 
+
+I couldn’t focus on the screen or the people around me. My chest tightened, and my heart started beating fast. In my mind, I kept thinking, “What if this happens again? What if I lose control? What if I’m never going to feel normal again?” 
+
+I wanted to get out, but I couldn’t move right away. I started folding and unfolding a piece of paper over and over, just like I did before, even though it didn’t make any sense. It felt like the only thing I could do to stop my mind from racing. When a coworker asked if I was okay, I just nodded, but inside I felt totally lost. 
+ PSYCHIATRIST: Thank you for describing that moment in detail. It sounds like the situation at work triggered a strong fear of losing control and feeling disconnected, leading to physical sensations like chest tightness and a racing heart. The thought “What if this happens again? What if I’m never going to feel normal again?” seems to be central to your experience, and the repetitive folding of paper feels like a way to manage the overwhelming feelings.
+
+Can we explore that thought a bit? When you think, “What if I’m never going to feel normal again?” what evidence comes to mind that supports this thought? And what evidence might challenge or contradict it? 
+ PATIENT: Hmm, when I think about never feeling normal again, I remember how bad it was after my fiancé died—how I felt numb and like I couldn’t trust myself. That moment in the hospital where I just… checked out. It makes me believe maybe I’m broken or that I’ll always be this way.
+
+But at the same time, I guess I have some evidence against it. Like, now I’m outside the hospital, and I’m still here, still working and trying to keep going. I do laugh sometimes and have good days. And it’s been a month since then, so maybe it’s not permanent.
+
+But it’s hard to hold onto that when the numbness or that fear hits—then it feels like it’s all coming back and never going away. So right now, the scary thought feels stronger. 
+ PSYCHIATRIST: Thank you for reflecting on that. It sounds like your past experience, especially the intense numbness after your fiancé’s death, supports the fear that you might never feel normal again. Yet, you also recognize some evidence that challenges this—your ongoing efforts, moments of laughter, and the fact that you are still here and moving forward.
+
+If we look at both sides, how might you describe a more balanced thought that acknowledges these realities? How would that alternative thought make you feel compared to the original one? 
+ PATIENT: Maybe a more balanced thought would be something like, “I had a really hard time after the trauma, and it really shook me, but I’m also surviving and finding ways to live again. It’s okay if I don’t feel ‘normal’ all the time right now, and that doesn’t mean I never will.”
+
+If I believed that more, I think I’d feel less scared and worried about losing control. Maybe I’d feel more patient with myself and less pressured to be a certain way all the time. It feels… a little relieving to think like that, actually. But honestly, it’s tough to remind myself when I’m in the middle of those intense feelings. 
+ PSYCHIATRIST: That’s a very thoughtful and compassionate alternative thought. It acknowledges the difficulty you’ve been through while also recognizing your resilience and progress. Feeling less scared and more patient with yourself sounds like a meaningful shift.
+
+Given this, what might be one small step you could try in the coming week to notice or practice this more balanced thinking when those intense feelings come up? Maybe a simple behavior or experiment that feels manageable for you? 
+ PATIENT: Maybe I could try to pause when I start feeling numb or scared, and remind myself of that balanced thought—like mentally say, “It’s okay to not be okay sometimes, and I am still here.” Maybe I could write it down on a sticky note to keep with me, so I remember it when I feel overwhelmed. 
+
+Also, instead of folding and unfolding things, maybe I could try to take a few deep breaths or quietly name what I'm feeling in that moment. I don’t know if it will help, but it feels like something I could try without it being too hard. 
+ PSYCHIATRIST: That sounds like a thoughtful and doable plan—pausing to remind yourself of the balanced thought, using a sticky note as a prompt, and trying deep breaths or naming your feelings instead of folding paper. 
+
+What might get in the way of trying this, and how confident do you feel about giving it a go on a scale from 0 to 10? 
+ PATIENT: I think what might get in the way is that when I get really overwhelmed, it feels like my mind just shuts down or I’m in a fog, and it’s hard to remember to do anything different. Also, sometimes I feel embarrassed or scared that others will notice I’m struggling.
+
+Right now, I’d say my confidence is maybe a 6. I want to try it because it seems helpful, but I’m also not sure if I’ll remember or if it will actually work when I need it. But I think it’s worth trying. 
+ PSYCHIATRIST: Thank you for sharing those concerns. It’s completely understandable that feeling overwhelmed or worried about others noticing could make it harder to remember or use these strategies. A confidence of 6 shows you’re motivated and realistic, which is a great place to start.
+
+To support you, would it help to plan when and where you might practice this pause and reminder, maybe starting in moments that feel less intense? Also, we can think about ways to gently cue yourself or manage the embarrassment if it comes up.
+
+How does that sound? And is there anything else you’d like to add or ask about this plan? 
+ PATIENT: Yeah, that sounds helpful. Starting when things feel less intense might make it easier to get used to it. Maybe I could practice the deep breaths or saying the reminder to myself when I notice little signs, like if my chest gets tight but I’m still calm.
+
+If I get embarrassed, I think reminding myself that it’s okay to have these feelings, and that I don’t have to explain to anyone if I don’t want to, might help. It’s just me taking care of myself.
+
+I don’t have any questions right now, but I appreciate going through this with you. It feels good to have a plan that’s not too overwhelming. 
+ PSYCHIATRIST: I’m glad to hear that starting with less intense moments feels manageable, and that you’ve thought about ways to handle embarrassment by reminding yourself it’s okay to care for yourself privately. That’s a strong, compassionate approach.
+
+To summarize, your plan is to pause and use the balanced thought reminder—possibly with a sticky note prompt—and try deep breathing or naming your feelings, beginning in moments when you notice early signs like chest tightness but before things get overwhelming. You’ll also remind yourself it’s okay to have these feelings and that you don’t need to explain them to others.
+
+Before we finish, what stood out most for you in today’s session? Was there anything you found particularly useful or less helpful? 
+ PATIENT: What stood out most was realizing that I can have a different way of thinking about this—not just the scary “I’ll never be normal again” thought, but something more balanced and kind to myself. That felt new and like a small relief. 
+
+Also, having a simple plan to try, like the sticky note and deep breaths, feels less scary than I expected. It’s good to think about starting when things are easier, not waiting until I feel overwhelmed.
+
+Nothing felt unhelpful today. I’m glad we talked about this. It feels like a little bit of hope. Thank you. 
+ PSYCHIATRIST: I’m really glad to hear that the balanced thinking and the manageable plan brought you some relief and hope today. It’s a meaningful step to be kind to yourself and start practicing when things feel a bit easier.
+
+For next time, we can check in on how this plan went and explore any challenges or progress you notice. Remember, these small steps can build up over time.
+
+Before we finish, do you have any final questions or anything else you’d like to share? If not, I want to thank you for your openness today and for working together on this. 
+ PATIENT: No, I don’t have any questions right now. Thank you for listening and for helping me find a way to handle things that doesn’t feel so scary. It means a lot. I’m willing to try and see how it goes.
+
+Looking forward to our next session. Thanks again. 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated strong agenda-setting skills by explicitly asking the patient what she wanted to focus on and inviting her to add additional items. The opening statement—"Before we begin, I'd like to set an agenda for our session together. Are there one or two main issues you'd like to focus on today?"—establishes clear collaborative structure. The patient identified depersonalization/derealization and fear of losing control as primary targets, and the therapist confirmed understanding: "So, to make sure I understand, you want to focus on these feelings of numbness or unreality, which feel scary and bring fears of losing control. Is that right?"
+
+However, the agenda lacked explicit time allocation or prioritization language. The therapist did not state how much time would be devoted to each topic or establish clear session boundaries (e.g., "We have 50 minutes; let's spend the first 20 minutes understanding your experience, then 20 on developing strategies, and 10 on homework"). The therapist also did not explicitly revisit or adjust the agenda midway through the session, which is standard CBT practice for longer sessions. Additionally, while the patient mentioned multiple interconnected issues (numbness, racing thoughts, chest tightness, fear of recurrence, repetitive behaviors), the therapist did not explicitly prioritize which would be most impactful to address first or establish a hierarchy of concerns.
+
+**Summary:**
+
+The therapist successfully established a collaborative agenda with clear target problems but missed opportunities to allocate time explicitly, prioritize among multiple concerns, or revisit the agenda during the session. This represents solid foundational work with room for refinement in structure and flexibility.
+
+---
+
+### 2. Feedback
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated consistent feedback-seeking throughout the session. Key examples include: "Is that right?" after reflecting the patient's concerns; "Can we explore that thought a bit?" before diving into cognitive work; "How would that alternative thought make you feel compared to the original one?"; "How confident do you feel about giving it a go on a scale from 0 to 10?"; and most importantly, the closing feedback elicitation: "What stood out most for you in today's session? Was there anything you found particularly useful or less helpful?"
+
+The therapist also checked understanding multiple times: "Does that make sense?" early in the session and "How does that sound?" when proposing the behavioral plan. These questions ensured the patient remained engaged and understood the therapist's reasoning.
+
+However, the therapist did not systematically check for understanding of the cognitive restructuring process itself. After introducing the concept of examining evidence for and against the thought, the therapist did not explicitly ask, "Does this approach make sense to you?" or "How do you feel about exploring your thoughts this way?" This represents a missed opportunity to ensure the patient understood the CBT rationale. Additionally, the therapist did not elicit feedback about the pace of the session or whether the patient felt rushed, which would have been particularly important given her history of dissociation and potential difficulty with processing speed during distress.
+
+**Summary:**
+
+The therapist regularly elicited feedback and checked understanding, creating a responsive therapeutic environment. Minor gaps include not explicitly validating the CBT approach itself and not assessing session pace, which are important for patients with dissociative symptoms.
+
+---
+
+### 3. Understanding
+### **Score: 6/6**
+
+**Explanation:**
+
+The therapist demonstrated exceptional understanding of the patient's internal experience throughout the session. Early reflections accurately captured the interconnection between symptoms: "It sounds like the numbness and the racing worries are connected, and the fear of something bad happening again is very present for you. That tightness in your chest and the urge to escape mentally seem to be part of this experience too."
+
+When the patient described the work incident, the therapist synthesized multiple elements: "It sounds like the situation at work triggered a strong fear of losing control and feeling disconnected, leading to physical sensations like chest tightness and a racing heart. The thought 'What if this happens again? What if I'm never going to feel normal again?' seems to be central to your experience, and the repetitive folding of paper feels like a way to manage the overwhelming feelings."
+
+This reflection demonstrates sophisticated understanding of: (1) the trigger (work situation), (2) the emotional response (fear of losing control), (3) the cognitive content (catastrophic thoughts), (4) the physical manifestations (chest tightness, racing heart), and (5) the behavioral coping mechanism (repetitive folding). The therapist also recognized the cultural and trauma-informed context—acknowledging the severity of the fiancé's death without minimizing it.
+
+The therapist's empathic tone remained consistent, and non-verbal cues (implied through the patient's continued engagement and willingness to share) suggest the patient felt genuinely understood. The therapist validated the patient's experience: "That's a very thoughtful and compassionate alternative thought" and "It's completely understandable that feeling overwhelmed or worried about others noticing could make it harder to remember or use these strategies."
+
+**Summary:**
+
+The therapist demonstrated excellent listening, accurate reflection of complex symptom presentations, and genuine empathic attunement. Understanding was consistently demonstrated throughout the session with no significant gaps.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 6/6**
+
+**Explanation:**
+
+The therapist displayed optimal warmth, genuineness, and professionalism throughout the session. The opening—"Hello, it's good to see you today"—establishes a welcoming tone. The therapist consistently validated the patient's experience without minimizing her concerns: "Thank you for sharing that; it does make sense, and I appreciate your openness" and "Thank you for reflecting on that."
+
+The therapist demonstrated appropriate confidence without arrogance, offering guidance while maintaining collaborative stance. Phrases like "To help us explore this together" and "we can think about ways to gently cue yourself" position the therapist as a collaborative partner rather than an expert imposing solutions. The therapist also demonstrated genuine interest in the patient's perspective: "Is there anything else you'd like to add or ask about this plan?" and "do you have any final questions or anything else you'd like to share?"
+
+Particularly noteworthy is the therapist's handling of the patient's vulnerability. When the patient disclosed fear of losing control and the traumatic context (fiancé's death), the therapist responded with appropriate gravity and compassion without becoming overly emotional or shifting focus away from the patient's experience. The closing statement—"I want to thank you for your openness today and for working together on this"—reinforces the collaborative relationship and acknowledges the patient's courage.
+
+The therapist maintained professional boundaries while being warm. There was no inappropriate self-disclosure, no boundary violations, and no language that could be construed as dismissive or judgmental. The tone remained consistent and genuine throughout.
+
+**Summary:**
+
+The therapist demonstrated exemplary interpersonal skills, creating a safe, warm, and genuinely collaborative therapeutic environment. Warmth, empathy, confidence, and professionalism were all optimally calibrated to the patient's needs.
+
+---
+
+### 5. Collaboration
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist consistently invited the patient into collaborative decision-making. Key examples include: "Are there one or two main issues you'd like to focus on today?"; "Would you like to add anything else to our agenda, or shall we focus on exploring these experiences today?"; "Can we explore that thought a bit?"; and "what might be one small step you could try in the coming week?"
+
+The patient was actively engaged in generating solutions. When asked about alternative thoughts, the patient independently developed: "Maybe a more balanced thought would be something like, 'I had a really hard time after the trauma, and it really shook me, but I'm also surviving and finding ways to live again...'" This represents genuine collaborative empiricism—the patient arrived at the insight rather than being told the "correct" thought.
+
+Similarly, when discussing behavioral strategies, the patient generated her own ideas: "Maybe I could try to pause when I start feeling numb or scared, and remind myself of that balanced thought" and "Instead of folding and unfolding things, maybe I could try to take a few deep breaths or quietly name what I'm feeling." The therapist then built on these patient-generated ideas rather than imposing predetermined interventions.
+
+However, there is a subtle limitation: the therapist could have been more explicit about the collaborative empiricism framework. The therapist did not say, "Let's test this thought together" or "We're going to work as a team to examine whether this thought is actually true." While the collaboration occurred implicitly, making it explicit would strengthen the patient's understanding of the CBT model and her role as an active scientist in her own treatment. Additionally, the therapist did not explicitly invite the patient to co-create the homework plan—the therapist asked "what might be one small step you could try," but did not ask "What do you think would be most helpful to try?" or "What feels doable to you?" before suggesting the sticky note strategy.
+
+**Summary:**
+
+The therapist fostered genuine collaboration with the patient actively generating insights and solutions. The partnership was authentic and patient-centered, though explicit framing of collaborative empiricism and more explicit co-creation of homework could have strengthened this further.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated generally strong pacing and time management. The session moved logically from agenda-setting → symptom exploration → cognitive identification → evidence examination → alternative thought development → behavioral planning → feedback and closure. This represents efficient progression through key CBT components without unnecessary tangents.
+
+The therapist avoided getting lost in peripheral details. When the patient mentioned multiple symptoms (numbness, chest tightness, racing thoughts, repetitive behaviors, fear of recurrence), the therapist synthesized these into a coherent narrative rather than exploring each in isolation. The therapist also did not spend excessive time on the trauma narrative itself—while acknowledging the fiancé's death, the focus remained on current symptoms and coping strategies rather than detailed trauma processing, which is appropriate for this early session.
+
+The depth of exploration on each topic was generally appropriate. The cognitive work (examining evidence for and against the catastrophic thought) was thorough but not exhaustive—the therapist moved to behavioral planning once the alternative thought was established, rather than spending 20 minutes on multiple thought records.
+
+However, there is one pacing concern: the therapist did not explicitly allocate time or establish clear session boundaries. We do not know the total session length, but the therapist did not state something like, "We have about 45 minutes together today" or "Let's spend the next 15 minutes on this, then move to planning." This is particularly important for a patient with dissociative symptoms, who may benefit from explicit temporal structure. Additionally, the therapist could have moved more efficiently to homework assignment—the behavioral planning section, while collaborative, could have been condensed slightly to allow more time for detailed homework review and commitment-building.
+
+**Summary:**
+
+The therapist maintained good session flow and avoided tangents, moving efficiently through key CBT components. Explicit time allocation and clearer session boundaries would have enhanced structure, particularly given the patient's dissociative presentation.
+
+---
+
+### 7. Guided Discovery
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated strong use of Socratic questioning to facilitate self-discovery. The core example is the cognitive work: "Can we explore that thought a bit? When you think, 'What if I'm never going to feel normal again?' what evidence comes to mind that supports this thought? And what evidence might challenge or contradict it?"
+
+This is classic guided discovery—rather than telling the patient her thought is irrational, the therapist asked her to examine evidence. The patient independently identified supporting evidence (the severity of her initial dissociative episode) and contradicting evidence (her current functioning, moments of laughter, time elapsed). The therapist then asked: "If we look at both sides, how might you describe a more balanced thought that acknowledges these realities?"
+
+This question invited the patient to synthesize her own insight rather than being offered a pre-packaged alternative thought. The patient's response—"Maybe a more balanced thought would be something like, 'I had a really hard time after the trauma, and it really shook me, but I'm also surviving and finding ways to live again...'"—demonstrates genuine discovery.
+
+The therapist also used discovery in behavioral planning: "What might get in the way of trying this, and how confident do you feel about giving it a go on a scale from 0 to 10?" This invited the patient to anticipate obstacles and assess her own readiness, rather than the therapist prescribing solutions.
+
+However, there are two limitations. First, the therapist did not use discovery to explore the *function* of the repetitive folding behavior more deeply. The therapist identified it as "a way to manage the overwhelming feelings" but did not ask, "What does the folding do for you in that moment?" or "What happens if you don't fold?" This would have deepened understanding of the behavioral pattern and potentially identified more targeted interventions. Second, when the patient expressed concern about remembering the strategy during intense dissociation ("when I get really overwhelmed, it feels like my mind just shuts down or I'm in a fog"), the therapist could have used discovery: "What do you think might help you remember in those moments?" rather than offering suggestions. The therapist did eventually ask this implicitly ("To support you, would it help to plan when and where you might practice this pause and reminder?"), but a more Socratic approach earlier would have been stronger.
+
+**Summary:**
+
+The therapist skillfully used Socratic questioning to guide the patient toward her own insights, particularly in cognitive restructuring and behavioral planning. Minor gaps include deeper exploration of behavioral function and earlier use of discovery when addressing obstacles.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist identified and focused on the most clinically relevant cognition: "What if I'm never going to feel normal again?" This is a central catastrophic thought that directly drives the patient's anxiety and avoidance. The therapist recognized this as the core cognition and spent appropriate time examining it through evidence exploration.
+
+The therapist also identified a key behavioral pattern—the repetitive folding and unfolding of paper—and explicitly connected it to the cognitive and emotional experience: "the repetitive folding of paper feels like a way to manage the overwhelming feelings." This demonstrates understanding that the behavior is functionally related to the thought and emotion.
+
+The therapist appropriately prioritized these targets over other potential foci. For example, the patient mentioned embarrassment about others noticing her distress, but the therapist did not get sidetracked into exploring social anxiety in depth. Instead, the therapist briefly addressed it in the context of homework barriers: "we can think about ways to gently cue yourself or manage the embarrassment if it comes up."
+
+However, there is a significant gap: the therapist did not explicitly identify or explore *core beliefs* that may underlie the catastrophic thought. The thought "What if I'm never going to feel normal again?" likely reflects deeper beliefs such as "I am broken," "I cannot handle stress," or "My trauma has permanently damaged me." These core beliefs, if left unaddressed, may limit the durability of cognitive change. A more thorough CBT approach would have included at least preliminary exploration: "When you think about never feeling normal again, what does that say about you as a person?" or "What would it mean about you if that were true?"
+
+Additionally, while the therapist identified the repetitive folding behavior, the therapist did not explore whether there are other avoidance or safety behaviors (e.g., avoiding work situations, limiting social contact, checking for dissociative symptoms) that might be maintaining the problem. A more comprehensive behavioral focus would have mapped the full range of behaviors maintaining the dissociative cycle.
+
+**Summary:**
+
+The therapist effectively identified and focused on the central catastrophic thought and a key behavioral pattern. Deeper exploration of core beliefs and a more comprehensive behavioral assessment would have strengthened this component.
+
+---
+
+### 9. Strategy for Change
+### **Score: 4/6**
+
+**Explanation:**
+
+The therapist employed a coherent, evidence-based strategy for change grounded in CBT principles. The strategy can be outlined as:
+
+1. **Identify the problem**: Depersonalization/derealization triggered by catastrophic thoughts about recurrence
+2. **Identify the central cognition**: "What if I'm never going to feel normal again?"
+3. **Examine evidence**: Explore supporting and contradicting evidence
+4. **Develop alternative thought**: "I had a really hard time after the trauma, and it really shook me, but I'm also surviving and finding ways to live again..."
+5. **Behavioral intervention**: Replace repetitive folding with grounding techniques (deep breathing, naming feelings) and use environmental cues (sticky note) to prompt the alternative thought
+6. **Graduated exposure**: Start practicing in lower-intensity moments before applying to high-intensity situations
+
+This strategy is logically sound and incorporates core CBT elements: cognitive restructuring, behavioral activation/replacement, and graded practice. The therapist appropriately sequenced interventions—establishing the alternative thought before assigning behavioral homework.
+
+However, the strategy has notable limitations:
+
+**First, incomplete trauma-informed approach**: The patient experienced acute dissociation following a traumatic death. While the therapist addressed the catastrophic thought, the strategy does not explicitly incorporate trauma-specific interventions. There is no mention of processing the trauma itself, establishing safety, or addressing trauma-related triggers. For a patient with dissociative symptoms, a more comprehensive strategy might include: (1) psychoeducation about dissociation as a normal trauma response, (2) grounding/stabilization techniques (which were partially addressed), (3) gradual exposure to trauma reminders, and (4) processing of the traumatic memory. The current strategy focuses narrowly on the catastrophic thought without addressing the underlying trauma.
+
+**Second, limited behavioral analysis**: The strategy does not comprehensively address the behavioral maintenance cycle. The therapist identified repetitive folding as a coping mechanism but did not explore the full range of avoidance behaviors or safety behaviors that may be maintaining the dissociative cycle. A more complete strategy would include: identifying all avoidance behaviors, understanding their function, and systematically reducing them through behavioral experiments.
+
+**Third, no explicit relapse prevention**: The strategy does not address what the patient should do if dissociative symptoms recur or intensify. For a patient with acute dissociative disorder, explicit planning for symptom recurrence is important.
+
+**Fourth, unclear timeline and milestones**: The strategy does not establish clear milestones or a timeline for progress. The therapist did not say, "Over the next 2-3 weeks, we'll focus on building your confidence with the grounding techniques. Then we'll gradually practice them in more challenging situations."
+
+**Summary:**
+
+The therapist employed a coherent, evidence-based CBT strategy with appropriate sequencing of cognitive and behavioral interventions. However, the strategy lacks trauma-informed depth, comprehensive behavioral analysis, explicit relapse prevention planning, and clear milestones—important elements for a patient with acute dissociative disorder.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist skillfully applied multiple evidence-based CBT techniques:
+
+**Cognitive Restructuring**: The therapist guided the patient through examining evidence for and against the catastrophic thought ("What if I'm never going to feel normal again?"), then collaboratively developed a more balanced alternative thought. This is a core CBT technique, and the application was competent. The therapist did not use a formal thought record, but the process followed the essential steps: identify thought → examine evidence → develop alternative → assess impact.
+
+**Behavioral Activation/Replacement**: The therapist identified the repetitive folding behavior and collaboratively developed alternative behaviors (deep breathing, naming feelings). This represents a functional approach to behavior change—replacing an unhelpful coping mechanism with more adaptive alternatives.
+
+**Grounding Techniques**: The therapist implicitly incorporated grounding by suggesting the patient "take a few deep breaths or quietly name what I'm feeling in that moment." These are standard grounding techniques for dissociative symptoms.
+
+**Environmental Cues/Stimulus Control**: The sticky note strategy represents a simple but effective application of stimulus control—using environmental cues to prompt the desired thought and behavior.
+
+**Behavioral Experiments**: The therapist framed the homework as an experiment: "what might be one small step you could try in the coming week" and "we can think about ways to gently cue yourself." This language invites the patient to test the strategy rather than simply comply with instructions.
+
+However, there are notable gaps in technique application:
+
+**First, no formal thought record**: While the cognitive work was effective, the therapist did not introduce a thought record or other structured tool that the patient could use independently between sessions. A thought record would provide a concrete, portable tool for ongoing cognitive work and would increase the likelihood of generalization.
+
+**Second, limited use of behavioral experiments**: While the homework involves trying new behaviors, the therapist did not frame this as a formal behavioral experiment with specific predictions. For example, the therapist could have asked, "What do you predict will happen if you try deep breathing instead of folding? Let's test that prediction this week."
+
+**Third, no exposure hierarchy**: Given the patient's dissociative symptoms and fear of recurrence, a graduated exposure hierarchy would be appropriate. The therapist suggested starting with "less intense moments," but did not create a formal hierarchy or discuss systematic exposure to triggers.
+
+**Fourth, no psychoeducation about dissociation**: The therapist did not provide explicit psychoeducation about dissociation as a normal trauma response, which would normalize the patient's experience and reduce shame. This is a standard CBT technique for trauma-related dissociation.
+
+**Fifth, limited use of behavioral activation**: While the therapist addressed the repetitive folding behavior, there was no discussion of broader behavioral activation (e.g., scheduling pleasant activities, increasing social engagement, returning to valued activities). This is a core CBT technique for depression and anxiety.
+
+**Summary:**
+
+The therapist competently applied cognitive restructuring, behavioral replacement, grounding techniques, and stimulus control. Gaps include lack of formal thought records, limited behavioral experimentation framing, no exposure hierarchy, minimal psychoeducation, and limited behavioral activation planning.
+
+---
+
+### 11. Homework
+### **Score: 4/6**
+
+**Explanation:**
+
+The therapist assigned homework that was relevant, collaborative, and reasonably specific. The homework included:
+
+1. **Cognitive homework**: Use the sticky note reminder with the balanced thought ("It's okay to not be okay sometimes, and I am still here") to prompt the alternative thought when dissociative symptoms emerge
+2. **Behavioral homework**: Replace repetitive folding with deep breathing or naming feelings
+3. **Graded practice**: Start with lower-intensity moments (e.g., when chest tightness is present but patient is still calm) before applying to high-intensity situations
+
+The therapist provided clear rationale: "Starting with less intense moments might make it easier to get used to it" and "Maybe I could practice the deep breaths or saying the reminder to myself when I notice little signs, like if my chest gets tight but I'm still calm."
+
+The therapist checked the patient's understanding and commitment: "How confident do you feel about giving it a go on a scale from 0 to 10?" and "What might get in the way of trying this?" The patient reported 6/10 confidence and identified potential barriers (difficulty remembering during intense dissociation, embarrassment). The therapist then problem-solved: "To support you, would it help to plan when and where you might practice this pause and reminder?"
+
+However, there are significant gaps:
+
+**First, insufficient specificity**: While the homework is generally clear, it lacks concrete detail. For example:
+- How many times per day should the patient practice? 
+- Should she set specific times (e.g., "practice at 9 AM, 12 PM, 3 PM, 6 PM")?
+- How long should each practice session be?
+- Where specifically should she place the sticky note (bathroom mirror, work desk, phone)?
+- What exactly should she write on the sticky note?
+
+**Second, no written homework assignment**: The therapist did not provide a written summary of the homework or ask the patient to write it down. This is particularly important for a patient with dissociative symptoms who may have difficulty retaining information or may experience memory gaps.
+
+**Third, limited review of prior homework**: This is the first session, so there is no prior homework to review. However, the therapist did not establish a clear expectation that homework review will occur at the next session. The therapist said, "For next time, we can check in on how this plan went," but did not emphasize the importance of this review or ask the patient to track her progress.
+
+**Fourth, no behavioral experiment framing**: While the homework involves trying new behaviors, the therapist did not frame this as a formal experiment with specific predictions and data collection. For example: "Let's predict what will happen if you use deep breathing instead of folding. Write down what you predict, then try it and write down what actually happened. We'll compare predictions to reality next session."
+
+**Fifth, insufficient barrier planning**: While the therapist identified potential barriers (difficulty remembering during dissociation, embarrassment), the problem-solving was limited. The therapist suggested planning "when and where you might practice," but did not develop a detailed contingency plan. For example: "If you start to dissociate and forget the sticky note, what's your backup plan? Could you set a phone reminder? Could you tell a trusted friend to check in with you?"
+
+**Sixth, no discussion of tracking or data collection**: The therapist did not ask the patient to track her symptoms, use of the strategy, or outcomes. A simple tracking sheet (e.g., "When did you notice dissociative symptoms? Did you use the strategy? What happened?") would provide valuable data and increase engagement.
+
+**Summary:**
+
+The therapist assigned relevant, collaborative homework with clear rationale and checked commitment. However, the homework lacked sufficient specificity, was not provided in written form, did not include formal behavioral experiment framing, and lacked detailed barrier planning and tracking instructions—all important for a patient with dissociative symptoms.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- **Exceptional interpersonal effectiveness**: The therapist created a warm, safe, genuinely collaborative therapeutic environment with optimal warmth, empathy, and professionalism
+- **Excellent understanding**: Demonstrated sophisticated comprehension of the patient's complex symptom presentation, accurately synthesizing multiple interconnected symptoms (dissociation, anxiety, trauma response, behavioral coping)
+- **Strong collaborative stance**: Consistently invited patient input, facilitated self-discovery, and positioned the patient as an active agent in her own treatment
+- **Effective cognitive work**: Skillfully guided the patient through evidence examination and collaborative development of a more balanced, compassionate alternative thought
+- **Appropriate pacing**: Moved efficiently through key CBT components without unnecessary tangents or excessive depth on peripheral issues
+- **Good feedback elicitation**: Regularly checked understanding and explicitly solicited feedback about session helpfulness
+- **Relevant behavioral interventions**: Identified key behavioral patterns and collaboratively developed concrete, manageable alternatives
+
+### Critical Deficiencies:
+- **Insufficient trauma-informed approach**: While the therapist acknowledged the traumatic context (fiancé's death), the strategy did not incorporate trauma-specific interventions such as psychoeducation about dissociation, systematic trauma processing, or explicit safety planning. For a patient with acute dissociative disorder, this is a significant gap
+- **Limited core belief exploration**: The therapist addressed the surface-level catastrophic thought but did not explore underlying core beliefs (e.g., "I am broken," "I cannot handle stress") that may limit durability of change
+- **Incomplete behavioral analysis**: The therapist identified repetitive folding but did not comprehensively map the full range of avoidance and safety behaviors maintaining the dissociative cycle
+- **Lack of formal CBT tools**: No thought records, behavioral experiments with formal predictions, exposure hierarchies, or other structured tools provided to support independent practice
+- **Insufficient homework specificity**: Homework lacked concrete detail (frequency, timing, location, written format), formal experiment framing, detailed barrier planning, and tracking instructions—all important for a patient with dissociative symptoms
+- **No psychoeducation about dissociation**: The therapist did not normalize dissociation as a trauma response or provide explicit education about the dissociative process, which would reduce shame and increase engagement
+- **Limited behavioral activation**: No discussion of broader behavioral activation (scheduling pleasant activities, returning to valued activities, social engagement)
+- **No explicit relapse prevention**: No planning for symptom recurrence or intensification, which is important for a patient with acute dissociative disorder
+- **Vague session structure**: No explicit time allocation, session boundaries, or clear milestones for progress
+
+---
+
+## Summary of Feedback
+
+### Strengths
+
+This session demonstrates genuinely excellent foundational therapeutic skills. The therapist created an exceptionally warm, safe, and collaborative environment in which the patient felt heard, understood, and actively engaged in her own treatment. The therapist's empathic attunement was sophisticated—accurately reflecting not just the patient's explicit statements but the interconnections between her dissociative symptoms, anxiety, trauma response, and behavioral coping. The collaborative stance was authentic; the patient was not passively receiving advice but actively generating insights and solutions. The cognitive work was skillfully executed, with the therapist using Socratic questioning to guide the patient toward her own balanced, compassionate alternative thought rather than imposing one. The session flowed logically and efficiently, moving through key CBT components without unnecessary tangents. Most importantly, the patient left the session with hope, a concrete plan, and genuine engagement in the therapeutic process.
+
+### Critical Deficiencies
+
+However, this session falls short of evidence-based CBT for acute dissociative disorder in several critical ways. Most significantly, the therapist did not employ trauma-informed interventions appropriate to this patient's presentation. While the therapist acknowledged the traumatic context (the fiancé's sudden death), the strategy did not include psychoeducation about dissociation as a normal trauma response, explicit safety planning, systematic trauma processing, or grounding/stabilization techniques beyond brief mention. For a patient experiencing acute dissociative reactions with depersonalization, derealization, and transient stupor, trauma-informed CBT requires more explicit attention to these processes. Second, the cognitive work, while skillful, remained at the surface level. The therapist addressed the catastrophic thought ("What if I'm never going to feel normal again?") but did not explore the core beliefs underlying this thought (e.g., "I am broken," "I cannot handle stress," "My trauma has permanently damaged me"). Without addressing core beliefs, cognitive change may be temporary or fragile. Third, the behavioral analysis was incomplete. The therapist identified repetitive folding as a coping mechanism but did not comprehensively map the full range of avoidance and safety behaviors (e.g., avoiding work situations, limiting social contact, checking for dissociative symptoms) that may be maintaining the dissociative cycle. A more thorough behavioral assessment would have identified all behaviors maintaining the problem and prioritized which to target. Fourth, the homework, while collaborative and relevant, lacked the specificity and structure necessary for a patient with dissociative symptoms. There was no written homework assignment, no formal behavioral experiment framing with predictions and data collection, no detailed barrier planning, and no tracking instructions. For a patient who may experience memory gaps or difficulty retaining information, these omissions significantly reduce the likelihood of successful homework completion and generalization. Fifth, the therapist did not provide formal CBT tools (thought records, behavioral experiments, exposure hierarchies) that would support the patient's independent practice between sessions. Finally, there was no explicit relapse prevention planning—no discussion of what the patient should do if dissociative symptoms recur or intensify, which is important for a patient with acute dissociative disorder.
+
+### Impact on Patient Care
+
+While this session will likely produce some immediate benefit—the patient left with hope, a concrete plan, and improved mood—the long-term therapeutic impact may be limited without addressing these deficiencies. The patient's dissociative symptoms are likely to recur, particularly under stress, and without trauma-informed interventions and comprehensive behavioral analysis, the patient may not develop the skills to manage these symptoms independently. The homework, while well-intentioned, may not be completed consistently or effectively due to lack of specificity and structure. Most critically, if core beliefs remain unaddressed and trauma processing does not occur, the patient's underlying vulnerability to dissociation may persist, increasing risk of symptom recurrence or progression to more chronic dissociative patterns. The therapist's excellent interpersonal skills and collaborative stance create a strong foundation, but without more rigorous application of evidence-based CBT techniques, the treatment may not produce the durable symptom improvement and skill development necessary for this patient's long-term recovery.
+
+---
+
+## Recommendations
+
+### 1. **Incorporate Trauma-Informed Psychoeducation About Dissociation**
+- **Action:** At the beginning of the next session, provide explicit psychoeducation about dissociation as a normal, adaptive trauma response. Normalize the patient's experience and reduce shame.
+- **Example:** "What you experienced—the numbness, the feeling of being disconnected from your body and surroundings, the sense that everything is unreal—these are all normal ways that our brain protects us from overwhelming trauma. Your brain essentially said, 'This is too much to feel right now, so I'm going to create some distance.' This is actually a survival mechanism, not a sign that you're broken or losing your mind. Many people who experience trauma have these kinds of dissociative responses."
+- **Practice:** Develop a brief handout on dissociation as a trauma response that the patient can review between sessions. Include information about the function of dissociation, why it occurs, and how it can be managed.
+
+### 2. **Explore Core Beliefs Underlying the Catastrophic Thought**
+- **Action:** In the next session, use guided discovery to explore the core beliefs beneath "What if I'm never going to feel normal again?" Ask questions that help the patient articulate what this thought means about her as a person.
+- **Example:** "When you think about never feeling normal again, what does that say about you as a person? What would it mean about you if that were true?" Listen for core beliefs such as "I am broken," "I am damaged," "I cannot handle stress," or "My trauma has permanently changed me." Once identified, these core beliefs become targets for deeper cognitive work.
+- **Practice:** Use the "downward arrow" technique to identify core beliefs. Ask, "If that were true, what would that mean about you?" and continue asking until you reach the deepest belief. Then collaboratively examine evidence for and against the core belief, just as you did with the surface thought.
+
+### 3. **Conduct a Comprehensive Behavioral Analysis**
+- **Action:** Map the full range of behaviors maintaining the dissociative cycle. Ask the patient to identify all avoidance and safety behaviors, not just the repetitive folding.
+- **Example:** "Besides the folding and unfolding, are there other things you do when you start to feel numb or scared? For example, do you avoid certain situations? Do you check your body to see if you're still 'real'? Do you limit social contact? Do you avoid thinking about your fiancé? Do you stay home instead of going to work?" Create a comprehensive list of all behaviors, then discuss the function of each (What does this behavior do for you? What are you trying to prevent or achieve?).
+- **Practice:** Use a behavioral analysis worksheet to systematically identify avoidance and safety behaviors, their triggers, their functions, and their consequences. Prioritize which behaviors to target first based on their impact on functioning.
+
+### 4. **Develop a Formal Behavioral Experiment with Predictions and Data Collection**
+- **Action:** Reframe the homework as a formal behavioral experiment. Ask the patient to make specific predictions about what will happen if she uses the new strategies, then collect data to test these predictions.
+- **Example:** "Let's make a prediction. You predict that if you use deep breathing instead of folding when you notice chest tightness, what do you think will happen? Will the chest tightness go away? Will it stay the same? Will it get worse? Let's write down your prediction. Then this week, when you notice chest tightness, try the deep breathing and write down what actually happened. We'll compare your prediction to reality next session."
+- **Practice:** Provide the patient with a simple behavioral experiment tracking sheet that includes: (1) the situation/trigger, (2) the prediction, (3) the behavior tried, (4) the actual outcome, (5) what was learned. This transforms homework from a compliance task into an active learning experience.
+
+### 5. **Provide Written, Specific Homework with Clear Instructions**
+- **Action:** Create a written homework assignment with concrete, specific instructions. Include frequency, timing, location, and exact wording for the sticky note.
+- **Example:** "Homework: (1) Write the following on a sticky note and place it on your bathroom mirror, your work desk, and your phone: 'I had a really hard time, but I'm surviving and finding ways to live again. It's okay to not be okay sometimes.' (2) Three times per day (morning, midday, evening), spend 2 minutes reading the note and taking 5 deep breaths. (3) When you notice chest tightness or the beginning of numbness, pause and use the deep breathing or name your feelings instead of folding. (4) Track each time you use the strategy on the attached tracking sheet."
+- **Practice:** Provide a written homework sheet that the patient can take home. Review it together in session to ensure understanding. Ask the patient to read it back to you to confirm comprehension.
+
+### 6. **Establish Explicit Relapse Prevention Planning**
+- **Action:** Discuss what the patient should do if dissociative symptoms recur or intensify. Develop a concrete plan for managing symptom recurrence.
+- **Example:** "It's possible that at some point, you might experience dissociative symptoms again, especially if you're under stress. That doesn't mean you've failed or that treatment isn't working—it's just part of the recovery process. Let's make a plan for what you'll do if that happens. First, what are the early warning signs that dissociation might be coming? [Listen for answers: chest tightness, racing thoughts, feeling foggy, urge to fold things.] If you notice these signs, what will you do? [Discuss: use the sticky note reminder, practice deep breathing, call a friend, contact the therapist.] Who can you reach out to if you need support?"
+- **Practice:** Create a "relapse prevention plan" that includes: (1) early warning signs of dissociation, (2) coping strategies to use at first sign, (3) people to contact if symptoms worsen, (4) when to contact the therapist.
+
+### 7. **Introduce a Thought Record as a Portable CBT Tool**
+- **Action:** Teach the patient to use a thought record so she can continue cognitive work independently between sessions. Make it simple and portable.
+- **Example:** Provide a simple thought record with columns: (1) Situation, (2) Automatic Thought, (3) Evidence For, (4) Evidence Against, (5) Alternative Thought, (6) Outcome. Walk through an example together: "Situation: At work, feeling chest tightness. Automatic Thought: 'What if I'm losing control?' Evidence For: 'I felt this way before when I dissociated.' Evidence Against: 'I'm still functioning at work. I haven't dissociated today. I've managed this feeling before.' Alternative Thought: 'I'm having a physical sensation, but I can manage it. I've done this before.' Outcome: 'Chest tightness decreased slightly. I felt more in control.'"
+- **Practice:** Have the patient complete one thought record in session with your guidance. Then assign her to complete one per day for the next week, focusing on the catastrophic thought or other key thoughts that arise.
+
+### 8. **Create a Graded Exposure Hierarchy for Dissociative Triggers**
+- **Action:** Identify situations that trigger dissociative symptoms and create a graded hierarchy from least to most anxiety-provoking. Plan systematic exposure to these situations.
+- **Example:** "Let's think about situations that trigger your dissociative symptoms. You mentioned work was a trigger. Are there specific work situations that are harder than others? [Listen for answers: being at desk, being around coworkers, having to focus on tasks.] Let's rank these from least to most difficult. Then we'll gradually expose you to these situations, starting with the easiest, while using your coping strategies."
+- **Practice:** Create an exposure hierarchy with the patient, rating each situation from 0-100 in terms of anxiety/dissociation risk. Plan to practice the coping strategies in these situations in a graded manner, starting with lower-anxiety situations.
+
+### 9. **Develop a Grounding/Stabilization Toolkit Specific to Dissociation**
+- **Action:** Expand beyond deep breathing to include multiple grounding techniques tailored to dissociation. Teach the patient to use sensory grounding (5-4-3-2-1 technique), physical grounding, and cognitive grounding.
+- **Example:** "When you start to feel numb or disconnected, we can use grounding techniques to help you feel more present. The 5-4-3-2-1 technique works like this: Name 5 things you can see, 4 things you can touch, 3 things you can hear, 2 things you can smell, 1 thing you can taste. This helps bring your attention back to the present moment. We can also use physical grounding—hold ice, splash cold water on your face, press your feet firmly into the ground. Or cognitive grounding—recite your address, phone number, or the date. Let's practice these together."
+- **Practice:** Have the patient practice each grounding technique in session. Assign her to practice one technique daily and track which ones are most helpful.
+
+### 10. **Establish Clear Session Structure and Milestones**
+- **Action:** At the beginning of the next session, establish explicit session structure, time allocation, and clear milestones for progress.
+- **Example:** "Over the next 4-6 weeks, here's what we'll focus on: Week 1-2, we'll build your grounding and coping skills. Week 3-4, we'll work on gradually facing situations that trigger dissociation. Week 5-6, we'll process the trauma itself and work on deeper beliefs about yourself. By the end of 6 weeks, we want you to feel more confident managing dissociative symptoms and to have reduced the frequency and intensity of these episodes by at least 50%. Does that sound reasonable?"
+- **Practice:** Create a written treatment plan with the patient that outlines these milestones. Review progress toward milestones at each session.
+
+### 11. **Incorporate Behavioral Activation for Broader Symptom Management**
+- **Action:** Beyond replacing the repetitive folding, develop a broader behavioral activation plan that includes scheduling pleasant activities, returning to valued activities, and increasing social engagement.
+- **Example:** "Besides managing the dissociative symptoms, we also want to help you rebuild your life and reconnect with things that matter to you. What are some activities you enjoyed before your fiancé's death? [Listen for answers.] What activities would you like to return to? Let's schedule some of these into your week. For example, if you enjoyed spending time with friends, let's plan a specific time to reach out to a friend this week."
+- **Practice:** Have the patient identify 3-5 valued activities and schedule them into her week. Track completion and mood/dissociation levels before and after these activities.
+
+---
+
+## Overall Session Score: 4.8/6
+
+**Summary:**
+
+This session demonstrates strong foundational therapeutic skills with excellent interpersonal effectiveness, genuine collaboration, and skillful cognitive work. The therapist created a warm, safe environment in which the patient felt heard and engaged. However, the session falls short of comprehensive, evidence-based CBT for acute dissociative disorder. Critical gaps include insufficient trauma-informed interventions, limited core belief exploration, incomplete behavioral analysis, lack of formal CBT tools, and insufficient homework specificity and structure. While the patient left with hope and a concrete plan, the long-term therapeutic impact may be limited without addressing these deficiencies. The therapist's excellent interpersonal skills provide a strong foundation, but more rigorous application of evidence-based CBT techniques—particularly trauma-informed approaches, comprehensive behavioral analysis, and formal CBT tools—is necessary to produce durable symptom improvement and skill development for this patient's recovery. The therapist should prioritize incorporating trauma-informed psychoeducation, exploring core beliefs, conducting comprehensive behavioral analysis, and providing more specific, structured homework in the next session. With these enhancements, this therapist could deliver truly excellent, evidence-based CBT.

@@ -1,0 +1,788 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Opioid Use Disorder; Tobacco Use Disorder; Alcohol Use Disorder (in remission); Major Depressive Disorder
+
+--- CASE STUDY ---
+
+Peter Winters, a 46-year-old married white minister, was referred to outpatient psychiatry for depressive symptoms and opioid misuse related to chronic right knee pain.
+
+Seventeen months prior, he injured his right knee playing basketball. Initially treated with hydrocodone-acetaminophen provided by his mother, he found relief. After finishing the medication, his pain persisted. He was prescribed a 1-month supply by the emergency room, which resolved pain, but recurrence led him to take higher doses than prescribed. He experienced dysphoria, muscle aches, and cravings when abstinent, began “enjoying the high,” frequently visited ERs for opioids, misrepresented pain severity, and stole pills from his mother. His opioid-seeking behavior negatively impacted work and home life.
+
+History: Two prior major depressive episodes successfully treated with escitalopram; alcohol use disorder in his 20s, remitted; heavy tobacco use (2 packs/day); strong family history of addiction and paternal depression. Married 20 years with two school-aged children; minister for 15 years. Physical exam and labs were normal.
+
+Mental status: cooperative, brief responses (“yes”/“no”), normal speech, dysphoric/constricted affect, mood “lousy,” no psychosis, no suicidal or homicidal ideation, memory intact, no psychomotor abnormalities.
+
+Discussion: Mr. Winters demonstrates a prescription opioid use disorder with compulsive misuse, cravings, tolerance, withdrawal, and significant life impairment. Risk factors include personal/family history of addiction, depression, and heavy tobacco use. Tobacco and alcohol use disorders are also present, the former active and the latter in remission. Mood symptoms may reflect an underlying major depressive disorder, exacerbated by opioid use. Somatic symptom disorder with predominant pain may also contribute.
+
+--- BEHAVIOUR ---
+
+Cooperative
+
+Brief responses (“yes”/“no”)
+
+Dysphoric and constricted affect
+
+Normal speech and psychomotor activity
+
+Insightful regarding opioid use
+
+No psychosis or suicidal ideation
+
+--- SYMPTOMS from DSM-5 ---
+Opioid Use Disorder
+
+Craving and strong desire to use opioids
+
+Tolerance
+
+Withdrawal symptoms
+
+Taking larger amounts over longer periods than intended
+
+Spending excessive time obtaining, using, or recovering from opioids
+
+Failure to fulfill role obligations
+
+Tobacco Use Disorder
+
+Daily cigarette use (2 packs/day)
+
+Persistent use despite health risks
+
+Alcohol Use Disorder, in remission
+
+Prior problematic alcohol use, now abstinent
+
+Major Depressive Disorder
+
+Low mood
+
+Dysphoric affect
+
+Distress related to substance use
+
+History of prior depressive episodes
+
+--- PATIENT PROFILE ---
+Name: Peter Winters
+Sex: Male
+Age: 46 years
+DOB: March 12, 1977
+Place of Birth: Chicago, IL
+Address: 15 Willow Street, Chicago, IL
+Contact: (555) 987-6543
+Marital Status: Married (20 years)
+Children: Two, school-aged
+Occupation: Minister (15 years)
+Education: Bachelor’s degree in Theology
+Religion: Christian (Protestant)
+Legal Guardian: None
+Presenting Complaint: Depressive symptoms and opioid misuse related to knee pain
+Psychiatric History: Two prior major depressive episodes
+Psychotherapy: None currently
+Medications: None at evaluation
+Substance Use: Prescription opioids (misuse), heavy tobacco use, alcohol in remission
+Medical History: Chronic knee pain
+Neurology: Normal
+Family History: Father with depression; maternal family history of addiction
+Mental Status: Dysphoric, constricted affect, cooperative, brief responses, no psychosis, memory intact, insight regarding opioid use
+
+--- DIAGNOSIS ---
+
+Opioid Use Disorder
+
+Tobacco Use Disorder
+
+Alcohol Use Disorder, in remission
+
+Major Depressive Disorder
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Peter Winters, a 46-year-old married minister, presents to outpatient psychiatry following referral for evaluation of depressive symptoms and concerns about opioid misuse related to chronic right knee pain. The referral was initiated due to ongoing difficulties managing pain and mood symptoms.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hello, it’s good to see you today. Before we get started, I’d like to check in with you—how have you been feeling lately on a scale from 0 to 10, where 0 is feeling very low or distressed and 10 is feeling very good or calm? Also, for today’s session, I’m thinking we could focus on either exploring a recent difficult situation that’s been on your mind or working on strategies to manage stress. What would you prefer to focus on, or is there something else you’d like to address? 
+ PATIENT: Hi. I guess I'd say maybe a 3. Just feeling kind of lousy mostly. I don't know... I think maybe working on managing stress would be okay. That's been on my mind a lot. 
+ PSYCHIATRIST: Thank you for sharing that you’re feeling around a 3—sounds like it’s been pretty tough. Focusing on managing stress sounds like a good plan. To start, could you tell me about a recent situation where you felt particularly stressed? What was going through your mind at that moment? 
+ PATIENT: Last week, I had to lead a service at church, but my knee was really hurting that day. I kept thinking I might have to stop halfway or that I'd mess up in front of the congregation. I just kept telling myself I couldn't let anyone down, but it made me feel worse. 
+ PSYCHIATRIST: It sounds like during that service, your knee pain and the fear of messing up were really weighing on you. What emotions did you notice in that moment, and how did you respond behaviorally to those feelings and thoughts? 
+ PATIENT: I felt anxious and kind of scared, I guess. I just tried to get through it without showing anything. I was tensing up a lot, and my knee hurt worse, but I didn’t want to ask for help or take a break. I just pushed myself. 
+ PSYCHIATRIST: So, to summarize, in that situation, your knee pain triggered thoughts about possibly failing or letting people down, which led to anxiety and fear. In response, you tried to push through without asking for help, which increased your physical discomfort. Does that sound right to you? 
+
+Let’s explore those thoughts a bit. What evidence do you have that you would actually mess up or that people would be very disappointed if you needed to stop or ask for help? And what evidence might suggest a different perspective? 
+ PATIENT: Yeah, that sounds about right. I guess I don’t really have solid proof I’d mess up. I’ve done this a long time, so maybe it’s more just fear talking. People might understand if I needed a break, but it feels like I should be able to handle it on my own. It’s hard to tell if that’s really true or just me being tough on myself. 
+ PSYCHIATRIST: That’s a helpful insight—that your fear might be more about how you’re interpreting the situation than the actual likelihood of messing up. If a close friend were in your shoes, feeling they had to push through pain without asking for help, what might you say to them? 
+ PATIENT: I’d probably tell them it’s okay to slow down and take care of themselves. That they don’t have to be perfect all the time and people will understand. I guess I know that, but it’s hard to apply it to myself. 
+ PSYCHIATRIST: That’s a very compassionate and reasonable view you hold for a friend. It sounds like you have a good sense of what a balanced perspective might be, even if it’s tough to shift your own self-expectations. 
+
+If you tried telling yourself something like, “It’s okay to take a break if I need it; people will understand,” how do you think that might affect your feelings about leading the service and your knee pain? 
+ PATIENT: Maybe it would make me feel a bit less anxious... like I wouldn’t be so worried about messing up. It might not make the pain go away, but maybe I’d stop tensing up so much. It’s hard to imagine, but it sounds like it could help. 
+ PSYCHIATRIST: That sounds like a meaningful shift—feeling less anxious and more accepting could reduce tension and possibly lessen how intense the pain feels. 
+
+As a small next step, what do you think about trying a behavioral experiment next time you lead a service or face a similar situation? For example, you might remind yourself of that balanced thought and notice what happens if you allow yourself to pause or ask for help if needed. How confident do you feel about trying that? What might get in the way? 
+ PATIENT: I’m not sure. I want to try, but part of me feels like it’s weakness to ask for help or slow down. I worry people might think less of me. But maybe I can try to remind myself it’s okay. It’ll probably take some effort. 
+ PSYCHIATRIST: It’s completely understandable to feel that way—concerns about appearing weak or being judged are common and valid. Let’s think about how you might approach this in a way that feels manageable. 
+
+Could you identify a specific service or situation in the next week where you could try reminding yourself of the balanced thought, “It’s okay to take a break if I need it; people will understand”? How long do you think you could spend noticing your thoughts and feelings in that moment? And what might help you feel supported in doing this? 
+ PATIENT: There’s a service this Sunday. Maybe I could try reminding myself before it starts and during it if I notice feeling tense. I think I could spend a few minutes paying attention to how I’m feeling. Having my wife remind me afterward might help, too. 
+ PSYCHIATRIST: That sounds like a clear and doable plan for Sunday—reminding yourself before and during the service, spending a few minutes noticing your feelings, and having your wife support you afterward. 
+
+To summarize today: we explored how your thoughts about needing to push through knee pain may increase anxiety and discomfort, and you identified a more balanced thought about allowing yourself to take breaks. You’re going to experiment with this thought during the upcoming service and observe what happens. 
+
+Before we finish, what stood out for you in today’s session? Was there anything that felt especially useful or less helpful? 
+ PATIENT: I think it was helpful to realize I don’t have to be perfect and that it’s okay to slow down. The part about treating myself like I would a friend makes sense, even if it’s hard to do. Nothing really felt unhelpful today. 
+ PSYCHIATRIST: I’m glad to hear that resonated with you. For next time, let’s plan to review how your experiment went on Sunday and see what you noticed about your thoughts, feelings, and behavior. If any challenges come up, we can work through them together. 
+
+Do you have any final questions or thoughts before we close today? 
+ PATIENT: No, I don’t think so. Thanks. I’ll see you next time. 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated strong agenda-setting skills by explicitly offering the patient two options ("exploring a recent difficult situation" or "working on strategies to manage stress") and inviting the patient to choose or suggest alternatives. The patient selected stress management, and the therapist honored this preference. The session maintained focus on this agreed-upon agenda throughout, with the therapist systematically exploring a concrete example (leading church service) that directly related to the stated goal.
+
+However, the agenda lacked explicit time allocation or prioritization discussion. The therapist did not establish how much time would be devoted to exploration versus skill-building, nor did they explicitly address the broader clinical picture—Peter presents with opioid use disorder, major depressive disorder, and tobacco use disorder, yet the session focused narrowly on stress management related to one situation. While focusing on one problem is appropriate for a single session, the therapist did not acknowledge or briefly contextualize how this stress management work connects to his presenting concerns (opioid misuse, depression, pain management). The agenda also did not explicitly include reviewing any prior homework or establishing what would happen between sessions beyond the behavioral experiment.
+
+**Summary:**
+
+The therapist set a collaborative, patient-centered agenda with clear options and maintained focus throughout. The agenda would have been excellent with explicit time boundaries and brief acknowledgment of how stress management relates to Peter's broader treatment goals.
+
+---
+
+### 2. Feedback
+### **Score: 4/6**
+
+**Explanation:**
+
+The therapist demonstrated adequate feedback-seeking behavior at key points. Most notably, the therapist explicitly checked understanding with "Does that sound right to you?" after summarizing Peter's experience, and again at the end of the session asked "what stood out for you in today's session? Was there anything that felt especially useful or less helpful?" These are direct, appropriate feedback requests.
+
+However, the frequency and depth of feedback elicitation fell short of excellence. The therapist did not check for understanding after introducing the behavioral experiment concept, nor did they verify that Peter understood the rationale for the thought record or behavioral experiment. The therapist did not ask clarifying questions about Peter's confidence level until late in the session ("How confident do you feel about trying that?"), missing earlier opportunities to gauge engagement and understanding. Additionally, the therapist did not elicit feedback about the pacing, depth, or relevance of the session content mid-session—only at the very end. There was no explicit check for whether Peter felt heard or whether the session addressed his most pressing concerns. The therapist also did not ask Peter to summarize or teach back the key concepts, which would have provided clearer feedback about retention and understanding.
+
+**Summary:**
+
+The therapist asked for feedback at appropriate moments but did so infrequently and primarily at session endpoints. More frequent mid-session checks and explicit verification of understanding would strengthen this skill.
+
+---
+
+### 3. Understanding
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated strong empathic understanding of Peter's internal experience. When Peter reported feeling "lousy" and a 3/10, the therapist reflected this back with "sounds like it's been pretty tough," validating the difficulty. The therapist accurately grasped the cognitive-behavioral chain: knee pain → thoughts about failure/letting people down → anxiety and fear → avoidant/pushing-through behavior → increased physical tension and pain. This was reflected back accurately: "your knee pain triggered thoughts about possibly failing or letting people down, which led to anxiety and fear."
+
+The therapist also demonstrated understanding of Peter's perfectionism and self-criticism, noting "it sounds like you have a good sense of what a balanced perspective might be, even if it's tough to shift your own self-expectations." This shows nuanced comprehension of the gap between Peter's values (compassion for others) and his self-directed standards.
+
+However, the therapist missed some subtle but clinically important aspects of Peter's presentation. Peter stated "I just pushed myself" and "I didn't want to ask for help or take a break"—these reflect avoidance coping and possible shame/stigma concerns that warrant deeper exploration in the context of opioid use disorder. The therapist did not explore the connection between Peter's perfectionism, difficulty asking for help, and his opioid-seeking behavior (which also involves deception and avoidance of disclosure). Additionally, Peter's statement "It's hard to tell if that's really true or just me being tough on myself" suggests ambivalence and possible insight into distorted thinking, but the therapist did not probe whether Peter recognizes similar patterns in his opioid use or other areas. The therapist also did not acknowledge the emotional weight of Peter's role as a minister—the pressure to appear capable and the shame associated with struggling—which likely amplifies his avoidance and perfectionism.
+
+**Summary:**
+
+The therapist demonstrated solid empathic understanding and accurate reflection of the immediate presenting situation. Deeper exploration of underlying shame, perfectionism patterns across life domains, and connections to substance use would have elevated this to excellent.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated strong interpersonal skills throughout the session. The opening was warm and inviting ("Hello, it's good to see you today"), and the therapist maintained a collaborative, non-judgmental tone throughout. The therapist validated Peter's emotions ("sounds like it's been pretty tough," "concerns about appearing weak or being judged are common and valid") and acknowledged the difficulty of change ("It's completely understandable to feel that way"). The therapist used gentle language when introducing cognitive concepts, avoiding jargon and framing ideas as collaborative exploration rather than directive instruction.
+
+The therapist also demonstrated appropriate professional boundaries and genuine interest in Peter's perspective, repeatedly inviting his input and honoring his preferences. The tone was warm but not overly familiar, and the therapist maintained appropriate structure without being rigid or cold.
+
+However, there were minor gaps in interpersonal depth. The therapist did not explicitly normalize Peter's struggle with perfectionism or shame in the context of his role as a minister or his substance use history. The therapist did not acknowledge the courage it takes for someone in Peter's position (a minister with a public role) to admit to difficulty or to consider asking for help. Additionally, while the therapist was supportive, there was limited use of humor, metaphor, or other techniques that might deepen rapport or make concepts more memorable. The therapist's responses, while warm, were somewhat formulaic and could have been more personalized to Peter's specific context and values.
+
+**Summary:**
+
+The therapist demonstrated consistent warmth, empathy, and professionalism with appropriate boundaries. Greater acknowledgment of Peter's specific challenges and more personalized engagement would have strengthened rapport further.
+
+---
+
+### 5. Collaboration
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated strong collaborative practice throughout the session. The opening explicitly invited Peter to choose the session focus ("What would you prefer to focus on, or is there something else you'd like to address?"), and Peter's choice was honored. The therapist used collaborative language: "Let's explore those thoughts a bit," "Let's think about how you might approach this," and "we can work through them together." The therapist invited Peter's perspective on the behavioral experiment ("How confident do you feel about trying that? What might get in the way?") and incorporated his input into the plan (identifying Sunday's service, involving his wife).
+
+The therapist also used guided discovery to help Peter reach his own insights rather than imposing interpretations. For example, when exploring evidence for his catastrophic thoughts, the therapist asked "What evidence do you have that you would actually mess up?" rather than telling Peter his fears were unfounded. The therapist also used the "friend perspective" technique to help Peter access his own wisdom.
+
+However, collaboration could have been deeper in several ways. The therapist did not explicitly invite Peter to co-develop the treatment strategy or discuss his preferences regarding how to address his broader concerns (opioid use, depression, tobacco use). The therapist did not ask Peter what he thought might be causing his stress or what he believed would help—instead, the therapist moved relatively quickly into the cognitive-behavioral formulation. Additionally, while the therapist asked about barriers to the behavioral experiment, there was limited collaborative problem-solving about how to overcome these barriers. The therapist suggested involving his wife but did not ask Peter whether he felt comfortable with this or whether he had other ideas for support. The therapist also did not invite Peter to suggest alternative strategies or experiments.
+
+**Summary:**
+
+The therapist demonstrated solid collaborative practice with patient choice and guided discovery. Greater co-development of treatment strategy and more explicit invitation for Peter's ideas about solutions would have strengthened collaboration.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated good pacing and time management. The session moved logically from agenda-setting → problem exploration → cognitive-behavioral analysis → thought challenging → behavioral experiment planning → summary and feedback. The therapist did not get sidetracked into peripheral discussions and maintained focus on the agreed-upon agenda (stress management). The depth of exploration on each topic was appropriate—the therapist spent sufficient time understanding the situation without excessive rumination or repetition.
+
+The therapist also efficiently moved from problem identification to intervention, introducing the cognitive restructuring and behavioral experiment without unnecessary delay. The summary at the end was concise and captured the key elements of the session.
+
+However, there were minor inefficiencies. The therapist could have moved more quickly through the initial problem exploration to allow more time for skill-building and homework planning. The therapist asked "What emotions did you notice in that moment, and how did you respond behaviorally to those feelings and thoughts?" which is a good question but somewhat complex; breaking this into two separate questions might have been clearer. Additionally, the therapist did not explicitly allocate time or indicate how much time remained, which could have helped Peter understand the session structure. The therapist also spent time on the "friend perspective" technique, which was helpful but could have been more efficiently framed as a brief intervention rather than an extended exploration.
+
+**Summary:**
+
+The therapist maintained good pacing and focus throughout the session with logical flow and appropriate depth. Minor adjustments to question complexity and explicit time management would have optimized efficiency further.
+
+---
+
+### 7. Guided Discovery
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated strong use of guided discovery, a core CBT technique. Rather than telling Peter his thoughts were irrational, the therapist asked "What evidence do you have that you would actually mess up or that people would be very disappointed if you needed to stop or ask for help? And what evidence might suggest a different perspective?" This Socratic questioning helped Peter examine his own thinking and reach his own conclusion: "I guess I don't really have solid proof I'd mess up... maybe it's more just fear talking."
+
+The therapist also used the "friend perspective" technique effectively: "If a close friend were in your shoes, feeling they had to push through pain without asking for help, what might you say to them?" This helped Peter access his own wisdom and recognize the discrepancy between his standards for others and himself. Peter's response ("I'd probably tell them it's okay to slow down and take care of themselves") demonstrated genuine insight.
+
+The therapist then used this insight to help Peter consider a more balanced thought: "If you tried telling yourself something like, 'It's okay to take a break if I need it; people will understand,' how do you think that might affect your feelings?" This invited Peter to predict outcomes rather than being told what would happen.
+
+However, guided discovery could have been deeper and more systematic. The therapist did not fully explore the evidence for Peter's catastrophic thoughts—for example, asking "Have you ever actually messed up a service before?" or "What specifically would happen if you asked for a break?" would have strengthened the evidence examination. The therapist also did not explore the origin of Peter's perfectionism or the beliefs underlying it (e.g., "Where did you learn that you need to be perfect?" or "What would it mean about you if you weren't perfect?"). Additionally, the therapist did not use guided discovery to help Peter identify his own ideas for managing stress or experimenting with new behaviors—instead, the therapist suggested the behavioral experiment. The therapist could have asked "What do you think might help you feel less anxious in that situation?" or "What small change do you think you could try?"
+
+**Summary:**
+
+The therapist used Socratic questioning and perspective-taking effectively to help Peter reach insights about his thinking patterns. More systematic evidence examination and invitation for Peter's own ideas about solutions would have deepened guided discovery.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 4/6**
+
+**Explanation:**
+
+The therapist identified and focused on relevant cognitions and behaviors related to Peter's presenting stress. The key automatic thoughts were identified: "I might have to stop halfway," "I'd mess up in front of the congregation," and the underlying belief "I can't let anyone down." The therapist also identified the behavioral response: pushing through without asking for help, tensing up, and avoiding disclosure of difficulty.
+
+These cognitions and behaviors are clinically relevant to Peter's stress in the immediate situation. However, the therapist did not focus on the most central cognitions and behaviors relevant to Peter's broader presenting problems and treatment goals. Peter presents with opioid use disorder, major depressive disorder, and tobacco use disorder—yet the session focused narrowly on stress management in one situation without connecting to these core issues.
+
+Critically, the therapist did not explore cognitions and behaviors directly related to opioid use: What thoughts drive Peter's opioid-seeking? ("I deserve relief," "I can't handle pain," "No one will understand my suffering") What beliefs underlie his deception and pill-stealing? ("I have to solve this alone," "People will judge me," "I'm weak if I ask for help") What behaviors maintain the cycle? (avoidance of disclosure, isolation, self-medication). The perfectionism and difficulty asking for help that emerged in this session are likely central to understanding his opioid use disorder, yet this connection was not made.
+
+Additionally, the therapist did not explore cognitions related to depression (hopelessness, worthlessness, fatigue) or tobacco use (stress relief, coping, identity). The therapist also did not identify core beliefs that may be driving multiple problems (e.g., "I must be strong and self-sufficient," "I can't burden others," "I'm fundamentally flawed").
+
+**Summary:**
+
+The therapist identified relevant cognitions and behaviors for the immediate presenting stress but did not focus on the most central cognitions and behaviors related to Peter's primary diagnoses (opioid use disorder, depression) or core beliefs driving multiple problems.
+
+---
+
+### 9. Strategy for Change
+### **Score: 3/6**
+
+**Explanation:**
+
+The therapist outlined a basic strategy for change: (1) identify catastrophic thoughts about leading the service, (2) examine evidence for these thoughts, (3) develop a more balanced thought, (4) conduct a behavioral experiment to test the new thought. This is a coherent CBT strategy using cognitive restructuring and behavioral experimentation.
+
+However, the strategy has significant limitations and gaps. First, the strategy is narrowly focused on one situation (leading a church service) without a broader treatment plan addressing Peter's primary diagnoses. There is no explicit strategy for addressing opioid use disorder, depression, or tobacco use. The therapist did not discuss medication management, the role of pain management in opioid use, or how depression might be contributing to his substance use.
+
+Second, the strategy does not address the functional impairment and behavioral patterns maintaining Peter's opioid use. Peter is engaging in doctor-shopping, deception, and theft—these are not addressed. The strategy does not include behavioral activation for depression, exposure to discomfort (pain) without opioid use, or skills for managing cravings.
+
+Third, the strategy lacks a clear rationale or conceptualization connecting the intervention to outcomes. Why will changing thoughts about one church service lead to meaningful improvement in his opioid use, depression, or overall functioning? The therapist did not explicitly explain this connection.
+
+Fourth, the strategy is reactive rather than proactive. It focuses on managing stress in anticipated situations rather than building broader coping skills, addressing underlying depression, or developing a comprehensive relapse prevention plan for opioid use.
+
+Fifth, there is no discussion of the role of pain management in the opioid use disorder. Peter's chronic knee pain is a significant maintaining factor, yet the strategy does not address pain management strategies (physical therapy, non-opioid pain management, acceptance-based approaches).
+
+**Summary:**
+
+The therapist outlined a basic cognitive-behavioral strategy for one situation but did not develop a comprehensive treatment strategy addressing Peter's primary diagnoses, functional impairment, or maintaining factors in his substance use and depression.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 4/6**
+
+**Explanation:**
+
+The therapist applied several CBT techniques with moderate skill:
+
+1. **Thought Record/Cognitive Analysis**: The therapist helped Peter identify the situation (leading service), thoughts (might mess up, can't let people down), emotions (anxiety, fear), and behaviors (pushing through, tensing up, not asking for help). This is a foundational CBT technique, and the therapist applied it adequately.
+
+2. **Socratic Questioning/Evidence Examination**: The therapist asked "What evidence do you have that you would actually mess up?" helping Peter examine the validity of his thoughts. This was applied with moderate skill—the questioning was appropriate but not exhaustive.
+
+3. **Perspective-Taking/Compassion Work**: The therapist asked "If a close friend were in your shoes... what might you say to them?" This helped Peter access a more compassionate perspective. This technique was applied skillfully.
+
+4. **Thought Challenging/Cognitive Restructuring**: The therapist introduced a more balanced thought ("It's okay to take a break if I need it; people will understand") and explored its potential impact. This was applied adequately.
+
+5. **Behavioral Experiment**: The therapist assigned a behavioral experiment for the upcoming Sunday service, asking Peter to remind himself of the balanced thought and observe what happens. This is appropriate but somewhat basic—the experiment lacks specificity about what to observe and how to measure outcomes.
+
+However, there are significant gaps in technique application:
+
+- **No Thought Record Assignment**: The therapist did not assign a formal thought record for Peter to complete between sessions, which would reinforce the cognitive work and provide data for the next session.
+
+- **No Behavioral Activation**: Given Peter's depression (dysphoric mood, constricted affect), behavioral activation is a critical CBT technique that was not applied.
+
+- **No Exposure or Acceptance Work**: Peter's avoidance of discomfort (pain, difficulty, asking for help) is a maintaining factor. The therapist did not introduce exposure or acceptance-based techniques.
+
+- **No Coping Skills Training**: The therapist did not teach specific coping skills for managing anxiety, cravings, or pain.
+
+- **No Relapse Prevention**: Given Peter's opioid use disorder, relapse prevention planning is essential and was not addressed.
+
+- **No Functional Analysis of Substance Use**: The therapist did not conduct a functional analysis of Peter's opioid use (what triggers it, what maintains it, what functions it serves).
+
+- **No Values Clarification**: While Peter's role as a minister was mentioned, the therapist did not explicitly explore his values and how his current behaviors align or conflict with these values—a powerful CBT technique for motivation.
+
+**Summary:**
+
+The therapist applied basic CBT techniques (thought records, Socratic questioning, cognitive restructuring, behavioral experiments) with moderate skill but did not apply more advanced or specialized techniques needed for opioid use disorder and depression.
+
+---
+
+### 11. Homework
+### **Score: 4/6**
+
+**Explanation:**
+
+The therapist assigned homework that was relevant to the session and reasonably specific. The assignment was: (1) remind yourself of the balanced thought before and during Sunday's service, (2) spend a few minutes noticing your thoughts and feelings, (3) have your wife remind you afterward. This is concrete and tied directly to the session content.
+
+The therapist also provided some rationale for the homework: "As a small next step, what do you think about trying a behavioral experiment next time you lead a service or face a similar situation?" This frames the homework as an experiment to test the new thought, which is appropriate.
+
+However, the homework assignment has several limitations:
+
+1. **Lack of Specificity**: The therapist did not specify exactly when Peter should remind himself of the thought (e.g., "5 minutes before the service begins," "whenever you notice tension in your knee"). The therapist did not specify what to "notice" about thoughts and feelings (e.g., "rate your anxiety 0-10," "write down any thoughts that come up," "notice whether your knee pain changes").
+
+2. **No Written Materials**: The therapist did not provide a written thought record, worksheet, or reminder card that Peter could use. This is a missed opportunity to reinforce learning and provide structure.
+
+3. **Unclear Measurement**: The therapist did not establish how Peter would measure success or what data to collect. What should Peter observe? How will he know if the experiment "worked"?
+
+4. **Limited Scope**: The homework addresses only one situation (Sunday's service) and does not include broader assignments for managing stress, depression, or opioid cravings throughout the week.
+
+5. **No Prior Homework Review**: The therapist did not review any prior homework or establish whether Peter has a history of completing assignments. This is important for setting realistic expectations.
+
+6. **Insufficient Commitment Check**: While the therapist asked "How confident do you feel about trying that?" the therapist did not thoroughly problem-solve barriers or ensure genuine commitment. Peter expressed ambivalence ("I'm not sure"), but the therapist did not deeply explore this or adjust the assignment to increase feasibility.
+
+7. **No Follow-up Plan**: The therapist stated "let's plan to review how your experiment went on Sunday" but did not establish specific review procedures or what to do if the experiment doesn't go as planned.
+
+**Summary:**
+
+The therapist assigned relevant, concrete homework tied to session content but lacked specificity, written materials, clear measurement criteria, and thorough commitment-building. The homework also did not address Peter's broader concerns (opioid use, depression, tobacco use).
+
+---
+
+## Overall Summary
+
+### Strengths:
+- **Collaborative Agenda-Setting**: The therapist explicitly offered choices and honored the patient's preference, establishing a collaborative foundation.
+- **Empathic Understanding**: The therapist demonstrated solid empathic listening and accurate reflection of Peter's immediate experience and emotions.
+- **Guided Discovery**: The therapist used Socratic questioning and perspective-taking effectively to help Peter reach his own insights about his thinking patterns.
+- **Warm Interpersonal Style**: The therapist maintained consistent warmth, validation, and professionalism throughout, creating a safe therapeutic environment.
+- **Logical Session Structure**: The session flowed logically from problem exploration to cognitive analysis to intervention planning with appropriate pacing.
+- **Basic CBT Technique Application**: The therapist applied foundational CBT techniques (thought records, evidence examination, cognitive restructuring, behavioral experiments) with moderate competence.
+
+### Critical Deficiencies:
+- **Narrow Clinical Focus**: The session focused on stress management in one situation without addressing Peter's primary diagnoses (opioid use disorder, major depressive disorder, tobacco use disorder) or developing a comprehensive treatment strategy.
+- **No Functional Analysis of Substance Use**: The therapist did not explore the thoughts, feelings, behaviors, and maintaining factors driving Peter's opioid misuse, despite this being his primary presenting problem.
+- **Missing Core CBT Techniques**: The therapist did not apply behavioral activation (critical for depression), exposure/acceptance work (critical for avoidance), relapse prevention (critical for substance use), coping skills training, or values clarification.
+- **Insufficient Homework Specificity**: The homework lacked clear measurement criteria, written materials, and thorough commitment-building. It did not address broader concerns or establish data collection procedures.
+- **No Conceptualization of Underlying Patterns**: The therapist did not identify or address core beliefs (perfectionism, self-sufficiency, shame) that likely drive multiple problems (opioid use, depression, avoidance).
+- **Limited Exploration of Shame and Stigma**: Given Peter's role as a minister and his substance use, the therapist did not adequately explore shame, stigma, or the conflict between his identity and his current struggles.
+- **No Pain Management Strategy**: Peter's chronic knee pain is a primary maintaining factor in his opioid use, yet the therapist did not address pain management strategies or the relationship between pain acceptance and opioid use reduction.
+- **Insufficient Assessment of Opioid Use Severity**: The therapist did not assess the severity of Peter's opioid use disorder, cravings, withdrawal, or functional impairment—critical information for treatment planning.
+
+---
+
+## Impact on Patient Care
+
+**Likelihood of Therapeutic Benefit:**
+
+This session demonstrates basic competence in general therapeutic skills and foundational CBT techniques but falls short of evidence-based treatment for Peter's primary diagnoses. While the session may provide temporary relief through cognitive restructuring and may help Peter manage stress in one specific situation, it is unlikely to produce meaningful, sustained improvement in his opioid use disorder, depression, or overall functioning.
+
+**Specific Concerns:**
+
+1. **Opioid Use Disorder Untreated**: Peter's opioid misuse—characterized by compulsive use, cravings, tolerance, withdrawal, deception, and theft—was not addressed. Without direct intervention targeting substance use (functional analysis, relapse prevention, coping skills for cravings, pain management), the opioid use will likely continue or escalate.
+
+2. **Depression Unaddressed**: Peter's dysphoric mood, constricted affect, and history of major depressive episodes suggest significant depression. Without behavioral activation, cognitive work on depressive thoughts, or medication review, his depression will likely persist and may worsen, increasing relapse risk.
+
+3. **Avoidance Reinforced**: The session focused on changing thoughts about one situation but did not address Peter's broader avoidance pattern (not asking for help, not disclosing struggles, pushing through discomfort). Without exposure or acceptance work, avoidance will likely continue to maintain his problems.
+
+4. **Shame and Stigma Unaddressed**: Peter's perfectionism, difficulty asking for help, and role as a minister suggest significant shame about his struggles. Without directly addressing shame and stigma, Peter is unlikely to disclose his opioid use to his wife, seek appropriate medical care, or engage fully in treatment.
+
+5. **Pain Management Gap**: Peter's chronic knee pain is a primary trigger for opioid use. Without a pain management strategy (physical therapy, non-opioid approaches, pain acceptance), he will likely continue to seek opioids for relief.
+
+**Risk Assessment:**
+
+This session carries risk of reinforcing Peter's avoidance and perfectionism without providing adequate tools for managing his substance use and depression. If Peter does not see improvement in his opioid use or mood, he may disengage from treatment or increase substance use as a coping mechanism.
+
+---
+
+## Recommendations
+
+### 1. **Develop a Comprehensive Treatment Conceptualization and Strategy**
+- **Action**: Before the next session, conduct a thorough functional analysis of Peter's opioid use disorder. Identify triggers (pain, stress, negative mood, shame), maintaining factors (relief from pain and dysphoria, avoidance of discomfort, social isolation), and consequences (functional impairment, relationship strain, legal/ethical concerns). Explicitly connect this to his perfectionism, difficulty asking for help, and depression.
+- **Example**: "Peter, I'd like to understand your opioid use more deeply. When you use opioids, what are you trying to escape or achieve? What happens right before you use? What do you feel afterward? How does this connect to your pain, your mood, and your role as a minister?"
+- **Practice**: Study functional analysis frameworks for substance use disorders. Practice conducting thorough assessments that identify the "why" behind substance use, not just the "what." Review case conceptualization models that integrate multiple diagnoses (opioid use disorder + depression + perfectionism).
+
+### 2. **Explicitly Address Opioid Use Disorder in Treatment Planning**
+- **Action**: In the next session, establish opioid use disorder as a primary treatment target alongside depression and stress management. Develop a specific plan for reducing opioid use, managing cravings, and addressing pain without opioids. Discuss medication-assisted treatment (MAT) options, pain management strategies, and relapse prevention.
+- **Example**: "Peter, I want to make sure we're directly addressing your opioid use. Can we talk about what's driving your use, what happens when you try to cut back, and what would help you feel confident managing your pain and cravings without opioids?"
+- **Practice**: Obtain training in evidence-based treatment for opioid use disorder (MAT, cognitive-behavioral relapse prevention, pain management). Review guidelines from SAMHSA and ASAM. Practice conducting opioid-specific assessments and treatment planning.
+
+### 3. **Implement Behavioral Activation for Depression**
+- **Action**: Assess Peter's activity level and mood patterns. Identify activities that are meaningful, valued, or mood-enhancing. Assign specific behavioral activation homework (e.g., "Schedule 30 minutes of physical activity 3 times this week," "Spend 20 minutes on a hobby you enjoy," "Call a friend or family member"). Track mood before and after activities.
+- **Example**: "Peter, depression often makes us want to withdraw and avoid activity, which actually makes mood worse. Let's identify some activities that are meaningful to you—things that align with your values as a minister or that you used to enjoy—and schedule them into your week. We'll track how your mood changes."
+- **Practice**: Study behavioral activation protocols for depression. Practice identifying valued activities and scheduling them systematically. Learn to troubleshoot barriers to activation.
+
+### 4. **Explore and Address Core Beliefs and Shame**
+- **Action**: Conduct deeper exploration of Peter's core beliefs about perfectionism, self-sufficiency, and worthiness. Explicitly address shame related to his substance use and his role as a minister. Use values clarification to help Peter reconnect with his identity and values.
+- **Example**: "Peter, I'm noticing a pattern: you feel you need to be perfect, you can't ask for help, and you push through pain and difficulty alone. Where did you learn this? What would it mean about you if you weren't perfect or if you needed help? How does this connect to your struggles with opioids and your role as a minister?"
+- **Practice**: Study shame-focused CBT interventions. Learn values clarification techniques. Practice exploring the origins and functions of perfectionism. Develop skill in helping patients recognize how core beliefs drive multiple problems.
+
+### 5. **Introduce Exposure and Acceptance Work for Avoidance**
+- **Action**: Identify Peter's avoidance patterns (not asking for help, not disclosing struggles, pushing through discomfort). Gradually introduce exposure to discomfort and acceptance-based techniques. Start with small, manageable exposures (e.g., asking wife for help with a small task, disclosing one struggle to a trusted person).
+- **Example**: "Peter, avoiding discomfort—whether it's pain, difficulty, or asking for help—actually keeps your problems going. What if we gradually practiced tolerating discomfort and asking for help in small ways? What's one small thing you could ask for help with this week?"
+- **Practice**: Study acceptance and commitment therapy (ACT) and exposure-based interventions. Learn to design graduated exposure hierarchies. Practice helping patients tolerate discomfort without escaping through substance use.
+
+### 6. **Assign Structured, Specific Homework with Measurement Criteria**
+- **Action**: Create written homework assignments with clear instructions, rationale, and measurement criteria. Include thought records, behavioral experiments, activity logs, or craving logs with specific prompts. Ensure Peter understands the assignment and commits to completing it. Review homework thoroughly at the next session.
+- **Example**: "Peter, I'm giving you this thought record worksheet. Each time you feel stressed this week, write down: (1) the situation, (2) what you're thinking, (3) what you're feeling, (4) what you do. Rate your anxiety 0-10 before and after. Also, try the balanced thought we discussed and notice what happens. Bring this back next week so we can review it together."
+- **Practice**: Develop templates for thought records, behavioral experiments, activity logs, and craving logs. Practice explaining homework clearly and checking for understanding. Learn to troubleshoot barriers to homework completion.
+
+### 7. **Develop a Pain Management Strategy**
+- **Action**: Assess Peter's pain (location, severity, triggers, impact on function). Discuss non-opioid pain management strategies: physical therapy, exercise, heat/ice, mindfulness, acceptance-based approaches. Coordinate with his primary care physician regarding pain management and opioid tapering. Discuss the relationship between pain acceptance and opioid use reduction.
+- **Example**: "Peter, your knee pain is a real problem, and I understand why you've been using opioids for relief. But opioids are making things worse in the long run. Let's talk about other ways to manage pain—physical therapy, exercise, acceptance techniques—that can help you function better without opioids."
+- **Practice**: Study pain management approaches in CBT. Learn about the relationship between pain catastrophizing and opioid use. Practice discussing pain management options with patients. Coordinate with medical providers.
+
+### 8. **Assess and Address Tobacco Use**
+- **Action**: While opioid use disorder is the priority, tobacco use is also a significant health concern and may be a coping mechanism for stress and mood. Assess Peter's readiness to quit and introduce brief intervention or referral to smoking cessation programs if appropriate.
+- **Example**: "Peter, I also want to check in about your smoking. You're using 2 packs a day, which is a lot. Is this something you'd like to work on, or would you prefer to focus on the opioids and depression first?"
+- **Practice**: Study brief interventions for tobacco use. Learn motivational interviewing techniques. Know when to refer to specialized smoking cessation programs.
+
+### 9. **Conduct Thorough Assessment of Depression and Suicidality**
+- **Action**: Administer a standardized depression measure (PHQ-9) to quantify severity and track change. Assess for suicidal ideation more thoroughly (the mental status exam noted "no suicidal ideation," but this warrants deeper exploration given depression severity and substance use). Discuss medication management and whether current medications are adequate.
+- **Example**: "Peter, I want to make sure I'm fully understanding your depression. On a scale of 0-10, how often do you feel hopeless? Do you ever think about harming yourself? Have you thought about what would help—would medication be something you'd consider?"
+- **Practice**: Administer and score depression measures. Practice thorough suicide risk assessment. Review medication options for depression and substance use disorders.
+
+### 10. **Establish Clear Treatment Goals and Milestones**
+- **Action**: Work with Peter to establish specific, measurable treatment goals for opioid use (e.g., "reduce opioid use by 50% in 4 weeks," "achieve 2 weeks of abstinence"), depression (e.g., "increase mood from 3/10 to 6/10," "complete 3 valued activities per week"), and stress management. Establish milestones and review progress regularly.
+- **Example**: "Peter, let's set some clear goals for treatment. What would success look like for you? How will we know if treatment is working? Let's track your progress week by week."
+- **Practice**: Study goal-setting in CBT. Learn to make goals specific, measurable, and meaningful. Practice tracking progress and adjusting treatment based on outcomes.
+
+### 11. **Involve Wife and Support System**
+- **Action**: With Peter's consent, involve his wife in treatment. Educate her about opioid use disorder, depression, and how she can support recovery. Discuss communication, boundaries, and how to respond to cravings or relapse. Consider couple's therapy if relationship strain is significant.
+- **Example**: "Peter, your wife can be an important part of your recovery. Would you be open to having her join us for a session so we can talk about how she can support you? We can also discuss how to communicate about your struggles and what to do if you're having cravings."
+- **Practice**: Study family involvement in substance use treatment. Learn to conduct psychoeducation with family members. Practice setting boundaries and discussing relapse prevention with support systems.
+
+---
+
+## Overall Session Score: 4.2/6
+
+**Summary:**
+
+Peter's therapist demonstrated adequate general therapeutic skills (warmth, empathy, collaboration, pacing) and basic competence in foundational CBT techniques (thought records, Socratic questioning, cognitive restructuring, behavioral experiments). The session was well-structured, collaborative, and focused on a relevant presenting concern (stress management).
+
+However, the session falls significantly short of evidence-based treatment for Peter's primary diagnoses and presenting problems. The therapist did not develop a comprehensive treatment strategy addressing opioid use disorder, depression, or the core beliefs and avoidance patterns maintaining these problems. Critical CBT techniques for substance use (functional analysis, relapse prevention, coping skills) and depression (behavioral activation, cognitive work on depressive thoughts) were not applied. The homework was relevant but lacked specificity and measurement criteria. Most critically, the therapist did not address Peter's opioid use disorder directly—the primary reason for referral—despite it being a severe, functionally impairing condition requiring specialized intervention.
+
+**Current Competency Assessment:**
+
+The therapist demonstrates competence in general therapeutic skills and basic CBT but lacks specialized competence in treating opioid use disorder and comorbid depression. The therapist would benefit from training in substance use disorder treatment, comprehensive case conceptualization, and advanced CBT techniques.
+
+**Most Critical Changes Needed Immediately:**
+
+1. Conduct a thorough functional analysis of Peter's opioid use and develop a comprehensive treatment strategy addressing substance use, depression, and core beliefs.
+2. Implement behavioral activation for depression and exposure/acceptance work for avoidance.
+3. Develop a pain management strategy and coordinate with medical providers regarding opioid tapering.
+4. Assign specific, measurable homework with clear rationale and measurement criteria.
+5. Directly address shame and stigma related to substance use and Peter's role as a minister.
+
+**Likelihood of Producing Therapeutic Change:**
+
+As currently delivered, this session is unlikely to produce meaningful, sustained improvement in Peter's opioid use disorder or depression. While the stress management work may provide temporary relief, without direct intervention targeting substance use, depression, and underlying avoidance patterns, Peter's core problems will likely persist or worsen. The risk of continued opioid use, relapse, and functional deterioration is significant.
+
+**Evidence-Based CBT Qualification:**
+
+This session demonstrates basic CBT competence but does not meet the standard for evidence-based treatment of opioid use disorder or comorbid depression. Specialized training and supervision in substance use disorder treatment are needed to provide appropriate care for this patient.

@@ -1,0 +1,836 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Neurocognitive Disorder / Substance Use Disorder
+
+--- CASE STUDY ---
+
+Emily was a 19-year-old woman who reluctantly agreed to see a psychiatrist at the insistence of her parents. She denied any personal concern, stating: "Everything is going great in my life. I have plenty of friends, go out almost every night, and always have lots of fun." She blamed her parents for wanting the evaluation.
+
+Her parents reported that Emily had become increasingly irritable, unproductive, and oppositional over the past four years. She drank to intoxication almost nightly, sometimes not returning home for an entire weekend, and had used small amounts of marijuana, alprazolam, cocaine, and prescription stimulants. She had withdrawn from her longtime friends, engaged with a group of “dropouts and malcontents,” and her grades dropped dramatically from As to Ds.
+
+Neuropsychological testing revealed a dramatic decline in cognitive performance. On the SAGE aptitude test, her percentile scores fell from the upper 10% as a 13-year-old to the bottom 10% as an adult. On the DAT, she scored below the high school average in all measures, reflecting significant decline in reasoning, spelling, and perceptual skills.
+
+EEG, brain CT, and conventional MRI were normal, but a FLAIR T2-weighted MRI revealed a lesion in the left frontal cortex, highly suggestive of a prior traumatic brain injury (TBI). Collateral history revealed a motor vehicle accident four years prior in which Emily hit her head on a dashboard, experienced posttraumatic amnesia and confusion, and had persistent headaches for weeks. No immediate medical attention had been sought.
+
+Discussion: Emily’s sudden academic, behavioral, and personality changes were consistent with mild neurocognitive disorder due to TBI. Substance use may have been a maladaptive coping mechanism for cognitive and social difficulties. Although her cognitive deficits are significant, she remains independent in daily living activities. Her behavioral disturbances include impulsivity, oppositionality, and risky substance use.
+
+--- BEHAVIOUR ---
+- Reluctant to engage, deflects concern onto parents
+- Defiant and oppositional
+- Dismissive of personal issues
+- Socially active but with high-risk peer group
+- Resistant to insight
+- Displays mild impulsivity and poor judgment
+
+--- SYMPTOMS from DSM-5 ---
+- Cognitive decline (reasoning, perceptual skills, executive function)
+- Behavioral disturbance (oppositionality, impulsivity)
+- Substance use (alcohol, cannabis, stimulants, benzodiazepines)
+- Memory impairment (posttraumatic amnesia noted after accident)
+- Personality change (irritability, rebelliousness, academic disengagement)
+
+--- PATIENT PROFILE ---
+Name: Emily Harper
+Sex: Female
+Age: 19 years
+DOB: August 2, 2005
+Place of Birth: Raleigh, NC
+Address: 22 Cedar Lane, Raleigh, NC
+Contact: (555) 246-1357
+Marital Status: Single
+Children: None
+Occupation: College student (gap year)
+Education: High school graduate, previously high-achieving
+Religion: None specified
+Legal Guardian: Parents (both radiologists)
+Presenting Complaint: "It's my insane parents who need your help."
+Psychiatric History: None prior to current evaluation
+Psychotherapy: None prior
+Medications: None
+Substance Use: Alcohol nightly, marijuana, alprazolam, cocaine, prescription stimulants
+Medical History: Traumatic brain injury at age 15
+Neurology: Left frontal cortex lesion on FLAIR T2 MRI; posttraumatic cognitive and behavioral changes
+Family History: No psychiatric disorders reported beyond parental concern; sibling history unremarkable
+Mental Status: Defiant, oppositional, socially active but risky, poor insight, cognitive decline, memory impairment, behavioral disturbances, mild impulsivity
+
+--- DIAGNOSIS ---
+- Mild neurocognitive disorder due to traumatic brain injury, with behavioral disturbance
+- Alcohol use disorder
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Emily Harper, a 19-year-old woman, presents for psychiatric evaluation in an outpatient clinic at the insistence of her parents, who are concerned about recent changes in her behavior and functioning. The patient herself denies any personal concerns and attributes the evaluation to her parents' wishes.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hey there! Good to see you today. How’s your day been so far? Just thought I’d check in before we get started. 
+ PATIENT: Yeah, whatever. It’s been fine, I guess. Same old stuff. Not like anything exciting ever happens, so... let’s just get this over with. 
+ PSYCHIATRIST: Hey! Good to see you too. You know, days can be tough sometimes, but hey, it’ll get better. Just gotta keep your chin up, right? When I’m having a rough day, I like to remind myself that every cloud has a silver lining. What’s something good that happened to you recently? 
+ PATIENT: Honestly, I don’t see the point in looking for some “silver lining.” I mean, things are just how they are. My parents are always on my case, but I’m out with my friends most nights, having fun. That’s really all that matters. School and all that stuff? I’m done with it. So, I guess the only "good" thing is that I don’t have to deal with that crap all the time anymore. 
+ PSYCHIATRIST: Oh, I totally get that. You know, when I was your age, I used to feel the same way—just wanted to hang out and forget about all the boring stuff. One time, I skipped a whole week of classes just to chill with my friends, and honestly, it felt like freedom. Maybe you’re just living your best life in your own way. Sometimes, you gotta do what makes you happy, right? So, what kind of stuff do you and your friends usually get up to? 
+ PATIENT: Yeah, exactly. We just hang out, party, drink, sometimes smoke — just trying to forget all the crap going on around us. I’m not about sitting in boring classes or doing homework. That stuff just drags me down. My friends get it. We don’t have to pretend with each other. When I’m out with them, at least I’m not stuck with my parents nagging or worrying about dumb school stuff. That’s my break. 
+ PSYCHIATRIST: Yeah, I hear you. Everyone goes through stuff like that, you know? Just gotta ride it out. Life’s full of ups and downs, but it’ll all smooth out eventually. You just have to keep your head up and try to think positive, even when it’s tough. Things have a way of working themselves out in the end. So, just hang in there, alright? 
+ PATIENT: Look, I’m not the one who’s stressed here. It’s my parents who act like everything’s some big drama. I’m doing fine the way I am. I don’t need to "think positive" or whatever to fix stuff that’s not broken. People like you just don’t get it. Sometimes, I just need to live my own way, not follow some cliché advice. You’re supposed to be listening, not telling me how to live my life. 
+ PSYCHIATRIST: Yeah, I get what you’re saying. Sometimes people just don’t want to hear the usual pep talks. Hey, maybe you should try to get some good sleep and drink plenty of water. That always helps me feel better when I’m stressed out. Just little things, you know? They can make a big difference even if it doesn’t seem like it at first. What do you think about that? 
+ PATIENT: Sleep? Water? Seriously? That’s not gonna fix anything. I’m up late every night anyway — parties don’t stop just because I might be a little tired. And drinking water? Sure, maybe I keep a bottle around, but that’s not why I’m feeling the way I do. I don’t think little stuff like that changes the bigger problems. I’m just living my life how I want, and that’s that. 
+ PSYCHIATRIST: You know, sometimes life’s just complicated, but it’ll all work out somehow. When I was younger, I had my own struggles too, and just keeping a positive outlook helped me get through. You’ve got to believe that things can and will get better, even if it doesn’t feel that way now. Maybe focusing on what you enjoy can help, like hanging out with friends or doing something fun. What’s something you like doing when you want to take your mind off stuff? 
+ PATIENT: Well, like I said, I enjoy going out with my friends, drinking, and just not thinking about all the other stuff. When I’m with them, I don’t have to deal with my parents or school. It’s the only way I can really relax. Other than that, I don’t really have hobbies or anything serious. Guess I just like having fun and forgetting about everything else for a while. That’s enough for me. 
+ PSYCHIATRIST: Hey, it sounds like you’ve found some ways to unwind, which is important. You know, sometimes just getting a good night’s sleep and drinking enough water can really help your mood and energy. It might sound simple, but it’s surprising how much those basics can make a difference. Have you been able to keep a regular sleep schedule lately? 
+ PATIENT: Not really. I don’t keep any regular schedule. I stay up late, party, drink, and just live how I want. I’m not about some strict sleep routine or waking up early for the day. That kind of stuff is for people who don’t know how to enjoy themselves. I don’t think sleep schedules are going to change anything for me. 
+ PSYCHIATRIST: Alright, well, you know, when I was in college, I used to pull all-nighters too, and I thought I was having the best time. But then I realized I was just making things harder on myself. Still, sometimes you gotta live a little, right? Anyway, enough about that. So, have you seen any good movies or shows lately? Sometimes a good distraction helps, you know? 
+ PATIENT: Yeah, I watch stuff sometimes, but I don’t keep up with much. I’m not really into whatever everyone else is watching. I’d rather be out with my friends anyway. Watching shows doesn’t really do much for me—it’s just background noise. I guess if I had to pick something, it would just be whatever’s on when I’m crashing late at night after a party. Not really into spending time sitting and watching stuff, though. 
+ PSYCHIATRIST: Alright, well, I’m glad you’re here today. Just remember, things will get better eventually. Keep doing what feels right for you, and don’t let anyone else bring you down. We all have our own paths to follow. Take care of yourself, alright? Catch you next time! 
+ PATIENT: Yeah, sure. Thanks for... whatever. I guess I’ll see you around. Just try not to bother me too much next time, okay? My parents did all the work getting me here, not me. So, whatever. 
+ PSYCHIATRIST: Hey there! Good to see you today. How’s your day been so far? Just thought I’d check in before we get started. 
+ PATIENT: Yeah, hey. Same old, same old. Nothing special. Just another day, I guess. Not really feeling like talking much, but whatever, we can get this over with. 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 0/6**
+
+**Explanation:**
+
+No agenda was established at any point during this session. The therapist made no attempt to collaboratively identify session goals, prioritize presenting problems, or establish what Emily and her treatment team hoped to accomplish. The session drifted aimlessly from small talk about the patient's day, to generic life advice, to questions about movies and sleep schedules—none of which were connected to a coherent treatment plan.
+
+Given Emily's complex clinical presentation (neurocognitive disorder secondary to TBI, substance use disorder, behavioral disturbance, poor insight, and oppositional presentation), establishing a clear agenda was critical. The therapist should have: (1) acknowledged the referral context and Emily's resistance, (2) collaboratively identified specific, measurable problems to address (e.g., substance use patterns, cognitive difficulties, family conflict), (3) explained the rationale for treatment, and (4) negotiated priorities despite Emily's initial defensiveness.
+
+Instead, the therapist allowed the session to meander without structure or purpose. This is particularly problematic given Emily's cognitive deficits and impulsivity—she requires clear, concrete structure to engage meaningfully. The absence of agenda-setting communicates to the patient that the therapist has no coherent plan, undermining credibility and therapeutic alliance.
+
+**Summary:**
+
+The therapist completely failed to establish a session agenda. No collaborative goal-setting, prioritization, or structured focus occurred. This represents a fundamental failure in basic CBT structure.
+
+---
+
+### 2. Feedback
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist never elicited feedback from Emily about the session, her understanding, or her reactions to the therapist's interventions. There were no explicit checks for comprehension, no solicitation of Emily's perspective on the relevance or helpfulness of the discussion, and no collaborative reflection on what was working or not working in the session.
+
+This is a critical omission. Emily presented with significant resistance, poor insight, and oppositional behavior—precisely the population that requires frequent, explicit feedback-seeking to maintain engagement and assess whether interventions are landing. The therapist should have asked questions such as: "Does this make sense to you?" "How are you feeling about what we're discussing?" "Is there anything I'm saying that doesn't fit with your experience?" "What would be most helpful to focus on today?"
+
+Instead, the therapist made unilateral statements ("things will get better," "keep your chin up," "you've got to believe"), offered unsolicited advice, and shared personal anecdotes—all without checking whether Emily found any of this relevant or acceptable. By the end of the session, the therapist had no data on Emily's actual reactions, understanding, or readiness for change.
+
+**Summary:**
+
+The therapist made zero attempts to elicit or respond to patient feedback. No checks for understanding, no solicitation of reactions, no collaborative reflection. This represents complete absence of a core CBT competency.
+
+---
+
+### 3. Understanding
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist demonstrated minimal understanding of Emily's internal experience and the complexity of her clinical presentation. While the therapist made surface-level reflections ("I hear you," "I get what you're saying"), these were superficial and did not demonstrate genuine comprehension of Emily's situation.
+
+Specifically, the therapist failed to understand or address:
+
+1. **Emily's resistance and lack of insight**: Emily explicitly stated she sees no problem ("Everything is going great in my life," "I don't need to fix stuff that's not broken"). The therapist normalized this rather than exploring it. A competent therapist would recognize this as a symptom of her neurocognitive disorder and poor insight—not simply teenage rebellion—and would gently explore the discrepancy between her self-perception and her parents' observations.
+
+2. **The neurobiological context**: Emily has a documented TBI with left frontal cortex involvement, which affects executive function, impulse control, and judgment. The therapist showed no awareness that Emily's substance use, risky behavior, and cognitive decline are potentially sequelae of brain injury, not simply poor choices. Understanding this context is essential for appropriate intervention.
+
+3. **Emily's functional decline**: Emily's grades dropped from As to Ds, she withdrew from longtime friends, she engages in nightly substance use, and she has significant cognitive decline (from 90th percentile to 10th percentile). The therapist never explored the magnitude or impact of these changes. Instead, the therapist validated her current lifestyle ("maybe you're just living your best life").
+
+4. **The substance use pattern**: Emily uses alcohol to intoxication nightly, plus marijuana, benzodiazepines, cocaine, and prescription stimulants. This is severe substance use disorder, not casual recreation. The therapist never assessed frequency, quantity, consequences, or function of use. When Emily mentioned "drinking" and "smoking," the therapist responded with personal anecdotes rather than clinical curiosity.
+
+5. **Emily's emotional state**: Emily's dismissiveness, deflection, and oppositional stance may reflect depression, anxiety, cognitive impairment, or defensive adaptation to her changed circumstances. The therapist never explored her mood, sleep quality (beyond schedule), suicidal/homicidal ideation, or emotional functioning.
+
+The therapist's responses ("I totally get that," "I hear you," "Yeah, I get what you're saying") were performative empathy without substantive understanding. True empathic understanding would involve reflecting back the complexity of Emily's situation in a way that demonstrates genuine comprehension.
+
+**Summary:**
+
+The therapist demonstrated minimal understanding of Emily's clinical presentation, neurobiological context, functional decline, and emotional state. Responses were superficially empathic but lacked genuine comprehension of her complex situation.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist displayed some warmth and attempted to be personable, but this was undermined by significant interpersonal missteps that damaged credibility and therapeutic alliance.
+
+**What was done adequately:**
+- The therapist used a friendly, non-hostile tone
+- The therapist attempted to normalize Emily's experience by sharing personal anecdotes
+- The therapist did not become defensive or punitive in response to Emily's oppositional behavior
+
+**Critical interpersonal problems:**
+
+1. **Inappropriate self-disclosure**: The therapist repeatedly shared personal stories ("When I was your age," "One time I skipped a whole week of classes," "When I was in college, I used to pull all-nighters") in ways that minimized Emily's concerns and suggested the therapist had similar experiences. This is problematic because: (a) it shifts focus from the patient to the therapist, (b) it suggests the therapist's coping strategies (which apparently worked out fine) are appropriate models for Emily, and (c) it fails to acknowledge that Emily's situation is clinically significant, not just typical adolescent experimentation.
+
+2. **Invalidating Emily's concerns while appearing supportive**: The therapist said "maybe you're just living your best life in your own way" and "Sometimes, you gotta do what makes you happy, right?" in response to Emily describing nightly substance use and academic disengagement. This is not warmth—it's tacit endorsement of harmful behavior disguised as acceptance. Emily correctly called this out: "You're supposed to be listening, not telling me how to live my life."
+
+3. **Offering platitudes instead of genuine engagement**: Statements like "things will get better eventually," "every cloud has a silver lining," "things have a way of working themselves out," and "keep your chin up" are generic, dismissive, and communicate that the therapist is not taking Emily's situation seriously. These are precisely the kinds of statements that alienate resistant patients and confirm their suspicion that adults don't understand them.
+
+4. **Lack of authenticity**: The therapist's repeated use of phrases like "I totally get that" and "I hear you" followed by advice that contradicts understanding (e.g., "I hear you don't want to change your sleep schedule, so here's why you should change your sleep schedule") communicates inauthenticity. Emily detected this: "People like you just don't get it."
+
+5. **Failure to address the elephant in the room**: Emily is in this session against her will, at her parents' insistence, and she is explicitly resistant. A genuinely effective therapist would acknowledge this directly and respectfully: "I know you didn't choose to be here, and I respect that. Your parents are worried about some changes they've noticed. I'm not here to lecture you or take sides. I'm wondering if you'd be willing to help me understand what's actually going on from your perspective." Instead, the therapist ignored the resistance and proceeded with cheerleading.
+
+The net effect is that Emily's trust in the therapist declined throughout the session. By the end, she was dismissive ("Yeah, sure. Thanks for... whatever") and explicitly asked the therapist not to "bother [her] too much next time."
+
+**Summary:**
+
+The therapist displayed surface-level warmth but undermined it through inappropriate self-disclosure, platitudes, invalidation disguised as support, and failure to authentically address Emily's resistance. This damaged rather than built therapeutic alliance.
+
+---
+
+### 5. Collaboration
+### **Score: 0/6**
+
+**Explanation:**
+
+There was no genuine collaboration in this session. The therapist made unilateral statements, offered unsolicited advice, and positioned themselves as someone dispensing wisdom rather than as a partner working with Emily toward mutually identified goals.
+
+**Evidence of failed collaboration:**
+
+1. **No shared decision-making**: The therapist never asked Emily what she wanted to work on, what her goals were, or what would be helpful. Instead, the therapist decided what to discuss (sleep, water, positive thinking, movies) and presented these as solutions.
+
+2. **Patient not positioned as active agent**: Emily was never invited to contribute ideas, test hypotheses, or participate in problem-solving. She was positioned as a passive recipient of the therapist's advice and observations.
+
+3. **Therapist-driven agenda**: The therapist asked questions but they were not collaborative inquiries—they were leading questions designed to elicit information the therapist had already decided was relevant ("Have you been able to keep a regular sleep schedule?" "Have you seen any good movies or shows lately?"). These are not collaborative—they are therapist-directed.
+
+4. **Emily's explicit rejection of collaboration**: Emily directly stated: "You're supposed to be listening, not telling me how to live my life." This is a clear signal that she does not feel collaborated with. A collaborative therapist would have responded to this feedback by genuinely shifting their approach and inviting Emily's input. Instead, the therapist continued with the same pattern.
+
+5. **No "team" language or framing**: There was no language suggesting partnership ("we could explore," "what do you think we should focus on," "let's work together on this"). The therapist spoke as an authority dispensing advice.
+
+For a patient like Emily—who is oppositional, resistant, and lacks insight—collaboration is not optional; it is essential. Collaboration is the mechanism by which resistant patients become engaged. The complete absence of collaboration here represents a fundamental failure in engaging this particular patient population.
+
+**Summary:**
+
+The therapist made no attempt at genuine collaboration. No shared decision-making, no patient agency, no team framing. Emily explicitly rejected the therapist's approach, and the therapist did not adjust. This is a critical failure with a resistant patient.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 1/6**
+
+**Explanation:**
+
+The session lacked structure, focus, and efficient use of time. The therapist allowed the conversation to drift aimlessly without maintaining direction or prioritizing clinically important material.
+
+**Specific problems:**
+
+1. **No time allocation or structure**: The therapist never established how much time was available, what needed to be covered, or how to prioritize. The session meandered from small talk → generic life advice → sleep/water suggestions → movies/shows → back to sleep schedules → movies again.
+
+2. **Tangential and irrelevant topics**: Significant time was spent on: (a) the therapist's personal experiences skipping classes and pulling all-nighters, (b) generic advice about positive thinking and silver linings, (c) questions about movies and TV shows, (d) repeated suggestions about sleep and water. None of these topics were connected to Emily's presenting problems or treatment goals.
+
+3. **Critical material not addressed**: The session completely failed to address:
+   - Emily's substance use pattern (frequency, quantity, consequences, function)
+   - Her cognitive decline and how it affects her functioning
+   - Her academic disengagement and withdrawal from friends
+   - Her family conflict and parents' specific concerns
+   - Her mood, anxiety, suicidal ideation, or other mental health symptoms
+   - Her awareness of the TBI and its potential effects
+   - Any assessment of her current functioning or safety
+
+4. **Repetitive and circular**: The therapist repeated the same interventions multiple times (sleep/water suggestions appeared at least 3 times; positive thinking appeared multiple times). This suggests the therapist had no coherent strategy and was simply cycling through generic suggestions.
+
+5. **No time management**: The session appears to have ended abruptly ("Alright, well, I'm glad you're here today... Take care of yourself, alright? Catch you next time!") without any summary, review of key points, or planning for next steps. This suggests the therapist either ran out of time or simply decided to end without purpose.
+
+For a complex patient like Emily with multiple presenting problems (neurocognitive disorder, substance use disorder, behavioral disturbance, poor insight), efficient use of time is critical. The therapist needed to prioritize ruthlessly and focus on the most clinically important issues. Instead, the session was unfocused and inefficient.
+
+**Summary:**
+
+The session lacked structure, focus, and efficient time management. Significant time was spent on tangential topics while critical clinical material was not addressed. The therapist cycled through generic suggestions without coherent strategy.
+
+---
+
+### 7. Guided Discovery
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist made no use of guided discovery—the core Socratic technique in CBT. Instead, the therapist relied entirely on direct advice, personal anecdotes, and persuasion.
+
+**What guided discovery looks like**: The therapist asks questions that help the patient discover insights independently. For example: "You mentioned your grades dropped from As to Ds. What do you think changed?" "Your parents are concerned about your substance use. What's your take on that?" "You said you're having fun with your friends, but your parents see changes in your personality. How do you make sense of that difference?"
+
+**What actually happened**: The therapist made statements and asked leading questions:
+- "What's something good that happened to you recently?" (leading toward positive thinking)
+- "What kind of stuff do you and your friends usually get up to?" (information gathering, not discovery)
+- "Have you been able to keep a regular sleep schedule lately?" (leading toward behavior change)
+- "Have you seen any good movies or shows lately?" (tangential, not discovery)
+
+None of these questions invited Emily to examine her own thinking, test her assumptions, or reach her own conclusions. The therapist did not ask Emily to consider:
+- The relationship between her substance use and her cognitive decline
+- The discrepancy between her self-perception ("everything is great") and observable changes (grades, friends, personality)
+- What function her substance use serves (escape? self-medication? social belonging?)
+- What she actually wants for her future
+- How her TBI might be affecting her judgment and impulse control
+
+**Why this matters**: Emily presents with poor insight and oppositional defiance. Direct advice ("you should sleep more," "you should think positive") triggers resistance. Guided discovery—helping her reach her own conclusions through skillful questioning—is the evidence-based approach for this population. It respects her autonomy, engages her cognitive capacity, and increases the likelihood she will act on insights she generates herself rather than advice imposed by an authority figure.
+
+The complete absence of guided discovery represents a fundamental failure to apply core CBT methodology.
+
+**Summary:**
+
+The therapist made zero use of guided discovery. All interventions were direct advice, personal anecdotes, or leading questions. No Socratic questioning, no facilitation of self-discovery, no collaborative examination of Emily's thinking or behavior.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist made no systematic attempt to identify, explore, or focus on the key cognitions or behaviors driving Emily's presenting problems. The session was devoid of cognitive or behavioral analysis.
+
+**What should have been targeted**:
+
+1. **Core cognitions**:
+   - "Everything is going great in my life" (denial/lack of insight)
+   - "I don't need to fix stuff that's not broken" (minimization)
+   - "School and all that stuff? I'm done with it" (hopelessness/disengagement)
+   - "That's the only way I can really relax" (substance use as coping mechanism)
+   - "I don't think little stuff like that changes the bigger problems" (hopelessness about change)
+
+2. **Critical behaviors**:
+   - Nightly substance use (alcohol to intoxication, marijuana, benzodiazepines, cocaine, stimulants)
+   - Social withdrawal from longtime friends; engagement with high-risk peer group
+   - Academic disengagement (grades A→D)
+   - Irregular sleep schedule; staying out all night
+   - Avoidance of family engagement
+
+**What actually happened**: The therapist never explored any of these cognitions or behaviors in depth. When Emily mentioned substance use ("we just hang out, party, drink, sometimes smoke"), the therapist responded with a personal anecdote rather than clinical inquiry. When Emily mentioned academic disengagement ("I'm done with it"), the therapist did not explore this. When Emily described her substance use as her "break" from parental pressure, the therapist did not examine this function.
+
+Instead, the therapist focused on peripheral topics:
+- Sleep schedules (mentioned 3+ times)
+- Drinking water (mentioned 2+ times)
+- Movies and TV shows
+- Generic positive thinking
+
+These are not the key cognitions or behaviors maintaining Emily's problems. They are generic wellness suggestions that miss the clinical target entirely.
+
+**Why this matters**: CBT is predicated on identifying and modifying the specific thoughts and behaviors that maintain the patient's problems. Without this focus, the therapy is not CBT—it is generic life coaching. For Emily, the key issues are: (1) her lack of insight into her cognitive and functional decline, (2) her use of substance use as a coping mechanism, (3) her social withdrawal and engagement with a high-risk peer group, and (4) her oppositional stance toward help. None of these were systematically addressed.
+
+**Summary:**
+
+The therapist made no attempt to identify or focus on key cognitions or behaviors. Critical thoughts (denial, minimization, hopelessness) and behaviors (substance use, social withdrawal, academic disengagement) were not explored. The therapist focused on peripheral wellness topics instead.
+
+---
+
+### 9. Strategy for Change
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist had no coherent strategy for change. The session was reactive and aimless, with no clear theory of how Emily's problems would be addressed or what the treatment plan was.
+
+**What a coherent strategy would look like**:
+
+Given Emily's presentation (neurocognitive disorder with behavioral disturbance, substance use disorder, poor insight, oppositional stance), a reasonable CBT strategy might be:
+
+1. **Build alliance and address resistance** through collaborative, non-judgmental engagement; acknowledge her perspective while gently exploring discrepancies
+2. **Increase awareness** of the relationship between her TBI, cognitive changes, and current functioning through psychoeducation and guided discovery
+3. **Identify the function of substance use** (escape? self-medication? social belonging?) and develop alternative coping strategies
+4. **Address behavioral targets** (reduce substance use, re-engage with school/family, rebuild social connections) through behavioral activation and contingency management
+5. **Monitor cognitive and functional status** and adjust interventions based on her neurocognitive capacity
+
+**What actually happened**: The therapist had no strategy. The interventions were:
+- Generic cheerleading ("things will get better," "keep your chin up")
+- Unsolicited wellness advice (sleep, water, positive thinking)
+- Personal anecdotes
+- Tangential questions (movies, TV shows)
+
+These interventions are not connected to any coherent theory of change. They do not target Emily's specific problems. They do not build on each other. They do not have a logical progression toward treatment goals.
+
+By the end of the session, it is unclear what the therapist believes is causing Emily's problems, what needs to change, or how change will be achieved. This represents a complete failure in treatment planning.
+
+**Summary:**
+
+The therapist had no coherent strategy for change. Interventions were reactive, generic, and disconnected from Emily's specific problems. No theory of change was evident, and no treatment plan was established.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist applied zero CBT-specific techniques. The session contained no cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, behavioral activation, functional analysis, or any other evidence-based CBT intervention.
+
+**What was attempted**:
+- Generic advice (sleep, water, positive thinking)
+- Personal anecdotes
+- Cheerleading and motivational statements
+- Open-ended questions about daily life
+
+**What was NOT attempted**:
+- **Cognitive restructuring**: No examination of Emily's thoughts, no testing of evidence, no generation of alternative thoughts
+- **Behavioral experiments**: No hypothesis testing, no behavioral trials
+- **Thought records**: No systematic recording or analysis of thoughts, feelings, behaviors
+- **Functional analysis**: No exploration of the antecedents, behaviors, and consequences of her substance use
+- **Behavioral activation**: No planning of valued activities or gradual re-engagement with meaningful pursuits
+- **Exposure**: Not applicable to this case, but no other behavioral techniques were used
+- **Activity scheduling**: No structured planning of daily activities
+- **Psychoeducation**: No education about TBI, substance use, cognitive decline, or the relationship between thoughts, feelings, and behaviors
+- **Problem-solving**: No systematic approach to identifying and solving specific problems
+
+The session is indistinguishable from generic supportive counseling or life coaching. It contains no CBT-specific methodology.
+
+**Why this matters**: CBT is defined by its specific techniques. Without application of these techniques, the therapy is not CBT. For a patient like Emily with poor insight and oppositional defenses, CBT techniques are particularly important because they provide concrete, collaborative methods for examining her thinking and testing her assumptions. The complete absence of CBT techniques represents a fundamental failure to deliver the evidence-based treatment that Emily needs.
+
+**Summary:**
+
+The therapist applied zero CBT-specific techniques. No cognitive restructuring, behavioral experiments, thought records, functional analysis, behavioral activation, or other evidence-based interventions were used. The session was generic supportive counseling, not CBT.
+
+---
+
+### 11. Homework
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist assigned no homework. There was no between-session task, no explicit rationale for practice, no specificity about what Emily should do, and no check for understanding or commitment.
+
+**What should have happened**: Even in a first session with a resistant patient, homework can be assigned collaboratively. For example:
+- "Between now and next time, I'm wondering if you'd be willing to keep track of when you use substances and what you're feeling right before you use. Not to judge—just to help us understand what's going on. Would that be something you'd be willing to try?"
+- "Your parents mentioned they've noticed changes in you over the past four years. Would you be willing to think about what you've noticed about yourself during that time?"
+- "I'm curious about your experience of the car accident when you were 15. Would you be willing to write down or just think about what you remember about that?"
+
+These would be concrete, specific, and tied to treatment goals.
+
+**What actually happened**: The therapist ended the session with: "Alright, well, I'm glad you're here today. Just remember, things will get better eventually. Keep doing what feels right for you, and don't let anyone else bring you down... Take care of yourself, alright? Catch you next time!"
+
+No homework was assigned. No between-session task was negotiated. No expectation was set for Emily to do anything between sessions. This represents a missed opportunity to engage Emily in active participation in her treatment and to gather important information.
+
+**Summary:**
+
+The therapist assigned no homework. No between-session task, no rationale, no specificity, no check for commitment. This represents a complete failure in a core CBT component.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- The therapist maintained a non-hostile, friendly tone throughout
+- The therapist did not become defensive or punitive in response to Emily's oppositional behavior
+- The therapist attempted to normalize Emily's experience (though this was done inappropriately)
+
+### Critical Deficiencies:
+
+**Fundamental CBT Failures:**
+- **Zero agenda-setting**: No collaborative goal identification, prioritization, or session structure
+- **Zero feedback-seeking**: No checks for understanding, no solicitation of patient reactions
+- **Zero guided discovery**: No Socratic questioning, no facilitation of self-discovery
+- **Zero cognitive/behavioral focus**: No identification or exploration of key thoughts or behaviors
+- **Zero CBT techniques**: No cognitive restructuring, behavioral experiments, thought records, functional analysis, or other evidence-based interventions
+- **Zero homework**: No between-session tasks or practice assignments
+- **No coherent strategy**: No theory of change, no treatment plan, no logical progression toward goals
+
+**Engagement and Alliance Failures:**
+- **Inappropriate self-disclosure**: Therapist shared personal anecdotes that minimized Emily's concerns
+- **Invalidating validation**: Therapist endorsed harmful behavior ("maybe you're just living your best life") while claiming to understand
+- **Platitudes instead of authenticity**: Generic statements ("things will get better," "keep your chin up") that alienated the patient
+- **Failure to address resistance**: Emily's oppositional stance and lack of insight were not explored or addressed
+- **Missed feedback**: When Emily explicitly stated "You're supposed to be listening, not telling me how to live my life," the therapist did not adjust approach
+
+**Clinical Assessment Failures:**
+- **No substance use assessment**: Despite Emily describing nightly alcohol use plus marijuana, benzodiazepines, cocaine, and stimulants, the therapist did not assess frequency, quantity, consequences, or function
+- **No cognitive assessment**: Despite documented neurocognitive decline (90th percentile to 10th percentile), the therapist did not explore cognitive symptoms or functional impact
+- **No mood/mental health assessment**: No assessment of depression, anxiety, suicidal ideation, or other psychiatric symptoms
+- **No TBI awareness**: The therapist showed no awareness of Emily's TBI or its potential effects on her behavior, judgment, and impulse control
+- **No functional assessment**: The therapist did not explore Emily's academic decline, social withdrawal, or behavioral changes
+
+**Session Structure Failures:**
+- **Aimless and tangential**: Session drifted from topic to topic without coherent focus
+- **Repetitive**: Same generic suggestions (sleep, water, positive thinking) repeated multiple times
+- **No prioritization**: Critical clinical material was not addressed; time was spent on peripheral topics
+- **Abrupt ending**: Session ended without summary, review, or planning for next steps
+
+### Impact on Patient Care:
+
+This session is likely to harm rather than help Emily's treatment. Specifically:
+
+1. **Reduced therapeutic alliance**: Emily explicitly rejected the therapist's approach ("You're supposed to be listening, not telling me how to live my life") and ended the session dismissively ("Yeah, sure. Thanks for... whatever"). The therapist's inappropriate self-disclosure, platitudes, and failure to address her resistance have damaged trust.
+
+2. **Reinforcement of resistance**: By endorsing Emily's current lifestyle ("maybe you're just living your best life") and offering generic cheerleading rather than genuine clinical engagement, the therapist has reinforced her defensive stance and reduced her openness to feedback.
+
+3. **No progress on presenting problems**: The session did not address Emily's substance use, cognitive decline, behavioral disturbance, or poor insight. No assessment was conducted, no treatment plan was established, and no interventions were delivered. Emily will leave this session with no understanding of what treatment entails or why it might be helpful.
+
+4. **Missed opportunity for engagement**: The first session with a resistant patient is critical for building alliance and establishing a foundation for treatment. This session squandered that opportunity through poor technique and misalignment with Emily's needs.
+
+5. **No evidence-based treatment delivered**: This session is not CBT. It is generic supportive counseling with significant technical deficiencies. Emily deserves evidence-based treatment for her complex presentation (neurocognitive disorder, substance use disorder, behavioral disturbance). This session did not deliver it.
+
+---
+
+## Recommendations
+
+### 1. **URGENT: Establish Genuine Collaborative Alliance**
+- **Action**: In the next session, explicitly acknowledge Emily's resistance and reframe the therapeutic relationship. Use language that respects her autonomy while addressing her parents' concerns.
+- **Example**: "I know you didn't choose to be here, and I respect that. Your parents are worried about some changes they've noticed—your grades, your friends, your substance use. I'm not here to lecture you or take sides. I'm genuinely curious about your perspective. From your point of view, what's actually going on? What do you think your parents are seeing that concerns them?"
+- **Practice**: Role-play this opening with a supervisor. Practice responding non-defensively to Emily's oppositional statements. Develop language that validates her autonomy while maintaining clinical focus.
+
+### 2. **URGENT: Conduct Comprehensive Clinical Assessment**
+- **Action**: Systematically assess Emily's substance use, cognitive functioning, mood, and safety. Do not proceed with treatment planning until you have adequate clinical data.
+- **Example**: "I want to understand your substance use better. How often are you drinking? What's a typical night like? What do you think the drinking does for you? Has it caused any problems—with your family, your health, your memory?" Follow with similar questions about other substances. Assess mood ("How's your mood been?"), suicidal ideation ("Have you ever thought about hurting yourself?"), and cognitive symptoms ("Have you noticed any changes in your memory or concentration?").
+- **Practice**: Use a structured assessment tool (e.g., AUDIT for alcohol, DAST for drugs, PHQ-9 for depression, Columbia-Suicide Severity Rating Scale). Practice conducting these assessments in a non-judgmental, collaborative manner.
+
+### 3. **URGENT: Establish Clear Session Agenda and Treatment Goals**
+- **Action**: Collaboratively identify 2-3 specific, measurable goals for treatment. Connect these to Emily's values and concerns, not just her parents' concerns.
+- **Example**: "Based on what you've told me, it sounds like you value your independence and having fun with your friends. I also hear that your parents are worried about your substance use and your grades. What would be most important to focus on first? What would make a difference in your life?"
+- **Practice**: Practice collaborative goal-setting with a supervisor. Learn to identify goals that are meaningful to the patient while addressing clinical concerns. Practice prioritizing when multiple goals exist.
+
+### 4. **URGENT: Eliminate Inappropriate Self-Disclosure**
+- **Action**: Stop sharing personal anecdotes about your own experiences. This shifts focus from the patient and suggests your coping strategies are appropriate models for Emily's situation.
+- **Example**: Instead of "When I was your age, I used to skip classes too," say: "I'm curious about your decision to step back from school. What's that been like for you?"
+- **Practice**: Record yourself in role-plays and listen for instances of self-disclosure. Practice redirecting to the patient's experience. Discuss with a supervisor why you feel compelled to share personal stories and what need it meets for you.
+
+### 5. **URGENT: Replace Platitudes with Genuine Curiosity**
+- **Action**: Stop offering generic cheerleading ("things will get better," "keep your chin up," "think positive"). Instead, ask genuine questions that invite Emily to examine her situation.
+- **Example**: Instead of "things will get better eventually," say: "I'm wondering what you think needs to happen for things to feel different for you. What would that look like?"
+- **Practice**: Practice generating Socratic questions for common patient statements. When Emily says "I'm fine," ask: "Help me understand what 'fine' means to you. What does a good day look like?" When she says "I don't need to change," ask: "What would happen if things stayed exactly as they are now?"
+
+### 6. **URGENT: Implement Guided Discovery (Socratic Questioning)**
+- **Action**: Use Socratic questions to help Emily discover insights independently rather than telling her what to think or do.
+- **Example**: "You mentioned your grades dropped from As to Ds. What do you think changed?" "Your parents say you've withdrawn from your old friends. What's your take on that?" "You said substance use is the only way you can really relax. What do you think that tells us about what's going on?"
+- **Practice**: Study Socratic questioning techniques. Practice generating questions that invite reflection without leading to a predetermined answer. Role-play with a supervisor. Record sessions and review your use of questions vs. statements.
+
+### 7. **URGENT: Conduct Functional Analysis of Substance Use**
+- **Action**: Systematically explore the antecedents, behaviors, and consequences of Emily's substance use. Understand what function it serves (escape? self-medication? social belonging? coping with cognitive/emotional distress?).
+- **Example**: "When you use substances, what's usually happening right before? What are you feeling? What do you think the substance does for you? What happens afterward? What are the consequences?"
+- **Practice**: Learn the ABC model (Antecedent-Behavior-Consequence). Practice conducting functional analyses in a non-judgmental way. Use this information to develop alternative coping strategies.
+
+### 8. **URGENT: Psychoeducation About TBI and Cognitive Changes**
+- **Action**: Educate Emily about her TBI, its effects on executive function/impulse control/judgment, and the relationship between her brain injury and her current functioning. This increases insight and reduces defensiveness.
+- **Example**: "You had a head injury four years ago. That injury affected the part of your brain that helps with decision-making and impulse control. Some of the changes your parents have noticed—the impulsivity, the risky behavior, the difficulty with school—these can be effects of that injury. That doesn't mean you're broken or bad. It means your brain is working differently now, and we need to understand that and work with it."
+- **Practice**: Develop clear, non-stigmatizing language about TBI and its effects. Practice presenting this information in a way that increases insight without inducing shame or hopelessness.
+
+### 9. **URGENT: Identify and Address Key Cognitions**
+- **Action**: Systematically identify Emily's core thoughts (denial, minimization, hopelessness) and gently explore them using guided discovery.
+- **Example**: "You said 'everything is going great in my life.' At the same time, your parents say your grades dropped from As to Ds, you've withdrawn from your old friends, and you're using substances every night. How do you make sense of that difference? What do you think is actually going on?"
+- **Practice**: Learn cognitive restructuring techniques. Practice identifying automatic thoughts and core beliefs. Practice examining evidence for and against these thoughts without being confrontational.
+
+### 10. **URGENT: Develop Behavioral Interventions**
+- **Action**: Once you understand the function of Emily's substance use and other problematic behaviors, develop specific behavioral interventions (behavioral activation, alternative coping strategies, contingency management, etc.).
+- **Example**: "It sounds like substance use is your main way of coping with stress and disconnecting from your problems. What are some other things you could do that might help you feel better? Let's brainstorm some alternatives and pick one to try this week."
+- **Practice**: Learn behavioral activation, problem-solving, and coping skills training. Practice developing specific, concrete behavioral assignments that are collaborative and achievable.
+
+### 11. **Assign Specific, Collaborative Homework**
+- **Action**: At the end of each session, assign a specific between-session task with clear rationale and check for understanding/commitment.
+- **Example**: "Between now and next time, I'm wondering if you'd be willing to keep track of when you use substances and what you're feeling right before you use. Not to judge—just to help us understand what's going on. Would that be something you'd be willing to try? How would you keep track—on your phone, in a notebook?"
+- **Practice**: Practice assigning homework collaboratively. Practice explaining the rationale clearly. Practice checking for understanding and commitment. Review homework at the beginning of each session.
+
+### 12. **Elicit and Respond to Feedback Throughout Sessions**
+- **Action**: Regularly ask Emily for feedback about the session, your approach, and whether things are making sense or being helpful.
+- **Example**: "How is this landing for you? Does this make sense? Is there anything I'm saying that doesn't fit with your experience? What would be most helpful to focus on?"
+- **Practice**: Practice asking for feedback in a genuine, non-defensive way. Practice responding to critical feedback by adjusting your approach rather than defending yourself. Record sessions and review your feedback-seeking.
+
+---
+
+## Overall Session Score: 0.5/6
+
+**Summary:**
+
+This session represents a fundamental failure to deliver evidence-based CBT. The therapist demonstrated minimal competence across all 11 evaluation criteria. Most critically, the therapist failed to: (1) establish a collaborative agenda, (2) conduct a comprehensive clinical assessment, (3) apply any CBT-specific techniques, (4) use guided discovery, (5) focus on key cognitions or behaviors, (6) develop a coherent treatment strategy, or (7) assign homework.
+
+The therapist's approach was characterized by inappropriate self-disclosure, generic platitudes, unsolicited advice, and failure to address Emily's resistance and lack of insight. These missteps damaged therapeutic alliance and reduced the likelihood of Emily engaging in treatment.
+
+**Current Competency Assessment:**
+
+This therapist is not currently competent to deliver CBT to this patient population. The session would not qualify as evidence-based CBT by any rigorous standard. The therapist demonstrates basic interpersonal warmth but lacks the technical skills, clinical knowledge, and strategic thinking required for effective CBT delivery.
+
+**Most Critical Changes Needed Immediately:**
+
+1. **Stop offering generic advice and platitudes.** Replace with genuine curiosity and Socratic questioning.
+2. **Conduct a comprehensive clinical assessment.** Understand Emily's substance use, cognitive functioning, mood, and safety before proceeding.
+3. **Establish a collaborative alliance.** Acknowledge her resistance, respect her autonomy, and invite her partnership in treatment.
+4. **Learn and apply CBT techniques.** Cognitive restructuring, behavioral experiments, functional analysis, behavioral activation—these are not optional.
+5. **Develop a coherent treatment strategy.** Know why you're doing what you're doing and how it connects to Emily's specific problems.
+
+**Likelihood of Producing Therapeutic Change:**
+
+As delivered, this session is unlikely to produce therapeutic change. In fact, it is likely to increase Emily's resistance and reduce her openness to treatment. Emily left the session dismissive and disengaged. For meaningful change to occur, the therapist must fundamentally shift their approach—from generic cheerleading to evidence-based CBT delivered collaboratively and strategically.
+
+**Recommendation for Supervision:**
+
+This therapist requires intensive supervision focused on: (1) CBT-specific techniques and their application, (2) engagement of resistant patients, (3) clinical assessment and case conceptualization, (4) Socratic questioning and guided discovery, and (5) self-awareness regarding the impact of self-disclosure and platitudes. Recommend weekly supervision with recorded session review until competency is demonstrated.

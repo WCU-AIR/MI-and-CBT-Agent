@@ -1,0 +1,762 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Major Depressive Disorder
+--- CASE STUDY ---
+Yvonne Perez was a 23‑year‑old Hispanic woman who presented for an outpatient psychiatric evaluation 3 weeks after giving birth to her second child. She was referred by her breastfeeding nurse with concerns about her “feeling hopeless and exhausted” and displaying a flat affect and significant fatigue.
+Ms. Perez reported that she had felt worried and unenthusiastic since discovering the pregnancy, which she and her husband had not planned. Her husband had expressed a preference that she terminate—a choice she refused on religious grounds—and grew increasingly critical when she felt too tired to continue her part‑time work at a local café. After delivery, breastfeeding proved difficult: her son refused her breast, spit up frequently, and remained colicky, forcing her to hold him most of each day. She began to believe her baby was “rejecting me” and wondered whether she deserved this hardship because she had not wanted the pregnancy.
+With her husband working long hours away from home and no family nearby, Ms. Perez struggled to care for her newborn and her demanding 16‑month‑old daughter. Over the past several weeks, she slept very little, felt constantly fatigued, cried daily, and worried about how she would manage each day. Her mother‑in‑law, who had just arrived to help, attributed her mood to typical postpartum “hormonal blues.”
+On mental status examination, Ms. Perez was casually dressed and cooperative but tearful. She made minimal eye contact, her speech was fluent yet slowed with increased latency, and her affect was constricted. She denied thoughts of suicide or self‑harm and reported no hallucinations or true delusions, though she described overvalued ideas of punishment. She was fully oriented, registered three objects but recalled only one after five minutes, and demonstrated average intelligence. Her insight and judgment were fair to good.
+--- BEHAVIOUR ---
+Minimal eye contact, eyes often lowered
+
+
+Slow, flat speech with increased pauses
+
+
+Tearful and fatigued
+
+
+Psychomotor retardation
+
+
+--- MDD SYMPTOMS from DSM‑5 (Criterion A) ---
+Depressed mood most of the day, nearly every day
+Markedly diminished interest or pleasure in almost all activities
+Insomnia nearly every day (difficulty initiating and maintaining sleep)
+Psychomotor retardation nearly every day (observable slowing of speech and movement)
+Fatigue or loss of energy nearly every day
+Feelings of worthlessness and excessive guilt nearly every day
+Diminished ability to think or concentrate, or indecisiveness, nearly every day
+
+
+--- PATIENT PROFILE ---
+ Name: Yvonne Perez
+ Sex: Female
+ Age: 23 years
+ DOB: April 16, 2002
+ Place of Birth: San Antonio, TX
+ Address: 789 Elm Street, Springfield, IL
+ Contact: (555) 234‑5678
+ Marital Status: Married (2 years)
+ Children: Two (3‑week‑old son; 16‑month‑old daughter)
+ Occupation: Former barista, Sunrise Café (until mid‑pregnancy)
+ Education: High school diploma; some community college coursework
+ Religion: Roman Catholic
+ Psychiatric History: None prior
+ Psychotherapy: None
+ Medications: Prenatal vitamins with iron
+ Substance Use: Denies alcohol and illicit drugs; quit smoking two years ago
+ Medical History: Asthma (uses albuterol inhaler as needed)
+ Family History: Maternal aunt and grandmother with depression; no bipolar history
+ Mental Status: Constricted affect, slowed speech, impaired concentration and short‑term memory, fair insight
+--- DIAGNOSIS ---
+ Major Depressive Disorder, single episode, moderate severity, without psychotic features, with peripartum onset
+--- END CASE STUDY ---
+
+Clinical Summary:
+Yvonne Perez is a 23-year-old woman presenting for an outpatient psychiatric evaluation three weeks postpartum, referred by her breastfeeding nurse due to concerns about her mood and energy levels. The intake is conducted to assess her current mental health status following recent childbirth and reported difficulties.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hello, it’s good to see you today. Before we get started, I’d like to set an agenda for our session together. We could focus on one or two main things you’d like to work on—perhaps a recent situation that’s been troubling you or a particular thought pattern you want to explore. Does that sound okay? Also, on a scale from 0 to 10, how would you rate your mood right now? 
+ PATIENT: Um, hi. Yeah, I guess that sounds okay. Lately, it’s mostly just been... feeling really tired and like I’m not doing anything right with the baby. I keep thinking maybe I’m a bad mom or something, ’cause my son won’t nurse and just cries all the time. I feel like I’m failing, even though I know I’m trying. And, um, I don’t know, I just want to not feel so sad all the time.
+
+Right now? I’d say maybe a 3. I’m just kind of... tired and sad mostly. 
+ PSYCHIATRIST: Thank you for sharing that with me. It sounds like feeling tired and worried about your son not nursing and crying a lot has been really tough for you. For today’s session, would you like us to focus on those feelings about being a mom and the thoughts that come up when your son cries? Or is there something else you’d prefer to explore? Also, you mentioned feeling sad and tired—would you say those are the main emotions you want to work on today? 
+ PATIENT: Yeah, I think that’s right. It’s really just... feeling like I’m not good enough as a mom, and when he cries and won’t nurse, I get so overwhelmed. Like maybe I did something wrong, or maybe he hates me, even though I know that sounds silly. And the tiredness just makes it harder to think clearly or feel like I can handle it.
+
+So, I guess focusing on those feelings about being a mom and the thoughts that come up with the crying would be good. And the sadness, I guess, yeah. It’s been kind of all mixed together. 
+ PSYCHIATRIST: Thanks for clarifying that. So, to make sure I’m on the right track, today we’ll focus on the situation when your son cries and won’t nurse, the thoughts that come up about being a “not good enough” mom, and the feelings of sadness and tiredness that follow. Does that sound right to you?
+
+Before we dive in, could you rate your current level of sadness and tiredness separately on a scale from 0 to 10? This will help us track any changes as we work through this together. 
+ PATIENT: Yeah, that sounds right. It’s been hard to separate it all out, so if we can look at it together, that’d be good.
+
+Um, for sadness, I’d say about a 5 right now. It’s there, but maybe not as strong as when I’m really overwhelmed. And tiredness... it’s probably higher. Like a 7 or maybe even 8. I just feel so drained all the time, like I don’t have any energy left. 
+ PSYCHIATRIST: Thanks for sharing those ratings. Let’s start by looking at a recent time when your son cried and wouldn’t nurse. Can you tell me about a specific situation like that? What was happening, and what was going through your mind at that moment? 
+ PATIENT: Um, yeah. Just the other day, he was crying a lot—like nonstop for maybe an hour—and I was holding him and trying to feed him. But he just wouldn’t latch on, and I started feeling really helpless. I kept thinking, "Why won’t he want me? Maybe I’m doing something wrong." And then I wondered, like, if he hates the breast or maybe even hates me. I know it sounds ridiculous, but those thoughts just wouldn't stop. I felt like maybe I wasn’t supposed to have this baby or that something was wrong with me as a mom. It made me want to cry too. 
+ PSYCHIATRIST: Thank you for sharing that moment so openly. It sounds like when your son wouldn’t nurse and was crying for a long time, you had some very painful thoughts about yourself, like feeling you might be doing something wrong or that he might even hate you. Those thoughts seem to have made you feel helpless and very sad. 
+
+Can you tell me more about how you felt emotionally in that moment, and what you did in response to those feelings? For example, did you try anything differently, or did you notice any urges or behaviors that followed? 
+ PATIENT: Yeah, it was really hard. I felt sad and kind of... empty inside, like I was failing him. I wanted to just put him down and have a break, but I felt guilty if I did. So, I just kept holding him, even though I felt exhausted. My arms were so tired, but I was scared that if I stopped, he’d cry even harder or maybe even hate me more.
+
+I remember telling myself over and over, "Maybe if I just keep trying, he’ll eventually want to nurse," but there were times I just wanted to give up. I didn’t really try anything different because I was too tired and didn’t know what else to do. The crying made me feel like I wasn’t enough, but I felt stuck. It’s like I wanted to fix it but didn’t know how, and that made me feel even more hopeless. 
+ PSYCHIATRIST: Thank you for sharing that—it sounds incredibly challenging to feel so tired and caught between wanting to help your son and feeling overwhelmed and stuck. Let’s take a moment to look at those thoughts you mentioned: “Maybe I’m doing something wrong,” “Maybe he hates me,” and “I’m failing him.” 
+
+What would you say is the evidence that supports those thoughts? And what evidence might go against them? This can help us explore how accurate or balanced those thoughts might be. 
+ PATIENT: Well, I guess... the evidence for those thoughts is mostly how he won’t nurse and just keeps crying. Like, it feels like he’s rejecting me, so maybe I must be doing something wrong. And when he cries this much, I think maybe he hates me, even though I know babies don’t really think like that. It just feels that way, you know?
+
+But, um, on the other hand, I do try really hard to hold him and comfort him, even when I’m exhausted. And I know other moms have tough times with breastfeeding, so it’s probably not just me. And my husband says I’m a good mom, even if I don’t feel like it. So maybe... some of those thoughts aren’t completely true, but I still can’t help feeling them. 
+ PSYCHIATRIST: Thanks for exploring that with me. It sounds like the situation with your son crying and not nursing leads to some very painful thoughts about yourself, but you also recognize some reasons why those thoughts might not be entirely accurate, like your effort and support from your husband.
+
+If you were to develop a more balanced thought about this situation—something that acknowledges both the difficulties and your strengths—what might that thought be? And how do you think that would change how you feel? 
+ PATIENT: Um, maybe something like, "Even though it’s really hard right now and my son won’t nurse, I’m doing my best to care for him, and that counts for something." Or maybe, "It’s okay to have struggles with breastfeeding—lots of moms do—and it doesn’t mean I’m a bad mom."
+
+I think if I could believe something like that, I’d feel a little less sad and maybe less tired in a way, like less hopeless. Maybe I’d feel like I can keep trying instead of wanting to give up all the time. But it’s hard to really believe it right now. 
+ PSYCHIATRIST: That’s a thoughtful and compassionate alternative thought. It acknowledges the difficulty while also recognizing your effort and normalizing the challenges, which is important. 
+
+Let’s check in on how you feel when you consider that balanced thought. On a scale from 0 to 10, how much sadness and tiredness do you feel now compared to before? 
+ PATIENT: Okay, let me think... I guess sadness might be down to about a 4 now. It’s still there, but not as heavy as before. And tiredness... maybe a 6? It’s still really bad, but thinking that way makes me feel a tiny bit less hopeless. 
+
+It’s small, but it helps a little. 
+ PSYCHIATRIST: I’m glad to hear that the balanced thought brings even a small shift in how you feel—that’s a meaningful step. 
+
+Now, thinking about our discussion, what might be one small, manageable action you could try before our next session that connects with this new perspective? For example, it could be something related to how you respond when your son cries or how you take care of yourself during those tough moments. What feels doable and helpful for you? 
+ PATIENT: Hmm... maybe I could try reminding myself of that kind thought when he starts crying a lot—like telling myself, "I’m doing my best," instead of just feeling like I’m failing. Maybe even say it out loud if I can. 
+
+And maybe I could try to take a little break when I’m feeling too tired, even if it’s just for a few minutes, like putting him down safely and sitting down or drinking some water. That sounds hard but maybe doable sometimes. 
+ PSYCHIATRIST: Those sound like thoughtful and achievable steps—using the balanced thought as a kind reminder and giving yourself brief breaks to recharge. 
+
+Before we finish, let’s make this a specific, measurable, and time-bound plan. For example, you might decide to practice the kind thought at least once each time your son cries a lot, and take a short break when you feel very tired, aiming to do this over the next few days. How does that sound? Are there any obstacles you anticipate, and how confident do you feel about trying this? 
+ PATIENT: Yeah, that sounds like a good plan. I can try to say the kind thought at least once each time he cries a lot and take a short break when I’m really tired, even if it’s just for a few minutes. 
+
+I think the biggest obstacle might be feeling too exhausted or guilty to take that break, but I’ll try to remind myself that it’s okay to rest sometimes. I’m maybe about a 6 out of 10 confident that I can do this—I know it won’t be easy, but I want to try. 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated strong agenda-setting skills by explicitly proposing a collaborative structure at the session's outset: "Before we get started, I'd like to set an agenda for our session together. We could focus on one or two main things you'd like to work on." This invitation was appropriately collaborative and invited patient input. The therapist then clarified the agenda mid-session ("So, to make sure I'm on the right track, today we'll focus on the situation when your son cries and won't nurse, the thoughts that come up about being a 'not good enough' mom, and the feelings of sadness and tiredness that follow. Does that sound right to you?"), demonstrating active confirmation of priorities.
+
+However, the agenda lacked explicit time allocation and prioritization structure. The therapist did not establish how much time would be devoted to each component or clarify whether the session would address the broader depressive symptomatology (sleep disturbance, psychomotor retardation, concentration difficulties, guilt beyond the immediate parenting situation) versus focusing narrowly on the nursing/crying situation. Given that Yvonne presents with moderate-severity MDD with peripartum onset affecting multiple life domains, a more comprehensive agenda might have included: (1) current safety assessment, (2) sleep and fatigue patterns, (3) the specific nursing/baby-crying cognitions, (4) behavioral activation planning, and (5) homework assignment. The therapist did not explicitly prioritize which issues would yield the most therapeutic benefit or establish realistic expectations for what could be accomplished in one session.
+
+**Summary:**
+
+The therapist successfully engaged the patient in collaborative agenda-setting with explicit confirmation, but failed to establish time allocation, prioritize among multiple presenting problems, or address the full scope of depressive symptoms warranting attention in a first session with a moderate-severity MDD patient.
+
+---
+
+### 2. Feedback
+### **Score: 4/6**
+
+**Explanation:**
+
+The therapist demonstrated adequate feedback-seeking behavior at key junctures. Early in the session, the therapist asked "Does that sound okay?" after proposing the agenda structure, and later confirmed understanding: "So, to make sure I'm on the right track, today we'll focus on..." This represents appropriate mid-session checking for alignment. The therapist also used scaling questions ("On a scale from 0 to 10, how would you rate your mood right now?") and later asked the patient to re-rate sadness and tiredness after the cognitive intervention, which provides implicit feedback about session impact.
+
+However, the therapist did not systematically elicit feedback about the session's helpfulness, pacing, or therapeutic approach. Critically absent: (1) no explicit check-in about whether the pace felt manageable for an exhausted, cognitively impaired patient; (2) no inquiry about whether the cognitive restructuring approach resonated or felt forced; (3) no solicitation of the patient's reactions to the homework assignment beyond confidence rating; (4) no end-of-session summary co-created with the patient to consolidate learning; (5) no explicit question about what the patient found most or least helpful. The therapist relied primarily on scaling questions and yes/no confirmations rather than open-ended feedback solicitation. For a patient with "diminished ability to think or concentrate" per DSM-5 criteria, more explicit feedback-checking about comprehension and retention would have been appropriate.
+
+**Summary:**
+
+The therapist asked sufficient questions to confirm basic understanding and track mood changes via scaling, but did not systematically elicit qualitative feedback about session helpfulness, pacing, or therapeutic approach, nor did they co-create a summary or explicitly check comprehension of key concepts.
+
+---
+
+### 3. Understanding
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated solid empathic understanding of Yvonne's internal experience. Early reflections accurately captured the patient's distress: "It sounds like feeling tired and worried about your son not nursing and just cries all the time has been really tough for you" and later "It sounds like when your son wouldn't nurse and was crying for a long time, you had some very painful thoughts about yourself, like feeling you might be doing something wrong or that he might even hate you." These reflections demonstrate accurate listening and appropriate emotional attunement.
+
+The therapist also grasped the core conflict between Yvonne's desire to help and her exhaustion: "It sounds incredibly challenging to feel so tired and caught between wanting to help your son and feeling overwhelmed and stuck." This reflects understanding of the bind she experiences—guilt preventing rest, exhaustion preventing effective coping.
+
+However, the therapist missed several subtle but clinically significant aspects of Yvonne's presentation: (1) The therapist did not explicitly acknowledge or explore the guilt about the unplanned pregnancy and her husband's initial preference for termination, which Yvonne disclosed in the case history as contributing to her belief she "deserved this hardship." This core belief was not addressed. (2) The therapist did not recognize or validate the realistic stressors (husband working long hours, no family support, two young children, breastfeeding difficulties) as legitimate contributors to her distress, instead focusing narrowly on thought patterns. (3) The therapist did not address the significant behavioral component—Yvonne's inability to rest due to guilt and fear, her psychomotor retardation, or her sleep deprivation—as primary targets. (4) The therapist did not inquire about suicidal ideation despite moderate-severity MDD with guilt and hopelessness.
+
+**Summary:**
+
+The therapist demonstrated good empathic reflection and accurate tracking of the immediate nursing/baby-crying situation, but missed deeper understanding of core beliefs related to pregnancy guilt, failed to contextualize distress within realistic stressors, and did not assess safety or address the behavioral/physiological components of depression.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated warm, genuine, and appropriately professional demeanor throughout the session. The opening ("Hello, it's good to see you today") was welcoming, and the therapist maintained a collaborative, non-judgmental tone. Reflections were delivered with appropriate gentleness—for example, when the patient expressed concern that her thoughts "sound ridiculous," the therapist did not dismiss this but instead validated the experience: "Those thoughts seem to have made you feel helpless and very sad." The therapist also normalized breastfeeding difficulties ("I know other moms have tough times with breastfeeding, so it's probably not just me"), which provided appropriate reassurance.
+
+The therapist's language was consistently supportive and encouraging ("That's a thoughtful and compassionate alternative thought," "I'm glad to hear that the balanced thought brings even a small shift"). The therapist also appropriately validated the patient's effort and small progress ("that's a meaningful step").
+
+Minor interpersonal gaps: (1) The therapist did not explicitly acknowledge the patient's visible presentation (minimal eye contact, tearfulness, slowed speech, fatigue) or normalize these as symptoms of depression rather than personal failure. (2) The therapist did not explicitly address the patient's apparent hesitation or low confidence ("I guess that sounds okay," "Um, yeah") with gentle exploration of ambivalence or concerns. (3) The therapist maintained appropriate professional boundaries but could have been slightly more warm in acknowledging the difficulty of the patient's circumstances (two infants, unsupportive husband, no family support, religious conflict).
+
+**Summary:**
+
+The therapist displayed consistent warmth, genuineness, and professionalism with appropriate validation and encouragement, but did not explicitly normalize depressive symptoms or deeply acknowledge the legitimacy of the patient's stressors.
+
+---
+
+### 5. Collaboration
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated strong collaborative stance throughout. The initial agenda-setting explicitly invited patient input ("Does that sound okay?"), and the therapist repeatedly checked for agreement ("Does that sound right to you?"). The therapist also invited the patient to generate her own balanced thought rather than imposing one: "If you were to develop a more balanced thought about this situation—something that acknowledges both the difficulties and your strengths—what might that thought be?" This is exemplary guided discovery and collaborative empiricism.
+
+The therapist also collaborated on homework design, asking the patient what felt "doable and helpful" and inviting her to suggest specific actions. The therapist then refined these collaboratively: "For example, you might decide to practice the kind thought at least once each time your son cries a lot, and take a short break when you feel very tired, aiming to do this over the next few days. How does that sound?"
+
+However, collaboration had limits: (1) The therapist did not invite the patient's input on the overall treatment strategy or explain the rationale for focusing on cognitive restructuring versus behavioral activation, sleep hygiene, or other CBT approaches. (2) The therapist did not collaboratively problem-solve the identified obstacle (guilt about taking breaks) but instead offered reassurance ("remind myself that it's okay to rest sometimes") without exploring the underlying belief driving the guilt. (3) The therapist did not invite the patient to identify what she already does well or what coping strategies she has used successfully, instead focusing on deficits and new strategies. (4) The patient's confidence level (6/10) was not explored—the therapist did not ask what would increase confidence or what barriers the patient anticipated beyond the stated guilt.
+
+**Summary:**
+
+The therapist established strong collaborative partnership through repeated check-ins and invited patient-generated solutions, but did not collaboratively establish treatment rationale, deeply problem-solve obstacles, or build on existing strengths and coping strategies.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Session Score: 4/6**
+
+**Explanation:**
+
+The therapist demonstrated reasonable pacing and session structure. The session moved logically from agenda-setting → symptom assessment → specific situation identification → thought identification → evidence examination → balanced thought generation → behavioral planning → homework assignment. This represents a coherent flow without significant tangents.
+
+However, pacing had notable inefficiencies: (1) The therapist spent considerable time on the cognitive restructuring intervention (evidence for/against thoughts, generating balanced thought, re-rating mood) without establishing whether this was the most efficient use of time for a patient with moderate-severity depression, fatigue, and concentration difficulties. For a cognitively impaired patient, this extended cognitive work may have been taxing. (2) The therapist did not address the patient's most pressing symptoms—sleep deprivation (insomnia nearly every day), psychomotor retardation, and fatigue (rated 7-8/10)—which are behavioral targets that might have yielded faster symptom relief than cognitive work alone. (3) The therapist did not conduct a safety assessment despite the patient's guilt, hopelessness, and depressive symptoms, which consumed no time but should have. (4) The therapist did not assess medication status or discuss whether pharmacological intervention might be warranted, which is appropriate for psychiatric evaluation of moderate-severity MDD. (5) The session did not include psychoeducation about peripartum depression, which would have normalized symptoms and reduced shame.
+
+The pacing was not rushed or dragging, but the prioritization of interventions was questionable given the patient's clinical presentation and severity.
+
+**Summary:**
+
+The therapist maintained logical session flow without tangents, but spent disproportionate time on cognitive restructuring without addressing higher-priority behavioral and safety concerns, and did not include essential psychoeducation or medication discussion.
+
+---
+
+### 7. Guided Discovery
+### **Score: 6/6**
+
+**Explanation:**
+
+The therapist demonstrated exemplary use of Socratic questioning and guided discovery throughout the session. Rather than telling the patient her thoughts were distorted, the therapist asked: "What would you say is the evidence that supports those thoughts? And what evidence might go against them?" This invited the patient to examine her own thinking and reach conclusions independently.
+
+When generating a balanced thought, the therapist again used guided discovery: "If you were to develop a more balanced thought about this situation—something that acknowledges both the difficulties and your strengths—what might that thought be?" The patient then generated her own balanced thoughts ("Even though it's really hard right now and my son won't nurse, I'm doing my best to care for him, and that counts for something"), which is far more powerful than therapist-provided alternatives.
+
+The therapist also used discovery to explore the impact of the balanced thought: "Let's check in on how you feel when you consider that balanced thought. On a scale from 0 to 10, how much sadness and tiredness do you feel now compared to before?" This invited the patient to discover the connection between thought and emotion.
+
+Finally, the therapist used discovery to develop homework: "Now, thinking about our discussion, what might be one small, manageable action you could try before our next session that connects with this new perspective?" The patient generated her own ideas, which the therapist then refined collaboratively.
+
+Throughout, the therapist avoided lecturing, debating, or cross-examining. The tone remained curious and invitational rather than confrontational.
+
+**Summary:**
+
+The therapist skillfully used Socratic questioning to facilitate patient self-discovery across multiple domains (evidence examination, balanced thought generation, behavioral planning), demonstrating exemplary guided discovery technique.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 3/6**
+
+**Explanation:**
+
+The therapist identified and focused on relevant cognitions related to the immediate situation: "Maybe I'm doing something wrong," "Maybe he hates me," and "I'm failing him." These are appropriate targets for cognitive work and directly connected to the patient's distress in the nursing/crying situation.
+
+However, the therapist failed to identify and focus on several more central cognitions and behaviors that are core to Yvonne's depression and would likely yield greater therapeutic progress:
+
+**Missed Core Cognitions:**
+1. **Guilt about the unplanned pregnancy and deserving punishment**: The case history explicitly states Yvonne "wondered whether she deserved this hardship because she had not wanted the pregnancy." This core belief—that she deserves suffering—is likely driving much of her guilt and hopelessness and was never explored.
+2. **Overvalued ideas about maternal responsibility**: The patient's inability to rest due to guilt ("I felt guilty if I did") reflects a core belief about what good mothers must do. This was not explored.
+3. **Hopelessness and helplessness**: The patient stated "I felt like maybe I wasn't supposed to have this baby" and "I wanted to give up all the time." These reflect deeper hopelessness beyond the immediate situation and were not targeted.
+
+**Missed Key Behaviors:**
+1. **Sleep deprivation and insomnia**: The patient "slept very little" and has "insomnia nearly every day" per DSM-5 criteria. Sleep is a primary behavioral target in depression treatment, yet was never addressed.
+2. **Behavioral avoidance of rest/self-care**: The patient cannot take breaks due to guilt and fear. This avoidance behavior perpetuates fatigue and depression but was not targeted as a behavioral experiment or exposure.
+3. **Activity restriction**: The patient is likely engaging in minimal activity due to fatigue and guilt. Activity scheduling was not discussed.
+4. **Social isolation**: The patient has no family nearby and a critical, unsupportive husband. Social support and communication were not addressed.
+
+The therapist focused on a secondary cognition (thoughts about the baby's rejection) rather than the core beliefs driving the depression (deserving punishment, maternal responsibility, hopelessness). For moderate-severity MDD, this represents a significant missed opportunity.
+
+**Summary:**
+
+The therapist identified and focused on relevant but secondary cognitions about the immediate nursing situation, but failed to identify and target core beliefs about deserving punishment, maternal responsibility, and hopelessness, as well as critical behavioral targets (sleep, activity, social support) that would likely produce greater therapeutic change.
+
+---
+
+### 9. Strategy for Change
+### **Score: 3/6**
+
+**Explanation:**
+
+The therapist's strategy was to use cognitive restructuring to address thoughts about being a "bad mom" and generate a more balanced perspective, with the expectation that this would reduce sadness and hopelessness. The logic is: distorted thought → emotional distress; balanced thought → reduced distress. This is a coherent CBT strategy and was applied with some skill.
+
+However, the overall strategy for addressing moderate-severity MDD with peripartum onset is incomplete and potentially insufficient:
+
+**Strategic Gaps:**
+
+1. **No behavioral activation strategy**: For a patient with severe fatigue (7-8/10), psychomotor retardation, and anhedonia, behavioral activation is typically a first-line intervention. The therapist did not establish a strategy for gradually increasing activity, scheduling pleasant or mastery activities, or breaking the fatigue-inactivity cycle. The homework assigned (reminding herself of balanced thoughts, taking breaks) is minimal behavioral activation.
+
+2. **No sleep intervention strategy**: Insomnia is a primary symptom and a maintaining factor for depression. The therapist did not establish a strategy for sleep hygiene, sleep restriction, or addressing the guilt preventing rest. This is a critical omission.
+
+3. **No safety/crisis strategy**: For a patient with guilt, hopelessness, and moderate-severity depression, a safety plan and crisis resources should be established. None were discussed.
+
+4. **No medication strategy**: The therapist did not discuss whether pharmacological intervention is indicated, which is appropriate for psychiatric evaluation of moderate-severity MDD. This is a significant gap in a psychiatric context.
+
+5. **No interpersonal/contextual strategy**: The patient's depression is occurring in the context of an unsupportive husband, no family support, and realistic stressors (two infants, breastfeeding difficulties). The therapist did not establish a strategy for addressing these contextual factors—communication with husband, accessing support, or problem-solving the realistic stressors.
+
+6. **No psychoeducation strategy**: The patient attributed her symptoms to personal failure rather than recognizing them as symptoms of peripartum depression. Psychoeducation would normalize symptoms and reduce shame, but was not included.
+
+The strategy is coherent but narrow, focusing only on cognitive restructuring of one thought pattern without addressing the broader depressive syndrome or contextual factors. For moderate-severity MDD, a more comprehensive strategy would integrate behavioral activation, sleep intervention, safety planning, medication consideration, and contextual problem-solving.
+
+**Summary:**
+
+The therapist established a coherent but narrow cognitive restructuring strategy without addressing behavioral activation, sleep intervention, safety planning, medication, or contextual factors—resulting in an incomplete treatment strategy for moderate-severity MDD.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 4/6**
+
+**Explanation:**
+
+The therapist demonstrated competent application of several core CBT techniques:
+
+**Techniques Applied Well:**
+1. **Thought Record/Evidence Examination**: The therapist asked the patient to identify evidence for and against her thoughts ("What would you say is the evidence that supports those thoughts? And what evidence might go against them?"). The patient identified supporting evidence (baby won't nurse, cries) and contradicting evidence (she tries hard, other moms struggle, husband's support). This is appropriate thought record technique.
+
+2. **Cognitive Restructuring/Balanced Thought Generation**: The therapist guided the patient to generate a more balanced thought ("Even though it's really hard right now and my son won't nurse, I'm doing my best to care for him, and that counts for something"). This balanced thought acknowledges difficulty while incorporating strengths and normalizing—appropriate technique.
+
+3. **Behavioral Experiments/Homework**: The therapist assigned homework to practice the balanced thought and take breaks, which are behavioral experiments testing whether the new thought and behavior change mood.
+
+4. **Scaling/Mood Monitoring**: The therapist used 0-10 scales to track mood before and after intervention, which is appropriate outcome monitoring.
+
+**Technique Application Gaps:**
+
+1. **Shallow thought record**: The evidence examination was brief and did not deeply explore alternative explanations. For example, the therapist did not ask: "What do we know about infant breastfeeding difficulties? Is this typically a sign of maternal failure or a common medical issue?" or "What do we know about babies' cognitive abilities at 3 weeks?" Deeper Socratic questioning would have strengthened the technique.
+
+2. **No thought challenging**: The therapist did not explicitly challenge the distorted thinking (e.g., "Your son is 3 weeks old and cannot 'hate' anyone. What does the research tell us about infant cognition?"). Instead, the therapist relied on the patient's own reasoning, which is appropriate but could have been supplemented with psychoeducation.
+
+3. **No behavioral experiments beyond homework**: The therapist did not suggest in-session behavioral experiments (e.g., "Let's imagine your son is crying right now. What would you tell yourself using the balanced thought?") or discuss how to test the thought in real situations.
+
+4. **No other CBT techniques applied**: The therapist did not use activity scheduling, behavioral activation, exposure, problem-solving, assertiveness training, or other CBT techniques appropriate for depression. The session relied almost entirely on cognitive restructuring.
+
+5. **Homework lacks specificity and monitoring plan**: While the homework is reasonable, the therapist did not establish: (a) how the patient will track practice (e.g., tally marks, journal), (b) what to do if guilt prevents taking breaks, (c) how to handle situations where the balanced thought doesn't feel believable, or (d) how progress will be monitored at the next session.
+
+**Summary:**
+
+The therapist competently applied cognitive restructuring and thought record techniques with appropriate Socratic questioning, but the application was somewhat shallow, lacked depth in challenging distorted thinking, did not include other CBT techniques appropriate for depression, and homework lacked specificity for tracking and troubleshooting.
+
+---
+
+### 11. Homework
+### **Score: 4/6**
+
+**Explanation:**
+
+The therapist assigned homework that is relevant to the session content and represents appropriate CBT practice:
+
+**Homework Strengths:**
+1. **Relevance**: The homework (practice balanced thought, take breaks) directly connects to the session's focus on thought patterns and behavioral response to fatigue.
+2. **Collaborative development**: The therapist asked the patient what felt "doable and helpful" and invited her to generate ideas, which increases buy-in.
+3. **Specificity**: The therapist specified "at least once each time your son cries a lot" and "when you feel very tired," which provides concrete guidance.
+4. **Time-bound**: The homework is framed for "the next few days," establishing a clear timeframe.
+5. **Feasibility check**: The therapist asked about obstacles and confidence level, which is appropriate.
+
+**Homework Deficiencies:**
+
+1. **Insufficient detail on implementation**: The therapist did not establish: (a) exactly how the patient will remind herself (e.g., write the thought on a card, set phone reminders, say it aloud), (b) when/where she will practice, or (c) what to do if she forgets or feels unable to practice.
+
+2. **No tracking mechanism**: The therapist did not ask the patient to track practice (e.g., "Write down each time you practice the thought and how you felt afterward"). Without tracking, it's unclear whether homework was completed or effective.
+
+3. **Insufficient problem-solving of obstacles**: The patient identified guilt as a barrier to taking breaks ("I felt guilty if I did"). The therapist offered reassurance ("remind myself that it's okay to rest sometimes") but did not collaboratively problem-solve this obstacle. What specific strategies will help her overcome guilt? This was not addressed.
+
+4. **No contingency planning**: The therapist did not discuss what to do if the balanced thought doesn't feel believable or if the patient forgets it during a crisis moment. Contingency planning increases homework completion.
+
+5. **Limited scope**: The homework addresses only cognitive and minimal behavioral change. For a patient with severe fatigue and insomnia, homework might also include: sleep hygiene practices, a specific time to rest, or activity scheduling. The homework is too narrow.
+
+6. **No review of prior homework**: This is the first session, so there is no prior homework to review. However, the therapist should establish a pattern of reviewing homework at the next session.
+
+7. **Confidence level not explored**: The patient reported 6/10 confidence. The therapist did not ask what would increase confidence or what specific barriers might prevent completion. This represents a missed opportunity to strengthen commitment.
+
+**Summary:**
+
+The therapist assigned relevant, collaborative, and time-bound homework with feasibility checking, but lacked specificity on implementation, tracking mechanisms, obstacle problem-solving, and contingency planning, and did not address the full scope of behavioral targets appropriate for depression.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- **Exemplary guided discovery**: The therapist skillfully used Socratic questioning to facilitate patient self-discovery across thought examination, balanced thought generation, and behavioral planning (Score 6/6).
+- **Strong collaborative stance**: The therapist repeatedly invited patient input, confirmed agreement, and co-developed solutions rather than imposing interventions.
+- **Solid empathic understanding**: The therapist accurately reflected the patient's immediate distress and the conflict between her desire to help and her exhaustion.
+- **Appropriate interpersonal effectiveness**: The therapist maintained warmth, genuineness, and professionalism with consistent validation and encouragement.
+- **Coherent cognitive restructuring**: The therapist competently applied thought records and guided the patient to generate balanced thoughts with measurable mood improvement (sadness 5→4, tiredness 7-8→6).
+- **Adequate agenda-setting and feedback**: The therapist established collaborative agenda with confirmation and tracked mood changes via scaling.
+
+### Critical Deficiencies:
+- **Incomplete assessment and safety planning**: No suicidal ideation assessment despite moderate-severity MDD with guilt and hopelessness. No safety plan or crisis resources established. This is a serious clinical gap in psychiatric evaluation.
+- **Failure to identify core cognitions**: The therapist focused on secondary thoughts about baby rejection rather than core beliefs about deserving punishment (explicitly stated in case history), maternal responsibility, and hopelessness. This represents a fundamental CBT conceptualization error.
+- **Narrow treatment strategy**: The strategy relies almost entirely on cognitive restructuring without addressing behavioral activation, sleep intervention, medication consideration, or contextual factors (unsupportive husband, lack of family support, realistic stressors). For moderate-severity MDD, this is insufficient.
+- **Missed behavioral targets**: Sleep deprivation (insomnia nearly every day), psychomotor retardation, and severe fatigue (7-8/10) were not addressed. Behavioral activation and sleep intervention are typically first-line for depression and would likely produce faster symptom relief than cognitive work alone.
+- **Limited CBT technique application**: Only cognitive restructuring was used. No activity scheduling, behavioral activation, sleep hygiene, problem-solving, or other CBT techniques appropriate for depression were applied.
+- **Inadequate psychoeducation**: No normalization of peripartum depression symptoms, no explanation of the relationship between thoughts/behaviors/mood, no discussion of depression as a medical condition rather than personal failure.
+- **No medication discussion**: In a psychiatric evaluation context, the therapist did not discuss whether pharmacological intervention is indicated for moderate-severity MDD, which is a significant omission.
+- **Insufficient homework specificity**: Homework lacks tracking mechanisms, implementation details, obstacle problem-solving, and contingency planning. Confidence level (6/10) was not explored to strengthen commitment.
+- **Contextual factors unaddressed**: The patient's depression occurs in the context of an unsupportive, critical husband; no family support; and realistic stressors (two infants, breastfeeding difficulties). These contextual factors were not addressed through communication strategies, problem-solving, or support-building.
+
+---
+
+## Impact on Patient Care
+
+This session demonstrates competent basic CBT skills (guided discovery, collaborative stance, cognitive restructuring) but falls short of evidence-based treatment for moderate-severity MDD with peripartum onset. The therapist's narrow focus on cognitive restructuring of one thought pattern, while producing modest mood improvement (sadness 5→4), does not address the full depressive syndrome or the patient's most pressing symptoms.
+
+**Specific concerns:**
+
+1. **Safety**: The absence of suicidal ideation assessment is clinically concerning. Yvonne has guilt, hopelessness, and moderate-severity depression—all risk factors for suicide. A psychiatric evaluation must include safety assessment.
+
+2. **Symptom severity mismatch**: The patient's fatigue (7-8/10), insomnia, and psychomotor retardation are severe and maintaining the depression. Cognitive work alone is unlikely to produce meaningful improvement in these symptoms. Behavioral activation and sleep intervention are more likely to help.
+
+3. **Incomplete conceptualization**: The therapist's focus on the baby-rejection thought misses the deeper depressive cognitions (deserving punishment, hopelessness) that are likely driving the overall depression. This represents a CBT conceptualization error that will limit treatment effectiveness.
+
+4. **Medication consideration**: For moderate-severity MDD with peripartum onset, pharmacological intervention is often indicated. The therapist did not discuss this, which may delay appropriate treatment.
+
+5. **Contextual factors**: The patient's depression is occurring in a context of marital conflict, lack of support, and realistic stressors. Without addressing these contextual factors, symptom improvement may be limited and relapse risk high.
+
+**Likelihood of therapeutic change**: The session produced modest mood improvement (sadness decreased 1 point, tiredness decreased 1-2 points), which is encouraging. However, the narrow focus on cognitive restructuring without behavioral activation, sleep intervention, or contextual problem-solving suggests that sustained symptom improvement is unlikely. The patient's homework (reminding herself of balanced thoughts, taking breaks) is minimal and may not produce clinically significant change in moderate-severity depression.
+
+---
+
+## Recommendations
+
+### 1. **Conduct Comprehensive Safety Assessment (HIGHEST PRIORITY)**
+- **Action**: At the next session, conduct a detailed suicide risk assessment including: current suicidal ideation, intent, plan, access to means, protective factors, and history of self-harm. Establish a safety plan with crisis resources (crisis hotline, emergency contact, when to go to ER). Document thoroughly.
+- **Example**: "I want to make sure you're safe. Have you had any thoughts about harming yourself or not wanting to be alive? If so, what would stop you from acting on those thoughts? Let's develop a plan for what you'll do if you feel unsafe."
+- **Practice**: Review suicide risk assessment protocols. Practice asking directly about suicidal ideation in a matter-of-fact, non-alarming way. Develop a standard safety planning template.
+
+### 2. **Expand Conceptualization to Include Core Beliefs and Broader Depressive Symptoms**
+- **Action**: In the next session, explicitly explore the core belief about deserving punishment related to the unplanned pregnancy. Use guided discovery to examine this belief: "You mentioned earlier that you wondered if you deserved this hardship because you didn't want the pregnancy. Tell me more about that thought. Where does that belief come from? What evidence supports or contradicts it?" Also assess and target the broader depressive cognitions (hopelessness, worthlessness, inability to cope).
+- **Example**: "It sounds like part of you believes you deserve to suffer because of the pregnancy. That's a painful belief. Let's explore where that comes from and whether it's actually true. What would a compassionate person say to you about this?"
+- **Practice**: Study the case history more thoroughly to identify core beliefs before sessions. Use a thought record that captures both automatic thoughts and underlying beliefs. Practice asking about the origin and function of core beliefs.
+
+### 3. **Implement Behavioral Activation as Primary Intervention**
+- **Action**: Develop a behavioral activation plan targeting the patient's severe fatigue and anhedonia. Start with a simple activity schedule: identify 3-5 small, achievable activities (e.g., 10-minute walk, call a friend, take a bath, sit outside) and schedule them for specific times. Frame as "behavioral experiments" to test whether activity improves mood. Monitor mood before and after each activity.
+- **Example**: "Research shows that when people are depressed, they tend to do less, which makes depression worse. Let's try scheduling some small activities—things you used to enjoy or things that give you a sense of accomplishment—and see if they help your mood. We'll track how you feel before and after."
+- **Practice**: Learn behavioral activation protocols. Practice identifying activities that are achievable for a severely fatigued patient. Develop activity scheduling templates. Practice framing behavioral activation as an experiment rather than a "should."
+
+### 4. **Address Sleep Deprivation with Targeted Sleep Intervention**
+- **Action**: Conduct a detailed sleep assessment: current sleep pattern, time to sleep onset, number of awakenings, total sleep duration, daytime napping, caffeine/alcohol use, sleep environment. Develop a sleep hygiene plan and consider sleep restriction therapy if appropriate. Explicitly address the guilt preventing rest: "It sounds like guilt keeps you from resting. Let's examine that belief. What would happen if you rested for 20 minutes? Would your baby be harmed? What does the evidence say?"
+- **Example**: "Sleep is really important for depression. Right now you're sleeping very little, which makes everything harder. Let's work on improving your sleep. First, let's establish a consistent bedtime and wake time. Second, let's make sure your bedroom is dark and quiet. Third, let's talk about what's preventing you from resting—I heard guilt. Let's examine that."
+- **Practice**: Study sleep intervention protocols for depression. Practice sleep restriction therapy. Develop sleep hygiene handouts. Practice addressing guilt about rest through cognitive work.
+
+### 5. **Discuss Medication and Coordinate with Prescriber**
+- **Action**: In the next session, discuss the role of medication in treating moderate-severity MDD with peripartum onset. Explain that medication can help with sleep, energy, and mood, making it easier to engage in behavioral and cognitive work. If the patient is not already on medication, discuss options (SSRIs are generally safe during breastfeeding). Coordinate with prescriber to ensure medication is considered. Document discussion and patient's preferences.
+- **Example**: "For depression this severe, especially with sleep problems and fatigue, medication can be really helpful. It can improve your sleep and energy, which makes everything easier. Have you considered medication? Let me explain the options and we can discuss what might work for you."
+- **Practice**: Review medication options for peripartum depression. Study safety data for breastfeeding. Practice discussing medication in a non-coercive, collaborative way. Develop a referral process for medication management.
+
+### 6. **Assess and Address Contextual Factors: Marital Conflict and Lack of Support**
+- **Action**: Assess the patient's relationship with her husband and family support. Explore: How does he respond to her depression? Is he supportive or critical? What communication patterns exist? Are there conflicts about the pregnancy or parenting? Develop a plan to address these contextual factors: (a) communication skills training to help her express needs to her husband, (b) problem-solving about division of labor and support, (c) referral to couples therapy if indicated, (d) strategies to build social support (postpartum support groups, friends, community resources).
+- **Example**: "You mentioned your husband was critical when you felt tired during pregnancy. How is he responding to your depression now? Does he understand what you're going through? Let's talk about how to communicate with him about what you need. Would it help to have him come to a session so we can talk together?"
+- **Practice**: Develop assessment questions about marital support and family dynamics. Learn communication skills training. Develop referral resources for couples therapy and postpartum support groups. Practice addressing contextual factors as part of treatment.
+
+### 7. **Provide Psychoeducation About Peripartum Depression**
+- **Action**: In the next session, provide explicit psychoeducation: (a) peripartum depression is a medical condition, not a personal failure or sign of being a bad mother; (b) symptoms (fatigue, guilt, hopelessness, difficulty concentrating) are common and treatable; (c) the relationship between thoughts, behaviors, and mood; (d) the role of sleep, activity, and support in recovery; (e) the timeline for improvement with treatment. Normalize her experience and reduce shame.
+- **Example**: "What you're experiencing is peripartum depression—a medical condition that happens to many women after childbirth. It's not your fault, and it's not because you're a bad mother. It's caused by hormonal changes, sleep deprivation, stress, and sometimes genetics. The good news is that it's very treatable. Let me explain what's happening and how we can help."
+- **Practice**: Develop a psychoeducation handout about peripartum depression. Practice delivering psychoeducation in a warm, normalizing way. Study the neurobiology of peripartum depression.
+
+### 8. **Strengthen Homework with Tracking, Implementation Details, and Obstacle Problem-Solving**
+- **Action**: Redesign homework to include: (a) specific tracking mechanism (e.g., "Write down each time you practice the balanced thought and how you felt"), (b) implementation details (e.g., "Write the thought on a card and keep it in your pocket; say it aloud when your son cries"), (c) obstacle problem-solving (e.g., "If guilt prevents you from resting, remind yourself that resting helps you be a better mother. If you forget the thought, that's okay—just try again next time"), (d) contingency planning (e.g., "If the thought doesn't feel believable, write down why and we'll discuss it next session"), (e) behavioral activation component (e.g., "Schedule one small activity each day").
+- **Example**: "Let's make a plan for practicing the balanced thought. First, write it on a card: 'Even though it's hard, I'm doing my best and that counts.' Keep it in your pocket. When your son cries, take out the card and read it. Write down what time you practiced it and how you felt. Also, let's schedule one small activity each day—maybe a 10-minute walk or sitting outside. Track how you feel before and after. Bring your tracking sheet to our next session."
+- **Practice**: Develop homework tracking templates. Practice writing specific, detailed homework assignments. Practice problem-solving obstacles collaboratively.
+
+### 9. **Deepen Cognitive Work with Psychoeducation and Thought Challenging**
+- **Action**: While maintaining the Socratic approach, supplement with targeted psychoeducation to deepen cognitive work. For example, when the patient thinks "My baby hates me," provide psychoeducation: "Babies at 3 weeks old don't have the cognitive ability to hate. Their brains are still developing. When a baby cries and won't nurse, it's usually a sign of hunger, discomfort, or developmental stage—not rejection. Let's look at what the research says about infant development." This combines guided discovery with psychoeducation.
+- **Example**: "You mentioned thinking your baby hates you. Let me share what we know about infant development. At 3 weeks, babies' brains are still developing. They can't form complex emotions like hate. When a baby won't nurse, it's usually because of hunger, discomfort, or a developmental reflex—not because of anything you did. Does that help you see the thought differently?"
+- **Practice**: Study infant development and breastfeeding physiology. Develop psychoeducation handouts. Practice integrating psychoeducation with Socratic questioning.
+
+### 10. **Expand CBT Technique Application Beyond Cognitive Restructuring**
+- **Action**: In subsequent sessions, systematically apply other CBT techniques appropriate for depression: (a) activity scheduling and behavioral activation, (b) sleep hygiene and sleep restriction, (c) problem-solving for realistic stressors (breastfeeding difficulties, marital conflict), (d) assertiveness training for communicating needs to husband, (e) exposure to guilt-inducing situations (e.g., taking breaks without guilt), (f) behavioral experiments to test beliefs. Develop a treatment plan that integrates multiple techniques.
+- **Example**: "We've worked on your thoughts about being a bad mom. Now let's work on your behavior. Research shows that when we're depressed, we do less, which makes depression worse. Let's schedule some activities and see if they help. We'll also work on your sleep, since that's really important. And let's talk about how to communicate with your husband about what you need."
+- **Practice**: Study CBT protocols for depression. Learn activity scheduling, sleep intervention, problem-solving, and assertiveness training. Practice integrating multiple techniques into a coherent treatment plan.
+
+### 11. **Establish Clear Treatment Plan and Monitoring**
+- **Action**: Develop a written treatment plan that includes: (a) diagnosis and severity, (b) treatment goals (e.g., reduce depressive symptoms, improve sleep and energy, improve marital communication), (c) specific interventions (cognitive restructuring, behavioral activation, sleep intervention, medication consideration, couples communication), (d) frequency and duration of sessions, (e) outcome measures (PHQ-9 or similar depression scale administered at each session), (f) safety planning. Share the plan with the patient and ensure understanding and agreement.
+- **Example**: "Here's our treatment plan. We're going to work on your depression using several approaches: (1) helping you identify and change unhelpful thoughts, (2) scheduling activities to improve your mood and energy, (3) improving your sleep, (4) discussing medication with your doctor, and (5) improving communication with your husband. We'll meet weekly for the next 4 weeks, then reassess. We'll track your mood using this scale at each session. Does this make sense? Do you have questions?"
+- **Practice**: Develop a treatment plan template. Practice explaining treatment plans clearly. Learn to use outcome measures (PHQ-9, GAD-7) to track progress.
+
+---
+
+## Overall Session Score: 4.2/6
+
+**Summary:**
+
+This session demonstrates competent foundational CBT skills with particular strength in guided discovery and collaborative stance, but falls significantly short of evidence-based treatment for moderate-severity MDD with peripartum onset. The therapist's narrow focus on cognitive restructuring of one thought pattern, while producing modest mood improvement, does not address the full depressive syndrome, critical safety concerns, or the patient's most pressing symptoms (severe fatigue, insomnia, psychomotor retardation).
+
+**Current competency assessment**: The therapist demonstrates intermediate CBT competence (4.2/6). Strengths include exemplary guided discovery, strong collaboration, and solid empathic understanding. However, critical deficiencies include: (1) failure to conduct safety assessment despite moderate-severity MDD with guilt and hopelessness, (2) incomplete conceptualization missing core beliefs about deserving punishment, (3) narrow treatment strategy relying only on cognitive restructuring without behavioral activation or sleep intervention, (4) limited CBT technique application, and (5) inadequate psychoeducation and medication discussion.
+
+**Most critical changes needed immediately**: (1) Conduct comprehensive suicide risk assessment and establish safety plan at next session. (2) Expand conceptualization to identify and target core beliefs about deserving punishment and broader depressive cognitions. (3) Implement behavioral activation and sleep intervention as primary interventions alongside cognitive work. (4) Discuss medication and coordinate with prescriber. (5) Address contextual factors (marital conflict, lack of support) through communication skills and problem-solving.
+
+**Likelihood of producing therapeutic change**: The session produced modest mood improvement (sadness 5→4, tiredness 7-8→6), which is encouraging. However, the narrow focus on cognitive restructuring without behavioral activation, sleep intervention, or contextual problem-solving suggests that sustained, clinically significant symptom improvement is unlikely. For moderate-severity MDD with peripartum onset, a more comprehensive, multi-modal approach is needed. With the recommended changes—particularly behavioral activation, sleep intervention, medication consideration, and contextual problem-solving—the likelihood of meaningful therapeutic change would increase substantially.
+
+**Does this qualify as evidence-based CBT?** Partially. The session demonstrates competent application of cognitive restructuring with guided discovery, which is evidence-based. However, the overall treatment approach is incomplete. Evidence-based CBT for depression typically includes behavioral activation, sleep intervention, and contextual problem-solving alongside cognitive work. This session relies too heavily on cognitive restructuring alone. Additionally, the absence of safety assessment, psychoeducation, and medication discussion in a psychiatric evaluation context represents significant gaps in evidence-based practice.

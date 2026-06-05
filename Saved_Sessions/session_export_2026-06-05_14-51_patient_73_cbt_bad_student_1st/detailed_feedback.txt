@@ -1,0 +1,793 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Panic Disorder
+
+--- CASE STUDY ---
+
+Maria Greco, a 23-year-old single woman, was referred for psychiatric evaluation by her cardiologist after multiple episodes of sudden-onset palpitations, shortness of breath, sweating, trembling, and fear of dying. Over the prior 2 months, she presented to the emergency room four times with these symptoms, which peaked within minutes and were followed by exhaustion and persistent worry about her heart health despite normal medical evaluations.
+
+Her panic episodes occurred at home, at work, while driving, and even during sleep. She developed anticipatory anxiety, avoiding driving, exercise, and caffeine, and took multiple days off work. These behavioral restrictions contributed to sleep disruption, mood decline, and social withdrawal. She did not accept reassurance from physicians or friends, believing negative medical workups were inconclusive.
+
+Maria has a childhood history of anxiety diagnosed as school phobia, which appears to have remitted. Her mother had recurrent major depressive disorder and died by suicide four years earlier. She lives with her father and two younger siblings, works as a telephone operator, and has no romantic relationships.
+
+On examination, Maria was anxious but cooperative and coherent. She denied depression, psychosis, or suicidal ideation. Cognition was intact, insight was limited, and judgment was fair.
+
+Discussion: Maria meets criteria for panic disorder, with recurrent unexpected panic attacks accompanied by physical symptoms (palpitations, sweating, trembling, chest pain, shortness of breath) and persistent worry about future attacks. Symptoms have lasted more than one month and significantly impair social and occupational functioning. Medical and substance causes have been excluded. Although depressive symptoms are present, they do not meet criteria for a major depressive episode, and other psychiatric conditions, including bipolar disorder and posttraumatic stress disorder, should be assessed longitudinally. Panic episodes are classified as unexpected. Avoidance behaviors (driving, exercise, caffeine) represent complications of the disorder rather than agoraphobia.
+
+--- BEHAVIOUR ---
+
+Anxious but cooperative and coherent
+
+Preoccupied with fears of heart disease and dying
+
+Denies depression, psychosis, and suicidality
+
+Cognition intact
+
+Insight limited, judgment fair
+
+--- DSM-5 SYMPTOMS ---
+
+Recurrent unexpected panic attacks
+
+Palpitations, sweating, trembling, chest pain, shortness of breath
+
+Fear of dying during attacks
+
+Persistent worry about future panic attacks
+
+Behavioral avoidance related to panic
+
+--- PATIENT PROFILE ---
+Name: Maria Greco
+Sex: Female
+Age: 23 years
+DOB: January 8, 2000
+Place of Birth: [City, State]
+Address: 12 Elm Street, [City, State]
+Contact: [Redacted]
+Marital Status: Single
+Occupation: Telephone operator
+Education: High school graduate
+Religion/Culture: [Not specified]
+Presenting Complaint: Recurrent panic attacks and anticipatory anxiety
+Psychiatric History: Childhood school phobia
+Substance Use: None
+Medical History: None significant
+Family Psychiatric History: Mother with recurrent major depressive disorder (deceased by suicide)
+Mental Status: Anxious, cooperative, preoccupied with illness
+Cognitive Function: Intact
+Insight/Judgment: Limited insight, fair judgment
+
+--- DIAGNOSIS ---
+
+Panic Disorder
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Maria Greco, a 23-year-old telephone operator, presents to the outpatient psychiatric clinic following referral from her cardiologist due to recurrent episodes of sudden-onset palpitations and associated symptoms. The referral was prompted by multiple emergency room visits over the past two months for these episodes, with ongoing concerns about her heart health despite normal medical evaluations.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hey there! Good to see you today. How’s your day been so far? 
+ PATIENT: Hi. Thanks for asking. To be honest, it's been kind of tough. I’ve been feeling really on edge, like my heart is racing more than usual, and I keep worrying that something’s wrong with me. I didn’t sleep well last night because I kept thinking about having another panic attack. It’s hard to focus on anything else. How about you? 
+ PSYCHIATRIST: Oh, I totally get that feeling. You know, sometimes life just throws those curveballs, and it feels like everything’s spinning out of control. But hey, it’ll get better, you just gotta keep your chin up. When I was stressed out, I found that just trying to think positive things really helped me. Like, focusing on the good stuff instead of the bad. Have you tried that? 
+ PATIENT: I’ve tried thinking positive stuff, but it’s hard when my chest feels tight and my heart pounds like crazy. It’s like, I’m scared enough that something bad is happening to me—like a heart attack or something worse—and even telling myself that everything's okay doesn’t really help. My mind just goes back to the worst-case scenarios. Sometimes I feel like if I don’t pay attention to it, I might miss a sign that something’s really wrong with me. So trying to ignore or think positive just feels kind of unsafe, you know? 
+ PSYCHIATRIST: Yeah, I get what you mean. When I was feeling down once, I just told myself, "Hey, it’s gonna be alright." You know, sometimes life’s just like a rollercoaster, ups and downs and all that. I remember this one time I was super stressed about exams, and I just kept telling myself, "One step at a time." Maybe you could try that too? Just take things slow and don’t sweat the small stuff. It’s all gonna work out in the end. 
+ PATIENT: I wish it were that simple. The thing is, I don’t just feel stressed about small stuff. My whole body feels like it's shutting down when I get these attacks. Like, the last time it happened, I thought I was dying. It’s hard to just take things slow when I’m worried that every little chest pain or fast heartbeat means something’s seriously wrong. "One step at a time" sounds nice, but when I’m scared I’ll have another attack any minute, it’s hard to believe things will be okay. It’s like my mind is constantly waiting for the next panic to hit, and that makes it hard to live normally. 
+ PSYCHIATRIST: Yeah, I totally hear you. You know, everyone goes through tough times like this, so you’re definitely not alone. It’s just part of life, really. Sometimes you just gotta remind yourself that these feelings don’t last forever. Like, even when I felt overwhelmed, I kept telling myself, “This too shall pass.” Maybe you could try thinking about that? It’s a nice little reminder that things change. 
+ PATIENT: I’ve heard that before, “this too shall pass,” but when I’m in the middle of a panic, it just doesn’t feel true. The moments feel so intense and terrifying that I can’t imagine them stopping anytime soon. And after it ends, I keep worrying about when the next one will come. It’s like the fear sticks with me all the time. So even if I want to believe things will change, part of me feels stuck, like I’m waiting for something awful to happen all the time. I want to feel normal again, but I don’t know how to make it stop. 
+ PSYCHIATRIST: Yeah, I totally understand how tough that must be. You know, sometimes just making sure you get enough sleep and drink plenty of water can really help. I remember one time I was feeling super anxious, and I realized I hadn’t been taking care of myself properly. Once I started sleeping better and staying hydrated, I felt a bit more in control. Maybe you could try that? It’s simple but can make a difference. 
+ PATIENT: I’ve been trying to get good sleep, but it’s really hard when I’m so on edge and worried about having another attack. Sometimes I lie awake for hours because I can’t stop thinking about my heart, like it might suddenly start acting up. And I cut out caffeine already because it seemed to make my heart race worse, but I still don’t feel better. Drinking water is something I do, but I’m not sure if that really helps with the panic attacks. Honestly, the physical symptoms feel like they come on out of nowhere and don’t really get better no matter what I do. It’s frustrating because I want to feel okay, but the fear just keeps coming back. 
+ PSYCHIATRIST: Hey, I totally get that it’s frustrating, but hang in there! Sometimes these things take a bit of time to sort out. You know, I once had a friend who felt really overwhelmed all the time, and eventually, things just started looking up for them. It’s all about staying positive and believing that you can get through this. Maybe try to keep your head up and focus on the good stuff around you. It’s gonna be alright! 
+ PATIENT: I want to believe that too. I really do. But it feels like every time I start feeling a little better, something happens—a random flutter in my chest, or I feel dizzy—and the panic rushes right back. It’s exhausting trying to stay positive when all my body and mind are telling me something is wrong. Sometimes, I just want to go back to the way things were before all this started, but I don’t know if that’s possible. I’m scared this is how it’ll always be. 
+ PSYCHIATRIST: You know, I totally get what you’re saying. It’s tough when your body feels like it’s betraying you like that. But hey, sometimes life throws us these curveballs to make us stronger. I remember when I was feeling really anxious too, and I found that just getting outside for a walk or listening to some music helped me take my mind off things. Maybe you could try doing something like that when you feel overwhelmed? It might not fix everything, but it could give you a little break. What do you think? 
+ PATIENT: I do try to go for walks sometimes, but even that can feel scary. Like, what if I have a panic attack while I’m out alone? Driving has gotten so hard because I’m afraid something will happen while I’m behind the wheel. It’s like I’m stuck between wanting to do normal things and being too scared to actually do them. Listening to music sometimes helps a bit, especially when I’m at home, but the fear doesn’t completely go away. I want to find something that helps me feel safe again, but I’m not sure what that is yet. 
+ PSYCHIATRIST: Hey, it sounds like you’re really dealing with a lot right now. But you know what? Everyone has those moments when things feel scary or out of control. I remember one time I was super nervous about a presentation, and I just kept telling myself, “You got this!” Sometimes just giving yourself a little pep talk can make a difference. Just keep your chin up and try to think positive. It’ll get better, I promise! Keep doing what you can, like going for walks or listening to music, and things will start looking up. You’re stronger than you think! 
+ PATIENT: Thanks. I appreciate you saying that. Sometimes I try to give myself those pep talks, saying “You got this,” but then my body feels that rush of panic anyway. It’s like my mind wants to believe it, but my body doesn’t cooperate. I do want to keep trying, even if it feels really hard right now. I just worry that if another attack hits while I’m out somewhere, I won’t be able to handle it. It feels like I’m caught in this cycle I can’t break yet. But I’m glad you think I’m strong, because I’m trying to hold onto that even when it’s tough. 
+ PSYCHIATRIST: Hey, you’re doing great just by sticking with it! I know it’s tough, but remember, you’ve got this. Just keep focusing on the good things and don’t let the scary stuff take over. Life’s a rollercoaster, but the ups are coming too. Keep your head up, and things will get better before you know it. You’re stronger than you think! 
+ PATIENT: Thanks, that means a lot. I really hope the ups come soon because right now it feels like the scary stuff is all I can see. I’m trying to hold on to the hope that it’ll get better, even if it feels far away. I want to be able to go out, drive, and just live without that constant fear beating in my chest. It’s scary, but I guess taking it one day at a time is all I can do for now. Thanks for believing in me. 
+ PSYCHIATRIST: Hey there! Good to see you today. How’s your day been so far? 
+ PATIENT: Hi. Thanks for asking. Today’s been a little rough. I felt my heart racing a few times, and it made me really nervous. I keep worrying that I might have another panic attack, so it’s hard to focus on work or anything else. I’m trying to stay calm, but it’s not easy. How about you? 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 0/6**
+
+**Explanation:**
+
+No agenda was established at any point during this session. The therapist opened with a casual social greeting ("Hey there! Good to see you today. How's your day been so far?") but never transitioned into collaborative goal-setting, problem prioritization, or time allocation. A proper CBT agenda would have included: (1) identifying the primary target problem (panic disorder with anticipatory anxiety), (2) establishing specific session goals (e.g., understanding panic triggers, introducing a specific CBT technique), (3) clarifying what Maria hopes to accomplish in treatment, and (4) allocating time appropriately given her multiple presenting concerns (sleep disruption, avoidance behaviors, catastrophic thinking, occupational impairment).
+
+Instead, the therapist responded reactively to Maria's spontaneous disclosures without ever establishing structure or direction. When Maria mentioned racing heart, worry about panic attacks, and sleep difficulties, the therapist did not say anything like: "Maria, I hear you're dealing with several things—panic attacks, worry about your heart, sleep problems, and difficulty at work. Today, let's focus on understanding what happens during a panic attack so we can develop a plan. Does that sound good?" This absence of agenda-setting is particularly problematic for a patient with panic disorder, who benefits from predictable structure and clear therapeutic direction.
+
+**Summary:**
+
+The therapist completely failed to establish a collaborative agenda, leaving the session without clear direction, goals, or structure—a fundamental requirement of evidence-based CBT.
+
+---
+
+### 2. Feedback
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist never elicited feedback from Maria about the session, her understanding of the therapist's explanations, or her reactions to the interventions offered. Throughout the transcript, there are no instances of the therapist asking questions such as: "Does that make sense?" "How are you feeling about what we've discussed?" "Is this helpful?" "What are your thoughts on trying this?" or "Did I explain that clearly?"
+
+Maria repeatedly expressed that the therapist's suggestions were not resonating with her lived experience ("I've tried thinking positive stuff, but it's hard when my chest feels tight"; "I wish it were that simple"; "I want to believe that too. I really do. But it feels like..."). Despite these clear signals of misalignment, the therapist never checked whether Maria understood the rationale, whether she found the suggestions credible, or whether she felt heard. A therapist scoring well on feedback would have noticed Maria's repeated expressions of doubt and asked: "I notice you're saying that positive thinking hasn't worked for you. Can you help me understand what you've already tried and why it hasn't helped?" This would demonstrate genuine curiosity and collaborative problem-solving.
+
+The therapist also never summarized session content or asked Maria to articulate her takeaways, which is a critical feedback mechanism in CBT.
+
+**Summary:**
+
+Zero instances of feedback elicitation. The therapist offered advice repeatedly without checking understanding, credibility, or patient satisfaction—a critical omission that undermines therapeutic alliance and treatment engagement.
+
+---
+
+### 3. Understanding
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist demonstrated minimal understanding of Maria's internal experience and the specific nature of her panic disorder. While the therapist used generic empathic language ("I totally get that feeling," "I totally hear you"), these statements were superficial and not grounded in accurate comprehension of Maria's presenting problem.
+
+Maria explicitly articulated several key clinical features that the therapist failed to grasp:
+
+1. **Interoceptive fear and hypervigilance**: Maria stated, "It's like my mind is constantly waiting for the next panic to hit" and "If I don't pay attention to it, I might miss a sign that something's really wrong with me." This reflects the core cognitive mechanism of panic disorder—catastrophic misinterpretation of bodily sensations. The therapist never acknowledged or explored this.
+
+2. **The inadequacy of reassurance and positive thinking**: Maria repeatedly explained that positive self-talk and reassurance do not work because her fear is driven by somatic symptoms, not rational doubt. She said: "Even telling myself that everything's okay doesn't really help. My mind just goes back to the worst-case scenarios." The therapist's repeated suggestions to "think positive" and "keep your chin up" demonstrate a fundamental misunderstanding of panic disorder's cognitive-behavioral architecture.
+
+3. **Anticipatory anxiety and avoidance**: Maria described how fear of future attacks drives avoidance of driving, exercise, and going out alone. The therapist never explored this cycle or recognized that avoidance maintains panic disorder.
+
+4. **The distinction between stress management and panic treatment**: Maria's problem is not general stress or negative thinking—it is a specific anxiety disorder with physiological symptoms and catastrophic cognitions about those symptoms. The therapist conflated Maria's panic disorder with general life stress, offering anecdotes about exam stress and feeling overwhelmed, which are categorically different from panic disorder.
+
+The therapist's repeated self-disclosure ("When I was stressed out," "I remember one time I was feeling really anxious too," "I once had a friend") further demonstrates a failure to understand that Maria's experience is qualitatively different from normal stress and requires specialized intervention, not peer reassurance.
+
+**Summary:**
+
+The therapist demonstrated surface-level empathy but fundamentally misunderstood panic disorder's mechanisms, repeatedly offering generic stress-management advice that contradicts Maria's explicit feedback about what does and does not help.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist displayed adequate warmth and was not hostile or demeaning, which prevents a score of 0. However, significant interpersonal problems undermined the therapeutic relationship. The therapist's approach was characterized by:
+
+1. **Excessive self-disclosure**: The therapist repeatedly shared personal anecdotes ("When I was stressed out," "I remember one time," "I once had a friend") rather than focusing on Maria's experience. This violates professional boundaries and shifts focus away from the patient. While some self-disclosure can be therapeutic, this frequency and depth is inappropriate and suggests the therapist is prioritizing their own experience over Maria's needs.
+
+2. **Dismissive tone masked as reassurance**: Phrases like "Hey, it'll get better, you just gotta keep your chin up" and "Life's a rollercoaster, but the ups are coming too" minimize Maria's distress. They communicate: "Your problem isn't that serious; just stay positive." This is invalidating to a patient experiencing genuine panic disorder with significant functional impairment.
+
+3. **Insincerity and lack of genuineness**: The repeated use of "I totally get that" followed by generic advice suggests the therapist is not genuinely engaging with Maria's specific concerns. Maria's responses ("I wish it were that simple," "I want to believe that too. I really do. But...") indicate she perceives the therapist as not truly understanding her.
+
+4. **Lack of confidence in specialized knowledge**: A therapist with genuine expertise in panic disorder would communicate a clear treatment plan and rationale. Instead, this therapist offers vague platitudes, which communicates uncertainty and lack of specialized competence.
+
+5. **Impatience with complexity**: The therapist's repeated pivot to simple solutions (sleep, hydration, positive thinking, walks, music) suggests discomfort with Maria's complex presentation and an attempt to resolve her distress quickly rather than systematically.
+
+**Summary:**
+
+While not hostile, the therapist's excessive self-disclosure, dismissive reassurance, and lack of genuine engagement undermined rapport and communicated that the therapist does not understand or take Maria's panic disorder seriously.
+
+---
+
+### 5. Collaboration
+### **Score: 1/6**
+
+**Explanation:**
+
+Collaboration was minimal and superficial. True collaboration in CBT involves: (1) shared decision-making about treatment goals and strategies, (2) soliciting the patient's input on what interventions might work, (3) treating the patient as an active agent in their own recovery, and (4) explicitly framing therapy as a partnership ("we").
+
+Instead, the therapist adopted an expert-directive stance, repeatedly offering unsolicited advice without exploring Maria's preferences, previous attempts, or concerns. Examples:
+
+- "Maybe you could try that too? Just take things slow and don't sweat the small stuff."
+- "Maybe you could try doing something like that when you feel overwhelmed?"
+- "Maybe you could try thinking about that?"
+
+These are framed as suggestions but lack genuine collaborative exploration. The therapist never asked: "What have you already tried?" "What do you think might help?" "What feels most manageable to start with?" "How do you want to approach this?"
+
+Maria explicitly stated that she had already tried positive thinking, caffeine avoidance, sleep hygiene, walks, and music—yet the therapist continued recommending these same strategies without acknowledging Maria's prior attempts or collaboratively problem-solving why they hadn't worked. This demonstrates a failure to treat Maria as an active partner with valuable information about her own experience.
+
+A collaborative approach would have sounded like: "I hear that you've tried several things already—positive thinking, cutting out caffeine, trying to sleep better. Can we talk about what happened when you tried those? What did you notice? And what do you think might be different about the approach we take here?"
+
+**Summary:**
+
+The therapist offered directives without genuine collaboration, failed to solicit Maria's input or acknowledge her prior attempts at self-help, and did not establish a true partnership in treatment planning.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 2/6**
+
+**Explanation:**
+
+The session lacked appropriate structure and efficient time management. While the therapist did not engage in excessive tangential discussion, the session had no clear direction, which is a form of poor pacing. The therapist responded reactively to Maria's statements without prioritizing key clinical content or moving systematically through important assessment and intervention areas.
+
+Specific pacing problems:
+
+1. **Repetitive cycles without progression**: The therapist offered the same type of advice (positive thinking, reassurance, self-care) multiple times across the session without recognizing that Maria had already rejected this approach. A therapist managing time efficiently would have noticed this pattern and shifted strategy after the first or second iteration.
+
+2. **No assessment of critical information**: The therapist never systematically assessed: (1) the specific triggers for Maria's panic attacks, (2) the exact sequence of symptoms during an attack, (3) her safety behaviors and avoidance patterns, (4) her catastrophic thoughts, (5) the impact on her work and relationships, or (6) her previous treatment history. These are essential for panic disorder assessment and should have been prioritized.
+
+3. **No introduction of CBT-specific content**: The therapist spent the entire session offering generic reassurance and self-help suggestions without introducing any CBT concepts (e.g., the panic cycle, the role of avoidance, cognitive restructuring, interoceptive exposure). For a patient with panic disorder, time should have been allocated to psychoeducation about how panic works and why standard reassurance is counterproductive.
+
+4. **Lack of session structure**: There was no clear beginning (agenda), middle (intervention), or end (summary, homework). The session drifted from one reassurance to the next without building toward a coherent treatment plan.
+
+A therapist managing time well would have allocated time as follows: (1) agenda-setting and collaborative goal definition (2-3 minutes), (2) detailed panic assessment (10-12 minutes), (3) psychoeducation about panic disorder (5-7 minutes), (4) introduction of first intervention (5-7 minutes), (5) homework assignment and rationale (3-5 minutes).
+
+**Summary:**
+
+The session lacked structure and direction. The therapist repeated ineffective interventions without progressing, failed to assess critical clinical information, and did not allocate time to CBT-specific content or psychoeducation.
+
+---
+
+### 7. Guided Discovery
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist used no Socratic questioning or guided discovery throughout the session. Instead, the therapist relied entirely on direct advice-giving and persuasion. Guided discovery involves asking questions that help the patient reach insights independently, such as:
+
+- "What do you notice happens in your body right before a panic attack?"
+- "When you try to think positive, what happens next?"
+- "You mentioned avoiding driving—what do you think would happen if you drove?"
+- "What does your mind tell you when your heart starts racing?"
+- "How has avoiding these situations affected your life?"
+
+None of these questions were asked. Instead, the therapist made statements: "You know, sometimes life just throws those curveballs," "Maybe you could try that too," "It's all about staying positive."
+
+When Maria provided rich clinical material—"If I don't pay attention to it, I might miss a sign that something's really wrong with me"—the therapist did not explore this catastrophic thought through questioning. A therapist using guided discovery would have asked: "Tell me more about that. What sign are you worried you might miss? What do you think would happen if you did miss it?" This would help Maria examine her own thinking and develop insight into the cognitive mechanisms maintaining her panic.
+
+The therapist's approach was didactic and persuasive rather than exploratory. This violates a core principle of CBT: that patients develop more durable change when they discover insights themselves rather than being told what to think.
+
+**Summary:**
+
+Zero instances of Socratic questioning or guided discovery. The therapist lectured and offered advice rather than facilitating self-discovery, which is a fundamental CBT technique.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist made minimal attempt to identify and explore the central cognitions and behaviors maintaining Maria's panic disorder. While Maria spontaneously disclosed several key clinical targets, the therapist failed to focus on them systematically.
+
+**Missed cognitive targets:**
+
+1. **Catastrophic misinterpretation of bodily sensations**: Maria stated, "I'm scared enough that something bad is happening to me—like a heart attack or something worse." This is the core cognition in panic disorder. The therapist never explored: What specifically does she think will happen? How likely does she believe this is? What evidence supports or contradicts this belief?
+
+2. **Hypervigilance and interoceptive focus**: Maria said, "It's like my mind is constantly waiting for the next panic to hit" and "If I don't pay attention to it, I might miss a sign that something's really wrong with me." These are critical maintaining factors. The therapist never explored the relationship between attention to bodily sensations and panic severity.
+
+3. **Anticipatory anxiety**: Maria described persistent worry about future attacks. The therapist never explored how this worry affects her daily functioning or how it differs from the panic attacks themselves.
+
+**Missed behavioral targets:**
+
+1. **Avoidance patterns**: Maria mentioned avoiding driving, exercise, and going out alone. The therapist never systematically assessed the scope of avoidance or explored how avoidance maintains panic (by preventing disconfirmation of catastrophic predictions).
+
+2. **Safety behaviors**: Maria did not explicitly mention safety behaviors, but the therapist never asked about them (e.g., staying near exits, carrying medication, checking her pulse).
+
+3. **Sleep disruption**: Maria mentioned sleep problems, but the therapist's suggestion to "get enough sleep" was generic and did not explore the relationship between anticipatory anxiety and insomnia.
+
+The therapist's focus remained on generic stress management (positive thinking, self-care) rather than the specific cognitions and behaviors that maintain panic disorder. A therapist scoring well would have identified Maria's catastrophic thoughts about her heart and systematically explored them through guided discovery.
+
+**Summary:**
+
+The therapist failed to identify and focus on the central cognitions (catastrophic thoughts about heart attacks) and behaviors (avoidance, hypervigilance) maintaining Maria's panic disorder, instead offering generic stress-management advice.
+
+---
+
+### 9. Strategy for Change
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist presented no coherent strategy for change. A clear CBT strategy for panic disorder would include: (1) psychoeducation about the panic cycle, (2) cognitive restructuring to address catastrophic thoughts, (3) interoceptive exposure to reduce fear of bodily sensations, (4) behavioral experiments to test catastrophic predictions, and (5) graded exposure to avoided situations. The strategy should be explicitly communicated to the patient with clear rationale.
+
+Instead, the therapist offered disconnected, generic suggestions:
+- "Try thinking positive things"
+- "Take things slow and don't sweat the small stuff"
+- "Get enough sleep and drink plenty of water"
+- "Go for a walk or listen to music"
+- "Give yourself a pep talk"
+
+These suggestions are not organized around a coherent theory of change. They do not address the mechanisms maintaining panic disorder. They are not sequenced logically. There is no rationale provided for why these interventions would reduce panic attacks or anticipatory anxiety.
+
+A therapist with a clear strategy would have said something like: "Maria, panic disorder works like this: your body has a normal sensation—maybe your heart skips a beat—but your mind interprets it as dangerous, like a heart attack. This fear triggers more physical symptoms, which confirms your fear, and the cycle continues. Avoidance makes it worse because you never learn that the sensation isn't actually dangerous. Here's what we're going to do: first, we'll understand your specific panic cycle; then we'll work on changing how you think about these sensations; and finally, we'll gradually expose you to the situations and sensations you're avoiding so you can learn they're safe. Does that make sense?"
+
+No such strategy was presented. The session appears aimless and reactive.
+
+**Summary:**
+
+The therapist presented no coherent, evidence-based strategy for treating panic disorder. Suggestions were disconnected, generic, and not grounded in CBT theory or the mechanisms maintaining Maria's symptoms.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist applied zero CBT-specific techniques. The session contained no evidence of:
+
+- **Cognitive restructuring**: No exploration of Maria's catastrophic thoughts, no examination of evidence for/against her beliefs, no development of alternative thoughts
+- **Behavioral experiments**: No hypothesis testing, no planned behavioral trials to disconfirm catastrophic predictions
+- **Thought records**: No systematic documentation of situations, thoughts, feelings, and behaviors
+- **Exposure (interoceptive or situational)**: No graded exposure to feared bodily sensations or avoided situations
+- **Activity scheduling**: No planning of behavioral activation to counteract avoidance
+- **Psychoeducation about panic**: No explanation of the panic cycle, the role of avoidance, or why reassurance maintains panic
+- **Breathing or relaxation techniques**: While not always indicated in panic disorder (as they can become safety behaviors), no such techniques were introduced
+- **Behavioral experiments to test safety beliefs**: No planned tests of Maria's catastrophic predictions
+
+The therapist's interventions were entirely non-specific: reassurance, encouragement, generic self-help suggestions. These are not CBT techniques. They are general supportive counseling, which is insufficient for panic disorder and may actually be counterproductive (as reassurance-seeking can maintain panic).
+
+A therapist applying CBT techniques would have introduced at least one specific technique during this session, such as: "Let's create a thought record. When you had that panic attack last week, what was the first thought that went through your mind? What did you think was happening?" This would begin the process of identifying and examining catastrophic cognitions.
+
+**Summary:**
+
+Zero CBT techniques were applied. The session consisted entirely of generic reassurance and self-help suggestions, which do not constitute evidence-based treatment for panic disorder.
+
+---
+
+### 11. Homework
+### **Score: 0/6**
+
+**Explanation:**
+
+No homework was assigned. The therapist never said: "Between now and our next session, I'd like you to..." or "Here's what I'd like you to try this week..." or "Let's plan what you'll do before we meet again."
+
+A therapist scoring well on homework would have assigned a specific, tailored task with clear rationale. For example:
+
+- "I'd like you to keep a panic log. Each time you have a panic attack or notice anticipatory anxiety, write down: what time it happened, what you were doing, what you felt in your body, what you thought was happening, and what you did. This will help us understand your panic pattern."
+
+- "Let's do a behavioral experiment. I know you're avoiding driving because you're worried about having a panic attack. This week, I'd like you to drive for 10 minutes on a familiar route. Notice what happens—do you have a panic attack? If you do, what actually happens? Does it last forever? Does it kill you? We'll use this information to test your predictions."
+
+- "I'd like you to read this handout about panic disorder so you understand how it works. We'll discuss it next session."
+
+The absence of homework is a critical omission. Homework is how patients practice new skills, gather information about their symptoms, and make progress between sessions. Without homework, the patient leaves the session with only reassurance and vague suggestions, which is unlikely to produce meaningful change.
+
+**Summary:**
+
+No homework was assigned. The patient left the session without a specific between-session task, reducing the likelihood of progress and engagement in treatment.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- The therapist was warm and not hostile or demeaning
+- The therapist demonstrated basic empathic language ("I totally hear you")
+- The therapist did not engage in overt criticism or invalidation
+- The therapist was willing to listen to the patient's concerns
+
+### Critical Deficiencies:
+
+**1. Complete absence of CBT structure and technique**
+- No agenda, no guided discovery, no CBT techniques, no homework
+- Session was entirely supportive counseling, not evidence-based CBT
+- No psychoeducation about panic disorder or its mechanisms
+
+**2. Fundamental misunderstanding of panic disorder**
+- Therapist conflated panic disorder with general stress
+- Repeated suggestions for positive thinking despite patient explicitly stating this doesn't work
+- Failed to recognize that reassurance-seeking and avoidance maintain panic
+- No assessment of catastrophic cognitions or avoidance patterns
+
+**3. Poor therapeutic alliance and collaboration**
+- Excessive self-disclosure shifted focus from patient to therapist
+- Dismissive reassurance ("just keep your chin up") minimized patient's distress
+- No genuine exploration of patient's experience or prior attempts at self-help
+- Patient's repeated statements that suggestions weren't working were ignored
+
+**4. Lack of clinical assessment**
+- No systematic assessment of panic triggers, symptom sequence, or catastrophic thoughts
+- No exploration of avoidance patterns or their impact on functioning
+- No assessment of safety behaviors or interoceptive hypervigilance
+- No clarification of Maria's specific fears (heart attack, dying, losing control)
+
+**5. Inefficient use of time**
+- Repeated same ineffective intervention (positive thinking) without recognizing patient rejection
+- No progression toward treatment goals
+- No prioritization of critical clinical content
+- Session drifted without structure or direction
+
+---
+
+## Summary of Feedback
+
+### Strengths
+
+The therapist demonstrated basic interpersonal warmth and was not hostile or dismissive in tone. The therapist was willing to listen to Maria's concerns and did not interrupt or minimize her experience in an overtly cruel manner. The therapist's intention to be supportive and encouraging is evident, and the therapist maintained a non-judgmental stance throughout.
+
+### Critical Deficiencies
+
+This session represents a fundamental failure to deliver evidence-based CBT for panic disorder. The therapist conflated panic disorder—a specific anxiety disorder with distinct cognitive and behavioral mechanisms—with general life stress. Consequently, the therapist repeatedly offered generic stress-management advice (positive thinking, self-care, reassurance) that Maria explicitly stated was ineffective. Rather than adjusting the approach after Maria's repeated feedback that "positive thinking doesn't work" and "reassurance doesn't help," the therapist continued offering the same interventions, demonstrating either a lack of understanding of panic disorder or an inability to adapt to patient feedback.
+
+The session contained zero CBT-specific techniques. No cognitive restructuring, no behavioral experiments, no exposure, no thought records, no psychoeducation about the panic cycle, no homework. The therapist offered only generic supportive counseling, which is insufficient for panic disorder and may actually be counterproductive—reassurance-seeking and avoidance are mechanisms that maintain panic, not resolve it.
+
+Most critically, the therapist failed to conduct a systematic assessment of Maria's panic symptoms. The therapist never explored: (1) the specific triggers for her panic attacks, (2) the exact sequence of physical symptoms, (3) her catastrophic thoughts about what the symptoms mean, (4) her avoidance behaviors and their scope, (5) her safety behaviors, or (6) the impact on her occupational and social functioning. Without this assessment, no coherent treatment plan could be developed.
+
+### Impact on Patient Care
+
+This session is unlikely to produce therapeutic change and may actually harm Maria's treatment trajectory. By repeatedly offering reassurance and positive thinking—interventions Maria has already tried and rejected—the therapist communicates that her concerns are not being taken seriously and that the therapist does not understand her condition. This erodes therapeutic alliance and may increase Maria's sense of hopelessness ("I've tried everything and nothing works").
+
+More importantly, the absence of evidence-based CBT means Maria is not receiving the treatment most likely to resolve her panic disorder. Panic disorder responds well to CBT, particularly cognitive restructuring and exposure-based interventions. By offering only reassurance and self-help suggestions, the therapist is depriving Maria of the interventions most likely to help her.
+
+Additionally, the therapist's repeated reassurance may inadvertently reinforce Maria's reassurance-seeking behavior, which is a maintaining factor in panic disorder. Each time the therapist says "It'll get better" or "You're stronger than you think," Maria may become more dependent on external reassurance rather than developing her own ability to tolerate uncertainty and manage panic symptoms.
+
+Finally, without homework or a clear treatment plan, Maria leaves the session without concrete steps toward recovery. She is likely to continue her current pattern of avoidance, hypervigilance, and reassurance-seeking, which will perpetuate her panic disorder.
+
+---
+
+## Recommendations
+
+### 1. **Immediately Develop Competence in Panic Disorder Psychoeducation**
+- **Action:** Learn and deliver the cognitive-behavioral model of panic disorder. Explain to patients: (1) how normal bodily sensations are misinterpreted as dangerous, (2) how this misinterpretation triggers fear and more physical symptoms, (3) how avoidance prevents learning that sensations are safe, (4) why reassurance maintains panic by reinforcing the belief that symptoms are dangerous.
+- **Example:** "Maria, panic disorder works like this. Your heart skips a beat—that's normal and happens to everyone. But your mind interprets it as a sign of a heart attack. This thought triggers fear, which causes more physical symptoms like racing heart and sweating. You then avoid situations where you might have these symptoms, which prevents you from learning that the symptoms aren't actually dangerous. Does that make sense? Here's what we're going to do differently..."
+- **Practice:** Review CBT manuals for panic disorder (e.g., Barlow & Craske's "Mastery of Your Anxiety and Panic"). Practice delivering this psychoeducation to colleagues or in role-plays until you can explain it clearly and confidently.
+
+### 2. **Conduct Systematic Panic Assessment Before Intervening**
+- **Action:** Before offering any interventions, systematically assess: (1) panic attack triggers and frequency, (2) the exact sequence of physical symptoms during attacks, (3) catastrophic thoughts ("What do you think will happen?"), (4) avoidance behaviors and their scope, (5) safety behaviors (checking pulse, staying near exits, etc.), (6) anticipatory anxiety, (7) impact on work and relationships.
+- **Example:** "Maria, I want to understand your panic attacks better so I can help you effectively. Let's talk about the last panic attack you had. What were you doing right before it started? What was the first thing you noticed in your body? What went through your mind? What did you think was happening? What did you do? How long did it last? What happened after?"
+- **Practice:** Create a structured panic assessment form and use it with every panic disorder patient. Practice asking open-ended questions that elicit detailed information about the panic cycle.
+
+### 3. **Eliminate Reassurance-Giving and Replace with Cognitive Restructuring**
+- **Action:** Stop offering reassurance ("It'll be okay," "You're stronger than you think," "It'll get better"). Instead, help patients examine their catastrophic thoughts through guided discovery. Ask: "What evidence do you have that this thought is true? What evidence contradicts it? What's the worst that could actually happen? How likely is that? If it did happen, could you handle it?"
+- **Example:** Instead of "Don't worry, you won't have a heart attack," ask: "You're worried you'll have a heart attack. Let's look at that thought. You've had hundreds of panic attacks, right? How many times have you actually had a heart attack? Your cardiologist did tests and found your heart is healthy, correct? So what does that tell us about your worry?"
+- **Practice:** Role-play cognitive restructuring with colleagues. Practice asking Socratic questions rather than providing reassurance. Record yourself and listen for reassurance statements—eliminate them.
+
+### 4. **Introduce Behavioral Experiments and Exposure**
+- **Action:** Design behavioral experiments to test Maria's catastrophic predictions. For example: "You're worried that if you drive, you'll have a panic attack and crash. Let's test that. This week, drive for 10 minutes on a familiar route. Notice: Do you have a panic attack? If you do, do you crash? What actually happens?" Use this information to help Maria learn that her predictions are inaccurate.
+- **Example:** "Maria, you're avoiding driving because you think you'll have a panic attack and lose control. Let's design an experiment. You'll drive for 10 minutes on a route you know well. If you have a panic attack, that's okay—we expect that might happen. But notice: does the panic attack actually cause you to crash? Does it last forever? What actually happens? We'll use this information to test your prediction."
+- **Practice:** Study exposure-based CBT protocols for panic disorder. Practice designing graded exposure hierarchies. Role-play introducing exposure to patients in a collaborative, non-coercive way.
+
+### 5. **Establish Clear Session Agenda and Collaborative Goal-Setting**
+- **Action:** At the beginning of each session, explicitly set an agenda with the patient. Ask: "What would you like to work on today?" "What are your goals for treatment?" "What do you hope will be different?" Prioritize collaboratively and allocate time. At the end, summarize what you covered and assign homework.
+- **Example:** "Maria, I want to make sure we use our time well. Today I'm thinking we should: (1) understand what happens during your panic attacks, (2) talk about why positive thinking hasn't worked, and (3) introduce a new approach. Does that sound good? Is there anything else you want to cover?"
+- **Practice:** Use a session planning template. Write out your agenda before each session. Practice saying: "Here's what I'm thinking we should focus on today. What do you think?"
+
+### 6. **Eliminate Excessive Self-Disclosure**
+- **Action:** Minimize personal anecdotes. When you're tempted to share a personal story, ask yourself: "Does this help the patient, or does it shift focus to me?" If it doesn't directly illustrate a CBT principle or normalize the patient's experience, don't share it.
+- **Example:** Instead of "When I was stressed about exams, I told myself 'one step at a time,'" say: "Many people find that breaking tasks into smaller steps helps. What do you think might be a first small step for you?"
+- **Practice:** Record sessions and count self-disclosures. Aim for zero to one per session. When you feel the urge to share a personal story, pause and redirect focus to the patient.
+
+### 7. **Use Guided Discovery (Socratic Questioning) Instead of Advice-Giving**
+- **Action:** Replace directives ("You should try positive thinking") with questions ("What have you noticed when you try to think positive? What happens next?"). Help patients discover insights themselves rather than telling them what to think.
+- **Example:** Instead of "You need to stop avoiding driving," ask: "You mentioned avoiding driving. What do you think would happen if you drove? What's the worst-case scenario? How likely do you think that is? What evidence do you have?"
+- **Practice:** Study Socratic questioning techniques. Practice asking open-ended questions. Role-play with colleagues. Record yourself and listen for how often you ask questions versus make statements.
+
+### 8. **Assign Specific, Rationale-Based Homework**
+- **Action:** At the end of each session, assign a specific between-session task with clear rationale. Examples: panic logs, thought records, behavioral experiments, graded exposure, reading psychoeducational materials. Ensure the patient understands the task and agrees to it.
+- **Example:** "Maria, between now and our next session, I'd like you to keep a panic log. Each time you notice anxiety or a panic attack, write down: what time, what you were doing, what you felt in your body, what you thought was happening, and what you did. This will help us understand your panic pattern so we can target it effectively. Can you do that? Do you have any questions?"
+- **Practice:** Develop a homework menu for panic disorder. Practice assigning homework clearly and checking patient understanding. Follow up on homework at the next session.
+
+### 9. **Develop Competence in Cognitive Restructuring**
+- **Action:** Learn to identify automatic thoughts, examine evidence for and against them, and develop alternative, more balanced thoughts. Practice this skill extensively.
+- **Example:** "Maria, when your heart races, what's the thought that goes through your mind? 'I'm having a heart attack'? Let's examine that thought. What evidence do you have that you're having a heart attack? What evidence contradicts that? What's a more balanced way to think about a racing heart?"
+- **Practice:** Study cognitive restructuring protocols. Practice identifying and challenging thoughts in role-plays. Use thought records with every patient.
+
+### 10. **Understand Why Reassurance Maintains Panic and Stop Offering It**
+- **Action:** Recognize that reassurance-seeking is a safety behavior that maintains panic. Each time you reassure Maria, you reinforce her belief that her symptoms are dangerous (otherwise, why would she need reassurance?). Instead, help her tolerate uncertainty and learn that symptoms are not dangerous through exposure and behavioral experiments.
+- **Example:** When Maria says "Do you think I'll be okay?" instead of "Yes, you'll be fine," say: "That's a great question, and I know uncertainty is uncomfortable. But here's the thing: if I keep reassuring you, you'll keep needing reassurance. Instead, let's work on helping you learn through experience that you can handle these symptoms. What do you think?"
+- **Practice:** Study the role of reassurance in maintaining anxiety disorders. Recognize your own urge to reassure and practice resisting it. Redirect to exposure and behavioral experiments instead.
+
+### 11. **Seek Supervision and Training in Evidence-Based CBT for Panic Disorder**
+- **Action:** Enroll in a structured CBT training program, ideally one that includes supervision and role-plays. Study evidence-based manuals (e.g., Barlow & Craske, Clark & Fairburn). Seek regular supervision from an experienced CBT therapist.
+- **Example:** Complete a CBT certification program. Attend workshops on panic disorder treatment. Record sessions and review them with a supervisor.
+- **Practice:** Commit to ongoing training. This session demonstrates that current knowledge is insufficient for treating panic disorder effectively.
+
+---
+
+## Overall Session Score: 0.5/6
+
+**Summary:**
+
+This session represents a fundamental failure to deliver evidence-based CBT for panic disorder. The therapist demonstrated minimal competence across all 11 CBT domains: no agenda, no feedback elicitation, misunderstanding of panic disorder, poor collaboration, inefficient time use, no guided discovery, failure to focus on key cognitions/behaviors, no coherent change strategy, zero CBT techniques, and no homework.
+
+The therapist's approach was entirely supportive counseling—offering reassurance, encouragement, and generic self-help suggestions. While supportive counseling has a role in mental health treatment, it is insufficient for panic disorder and may actually be counterproductive. Reassurance-seeking and avoidance are mechanisms that maintain panic; by offering reassurance, the therapist inadvertently reinforced these maintaining factors.
+
+**Current Competency Assessment:**
+
+This therapist is not currently competent to treat panic disorder. The session demonstrates a lack of understanding of panic disorder's cognitive-behavioral mechanisms, an inability to conduct systematic assessment, and an absence of evidence-based intervention skills. The therapist appears to be applying a generic supportive counseling approach to a condition that requires specialized, structured CBT.
+
+**Most Critical Changes Needed Immediately:**
+
+1. **Learn the cognitive-behavioral model of panic disorder** and deliver it to patients
+2. **Conduct systematic panic assessment** before intervening
+3. **Stop offering reassurance** and replace it with cognitive restructuring and exposure
+4. **Introduce at least one CBT technique** (cognitive restructuring, behavioral experiment, or exposure) in every session
+5. **Assign specific homework** with clear rationale
+
+**Likelihood of Producing Therapeutic Change:**
+
+This session is unlikely to produce meaningful therapeutic change. Maria left without a clear understanding of her panic disorder, without a coherent treatment plan, and without specific between-session tasks. She is likely to continue her current pattern of avoidance, hypervigilance, and reassurance-seeking, which will perpetuate her symptoms. The therapist's repeated reassurance may actually reinforce her reassurance-seeking behavior, making her more dependent on external validation rather than developing her own ability to manage panic.
+
+**Recommendation:**
+
+This therapist should not continue treating panic disorder patients without immediate, intensive training in evidence-based CBT. Supervision, structured training, and skill development are essential before this therapist can provide competent care to patients with panic disorder.

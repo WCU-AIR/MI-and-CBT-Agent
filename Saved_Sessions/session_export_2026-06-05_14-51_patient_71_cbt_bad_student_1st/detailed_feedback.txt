@@ -1,0 +1,940 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Other Specified Depressive Disorder (Depressive Episode with Insufficient Symptoms)
+
+--- CASE STUDY ---
+
+Ka Fang, a 59-year-old widowed Hmong woman, was referred for psychiatric evaluation due to persistent fatigue, chronic back pain, and insomnia over the preceding 11 months. These complaints had been managed medically with clonazepam and hydrocodone, which improved her sleep and pain but not her daytime fatigue.
+
+Ms. Fang immigrated from Thailand 10 years earlier, having spent almost two decades in a Thai refugee camp following the Vietnam War. She lives with her son and his family on a small farm near Sacramento. She reported no depressed mood, anhedonia, or suicidal thoughts, but expressed feelings of worthlessness and embarrassment over her perceived inactivity.
+
+On mental status examination, she appeared alert but sad and constricted. Speech was slow and careful, and insight appeared limited. Cognitive testing revealed normal attention and concentration. She wore white strings on her wrists from recent Hmong shamanistic soul-calling ceremonies intended to reunite with distant relatives.
+
+Discussion: Ms. Fang demonstrates somatic symptoms commonly associated with depressive presentations in Hmong culture, including fatigue and insomnia. She meets only three of the nine DSM-5 criteria for major depressive disorder; five are required for diagnosis. Cultural factors—including functional illiteracy, loss of her husband, geographic separation from family, and traditional shamanistic practices—may contribute to her presentation. Collateral information from her children could help clarify symptom impact. Given the insufficient symptom count and cultural considerations, her presentation is best categorized as an other specified depressive disorder (depressive episode with insufficient symptoms).
+
+--- BEHAVIOUR ---
+
+Alert but sad and constricted
+
+Slow, careful speech
+
+Denies depressed mood, anhedonia, or suicidality
+
+Participates cooperatively in interview
+
+Limited insight into her illness
+
+Wears symbolic strings for cultural/spiritual reasons
+
+--- DSM-5 SYMPTOMS ---
+
+Fatigue
+
+Insomnia
+
+Feelings of worthlessness
+
+--- PATIENT PROFILE ---
+Name: Ka Fang
+Sex: Female
+Age: 59 years
+DOB: February 8, 1966
+Place of Birth: Thailand
+Address: 112 Meadow Lane, Sacramento, CA
+Contact: (916) 555-4432
+Marital Status: Widowed
+Occupation: Retired/ homemaker
+Education: Limited formal education, functionally illiterate
+Religion/Culture: Hmong traditional beliefs
+Presenting Complaint: Fatigue, insomnia, chronic pain
+Psychiatric History: None prior
+Substance Use: Minimal; occasional wine (2–3 glasses/month)
+Medical History: Chronic back pain; insomnia
+Family Psychiatric History: None significant
+Mental Status: Alert, sad/constricted affect, slow speech
+Cognitive Function: Normal attention and concentration
+Insight/Judgment: Limited
+
+--- DIAGNOSIS ---
+
+Other Specified Depressive Disorder (Depressive Episode with Insufficient Symptoms)
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Ka Fang is a 59-year-old widowed Hmong woman evaluated in an outpatient psychiatric setting following referral for persistent fatigue, chronic back pain, and insomnia lasting approximately 11 months. The referral was initiated due to ongoing symptoms despite medical management, with collateral history obtained from her family.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hey there! How’s it going today? Just glad you could make it in. So, what’s been up with you lately? 
+ PATIENT: Hello. Thank you for seeing me today. I have been feeling very tired a lot of the time. Even when I sleep, I still feel tired during the day. My back has been hurting for a long time too, and it makes it hard to rest well. I do not feel very happy with myself because I cannot do as much as I used to. It feels embarrassing sometimes. 
+ PSYCHIATRIST: Hey, I’m sorry to hear you’re feeling so tired and dealing with back pain. That sounds really tough. But you know, these things happen to everyone at some point. Just hang in there, it’ll get better. You might want to try thinking positive about the good stuff in your life. When I was feeling down last year, I found that focusing on the little wins really helped me keep going. Have you ever had a time when things felt better? 
+ PATIENT: I understand what you say, but it is hard for me to feel better. Sometimes I try to think about good things, but the tiredness and pain make me quiet. Before my husband passed, I had more energy, and I could work on the farm. Now, it is different. I feel like I am not doing enough, even small things. I suppose sometimes days are better, but it is rare. Most days feel heavy. 
+ PSYCHIATRIST: Oh, I totally get that. You know, last summer I was so stressed out with exams, I barely slept. But then I just told myself to take it easy, and things started to look up. Maybe you just need to give yourself a break and not be so hard on yourself. Everyone goes through rough patches like this. By the way, have you tried drinking more water? Sometimes that helps with energy and feeling better. 
+ PATIENT: Thank you. I try to be patient with myself, but it is difficult. When I rest or try to do less, I still feel tired and pain in my back. Sometimes I feel like I should do more, but my body does not listen. I drink water, but I do not think it changes much. It is not easy to stop feeling this way. I guess I want to have more strength, but I do not know how. 
+ PSYCHIATRIST: Yeah, I get that. It’s tough when your body doesn’t cooperate. But you know, it’s really important to just keep your head up and think positive. Sometimes it’s just about waiting it out and believing things will get better. Have you been able to get outside at all? Fresh air can do wonders, even if it’s just a little bit. I remember one time I was feeling down, and a walk in the park really lifted my mood. Maybe that could help you too. 
+ PATIENT: I do try to go outside sometimes, but when the back pain is strong, it is hard to even walk. We have a small farm, so I am outside, but mostly sitting or doing light work. I notice that fresh air helps a little, but the tiredness stays with me. Even when I am outside, my body feels heavy. It is frustrating because I want to do more, but I cannot. It makes me feel sad. 
+ PSYCHIATRIST: Yeah, I hear you. It’s really frustrating when you want to do more but just can’t. But you know, everyone has their ups and downs. When I was feeling low, I found that just trying to get a good night’s sleep helped a lot. Maybe you could try focusing on getting better rest. Drinking some chamomile tea or something relaxing before bed might help too. It’s worth a shot, right? 
+ PATIENT: Yes, I do take medicine to help me sleep, but sometimes my mind is busy, and I still wake up during the night. The pain wakes me too. I have tried some teas before, but they do not always help. Sleep is so important, and when it is not good, the next day feels even harder. I wish I could find a way to sleep better without medicine because sometimes I worry about taking too many pills. 
+ PSYCHIATRIST: I totally get what you mean about sleep. It’s so tricky sometimes. You know, when I was stressed, I found that just drinking a lot of water and trying to relax helped a bit. Maybe you could try that too? Also, sometimes just talking to someone or spending time with family can lift your spirits. I remember last year, when things were tough, my cousin came over and we just chatted for hours. It really helped me forget my worries for a while. Do you have family or friends you can hang out with? 
+ PATIENT: I live with my son and his family on the farm. They are kind and helpful, but I do not always feel able to join in their busy lives. Sometimes I sit quietly while they work or talk. I do not want to be a burden or make them worry. Talking helps a little, but I often keep my feelings inside. I do not want to make others sad. It is easier to be quiet, even if it makes me feel alone sometimes. 
+ PSYCHIATRIST: That sounds really nice that you have your son and his family around. Sometimes just having people nearby is comforting, even if you don’t say much. I remember when I was feeling kind of down, just sitting with my friends and watching a movie helped me feel a bit better. Maybe you could try something simple like that with your family. It’s the little things that count, you know? Just keep your chin up, things will get better. 
+ PATIENT: Thank you. I will try to spend more time with them, even if it is only small moments. Watching something together sounds nice. Sometimes I worry that I am too slow or tired for them, but perhaps it is better to be with them, even quietly. I hope things do get better. I need to be patient with myself. 
+ PSYCHIATRIST: That’s a great way to think about it. You know, sometimes life just throws us curveballs, but if we keep looking for those little moments of joy, things tend to improve. Remember to take it easy and be kind to yourself. You’re doing better than you think. Keep your spirits up, and before you know it, you’ll be feeling stronger. Take care! 
+ PATIENT: Thank you very much for your kind words. It means a lot to me. I will try to be patient and take small steps. Sometimes it feels hard, but I want to keep trying. I appreciate you listening and helping me today. 
+ PSYCHIATRIST: Hi there! It’s good to see you today. How’s everything going with you? 
+ PATIENT: Hello. Thank you for seeing me again. I still feel very tired most days. The pain in my back is there too, making it hard to rest well. I sleep a little better sometimes, but the tiredness during the day does not go away. I try to spend time with my family, but I still feel slow and quiet. It is hard to feel strong. 
+ PSYCHIATRIST: Hey! Thanks for coming in today. You know, sometimes life just throws us these tough days, but it’s all about hanging in there. Try to think positive, like focusing on the good stuff, even if it’s small. When I was stressed last year, just reminding myself of the little wins really helped me keep going. Have you had any moments lately that felt a bit better? 
+ PATIENT: Thank you. I try to think about small good things sometimes, like when my family smiles or when the sun is shining. But even then, the tiredness is still there, like a heavy cloud. I cannot remember many days that felt better for a long time. Sometimes moments come, but they do not stay. It makes me feel sad, but I keep trying to be hopeful. 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist made no attempt to establish a collaborative agenda at any point during either session. The opening ("Hey there! How's it going today?") is informal and unstructured, lacking any discussion of session goals, target problems, time allocation, or prioritization. Throughout both sessions, the therapist responds reactively to patient statements without ever proposing a structured plan for what will be addressed or accomplished. There is no evidence of the therapist and patient working together to identify specific, measurable treatment targets (e.g., reducing fatigue, improving sleep quality, addressing feelings of worthlessness, or managing chronic pain). The sessions drift without direction—the therapist offers generic advice (positive thinking, fresh air, chamomile tea, spending time with family) without establishing why these interventions are relevant to Ka Fang's specific presentation or how they connect to a coherent treatment strategy.
+
+For a patient with Other Specified Depressive Disorder presenting with fatigue, insomnia, chronic pain, and feelings of worthlessness, a proper agenda would explicitly identify: (1) which symptoms to prioritize, (2) the rationale for CBT-based interventions, (3) how cultural factors (Hmong background, limited literacy, grief over husband's death) will be incorporated, and (4) concrete session goals. None of this occurs. The sessions lack structure entirely, making it impossible for the patient to understand what the treatment plan is or how sessions will help her achieve specific outcomes.
+
+**Summary:**
+
+No agenda was established. Sessions were entirely unstructured and reactive, with no collaborative goal-setting or prioritization of treatment targets.
+
+---
+
+### 2. Feedback
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist made minimal attempts to elicit or respond to patient feedback. The only question approximating feedback-seeking appears in the first session ("Have you ever had a time when things felt better?") and again in the second session ("Have you had any moments lately that felt a bit better?"), but these are questions about the patient's experience, not genuine feedback about the session itself or the therapist's interventions.
+
+The therapist never asks: "Does this make sense to you?" "How are you feeling about what we discussed?" "Is this helpful?" "Do you understand my reasoning?" "What are your thoughts on this approach?" "How did the suggestions I mentioned work out?" The patient explicitly states concerns ("I worry about taking too many pills," "I do not want to be a burden," "It is hard to feel strong") that should trigger feedback-seeking, but the therapist does not pause to check understanding or adjust approach based on patient input.
+
+In the second session, when the patient reports that symptoms persist despite trying the therapist's suggestions ("I still feel very tired most days," "the tiredness during the day does not go away"), the therapist does not ask what happened with previous recommendations, whether they were attempted, or why they were ineffective. This represents a critical failure to use feedback to guide treatment. The therapist also never summarizes session content or asks the patient to articulate takeaways, which is essential for ensuring comprehension and commitment.
+
+**Summary:**
+
+Minimal feedback elicitation; therapist never checked understanding of interventions, adjusted based on patient input, or verified that suggestions were attempted or helpful.
+
+---
+
+### 3. Understanding
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist demonstrates surface-level understanding of explicit statements but misses critical nuances of Ka Fang's internal experience and cultural context. The therapist accurately reflects that the patient is tired, has back pain, and feels embarrassed about inactivity ("I hear you," "That sounds really tough," "Yeah, I get that"). However, this reflects only basic listening, not genuine comprehension of the patient's "internal reality."
+
+Critical missed elements include:
+
+1. **Cultural Context**: Ka Fang is a Hmong refugee who spent nearly two decades in a Thai refugee camp, is functionally illiterate, and practices traditional shamanistic spirituality (evidenced by the white strings worn for soul-calling ceremonies). The therapist never acknowledges this background, never explores how trauma, cultural displacement, or spiritual beliefs might relate to her presentation, and never adapts language or interventions to her cultural framework.
+
+2. **Grief and Loss**: Ka Fang explicitly states her husband passed away and that she had more energy before his death. The therapist never explores this loss, its timing relative to symptom onset (11 months—potentially coinciding with the anniversary), or how grief might be contributing to her presentation. This is a profound miss.
+
+3. **Feelings of Worthlessness**: The patient repeatedly expresses shame about inactivity ("I do not feel very happy with myself because I cannot do as much as I used to," "I feel like I am not doing enough," "It makes me feel sad"). The therapist never explores the cognitions underlying this worthlessness, never asks what "doing enough" means to her, and never addresses this core depressive symptom.
+
+4. **Isolation and Burden**: Ka Fang states, "I do not want to be a burden or make them worry" and "I do not want to make others sad. It is easier to be quiet, even if it makes me feel alone sometimes." These are significant cognitive distortions and safety behaviors that warrant exploration. The therapist does not address them.
+
+5. **Somatic Symptom Dominance**: The therapist fails to recognize that in Hmong culture, depression often presents somatically (fatigue, pain, insomnia) rather than with mood complaints. Ka Fang explicitly denies depressed mood but reports these physical symptoms. The therapist treats these as separate issues rather than understanding them as culturally-congruent expressions of depression.
+
+The therapist's repeated self-disclosure ("When I was feeling down," "When I was stressed," "My cousin came over") further demonstrates misunderstanding—it centers the therapist's experience rather than deepening understanding of the patient's unique situation. This is particularly problematic with a patient from a different cultural background who may interpret such sharing as dismissive or as a failure to recognize her distinct challenges.
+
+**Summary:**
+
+Therapist reflected explicit statements but missed critical cultural context, grief, core cognitions about worthlessness, isolation, and the somatic presentation of depression in Hmong culture.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist displays surface-level warmth and friendliness ("Hey there!" "That sounds really tough," "I totally get what you mean") but demonstrates significant interpersonal problems that undermine therapeutic effectiveness, particularly with a vulnerable, culturally-distinct patient.
+
+**Problems:**
+
+1. **Inappropriate Informality and Self-Focus**: The opening ("Hey there! How's it going today?") is overly casual for a psychiatric evaluation of a 59-year-old widow with limited English proficiency and cultural differences. More critically, the therapist repeatedly centers their own experience ("When I was feeling down," "When I was stressed," "My cousin came over and we just chatted for hours"). This is self-focused rather than patient-centered and may communicate to Ka Fang that her unique struggles are not being taken seriously or that the therapist views her situation as equivalent to their own stress.
+
+2. **Dismissiveness Masked as Reassurance**: Statements like "But you know, these things happen to everyone at some point. Just hang in there, it'll get better" and "Everyone has their ups and downs" minimize Ka Fang's suffering. She is not experiencing a temporary rough patch—she has 11 months of persistent symptoms, chronic pain, grief, and cultural displacement. Normalizing her experience as universal trivializes her distress.
+
+3. **Lack of Genuine Empathy for Complexity**: The therapist offers simplistic solutions (drink water, chamomile tea, think positive, go for walks) without acknowledging the genuine barriers Ka Fang faces: chronic back pain that prevents walking, insomnia despite medication, fatigue that persists despite rest, and cultural/spiritual factors. True empathy would involve recognizing these barriers and collaboratively problem-solving rather than offering generic advice.
+
+4. **Failure to Recognize Vulnerability**: Ka Fang is a refugee, widow, functionally illiterate, and expressing feelings of worthlessness and burden. She is highly vulnerable. The therapist's tone remains upbeat and casual rather than demonstrating the seriousness and attunement appropriate to her situation.
+
+5. **Repeated Ineffective Interventions Without Adjustment**: When Ka Fang reports that suggestions haven't worked ("I drink water, but I do not think it changes much," "Even when I am outside, my body feels heavy," "I have tried some teas before, but they do not always help"), the therapist continues offering similar advice rather than expressing genuine concern about why interventions are failing or adjusting approach. This communicates that the therapist is not truly listening or invested in her specific needs.
+
+6. **Lack of Professional Boundaries Around Self-Disclosure**: While some therapist self-disclosure can build rapport, the frequency and nature here (multiple personal anecdotes about the therapist's own stress, sleep problems, and family interactions) blur boundaries and shift focus away from the patient. This is particularly problematic with a patient from a culture that may have different expectations about professional relationships.
+
+**Summary:**
+
+Therapist displayed surface warmth but undermined effectiveness through inappropriate informality, self-focused disclosure, dismissive normalization, and failure to demonstrate genuine empathy for the patient's complex, vulnerable situation.
+
+---
+
+### 5. Collaboration
+### **Score: 1/6**
+
+**Explanation:**
+
+Collaboration is nearly absent. The therapist does not invite the patient to be an active partner in treatment planning, does not solicit input on what interventions might be helpful, and does not engage in shared decision-making. Instead, the therapist adopts an expert-advice-giver stance, repeatedly telling the patient what to do: "Try thinking positive," "Maybe you just need to give yourself a break," "Have you tried drinking more water?" "Maybe you could try that too?" "You could try focusing on getting better rest," "Maybe you could try something simple like that."
+
+These are directives, not collaborative proposals. The therapist never says, "What do you think might help?" "What have you already tried?" "What feels manageable to you?" "How could we work together on this?" "What would be most helpful to focus on first?" The patient is positioned as a passive recipient of advice rather than an active agent in her own treatment.
+
+Furthermore, the therapist never explores Ka Fang's own theories about her symptoms, her cultural or spiritual beliefs about healing, or her preferences for treatment. Given that Ka Fang wears white strings from Hmong shamanistic soul-calling ceremonies, a collaborative therapist would ask about these practices, their meaning, and how they might integrate with Western psychiatric treatment. Instead, the therapist ignores this entirely.
+
+In the second session, when the patient reports that symptoms persist, the therapist does not collaboratively review what was attempted, what worked, what didn't, and what to try next. There is no sense of "we're in this together, figuring this out." The patient remains passive, and the therapist remains the expert dispensing generic advice.
+
+**Summary:**
+
+Collaboration was minimal to absent; therapist positioned as expert advice-giver rather than partner, never solicited patient input on treatment preferences, and failed to engage in shared decision-making.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 1/6**
+
+**Explanation:**
+
+The sessions lack structure and efficient pacing. The therapist allows conversations to meander without clear direction or purpose. For example, the discussion of water intake, chamomile tea, and walks in the park consumes session time without advancing understanding of the patient's core problems or establishing a coherent treatment strategy.
+
+In a structured, efficient session, the therapist would: (1) establish an agenda, (2) prioritize which symptoms to address first, (3) conduct a focused assessment of the most relevant cognitions and behaviors, (4) introduce a specific CBT intervention, (5) practice it in-session, and (6) assign homework. Instead, the sessions consist of the patient describing symptoms, the therapist offering sympathy and generic advice, and then moving to the next topic without depth or purpose.
+
+The second session is particularly problematic. The patient reports that symptoms persist despite the previous session, yet the therapist does not spend time reviewing what happened, assessing barriers to change, or adjusting the treatment approach. Instead, the therapist repeats similar advice ("Try to think positive," "Keep your spirits up"). This represents poor time management—the session does not build on previous work or move treatment forward.
+
+Additionally, the therapist's repeated personal anecdotes ("When I was feeling down," "When I was stressed," "My cousin came over") consume time that should be devoted to understanding the patient's specific situation and developing targeted interventions. These tangents are inefficient and off-topic.
+
+**Summary:**
+
+Sessions lacked structure and clear pacing; therapist allowed tangential discussions, repeated ineffective advice, and failed to build on previous session content or move treatment forward systematically.
+
+---
+
+### 7. Guided Discovery
+### **Score: 0/6**
+
+**Explanation:**
+
+Guided discovery—the cornerstone of CBT—is entirely absent. The therapist never uses Socratic questioning to help the patient reach insights independently. Instead, the therapist relies exclusively on direct advice and reassurance.
+
+Examples of what should have occurred but did not:
+
+1. **Exploring Worthlessness**: When Ka Fang states, "I do not feel very happy with myself because I cannot do as much as I used to," a Socratic approach would ask: "What does 'doing enough' mean to you?" "Where did you learn that your worth depends on how much you accomplish?" "Is it possible to have value even when you're not working?" "What would you tell a friend in your situation?" Instead, the therapist offers reassurance: "You're doing better than you think."
+
+2. **Examining Burden Beliefs**: When Ka Fang says, "I do not want to be a burden or make them worry," Socratic questioning would explore: "What makes you think you're a burden?" "Have your son or family told you this?" "What evidence do you have?" "What would they say if you asked them?" Instead, the therapist suggests: "Just having people nearby is comforting."
+
+3. **Understanding Fatigue**: Rather than asking, "What happens when you rest? Does the fatigue improve?" "What does the fatigue feel like?" "When is it worst?" "What thoughts go through your mind when you're tired?" the therapist offers surface-level sympathy and generic suggestions (drink water, get fresh air).
+
+4. **Exploring Grief**: The patient mentions her husband's death, but the therapist never asks: "How long ago did your husband pass?" "How has that affected you?" "What was your life like before?" "What do you miss most?" "How do you think about his death now?" These questions would help the patient process grief and potentially connect it to her current symptoms.
+
+5. **Assessing Cognitions**: The therapist never systematically explores automatic thoughts. For example, when the patient says, "Even when I am outside, my body feels heavy. It is frustrating because I want to do more, but I cannot. It makes me feel sad," a CBT therapist would ask: "What thoughts go through your mind when you feel that heaviness?" "What do you tell yourself about your inability to do more?" "What does that mean to you?" Instead, the therapist offers reassurance.
+
+The therapist's approach is entirely didactic—telling the patient what to do and think—rather than facilitating self-discovery. This is antithetical to CBT and particularly problematic with a patient who has limited insight and may benefit from guided exploration of her own beliefs and experiences.
+
+**Summary:**
+
+Guided discovery was completely absent; therapist relied exclusively on direct advice and reassurance rather than Socratic questioning to facilitate patient insight.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist makes no systematic attempt to identify, explore, or target the central cognitions or behaviors relevant to Ka Fang's presentation. This is a critical failure in CBT.
+
+**Key cognitions that should have been targeted but were not:**
+
+1. **"I am not doing enough" / Worthlessness**: Ka Fang repeatedly expresses feelings of worthlessness tied to perceived inactivity. This is a core depressive cognition that warrants exploration and cognitive restructuring. The therapist never addresses it.
+
+2. **"I am a burden"**: Ka Fang states, "I do not want to be a burden or make them worry" and "I do not want to make others sad." These are safety behaviors and avoidance patterns rooted in negative self-beliefs. The therapist never explores the evidence for these beliefs or helps the patient test them.
+
+3. **"Things won't get better"**: Ka Fang says, "I cannot remember many days that felt better for a long time" and "Sometimes moments come, but they do not stay." These reflect hopelessness and negative predictions about the future—core depressive cognitions. The therapist never explores or challenges these.
+
+4. **"My body doesn't listen"**: Ka Fang states, "When I rest or try to do less, I still feel tired and pain in my back. Sometimes I feel like I should do more, but my body does not listen." This reflects a disconnect between effort and outcome, potentially contributing to learned helplessness. The therapist never explores this.
+
+**Key behaviors that should have been targeted but were not:**
+
+1. **Avoidance and Withdrawal**: Ka Fang isolates herself ("I sit quietly while they work or talk," "It is easier to be quiet, even if it makes me feel alone sometimes"). This is a critical maintaining factor in depression. The therapist never develops a behavioral activation plan or explores the consequences of withdrawal.
+
+2. **Inactivity**: Ka Fang reports reduced activity due to pain and fatigue. While the therapist suggests "fresh air" and "walks," there is no systematic behavioral assessment or graded activity plan. The therapist does not ask: "What activities did you enjoy before?" "What small activities could you do despite pain?" "How would increasing activity affect your mood?"
+
+3. **Rumination**: Ka Fang's statements suggest rumination ("my mind is busy," "the tiredness is still there, like a heavy cloud"). The therapist never addresses this or introduces thought-stopping or mindfulness techniques.
+
+4. **Sleep Behavior**: Ka Fang takes clonazepam and hydrocodone for sleep but still wakes during the night due to pain and racing thoughts. The therapist suggests chamomile tea but never conducts a sleep assessment or develops sleep hygiene or cognitive strategies for nighttime rumination.
+
+Instead of targeting these central cognitions and behaviors, the therapist offers generic advice (think positive, drink water, spend time with family) that is not tailored to Ka Fang's specific presentation and does not address the maintaining factors of her depression.
+
+**Summary:**
+
+No systematic focus on key cognitions (worthlessness, burden beliefs, hopelessness) or behaviors (avoidance, inactivity, rumination); therapist offered generic advice unrelated to core depressive processes.
+
+---
+
+### 9. Strategy for Change
+### **Score: 0/6**
+
+**Explanation:**
+
+There is no coherent strategy for change. The therapist has not developed a conceptualization of Ka Fang's depression or a logical plan for how treatment will lead to symptom improvement.
+
+**What a coherent CBT strategy would include:**
+
+1. **Conceptualization**: Understanding how Ka Fang's cognitions (worthlessness, burden beliefs, hopelessness), behaviors (avoidance, inactivity, isolation), and environmental factors (grief, cultural displacement, chronic pain, limited social engagement) interact to maintain her depression.
+
+2. **Prioritization**: Identifying which symptoms to target first (e.g., behavioral activation to address fatigue and inactivity, cognitive work on worthlessness, grief processing).
+
+3. **Logical Progression**: A plan for how early interventions will build toward later ones (e.g., behavioral activation → improved mood → cognitive work on worthlessness → reduced isolation).
+
+4. **Rationale**: Explaining to the patient why specific interventions are chosen and how they connect to her goals.
+
+**What actually occurs:**
+
+The therapist offers disconnected, generic suggestions: think positive, drink water, get fresh air, drink chamomile tea, spend time with family, watch movies. These are not connected to a coherent theory of change. The therapist never explains: "We're going to work on increasing your activity because research shows that activity improves mood," or "We're going to examine your thoughts about being a burden because these thoughts may be keeping you isolated," or "We're going to process your grief because loss can contribute to depression."
+
+In the second session, when symptoms persist, the therapist does not revise the strategy or acknowledge that the previous approach was ineffective. Instead, the therapist repeats similar advice. This suggests no underlying strategy—just reactive, generic suggestions.
+
+Furthermore, the strategy does not account for Ka Fang's cultural context, her limited literacy, her chronic pain, or her spiritual beliefs. A culturally-informed CBT strategy would integrate these factors rather than ignoring them.
+
+**Summary:**
+
+No coherent strategy for change; therapist offered disconnected, generic suggestions without conceptualization, prioritization, or logical progression toward goals.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 0/6**
+
+**Explanation:**
+
+No specific CBT techniques are applied. The therapist does not use any of the core interventions that define cognitive-behavioral therapy.
+
+**CBT techniques that should have been used but were not:**
+
+1. **Cognitive Restructuring / Thought Records**: The therapist never helps Ka Fang identify automatic thoughts, examine evidence for and against them, or develop alternative thoughts. For example, when Ka Fang expresses worthlessness, the therapist could introduce a thought record to examine: "I am not doing enough" → What evidence supports this? What evidence contradicts it? What would be a more balanced thought?
+
+2. **Behavioral Activation**: The therapist suggests "fresh air" and "walks" but never conducts a systematic behavioral activation plan. A proper intervention would: (a) assess current activity level, (b) identify valued activities, (c) schedule graded increases in activity, (d) monitor mood changes, (e) problem-solve barriers. None of this occurs.
+
+3. **Behavioral Experiments**: The therapist never proposes experiments to test beliefs. For example: "You believe you're a burden to your family. What if we asked them directly? What would they say?" or "You believe activity won't help. What if we tried a small activity and tracked your mood?"
+
+4. **Exposure / Graded Exposure**: Ka Fang is isolating due to beliefs about being a burden. Exposure (gradually increasing social engagement) could be used, but the therapist never structures this systematically.
+
+5. **Problem-Solving**: When Ka Fang reports barriers (pain prevents walking, insomnia despite medication, fatigue despite rest), the therapist never engages in collaborative problem-solving to address these barriers.
+
+6. **Sleep Hygiene / Sleep Restriction**: Ka Fang has insomnia. While the therapist suggests chamomile tea, there is no systematic sleep intervention (sleep hygiene, stimulus control, sleep restriction, cognitive work on nighttime rumination).
+
+7. **Activity Scheduling**: No structured activity schedule is created.
+
+8. **Thought Records / Monitoring**: No systematic monitoring of thoughts, behaviors, or mood is introduced.
+
+9. **Psychoeducation about Depression**: The therapist never explains the cognitive model, the relationship between thoughts/behaviors/mood, or how CBT works. This is particularly important for a patient with limited insight.
+
+10. **Grief Work / Meaning-Making**: While not strictly a "CBT technique," processing grief and exploring meaning is relevant to Ka Fang's presentation. The therapist never addresses this.
+
+The therapist's interventions are generic life advice (think positive, spend time with family, drink water) rather than evidence-based CBT techniques. This represents a fundamental failure to apply the therapeutic modality.
+
+**Summary:**
+
+No CBT techniques were applied; therapist offered generic life advice rather than cognitive restructuring, behavioral activation, behavioral experiments, or other evidence-based interventions.
+
+---
+
+### 11. Homework
+### **Score: 0/6**
+
+**Explanation:**
+
+No homework is assigned. The therapist makes no attempt to structure between-session work or to extend treatment beyond the session.
+
+**What should have occurred:**
+
+1. **Behavioral Activation Homework**: "This week, I'd like you to track your daily activities and mood. Let's identify one small activity you could do each day—even 10 minutes—and see how it affects your energy."
+
+2. **Thought Record Homework**: "When you notice the thought 'I'm not doing enough,' write it down. What evidence supports it? What evidence contradicts it? What's a more balanced way to think about it?"
+
+3. **Behavioral Experiment Homework**: "This week, I'd like you to ask your son or daughter one question: 'Do you think I'm a burden to you?' and write down what they say. We'll discuss it next session."
+
+4. **Activity Monitoring**: "Keep a simple log of what you do each day and how you feel. This will help us understand the connection between activity and mood."
+
+5. **Sleep Monitoring**: "Track your sleep—when you go to bed, when you wake up, how you feel. Also notice what thoughts go through your mind when you can't sleep."
+
+6. **Grief Reflection**: "Think about a favorite memory with your husband. Write it down or tell your son about it. We'll talk about it next session."
+
+Instead, the therapist offers vague suggestions ("Try to spend more time with them," "Keep your spirits up") without assigning specific, structured homework. There is no rationale provided, no clarity about what the patient should do, and no plan to review homework in the next session.
+
+In the second session, the therapist does not ask, "Did you try any of the things we discussed?" or "How did the suggestions work out?" This indicates that homework was never intended to be a structured part of treatment.
+
+**Summary:**
+
+No homework was assigned; therapist made no attempt to structure between-session work or extend treatment beyond sessions.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- Therapist displayed basic warmth and did not behave in a hostile or demeaning manner
+- Therapist allowed patient to speak and did not interrupt excessively
+- Therapist acknowledged patient's statements with simple reflections ("I hear you," "That sounds tough")
+- Therapist maintained a non-judgmental tone
+
+### Critical Deficiencies:
+
+**Structural and Strategic Failures:**
+- No agenda established; sessions entirely unstructured and reactive
+- No coherent treatment strategy or conceptualization of the patient's depression
+- No systematic assessment of cognitions, behaviors, or maintaining factors
+- No integration of cultural context, grief, or spiritual beliefs
+
+**CBT-Specific Failures:**
+- Zero application of evidence-based CBT techniques (no cognitive restructuring, behavioral activation, thought records, behavioral experiments, etc.)
+- No guided discovery or Socratic questioning; therapist relied entirely on direct advice
+- No homework assigned or reviewed
+- No focus on key cognitions (worthlessness, burden beliefs, hopelessness) or behaviors (avoidance, inactivity, isolation)
+
+**Therapeutic Process Failures:**
+- Minimal feedback elicitation; therapist never checked understanding or adjusted based on patient input
+- Minimal collaboration; therapist positioned as expert advice-giver rather than partner
+- Repeated ineffective interventions without adjustment when patient reported they didn't work
+- Inappropriate self-disclosure that centered therapist's experience rather than patient's needs
+- Dismissive normalization ("Everyone goes through rough patches") that minimized patient's suffering
+
+**Cultural and Clinical Sensitivity Failures:**
+- Complete failure to acknowledge or integrate Hmong cultural background, refugee trauma, or spiritual practices
+- No exploration of grief related to husband's death
+- No recognition that somatic symptoms (fatigue, pain, insomnia) are culturally-congruent expressions of depression in Hmong populations
+- No adaptation of language, pace, or approach for a patient with limited English proficiency and functional illiteracy
+- Repeated generic advice (drink water, chamomile tea) that ignored patient's stated barriers and complexity
+
+---
+
+## Summary of Feedback
+
+### Strengths
+
+The therapist demonstrated basic interpersonal warmth and did not behave in a hostile, demeaning, or destructive manner. The therapist allowed the patient to speak, acknowledged her statements, and maintained a non-judgmental tone. These are foundational skills that prevent harm, but they are insufficient for effective treatment.
+
+### Critical Deficiencies
+
+This session represents a fundamental failure to deliver evidence-based cognitive-behavioral therapy. The therapist did not establish an agenda, did not develop a coherent treatment strategy, did not apply any specific CBT techniques, and did not assign homework. Instead, the therapist offered generic life advice (think positive, drink water, get fresh air, spend time with family) that is disconnected from any theoretical framework and that the patient explicitly reported was ineffective.
+
+More critically, the therapist failed to recognize or address the core maintaining factors of Ka Fang's depression: her beliefs about worthlessness and being a burden, her avoidance and isolation, her unprocessed grief, and her somatic symptom presentation. The therapist also completely failed to integrate Ka Fang's cultural context—her Hmong background, refugee trauma, limited literacy, spiritual practices, and the cultural expression of depression through somatic symptoms rather than mood complaints.
+
+The therapist's repeated self-disclosure ("When I was feeling down," "My cousin came over") centered the therapist's experience rather than deepening understanding of the patient's unique situation. When the patient reported that suggestions were ineffective ("I drink water, but I do not think it changes much," "I have tried some teas before, but they do not always help"), the therapist did not adjust approach or explore barriers—instead, the therapist repeated similar advice in the second session, suggesting no underlying strategy or responsiveness to patient feedback.
+
+### Impact on Patient Care
+
+This approach is unlikely to produce therapeutic change and may actually harm the patient. Ka Fang will leave treatment without understanding what depression is, how it develops, or how to change it. She will not have learned any skills to challenge her thoughts about worthlessness or burden, to increase her activity despite pain, or to process her grief. She will not have a structured plan for between-session work. Most importantly, she will have received the message that her complex, culturally-embedded suffering can be addressed with generic advice and positive thinking—a message that, when it fails (as it will), may reinforce her hopelessness and beliefs about being unable to change.
+
+For a vulnerable patient with limited insight, cultural displacement, grief, and somatic depression, this represents a missed opportunity for meaningful intervention and a potential reinforcement of her belief that nothing will help.
+
+---
+
+## Recommendations
+
+### 1. **Establish a Structured, Collaborative Agenda (HIGHEST PRIORITY)**
+
+**Action:** At the beginning of the next session, explicitly establish a collaborative agenda with the patient. Identify 2-3 specific, measurable treatment goals. Explain the rationale for CBT and how it will help address her symptoms.
+
+**Example:**
+"Ka Fang, I want to make sure we're working on what's most important to you. I've noticed you mentioned three main things: (1) feeling very tired during the day, (2) difficulty sleeping well, and (3) feeling like you're not doing enough and feeling embarrassed about that. These are all things we can work on together. In CBT, we look at how our thoughts, feelings, and behaviors are connected. For example, when we feel tired and think 'I'm not doing enough,' we might avoid activities, which can actually make us feel more tired and sad. Does this make sense? Which of these three would you like to focus on first?"
+
+**Practice:** 
+- Write out a sample agenda for Ka Fang before each session
+- Practice saying it aloud to ensure clarity and appropriate pacing
+- Role-play with a supervisor, receiving feedback on collaborative language
+- Review agenda-setting in CBT training materials (e.g., Cognitive Therapy Rating Scale guidelines)
+
+---
+
+### 2. **Conduct a Systematic Assessment of Cognitions, Behaviors, and Maintaining Factors**
+
+**Action:** Use guided discovery to identify the automatic thoughts, beliefs, and behaviors maintaining Ka Fang's depression. Create a cognitive-behavioral case conceptualization.
+
+**Example:**
+"Ka Fang, I want to understand more about what happens when you feel tired. When you wake up tired, what thoughts go through your mind? What do you tell yourself?" [Listen for: "I can't do anything," "I'm useless," "Nothing will help."]
+
+"And when you have those thoughts, what do you do? Do you try to do things, or do you rest?" [Listen for: avoidance, inactivity, isolation.]
+
+"And when you rest or stay quiet, how does that affect your mood? Does it help, or does it make things worse?"
+
+**Practice:**
+- Study the cognitive model and how to apply it to specific presentations
+- Practice Socratic questioning with role-plays
+- Develop a written case conceptualization for Ka Fang that identifies: (a) precipitating factors (husband's death, chronic pain), (b) maintaining cognitions (worthlessness, burden beliefs), (c) maintaining behaviors (avoidance, inactivity, isolation), (d) environmental factors (grief, cultural displacement, limited social engagement)
+
+---
+
+### 3. **Integrate Cultural Context and Grief Processing**
+
+**Action:** Explicitly acknowledge and explore Ka Fang's Hmong background, refugee history, spiritual practices, and grief. Adapt interventions to be culturally congruent.
+
+**Example:**
+"Ka Fang, I notice you wear white strings on your wrists. I know this is part of Hmong spiritual practice. Can you tell me about this? What does it mean to you?" [Listen and validate.]
+
+"I also know that your husband passed away about a year ago. That's around the time your tiredness started. Can you tell me about him? What was he like? What do you miss most?" [Explore grief and its connection to symptoms.]
+
+"In Hmong culture, I know that sadness and grief sometimes show up as tiredness and body pain rather than as sadness in the mood. Is that true for you?"
+
+**Practice:**
+- Consult cultural competency resources on Hmong mental health and trauma
+- Learn about refugee trauma and its long-term effects
+- Explore how somatic symptoms express depression in non-Western cultures
+- Practice asking open-ended questions about cultural beliefs and spiritual practices
+- Develop culturally-adapted interventions (e.g., incorporating spiritual practices into treatment, involving family in culturally-appropriate ways)
+
+---
+
+### 4. **Apply Behavioral Activation Systematically**
+
+**Action:** Develop a structured behavioral activation plan. Identify valued activities, assess current activity level, and schedule graded increases in activity. Monitor mood changes.
+
+**Example:**
+"Ka Fang, before your husband passed away, what activities did you enjoy? What did you do on the farm? What made you feel good?" [Identify valued activities.]
+
+"Now, because of your pain and tiredness, you're doing less. I understand that. But research shows that when we do less, we often feel more tired and sad. So I want to try something: this week, I'd like you to do one small activity each day—even just 10 minutes. It could be something simple, like sitting with your son while he works, or helping with a small task on the farm, or taking a short walk. And I want you to notice: after you do this activity, how do you feel? Does your energy change? Does your mood change?"
+
+**Practice:**
+- Study behavioral activation protocols for depression
+- Practice identifying valued activities and breaking them into small, manageable steps
+- Develop activity schedules for Ka Fang that account for her pain and fatigue
+- Learn to troubleshoot barriers (pain, fatigue, beliefs about burden) collaboratively
+
+---
+
+### 5. **Use Guided Discovery to Challenge Core Cognitions**
+
+**Action:** Use Socratic questioning to help Ka Fang examine and challenge her thoughts about worthlessness and being a burden. Do not tell her what to think; help her discover alternative perspectives.
+
+**Example:**
+"Ka Fang, you mentioned feeling embarrassed because you can't do as much as you used to. What does 'doing enough' mean to you? Where did you learn that your worth depends on how much you work?" [Listen.]
+
+"Is it possible to have value as a person even when you're not working? What would you tell your grandchild if they were sick and couldn't work—would you think they were worthless?" [Guide toward alternative perspective.]
+
+"You also said you don't want to be a burden to your son. What makes you think you're a burden? Has he told you that?" [Examine evidence.]
+
+"What do you think he would say if you asked him directly: 'Am I a burden to you?'" [Propose behavioral experiment.]
+
+**Practice:**
+- Study Socratic questioning techniques
+- Practice asking open-ended questions rather than leading questions
+- Role-play challenging cognitions with a supervisor
+- Learn to avoid debate or persuasion; focus on guided discovery
+
+---
+
+### 6. **Introduce Thought Records and Cognitive Restructuring**
+
+**Action:** Teach Ka Fang to identify automatic thoughts, examine evidence, and develop alternative thoughts. Use written thought records adapted for her literacy level (simple language, visual aids if needed).
+
+**Example:**
+"When you notice a thought like 'I'm not doing enough,' I want you to write it down. Then ask yourself: What evidence do I have that this is true? What evidence do I have that this might not be completely true? What's a more balanced way to think about this?"
+
+[Create a simple thought record with pictures/symbols if needed, given her limited literacy.]
+
+**Practice:**
+- Develop simplified thought records appropriate for Ka Fang's literacy level
+- Practice introducing thought records in session and completing one together
+- Learn to adapt cognitive interventions for patients with limited education
+
+---
+
+### 7. **Assign Specific, Structured Homework with Clear Rationale**
+
+**Action:** At the end of each session, assign 1-2 specific homework tasks. Explain the rationale, ensure understanding, and plan to review in the next session.
+
+**Example:**
+"Ka Fang, I want to give you something to do this week. It's called an activity log. Each day, I want you to write down [or have your son write down] what you do and how you feel. For example: 'Monday: I sat with my son while he worked for 20 minutes. After, I felt a little less tired.' This will help us understand the connection between activity and how you feel. Can you do this? Do you have any questions?"
+
+**Practice:**
+- Study homework assignment guidelines in CBT manuals
+- Practice explaining homework rationale in simple, clear language
+- Develop homework assignments tailored to Ka Fang's literacy level and cultural context
+- Plan to review homework at the start of each session
+
+---
+
+### 8. **Elicit and Respond to Patient Feedback Throughout Sessions**
+
+**Action:** Regularly check for understanding, ask for reactions to interventions, and adjust based on feedback. Never assume the patient understands or agrees.
+
+**Example:**
+"Does this make sense to you?" [Pause for response.]
+
+"How are you feeling about this idea?" [Listen.]
+
+"Last week I suggested you try fresh air and walks. Did you try that? What happened? Did it help?" [Listen to barriers and adjust.]
+
+"Is there anything I said today that didn't make sense or that you disagree with?" [Invite feedback.]
+
+**Practice:**
+- Set a goal to ask for feedback at least 3 times per session
+- Practice pausing and waiting for patient response rather than filling silence
+- Learn to adjust interventions based on feedback
+- Role-play with supervisor, receiving feedback on feedback-seeking
+
+---
+
+### 9. **Avoid Inappropriate Self-Disclosure; Center the Patient's Experience**
+
+**Action:** Eliminate personal anecdotes about your own stress, sleep problems, or family experiences. Instead, use empathic reflection and validation focused on the patient's unique situation.
+
+**Example:**
+
+**Instead of:** "When I was feeling down, I found that just thinking positive helped me keep going."
+
+**Say:** "I can see how hard this is for you. You're dealing with pain, tiredness, grief over your husband, and feeling like you're not doing enough. That's a lot. Let's work together to understand what's keeping these feelings going and what we can do about it."
+
+**Practice:**
+- Review guidelines on appropriate therapist self-disclosure
+- Practice empathic reflection without centering yourself
+- Role-play with supervisor, receiving feedback on self-disclosure
+- Develop a list of validating statements that do not include personal anecdotes
+
+---
+
+### 10. **Develop a Coherent Treatment Strategy and Communicate It to the Patient**
+
+**Action:** Create a written case conceptualization and treatment plan. Explain to Ka Fang how the interventions you're using connect to her goals and how they will help her improve.
+
+**Example:**
+"Ka Fang, here's what I understand: You're tired and in pain, and you're thinking 'I'm not doing enough,' which makes you feel sad and embarrassed. So you do less, which makes you feel more tired and sad. It's a cycle. We're going to break this cycle by: (1) gradually increasing your activity, even though it's hard, (2) examining these thoughts about not doing enough, and (3) helping you reconnect with your family and the things that matter to you. This will take time, but research shows that this approach helps people feel better. Does this make sense?"
+
+**Practice:**
+- Study case conceptualization frameworks in CBT manuals
+- Develop a written conceptualization for Ka Fang
+- Practice explaining the treatment strategy in simple, clear language
+- Learn to connect specific interventions to the overall strategy
+
+---
+
+### 11. **Conduct Systematic Assessment of Sleep and Introduce Sleep-Specific Interventions**
+
+**Action:** Assess Ka Fang's sleep in detail (bedtime, wake time, nighttime awakenings, thoughts during night, pain patterns). Introduce evidence-based sleep interventions (sleep hygiene, stimulus control, cognitive work on nighttime rumination).
+
+**Example:**
+"Ka Fang, let's talk more about your sleep. What time do you go to bed? What time do you wake up? How many times do you wake during the night? When you wake up, what's happening? Is it pain? Are you thinking about things? What thoughts go through your mind?"
+
+[Based on assessment, introduce interventions:]
+
+"I want to try something. When you wake up at night and your mind is busy, instead of lying there thinking, try getting up and doing something quiet—like sitting with a cup of tea or looking out the window. Then go back to bed when you feel sleepy. This helps your brain learn that bed is for sleeping, not for thinking."
+
+**Practice:**
+- Study sleep assessment and sleep-specific CBT interventions
+- Develop a sleep assessment protocol for Ka Fang
+- Learn to introduce sleep interventions in culturally-appropriate ways
+
+---
+
+### 12. **Receive Supervision and Training in CBT and Cultural Competency**
+
+**Action:** Engage in regular supervision with a CBT-trained supervisor. Seek training in cultural competency, particularly regarding Hmong mental health, refugee trauma, and somatic presentations of depression.
+
+**Practice:**
+- Attend CBT training workshops or courses
+- Seek weekly supervision with a CBT expert
+- Review recordings of sessions with supervisor, receiving feedback on agenda-setting, guided discovery, technique application, and cultural sensitivity
+- Read literature on Hmong mental health, refugee trauma, and cultural psychiatry
+- Consult with cultural brokers or Hmong community members to deepen understanding
+
+---
+
+## Overall Session Score: 0.8/6
+
+**Summary:**
+
+This session represents a fundamental failure to deliver evidence-based cognitive-behavioral therapy. The therapist scored 0/6 on five of eleven criteria (Agenda, Guided Discovery, Focusing on Key Cognitions/Behaviors, Strategy for Change, Application of CBT Techniques, and Homework), indicating complete absence of these essential CBT components. The therapist scored 1-2/6 on most other criteria, indicating minimal or inadequate performance.
+
+The therapist demonstrated basic warmth and did not behave destructively, but these foundational skills are insufficient for effective treatment. The session consisted entirely of generic life advice (think positive, drink water, get fresh air, spend time with family) disconnected from any theoretical framework or systematic assessment of the patient's problems. When the patient explicitly reported that these suggestions were ineffective, the therapist did not adjust approach or explore barriers—instead, the therapist repeated similar advice in the second session.
+
+Most critically, the therapist failed to recognize or address the core maintaining factors of Ka Fang's depression (worthlessness, burden beliefs, avoidance, isolation, unprocessed grief) and completely failed to integrate her cultural context (Hmong background, refugee trauma, limited literacy, spiritual practices, somatic symptom presentation). This represents not only a failure to deliver CBT but also a failure of cultural competency that may harm the patient by dismissing her unique, complex situation as equivalent to universal stress.
+
+**This session does not qualify as evidence-based CBT and is unlikely to produce therapeutic change. Immediate, intensive training and supervision are required before this therapist should continue treating patients.**

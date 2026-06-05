@@ -1,0 +1,762 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Obstructive Sleep Apnea Hypopnea (OSAH)
+
+--- CASE STUDY ---
+
+César Linares was a 57-year-old married Hispanic man who presented for reevaluation of his antidepressant medication. He described several years of worsening fatigue, daytime sleepiness, and generally "not feeling good." He lacked energy for usual activities but still enjoyed them when participating. He experienced difficulty focusing at work as an information technology consultant and worried about job loss. He had been on an SSRI antidepressant for 6 months with some symptom improvement and reported adherence.
+
+He denied recent stressors. His medical history included depression, hypertension, diabetes, and coronary artery disease. He complained of heartburn and erectile dysfunction, which had not been evaluated. He was born in Venezuela, had two grown children, did not smoke or drink alcohol, but consumed several servings of coffee daily for alertness.
+
+On physical examination, he was 5'10", weighed 235 lbs (BMI 34), neck circumference 20 inches, respiratory rate 15, blood pressure 155/90. No other abnormalities were noted.
+
+Mental status: cooperative, appeared tired, no depression, anxiety, psychosis, or cognitive decline. Focused questioning revealed trouble staying awake at work and occasional nodding off while driving. Slept 8–10 hours nightly with frequent awakenings, nocturia, waking with choking sensation or headaches. Snored loudly since childhood; wife reported intermittent breathing pauses.
+
+Sleep studies (polysomnography) results: apnea hypopnea index 25 events/hour, oxygen desaturation index 20 events/hour, nadir O₂ saturation 82%, 10% of time <90%, arousal index 35 events/hour. Sleep stages: N1 20%, N2 65%, N3 5%, REM 10%. Findings consistent with obstructive sleep apnea hypopnea.
+
+--- BEHAVIOUR ---
+- Cooperative
+- Appears tired and fatigued
+- Alert, coherent, and oriented
+- No signs of depression, anxiety, or psychosis
+- Engaged and responsive during interview
+
+--- SYMPTOMS from DSM-5 ---
+- Excessive daytime sleepiness
+- Fatigue
+- Snoring
+- Breathing pauses during sleep
+- Nonrestorative sleep
+- Morning headaches
+- Nocturia
+- Impaired occupational functioning
+
+--- PATIENT PROFILE ---
+Name: César Linares
+Sex: Male
+Age: 57 years
+DOB: June 22, 1966
+Place of Birth: Caracas, Venezuela
+Address: 789 Elmwood Drive, Miami, FL
+Contact: (555) 234-5678
+Marital Status: Married
+Children: Two adult children
+Occupation: Information Technology Consultant
+Education: College degree in Computer Science
+Religion: Catholic
+Legal Guardian: Self
+Presenting Complaint: Fatigue, excessive sleepiness
+Psychiatric History: Depression, on SSRI
+Psychotherapy: None currently
+Medications: SSRI antidepressant
+Substance Use: None; several cups of coffee daily
+Medical History: Hypertension, diabetes, coronary artery disease, heartburn, erectile dysfunction
+Neurology: Normal
+Family History: Male relatives snore
+Mental Status: Cooperative, tired, alert, no mood or psychotic symptoms, coherent, oriented
+
+--- DIAGNOSIS ---
+Obstructive Sleep Apnea Hypopnea (OSAH)
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+César Linares is a 57-year-old Hispanic male presenting to the outpatient clinic for reevaluation of his antidepressant medication, brought in by self-referral due to concerns about persistent fatigue and excessive daytime sleepiness. He has a medical history significant for depression, hypertension, diabetes, and coronary artery disease.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hey there! Good to see you today. How’s your day been so far? 
+ PATIENT: Hi, thanks for seeing me today. Honestly, it’s been a bit rough. I’m feeling pretty tired, like I didn’t really get good rest last night. My energy is low and I’ve been struggling to stay focused at work. It’s frustrating because I want to do well, but my body just doesn’t seem to cooperate. How about you? 
+ PSYCHIATRIST: Hey, I get that. You know, sometimes life just throws those tired days at us, and it feels like an uphill battle. But hey, it’ll get better, right? Just try to think positive. When I’m wiped out, I remind myself that tomorrow’s a fresh start. You ever have one of those days where you just want to crawl back into bed and forget the world? I sure do. Anyway, did you catch that new show everyone’s talking about? It’s a nice distraction from all the stress. 
+ PATIENT: Yeah, I definitely know those days where I just want to hide under the covers and disconnect. Most days feel like that these days, to be honest. Getting through work is tough when I’m so sleepy and drained all the time. I haven’t really been keeping up with TV much lately—when I get home, I usually just crash. I guess I try to distract myself, but it’s hard when I’m so exhausted. Sometimes I worry that I’m letting things slide or that people might think I’m not keeping up. It’s frustrating because I want to be my usual self, but this fatigue gets in the way. 
+ PSYCHIATRIST: Oh man, I totally get that feeling of being wiped out and not quite yourself. You know, I once had a week where I was so tired I could barely keep my eyes open during class. I just kept telling myself, “It’s just a phase, it’ll pass.” And you know what? It did. Sometimes you just gotta hang in there and trust that things will turn around. Hey, have you tried just taking a little break or doing something fun to shake off the tiredness? Like maybe a walk or watching a funny video? That always cheers me up. 
+ PATIENT: I try to take breaks when I can, but sometimes even that feels like too much. Like, when I walk around or do something light, I end up feeling more out of breath or drained. And with how my nights have been, I’m not sure if a little distraction really helps long-term. I do like the idea of watching something funny though—laughing does help, even if just for a few minutes. But honestly, some days it feels like nothing really shakes off this tiredness. It’s more constant now, like a background that never quite goes away. I worry about how this is going to affect my work or my family, you know? I don’t want to be like this forever. 
+ PSYCHIATRIST: Yeah, I totally hear you. Life can be so tough sometimes, but you know what they say, “This too shall pass.” Just try to keep your head up and think positive. Drinking plenty of water and getting some sleep always helps me feel better. Maybe you could try that? Sometimes the simplest things make the biggest difference. Oh, and don’t forget to smile! It sounds cheesy, but smiling can actually lift your mood. Have you smiled today? 
+ PATIENT: I get what you mean about the little things sometimes helping. I do try to drink water, though some days I forget with how tired I feel. Sleep is harder for me—it doesn’t always feel restful even when I spend a lot of time in bed. I wake up several times and sometimes feel like I’m choking, which is really unsettling. As for smiling, I guess I haven't really felt much like smiling today. It’s tough to feel cheerful when I’m this worn out all the time. I want to find ways to feel better, but I just don’t know what’s wrong with me, you know? It’s like I’m stuck in this tired fog and I can’t shake it. 
+ PSYCHIATRIST: Hey, I totally get that feeling of being stuck in a fog. You know, sometimes when I feel down or tired, I just remind myself that everyone goes through rough patches. It’s part of life, and it doesn’t last forever. One time, I was feeling so drained that I just took a whole day off to binge-watch old movies and eat ice cream. It didn’t fix everything, but it helped me feel a bit more human again. Maybe you could try something like that? Just a little treat for yourself. What do you think? 
+ PATIENT: That actually sounds nice—taking a day just to rest and do things I enjoy without worrying about work or other responsibilities. I haven’t really allowed myself to do that lately because I feel like I have too much to catch up on or that I should be pushing through the tiredness. But maybe I do need to be kinder to myself and take a break. It’s just hard to switch off sometimes, especially when my mind keeps racing with worries about work and not being productive. But I think something like a day of rest could help, even if just a little. Thanks for suggesting that. 
+ PSYCHIATRIST: Yeah, sometimes we all need that kind of downtime to recharge. I remember one weekend I just turned off my phone and went hiking with some friends. It was great to get out in nature and forget about all the stress for a bit. Maybe you could find something like that that helps you disconnect too. Just remember, it’s okay to take time for yourself. Life can be overwhelming, but little breaks like that can make a big difference. Just keep your chin up and try to focus on the good things, even if they seem small. You’ll get through this! 
+ PATIENT: That sounds really nice, being outdoors and away from everything for a while. I think I used to enjoy walks or being outside more before this tiredness set in. Lately, even getting up and moving feels like a big effort. But maybe if I start small, like just a short walk around the block, it could help. I do miss feeling more energetic and clear-headed. It’s hard to remember the good things when I’m so exhausted, but I want to try. I really appreciate your encouragement—it helps to hear that this can get better and that it’s okay to take time for myself. I’ll try to keep that in mind. 
+ PSYCHIATRIST: Hey, it’s really good to hear you’re thinking about taking those little steps. Sometimes just a short walk can make a big difference, you know? I remember when I started trying to be more active, even a few minutes outside lifted my mood a lot. Just keep at it and try to think positive. You got this! And hey, don’t forget to drink plenty of water and get some rest too. Those basics really do help more than we think. So, what’s something fun you might want to do this week? 
+ PATIENT: Hmm, something fun this week... I think I might try that short walk around my neighborhood like we talked about. Maybe in the evening when it’s cooler. I used to enjoy taking photos when I was out, so maybe I could bring my phone and try to capture some interesting things around. It’s been a while since I did something like that, and it might help me notice things other than just how tired I feel. I’m hoping it can be a small, enjoyable break from all the stress. It feels manageable, and maybe it’ll lift my spirits a bit. 
+ PSYCHIATRIST: That sounds like a great idea! Taking photos while you walk could be a nice way to keep your mind off the tiredness and focus on something positive. Sometimes just a little change in routine can make a big difference. Keep at it, and remember, it’ll get better with time. Just keep thinking positive and taking care of yourself. You’re doing great! 
+ PATIENT: Thanks, I really appreciate that. It means a lot to hear some encouragement. I’m going to try to stick with that walk and photo idea this week and see how it feels. It’s nice to have something small to look forward to. I hope that with time, I can start feeling more like myself again. Thanks for listening and supporting me today. 
+ PSYCHIATRIST: Alright, I’m glad we had this chat. Just remember, things will get better, so keep your head up and stay positive. You’ve got this! Take care and see you next time! 
+ PATIENT: Thank you. I’ll do my best to keep going and take care of myself. I appreciate your support. See you next time. Take care. 
+ PSYCHIATRIST: Hey there! Good to see you today. How’s your day been so far? 
+ PATIENT: Hi, thanks for having me. To be honest, I’m feeling pretty tired today. It feels like no matter how much I sleep, I still wake up exhausted. My energy is really low, and it’s been hard to focus on things at work. It’s been frustrating because I want to do my job well, but this tiredness just keeps getting in the way. How about you? 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 0/6**
+
+**Explanation:**
+
+No agenda was established at any point during this session. The therapist did not collaboratively identify target problems, prioritize concerns, or establish time-bound goals with the patient. The session lacked structure entirely—there was no discussion of what César wanted to accomplish during the appointment, what specific problems would be addressed, or how time would be allocated.
+
+This is particularly problematic given César's complex presentation: he presented with fatigue, excessive daytime sleepiness, occupational impairment, sleep disturbances (frequent awakenings, choking sensations, morning headaches), and significant medical comorbidities (hypertension, diabetes, coronary artery disease). A structured agenda would have prioritized the most pressing concerns and guided the session toward diagnostic clarity and treatment planning.
+
+The absence of agenda-setting represents a fundamental failure in CBT structure. Without an explicit agenda, the session drifted aimlessly through general encouragement and personal anecdotes rather than systematically addressing César's presenting problems.
+
+**Summary:**
+
+No agenda was established. The session lacked any collaborative goal-setting, prioritization of problems, or structured framework for the appointment.
+
+---
+
+### 2. Feedback
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist made minimal attempt to elicit feedback from César about the session's helpfulness, his understanding of the therapist's reasoning, or his reactions to suggestions. There was one implicit moment where the therapist asked "What do you think?" regarding taking a day off for self-care, but this was not systematic feedback-seeking about the session itself.
+
+The therapist never checked whether César understood the rationale behind suggestions, never asked if the recommendations felt relevant or feasible, and never solicited César's input on whether the session was addressing his actual concerns. Most critically, the therapist never circled back to verify that César understood why certain interventions were being suggested or whether they aligned with his goals.
+
+At the end of the session, there was no summary of key points, no check for understanding, and no elicitation of César's takeaways. The therapist simply said "things will get better" and ended the session without any structured feedback process.
+
+**Summary:**
+
+Minimal feedback elicitation. The therapist did not systematically check understanding, verify relevance of suggestions, or solicit César's reactions to the session content.
+
+---
+
+### 3. Understanding
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist demonstrated surface-level empathy but fundamentally failed to understand César's actual clinical presentation. The therapist acknowledged César's fatigue and frustration ("I totally get that feeling of being stuck in a fog"), which shows basic listening. However, the therapist missed critical clinical information that César explicitly provided.
+
+César reported: (1) waking with choking sensations, (2) frequent nighttime awakenings, (3) nocturia, (4) morning headaches, (5) feeling out of breath with light activity, (6) nonrestorative sleep despite 8-10 hours in bed, and (7) occupational impairment with concerns about job loss. These are classic signs of obstructive sleep apnea, yet the therapist never explored these symptoms, never asked clarifying questions, and never recognized the pattern.
+
+Instead, the therapist repeatedly offered generic advice (drink water, smile, think positive, take breaks) that fundamentally misunderstood the nature of César's problem. The therapist treated this as a mood/motivation issue amenable to behavioral activation and positive thinking, when the clinical presentation strongly suggests a medical sleep disorder requiring diagnostic evaluation and medical intervention.
+
+The therapist's repeated personal anecdotes ("I once had a week where I was so tired...") and self-disclosure ("One time, I was feeling so drained...") further demonstrate a failure to center César's experience. The therapist made this about their own experiences rather than deeply understanding César's specific suffering.
+
+**Summary:**
+
+Surface-level empathy with fundamental misunderstanding of César's clinical presentation. The therapist failed to recognize or explore critical symptoms suggesting a medical sleep disorder.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist displayed warmth and friendliness but demonstrated significant interpersonal problems that undermine therapeutic effectiveness. The tone was overly casual and self-focused, with excessive personal disclosure that violated appropriate professional boundaries.
+
+The therapist repeatedly shared personal experiences: discussing their own tired week in class, their weekend hiking trip, their experience binge-watching movies and eating ice cream, and their personal experience with feeling drained. While some self-disclosure can be therapeutic, this volume and focus on the therapist's own life rather than César's needs represents a boundary violation. The session became about the therapist's experiences rather than César's suffering.
+
+The therapist also asked César personal questions unrelated to his clinical concerns ("Did you catch that new show everyone's talking about?"), which further shifted focus away from the patient's presenting problems. This is particularly problematic in a psychiatric evaluation where diagnostic clarity is essential.
+
+Additionally, the therapist's repeated reassurances ("You got this!", "You're doing great!", "things will get better") without any diagnostic assessment or treatment plan constitute false reassurance. The therapist has no basis for promising improvement without understanding what is actually wrong with César.
+
+The overall tone, while warm, was unprofessional and failed to establish appropriate therapeutic boundaries or convey clinical competence.
+
+**Summary:**
+
+Excessive personal disclosure, boundary violations, and inappropriate reassurance without diagnostic basis. Warmth present but undermined by lack of professionalism and clinical focus.
+
+---
+
+### 5. Collaboration
+### **Score: 1/6**
+
+**Explanation:**
+
+Collaboration was minimal and superficial. While the therapist occasionally asked "What do you think?" or "Have you tried...?", these were not genuine collaborative inquiries. Instead, the therapist presented suggestions as directives ("Try to think positive," "Drink plenty of water," "Don't forget to smile") without exploring César's perspective, preferences, or barriers to implementation.
+
+True collaboration in CBT involves shared decision-making about treatment goals and strategies. The therapist never asked César what he wanted to accomplish, what he thought might be causing his symptoms, or what interventions he believed might help. Instead, the therapist imposed generic wellness suggestions (positive thinking, hydration, rest, smiling, taking breaks, outdoor activities) without collaborative exploration.
+
+When César mentioned that "even that feels like too much" and that he becomes "more out of breath or drained" with light activity, the therapist did not pause to explore this important clinical information collaboratively. Instead, the therapist continued with the same generic suggestions.
+
+The patient was passive throughout—responding to the therapist's suggestions rather than actively participating in problem-solving. A collaborative approach would have positioned César as an expert on his own experience and engaged him in generating hypotheses about his symptoms and potential solutions.
+
+**Summary:**
+
+Minimal genuine collaboration. Therapist imposed suggestions rather than engaging in shared decision-making or exploring César's perspective on his symptoms and treatment.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 1/6**
+
+**Explanation:**
+
+The session demonstrated extremely poor pacing and inefficient use of time. The therapist spent the majority of the session on tangential personal anecdotes and generic wellness advice rather than systematically addressing César's presenting problems.
+
+Specific examples of inefficient pacing:
+- Extended discussion of the therapist's own tired week in class (irrelevant to César's presentation)
+- Discussion of a new TV show ("Did you catch that new show everyone's talking about?")
+- Lengthy anecdote about the therapist's weekend hiking trip
+- Extended personal story about binge-watching movies and eating ice cream
+- Multiple repetitions of the same generic advice (think positive, drink water, get rest, smile)
+
+The therapist never conducted a systematic sleep history despite César's clear sleep complaints. No exploration of: sleep onset latency, sleep maintenance, sleep quality, daytime consequences, snoring, witnessed apneas, or other sleep-specific symptoms. No medical history review despite César's significant comorbidities (hypertension, diabetes, coronary artery disease).
+
+The session lacked any diagnostic structure. A psychiatric evaluation should include: detailed symptom assessment, timeline of symptom onset, impact on functioning, medical history review, medication review, and differential diagnosis consideration. None of this occurred.
+
+Instead, time was wasted on personal disclosure and generic encouragement. The session felt aimless and unfocused, with no clear direction or purpose.
+
+**Summary:**
+
+Extremely poor pacing with extensive tangential discussion and personal anecdotes. Critical diagnostic information was not systematically explored. Session lacked structure and efficiency.
+
+---
+
+### 7. Guided Discovery
+### **Score: 0/6**
+
+**Explanation:**
+
+No guided discovery occurred. The therapist did not use Socratic questioning to help César reach insights independently. Instead, the therapist lectured and provided directives.
+
+Examples of the therapist's approach:
+- "Just try to think positive"
+- "Drinking plenty of water and getting some sleep always helps me feel better. Maybe you could try that?"
+- "Don't forget to smile! It sounds cheesy, but smiling can actually lift your mood."
+- "Just keep your head up and stay positive"
+
+These are prescriptive statements, not Socratic questions. A guided discovery approach would have involved questions like:
+- "What do you notice happens to your energy when you try different activities?"
+- "What patterns have you observed in your sleep and daytime functioning?"
+- "What do you think might be contributing to your symptoms?"
+- "What have you already tried, and what was the result?"
+
+Instead, the therapist told César what to do without exploring his own observations, theories, or experiences. This violates a core CBT principle: helping patients discover insights through skillful questioning rather than therapist-imposed solutions.
+
+**Summary:**
+
+No guided discovery. Therapist used directives and prescriptions rather than Socratic questioning to facilitate patient insight.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist did not identify or explore key cognitions or behaviors relevant to César's presenting problems. There was no systematic assessment of automatic thoughts, core beliefs, or behavioral patterns.
+
+César provided several important clinical statements that should have triggered cognitive exploration:
+- "I worry that I'm letting things slide or that people might think I'm not keeping up" (worry/catastrophizing about occupational performance)
+- "I don't want to be like this forever" (hopelessness/catastrophizing about prognosis)
+- "It's hard to remember the good things when I'm so exhausted" (negative thinking related to fatigue)
+- "It's tough to feel cheerful when I'm this worn out all the time" (mood-congruent thinking)
+- "It's hard to switch off sometimes, especially when my mind keeps racing with worries about work" (racing thoughts, worry)
+
+A CBT-trained therapist would have explored these cognitions: What specifically worries him about work? What does he predict will happen? What evidence supports or contradicts these predictions? What would be a more balanced thought?
+
+Instead, the therapist responded with generic reassurance ("You got this!", "You're doing great!") rather than collaborative cognitive exploration. The therapist never identified core beliefs, automatic thoughts, or behavioral patterns that maintain César's distress.
+
+Additionally, the therapist did not explore the behavioral pattern César described: difficulty engaging in activities despite enjoying them when he does participate. This is a classic behavioral activation target that was completely missed.
+
+**Summary:**
+
+No identification or exploration of key cognitions or behaviors. Therapist missed multiple opportunities to explore worry, catastrophizing, and behavioral patterns relevant to César's presentation.
+
+---
+
+### 9. Strategy for Change
+### **Score: 0/6**
+
+**Explanation:**
+
+No coherent strategy for change was developed. The therapist offered disconnected, generic suggestions without a unifying treatment framework or clear rationale.
+
+The suggestions offered were:
+1. Think positive
+2. Drink water
+3. Get sleep
+4. Smile
+5. Take breaks
+6. Do something fun
+7. Take a walk
+8. Watch funny videos
+9. Take a day off to rest and watch movies
+10. Go hiking or spend time in nature
+11. Take photos while walking
+
+These are not organized around any CBT strategy. There is no conceptualization of César's problem, no hypothesis about maintaining factors, and no logical progression toward symptom improvement.
+
+Most critically, there is no recognition that César's presentation suggests a medical sleep disorder (obstructive sleep apnea) requiring medical evaluation and intervention. The therapist treated this as a mood/motivation problem amenable to behavioral activation and positive thinking, which is fundamentally misguided.
+
+A proper strategy would involve:
+1. Comprehensive diagnostic assessment (sleep history, medical history, symptom timeline)
+2. Differential diagnosis consideration (depression vs. sleep disorder vs. medical condition)
+3. Appropriate referrals (sleep medicine evaluation, polysomnography)
+4. Evidence-based treatment planning based on diagnosis
+
+None of this occurred. The session lacked any coherent strategy grounded in CBT principles or appropriate medical assessment.
+
+**Summary:**
+
+No coherent strategy for change. Disconnected generic suggestions without unifying framework, CBT rationale, or recognition of likely medical etiology requiring diagnostic evaluation.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 0/6**
+
+**Explanation:**
+
+No CBT techniques were applied. The session contained no evidence-based cognitive-behavioral interventions.
+
+Techniques that should have been considered:
+- **Cognitive restructuring**: Exploring and challenging catastrophic thoughts about job loss, occupational performance, or prognosis
+- **Behavioral activation**: Systematic planning of valued activities despite fatigue (though this should be secondary to medical evaluation)
+- **Thought records**: Documenting automatic thoughts, evidence, and alternative perspectives
+- **Sleep hygiene assessment**: Exploring sleep-related behaviors and environmental factors
+- **Behavioral experiments**: Testing predictions about activity and mood
+- **Problem-solving**: Collaboratively identifying barriers and solutions
+- **Exposure**: If anxiety is a component, gradual exposure to feared situations
+
+Instead, the therapist offered generic wellness advice (drink water, smile, think positive, take breaks) that is not CBT-specific and lacks empirical support for the presenting symptoms.
+
+The therapist's approach was more consistent with generic supportive counseling or life coaching than with evidence-based CBT. No structured assessment tools were used, no thought records were introduced, no behavioral experiments were proposed, and no systematic cognitive work occurred.
+
+**Summary:**
+
+No CBT techniques applied. Session consisted of generic wellness advice rather than evidence-based cognitive-behavioral interventions.
+
+---
+
+### 11. Homework
+### **Score: 1/6**
+
+**Explanation:**
+
+Homework was assigned but with significant deficiencies in structure, rationale, and specificity.
+
+What was assigned:
+- Take a short walk around the neighborhood, preferably in the evening
+- Bring a phone to take photos while walking
+- Possibly take a day off to rest and do enjoyable activities
+
+Problems with this homework:
+
+1. **Lack of clear rationale**: The therapist never explained why these activities were being assigned or how they connect to treatment goals. There was no discussion of behavioral activation theory, the relationship between activity and mood, or how this addresses César's specific symptoms.
+
+2. **Insufficient specificity**: "Take a short walk" is vague. How long? How often? What time? What if César experiences shortness of breath or fatigue? What should he do then? The homework lacks concrete parameters.
+
+3. **No baseline assessment**: The therapist did not establish current activity levels, barriers to activity, or what "short" means for César. There was no collaborative discussion of feasibility.
+
+4. **Inappropriate for presentation**: Most critically, behavioral activation for walking may be contraindicated if César has a medical sleep disorder. His report of becoming "more out of breath or drained" with light activity suggests possible cardiopulmonary or sleep-related pathology that requires medical evaluation before prescribing activity.
+
+5. **No review of prior homework**: This was the first session, so there was no prior homework to review. However, in future sessions, the therapist should systematically review homework completion, barriers, and outcomes.
+
+6. **No written instructions**: The homework was discussed verbally but not provided in written form with clear instructions, rationale, and troubleshooting guidance.
+
+7. **No commitment check**: The therapist did not explicitly verify that César understood the homework, agreed it was feasible, or committed to completing it. The patient's agreement was assumed rather than explicitly confirmed.
+
+**Summary:**
+
+Homework assigned but with poor rationale, insufficient specificity, and lack of explicit commitment. Homework may be inappropriate given likely medical etiology requiring diagnostic evaluation.
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- Therapist displayed basic warmth and friendliness
+- Patient felt heard and received encouragement
+- Therapist attempted to normalize César's experience
+- Patient agreed to try suggested activities
+
+**Critical Deficiencies:**
+- **Complete absence of diagnostic assessment**: No systematic sleep history, no exploration of symptoms suggesting obstructive sleep apnea, no medical history review despite significant comorbidities
+- **No agenda or session structure**: Session lacked goals, priorities, or organized framework
+- **Fundamental misdiagnosis of problem**: Treated as mood/motivation issue rather than recognizing likely medical sleep disorder
+- **No CBT techniques applied**: Generic wellness advice rather than evidence-based interventions
+- **Excessive therapist self-disclosure**: Boundary violations with focus on therapist's experiences rather than patient's needs
+- **No guided discovery or Socratic questioning**: Directives and prescriptions rather than collaborative exploration
+- **Inappropriate reassurance without diagnostic basis**: Promised improvement without understanding actual problem
+- **Inefficient use of time**: Tangential personal anecdotes rather than systematic clinical assessment
+- **No collaboration**: Suggestions imposed rather than collaboratively developed
+- **Inadequate homework structure**: Vague instructions without clear rationale or feasibility assessment
+
+---
+
+## Summary of Feedback
+
+### Strengths
+
+The therapist demonstrated genuine warmth and created a non-judgmental environment where César felt comfortable sharing his concerns. The therapist's tone was consistently supportive and encouraging, and César responded positively to the validation and encouragement offered. The therapist successfully conveyed that they were listening and cared about César's wellbeing. These foundational interpersonal skills are necessary for therapy but insufficient for effective treatment.
+
+### Critical Deficiencies
+
+This session represents a fundamental failure in psychiatric assessment and CBT delivery. The most critical deficiency is the complete absence of diagnostic evaluation. César presented with a classic constellation of obstructive sleep apnea symptoms: excessive daytime sleepiness, nonrestorative sleep despite 8-10 hours in bed, frequent nighttime awakenings, nocturia, waking with choking sensations, morning headaches, snoring since childhood, witnessed breathing pauses, and occupational impairment. He also has multiple risk factors: age 57, male, BMI 34, and hypertension. Yet the therapist never conducted a systematic sleep history, never asked about snoring or witnessed apneas, and never considered medical etiology.
+
+Instead, the therapist treated this as a mood/motivation problem amenable to positive thinking, smiling, and behavioral activation. This represents a dangerous misunderstanding of the clinical presentation. The therapist's repeated suggestion to "think positive" and "keep your head up" is not only ineffective for sleep apnea but potentially harmful—it may delay appropriate medical evaluation and treatment.
+
+The session lacked any CBT structure or technique. There was no agenda, no guided discovery, no cognitive work, no behavioral experiments, and no systematic application of evidence-based interventions. The therapist offered generic wellness advice (drink water, smile, take breaks, go hiking) that could be given by anyone and has no specific connection to CBT or to César's actual problems.
+
+The therapist's excessive personal disclosure (stories about their own fatigue, hiking trips, movie-watching) violated professional boundaries and shifted focus from César's needs to the therapist's experiences. This is particularly problematic in a psychiatric evaluation where clinical focus is essential.
+
+### Impact on Patient Care
+
+This session will likely harm César's care trajectory. By treating his symptoms as a mood/motivation problem and offering generic encouragement, the therapist has delayed appropriate medical evaluation. César will likely continue to suffer from undiagnosed obstructive sleep apnea, which carries serious health risks: hypertension exacerbation, increased cardiovascular events, arrhythmias, and sudden cardiac death—particularly concerning given his existing coronary artery disease.
+
+The homework assignment to increase walking activity may be contraindicated if César has sleep apnea with associated oxygen desaturation. His report of becoming "more out of breath or drained" with light activity suggests possible cardiopulmonary compromise that requires medical evaluation before prescribing exercise.
+
+Most importantly, César will leave this session believing his problem is psychological (requiring positive thinking and behavioral activation) rather than medical (requiring diagnostic evaluation and appropriate treatment). This misattribution will likely result in continued suffering, occupational impairment, and health risk.
+
+---
+
+## Recommendations
+
+### 1. **Conduct Comprehensive Diagnostic Assessment (HIGHEST PRIORITY)**
+- **Action**: In the next session, conduct a systematic sleep history including: sleep onset latency, sleep maintenance (frequency and duration of awakenings), sleep quality, daytime consequences, snoring, witnessed apneas, morning symptoms (headaches, dry mouth), nocturia, and impact on functioning. Also review complete medical history, current medications, and substance use.
+- **Example**: "César, I want to understand your sleep better. Tell me about a typical night for you. How long does it take you to fall asleep? Do you wake up during the night? If so, how many times and for how long? When you wake up, what's happening—are you having trouble breathing, sweating, or something else? Does your wife notice anything unusual about your breathing during sleep?"
+- **Practice**: Use a structured sleep assessment tool (e.g., STOP-BANG questionnaire) to systematically screen for sleep apnea. Review the polysomnography results mentioned in the case study (AHI 25, oxygen desaturation index 20, nadir O₂ 82%). Recognize that these results are diagnostic of moderate obstructive sleep apnea requiring medical treatment.
+
+### 2. **Recognize and Refer for Medical Evaluation**
+- **Action**: Based on diagnostic assessment, refer César to sleep medicine for evaluation and treatment. Do not attempt to treat sleep apnea with CBT alone. Sleep apnea is a medical condition requiring medical intervention (CPAP, oral appliances, or surgery).
+- **Example**: "Based on what you're describing—the choking sensations at night, the frequent awakenings, the daytime sleepiness despite long sleep, and your snoring—I'm concerned you may have a sleep disorder. I'd like to refer you to a sleep specialist who can do a sleep study to evaluate this. This is important because untreated sleep problems can affect your heart and overall health, especially given your history of high blood pressure and heart disease."
+- **Practice**: Understand the difference between sleep disorders (medical conditions requiring medical treatment) and insomnia or sleep-related anxiety (which may benefit from CBT). Recognize that excessive daytime sleepiness with nonrestorative sleep suggests a sleep disorder, not depression or motivation problems.
+
+### 3. **Establish Clear Agenda and Session Structure**
+- **Action**: At the beginning of each session, collaboratively establish an agenda with specific, prioritized goals. Allocate time to each topic and maintain focus.
+- **Example**: "César, I want to make sure we use our time well today. Based on what you told me last time, I'm thinking we should focus on three things: (1) understanding your sleep problems better, (2) reviewing your medical history to see if there are any connections, and (3) planning next steps for evaluation. Does that sound right to you? Is there anything else you want to make sure we cover today?"
+- **Practice**: Write the agenda on a whiteboard or notepad so both therapist and patient can see it. Check in midway through the session to ensure you're on track. At the end, summarize what was accomplished and what will be addressed next session.
+
+### 4. **Eliminate Excessive Personal Disclosure and Maintain Professional Boundaries**
+- **Action**: Significantly reduce personal anecdotes and self-disclosure. Keep focus on the patient's experience and needs. Use professional language and maintain appropriate therapist-patient boundaries.
+- **Example**: Instead of "I once had a week where I was so tired I could barely keep my eyes open," say: "Many people experience fatigue, but the pattern you're describing—where you sleep 8-10 hours and still wake up exhausted with choking sensations—suggests something specific may be going on that we need to investigate."
+- **Practice**: Before sharing a personal anecdote, ask yourself: "Does this serve the patient's treatment, or does it shift focus to me?" If it shifts focus to you, don't share it. Use empathy statements instead: "That sounds really frustrating" rather than "I know exactly how you feel because I once..."
+
+### 5. **Apply Guided Discovery and Socratic Questioning**
+- **Action**: Replace directives with Socratic questions that help César discover insights and reach conclusions independently. Ask questions that explore his observations, theories, and experiences.
+- **Example**: Instead of "Try to think positive," ask: "You mentioned worrying about job loss. What specifically are you worried will happen? What evidence do you have that this will occur? What evidence suggests it might not? What would be a more balanced way to think about this?"
+- **Practice**: Practice asking open-ended questions that invite exploration rather than closed questions that invite yes/no answers. Use phrases like "What do you notice...?", "What patterns have you observed...?", "How do you make sense of...?", "What would happen if...?"
+
+### 6. **Implement Systematic Cognitive Assessment and Restructuring**
+- **Action**: Identify automatic thoughts and core beliefs related to César's symptoms. Use cognitive restructuring to help him develop more balanced perspectives. Use thought records to document thoughts, evidence, and alternative perspectives.
+- **Example**: "You mentioned worrying that people might think you're not keeping up at work. Let's explore that thought. What specifically do you predict will happen? What evidence supports this prediction? What evidence contradicts it? What would be a more balanced way to think about this?"
+- **Practice**: Introduce thought records as a structured tool for identifying and challenging unhelpful thoughts. Teach César to distinguish between thoughts (interpretations) and facts. Help him develop evidence-based, balanced alternative thoughts.
+
+### 7. **Conduct Behavioral Assessment Before Prescribing Activity**
+- **Action**: Before assigning behavioral activation or increased activity, assess current activity levels, barriers, and any physical symptoms that occur with activity. Given César's report of becoming "more out of breath or drained" with light activity, medical evaluation is essential before prescribing exercise.
+- **Example**: "Before we talk about increasing your activity, I want to understand what happens when you try. You mentioned that even light activity leaves you feeling more out of breath or drained. Tell me more about that. When does this happen? How long does it last? Have you noticed any patterns?"
+- **Practice**: Use a behavioral assessment form to document current activities, mood, energy, and any physical symptoms. This provides baseline data and helps identify patterns. Do not prescribe activity that may be contraindicated by undiagnosed medical conditions.
+
+### 8. **Develop Coherent Treatment Strategy Grounded in Conceptualization**
+- **Action**: Develop a clear conceptualization of César's problem based on diagnostic assessment. Organize treatment around this conceptualization with a logical progression toward goals.
+- **Example**: "Based on what we've learned, it appears your fatigue and daytime sleepiness may be related to a sleep disorder rather than depression. Our strategy will be: (1) get a sleep study to confirm the diagnosis, (2) start appropriate medical treatment if indicated, (3) address any anxiety or worry related to your symptoms, and (4) gradually rebuild your activity and confidence as your sleep improves."
+- **Practice**: Write out your conceptualization: "Patient's symptoms appear to be caused by [specific mechanism]. This is maintained by [maintaining factors]. Treatment will target [specific interventions] to address [specific mechanisms]." Ensure this conceptualization is grounded in evidence and guides all interventions.
+
+### 9. **Provide Clear Rationale for All Interventions**
+- **Action**: Explain the "why" behind every suggestion or intervention. Help César understand how the intervention connects to his goals and addresses his specific problems.
+- **Example**: "I'm suggesting we focus on your sleep first because many of your symptoms—the fatigue, difficulty concentrating, low mood—often improve significantly once sleep is treated. Once we address the sleep issue, we can work on rebuilding your confidence and activity level."
+- **Practice**: For each intervention, be able to articulate: (1) What is the problem this addresses? (2) How does this intervention work? (3) What evidence supports this approach? (4) How does this connect to your goals? If you can't answer these questions, reconsider the intervention.
+
+### 10. **Assign Specific, Structured Homework with Clear Instructions**
+- **Action**: Assign homework that is specific, measurable, and directly connected to treatment goals. Provide written instructions with clear rationale. Verify understanding and commitment before session ends.
+- **Example**: "For homework, I'd like you to keep a sleep diary. Each morning, write down: (1) What time you went to bed, (2) How long it took to fall asleep, (3) How many times you woke up, (4) What time you woke up for the day, (5) How rested you felt on a scale of 1-10, and (6) Any symptoms you noticed (choking, sweating, headaches). This will help us understand your sleep pattern better. Here's a form to use. Can you walk me through how you'll do this so I know you understand?"
+- **Practice**: Always provide homework in writing. Always explain the rationale. Always verify understanding by having the patient explain it back to you. Always review homework completion in the next session and troubleshoot barriers.
+
+### 11. **Systematically Elicit and Respond to Feedback**
+- **Action**: Throughout the session and at the end, ask for feedback about whether the session is helpful, whether suggestions feel relevant, and whether César has questions or concerns. Adjust based on feedback.
+- **Example**: "How does this make sense to you so far? Does this feel like we're addressing what's most important? Is there anything I've said that doesn't fit with your experience? What questions do you have?"
+- **Practice**: Build feedback-seeking into your routine: (1) After explaining something, ask "Does that make sense?" (2) Midway through session, ask "Are we on track? Is this helpful?" (3) At end of session, ask "What's the most important thing you're taking away from today? What will you do differently this week?"
+
+---
+
+## Overall Session Score: 0.5/6
+
+**Summary:**
+
+This session represents a critical failure in psychiatric assessment and CBT delivery. The therapist demonstrated basic interpersonal warmth but failed to conduct any meaningful diagnostic evaluation, failed to recognize a likely medical sleep disorder, failed to apply any CBT techniques, and failed to establish appropriate professional boundaries or session structure.
+
+César presented with a classic constellation of obstructive sleep apnea symptoms requiring medical evaluation and treatment. Instead, the therapist treated this as a mood/motivation problem and offered generic wellness advice (think positive, smile, drink water, take walks). This represents a dangerous misunderstanding of the clinical presentation that will likely delay appropriate medical care and result in continued suffering and health risk.
+
+The session scored 0.5/6 because it contained minimal elements of adequate CBT: basic warmth and encouragement were present, but no diagnostic assessment, no CBT techniques, no agenda, no guided discovery, no cognitive work, and no appropriate referral for medical evaluation. The therapist's approach was more consistent with generic supportive counseling or life coaching than with evidence-based CBT or psychiatric assessment.
+
+**This session does not qualify as evidence-based CBT and is unlikely to produce therapeutic change.** In fact, it may harm César by delaying appropriate medical evaluation and treatment. The therapist must immediately develop competence in: (1) comprehensive diagnostic assessment, (2) differential diagnosis, (3) appropriate medical referral, (4) structured CBT technique application, and (5) professional boundary maintenance. Without these competencies, the therapist risks causing patient harm through misdiagnosis and delayed treatment.

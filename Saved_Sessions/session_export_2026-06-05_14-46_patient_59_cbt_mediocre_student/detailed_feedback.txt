@@ -1,0 +1,937 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Alcohol Use Disorder (in early remission)
+Medication-Induced Anxiety Disorder (steroids)
+
+--- CASE STUDY ---
+
+Robert Jennings, a 50-year-old married white man, was referred for psychiatric evaluation by a liver transplant liaison service. He had advanced cirrhosis secondary to alcohol use disorder and was recently hospitalized for acute alcohol-associated hepatitis. Following discharge, he began a mandatory addiction treatment program required for transplant eligibility. Alprazolam 0.5 mg as needed was prescribed for anxiety, initially helpful, but soon he became irritable, lethargic, and forgetful.
+
+Mr. Jennings had been unaware of the severity of his liver disease until hospitalization and reported an initial post-discharge period of enhanced energy and well-being, followed by anxiety, restlessness, poor sleep, irritability, distractibility, and worry about health, finances, and family. He denied depressive symptoms, suicidality, panic attacks, or trauma-related symptoms. He had a 10-year history of daily alcohol use but denied consumption since hospitalization.
+
+On examination, he appeared thin, jaundiced, and tired. He was fidgety but cooperative, with anxious and irritable affect. Speech was terse, thought processes logical and coherent, cognition mildly impaired (MoCA 26/30), and attention slightly reduced (Trails B required repeated instructions). There were no psychotic symptoms or overt delirium.
+
+Discussion: Mr. Jennings’s anxiety and irritability appear temporally related to steroid therapy (prednisolone), which can induce initial euphoria followed by negative mood symptoms. Other potential contributors include early alcohol withdrawal and minimal hepatic encephalopathy (subtle cognitive and behavioral changes associated with advanced liver disease). Major depressive disorder and trauma-related disorders were considered but ruled out based on symptom profile. Benzodiazepines can worsen cognitive function and risk relapse; they were discontinued. Focused management includes monitoring for hepatic encephalopathy, optimizing ammonia-reducing treatments, and careful psychiatric follow-up in the context of transplant readiness.
+
+--- BEHAVIOUR ---
+
+Anxious, irritable, and fidgety in clinic
+
+Distractible but cooperative and goal-directed
+
+Maintains eye contact
+
+Repeatedly expresses concern about health (“Something isn’t right”)
+
+No psychosis or disorientation
+
+--- DSM-5 SYMPTOMS ---
+
+Anxiety, restlessness, irritability, and sleep disturbance (steroid-induced)
+
+Alcohol use disorder, early remission
+
+Mild cognitive impairment consistent with minimal hepatic encephalopathy
+
+--- PATIENT PROFILE ---
+Name: Robert Jennings
+Sex: Male
+Age: 50 years
+DOB: January 14, 1975
+Place of Birth: [City, Country]
+Address: [Redacted]
+Marital Status: Married
+Occupation: Delivery Driver
+Presenting Complaint: Increasing irritability and anxiety
+Psychiatric History: None prior
+Substance Use: Alcohol use disorder, in early remission
+Medical History: Advanced cirrhosis, alcohol-associated hepatitis
+Family Psychiatric History: None reported
+Mental Status: Anxious, irritable, cooperative
+Cognitive Function: Mild impairment (MoCA 26/30)
+Insight/Judgment: Fair
+
+--- DIAGNOSIS ---
+
+Alcohol Use Disorder, moderate, in early remission
+
+Medication-Induced Anxiety Disorder (steroids)
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Robert Jennings, a 50-year-old married man with advanced cirrhosis secondary to alcohol use disorder, presents for psychiatric evaluation in an outpatient clinic following referral from a liver transplant liaison service due to concerns about increasing irritability and anxiety after recent hospitalization and initiation of steroid therapy.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hi there! It’s good to see you today. I thought maybe we could talk a bit about what’s been on your mind lately and see if we can figure out some ways to feel a bit better. Does that sound okay to you? 
+ PATIENT: Yeah, thanks for seeing me. I guess I’ve just been feeling really restless and on edge all the time. It’s like something’s not right in my body or my head, but I can’t figure out exactly what. I’m worried about my liver, about whether this transplant will happen, and I can’t really get comfortable or sleep well. It’s frustrating because I want to feel better, but I just keep feeling anxious and irritable. It’s like this buzzing in my mind that won’t go away. 
+ PSYCHIATRIST: Okay, thanks for sharing that. So, it sounds like you’ve been feeling restless and anxious about the transplant and your liver, and it’s making it hard for you to relax or sleep. Can you tell me a bit more about what goes through your mind when you notice that buzzing feeling? Like, what kind of thoughts come up? Maybe you think something like, "What if the transplant doesn’t happen soon enough" or "What if my liver gets worse"? Those kinds of thoughts can definitely make us feel on edge. What do you think? 
+ PATIENT: Yeah, exactly. The thoughts kind of come in waves. One moment I’m thinking, “What if this treatment doesn’t work?” Then it jumps to, “What if I don’t get the transplant in time?” And then, “What if I mess up and start drinking again?” I try to push the thoughts away, but they keep coming back. It’s like my mind won’t let me rest. Sometimes I catch myself worrying about money too—how the bills are gonna get paid while I'm out of work. It’s like a loop that I can’t stop. Makes my stomach twist and my heart race, and then I just get more on edge. 
+ PSYCHIATRIST: Yeah, those are definitely tough thoughts to have. It sounds like they keep you pretty stuck in that anxious loop. Maybe it would help to try thinking about those worries in a different way, like reminding yourself that you’re doing your best and that some things are out of your control for now. You could tell yourself something like, “I’m handling things as well as I can,” or “I’m working towards the transplant, and worrying won’t speed it up.” Do you think that kind of thought might help calm the buzzing feeling a bit? 
+ PATIENT: I guess that makes sense. It’s hard, though, because sometimes it feels like if I don’t worry, I’m not taking it seriously enough. Like, if I don’t stay on top of the risks, something bad will happen. But maybe saying those things—like I’m doing what I can and worrying won’t change things—could help slow my mind down a little. I just want to feel like I’m in control of something. Right now, it kind of feels like everything is slipping through my fingers. Maybe trying those thoughts could help, yeah. 
+ PSYCHIATRIST: Yeah, it’s totally normal to feel like worrying is a way to stay in control. Maybe it would help to try some things to distract your mind a bit when the worries get too loud, like doing a hobby or some gentle exercise if you can. Sometimes focusing on something else can give your brain a break and make you feel a bit more in control. You should practice noticing when the worries start and then try shifting your attention. Do you think you might try that? 
+ PATIENT: I could try that. I haven’t really had the energy or motivation for much lately, but maybe doing something simple like going for a short walk or messing around with some music or a puzzle could help. It’s just that when the worries hit, it’s hard to think about anything else. But maybe if I catch them early enough, I could switch gears before I get too wrapped up. It’s worth a shot, I guess. I just don’t want to let the worries win all the time. 
+ PSYCHIATRIST: That sounds like a good idea to try some gentle distractions. Also, maybe it would help to remind yourself that it’s okay to have these worries sometimes—they don’t mean you’re weak or failing. You could try to be kind to yourself when the buzzing starts. Do you think that might make a difference? Sometimes being a bit gentler with ourselves can reduce the stress a bit. What do you think? 
+ PATIENT: Yeah, I like that. I’m usually pretty tough on myself, thinking I should just snap out of it or be stronger. But maybe being kinder to myself when these feelings come up could make a difference. Like, telling myself it’s okay to feel anxious, and I’m still doing the best I can with everything. It’s hard to break that habit of being hard on myself, but I think it could help if I keep reminding myself. I want to be less harsh and more patient with how I’m feeling. 
+ PSYCHIATRIST: That’s really good to hear. Being kinder to yourself is important, and it sounds like you’re already thinking about it in a helpful way. So, maybe for this week, you could just try to notice when you start feeling anxious or restless, and remind yourself that it’s okay to feel that way and that you’re doing your best. Also, try to do a little distraction activity when the worries get too much, like a short walk or something you enjoy. How does that sound for something to work on until we meet again? 
+ PATIENT: Yeah, that sounds doable. I’ll try to pay attention to when the anxiety starts creeping in and remind myself it’s alright to feel like this sometimes. And I’ll try to get outside for a little walk or do something to take my mind off the worries. I know it won’t fix everything overnight, but maybe it’ll help me get through the days a bit easier. I appreciate you helping me figure out some ways to handle this. I’m willing to give it a shot. 
+ PSYCHIATRIST: Great, I’m glad you’re willing to try that. Just remember, it’s okay if it doesn’t feel perfect right away—these things take time. We’ll check in on how it’s going next time. Keep being patient with yourself. If you want, you can also jot down any thoughts or feelings you notice during the week, but no pressure. Thanks for sharing today, and I look forward to catching up again soon. Take care! 
+ PATIENT: Thanks, I appreciate that. I’ll try to be patient with myself and keep working on those little steps. I might try writing things down if it feels helpful, but I won’t stress if I don’t. It’s good to have someone to talk to about this stuff. I’ll see you next time. Take care too. 
+ PSYCHIATRIST: Hello! It's good to see you today. I thought maybe we could chat a bit about what's been bothering you lately and try to find some ways to feel a bit better. Does that sound alright? 
+ PATIENT: Yeah, hi. Thanks for seeing me again. I’ve been feeling pretty on edge lately, like that buzzing feeling hasn’t really gone away. Some days it’s a bit better, but other days my mind just won’t stop racing with worries about my health and the transplant. It’s hard to relax or get good sleep. I’m still feeling pretty restless and irritable, honestly. I just want to figure out how to get it under control. 
+ PSYCHIATRIST: Okay, so it seems like that buzzing feeling and worries about your health are still bothering you quite a bit. Maybe we can try to look at some of the thoughts that come up when you feel restless or irritable. Like, what kind of thoughts do you notice when you’re feeling that way? For example, do you think things like, “I’m not going to get better,” or “What if the transplant doesn’t happen in time”? Those kinds of thoughts can really make us feel anxious. What do you think? 
+ PATIENT: Yeah, those thoughts are definitely there. I catch myself thinking, “What if I don’t last long enough to get the transplant?” or “What if something else goes wrong and I get worse?” Sometimes I even worry that maybe I’m messing this whole thing up, like I’m not doing enough or that I’ll end up drinking again and ruin all the progress. It’s like my brain keeps running through the worst-case scenarios nonstop. And then I start feeling tense all over and my heart pounds, and I get really irritable. It’s exhausting. 
+ PSYCHIATRIST: Thanks for sharing that. It sounds like those thoughts are really overwhelming and make you feel tense and irritable. Maybe it would help to try thinking about those worries in a different way, like reminding yourself that worrying doesn’t actually change what will happen, and that you’re doing what you can right now. You could try telling yourself something like, “I’m taking steps to get better, and worrying won’t speed things up.” Do you think that might help calm things down a bit? 
+ PATIENT: I think that could help, yeah. Sometimes I feel like if I stop worrying, I’m not paying enough attention to how serious this is—but maybe that’s just my mind trying to keep me alert. Telling myself that worrying won’t fix anything and that I’m already doing what I can seems like a good way to break the cycle. It’s not easy though, because the fears are still so real to me. But I’ll try to remind myself of that when the thoughts hit hard. 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist failed to establish a structured, collaborative agenda at either session opening. In Session 1, the therapist offered only a vague opening ("talk a bit about what's been on your mind lately and see if we can figure out some ways to feel a bit better") without clarifying specific session goals, priorities, or time allocation. No explicit agenda items were identified, prioritized, or revisited. In Session 2, the identical opening occurred with no reference to progress on previous homework or adjustment of focus based on outcomes. 
+
+Critically, the therapist did not address the clinical complexity of this case: Robert presents with medication-induced anxiety (steroid-related), early alcohol use disorder remission, mild hepatic encephalopathy, and transplant-related stress. A proper CBT agenda would have: (1) explicitly identified which presenting problem to target first (e.g., steroid-induced anxiety vs. transplant worry vs. relapse prevention), (2) acknowledged the medical complexity and how it constrains typical CBT interventions, (3) established time boundaries, and (4) collaborated on priorities. The patient's cognitive impairment (MoCA 26/30) and attention difficulties (Trails B requiring repeated instructions) were never factored into session structure or pacing.
+
+By Session 2, there was no review of whether homework was completed, what worked, what didn't, or how to adjust the plan. This represents a fundamental failure in CBT structure.
+
+**Summary:**
+
+Agenda-setting was absent in both sessions. No collaborative prioritization, no explicit goals, no time management, and no session-to-session continuity. This is a foundational CBT failure.
+
+---
+
+### 2. Feedback
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist elicited virtually no feedback throughout either session. There were no explicit checks for understanding (e.g., "Does that make sense?" "How are you feeling about what we discussed?" "Is this approach resonating with you?"). The therapist did not ask whether the patient understood the rationale for suggested interventions, whether the suggestions felt realistic or helpful, or whether the patient had concerns about the proposed strategies.
+
+In Session 1, after suggesting cognitive reframing ("I'm handling things as well as I can"), the therapist asked "Do you think that kind of thought might help?" but this was a leading yes/no question, not genuine feedback elicitation. The patient's response ("I guess that makes sense. It's hard, though...") contained a significant concern—"if I don't worry, I'm not taking it seriously enough"—which the therapist acknowledged but never explored or validated through feedback loops.
+
+In Session 2, after the patient reported that the buzzing feeling "hasn't really gone away," the therapist did not ask: "What did you try from last week?" "How did the walks or distractions work?" "What barriers did you encounter?" "Did the self-compassion practice feel helpful?" Instead, the therapist immediately pivoted to identifying thoughts, suggesting the homework was never reviewed or evaluated.
+
+At no point did the therapist ask for the patient's reaction to the session overall, whether he felt heard, or whether he had questions or reservations about the treatment approach.
+
+**Summary:**
+
+Feedback elicitation was minimal and superficial. No genuine checking for understanding, no homework review, no assessment of patient satisfaction or engagement. This severely compromises collaborative empiricism.
+
+---
+
+### 3. Understanding
+### **Score: 3/6**
+
+**Explanation:**
+
+The therapist demonstrated partial understanding of the patient's explicit concerns but missed critical clinical nuances. The therapist accurately reflected that Robert feels "restless and anxious about the transplant and your liver" and acknowledged the "buzzing feeling" and sleep difficulties. The therapist also recognized that Robert experiences thought loops and catastrophic thinking patterns.
+
+However, significant gaps in understanding emerged:
+
+1. **Medical complexity ignored:** The therapist never acknowledged or explored the steroid-induced nature of the anxiety. The case formulation explicitly states anxiety is "temporally related to steroid therapy (prednisolone), which can induce initial euphoria followed by negative mood symptoms." The therapist treated this as purely psychological anxiety amenable to cognitive reframing, missing the biological substrate. This is clinically dangerous—cognitive interventions alone may be insufficient for medication-induced symptoms.
+
+2. **Hepatic encephalopathy not addressed:** Robert's mild cognitive impairment (MoCA 26/30) and attention difficulties (Trails B requiring repeated instructions) suggest minimal hepatic encephalopathy. The therapist never explored whether cognitive symptoms (distractibility, forgetfulness) are contributing to his distress or whether they affect his ability to engage in CBT. This is a critical oversight.
+
+3. **Benzodiazepine discontinuation not discussed:** The case notes state alprazolam was discontinued due to cognitive worsening and relapse risk. The therapist never explored whether Robert is experiencing withdrawal symptoms, rebound anxiety, or adjustment to medication changes. This is a major gap in understanding the temporal context of symptoms.
+
+4. **Relapse vulnerability underexplored:** While Robert mentioned "What if I mess up and start drinking again," the therapist never explored this concern in depth. For someone in early remission with a 10-year drinking history, relapse prevention should be a central focus, not a passing mention.
+
+5. **Subtle emotional communication missed:** When Robert said "It's like my mind won't let me rest" and "I just want to feel like I'm in control of something. Right now, it kind of feels like everything is slipping through my fingers," the therapist did not explore the existential distress, loss of identity (he's a delivery driver now unable to work), or the profound loss of control related to liver disease and transplant dependency. These are central to his experience.
+
+The therapist's empathy was surface-level ("Yeah, those are definitely tough thoughts to have") without demonstrating deep understanding of Robert's internal reality.
+
+**Summary:**
+
+The therapist grasped explicit content but missed critical medical, psychological, and contextual factors. Understanding was adequate for general anxiety but inadequate for this complex case.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 4/6**
+
+**Explanation:**
+
+The therapist demonstrated adequate warmth, genuineness, and professionalism without significant interpersonal problems. The tone was consistently supportive ("That's really good to hear," "Great, I'm glad you're willing to try that"), and the therapist normalized Robert's experience ("Yeah, it's totally normal to feel like worrying is a way to stay in control"). The therapist was patient with Robert's hesitations and validated his concerns.
+
+However, there were missed opportunities for deeper connection:
+
+1. **Insufficient validation of distress:** When Robert expressed that "everything is slipping through my fingers," the therapist pivoted to distraction strategies rather than sitting with the profound loss and vulnerability Robert was expressing. A more empathic response would have acknowledged the legitimacy of feeling out of control given his medical situation.
+
+2. **Lack of genuine curiosity:** The therapist's questions often felt leading or prescriptive rather than genuinely curious. For example, "Maybe it would help to try thinking about those worries in a different way..." is directive, not exploratory. True interpersonal effectiveness includes genuine interest in the patient's perspective.
+
+3. **No acknowledgment of courage:** Robert is facing a life-threatening illness, mandatory addiction treatment, and cognitive changes. The therapist never acknowledged the courage required to engage in this process or the legitimacy of his anxiety given the stakes.
+
+4. **Professional boundaries appropriate:** The therapist maintained appropriate boundaries and did not overstep into medical management (e.g., did not adjust medications or make medical recommendations beyond psychiatric scope).
+
+The interpersonal stance was "helpful professional" rather than "deeply connected clinician," which is adequate but not excellent.
+
+**Summary:**
+
+Warmth and professionalism were present without significant problems, but empathic depth and genuine curiosity were limited. Adequate but not exceptional.
+
+---
+
+### 5. Collaboration
+### **Score: 2/6**
+
+**Explanation:**
+
+Collaboration was minimal and largely illusory. While the therapist used collaborative language ("Maybe we can try," "Do you think?"), the actual decision-making was therapist-driven, not truly collaborative.
+
+**Session 1 examples of pseudo-collaboration:**
+
+- Therapist suggested cognitive reframing ("You could tell yourself something like...") without exploring whether Robert had already tried this, what his concerns were, or whether he wanted to try this approach.
+- Therapist recommended distraction activities ("maybe it would help to try some things to distract your mind") without asking what Robert enjoys, what's realistic given his energy level, or whether he prefers other strategies.
+- Therapist assigned homework ("So, maybe for this week, you could just try to notice...") without genuine negotiation. The patient's "Yeah, that sounds doable" suggests compliance, not collaboration.
+
+**Session 2 examples:**
+
+- Therapist immediately pivoted to identifying thoughts without asking: "What did you try last week? What worked? What didn't? What would you like to focus on today?"
+- No discussion of whether the previous week's strategies were helpful, realistic, or aligned with Robert's goals.
+- Therapist continued prescribing interventions without checking whether Robert felt invested in the approach.
+
+**Critical missing element:** True collaboration in this case would involve:
+1. Explicitly discussing the medical complexity (steroid-induced anxiety, hepatic encephalopathy, benzodiazepine discontinuation)
+2. Collaboratively deciding whether cognitive restructuring is the right first intervention or whether psychoeducation about medication effects should come first
+3. Asking Robert what he thinks is causing his symptoms and what he believes might help
+4. Negotiating realistic homework given his cognitive impairment and energy level
+5. Treating Robert as an expert on his own experience, not just a recipient of therapist expertise
+
+The therapist functioned as an expert dispensing advice, not as a partner in discovery.
+
+**Summary:**
+
+Collaboration was superficial. Therapist-driven recommendations without genuine shared decision-making or patient input on treatment direction. This undermines the CBT principle of collaborative empiricism.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 3/6**
+
+**Explanation:**
+
+Pacing was inconsistent and inefficient. The therapist covered multiple topics (cognitive reframing, distraction, self-compassion, homework) without adequate depth on any single issue, yet also allowed tangential discussion without redirecting.
+
+**Session 1 pacing issues:**
+
+- The therapist introduced cognitive reframing, then immediately pivoted to distraction strategies, then to self-compassion, then to homework—five distinct interventions in one session without establishing which was most important or how they connected.
+- When Robert expressed a core belief ("if I don't worry, I'm not taking it seriously enough"), the therapist acknowledged it but did not explore it adequately. This is a critical thought that deserves focused attention, not a passing mention.
+- The therapist spent time on general reassurance ("It's okay if it doesn't feel perfect right away") rather than on concrete skill-building.
+
+**Session 2 pacing issues:**
+
+- The therapist did not allocate time to reviewing homework from Session 1, which is a fundamental CBT structure. This represents wasted time and lost opportunity to assess what worked.
+- The therapist immediately re-introduced cognitive reframing without acknowledging that this was already attempted in Session 1. This suggests either poor documentation or poor attention to continuity.
+- No time was spent on psychoeducation about steroid-induced anxiety, medication effects, or hepatic encephalopathy—all of which would have been more efficient uses of time than repeating cognitive reframing.
+
+**Efficiency concerns:**
+
+- Given Robert's mild cognitive impairment and attention difficulties, the therapist should have paced more slowly, checked understanding more frequently, and focused on fewer interventions per session.
+- The therapist did not prioritize. In a complex case with limited transplant eligibility window, time should be spent on highest-impact interventions (relapse prevention, medication psychoeducation) rather than general anxiety management.
+
+**Summary:**
+
+Pacing was scattered and inefficient. Multiple interventions introduced without adequate depth, no homework review, and poor prioritization given case complexity. Time was not used strategically.
+
+---
+
+### 7. Guided Discovery
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist relied heavily on suggestion and persuasion rather than Socratic questioning and guided discovery. This is a critical CBT failure.
+
+**Examples of directive rather than discovery-based approach:**
+
+Session 1:
+- "Maybe it would help to try thinking about those worries in a different way, like reminding yourself that you're doing your best and that some things are out of your control for now. You could tell yourself something like, 'I'm handling things as well as I can,' or 'I'm working towards the transplant, and worrying won't speed it up.'" 
+
+This is therapist-generated thought replacement, not guided discovery. A Socratic approach would have been: "When you notice the worry about the transplant, what do you think would happen if you didn't worry? What evidence do you have that worrying actually helps you? What might happen if you focused on what you can control?"
+
+- "Maybe it would help to try some things to distract your mind a bit when the worries get too loud, like doing a hobby or some gentle exercise if you can."
+
+This is suggestion, not discovery. Socratic approach: "When the worries are intense, what have you found helpful in the past? What activities have you enjoyed that might give your mind a break? What would feel realistic for you right now?"
+
+Session 2:
+- "Maybe we can try to look at some of the thoughts that come up when you feel restless or irritable. Like, what kind of thoughts do you notice when you're feeling that way? For example, do you think things like, 'I'm not going to get better,' or 'What if the transplant doesn't happen in time'?"
+
+The therapist is providing examples rather than asking open-ended questions. Better: "What goes through your mind when you notice the restlessness? What are you telling yourself about what's happening?"
+
+**Rare moments of guided discovery:**
+
+When Robert said "if I don't worry, I'm not taking it seriously enough," the therapist could have used Socratic questioning: "What makes you think that? What evidence do you have that worrying helps you take things seriously? What would it look like to take things seriously without worrying?" Instead, the therapist moved on.
+
+**Why this matters:**
+
+Guided discovery is central to CBT because it helps patients develop insight and internalize new perspectives. When the therapist provides answers, the patient may comply but not truly believe or integrate the new thinking. Robert needs to discover through questioning that worrying doesn't change outcomes, not be told this by the therapist.
+
+**Summary:**
+
+The therapist relied on suggestion and persuasion rather than Socratic questioning. This undermines the core CBT mechanism of change and reduces the likelihood that Robert will internalize new perspectives or develop independent problem-solving skills.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist identified some relevant cognitions but failed to focus on the most central and clinically important ones. This represents a significant strategic error.
+
+**Cognitions identified:**
+
+- "What if the transplant doesn't happen soon enough?"
+- "What if I don't get the transplant in time?"
+- "What if I mess up and start drinking again?"
+- "What if this treatment doesn't work?"
+- "What if I don't last long enough to get the transplant?"
+- "What if something else goes wrong and I get worse?"
+
+**Critical cognitions NOT adequately explored:**
+
+1. **"If I don't worry, I'm not taking it seriously enough"** — This is a core belief that maintains the anxiety. Robert believes worry is protective and necessary. This deserves focused attention and cognitive restructuring, but the therapist mentioned it only in passing.
+
+2. **"I'm not doing enough" / "I'm messing this whole thing up"** — This suggests perfectionism and responsibility assumptions that are likely maintaining anxiety and irritability. Not adequately explored.
+
+3. **"Everything is slipping through my fingers"** — This reflects loss of control and identity (unable to work as a delivery driver, dependent on medical system, dependent on transplant). This is existentially central to Robert's distress but was never explored.
+
+4. **Relapse-related cognitions** — "What if I mess up and start drinking again?" is mentioned but never explored in depth. For someone in early remission, this is a critical cognition to address. What triggers this fear? What does "messing up" mean? What would relapse look like? How confident is he in his recovery?
+
+5. **Medical catastrophizing** — Robert's repeated "something isn't right" and health preoccupation suggest health anxiety cognitions that were never identified or addressed.
+
+**Behavioral patterns not adequately explored:**
+
+- Avoidance of activities due to low energy/motivation
+- Worry rumination as a coping mechanism
+- Irritability as a behavioral manifestation of anxiety
+- Sleep avoidance or hypervigilance about sleep
+
+**Why this matters:**
+
+CBT requires identifying the cognitions and behaviors most central to the presenting problem. By focusing on generic catastrophic thoughts ("What if the transplant doesn't happen?"), the therapist missed the core maintaining factors (belief that worry is protective, loss of control, relapse fear, health preoccupation). This means interventions are unlikely to produce meaningful change.
+
+**Summary:**
+
+The therapist identified surface-level catastrophic thoughts but missed core cognitions and beliefs that maintain anxiety. Interventions targeted secondary rather than primary cognitions, reducing treatment efficacy.
+
+---
+
+### 9. Strategy for Change
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist's strategy for change was vague, reactive, and not grounded in a coherent case formulation. This is a fundamental CBT failure.
+
+**What the therapist attempted:**
+
+1. Cognitive reframing (telling himself "I'm doing my best")
+2. Distraction (walks, puzzles, music)
+3. Self-compassion (being kind to himself)
+4. Thought monitoring (noticing when anxiety starts)
+
+**Critical problems with this strategy:**
+
+1. **No case formulation:** The therapist never explicitly articulated a formulation of Robert's anxiety. Is it primarily steroid-induced? Transplant-related? Relapse-related? Existential? The strategy should flow from a clear formulation, but none was offered.
+
+2. **Ignores medical etiology:** The strategy treats Robert's anxiety as purely psychological, despite clear evidence of steroid-induced medication effects. A coherent strategy would include psychoeducation about steroid effects, discussion of medication management with prescribing physician, and realistic expectations about what CBT can accomplish while on steroids.
+
+3. **Ignores cognitive impairment:** Robert has mild cognitive impairment (MoCA 26/30) and attention difficulties. A coherent strategy would account for this—perhaps focusing on simpler, more concrete interventions rather than complex cognitive restructuring.
+
+4. **No prioritization:** The strategy does not prioritize which problem to address first. Should relapse prevention come before anxiety management? Should psychoeducation about medication effects come before cognitive restructuring? The strategy is undifferentiated.
+
+5. **No connection between interventions:** The three interventions (reframing, distraction, self-compassion) are presented as separate suggestions, not as a coherent strategy. How do they work together? Which is primary? How do they address the underlying mechanism maintaining anxiety?
+
+6. **Insufficient for relapse prevention:** Given Robert's 10-year drinking history and early remission status, a coherent strategy should include explicit relapse prevention work (identifying triggers, developing coping strategies, addressing relapse-related cognitions). This is largely absent.
+
+7. **No measurement of progress:** The strategy includes no explicit goals, no baseline measurement, and no plan to assess whether interventions are working. How will Robert know if he's improving? How will the therapist know if the strategy is effective?
+
+**What a coherent strategy would include:**
+
+- Clear formulation: "Robert's anxiety appears to be multifactorial: (1) steroid-induced medication effects, (2) transplant-related uncertainty, (3) early alcohol remission with relapse vulnerability, (4) loss of identity/control related to medical illness. Primary focus: relapse prevention and psychoeducation about medication effects. Secondary focus: anxiety management through cognitive and behavioral strategies."
+- Explicit goals: "By week 4, Robert will: (1) understand steroid effects on mood/anxiety, (2) identify personal relapse triggers, (3) develop 3 coping strategies for relapse urges, (4) reduce anxiety-related avoidance by 50%."
+- Sequenced interventions: "Week 1-2: Psychoeducation about steroids and relapse. Week 3-4: Relapse prevention planning. Week 5+: Anxiety management strategies."
+- Measurement: "Weekly anxiety rating (0-10), weekly relapse urge rating (0-10), behavioral activation tracking."
+
+**Summary:**
+
+The strategy was vague, reactive, and not grounded in a coherent case formulation. No prioritization, no measurement, and insufficient attention to medical and relapse-related factors. This is unlikely to produce meaningful change.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist attempted to apply CBT techniques but did so with significant flaws in execution. The techniques were superficially applied without adequate depth, structure, or skill.
+
+**Techniques attempted:**
+
+1. **Cognitive Restructuring (Thought Records):**
+   - The therapist identified catastrophic thoughts ("What if the transplant doesn't happen in time?")
+   - The therapist suggested alternative thoughts ("I'm taking steps to get better, and worrying won't speed things up")
+   - **Flaws:** No systematic thought record was completed. No examination of evidence for/against the thought. No evaluation of the alternative thought's believability. The therapist simply provided a replacement thought, which is persuasion, not cognitive restructuring. Robert's response ("I think that could help, yeah") suggests intellectual agreement but not genuine belief change.
+
+2. **Behavioral Activation (Distraction):**
+   - The therapist suggested activities (walks, puzzles, music)
+   - **Flaws:** No systematic behavioral activation plan was developed. No baseline of current activity level. No graded hierarchy of activities. No discussion of barriers to activity engagement. No plan to track mood/anxiety changes with activity. The suggestion was vague ("do a little distraction activity") without specificity about frequency, duration, or timing.
+
+3. **Thought Monitoring:**
+   - The therapist suggested "noticing when the worries start"
+   - **Flaws:** No structured thought record or monitoring form was introduced. No clear instructions on what to record (thought? emotion? trigger? consequence?). No plan to review monitoring data. This is vague self-observation, not systematic thought monitoring.
+
+4. **Self-Compassion/Acceptance:**
+   - The therapist suggested "being kind to yourself" and "it's okay to feel anxious"
+   - **Flaws:** This is more acceptance-based therapy than CBT. While not inappropriate, it was not integrated into a coherent CBT strategy. No explicit rationale for why self-compassion would reduce anxiety. No structured self-compassion exercise.
+
+**Techniques NOT applied:**
+
+- **Behavioral Experiments:** No hypothesis testing about the relationship between worry and outcomes
+- **Exposure:** No systematic exposure to anxiety-provoking situations
+- **Problem-Solving:** No structured problem-solving for concrete issues (finances, work, transplant timeline)
+- **Relapse Prevention Planning:** No explicit relapse prevention despite clear indication
+- **Activity Scheduling:** No structured schedule despite low motivation/energy
+- **Thought Records:** No formal thought record despite identifying multiple catastrophic thoughts
+- **Cognitive Pie Charts:** No visual representation of multiple contributing factors to anxiety
+- **Behavioral Experiments:** No testing of beliefs (e.g., "If I don't worry, will something bad happen?")
+
+**Quality of technique application:**
+
+The techniques that were attempted were applied with "significant flaws" (per CTRS scoring). The therapist demonstrated basic familiarity with CBT concepts but lacked skill in systematic application. For example:
+
+- Cognitive restructuring requires examining evidence, generating alternatives, and evaluating believability. The therapist skipped to providing an alternative thought.
+- Behavioral activation requires baseline assessment, graded hierarchy, and systematic tracking. The therapist made a vague suggestion.
+- Thought monitoring requires a structured form and systematic review. The therapist suggested informal noticing.
+
+**Why this matters:**
+
+CBT's efficacy depends on skillful, systematic application of techniques. Superficial application (suggesting a thought, recommending an activity, mentioning self-compassion) is unlikely to produce meaningful change. Robert needs structured, evidence-based interventions, not general suggestions.
+
+**Summary:**
+
+CBT techniques were attempted but applied with significant flaws. Execution was superficial and unsystematic. Techniques were not integrated into a coherent strategy. This represents inadequate CBT skill.
+
+---
+
+### 11. Homework
+### **Score: 1/6**
+
+**Explanation:**
+
+Homework assignment and review were severely deficient. This is a critical CBT failure, as homework is the primary mechanism for between-session change and skill consolidation.
+
+**Session 1 Homework:**
+
+**What was assigned:**
+- "Notice when you start feeling anxious or restless, and remind yourself that it's okay to feel that way and that you're doing your best"
+- "Try to do a little distraction activity when the worries get too much, like a short walk or something you enjoy"
+- Optional: "Jot down any thoughts or feelings you notice during the week, but no pressure"
+
+**Critical flaws:**
+
+1. **Vague and unstructured:** "Notice when you start feeling anxious" is not a specific homework assignment. What should Robert write down? How often? In what format? No thought record form was provided. No structure was given.
+
+2. **No clear rationale:** The therapist did not explain WHY monitoring thoughts would help or HOW it connects to reducing anxiety. Robert needs to understand the mechanism of change.
+
+3. **No specificity about distraction:** "Try to do a little distraction activity" is too vague. Which activities? How often? For how long? When should he do them (proactively or only when anxious)? No specificity means low compliance and unclear results.
+
+4. **No baseline or measurement:** The therapist did not establish a baseline (e.g., "How many times per day do you currently experience the buzzing feeling?") or a measurement plan (e.g., "Rate your anxiety 0-10 each day"). Without measurement, progress cannot be assessed.
+
+5. **"No pressure" undermines commitment:** By saying "no pressure," the therapist reduced the expectation of homework completion and suggested it's optional. This is inconsistent with CBT, where homework is a core component.
+
+6. **No written instructions:** The therapist did not provide written homework instructions. Given Robert's cognitive impairment and attention difficulties, written instructions are essential.
+
+7. **No check for understanding:** The therapist did not ask Robert to summarize the homework, identify potential barriers, or problem-solve obstacles. The patient's "Yeah, that sounds doable" suggests compliance, not genuine understanding.
+
+**Session 2 Homework Review:**
+
+**What happened:**
+- The therapist did NOT review homework from Session 1
+- The therapist did not ask: "Did you try the monitoring?" "Did you do the walks?" "What worked?" "What didn't?" "What got in the way?"
+- The therapist immediately pivoted to identifying thoughts, suggesting homework was never completed or reviewed
+
+**Critical failure:**
+
+In CBT, homework review is mandatory. It serves multiple functions:
+1. Assesses compliance and barriers
+2. Reinforces learning from previous session
+3. Provides data on what's working
+4. Allows adjustment of strategy based on results
+5. Demonstrates therapist investment in between-session work
+
+By skipping homework review, the therapist:
+- Lost critical information about what worked/didn't work
+- Failed to reinforce homework completion
+- Missed opportunity to problem-solve barriers
+- Suggested homework is not important
+- Wasted session time by not building on previous work
+
+**Session 2 Homework:**
+
+**What was assigned:**
+- "Try to remind yourself of that when the thoughts hit hard" (referring to "worrying won't fix anything and I'm already doing what I can")
+- Implicit suggestion to continue monitoring/distraction, but no explicit new homework
+
+**Critical flaws:**
+
+1. **No new homework:** The therapist did not assign new homework for Session 2. This suggests either that Session 1 homework was sufficient (unlikely, given no review) or that the therapist forgot to assign homework.
+
+2. **Vague reminder:** "Try to remind yourself of that when the thoughts hit hard" is not a specific homework assignment. What does "remind yourself" mean? Write it down? Say it aloud? How often?
+
+3. **No written instructions:** Again, no written homework sheet or instructions provided.
+
+4. **No measurement:** No baseline or tracking plan established.
+
+5. **No check for understanding:** No verification that Robert understood or committed to the homework.
+
+**What homework SHOULD have been assigned:**
+
+Given the case formulation and identified problems:
+
+**Session 1:**
+- **Thought Record:** Provide a structured thought record form. Assign: "Complete a thought record for 3 instances of anxiety this week. Record: (1) Situation, (2) Automatic thought, (3) Emotion/physical sensation, (4) Evidence for/against thought, (5) Alternative thought, (6) Outcome."
+- **Behavioral Activation:** "Schedule 3 specific activities this week (walks, puzzles, music). Record: (1) Activity, (2) Duration, (3) Anxiety before (0-10), (4) Anxiety after (0-10)."
+- **Relapse Prevention:** "Identify 3 personal relapse triggers and 1 coping strategy for each."
+- **Psychoeducation:** "Read handout on steroid effects on mood and anxiety."
+
+**Session 2:**
+- **Review Session 1 homework:** "What did you complete? What worked? What got in the way?"
+- **Behavioral Experiment:** "Test the belief 'If I don't worry, something bad will happen.' Choose one situation where you normally worry. Try not worrying and observe what actually happens. Record results."
+- **Relapse Prevention:** "Develop a written relapse prevention plan with specific triggers, warning signs, and coping strategies."
+
+**Summary:**
+
+Homework was vague, unstructured, and not reviewed. No written instructions, no measurement, no check for understanding. Session 2 homework review was completely absent. This represents a fundamental CBT failure and severely limits treatment efficacy.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- **Warmth and professionalism:** The therapist maintained a supportive, non-judgmental tone throughout both sessions
+- **Identification of some relevant cognitions:** The therapist identified several catastrophic thoughts related to transplant and health
+- **Patient engagement:** The patient remained engaged and willing to try suggestions, indicating adequate rapport
+- **Normalization:** The therapist normalized worry and anxiety, reducing shame
+- **Consistency across sessions:** The therapist maintained a consistent approach (though this consistency included consistent deficiencies)
+
+### Critical Deficiencies:
+- **No agenda-setting or session structure:** Fundamental CBT failure; no explicit goals, priorities, or time management
+- **No homework review:** Session 2 completely failed to review Session 1 homework, breaking continuity and suggesting homework is not important
+- **Vague, unstructured homework:** Homework assignments lacked specificity, measurement, and written instructions
+- **Superficial CBT technique application:** Techniques were attempted but applied with significant flaws; cognitive restructuring was reduced to thought replacement; behavioral activation was vague suggestion
+- **No case formulation:** The therapist never articulated a coherent understanding of Robert's anxiety or a strategic plan to address it
+- **Ignored medical complexity:** Steroid-induced anxiety, hepatic encephalopathy, benzodiazepine discontinuation, and cognitive impairment were not addressed
+- **Insufficient relapse prevention:** Despite clear indication (10-year drinking history, early remission), relapse prevention was minimal
+- **Pseudo-collaboration:** Collaborative language masked therapist-driven recommendations without genuine shared decision-making
+- **No guided discovery:** Heavy reliance on suggestion and persuasion rather than Socratic questioning
+- **No feedback elicitation:** Minimal checking for understanding or patient satisfaction
+- **Poor prioritization:** Multiple interventions introduced without clear hierarchy or rationale
+- **No measurement or progress tracking:** No baseline, no goals, no systematic measurement of change
+
+---
+
+## Summary of Feedback
+
+### Strengths
+
+The therapist demonstrated adequate interpersonal skills, maintaining a warm, supportive, and non-judgmental stance throughout both sessions. Robert remained engaged and expressed willingness to try suggested interventions, indicating that basic rapport was established. The therapist appropriately normalized anxiety and worry, reducing potential shame. The therapist also identified several relevant catastrophic thoughts (e.g., "What if the transplant doesn't happen in time?") and attempted to introduce cognitive and behavioral strategies. The therapist maintained professional boundaries and did not overstep into medical management.
+
+### Critical Deficiencies
+
+This session represents a significant departure from evidence-based CBT practice. The most critical deficiency is the complete absence of proper CBT structure: no collaborative agenda was established in either session, no explicit goals were identified, and no session-to-session continuity was maintained. Most egregiously, Session 2 failed to review homework from Session 1, which is a fundamental CBT requirement. This suggests either that homework was not completed (and the therapist did not address this) or that the therapist forgot to review it (indicating poor session planning).
+
+The homework assignments themselves were severely deficient. They lacked specificity ("try to do a little distraction activity"), measurement ("no baseline or tracking plan"), written instructions (critical given Robert's cognitive impairment), and clear rationale. The optional framing ("no pressure") undermined commitment. No check for understanding was conducted, and no barriers were identified or problem-solved.
+
+The therapist's application of CBT techniques was superficial and unsystematic. Cognitive restructuring was reduced to providing replacement thoughts rather than systematic examination of evidence and alternatives. Behavioral activation was a vague suggestion rather than a structured plan with baseline, hierarchy, and tracking. Thought monitoring was informal noticing rather than a structured thought record. No behavioral experiments, exposure, problem-solving, or relapse prevention planning occurred despite clear clinical indication.
+
+The therapist never articulated a coherent case formulation or treatment strategy. The anxiety was treated as purely psychological despite clear evidence of steroid-induced medication effects. Robert's mild cognitive impairment (MoCA 26/30) and attention difficulties were not factored into session structure or intervention selection. His 10-year drinking history and early remission status received minimal attention despite being a critical risk factor. The existential distress related to loss of identity, control, and dependence on medical systems was not explored.
+
+The therapist relied on suggestion and persuasion rather than Socratic questioning and guided discovery. When Robert expressed a core belief ("if I don't worry, I'm not taking it seriously enough"), the therapist acknowledged it but did not explore it through questioning. Feedback elicitation was minimal—the therapist did not genuinely check for understanding, ask about patient satisfaction, or solicit input on treatment direction. Collaboration was pseudo-collaboration: the therapist used collaborative language but made therapist-driven recommendations without genuine shared decision-making.
+
+### Impact on Patient Care
+
+These deficiencies significantly reduce the likelihood of therapeutic change. Robert is unlikely to experience meaningful symptom improvement because: (1) interventions are not grounded in a coherent formulation, (2) techniques are applied superficially rather than systematically, (3) homework is vague and unmeasured, (4) medical factors are not addressed, and (5) relapse prevention is inadequate. The lack of homework review means the therapist has no data on what's working and cannot adjust the strategy accordingly. Robert's cognitive impairment and attention difficulties are not accommodated, making complex cognitive restructuring potentially ineffective. Most concerning, the therapist's failure to address steroid-induced anxiety and relapse vulnerability means Robert is not receiving appropriate treatment for his most critical clinical needs.
+
+Additionally, the lack of structure and measurement means neither the therapist nor the patient will know if treatment is working. This can lead to prolonged ineffective treatment, patient demoralization, and potential dropout. For someone facing a life-threatening illness and transplant dependency, ineffective psychiatric treatment is not merely suboptimal—it is clinically harmful.
+
+---
+
+## Recommendations
+
+### 1. Establish Proper CBT Session Structure (HIGHEST PRIORITY)
+- **Action:** Begin every session with a collaborative agenda. Explicitly identify 2-3 target problems, prioritize them with the patient, and allocate time. End every session with a summary and homework assignment.
+- **Example:** "Robert, I want to make sure we use our time well today. Last week we talked about your anxiety and some strategies to manage it. Today, I'd like to focus on three things: (1) reviewing how the walks and thought monitoring went, (2) developing a relapse prevention plan, and (3) setting up a more structured thought record. Does that sound good? We have 45 minutes, so we'll spend about 15 minutes on each. Does that work for you?"
+- **Practice:** Before each session, write out a 3-item agenda with time allocation. Review it with the patient at the start. At the end, summarize what was covered and what homework is assigned. This should become automatic.
+
+### 2. Implement Mandatory Homework Review (HIGHEST PRIORITY)
+- **Action:** Begin every session (after Session 1) by reviewing the previous week's homework. Ask: "What did you complete?" "What worked?" "What got in the way?" "What did you learn?" Adjust the strategy based on results.
+- **Example:** "Robert, last week I asked you to try some walks and to notice your thoughts. Let's start by reviewing that. Did you get out for any walks? How many? What did you notice about your anxiety before and after? Did the thought monitoring help? What got in the way?"
+- **Practice:** Create a homework review checklist: (1) Ask what was completed, (2) Ask what worked/didn't work, (3) Ask about barriers, (4) Adjust strategy based on results, (5) Reinforce completion. Use this checklist at the start of every session.
+
+### 3. Develop a Coherent Case Formulation and Treatment Strategy (HIGHEST PRIORITY)
+- **Action:** Explicitly articulate a formulation of Robert's anxiety that accounts for medical factors, psychological factors, and relapse vulnerability. Use this formulation to guide all interventions.
+- **Example:** "Robert, I want to make sure I understand what's going on. It sounds like your anxiety has several causes: (1) The steroids you're taking can cause anxiety and irritability—this is a medication effect, not a personal failing. (2) The uncertainty about the transplant and your health is genuinely stressful. (3) You're in early recovery from alcohol, and that takes a lot of mental energy. (4) You've lost your job as a delivery driver, which was part of your identity. All of these together are making you feel on edge. Does that match your experience? I think our plan should focus on: first, understanding the steroid effects and talking to your doctor about that; second, developing a relapse prevention plan so you feel more secure in your recovery; and third, managing the transplant-related anxiety. Does that make sense?"
+- **Practice:** For each patient, write out a one-paragraph formulation that includes: (1) Biological factors, (2) Psychological factors, (3) Social/contextual factors, (4) Maintaining factors, (5) Treatment priorities. Share this formulation with the patient and refine it based on feedback.
+
+### 4. Create Structured, Specific Homework Assignments with Written Instructions (HIGH PRIORITY)
+- **Action:** Replace vague homework suggestions with specific, structured assignments. Provide written instructions, establish baseline/measurement, and check for understanding.
+- **Example:** Instead of "Try to do a little distraction activity," assign: "Behavioral Activation Log: This week, schedule 3 specific activities (walks, puzzles, music, etc.). For each activity, record: (1) Activity name, (2) Day/time, (3) Duration, (4) Anxiety before (0-10 scale), (5) Anxiety after (0-10 scale). Bring the log to our next session so we can review what helped."
+- **Practice:** Create homework templates for common assignments: (1) Thought Record form, (2) Behavioral Activation Log, (3) Relapse Prevention Worksheet, (4) Worry Monitoring form. Use these templates consistently. Always provide written instructions. Always establish baseline and measurement. Always check: "Does this make sense? What might get in the way? How will you remember to do this?"
+
+### 5. Implement Systematic Cognitive Restructuring, Not Thought Replacement (HIGH PRIORITY)
+- **Action:** Move beyond suggesting replacement thoughts. Use structured thought records that include: (1) Situation, (2) Automatic thought, (3) Emotion/physical sensation, (4) Evidence for the thought, (5) Evidence against the thought, (6) Alternative thought, (7) Outcome/belief in alternative.
+- **Example:** Instead of "You could tell yourself 'I'm doing my best,'" use Socratic questioning: "When you think 'What if the transplant doesn't happen in time?', what evidence do you have that this will happen? What evidence do you have against it? What would someone who cares about you say about this thought? What's a more balanced way to think about it?" Then complete a thought record together.
+- **Practice:** For each catastrophic thought Robert identifies, complete a full thought record. Do not skip steps. Help Robert examine evidence systematically. Help him generate alternatives through questioning, not suggestion. Have him rate belief in the alternative thought (0-100%). Track changes in belief over time.
+
+### 6. Develop Explicit Relapse Prevention Plan (HIGH PRIORITY)
+- **Action:** Given Robert's 10-year drinking history and early remission status, relapse prevention must be a central focus. Develop a written plan that identifies: (1) Personal relapse triggers, (2) Warning signs, (3) Coping strategies for each trigger, (4) High-risk situations, (5) Support resources.
+- **Example:** "Robert, you mentioned worrying about 'messing up and starting drinking again.' Let's develop a plan so you feel more confident in your recovery. First, what are your personal triggers for drinking? (e.g., stress, certain people, certain places, certain emotions?) For each trigger, what's one coping strategy you could use instead? Let's write this down so you have it when you need it."
+- **Practice:** Spend at least one full session on relapse prevention. Create a written relapse prevention plan. Review it regularly. Update it as new triggers emerge. Connect relapse prevention to anxiety management (e.g., "When anxiety spikes, use your coping strategy instead of drinking").
+
+### 7. Address Steroid-Induced Anxiety Through Psychoeducation (HIGH PRIORITY)
+- **Action:** Provide explicit psychoeducation about steroid effects on mood and anxiety. Discuss with Robert's prescribing physician whether dose reduction or medication change is possible. Adjust expectations about what CBT can accomplish while on steroids.
+- **Example:** "Robert, I want to make sure you understand something important. The anxiety and irritability you're experiencing are partly caused by the steroids you're taking. Steroids can cause anxiety, irritability, and sleep problems—this is a medication effect, not something you're doing wrong. This means that while we work on managing anxiety through the strategies we've discussed, we also need to talk to your doctor about the steroids. Sometimes adjusting the dose or timing can help. Let's set up a conversation with your doctor about this."
+- **Practice:** Provide Robert with a handout on steroid effects. Discuss it together. Help him prepare questions for his prescribing physician. Follow up on whether medication adjustments were made. Adjust CBT expectations accordingly.
+
+### 8. Use Socratic Questioning Instead of Suggestion (HIGH PRIORITY)
+- **Action:** Replace directive suggestions with open-ended Socratic questions that help Robert discover insights himself.
+- **Example:** Instead of "Maybe it would help to try some things to distract your mind," ask: "When the worries get really intense, what have you found helpful in the past? What activities have you enjoyed that might give your mind a break? What would feel realistic for you right now given your energy level? What's one thing you could try this week?"
+- **Practice:** For every suggestion you're tempted to make, ask a Socratic question instead. Practice asking: "What do you think...?" "What evidence do you have...?" "What would happen if...?" "How might someone else view this...?" "What's another way to think about this...?" Record yourself in sessions and count how many times you suggest vs. question. Aim for 80% questions, 20% suggestions.
+
+### 9. Systematically Apply Behavioral Activation With Baseline and Tracking (MEDIUM PRIORITY)
+- **Action:** Move beyond vague suggestions to structured behavioral activation. Establish baseline activity level, create a graded hierarchy, schedule specific activities, and track mood/anxiety changes.
+- **Example:** "Let's look at your activity level this week. How many days did you get out of the house? How many activities did you do that you enjoy? Let's create a plan. This week, I'd like you to schedule one activity each day—it could be a 10-minute walk, listening to music, doing a puzzle, or calling a friend. For each activity, rate your mood before and after (0-10). Let's see if activity affects your mood."
+- **Practice:** Create a Behavioral Activation Log. Establish baseline (current activity level). Create a graded hierarchy (easy activities to harder activities). Schedule specific activities. Track mood before/after. Review results weekly. Adjust based on what works.
+
+### 10. Elicit Genuine Feedback and Check for Understanding (MEDIUM PRIORITY)
+- **Action:** Regularly ask for feedback about the session, the approach, and whether interventions are helpful. Check understanding of rationale and techniques.
+- **Example:** "Robert, I want to make sure this is helpful for you. How are you feeling about the strategies we've discussed? Does the thought record make sense? Is there anything that doesn't feel right or that you'd like to do differently? What's your biggest concern about trying these strategies?"
+- **Practice:** At the end of each session, ask: (1) "What was most helpful about today's session?" (2) "What was least helpful?" (3) "Is there anything you'd like to do differently?" (4) "Do you have any concerns about the homework?" Use feedback to adjust your approach.
+
+### 11. Accommodate Cognitive Impairment in Session Structure and Interventions (MEDIUM PRIORITY)
+- **Action:** Given Robert's mild cognitive impairment (MoCA 26/30) and attention difficulties, simplify interventions, provide written materials, check understanding frequently, and use concrete examples.
+- **Example:** Instead of complex cognitive restructuring, use simpler interventions like behavioral activation, thought monitoring with a simple form, and concrete problem-solving. Provide written instructions for all homework. Check understanding by asking Robert to summarize the homework in his own words. Use concrete examples from his life rather than abstract concepts.
+- **Practice:** Assess cognitive function at baseline. Adjust intervention complexity accordingly. Provide written materials for all interventions. Check understanding frequently. Use concrete, specific examples. Simplify language. Repeat key points. Verify understanding by asking Robert to summarize.
+
+### 12. Establish Measurement and Progress Tracking (MEDIUM PRIORITY)
+- **Action:** Establish baseline measurements for key symptoms (anxiety, irritability, sleep, relapse urges). Track progress weekly. Adjust strategy if progress is not occurring.
+- **Example:** "Robert, I want to track your progress so we know if what we're doing is helping. Let's establish a baseline. On a 0-10 scale, how anxious are you typically? How irritable? How many hours of sleep are you getting? How strong are your urges to drink? Let's check these every week so we can see if they're improving."
+- **Practice:** Use simple measurement tools: (1) Anxiety rating (0-10), (2) Irritability rating (0-10), (3) Sleep hours, (4) Relapse urge rating (0-10), (5) Activity level (days active per week). Track weekly. Graph progress. Review with patient. Adjust strategy if no progress after 3-4 weeks.
+
+---
+
+## Overall Session Score: 2.3/6
+
+**Summary:**
+
+These sessions represent inadequate CBT practice with significant departures from evidence-based standards. While the therapist demonstrated adequate interpersonal skills and identified some relevant cognitions, the fundamental structure, techniques, and strategy of CBT were not properly implemented. Most critically, there was no collaborative agenda, no homework review, vague and unstructured homework assignments, superficial technique application, and no coherent case formulation. The therapist treated Robert's anxiety as purely psychological despite clear evidence of steroid-induced medication effects, cognitive impairment, and relapse vulnerability. The lack of structure, measurement, and guided discovery means Robert is unlikely to experience meaningful symptom improvement.
+
+**Current Competency Assessment:**
+
+The therapist demonstrates basic familiarity with CBT concepts (identifying thoughts, suggesting cognitive reframing, recommending behavioral activation) but lacks the systematic skill required for effective CBT delivery. The therapist functions more as a supportive counselor than as a CBT therapist. This is a critical distinction: supportive counseling can be helpful, but it is not CBT, and it is not appropriate for a patient with complex medical and psychiatric needs who requires evidence-based treatment.
+
+**Most Critical Changes Needed Immediately:**
+
+1. **Establish proper CBT structure:** Collaborative agenda, explicit goals, time management, homework review, measurement
+2. **Implement systematic homework:** Specific assignments, written instructions, baseline/measurement, understanding check
+3. **Develop coherent case formulation:** Account for steroid effects, cognitive impairment, relapse vulnerability, and existential factors
+4. **Apply CBT techniques systematically:** Structured thought records, behavioral activation with tracking, guided discovery through Socratic questioning
+5. **Prioritize relapse prevention:** Given 10-year drinking history and early remission, this must be a central focus
+
+**Whether Session Qualifies as Evidence-Based CBT:**
+
+No. These sessions do not qualify as evidence-based CBT. While some CBT elements were present (identifying thoughts, suggesting behavioral strategies), they were applied superficially and without the systematic structure, measurement, and guided discovery that define CBT. The sessions more closely resemble supportive counseling with some cognitive-behavioral elements. For a patient with Robert's complexity (advanced liver disease, steroid-induced anxiety, early alcohol remission, cognitive impairment, transplant dependency), this level of treatment is inadequate and potentially harmful. Robert requires rigorous, systematic, evidence-based CBT delivered by a therapist with genuine competence in the model.
+
+**Likelihood of Producing Therapeutic Change:**
+
+Low. Without proper structure, measurement, and systematic technique application, Robert is unlikely to experience meaningful symptom improvement. The vague homework, lack of review, and superficial interventions mean there is no mechanism for change. Additionally, the failure to address steroid-induced anxiety and relapse vulnerability means the therapist is not targeting Robert's most critical clinical needs. For someone facing a life-threatening illness and transplant dependency, ineffective psychiatric treatment is not merely suboptimal—it represents a missed opportunity for meaningful clinical impact and potentially contributes to deterioration.

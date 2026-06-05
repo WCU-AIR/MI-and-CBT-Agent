@@ -1,0 +1,803 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Autism Spectrum Disorder (ASD) with Childhood-Onset Fluency Disorder (Stuttering)
+
+--- CASE STUDY ---
+
+Brandon, a 12-year-old boy, was brought in by his mother for psychiatric evaluation due to temper tantrums, social difficulties, and declining school performance. His mother reported that things had always been difficult but became worse after he entered middle school. Around this time, he began complaining of stomachaches on school mornings and often resisted going to school.
+
+Teachers described Brandon as academically capable but socially isolated. He mistrusted classmates who were genuinely kind and instead gravitated toward peers who mocked him. He brought toy cars and trucks to school, which other students ridiculed. Teachers reported he often cried, rarely spoke in class, and had recently begun screaming at classmates in hallways and classrooms. These outbursts embarrassed him, and he avoided swim practice to escape questions about them.
+
+In interview, Brandon was shy and nonspontaneous, responding with mumbled answers when asked about school, friends, or family. However, when asked about toy cars, his demeanor brightened, and he spoke in detail, accurately naming different models (e.g., front-end loader, B-52, Jaguar). He carried toy cars and airplanes in his backpack. When asked about peers, he showed the examiner text messages he had saved: “dumbo!!!!” “mr stutter”; “LoSeR”; “freak!”; “EVERYBODY HATES YOU.” He reported classmates whispered insults and screamed in his ears. He added, “I hate loud noises” and admitted he sometimes wished he had never been born.
+
+Developmentally, Brandon spoke his first word at 11 months and began using sentences by age 3. He had always been intensely focused on vehicles and struggled with humor and figurative language, often taking things literally. His mother described him as shy, without a best friend, and noted his father, a successful attorney, shared similar rigid routines and humorless demeanor. Brandon tried to appear “normal” around peers but found it exhausting and avoided socializing due to anxiety.
+
+Examination revealed below-average eye contact, coherent and goal-directed speech, but with frequent stumbles, long pauses, and word repetitions consistent with stuttering. His affect was subdued, though he brightened when discussing his interests. He denied current suicidal intent or plans, homicidality, or psychosis. Cognition was intact.
+
+Discussion:
+Brandon meets DSM-5 criteria for Autism Spectrum Disorder, showing clear social communication deficits (difficulty forming friendships, misinterpreting social cues, literal thinking) and restricted, repetitive interests (trucks, cars, trains). His distress over changes in routine and sensory sensitivity to loud noises further support this diagnosis. He also meets criteria for childhood-onset fluency disorder, given his stuttering symptoms.
+
+He shows signs of anxiety (school avoidance, stomachaches, social fear), common in ASD. Bullying exacerbates his distress and suicidal ideation. His awareness of his difficulties and desire for friends are positive prognostic factors, suggesting that appropriate interventions could significantly improve his functioning.
+
+--- BEHAVIOUR ---
+- Shy, nonspontaneous speech
+- Below-average eye contact
+- Screaming outbursts at peers
+- Frequent crying at school
+- Carries toy vehicles in backpack, obsessive interest
+- Embarrassment, avoids social activities (e.g., swim practice)
+- Brightens when discussing special interests
+- Sensitive to loud noises
+- Saves bullying messages but hides them from others
+
+--- ASD & FLUENCY DISORDER SYMPTOMS from DSM-5 ---
+Autism Spectrum Disorder:
+- Deficits in social communication (difficulty making friends, mistrust, literal interpretation, poor eye contact)
+- Restricted, repetitive interests (trucks, cars, trains obsession)
+- Sensory sensitivities (distress with loud noises)
+- Symptoms present since early childhood
+- Significant impairment in school and social functioning
+
+Childhood-Onset Fluency Disorder (Stuttering):
+- Repetitions of words/parts of words
+- Long pauses in speech
+- Speech disruptions causing social and academic dysfunction
+- Onset in early development, persistent pattern
+
+--- PATIENT PROFILE ---
+Name: Brandon Ellis
+Sex: Male
+Age: 12 years
+DOB: June 22, 2013
+Place of Birth: Richmond, VA
+Address: 97 Brookside Lane, Richmond, VA
+Contact: (804) 555-2974
+Marital Status: Single
+Children: None
+Occupation: Student, 6th grade
+Education: Middle school, average academic ability
+Religion: Methodist
+Legal Guardian: Sarah Ellis (mother)
+Presenting Complaint: Temper tantrums, social withdrawal, school difficulties
+Psychiatric History: No prior formal psychiatric treatment
+Psychotherapy: None reported
+Medications: None reported
+Substance Use: None
+Medical History: Recurrent stomachaches, school avoidance
+Neurology: No known neurological disorder
+Family History: Father (rigid, humorless, possible ASD traits), mother (none reported), no major psychiatric illness reported
+Mental Status: Shy, below-average eye contact, coherent but stuttering speech, subdued affect, brightened when discussing cars, intact cognition, no current suicidal ideation but past passive wishes to not be alive
+
+--- DIAGNOSIS ---
+- Autism Spectrum Disorder requiring support for deficits in social communication and for restricted, repetitive behaviors, without intellectual impairment, with accompanying language impairment
+- Childhood-Onset Fluency Disorder (Stuttering)
+- Rule out comorbid anxiety disorder
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Brandon Ellis, a 12-year-old male student, presents to the outpatient psychiatric clinic for evaluation at the request of his mother due to concerns about temper tantrums, social withdrawal, and declining school performance. The referral follows reports of increased difficulties since starting middle school, including school avoidance and peer conflicts.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hey there! Good to see you today. How's your day been so far? 
+ PATIENT: Hi... um, it’s been okay, I guess. School was... kind of hard today. Some kids were loud in the hallway, and it made me really nervous. I didn’t want to go to class for a while. But, uh, I brought my toy trucks with me, so that helped a little. How about you? 
+ PSYCHIATRIST: Hey! It’s good to see you too. You know, days can be tough sometimes, but it’ll get better. Just try to think positive, you know? Like, when I was your age, I used to get really nervous too, but I’d remind myself that things always turn out okay in the end. What do you usually do when you feel nervous? 
+ PATIENT: Yeah, I try to think about my trucks or planes... that helps me calm down a bit. But sometimes the words get stuck and I stutter, and then I feel like everyone’s staring. When I get nervous, I sometimes just want to hide or go somewhere quiet, but I know I can't always do that. Oh, and loud noises make it harder too — like when kids scream or the bell rings really loud. Then I get all shaky inside. What do you think I should do when I feel like that? 
+ PSYCHIATRIST: Oh, I totally get that! When I was a kid, I used to get really scared of loud noises too. One time, during a thunderstorm, I hid under my blanket for hours. It felt better after a while, you know? So maybe you can find a little safe spot or something that makes you feel cozy when things get too loud. Also, sometimes just thinking about happy things, like your favorite toy or a fun day at the park, can help a lot. Everyone goes through stuff like this, so you’re not alone. Hey, do you like playing outside? 
+ PATIENT: Yeah, I like playing outside sometimes. I like watching the trucks go by on the street. But I don’t really like playing with other kids much. They usually don’t get me, and sometimes they say mean stuff like “LoSeR” or “mr stutter.” That really hurts. I wish I had a safe place at school, but I don’t think there is one. And when it gets loud, I just want to cover my ears or find a quiet corner. It’s hard when people don’t understand that loud noises make me feel really upset. Do you think I should tell someone at school about it? 
+ PSYCHIATRIST: Oh, that sounds really tough, but you know what? It’s important to stay strong and keep your head up. When I was younger, I had friends who said mean things too, but I just tried to ignore them and think about better stuff. Maybe you can try to think positive and focus on what makes you happy. Drinking lots of water and getting good sleep always helped me feel better when I was down. Sometimes, just taking a deep breath and smiling can make a big difference. You’ll get through this, no doubt. Have you been sleeping okay lately? 
+ PATIENT: I... I don’t sleep very well most nights. Sometimes I lie awake thinking about school and the things kids said to me. I get worried that it will happen again tomorrow. And then I feel tired at school, which makes everything harder. Taking deep breaths helps a little, but sometimes it’s hard to calm down when my mind is busy with those thoughts. I wish I wasn’t so scared all the time. It’d be nice to just feel normal, you know? 
+ PSYCHIATRIST: Yeah, that sounds really tough. You know, sometimes when I can’t sleep, I just try to think about my favorite place, like the beach or a park where I had fun. It helps me relax. Also, drinking water before bed and having a little snack can sometimes help, but I’m not really sure why. Everyone has rough days, but it’ll get better. Maybe you could try to think positive before you go to sleep. Oh, speaking of fun places, have you ever been on a really cool trip or vacation? 
+ PATIENT: Well, not really a big trip or anything. But my family took me to the museum once, and they had this huge model train set. I spent a long time just watching it and talking about the different kinds of trains I saw. That was really cool. I like things like that more than regular trips to the beach or amusement parks. And, um, I keep pictures of my trucks and planes on my phone. Sometimes looking at them before bed helps me feel a little better. It’s nice to have something I like, even if other kids don’t understand it. Do you think it’s okay to be really into things like trucks and planes? 
+ PSYCHIATRIST: Oh, absolutely! Everyone has their own thing that makes them happy. When I was a kid, I was really into collecting stickers and comic books. It’s totally okay to like what you like. Sometimes having a special interest can be like a little treasure that makes life more fun. Just keep enjoying what you love, and don’t worry about what others think. You’re doing great. Hey, have you tried doing something fun or relaxing when you feel upset? Like drawing or listening to music? 
+ PATIENT: Sometimes I like to listen to music, but only quiet stuff. Loud music makes me feel uncomfortable. I don’t really draw much—my handwriting is all messy because of the stuttering and shaking sometimes. But I have lots of toy trucks and airplanes that I play with when I’m upset. I can focus on them, and it makes me feel less nervous. When I talk about them, I don’t feel as scared or awkward. It’s like they understand me better than people do. Do you think it’s weird to like playing with toys when I’m 12? 
+ PSYCHIATRIST: Not at all! Everyone needs something that makes them feel safe and happy. When I was your age, I had a teddy bear I took everywhere. It’s totally normal to have things that comfort you, no matter how old you are. Just keep doing what helps you feel better. You’re doing just fine. Remember, it’ll get better with time. Keep your chin up! 
+ PATIENT: Thanks... that means a lot. Sometimes it feels really hard, but I want to believe things can get better. I just wish it was easier to make friends or not feel so scared all the time. But I’ll keep trying. Thanks for listening. 
+ PSYCHIATRIST: You’re welcome! Just remember, you’re stronger than you think, and every day is a new chance to feel better. Keep doing what makes you happy, and don’t let the tough stuff get you down. You’ve got this! Take care, and I’m rooting for you! 
+ PATIENT: Okay, I’ll try. Thanks for saying that. It helps a little, knowing someone believes in me. I guess I’ll bring my trucks tomorrow and see if that helps again. Bye for now. 
+ PSYCHIATRIST: Hey there! Good to see you today. How's your day been so far? 
+ PATIENT: Hi... today was okay, I guess. School was kind of noisy, and that made me nervous. I tried to stay quiet, but sometimes the words get stuck, and I stutter a lot. I brought my toy cars with me, though, and they helped me feel a bit better. How about you? 
+ PSYCHIATRIST: Hey! It’s good to see you too. You know, days can be tough sometimes, but it’ll get better. Just try to think positive, you know? Like, when I was your age, I used to get really nervous too, but I’d remind myself that things always turn out okay in the end. What do you usually do when you feel nervous? 
+ PATIENT: Well, when I feel nervous, I usually think about my trucks and planes. That helps me calm down a bit. But sometimes, even thinking about them isn’t enough, and I get really scared that people are staring or laughing at me because of how I talk. Then I want to hide or just be somewhere quiet. Loud noises make it worse too. What do you think I should do when I feel like that? 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 0/6**
+
+**Explanation:**
+
+No agenda was established at any point in this session. The therapist did not collaboratively identify target problems, prioritize concerns, or establish time-bound goals with Brandon. The session drifted without structure, moving from general pleasantries about nervousness, to personal anecdotes about the therapist's childhood, to questions about vacations and hobbies. There was no explicit discussion of what Brandon and the therapist would work on together, what specific problems would be addressed, or how the session time would be allocated. A 12-year-old with ASD, anxiety, bullying trauma, and suicidal ideation requires clear, concrete agenda-setting—particularly given his literal thinking style and need for predictability. The absence of agenda meant the session lacked direction and failed to prioritize Brandon's most pressing concerns: peer bullying, school avoidance, sleep disturbance, and passive suicidal ideation.
+
+**Summary:**
+
+The therapist completely failed to establish a collaborative agenda, leaving the session without structure, direction, or prioritized treatment targets.
+
+---
+
+### 2. Feedback
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist made minimal attempt to elicit or respond to feedback throughout the session. There were no explicit checks for understanding (e.g., "Does that make sense?" "How does that land with you?"). The therapist did not ask Brandon whether the suggestions being offered were helpful, realistic, or aligned with his experience. Most critically, the therapist never circled back to assess whether Brandon understood the rationale behind recommendations or whether he felt heard. The only implicit feedback opportunity came when Brandon asked direct questions ("Do you think I should tell someone at school about it?" and "Do you think it's okay to be really into things like trucks and planes?"), but the therapist's responses were reassurances rather than genuine exploration of Brandon's perspective. There was no summary of session content, no check-in about what Brandon found most useful, and no solicitation of his input on next steps. For a child with ASD who struggles with social communication and may not spontaneously express confusion or disagreement, explicit feedback elicitation is essential—yet it was entirely absent.
+
+**Summary:**
+
+The therapist did not systematically elicit or respond to feedback, missing critical opportunities to ensure understanding and validate Brandon's experience.
+
+---
+
+### 3. Understanding
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist demonstrated surface-level understanding of Brandon's explicit statements but missed critical nuances and failed to grasp his internal reality. For example, when Brandon disclosed that loud noises cause him significant distress and that he "sometimes wished he had never been born" (passive suicidal ideation per the case summary), the therapist responded with generic reassurance ("it'll get better") rather than exploring the severity of his emotional pain or assessing safety. When Brandon described being bullied with specific, devastating messages ("dumbo!!!!" "mr stutter"; "LoSeR"; "freak!"; "EVERYBODY HATES YOU"), the therapist minimized this by sharing a personal anecdote about his own childhood bullying rather than validating Brandon's current suffering or exploring the impact of these messages on his self-concept.
+
+The therapist also failed to recognize that Brandon's special interest in vehicles and his difficulty with social reciprocity are core ASD features, not merely "things he likes." When Brandon asked "Do you think it's weird to like playing with toys when I'm 12?"—a question reflecting shame and social anxiety about his autism—the therapist normalized it with a personal anecdote about a teddy bear, which, while well-intentioned, missed the opportunity to validate his neurodivergence and address the underlying social rejection he experiences.
+
+Most significantly, the therapist did not demonstrate understanding of Brandon's literal thinking style, sensory sensitivities, or anxiety patterns. Brandon explicitly stated that loud noises trigger physiological distress ("I get all shaky inside"), yet the therapist's suggestions (thinking positive, deep breathing, drinking water) were generic coping strategies that do not address the specific neurobiological and environmental factors driving his anxiety.
+
+**Summary:**
+
+The therapist grasped explicit content but missed Brandon's emotional depth, failed to recognize ASD-specific features, and did not demonstrate understanding of his internal experience of shame, rejection, and suicidal ideation.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist displayed surface-level warmth and friendliness but demonstrated significant interpersonal problems that undermined therapeutic effectiveness. Most problematically, the therapist repeatedly centered his own experiences rather than Brandon's. In nearly every exchange, the therapist responded to Brandon's disclosures with personal anecdotes: "When I was your age, I used to get really nervous too," "One time, during a thunderstorm, I hid under my blanket for hours," "When I was a kid, I was really into collecting stickers and comic books," "When I was your age, I had a teddy bear I took everywhere." This pattern of self-disclosure is inappropriate in child therapy, particularly with a child who is already struggling with social isolation and needs to feel that his unique experiences are understood—not compared to the therapist's past.
+
+The therapist also displayed a tone of false cheerfulness and minimization that, while not hostile, came across as dismissive of Brandon's genuine suffering. Phrases like "You're doing just fine," "You've got this!" and "Keep your chin up!" are platitudes that do not acknowledge the severity of Brandon's distress. For a child experiencing bullying, sleep disturbance, school avoidance, and suicidal ideation, this tone may feel invalidating.
+
+The therapist did establish basic rapport and was not cold or rejecting, but the consistent self-focus and use of generic encouragement rather than genuine empathic attunement created distance rather than connection. A child with ASD who struggles with social understanding needs clear, concrete, and authentic communication—not cheerleading.
+
+**Summary:**
+
+The therapist was friendly but repeatedly centered his own experiences, minimized Brandon's suffering through platitudes, and failed to demonstrate genuine empathic attunement to his unique struggles.
+
+---
+
+### 5. Collaboration
+### **Score: 1/6**
+
+**Explanation:**
+
+Collaboration was minimal and largely absent. The therapist did not invite Brandon to be an active partner in identifying problems or developing solutions. Instead, the therapist offered suggestions in a top-down manner: "Maybe you can try to think positive," "Maybe you can find a little safe spot," "Try to think about your favorite place," "Have you tried doing something fun or relaxing?" These are directive suggestions presented without collaborative exploration of what Brandon thinks might help, what he has already tried, or what feels realistic for him.
+
+True collaboration in CBT requires asking questions like: "What do you think might help when you feel nervous?" "What have you already tried?" "What feels doable for you?" "How could we work together on this?" None of these collaborative invitations appeared in the session. Brandon did ask direct questions ("What do you think I should do?" "Do you think I should tell someone at school?" "Do you think it's okay to be really into things?"), which created an illusion of engagement, but the therapist's responses were reassurances rather than collaborative problem-solving.
+
+Most critically, the therapist did not establish Brandon as an active agent in his own treatment. There was no discussion of shared goals, no exploration of Brandon's priorities, and no invitation for him to contribute ideas. For a child with ASD who may struggle with social reciprocity but is cognitively capable, this lack of collaboration sends the message that his input is not valued and that solutions will be imposed rather than co-created.
+
+**Summary:**
+
+The therapist offered directive suggestions without collaborative exploration, failed to invite Brandon's input on problem-solving, and did not establish him as an active partner in treatment.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 1/6**
+
+**Explanation:**
+
+The session lacked structure and efficient time management. The therapist allowed the conversation to drift without redirecting toward clinically relevant material. Significant time was spent on tangential topics: the therapist's personal experiences with nervousness, thunderstorms, sticker collecting, and teddy bears; Brandon's museum trip and train sets; questions about vacations and playing outside; and extended discussion about music preferences and handwriting.
+
+Meanwhile, critical clinical material was touched on but not explored in depth:
+- Brandon's passive suicidal ideation ("I sometimes wished I had never been born") was mentioned but never assessed or explored.
+- Specific bullying messages were disclosed but not processed or addressed therapeutically.
+- Sleep disturbance and rumination about peer rejection were mentioned but not targeted with any intervention.
+- Brandon's school avoidance and anxiety symptoms were noted but not systematically addressed.
+- His sensory sensitivities to loud noises were acknowledged but not incorporated into a treatment plan.
+
+The session felt aimless, with the therapist responding reactively to whatever Brandon mentioned rather than proactively directing time toward the most pressing clinical concerns. For a child with limited attention and significant anxiety, this lack of structure is counterproductive. A 12-year-old with ASD benefits from clear, predictable session structure—yet this session provided none.
+
+**Summary:**
+
+The therapist allowed the session to drift into tangential personal anecdotes while failing to prioritize and efficiently address Brandon's most pressing clinical concerns.
+
+---
+
+### 7. Guided Discovery
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist did not employ guided discovery at any point in the session. Guided discovery in CBT involves asking skillful Socratic questions that help the patient reach insights independently, examine evidence, consider alternatives, and weigh pros and cons. Instead, the therapist relied entirely on direct advice and reassurance.
+
+Examples of what was NOT done:
+- When Brandon disclosed anxiety about peers staring or laughing, the therapist did not ask: "What evidence do you have that people are staring? What might they actually be thinking? Have there been times when people weren't staring?"
+- When Brandon expressed fear about school, the therapist did not explore: "What specifically happens at school that makes you nervous? What's the worst thing that could happen? What's actually happened before?"
+- When Brandon mentioned bullying messages, the therapist did not ask: "How much of what they say do you believe? What would a friend say about you? What do you know about yourself that contradicts these messages?"
+- When Brandon expressed shame about his special interests, the therapist did not explore: "Why do you think you like trucks? What do they give you that other activities don't? Who decides what's 'normal' to like?"
+
+Instead, the therapist told Brandon what to think: "Just try to think positive," "Don't worry about what others think," "It's totally okay to like what you like," "You're stronger than you think." These are prescriptive statements that bypass the cognitive work Brandon needs to do to develop genuine insight and resilience.
+
+For a child with ASD who is literal-minded and may struggle with abstract reasoning, guided discovery would need to be concrete and structured—but it was entirely absent.
+
+**Summary:**
+
+The therapist did not use any Socratic questioning or guided discovery; instead, he relied on direct advice and reassurance, bypassing the cognitive work necessary for genuine insight.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist made minimal attempt to identify and explore Brandon's central automatic thoughts, core beliefs, or critical behavioral patterns. While Brandon disclosed several clinically significant cognitions and behaviors, the therapist did not systematically target them:
+
+**Automatic Thoughts Not Explored:**
+- "People are staring at me because of how I talk" (social anxiety, catastrophizing)
+- "Everyone hates me" (core belief, supported by saved bullying messages)
+- "I'm weird for liking trucks at 12" (shame, social comparison)
+- "I can't handle loud noises" (anxiety amplification)
+- "I wish I had never been born" (suicidal ideation, hopelessness)
+
+**Behavioral Patterns Not Addressed:**
+- School avoidance (reinforced by anxiety reduction)
+- Social withdrawal (avoidance of swim practice, isolation)
+- Rumination at night (worry about peer rejection, sleep disruption)
+- Reliance on special interests as sole coping mechanism (adaptive but limiting)
+- Saving bullying messages (rumination, self-harm through repeated exposure)
+
+The therapist acknowledged these issues superficially but did not explore them as targets for intervention. For example, when Brandon mentioned sleep disturbance due to rumination about school and peer rejection, the therapist suggested "thinking about your favorite place" and "drinking water before bed"—generic sleep hygiene advice that does not address the underlying anxious cognitions driving the insomnia.
+
+A CBT-focused session would identify Brandon's most central and distressing thoughts (e.g., "Everyone hates me," "I'm broken," "I can't handle school") and begin to examine them collaboratively. This did not occur.
+
+**Summary:**
+
+The therapist did not systematically identify or explore Brandon's central automatic thoughts, core beliefs, or behavioral patterns; instead, he offered generic advice without targeting specific cognitive or behavioral targets.
+
+---
+
+### 9. Strategy for Change
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist did not articulate or follow a coherent, evidence-based strategy for change. There was no clear treatment conceptualization, no logical progression toward goals, and no systematic application of CBT principles.
+
+What was missing:
+
+1. **No Conceptualization:** The therapist did not explicitly connect Brandon's presenting problems (anxiety, bullying, social withdrawal, suicidal ideation) to underlying cognitive and behavioral patterns. There was no discussion of how anxiety maintains avoidance, how avoidance maintains anxiety, or how Brandon's negative self-beliefs are reinforced by social withdrawal and rumination.
+
+2. **No Treatment Plan:** The therapist did not outline a strategy for addressing Brandon's problems. There was no discussion of: "Here's what we'll work on together: managing anxiety, challenging negative thoughts about yourself, gradually facing feared situations, building social skills, addressing sleep problems."
+
+3. **No Logical Progression:** The suggestions offered (think positive, deep breathing, find a safe spot, drink water, listen to music, think about favorite places) were disconnected, generic, and not organized around a coherent theory of change. They were reactive responses to whatever Brandon mentioned rather than proactive steps toward a goal.
+
+4. **No CBT Framework:** The therapist did not explain how thoughts, feelings, and behaviors interact, or how changing one domain affects the others. For a child with ASD who benefits from explicit, concrete explanations, this is a critical omission.
+
+5. **No Prioritization:** The therapist did not distinguish between immediate safety concerns (suicidal ideation), primary targets (anxiety, bullying impact), and secondary targets (sleep hygiene). All issues were treated with equal weight and generic reassurance.
+
+For Brandon, an evidence-based strategy would involve: (1) safety assessment and planning around suicidal ideation, (2) psychoeducation about anxiety and ASD, (3) cognitive restructuring of negative self-beliefs, (4) gradual exposure to feared social situations, (5) behavioral activation, (6) social skills training tailored to his autism, and (7) coordination with school for environmental accommodations. None of this was present.
+
+**Summary:**
+
+The therapist did not articulate or follow any coherent treatment strategy; suggestions were generic, disconnected, and not organized around a CBT conceptualization of Brandon's problems.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist did not apply any specific CBT techniques. The session contained no evidence of:
+
+- **Cognitive Restructuring:** No examination of automatic thoughts, no evidence evaluation, no alternative thought generation, no thought records.
+- **Behavioral Experiments:** No hypothesis testing, no behavioral assignments designed to test beliefs.
+- **Exposure:** No gradual exposure to feared situations (e.g., tolerating peer interaction, managing sensory input).
+- **Activity Scheduling:** No structured plan to increase valued activities or behavioral activation.
+- **Thought Records:** No systematic documentation of situations, thoughts, feelings, and behaviors.
+- **Behavioral Activation:** No discussion of increasing engagement in meaningful activities to counter depression/withdrawal.
+- **Problem-Solving:** No structured problem-solving around specific obstacles (e.g., how to handle bullying, how to manage school anxiety).
+- **Relaxation Training:** While the therapist mentioned "deep breathing," there was no formal instruction, practice, or rationale for this technique.
+- **Social Skills Training:** No explicit teaching of social skills or communication strategies, despite Brandon's clear social difficulties.
+
+Instead, the therapist offered generic coping suggestions ("think positive," "find a safe spot," "drink water," "listen to music") that are not CBT techniques. These are supportive suggestions that any caring adult might offer, but they do not constitute evidence-based CBT intervention.
+
+For a child with ASD and anxiety, specific CBT techniques adapted to his developmental level and neurodivergence are essential. For example:
+- **Concrete thought records** with visual supports to help him identify and challenge catastrophic thoughts
+- **Behavioral experiments** to test his belief that "everyone hates me" (e.g., tracking actual peer interactions vs. his predictions)
+- **Gradual exposure** to social situations with clear, step-by-step planning
+- **Sensory accommodation planning** to address his noise sensitivity in concrete, practical ways
+
+None of this occurred.
+
+**Summary:**
+
+The therapist did not apply any specific CBT techniques; instead, he offered generic supportive suggestions that do not constitute evidence-based intervention.
+
+---
+
+### 11. Homework
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist did not assign any homework. There was no discussion of between-session tasks, no rationale for assignments, no specificity about what Brandon should do, and no check-in about his understanding or commitment.
+
+What should have been assigned (examples):
+
+1. **Thought Record:** "This week, write down three times you feel nervous at school. For each, write: What happened? What did you think? How did you feel? What did you do?" (adapted with visual supports for a 12-year-old with ASD)
+
+2. **Behavioral Experiment:** "This week, notice three times when you think people are staring or laughing. Write down what actually happened. Did they really stare? What were they actually doing?"
+
+3. **Behavioral Activation:** "This week, spend 15 minutes each day doing something with your trucks or planes. Notice how you feel before and after."
+
+4. **Exposure Hierarchy:** "Let's make a list of situations at school that make you nervous, from least to most scary. We'll work on facing them step by step."
+
+5. **Sleep Log:** "This week, write down what time you go to bed, what time you fall asleep, and what you were thinking about. We'll look for patterns."
+
+6. **School Communication:** "Talk to your mom about telling the school counselor about the loud noises that bother you. We can practice what to say."
+
+The absence of homework is a critical failure in CBT. Homework is where the real work happens—where patients practice new skills, test beliefs, and consolidate learning. Without homework, the session becomes a one-off conversation with no mechanism for change between sessions.
+
+**Summary:**
+
+The therapist did not assign any homework, eliminating the primary vehicle for between-session learning and skill practice.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- The therapist was warm, non-hostile, and did not create a threatening environment
+- The therapist did not dismiss Brandon's concerns or respond with anger or impatience
+- The therapist acknowledged Brandon's special interests without explicit judgment
+- The therapist was punctual and maintained basic professional boundaries
+
+### Critical Deficiencies:
+
+**1. Complete Absence of CBT Structure and Technique**
+- No agenda, no treatment plan, no coherent strategy for change
+- No application of any specific CBT techniques (cognitive restructuring, behavioral experiments, exposure, thought records, etc.)
+- No homework assignment
+- Session was supportive counseling, not CBT
+
+**2. Failure to Assess and Address Suicidal Ideation**
+- Brandon disclosed passive suicidal ideation ("I sometimes wished I had never been born")
+- Therapist did not assess severity, intent, plan, or protective factors
+- No safety planning, no discussion of crisis resources
+- This is a critical clinical failure with potential harm
+
+**3. Minimization of Bullying Trauma**
+- Brandon disclosed specific, devastating bullying messages and peer rejection
+- Therapist responded with personal anecdotes rather than validation or processing
+- No exploration of impact on self-concept, no cognitive work on internalized negative beliefs
+- Bullying was treated as a minor stressor rather than a primary driver of Brandon's distress
+
+**4. Failure to Recognize and Address ASD-Specific Needs**
+- No acknowledgment of Brandon's autism or how it affects his social communication, sensory processing, and anxiety
+- No adaptation of interventions to his literal thinking style, need for concrete explanations, or sensory sensitivities
+- Special interests treated as generic hobbies rather than core to his identity and coping
+- No discussion of environmental accommodations (e.g., sensory-friendly spaces at school)
+
+**5. Therapist Self-Focus and Inappropriate Self-Disclosure**
+- Nearly every response included a personal anecdote about the therapist's childhood
+- This centered the therapist's experience rather than Brandon's
+- Particularly inappropriate for a child with social difficulties who needs to feel uniquely understood
+- Violates CBT principle of maintaining appropriate therapeutic focus
+
+**6. Lack of Collaboration and Patient Activation**
+- No collaborative agenda-setting or goal identification
+- No invitation for Brandon's input on problem-solving
+- Directive advice presented without exploring Brandon's perspective
+- Patient positioned as passive recipient of therapist's suggestions rather than active agent
+
+**7. No Guided Discovery or Socratic Questioning**
+- Therapist told Brandon what to think rather than helping him discover insights
+- No examination of evidence, consideration of alternatives, or weighing of pros/cons
+- Missed opportunities to help Brandon challenge catastrophic thoughts and negative self-beliefs
+
+**8. Failure to Identify and Target Key Cognitions and Behaviors**
+- Central automatic thoughts ("Everyone hates me," "I'm weird," "I can't handle this") were not explored
+- Behavioral patterns (avoidance, rumination, social withdrawal) were not targeted
+- Generic coping suggestions offered instead of targeted intervention
+
+**9. No Feedback Elicitation or Checking for Understanding**
+- Therapist did not ask if Brandon understood recommendations
+- No assessment of whether suggestions felt realistic or helpful
+- No summary of session or solicitation of Brandon's takeaways
+- Particularly problematic for a child with ASD who may not spontaneously express confusion
+
+**10. Poor Time Management and Session Structure**
+- Session drifted into tangential personal anecdotes
+- Critical clinical material (suicidal ideation, bullying impact, anxiety patterns) was touched on but not explored
+- No prioritization of most pressing concerns
+- No clear structure or predictability—problematic for a child with ASD
+
+---
+
+## Impact on Patient Care
+
+This session is unlikely to produce meaningful therapeutic change and carries significant risks. Brandon disclosed suicidal ideation, severe bullying trauma, and anxiety symptoms—yet received generic reassurance and personal anecdotes rather than evidence-based intervention. He left the session without a clear understanding of what he will work on, what skills he will learn, or how treatment will help him.
+
+More concerning, the therapist's repeated self-focus and minimization of Brandon's suffering may have reinforced his belief that his experiences are not unique or serious enough to warrant genuine attention. For a child already struggling with social isolation and rejection, this could deepen his sense of alienation.
+
+The complete absence of CBT technique means Brandon received supportive counseling, not CBT. While supportive counseling has value, it is not the evidence-based treatment of choice for anxiety and depression in children with ASD. Brandon needs structured, concrete, skill-building intervention—not cheerleading.
+
+The failure to assess suicidal ideation is a critical clinical and ethical failure. While Brandon denied current intent or plan, his passive ideation warrants thorough assessment, safety planning, and ongoing monitoring. This was not done.
+
+---
+
+## Recommendations
+
+### 1. **URGENT: Conduct Comprehensive Suicide Risk Assessment**
+- **Action:** In the next session, conduct a thorough suicide risk assessment using a structured tool (e.g., Columbia-Suicide Severity Rating Scale adapted for children). Assess: frequency and intensity of suicidal ideation, intent, plan, means, protective factors, and past attempts.
+- **Example:** "Brandon, last time you mentioned wishing you had never been born. I want to understand this better. How often do you have these thoughts? Do you ever think about hurting yourself? Do you have a plan for how you would do it? What keeps you safe?"
+- **Practice:** Review suicide assessment protocols, practice with supervisors, develop a safety planning template for use with pediatric patients.
+
+### 2. **Establish a Clear, Collaborative Agenda and Treatment Plan**
+- **Action:** At the start of the next session, explicitly set a collaborative agenda. Ask Brandon: "What are the biggest problems you want help with?" Prioritize together. Explain the treatment plan in concrete, age-appropriate language.
+- **Example:** "Brandon, I hear that three things are really hard right now: (1) kids being mean to you at school, (2) feeling nervous and not sleeping well, and (3) wanting to have friends but not knowing how. We're going to work on all three. Here's how: First, we'll talk about the mean things kids say and figure out which ones are true and which ones aren't. Second, we'll practice ways to calm your body when you feel nervous. Third, we'll work on making friends step by step. Does that sound okay?"
+- **Practice:** Develop session agendas for 5 consecutive sessions with a supervisor; practice explaining treatment plans in concrete language.
+
+### 3. **Apply Cognitive Restructuring Adapted for ASD**
+- **Action:** Teach Brandon to identify and challenge automatic thoughts using concrete, visual tools. Create a "Thought Detective" worksheet with columns: Situation, Thought, Evidence For, Evidence Against, More Balanced Thought.
+- **Example:** Situation: "Kids whispered in the hallway." Thought: "They were talking about me and hate me." Evidence For: "They whispered." Evidence Against: "I didn't hear what they said. They might have been talking about homework. Other times people whisper and it's not about me." More Balanced Thought: "They might have been talking about me, or they might not have been. I don't know for sure."
+- **Practice:** Create 3-5 thought records with Brandon in session; assign one per week as homework; review and refine together.
+
+### 4. **Eliminate Therapist Self-Disclosure; Maintain Appropriate Therapeutic Focus**
+- **Action:** Stop sharing personal anecdotes. When tempted to say "When I was your age," redirect: "That's interesting. Let's focus on your experience. What was that like for you?"
+- **Example:** Instead of "I used to get nervous too," say: "I hear you. Nervousness is really hard. Let's figure out what's making you nervous and what we can do about it."
+- **Practice:** Record sessions and review for instances of self-disclosure; practice redirecting with a supervisor; aim for zero personal anecdotes in next 5 sessions.
+
+### 5. **Conduct Thorough Assessment of Bullying Impact and Trauma Processing**
+- **Action:** Explore the bullying messages Brandon saved in detail. Assess: How often does he read them? What does he believe about them? How do they affect his self-concept? What would he say to a friend who received these messages?
+- **Example:** "I see you saved these messages. That must have been really painful. Tell me about each one. When you read 'mr stutter,' what do you think? Do you believe that's true about you? What would you tell a friend if someone called them that?"
+- **Practice:** Develop a trauma-informed approach to bullying; learn to help children separate peer rejection from objective truth about themselves.
+
+### 6. **Implement Behavioral Experiments to Test Negative Beliefs**
+- **Action:** Design collaborative behavioral experiments to test Brandon's catastrophic thoughts. For example: "You think everyone hates you. Let's test that. This week, notice three times someone is kind to you or doesn't reject you. Write it down. We'll see if 'everyone hates me' is actually true."
+- **Example:** Create a "Prediction vs. Reality" log: "I predict: People will stare at me and laugh. Reality: [What actually happened]."
+- **Practice:** Develop 3-5 behavioral experiments tailored to Brandon's specific beliefs; practice explaining the rationale in concrete language.
+
+### 7. **Address Sensory Sensitivities and Anxiety with Concrete Accommodations**
+- **Action:** Work with Brandon and his school to identify concrete accommodations for his noise sensitivity (e.g., noise-canceling headphones, access to quiet space during transitions, advance warning of loud events). Do not rely on "thinking positive" to manage sensory distress.
+- **Example:** "Loud noises are genuinely hard for your nervous system. That's not something you can just think away. Let's figure out: Where at school is quietest? Can you go there when it gets loud? Can you use headphones? Can we tell your teacher to give you a heads-up before the bell rings?"
+- **Practice:** Learn about sensory accommodations for children with ASD; coordinate with school; develop a sensory plan.
+
+### 8. **Teach Specific, Concrete Anxiety Management Skills (Not Generic Reassurance)**
+- **Action:** Teach Brandon specific, evidence-based anxiety management techniques: progressive muscle relaxation, box breathing, grounding techniques (5-4-3-2-1 sensory awareness). Practice in session. Assign as homework with clear instructions.
+- **Example:** "When you feel nervous, we're going to practice box breathing. Breathe in for 4 counts, hold for 4, out for 4, hold for 4. Let's practice together. Now you try. Good. This week, practice this three times a day, even when you're not nervous, so your body learns it."
+- **Practice:** Learn and practice anxiety management techniques; teach them to Brandon with repetition and practice; assign with clear written instructions.
+
+### 9. **Assign Specific, Concrete Homework with Clear Rationale**
+- **Action:** Assign homework every session. Make it specific, concrete, and achievable. Explain the rationale. Check understanding. Review in next session.
+- **Example:** "This week, I want you to keep a 'Thought Log.' When you feel nervous at school, write down: (1) What happened? (2) What did you think? (3) How did you feel? (4) What did you do? Bring it back next week and we'll look at it together. Does that make sense? Can you show me how you'll do it?"
+- **Practice:** Develop 5-10 homework assignments tailored to Brandon's needs; practice explaining rationale; develop a system for reviewing homework.
+
+### 10. **Adapt All Interventions for ASD: Concrete, Literal, Visual**
+- **Action:** Recognize that Brandon has autism. Adapt all interventions to his literal thinking style, need for concrete explanations, and visual learning preference. Use visual supports (worksheets, diagrams, written instructions). Avoid metaphors and abstract language.
+- **Example:** Instead of "Let's explore your feelings," say: "Tell me exactly what you felt in your body. Where? How strong? 1-10?"
+- **Practice:** Learn about ASD-adapted CBT; review all interventions for abstract language; add visual supports; practice explaining concepts concretely.
+
+### 11. **Develop a Collaborative Safety Plan**
+- **Action:** Once suicidal ideation is fully assessed, develop a written safety plan with Brandon and his mother. Include: warning signs, internal coping strategies, people to talk to, professional resources, ways to make the environment safer.
+- **Example:** "When you start thinking 'I wish I had never been born,' that's a warning sign. Here's what you can do: (1) Tell your mom, (2) Call the crisis line, (3) Go to your quiet space with your trucks, (4) Text your therapist. Here are the phone numbers."
+- **Practice:** Learn safety planning; practice with supervisors; develop templates.
+
+### 12. **Establish Ongoing Feedback and Collaboration**
+- **Action:** At the end of each session, explicitly ask for feedback: "What was helpful today? What wasn't? What do you want to work on next time? Is there anything I said that didn't make sense?"
+- **Example:** "Brandon, before you go, I want to know: Did today help? What was most useful? What should we do differently next time?"
+- **Practice:** Build feedback elicitation into every session; practice responding non-defensively to critical feedback; adjust approach based on patient input.
+
+---
+
+## Overall Session Score: 0.8/6
+
+**Summary:**
+
+This session represents a fundamental failure to deliver evidence-based CBT. The therapist provided supportive, warm counseling—which is not harmful in itself—but failed to implement any of the core components of CBT: no agenda, no guided discovery, no cognitive restructuring, no behavioral experiments, no homework, no clear treatment strategy. Most critically, the therapist did not assess or address Brandon's suicidal ideation, did not process his bullying trauma, and did not adapt interventions to his autism.
+
+The therapist's repeated self-disclosure, while well-intentioned, centered his own experience rather than Brandon's and may have reinforced Brandon's sense that his suffering is not unique or serious. The generic reassurance ("You've got this," "It'll get better," "Keep your chin up") is unlikely to help a child with anxiety and depression and may feel invalidating.
+
+**Current Competency Assessment:**
+
+This therapist is not currently competent to deliver CBT to children with complex presentations (anxiety, trauma, suicidal ideation, neurodivergence). He demonstrates basic interpersonal warmth but lacks fundamental CBT knowledge and skill. He does not understand the structure, techniques, or theoretical framework of CBT. He appears to be practicing supportive counseling under the label of CBT.
+
+**Most Critical Changes Needed Immediately:**
+
+1. **Conduct suicide risk assessment** (ethical and clinical imperative)
+2. **Learn and apply CBT techniques** (cognitive restructuring, behavioral experiments, thought records)
+3. **Stop therapist self-disclosure** and maintain appropriate therapeutic focus
+4. **Establish clear agendas and treatment plans** with collaborative goal-setting
+5. **Assign specific, concrete homework** every session
+6. **Adapt all interventions for ASD** (concrete, literal, visual)
+
+**Likelihood of Therapeutic Change:**
+
+Without significant changes, this treatment is unlikely to produce meaningful symptom improvement. Brandon may experience temporary relief from having a caring adult listen to him, but he will not develop the cognitive and behavioral skills necessary to manage anxiety, challenge negative self-beliefs, or build resilience. He will leave treatment with the same distorted thoughts ("Everyone hates me"), the same avoidance patterns, and the same unaddressed suicidal ideation.
+
+**This session does not qualify as evidence-based CBT.** It is supportive counseling. While supportive counseling has value, it is not the treatment of choice for anxiety and depression in children, particularly those with trauma and suicidal ideation. Brandon deserves better.

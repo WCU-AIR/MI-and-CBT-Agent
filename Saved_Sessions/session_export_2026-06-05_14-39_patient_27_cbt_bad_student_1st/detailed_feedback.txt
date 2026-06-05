@@ -1,0 +1,964 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Cannabis-Induced Psychotic Disorder
+
+--- CASE STUDY ---
+
+Kevin Foster was a 32-year-old married white male with a history of bipolar I disorder who was brought to the ER by police after threatening to jump out of a hotel window during a vacation with his wife. The episode followed smoking a marijuana cigarette after getting tattoos. He became delusionally paranoid about the tattoo symbols, the tattoo artist, and his wife’s fidelity, and threatened self-harm and harm to his wife.
+
+Mr. Foster had a history of sporadic cannabis use since age 18, progressing to daily use over the past 5 years, with a recent increase to three times daily. He had four psychiatric hospitalizations in the past year: two for mania, one for suicidal depression, and one for a 6-week episode of cannabis-induced psychosis. He had been adherent to lithium monotherapy for 3 months prior to this episode. No other substances were used, and alcohol use was minimal.
+
+During hospitalization, his psychotic symptoms resolved spontaneously within 3 days, and he gained insight that the delusions were caused by cannabis intoxication. He declined further antipsychotic medication and continued lithium.
+
+Discussion: Psychotic symptoms emerged rapidly after cannabis use, without concurrent mood symptoms, and resolved within days. This pattern is consistent with a DSM-5 cannabis-induced psychotic disorder. Bipolar I disorder is in remission. Cannabis use disorder, moderate, is evident due to recurrent use despite adverse consequences and withdrawal-like anxiety when not using. Schizophrenia spectrum disorders and other psychotic disorders are unlikely due to rapid resolution of symptoms and limited affected domains.
+
+--- BEHAVIOUR ---
+
+Cooperative, alert, and oriented
+
+Paranoid, delusional during acute episode
+
+Threatening self-harm and harm to others during psychotic episode
+
+Insight regained rapidly after resolution
+
+No manic or depressive mood during recent episode
+
+Adheres to medication and follow-up recommendations
+
+--- SYMPTOMS from DSM-5 ---
+
+Delusions (paranoia regarding tattoos and wife)
+
+Threats of self-harm
+
+Threats toward others
+
+Anxiety during cannabis withdrawal
+
+Paranoia
+
+Sleep disruption
+
+--- PATIENT PROFILE ---
+Name: Kevin Foster
+Sex: Male
+Age: 32 years
+DOB: March 14, 1991
+Place of Birth: Chicago, IL
+Address: 214 Maple Avenue, Chicago, IL
+Contact: (555) 654-2109
+Marital Status: Married
+Children: None reported
+Occupation: Film Editor
+Education: College graduate
+Religion: Not reported
+Legal Guardian: None
+Presenting Complaint: “Paranoid thoughts and threatening behavior after smoking cannabis”
+Psychiatric History: Bipolar I disorder, prior cannabis-induced psychotic episode, prior manic and depressive episodes
+Psychotherapy: None at recent episode
+Medications: Lithium
+Substance Use: Cannabis (moderate use), minimal alcohol; history of cannabis-induced psychotic episodes
+Medical History: None significant
+Neurology: Normal
+Family History: Father with bipolar disorder; paternal grandfather committed suicide
+Mental Status: Paranoid and delusional during acute episode; insight regained post-resolution; cooperative and oriented; no other cognitive deficits
+
+--- DIAGNOSIS ---
+Cannabis-Induced Psychotic Disorder
+Bipolar I Disorder, in remission
+Cannabis Use Disorder, Moderate
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Kevin Foster, a 32-year-old married male with a history of bipolar I disorder, presents to the emergency room after being brought in by police due to threatening behavior following cannabis use during a vacation. The intake is conducted to evaluate his recent episode characterized by paranoid thoughts and safety concerns.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hey there! How’s it going today? Just glad you could make it in. So, what’s been on your mind lately? 
+ PATIENT: Hey. Yeah, thanks for seeing me. Lately, I’ve just been feeling on edge a lot. You know, my mind keeps going back to all those paranoid thoughts I had the last time I smoked. It’s like I can’t shake the fear that something bad will happen, even though I know it’s probably just in my head. It’s frustrating, ‘cause I just want to feel normal again. 
+ PSYCHIATRIST: Hey! I’m really sorry you’re feeling that way. You know, everyone goes through tough times like that—it’ll get better, just hang in there. When I was stressed, I found that trying to think positive really helped me keep my head up. Maybe you could try that too? Sometimes just telling yourself things will be okay can make a big difference. What do you think? 
+ PATIENT: I get what you’re saying, and I want to believe that things will get better, but it’s hard. When those paranoid thoughts start up, telling myself positive stuff feels kind of empty, like I’m ignoring the real danger. Like, I worry that something’s actually wrong with my wife or that the tattoos have some secret meaning that’s bad. It’s tough to convince myself otherwise when my brain feels so loud with those fears. So yeah, thinking positive sounds nice, but right now it feels almost impossible. 
+ PSYCHIATRIST: Yeah, I totally get that. Sometimes when I was feeling down, I’d just remind myself that life’s a rollercoaster, you know? Ups and downs, but it always evens out eventually. Like, one time I was super stressed about a job thing, and I just kept telling myself, “This too shall pass.” Maybe you can try that? It’s helped me feel a bit better when stuff gets rough. But hey, don’t stress too much about it. Everyone goes through this kind of stuff at some point. 
+ PATIENT: I like the idea of "this too shall pass." It’s kind of comforting to think that these bad moments won't last forever. But sometimes the “downs” feel so intense that I start wondering if the ups will even come back. Like, when I last had that episode after smoking, it felt like the paranoia and panic were just wrapping around me, and I couldn’t find a way out. It’s scary to think I might feel like that again, even if I remind myself it won’t be forever. So, I guess I want to believe that things will get better, but I’m still pretty worried about when or if that will happen. 
+ PSYCHIATRIST: Yeah, I hear you. It’s really tough when those feelings just won’t quit. You know, sometimes when I can’t sleep or my mind won’t stop racing, I just try to drink more water and get some rest. It sounds simple, but it really helps me feel a little more in control. Maybe you could try that? Just small stuff like that can make a difference. And hey, you’re not alone in this. Lots of people have these moments. It’s part of being human. 
+ PATIENT: Yeah, sleep has been a big problem for me lately. I find myself lying awake for hours, just stuck with those paranoid thoughts swirling around. Drinking water and trying to get rest sounds... doable, actually. Sometimes when I’m that wired, it feels like I need something bigger to fix things, but maybe little steps like that could help. It’s just hard because when I can’t sleep, the anxiety just feels worse, and then it’s like a loop I can’t break out of. But I’ll try to focus on that—just doing small things to at least help with the sleep. Thanks for the suggestion. 
+ PSYCHIATRIST: Oh, I totally get that. Sleep troubles can really mess with your head. You know, sometimes when I’ve felt overwhelmed, I just remind myself that everything happens for a reason, even if I don’t see it right away. It’s like, maybe these tough times are just part of the journey. And hey, you’re doing great by even talking about it. That’s a big step. Just keep hanging in there, okay? Things will turn around for you. 
+ PATIENT: Thanks. It helps hearing that sometimes these tough times might mean something, even if I don’t see it now. I guess part of me worries I’ll never fully get past the paranoia or that I’ll hurt myself or my wife again if things get out of control. Talking about it does help, though. It makes me feel less trapped in my own head. I just want to find a way to keep hold of that hope, even when my mind feels like it’s trying to convince me otherwise. So yeah, I’ll try to keep hanging on. 
+ PSYCHIATRIST: Yeah, you’re really brave for opening up about it. You know, when I was going through a rough patch, I found that sometimes just getting outside and taking a walk helped clear my head. Maybe you could try that too? Fresh air and a change of scenery can do wonders. And remember, it’s okay to have bad days. Just keep telling yourself that things will get better. You’ve got this! 
+ PATIENT: I appreciate that. Walking outside sounds like something I could try. Sometimes when I’m stuck in the house, those paranoid thoughts just bounce around even more, so getting fresh air and changing the scene might help break that cycle. It’s hard to motivate myself when the anxiety gets so heavy, but maybe starting small with a short walk could make a difference. And yeah, I’m trying to remind myself it’s okay to have bad days, even if that’s easier said than done. Thanks for encouraging me—I do want to believe I’ve got this. 
+ PSYCHIATRIST: Hey, it’s really great that you’re thinking about trying to get outside more. You know, sometimes just focusing on the little things, like the weather or a nice breeze, can really lift your spirits. When I was stressed, I’d go for walks too, and it helped me clear my head. Just keep doing what you can, and remember, every day is a new chance to feel better. You’re doing awesome! Keep your chin up! 
+ PATIENT: Thanks, that means a lot. I think paying attention to the little things outside, like the breeze or the sunlight, might help pull me out of those swirling thoughts for a bit. It feels good to remember that each day is a fresh start, even if some days are harder than others. I’m going to try to keep that in mind and take things one step at a time. It’s nice to hear someone say I’m doing okay; sometimes I feel like I’m just barely holding on. So thanks for being patient with me. 
+ PSYCHIATRIST: Hey, I’m glad you’re feeling a bit better about trying those small things. You know, life’s full of ups and downs, but if you just keep thinking positive and taking care of yourself, things will get better. Just remember to keep your head up and don’t let the bad days get you down. You’ve got this! Keep smiling, and take care! 
+ PATIENT: I’ll do my best to keep that in mind—taking care of myself and not letting the bad days pull me under. It’s not easy, but hearing you say that helps. I want to believe that the ups are waiting for me, even if it feels like I’m stuck in the downs right now. Thanks for encouraging me to keep going and to try to smile through it. That little bit of hope means more than I can say. 
+ PSYCHIATRIST: Alright, it’s been good chatting with you. Just remember, you’re stronger than you think, and things will get better if you keep your head up. Keep smiling and take care of yourself. You’ve got this! See you next time! 
+ PATIENT: Thanks, I really appreciate that. I’ll try to hold onto that strength and keep working at getting better. It helps knowing someone believes in me. I’ll see you next time. Take care. 
+ PSYCHIATRIST: Hey! Good to see you today. How’ve you been holding up? Anything you want to talk about? 
+ PATIENT: Hey, thanks for asking. I’ve been okay, mostly. I’m still trying really hard to stay away from cannabis because of what happened last time. It’s been tough, though. Sometimes the anxiety creeps in when I’m not using, and my mind starts racing with those paranoid thoughts. I’m scared the episode could happen again, and that fear kind of sticks with me a lot. So yeah, that’s been on my mind. 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist made no attempt to establish a collaborative agenda at any point in the session. The opening question ("So, what's been on your mind lately?") is generic and does not establish specific session goals, target problems, or time allocation. Throughout the entire transcript, there is no evidence of the therapist working with the patient to prioritize problems, establish what should be accomplished in the session, or create a structured plan for the 50-minute hour.
+
+Given Kevin's complex presentation—cannabis-induced psychotic disorder with active paranoid ideation, safety concerns (prior threats of self-harm and harm to others), cannabis use disorder with withdrawal anxiety, and bipolar I disorder in remission—a structured agenda was critical. The therapist should have explicitly stated: "Kevin, I want to make sure we use our time well today. I'm hearing that you're struggling with paranoid thoughts, anxiety about cannabis use, and sleep problems. What feels most important to address today? And I want to make sure we also check in about your safety and your medication adherence with lithium."
+
+Instead, the session drifts aimlessly, with the therapist offering unsolicited personal anecdotes and generic reassurance without any clear direction or prioritization.
+
+**Summary:**
+
+No agenda was established. The session lacked structure, prioritization, or collaborative goal-setting—fundamental CBT requirements that organize treatment and maximize therapeutic efficiency.
+
+---
+
+### 2. Feedback
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist elicited minimal feedback and did not systematically check for understanding, patient satisfaction, or reactions to interventions. The only implicit feedback-seeking occurs when the therapist asks "What do you think?" after suggesting positive thinking (first exchange), but this is superficial and not followed by genuine exploration of the patient's response.
+
+When the patient explicitly states, "telling myself positive stuff feels kind of empty, like I'm ignoring the real danger," the therapist does not pause to understand this crucial feedback. Instead, the therapist pivots to a new personal anecdote ("This too shall pass") without acknowledging the patient's clear indication that the suggested strategy is ineffective or potentially harmful.
+
+The patient provides repeated, explicit feedback that generic positive thinking is not working:
+- "It feels almost impossible"
+- "It's scary to think I might feel like that again"
+- "It feels like a loop I can't break out of"
+
+None of this feedback is explored, validated, or used to adjust the therapist's approach. There is no mid-session check-in about whether the suggestions are helpful, no exploration of barriers to implementation, and no collaborative problem-solving about why positive thinking alone is insufficient for someone with psychotic symptoms and trauma from a recent episode.
+
+At the end of the session, the therapist does not elicit feedback about the session itself, ask what the patient found helpful, check understanding of any recommendations, or solicit input on next steps.
+
+**Summary:**
+
+Minimal feedback elicitation; patient's explicit statements that interventions are ineffective were ignored rather than explored. No systematic checking for understanding or session satisfaction.
+
+---
+
+### 3. Understanding
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist demonstrates surface-level empathy ("I hear you," "Yeah, I totally get that") but fundamentally misunderstands Kevin's clinical presentation and internal experience. The therapist repeatedly reflects explicit statements but misses critical nuances and the severity of Kevin's condition.
+
+Kevin explicitly describes:
+1. **Paranoid delusions with specific content** ("I worry that something's actually wrong with my wife or that the tattoos have some secret meaning that's bad")
+2. **Fear of recurrence** ("I'm scared the episode could happen again")
+3. **Safety concerns** ("I part of me worries I'll never fully get past the paranoia or that I'll hurt myself or my wife again if things get out of control")
+4. **Sleep disruption as a symptom** ("Sleep has been a big problem for me lately. I find myself lying awake for hours, just stuck with those paranoid thoughts swirling around")
+5. **Anxiety loops** ("It's like a loop I can't break out of")
+
+The therapist's response to these disclosures is to offer personal anecdotes about stress management and generic reassurance. This demonstrates a fundamental failure to grasp:
+- The distinction between normal stress and psychotic symptoms
+- The patient's fear of psychotic recurrence (not ordinary worry)
+- The safety risk posed by active paranoid ideation
+- The relationship between cannabis use, withdrawal anxiety, and symptom exacerbation
+- That Kevin has bipolar I disorder with a history of four hospitalizations in one year
+
+The therapist never explores the content of the paranoid thoughts, the triggers for their emergence, the patient's insight into their unreality, or the specific fears driving his anxiety. There is no demonstration of understanding Kevin's "internal reality"—his lived experience of terror during psychotic episodes and his current hypervigilance about recurrence.
+
+**Summary:**
+
+Surface empathy without genuine understanding of psychotic symptoms, safety concerns, or the severity of Kevin's condition. Therapist conflates normal stress with psychotic disorder and misses critical clinical nuances.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist displays warmth and apparent concern but demonstrates significant interpersonal problems that undermine the therapeutic relationship and potentially harm the patient. While not hostile or demeaning, the therapist's approach is problematic in several ways:
+
+**Self-Disclosure Overuse:** The therapist repeatedly shares personal experiences ("When I was stressed," "When I was going through a rough patch," "When I was feeling down," "Sometimes when I can't sleep or my mind won't stop racing"). This violates appropriate professional boundaries and shifts focus from the patient's experience to the therapist's. For a patient with paranoid ideation and trust concerns, excessive therapist self-disclosure can feel invalidating and may reinforce the patient's sense that the therapist doesn't truly understand his unique suffering.
+
+**Invalidation Through Normalization:** Statements like "Everyone goes through tough times like that," "Everyone goes through this kind of stuff at some point," and "It's part of being human" minimize the severity of cannabis-induced psychosis and may communicate to Kevin that his experience is ordinary rather than a serious psychiatric condition requiring specialized intervention.
+
+**Patronizing Tone:** Phrases like "You've got this!" (repeated 4 times), "Keep smiling," "Keep your chin up," and "You're doing awesome!" feel superficial and dismissive of genuine suffering. For someone with active paranoid ideation and prior suicidal threats, cheerleading is not therapeutic—it may feel invalidating or even mocking.
+
+**Lack of Genuine Curiosity:** The therapist does not ask clarifying questions about Kevin's experience, does not explore his concerns in depth, and does not demonstrate authentic interest in understanding his internal world. The questions asked are generic ("How's it going today?" "Anything you want to talk about?") rather than specific to his presentation.
+
+**Summary:**
+
+Warmth present but undermined by boundary violations, invalidating normalization, patronizing tone, and lack of genuine curiosity. Interpersonal approach may damage therapeutic alliance with a patient who has paranoid ideation.
+
+---
+
+### 5. Collaboration
+### **Score: 1/6**
+
+**Explanation:**
+
+Collaboration is nearly absent. The therapist does not function as a partner with the patient; instead, the therapist adopts an expert-advice-giver role, repeatedly offering suggestions without collaborative exploration or shared decision-making.
+
+**Unilateral Recommendations Without Exploration:**
+- "Maybe you could try that too?" (positive thinking)
+- "Maybe you can try that?" ("This too shall pass")
+- "Maybe you could try that?" (drinking water and rest)
+- "Maybe you could try that too?" (walking outside)
+
+Each suggestion is presented as the therapist's solution, not as something developed collaboratively. The therapist does not ask: "What have you already tried?" "What barriers might get in the way?" "How do you feel about trying this?" "What would work best for you?" "What are your thoughts on this approach?"
+
+**No Collaborative Empiricism:** CBT relies on collaborative empiricism—therapist and patient working together to test thoughts and beliefs through evidence. There is zero evidence of this approach. The therapist does not propose behavioral experiments, thought records, or any structured method for Kevin to examine his paranoid thoughts. Instead, the therapist simply asserts that positive thinking and lifestyle changes will help.
+
+**Patient Not Actively Engaged in Problem-Solving:** Kevin repeatedly indicates that generic positive thinking is not working, yet the therapist does not invite him to problem-solve together about what *might* work. For example, when Kevin says "telling myself positive stuff feels kind of empty," the therapist could have responded: "That's really important feedback. It sounds like positive thinking alone isn't cutting it. Let's think together about what might actually help when those paranoid thoughts show up. What do you think would be more useful?"
+
+Instead, the therapist pivots to a new suggestion without collaborative exploration.
+
+**Summary:**
+
+Therapist functions as unilateral advice-giver rather than collaborative partner. No shared decision-making, no collaborative empiricism, no active patient engagement in problem-solving.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 1/6**
+
+**Explanation:**
+
+The session demonstrates severe problems with pacing and time management. The therapist allows the session to drift aimlessly without structure, repeatedly tangentializes into personal anecdotes, and fails to cover critical clinical material.
+
+**Excessive Tangentialization:** Approximately 40% of the therapist's speech consists of personal stories ("When I was stressed," "When I was feeling down," "When I was going through a rough patch," "Sometimes when I can't sleep"). These anecdotes do not advance treatment and consume time that should be devoted to understanding Kevin's specific symptoms and developing a treatment plan.
+
+**No Prioritization:** With a patient presenting with:
+- Active paranoid ideation
+- Prior suicidal and homicidal threats
+- Cannabis use disorder with withdrawal anxiety
+- Bipolar I disorder with 4 hospitalizations in one year
+- Sleep disruption
+- Fear of psychotic recurrence
+
+The therapist should have prioritized: (1) safety assessment, (2) medication adherence, (3) cannabis use triggers and relapse prevention, (4) sleep management, (5) specific strategies for managing paranoid thoughts. Instead, the session meanders through generic wellness suggestions.
+
+**Critical Topics Not Addressed:**
+- No safety assessment (suicidal/homicidal ideation, current safety plan)
+- No medication review (lithium adherence, side effects, efficacy)
+- No cannabis use disorder treatment (triggers, relapse prevention, withdrawal management)
+- No psychoeducation about cannabis-induced psychosis
+- No discussion of warning signs for psychotic recurrence
+- No structured coping strategies for paranoid thoughts
+- No behavioral activation plan
+- No homework assignment
+
+**Repetitive Content:** The therapist cycles through the same generic suggestions (positive thinking, self-care, "things will get better") without deepening exploration or moving toward concrete interventions.
+
+**Summary:**
+
+Severe pacing problems; excessive tangentialization into personal anecdotes; no prioritization of critical clinical material; critical topics not addressed; session lacks structure and direction.
+
+---
+
+### 7. Guided Discovery
+### **Score: 0/6**
+
+**Explanation:**
+
+Guided discovery—the cornerstone of CBT—is completely absent. The therapist does not use Socratic questioning to help Kevin reach insights independently. Instead, the therapist lectures, advises, and reassures without facilitating self-discovery.
+
+**No Socratic Questions:** A therapist using guided discovery would ask questions like:
+- "When you have those paranoid thoughts about your wife, what evidence do you have that they're true?"
+- "What evidence contradicts those thoughts?"
+- "How did those thoughts feel during the episode versus now?"
+- "What happened after the episode resolved? Did your wife actually do anything wrong?"
+- "When you're not using cannabis, do those thoughts still feel as real?"
+- "What's the difference between a thought and a fact?"
+- "What would help you test whether these thoughts are accurate?"
+
+None of these questions appear in the transcript. Instead, the therapist makes declarative statements: "Things will get better," "It's part of being human," "Everything happens for a reason," "You're stronger than you think."
+
+**Therapist Tells Rather Than Asks:** The therapist repeatedly tells Kevin what to do (think positive, drink water, get rest, take walks, focus on little things) without asking Kevin to discover these solutions himself or to examine the logic behind them.
+
+**No Examination of Thoughts:** Kevin explicitly mentions paranoid thoughts ("I worry that something's actually wrong with my wife or that the tattoos have some secret meaning that's bad"). A therapist using guided discovery would explore these thoughts systematically:
+- "Tell me more about that worry. What specifically are you afraid is wrong with your wife?"
+- "What makes you think the tattoos have a bad meaning?"
+- "How did you come to that conclusion?"
+- "What evidence supports that? What evidence contradicts it?"
+- "During the episode, how certain were you? How certain are you now?"
+
+Instead, the therapist offers reassurance without exploration.
+
+**Summary:**
+
+Guided discovery completely absent. No Socratic questioning, no facilitation of self-discovery, no systematic examination of thoughts. Therapist lectures and advises rather than asking.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist fails to identify and focus on the central cognitions and behaviors most relevant to Kevin's presenting problems. Instead, the therapist addresses peripheral issues (weather, fresh air, positive thinking) while ignoring core clinical material.
+
+**Key Cognitions NOT Explored:**
+1. **Paranoid delusions about wife's fidelity** ("I worry that something's actually wrong with my wife")
+2. **Delusional ideation about tattoo symbols** ("the tattoos have some secret meaning that's bad")
+3. **Catastrophic thoughts about recurrence** ("I'm scared the episode could happen again")
+4. **Safety-related cognitions** ("I'll hurt myself or my wife again if things get out of control")
+5. **Withdrawal-related anxiety cognitions** ("Sometimes the anxiety creeps in when I'm not using")
+
+**Key Behaviors NOT Addressed:**
+1. **Cannabis use triggers and relapse prevention** (What situations trigger urges? What's the relapse risk?)
+2. **Avoidance behaviors** (Is Kevin avoiding situations due to paranoia? Is he isolating?)
+3. **Sleep hygiene and behavioral interventions for insomnia** (Beyond "get rest," what specific behaviors?)
+4. **Activity scheduling** (Is Kevin engaging in valued activities? Is depression/anhedonia present?)
+5. **Medication adherence behaviors** (Is Kevin taking lithium consistently? Any barriers?)
+
+**What WAS Focused On:**
+- Generic positive thinking
+- Walking outside
+- Noticing weather
+- Drinking water
+- "Things will get better"
+
+These are peripheral to Kevin's core problems. While self-care is important, it is not the primary intervention needed for someone with active paranoid ideation, prior psychotic episodes, and safety concerns.
+
+**Missed Opportunity for Behavioral Activation:** Kevin mentions sleep problems and anxiety loops. A CBT therapist would develop a structured behavioral activation plan targeting specific activities that increase mastery and pleasure, particularly activities that compete with rumination and paranoid thinking. Instead, the therapist vaguely suggests "taking walks."
+
+**Summary:**
+
+Therapist fails to identify and focus on central cognitions (paranoid delusions, catastrophic thoughts about recurrence, safety concerns) and critical behaviors (cannabis use triggers, relapse prevention, medication adherence). Focus remains on peripheral wellness suggestions.
+
+---
+
+### 9. Strategy for Change
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist demonstrates no coherent strategy for change. There is no clear treatment plan, no logical progression toward goals, and no conceptualization guiding interventions. The session consists of disconnected, generic suggestions without an overarching framework.
+
+**Absence of Treatment Conceptualization:** A CBT therapist would develop a case conceptualization explaining:
+- How cannabis use triggers psychotic symptoms in Kevin's brain (given his bipolar I disorder)
+- How paranoid thoughts maintain anxiety and avoidance
+- How withdrawal anxiety reinforces cannabis use
+- How sleep disruption exacerbates all symptoms
+- How catastrophic thinking about recurrence maintains hypervigilance
+
+None of this conceptualization is articulated or used to guide treatment.
+
+**No Clear Change Strategy:** The therapist does not explain a logical plan for symptom improvement. For example:
+- "Kevin, here's what we know: Cannabis triggers psychosis in you. So our strategy is to help you stay abstinent and manage withdrawal anxiety. We'll also work on recognizing early warning signs of psychosis so you can get help quickly. And we'll develop specific strategies for managing the paranoid thoughts when they show up, so you don't feel so trapped by them."
+
+Instead, the therapist offers disconnected suggestions (positive thinking, walks, water, rest) without explaining how these address his core problems.
+
+**No Progression Toward Goals:** The session does not build toward anything. Each exchange is isolated. There is no sense of: "First we'll do X, then we'll move to Y, and that will help us achieve Z."
+
+**Mismatch Between Diagnosis and Intervention:** Kevin has cannabis-induced psychotic disorder with active paranoid ideation. The evidence-based treatment approach includes:
+1. Psychoeducation about cannabis and psychosis
+2. Relapse prevention for cannabis use disorder
+3. Cognitive interventions for paranoid thoughts (reality testing, thought records)
+4. Behavioral interventions (activity scheduling, sleep hygiene)
+5. Safety planning
+6. Medication management
+
+The therapist addresses none of these. Instead, the strategy is: "Think positive, take walks, drink water, things will get better."
+
+**Summary:**
+
+No coherent treatment strategy, no case conceptualization, no logical progression toward goals, no connection between diagnosis and intervention. Session consists of disconnected generic suggestions.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 0/6**
+
+**Explanation:**
+
+No CBT-specific techniques are applied. The therapist does not use any of the core CBT methods that would be appropriate for Kevin's presentation.
+
+**Techniques NOT Used (But Should Have Been):**
+
+1. **Cognitive Restructuring / Thought Records:** No systematic examination of paranoid thoughts, no identification of evidence for/against thoughts, no development of alternative thoughts. Kevin mentions specific paranoid thoughts ("something's actually wrong with my wife," "tattoos have some secret meaning that's bad"), but these are never explored or challenged using CBT methods.
+
+2. **Behavioral Experiments:** No hypothesis testing. For example: "You're worried that something's wrong with your wife. What would be evidence that she's actually okay? Could we design an experiment to test that?" None of this occurs.
+
+3. **Exposure and Response Prevention:** No systematic exposure to anxiety-provoking situations or thoughts. No prevention of avoidance or safety behaviors.
+
+4. **Activity Scheduling:** While the therapist mentions "taking walks," there is no structured activity scheduling targeting specific goals (mood improvement, mastery, pleasure, competing with rumination).
+
+5. **Sleep Hygiene / Behavioral Interventions for Insomnia:** Kevin reports sleep disruption. The therapist suggests "get rest" but does not implement evidence-based sleep interventions (sleep restriction, stimulus control, sleep hygiene protocol).
+
+6. **Relapse Prevention Planning:** Kevin has cannabis use disorder with prior psychotic episodes. No relapse prevention plan is developed. No identification of high-risk situations, triggers, coping strategies, or emergency protocols.
+
+7. **Psychoeducation:** No education about cannabis-induced psychosis, the relationship between cannabis and his bipolar disorder, warning signs of recurrence, or the rationale for abstinence.
+
+8. **Safety Planning:** Kevin has prior suicidal and homicidal threats. No safety plan is developed. No identification of warning signs, coping strategies, or emergency contacts.
+
+9. **Behavioral Activation:** While "taking walks" is mentioned, there is no structured behavioral activation plan targeting specific values, goals, and activities.
+
+10. **Thought Records / Monitoring:** No assignment of structured thought monitoring or records to track paranoid thoughts, triggers, and outcomes.
+
+**What IS Present (But Not CBT):**
+
+- Generic reassurance ("You've got this!")
+- Therapist self-disclosure ("When I was stressed...")
+- Motivational statements ("You're stronger than you think")
+- Lifestyle suggestions (walks, water, rest)
+
+These are supportive counseling techniques, not CBT techniques.
+
+**Summary:**
+
+Zero CBT-specific techniques applied. No cognitive restructuring, behavioral experiments, exposure, activity scheduling, relapse prevention, psychoeducation, safety planning, or thought records. Session consists of supportive counseling without evidence-based CBT methods.
+
+---
+
+### 11. Homework
+### **Score: 0/6**
+
+**Explanation:**
+
+No homework is assigned. The therapist does not review prior homework, does not assign new homework, and does not provide any between-session tasks for Kevin to complete.
+
+**What Should Have Been Assigned:**
+
+Given Kevin's presentation, appropriate homework might include:
+
+1. **Thought Record:** "Over the next week, when you notice paranoid thoughts, write them down. Include: (1) the situation, (2) the thought, (3) how much you believe it (0-100%), (4) evidence for it, (5) evidence against it, (6) alternative thought, (7) how much you believe the alternative (0-100%). Bring this to our next session."
+
+2. **Behavioral Experiment:** "You're worried something's wrong with your wife. This week, notice specific evidence that she cares about you and is trustworthy. Write down 3-5 examples. We'll review these next session to test your worry."
+
+3. **Activity Scheduling:** "Let's identify 3-5 activities you value or that give you pleasure. This week, schedule at least one per day. Track your mood before and after. Bring the schedule to our next session."
+
+4. **Sleep Monitoring:** "Keep a sleep log this week. Write down: bedtime, wake time, total sleep, quality (1-10), and any paranoid thoughts that interfered with sleep. We'll use this to develop a sleep plan."
+
+5. **Cannabis Relapse Prevention:** "Write down your top 3 high-risk situations for cannabis use. For each, write down one coping strategy you could use instead. We'll review these next session."
+
+6. **Psychoeducation Reading:** "Here's a handout about cannabis-induced psychosis. Read it this week and write down any questions. We'll discuss it next session."
+
+7. **Safety Planning:** "Let's develop a safety plan together. Write down: warning signs of psychosis, coping strategies, people to contact, crisis numbers. Keep it somewhere accessible."
+
+**What Actually Happened:**
+
+The therapist ends the session with: "Alright, it's been good chatting with you. Just remember, you're stronger than you think, and things will get better if you keep your head up. Keep smiling and take care of yourself. You've got this! See you next time!"
+
+No homework is mentioned. No between-session tasks are assigned. No rationale for homework is provided. No check for understanding or commitment is made.
+
+**Summary:**
+
+No homework assigned. No review of prior homework. No between-session tasks. No structured practice opportunities for Kevin to apply skills or test thoughts.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- Therapist displays warmth and apparent concern for the patient
+- Therapist does not become hostile, demeaning, or destructive
+- Therapist allows patient to speak and does not interrupt excessively
+- Therapist uses some empathic language ("I hear you," "Yeah, I totally get that")
+
+### Critical Deficiencies:
+
+**1. Complete Absence of CBT Framework**
+This session is not cognitive-behavioral therapy. It is supportive counseling with generic reassurance. No CBT-specific techniques are applied. No thought records, behavioral experiments, exposure, activity scheduling, relapse prevention, psychoeducation, or safety planning occur.
+
+**2. Failure to Assess and Address Safety**
+Kevin has a history of suicidal threats ("threatening to jump out of a hotel window") and homicidal threats ("threatening harm to his wife"). He explicitly states: "I part of me worries I'll never fully get past the paranoia or that I'll hurt myself or my wife again if things get out of control." The therapist does not conduct a safety assessment, does not develop a safety plan, and does not address these concerns directly.
+
+**3. Misunderstanding of Psychotic Symptoms**
+The therapist treats Kevin's paranoid delusions as ordinary worry that can be managed with positive thinking. This demonstrates fundamental misunderstanding of psychosis. Paranoid delusions are not amenable to simple positive thinking; they require specific cognitive interventions (reality testing, thought records, behavioral experiments) and may require medication adjustment.
+
+**4. No Treatment Conceptualization or Strategy**
+The therapist offers disconnected suggestions (walks, water, positive thinking) without explaining how these address Kevin's core problems or how they fit into a coherent treatment plan. There is no case conceptualization, no logical progression, no clear strategy for change.
+
+**5. Excessive Therapist Self-Disclosure**
+The therapist repeatedly shares personal experiences ("When I was stressed," "When I was feeling down," "When I was going through a rough patch"). This violates professional boundaries, shifts focus from the patient, and may be particularly problematic for a patient with paranoid ideation.
+
+**6. Invalidation Through Normalization**
+Statements like "Everyone goes through tough times like that" and "It's part of being human" minimize the severity of cannabis-induced psychosis and may communicate that Kevin's experience is ordinary rather than a serious psychiatric condition.
+
+**7. No Agenda, No Structure, No Prioritization**
+The session drifts aimlessly without a clear agenda, prioritization of problems, or structured plan. Critical topics (medication adherence, cannabis relapse prevention, warning signs of recurrence) are not addressed.
+
+**8. Failure to Respond to Patient Feedback**
+Kevin explicitly states that positive thinking feels "empty" and "almost impossible." The therapist does not explore this feedback or adjust the approach. Instead, the therapist continues offering the same ineffective suggestion.
+
+**9. No Homework or Between-Session Tasks**
+No homework is assigned. Kevin has no structured practice opportunities to apply skills, test thoughts, or work toward goals between sessions.
+
+**10. Lack of Genuine Curiosity**
+The therapist does not ask clarifying questions about Kevin's paranoid thoughts, does not explore his concerns in depth, and does not demonstrate authentic interest in understanding his internal world.
+
+---
+
+### Impact on Patient Care:
+
+This session is unlikely to produce therapeutic change and may actually harm Kevin's treatment. Specifically:
+
+1. **Safety Risk:** Without a safety assessment and plan, Kevin's risk of self-harm or harm to others is not adequately addressed. If he experiences another psychotic episode, he has no crisis plan.
+
+2. **Reinforcement of Ineffective Coping:** The therapist repeatedly suggests positive thinking despite Kevin's clear indication that this doesn't work. This may reinforce Kevin's sense of helplessness ("I've tried what the therapist suggested, and it doesn't work").
+
+3. **Missed Opportunity for Relapse Prevention:** Kevin has cannabis use disorder with prior psychotic episodes. Without relapse prevention planning, his risk of cannabis use and psychotic recurrence is high.
+
+4. **Lack of Skill Development:** Kevin receives no specific skills for managing paranoid thoughts, managing withdrawal anxiety, or preventing relapse. He leaves the session with only generic advice.
+
+5. **Therapeutic Alliance Risk:** Kevin's explicit feedback that suggestions aren't working is ignored. This may damage the therapeutic relationship and reduce his engagement in treatment.
+
+6. **Inadequate Medication Management:** There is no discussion of lithium adherence, efficacy, or side effects. No assessment of whether medication adjustment is needed.
+
+7. **No Psychoeducation:** Kevin does not understand the relationship between cannabis and psychosis, warning signs of recurrence, or why abstinence is critical. This reduces his motivation for change.
+
+**Likelihood of Therapeutic Change:** Low. Without CBT-specific interventions, structured skill development, and a coherent treatment plan, Kevin is unlikely to experience meaningful symptom improvement. He may continue to struggle with paranoid ideation, anxiety, and cannabis use.
+
+---
+
+## Recommendations
+
+### 1. **URGENT: Implement Comprehensive Safety Assessment and Planning**
+
+**Action:** Conduct a detailed safety assessment at the beginning of the next session. Assess current suicidal and homicidal ideation, intent, plan, and access to means. Develop a written safety plan including: warning signs of psychotic recurrence, coping strategies, people to contact, crisis numbers, and emergency protocols.
+
+**Example Dialogue:**
+"Kevin, I want to make sure we address something important. You mentioned worrying that you might hurt yourself or your wife again if things get out of control. I need to ask directly: Are you having thoughts of hurting yourself right now? Are you having thoughts of hurting your wife? [Listen carefully.] Let's develop a safety plan together so you know exactly what to do if you start feeling like you might lose control again. We'll write down warning signs, things you can do to stay safe, and people you can call."
+
+**Practice:** Review safety assessment protocols. Practice asking direct questions about suicidal and homicidal ideation without flinching. Develop a template for safety planning that you use consistently.
+
+---
+
+### 2. **Develop a Coherent CBT Case Conceptualization and Treatment Plan**
+
+**Action:** Before the next session, write out a case conceptualization that explains: (1) How cannabis triggers psychosis in Kevin's brain, (2) How paranoid thoughts maintain anxiety and avoidance, (3) How withdrawal anxiety reinforces cannabis use, (4) How sleep disruption exacerbates symptoms, (5) How catastrophic thinking about recurrence maintains hypervigilance. Use this conceptualization to guide all interventions.
+
+**Example Conceptualization:**
+"Kevin has bipolar I disorder, which increases his vulnerability to psychosis. Cannabis use triggers acute psychotic episodes (delusions, paranoia). After episodes resolve, Kevin develops catastrophic thoughts about recurrence ('I'll hurt myself or my wife again'). These thoughts trigger anxiety and hypervigilance. When he tries to quit cannabis, withdrawal anxiety emerges, which he may try to manage with cannabis use, creating a relapse cycle. Sleep disruption exacerbates all symptoms. Treatment will focus on: (1) cannabis abstinence and relapse prevention, (2) cognitive interventions for paranoid thoughts and catastrophic thinking, (3) behavioral interventions for sleep and activity, (4) safety planning, (5) medication management."
+
+**Practice:** Write case conceptualizations for 3-5 patients. Have a supervisor review them. Practice explaining your conceptualization to patients in clear language.
+
+---
+
+### 3. **Replace Generic Reassurance with Specific Cognitive Interventions for Paranoid Thoughts**
+
+**Action:** When Kevin mentions paranoid thoughts, use guided discovery and thought records instead of reassurance. Systematically examine the evidence for and against the thought.
+
+**Example Dialogue:**
+"Kevin, you mentioned worrying that something's wrong with your wife. Let's look at that thought more carefully. Tell me specifically what you're worried about. [Listen.] Okay, so you're worried that [specific worry]. On a scale of 0-100%, how much do you believe that right now? [Get number.] What evidence do you have that this worry is true? [Listen.] What evidence do you have that contradicts this worry? [Listen.] During the episode, how certain were you about this? How certain are you now? What's changed? [Listen.] Let's write this down in a thought record so we can track it over time."
+
+**Practice:** Practice Socratic questioning with a colleague. Record yourself and listen for: Are you asking questions or telling? Are you exploring the evidence systematically? Are you helping the patient reach insights independently?
+
+---
+
+### 4. **Implement Structured Relapse Prevention for Cannabis Use Disorder**
+
+**Action:** Develop a detailed relapse prevention plan addressing: (1) high-risk situations, (2) triggers for cannabis use, (3) withdrawal symptoms and management, (4) coping strategies, (5) emergency protocols. Assign this as homework.
+
+**Example Dialogue:**
+"Kevin, you've had cannabis-induced psychotic episodes before, and you're at risk for another one if you use again. Let's develop a relapse prevention plan. First, what situations put you at highest risk for using cannabis? [Listen.] For each situation, what's one coping strategy you could use instead? [Develop strategies.] When you quit cannabis, you might experience withdrawal anxiety. That's normal. Here are some strategies for managing it without using. Let's write all this down, and you can keep it with you."
+
+**Practice:** Learn the relapse prevention protocol for substance use disorders. Practice identifying high-risk situations and developing coping strategies. Role-play with a colleague.
+
+---
+
+### 5. **Eliminate Excessive Therapist Self-Disclosure; Maintain Professional Boundaries**
+
+**Action:** Stop sharing personal anecdotes. When tempted to say "When I was stressed...," instead ask: "What have you tried before that helped?" or "What do you think might work for you?" Redirect focus to the patient's experience.
+
+**Example Dialogue:**
+Instead of: "When I was stressed, I found that trying to think positive really helped me..."
+Say: "I'm hearing that positive thinking feels empty for you right now. That's important feedback. Let's think together about what might actually help when those paranoid thoughts show up. What have you tried before? What worked? What didn't?"
+
+**Practice:** Record yourself in sessions. Count instances of self-disclosure. Set a goal of zero personal anecdotes per session. Have a supervisor listen and provide feedback.
+
+---
+
+### 6. **Establish a Clear Agenda and Prioritize Critical Topics**
+
+**Action:** At the beginning of each session, collaboratively establish an agenda. Prioritize: (1) safety, (2) medication adherence, (3) cannabis use and relapse prevention, (4) paranoid thoughts and coping strategies, (5) sleep and activity. Allocate time explicitly.
+
+**Example Dialogue:**
+"Kevin, I want to make sure we use our time well today. I'm hearing that you're struggling with paranoid thoughts, anxiety about cannabis use, sleep problems, and worry about having another episode. We also need to check in about your lithium and make sure you have a safety plan. What feels most important to address today? [Listen.] Here's what I'm thinking: Let's spend the first 15 minutes on safety and your medication, then 20 minutes on managing the paranoid thoughts, then 10 minutes on relapse prevention. Does that work for you?"
+
+**Practice:** Write out an agenda for each session before it begins. Share it with the patient. Refer back to it during the session. At the end, review what you covered and what you'll address next time.
+
+---
+
+### 7. **Implement Behavioral Activation and Sleep Interventions**
+
+**Action:** Move beyond vague suggestions ("take walks") to structured behavioral activation. Identify specific activities that increase mastery and pleasure. Schedule them explicitly. For sleep, implement evidence-based sleep hygiene and behavioral interventions.
+
+**Example Dialogue:**
+"Kevin, I notice you're struggling with sleep and anxiety. Let's develop a specific plan. First, what activities do you enjoy or find meaningful? [Listen.] This week, I want you to schedule at least one of these activities per day. Track your mood before and after. Also, let's work on your sleep. Here's a sleep hygiene protocol: [explain]. And here's a sleep log to track your sleep this week. We'll use this information to develop a more detailed sleep plan."
+
+**Practice:** Learn behavioral activation protocols. Learn evidence-based sleep interventions. Practice scheduling activities with patients. Assign sleep logs and track outcomes.
+
+---
+
+### 8. **Systematically Elicit and Respond to Patient Feedback**
+
+**Action:** After each intervention or suggestion, ask: "How does that land with you?" "Does that make sense?" "What are your thoughts?" When the patient indicates something isn't working, pause and explore: "You mentioned that positive thinking feels empty. Tell me more about that. What would actually be helpful?"
+
+**Example Dialogue:**
+"I suggested trying positive thinking. You said it feels empty and like you're ignoring real danger. That's really important feedback. It sounds like positive thinking alone isn't the answer for you. Let's think together about what might actually help. What do you think would be more useful?"
+
+**Practice:** After each suggestion, pause and ask for feedback. Listen carefully. If feedback is negative, explore rather than defend. Adjust your approach based on patient input.
+
+---
+
+### 9. **Assign Specific, Structured Homework with Clear Rationale**
+
+**Action:** At the end of each session, assign 1-3 specific homework tasks with clear rationale. Ensure the patient understands the task and commits to it. Review homework at the beginning of the next session.
+
+**Example Dialogue:**
+"Kevin, I want to give you some homework for this week. First, I want you to keep a thought record. When you notice paranoid thoughts, write down: the situation, the thought, how much you believe it, evidence for it, evidence against it, and an alternative thought. This helps us understand your thoughts better and test whether they're accurate. Can you do that? [Get commitment.] Second, I want you to schedule one activity you enjoy each day and track your mood. This helps us see what activities help your mood. Third, keep a sleep log. [Explain.] Bring all three to our next session. Any questions?"
+
+**Practice:** Develop homework templates for different interventions. Practice explaining the rationale clearly. Practice checking for understanding and commitment. Review homework systematically at the beginning of each session.
+
+---
+
+### 10. **Develop Psychoeducation Materials About Cannabis-Induced Psychosis**
+
+**Action:** Create or obtain psychoeducation materials explaining: (1) how cannabis triggers psychosis, (2) the relationship between cannabis and bipolar disorder, (3) warning signs of psychotic recurrence, (4) why abstinence is critical, (5) relapse prevention strategies. Provide these to Kevin and discuss them.
+
+**Example Dialogue:**
+"Kevin, I want to give you some information about cannabis and psychosis. [Provide handout.] The key point is: cannabis triggers psychosis in people with bipolar disorder like you. Your brain is vulnerable to psychosis, and cannabis activates that vulnerability. That's why you had episodes after smoking. The good news is: if you stay off cannabis, your risk of psychosis drops dramatically. Let's read through this together and talk about any questions you have."
+
+**Practice:** Gather or create psychoeducation materials. Practice explaining them clearly. Assess patient understanding. Use psychoeducation to motivate behavior change.
+
+---
+
+### 11. **Receive Supervision and Training in CBT-Specific Techniques**
+
+**Action:** Seek regular supervision from a CBT-trained supervisor. Request training in: cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, relapse prevention, and safety planning. Practice these techniques under supervision.
+
+**Example:** "I need to improve my CBT skills, particularly in cognitive restructuring and relapse prevention. Can we role-play a session where I practice these techniques? Can you give me feedback on my Socratic questioning?"
+
+**Practice:** Attend CBT training workshops. Read CBT manuals. Practice techniques with colleagues. Record sessions and review with a supervisor. Gradually build competence in each technique.
+
+---
+
+### 12. **Eliminate Patronizing Language; Use Respectful, Collaborative Tone**
+
+**Action:** Replace cheerleading ("You've got this!", "Keep smiling!", "You're doing awesome!") with respectful, collaborative language that acknowledges the difficulty of Kevin's situation and positions you as a partner in problem-solving.
+
+**Example Dialogue:**
+Instead of: "You're doing awesome! Keep your chin up!"
+Say: "I can see how hard you're working on this. It's not easy to manage paranoid thoughts and stay off cannabis. Let's work together to develop strategies that actually work for you."
+
+**Practice:** Record yourself. Listen for patronizing language. Replace it with respectful alternatives. Ask a colleague for feedback on your tone.
+
+---
+
+## Overall Session Score: 0.8/6
+
+**Summary:**
+
+This session represents a fundamental failure to deliver evidence-based CBT. The therapist demonstrates basic interpersonal warmth but lacks the core competencies required for CBT delivery. Specifically:
+
+**Current Competency Assessment:**
+The therapist is functioning at a pre-CBT level. While not harmful in the sense of being hostile or demeaning, the session is ineffective and potentially counterproductive. The therapist offers generic supportive counseling rather than evidence-based CBT. No CBT-specific techniques are applied. No coherent treatment plan is developed. Critical clinical material (safety, medication, relapse prevention) is not addressed. The patient's explicit feedback that interventions are ineffective is ignored.
+
+**Most Critical Changes Needed Immediately:**
+
+1. **Safety Assessment and Planning** (URGENT): Conduct a comprehensive safety assessment. Develop a written safety plan. This is non-negotiable given Kevin's history of suicidal and homicidal threats.
+
+2. **Replace Generic Reassurance with Specific Cognitive Interventions:** Stop offering positive thinking as a treatment for paranoid delusions. Implement thought records and guided discovery to systematically examine paranoid thoughts.
+
+3. **Develop a Coherent CBT Treatment Plan:** Write out a case conceptualization. Identify specific CBT interventions for each problem. Explain the plan to Kevin. Use it to guide all interventions.
+
+4. **Implement Relapse Prevention for Cannabis Use Disorder:** Develop a detailed relapse prevention plan addressing high-risk situations, triggers, withdrawal management, and coping strategies.
+
+5. **Establish Session Structure and Agenda:** Begin each session with a collaborative agenda. Prioritize critical topics. Allocate time explicitly. Follow the agenda.
+
+**Whether Session Qualifies as Evidence-Based CBT:**
+
+No. This session does not qualify as evidence-based CBT. It is supportive counseling with generic reassurance. No CBT-specific techniques are applied. No structured interventions are implemented. No homework is assigned. No between-session practice occurs. The likelihood of producing therapeutic change is low.
+
+**Likelihood of Producing Therapeutic Change:**
+
+Low to very low. Without CBT-specific interventions, structured skill development, and a coherent treatment plan, Kevin is unlikely to experience meaningful symptom improvement. He may continue to struggle with paranoid ideation, anxiety, cannabis use, and fear of recurrence. His risk of psychotic relapse and self-harm remains inadequately addressed.
+
+**Recommendation for Training:**
+
+This therapist requires intensive training in CBT fundamentals before continuing to see patients with psychotic disorders or substance use disorders. Recommend: (1) CBT training workshop, (2) regular supervision from a CBT-trained supervisor, (3) practice with simpler cases before returning to complex cases like Kevin's, (4) review of CBT manuals and protocols, (5) recording and reviewing sessions with supervisor feedback.

@@ -1,0 +1,794 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Histrionic Personality Disorder
+
+--- CASE STUDY ---
+
+Karmen Fuentes, a 50-year-old married Hispanic woman, presented to the psychiatric emergency room (ER) at the urging of her outpatient psychiatrist after reporting thoughts of overdosing on Advil.
+
+She explained that her back had been painful since a recent fall at the family-owned grocery store where she worked. The fall left her feeling downcast and upset, although she denied other depressive symptoms aside from a low mood. She spoke extensively about the fall and a prior fall years earlier, expressing feelings of abandonment by a neurosurgeon and frustration over diminished ability to exercise and weight gain.
+
+When discussing suicidal comments, she described them as threats directed at her husband to “teach him a lesson” for perceived lack of compassion. She minimized the seriousness of her statements and laughed when the interviewer expressed concern. She was friendly, flirtatious with the male interviewer, and consistently acknowledged staff by name, maintaining attention to her appearance.
+
+Her outpatient psychiatrist reported no prior suicidal ideation in the past three years of treatment, and her husband stated that her suicidal comments were habitual attempts to worry him rather than genuine intent. Ms. Fuentes had received trials of multiple antidepressants (sertraline, escitalopram, fluoxetine, paroxetine) without benefit.
+
+She described being sexually active with older men in high school, finding dating enjoyable, and emphasized the importance of her appearance and grooming throughout her life. She lived with her 73-year-old husband; her 25-year-old son lived nearby with his family. She reported a history of being “unsupported” by her husband and expressed a need for attention and care.
+
+Discussion: Ms. Fuentes demonstrates excessive emotionality and attention-seeking behavior, with rapidly shifting moods, theatricality, seductive behavior, self-dramatization, and use of physical appearance to gain attention. Her suicidal gestures serve primarily to elicit concern rather than reflect major depressive disorder. She meets at least six of the eight symptomatic criteria for DSM-5 histrionic personality disorder (HPD). No clear evidence of comorbid personality disorder was noted.
+
+Diagnosis: Histrionic Personality Disorder
+
+--- BEHAVIOUR ---
+
+Cooperative and friendly with staff
+
+Flirtatious toward male interviewer
+
+Maintains attention to appearance, dress, and grooming
+
+Dramatic, self-dramatizing, and theatrical
+
+Rapidly shifting emotions (tearful to cheerful)
+
+Uses social interactions to elicit attention
+
+Minimizes actual suicidal risk
+
+--- HPD SYMPTOMS from DSM-5 ---
+
+Discomfort when not the center of attention
+
+Inappropriately seductive or provocative behavior
+
+Rapidly shifting and shallow expression of emotions
+
+Use of physical appearance to draw attention to self
+
+Consistently uses self-dramatization, theatricality
+
+Considers relationships to be more intimate than they are
+
+(Other criteria like impressionistic speech and suggestibility may be present but not reported)
+
+--- PATIENT PROFILE ---
+Name: Karmen Fuentes
+Sex: Female
+Age: 50 years
+DOB: August 3, 1973
+Place of Birth: San Antonio, TX
+Address: 1024 Magnolia Lane, San Antonio, TX
+Contact: (555) 654-3210
+Marital Status: Married
+Children: One son, age 25
+Occupation: Works at family-owned grocery store
+Education: High school diploma
+Religion: Catholic
+Legal Guardian: Self
+Presenting Complaint: Thoughts of overdosing on Advil; seeking attention and care
+Psychiatric History: Outpatient psychotherapy for 3 years; multiple antidepressant trials without benefit
+Psychotherapy: Past outpatient therapy (ineffective)
+Medications: Past antidepressants (sertraline, escitalopram, fluoxetine, paroxetine)
+Substance Use: None reported
+Medical History: Recent back injury; otherwise healthy
+Neurology: Normal
+Family History: Lives with husband; son nearby
+Mental Status: Cooperative, friendly, flirtatious, attention-seeking, dramatic, self-dramatizing, shifting emotions, concerned with appearance, superficial suicidal gestures, insight limited
+
+--- DIAGNOSIS ---
+Histrionic Personality Disorder
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Karmen Fuentes, a 50-year-old married Hispanic woman, presents to the psychiatric emergency room following referral from her outpatient psychiatrist due to reported thoughts of overdosing on Advil. She is evaluated after expressing concerns related to a recent back injury and interpersonal stressors, with collateral information provided by her husband and outpatient provider.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hello, it’s good to see you today. To start, I’d like to set an agenda together. What is one or two things you’d most like to focus on in our session? Also, on a scale from 0 to 10, how would you rate your overall mood right now? 
+ PATIENT: Hi there! Well, honestly, I just want to make sure people are paying attention to me—feeling a bit invisible lately, you know? So maybe we can talk about how to get back to being the center of things again. Also, this back pain has been such a drama, it’s like it’s stealing all my spotlight.
+
+As for my mood, hmm, I’d say maybe a 4? I’m trying to keep bright and shiny, but underneath, it feels pretty gloomy and blah. Like, I want to laugh and flirt and have fun, but this ache and feeling unnoticed are dragging me down. 
+ PSYCHIATRIST: Thank you for sharing that. It sounds like feeling noticed and managing your back pain are important areas for you right now. Does that sound right? If so, we could focus on exploring your thoughts and feelings around these, and perhaps look at some ways to help you feel more connected and comfortable.
+
+Before we dive in, just to check, you rated your mood as a 4 out of 10—so a bit low. Are there any specific feelings or emotions that stand out for you at this moment? For example, are you feeling more frustrated, sad, anxious, or something else? 
+ PATIENT: Yes, that sounds exactly right. I really hate feeling like I’m fading into the background, especially at work and even with my husband. It's like if I’m not the one grabbing attention, then I might as well not be there. It’s so frustrating!
+
+Right now, I guess the biggest feeling is frustration for sure. And a bit of sadness sneaking in, too. Like why can’t people just notice me? And this back pain just makes everything worse. Sometimes I get anxious, too, like maybe I’m going to keep getting ignored or hurt and no one will care. But mostly, it’s that mix of frustration and sadness that’s heavy on me right now. 
+ PSYCHIATRIST: Thank you for sharing those feelings so openly. Frustration and sadness, especially when tied to feeling unnoticed and dealing with pain, can be quite heavy. Let’s try to explore a recent specific situation where you felt this way—can you think of a moment in the past few days when you really noticed these feelings coming up? What was happening, and what was going through your mind at that time? 
+ PATIENT: Oh, definitely. Just a couple of days ago at the store when I was trying to get some help with these heavy boxes, I noticed one of the younger guys just kind of looking through me, like I wasn’t even there. I felt my blood boil with frustration. I thought, "Why bother even showing up if no one cares? Maybe if I looked nicer or said something sexy, he’d notice me." But I didn't want to seem desperate, you know?
+
+At the same time, I was feeling that sharp sting of sadness, like, "Am I really invisible? Has my husband stopped caring, too?" It was like this cocktail of emotions that swirled and made me want to lash out or just cry, but I held it in because I didn’t want to cause a scene—though something inside me screamed to be seen. 
+ PSYCHIATRIST: Thank you for describing that moment so vividly. It sounds like the situation at the store triggered a strong mix of frustration, sadness, and a desire to be noticed, alongside some worries about how you come across and how your husband feels. 
+
+If I’m hearing you correctly, the thought “Why bother even showing up if no one cares?” was quite central. Is that right? What would you say was the evidence that supported this thought? And what evidence might speak against it? 
+ PATIENT: Yes, that thought hit me hard—“Why bother even showing up if no one cares?” It felt so true in the moment. The evidence supporting it was pretty obvious to me: the guy barely looked at me, didn’t offer help, and acted like I was invisible. And honestly, sometimes my husband seems like he’s just going through the motions, not really paying attention to me either.
+
+But then, when I think back, I guess there are times when people do notice me—like when I dress up, or when I call someone by name and they smile. My son calls fairly often, and sometimes my husband does ask how I’m doing, even if it’s not as much as I want. So maybe not *everyone* ignores me, but those moments can feel few and far between, and some days they don’t seem to count for much. 
+ PSYCHIATRIST: Thank you for weighing both sides of that thought so thoughtfully. It sounds like while the thought “Why bother even showing up if no one cares?” feels very real and painful, there is also some evidence that people do notice and care, even if it’s inconsistent. 
+
+How might it feel if you considered a more balanced thought, such as: “Sometimes people don’t notice me, which is frustrating, but there are also times when I am seen and cared for”? What would your frustration or sadness be like if you held that thought instead? 
+ PATIENT: Hmm, I see what you’re saying. If I told myself, “Sometimes people don’t notice me, which is frustrating, but there are also times when I am seen and cared for,” I guess I wouldn’t feel quite as crushed all the time. Maybe the frustration would still be there, but it wouldn’t feel like a dark storm hanging over me all day.
+
+The sadness might soften a bit, too. Like I wouldn’t feel so alone or like I’m always invisible. Still, part of me worries that if I don’t put on a big show, people really might not see me at all. It’s scary to think about being just... ordinary or unnoticed. But maybe with that thought, I could feel a little more calm and less desperate to grab attention all the time. Maybe that sounds nice. 
+ PSYCHIATRIST: That’s a really insightful reflection. It sounds like this more balanced thought could help ease some of the intensity of your frustration and sadness, even if some worries about being unnoticed remain. 
+
+To help put this into action, what might be a small step you could try in the next few days to notice or remind yourself of times when you are seen or cared for? This could be a simple behavior or an experiment to test this balanced thought. What comes to mind? 
+ PATIENT: Well, maybe I could try keeping a little journal or just a note on my phone where I jot down moments when someone notices me or shows they care—like when my son calls or a coworker smiles at me. I usually focus on the times I’m ignored, so flipping it around might help me actually see those good moments.
+
+Or maybe I could even try thanking someone when they do something nice instead of waiting for the attention to come to me—that way I create a little connection instead of just hoping for it. It feels a bit scary, like putting myself out there without the usual drama, but maybe it would be a good start. What do you think? 
+ PSYCHIATRIST: That sounds like a thoughtful and manageable step—tracking moments of being noticed and expressing appreciation can help bring those positive interactions into clearer focus. It also gently encourages connection, which might feel less risky than trying to grab attention dramatically.
+
+What might get in the way of doing this in the next few days? How confident do you feel about trying this out, on a scale from 0 to 10? 
+ PATIENT: Well, I’m worried that I might forget to do it or that those moments won’t happen enough to write down. I also worry a bit about looking too obvious or needy if I start thanking people too much. But I think if I remind myself, maybe I can do it.
+
+On a scale from 0 to 10, I’d say I feel like a 6 about trying this. It’s not super easy for me, but it feels like something I could manage without losing my style or charm. It’s kind of exciting to think maybe I can feel good without having to be all dramatic all the time. 
+ PSYCHIATRIST: Thank you for sharing those concerns and your confidence level. It’s great that you’re open to trying this and recognize it as manageable, even if it feels a bit uncomfortable. To help, we can think about a specific time or cue to remind you to jot down or notice those moments—maybe right after a phone call or when you get home from work?
+
+To summarize, your homework is to track moments when you feel noticed or cared for, and to try expressing thanks once or twice in the next few days, noticing how that feels. Does that sound clear and doable? 
+ PATIENT: Yes, that sounds clear and doable. I like the idea of reminding myself after a phone call or when I get home—that could work well. I’m curious to see if paying attention to those moments will really make me feel better or if it will feel awkward. But I’m willing to give it a try. Thanks for helping me figure this out—it feels good to have a plan instead of just feeling lost in the drama. 
+ PSYCHIATRIST: I’m glad to hear that feels manageable and that you have a clear plan. Just to recap, you’ll keep a note of moments when you feel noticed or cared for, and you’ll try expressing thanks to someone once or twice in the next few days, using those cues as reminders. 
+
+Before we finish, what part of today’s session stood out most for you or felt most useful? Was there anything that felt less helpful or that you’d like to explore further next time? 
+ PATIENT: Honestly, what stuck with me most was the idea that people do notice me sometimes, even if it doesn’t always feel that way. That little bit of hope is kind of refreshing. Also, having a simple plan to actually look for those moments feels like something I can hold on to.
+
+Nothing really felt less helpful today—I liked how you didn’t judge me when I talked about wanting attention or feeling frustrated. Maybe next time, I’d like to talk more about how to manage when I feel ignored or lonely, since that can still hit me hard. But for now, I feel like today was a good step. 
+ PSYCHIATRIST: Thank you for sharing that. I’m glad the session brought some hope and a practical plan, and I appreciate your openness about what you’d like to explore next time. We’ll definitely keep working on those feelings of loneliness and being ignored.
+
+To wrap up, remember your homework: track moments of feeling noticed or cared for and try expressing thanks once or twice, using your chosen cues. If any challenges come up, we can troubleshoot together next session.
+
+Do you have any last questions or thoughts before we finish today? 
+ PATIENT: No, I think I’m good for now. Thanks for listening and helping me sort through all this. I’ll try to keep my journal going and see how it feels to say thanks more. I’ll be curious to tell you how it goes next time. 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated strong agenda-setting skills by explicitly inviting the patient to identify priorities ("What is one or two things you'd most like to focus on in our session?") and then reflecting back the identified topics for confirmation ("It sounds like feeling noticed and managing your back pain are important areas for you right now. Does that sound right?"). This collaborative approach established clear targets: (1) feeling unnoticed/invisible, and (2) back pain management. The therapist also introduced a mood rating scale (0-10), which provided a quantifiable baseline for tracking progress.
+
+However, the agenda lacked explicit time allocation or prioritization discussion. With two substantial topics (attention-seeking/interpersonal patterns and pain management), the therapist did not clarify which would receive primary focus or how time would be divided. The session appears to have concentrated almost entirely on the attention/visibility concern while back pain was mentioned but never systematically explored. Additionally, the therapist did not establish explicit session goals or outcomes (e.g., "By the end of today, we'll understand the connection between your thoughts about being invisible and your mood, and we'll have a concrete plan to test a new way of thinking"). A truly excellent agenda would have included these elements.
+
+**Summary:**
+
+The therapist successfully collaborated with the patient to identify and confirm session topics, but failed to prioritize between competing concerns or allocate time explicitly. The agenda was clear but incomplete in structure.
+
+---
+
+### 2. Feedback
+### **Score: 4/6**
+
+**Explanation:**
+
+The therapist demonstrated adequate feedback-seeking throughout the session. Early in the interaction, the therapist checked understanding: "Does that sound right?" and "If so, we could focus on exploring your thoughts and feelings around these." Mid-session, the therapist asked clarifying questions about emotional specificity ("Are you feeling more frustrated, sad, anxious, or something else?") and later confirmed comprehension of the homework ("Does that sound clear and doable?"). At session end, the therapist explicitly solicited feedback about what was helpful and what could be improved ("What part of today's session stood out most for you or felt most useful? Was there anything that felt less helpful?").
+
+However, feedback elicitation was somewhat formulaic and lacked depth. The therapist did not regularly check for understanding of the cognitive restructuring process itself—for example, after introducing the balanced thought, the therapist did not ask "Does this way of examining your thoughts make sense to you?" or "How do you feel about this approach?" The therapist also did not solicit mid-session feedback about pacing, depth, or whether the patient felt heard on the back pain concern (which was largely abandoned). Additionally, the therapist did not ask the patient to summarize key takeaways in her own words, which would have provided stronger evidence of comprehension and retention. A score of 5-6 would require more systematic, probing feedback throughout rather than primarily at session endpoints.
+
+**Summary:**
+
+The therapist asked for feedback at appropriate moments but did so in a somewhat routine manner without deeply probing understanding or satisfaction. More frequent and nuanced feedback-seeking would strengthen this skill.
+
+---
+
+### 3. Understanding
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated strong empathic understanding of the patient's internal experience. When the patient described feeling invisible and frustrated, the therapist reflected accurately: "Frustration and sadness, especially when tied to feeling unnoticed and dealing with pain, can be quite heavy." The therapist also grasped the patient's core conflict—the desire to be noticed balanced against fear of appearing desperate—as evidenced by the reflection: "It sounds like the situation at the store triggered a strong mix of frustration, sadness, and a desire to be noticed, alongside some worries about how you come across and how your husband feels."
+
+The therapist accurately identified the central automatic thought ("Why bother even showing up if no one cares?") and understood its emotional weight. The therapist also recognized the patient's ambivalence about change—acknowledging that "some worries about being unnoticed remain" even as the patient considered a more balanced perspective.
+
+However, there is a critical gap in understanding specific to this patient's diagnosis. The therapist did not demonstrate awareness that the patient's presentation is consistent with Histrionic Personality Disorder (HPD), characterized by excessive emotionality, attention-seeking, self-dramatization, and shallow affect. The patient explicitly stated, "I really hate feeling like I'm fading into the background" and "Maybe if I looked nicer or said something sexy, he'd notice me," which are hallmark HPD symptoms. A therapist with deeper understanding would recognize that standard cognitive restructuring alone may be insufficient for personality disorder pathology and would need to address the underlying maladaptive interpersonal patterns, not just the surface-level thoughts. The therapist's approach treats this as a straightforward mood/thought problem rather than a personality-level pattern requiring different intervention strategies.
+
+**Summary:**
+
+The therapist demonstrated good empathic listening and accurate reflection of the patient's stated concerns, but missed the diagnostic significance of the presentation and did not demonstrate understanding of HPD-specific treatment considerations.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist created a warm, accepting therapeutic environment. The opening ("Hello, it's good to see you today") was genuine and welcoming. Throughout the session, the therapist maintained a non-judgmental stance, explicitly affirming the patient's openness: "I'm glad the session brought some hope and a practical plan, and I appreciate your openness about what you'd like to explore next time." The therapist also validated the patient's concerns without minimizing them ("Frustration and sadness...can be quite heavy") and expressed genuine curiosity about the patient's experience ("Can you think of a moment in the past few days when you really noticed these feelings coming up?").
+
+The therapist demonstrated appropriate professional boundaries—remaining warm without becoming overly familiar or colluding with the patient's attention-seeking behavior. The therapist did not reciprocate the patient's flirtatiousness (which was not explicitly present in this transcript but is part of her diagnostic pattern) and maintained focus on therapeutic work.
+
+However, there is a subtle but important interpersonal misstep. Given the patient's HPD diagnosis and explicit statement that she uses drama and attention-seeking to manage distress, the therapist's consistent validation and positive reinforcement of the patient's self-disclosure may inadvertently reinforce the very maladaptive patterns that maintain her disorder. A more sophisticated interpersonal approach would gently challenge the patient's reliance on external validation while maintaining warmth—for example, "I notice you're very focused on whether people notice you. I'm wondering what it would feel like to notice and value yourself, independent of others' reactions?" This would demonstrate both empathy and appropriate therapeutic challenge. The current approach, while warm, may be insufficiently challenging for personality disorder work.
+
+**Summary:**
+
+The therapist demonstrated warmth, genuineness, and appropriate boundaries, creating a safe environment. However, the approach may be insufficiently challenging for a patient with attention-seeking personality patterns.
+
+---
+
+### 5. Collaboration
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist established genuine collaboration throughout the session. The opening explicitly invited the patient's input ("What is one or two things you'd most like to focus on in our session?"), and the therapist consistently checked for agreement before proceeding ("Does that sound right?"). When developing the homework, the therapist asked the patient for ideas ("What might be a small step you could try in the next few days?") rather than prescribing interventions. The patient generated her own suggestions (journaling, expressing thanks), and the therapist built upon them collaboratively ("That sounds like a thoughtful and manageable step").
+
+The therapist also invited the patient to problem-solve potential obstacles ("What might get in the way of doing this in the next few days?") and assessed the patient's confidence level (0-10 scale), demonstrating respect for the patient's agency and readiness. The patient responded positively to this collaborative stance, stating at the end: "Thanks for helping me figure this out—it feels good to have a plan instead of just feeling lost in the drama."
+
+However, collaboration was somewhat limited in scope. The therapist did not collaboratively develop a conceptualization of the patient's difficulties—for example, exploring together how the patient's attention-seeking pattern might be connected to her back pain, her relationship with her husband, or her broader life satisfaction. The therapist also did not invite the patient to collaborate on selecting which CBT technique to use or why cognitive restructuring was chosen as the primary intervention. A truly excellent collaborative approach would involve the patient in understanding the rationale for treatment strategies, not just in implementing them.
+
+**Summary:**
+
+The therapist engaged the patient as an active partner in goal-setting and homework design, demonstrating solid collaboration. However, collaboration did not extend to developing shared conceptualization or selecting treatment strategies.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Session Score: 4/6**
+
+**Explanation:**
+
+The therapist managed session flow reasonably well, moving logically from agenda-setting to mood assessment to specific situation exploration to cognitive work to homework assignment. The pacing allowed adequate time for the patient to elaborate on her experience without excessive tangential discussion. The therapist tactfully redirected when necessary—for example, after the patient described the store incident, the therapist moved efficiently to cognitive examination rather than dwelling on the narrative details.
+
+However, there are notable inefficiencies. The session identified two agenda items (feeling unnoticed and back pain management) but devoted almost no time to back pain despite it being explicitly listed as a priority. This represents poor time allocation and suggests the therapist either lost track of the agenda or prioritized based on implicit assumptions rather than explicit discussion with the patient. Additionally, the therapist spent considerable time on cognitive restructuring (examining evidence for/against the thought, developing a balanced thought) without establishing whether this was the most efficient use of time for this particular patient. Given that the patient has HPD and has already failed multiple antidepressant trials, a deeper exploration of the function of her attention-seeking behavior might have been more time-efficient than standard thought-challenging.
+
+The session also lacked explicit time boundaries or check-ins about remaining time, which would have helped the therapist allocate time more strategically between the two agenda items.
+
+**Summary:**
+
+The therapist maintained reasonable flow and avoided major tangents, but failed to allocate time between two stated agenda items and did not explicitly manage time boundaries.
+
+---
+
+### 7. Guided Discovery
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated strong use of Socratic questioning to facilitate the patient's own insights. Rather than telling the patient her thoughts were distorted, the therapist asked: "What would you say was the evidence that supported this thought? And what evidence might speak against it?" This invited the patient to examine her own thinking and generate counterevidence. The patient responded by identifying times when people did notice her ("like when I dress up, or when I call someone by name and they smile"), demonstrating genuine discovery rather than passive acceptance of the therapist's interpretation.
+
+The therapist also used guided discovery when developing homework: "What might be a small step you could try in the next few days?" rather than prescribing a specific intervention. The patient generated her own ideas (journaling, expressing thanks), which increased ownership and engagement.
+
+However, guided discovery was somewhat limited in depth. The therapist introduced the balanced thought ("Sometimes people don't notice me, which is frustrating, but there are also times when I am seen and cared for") rather than guiding the patient to generate it herself through questioning. A more Socratic approach would have asked: "Given the evidence you just identified, what might be a more balanced way of thinking about this situation?" This would have required the patient to synthesize her own insights rather than accepting the therapist's formulation.
+
+Additionally, the therapist did not use guided discovery to explore the function or purpose of the patient's attention-seeking behavior—for example, "What do you think happens inside you when you feel invisible? What does the attention do for you?" Such exploration might have led to deeper insights about the maladaptive pattern itself.
+
+**Summary:**
+
+The therapist used Socratic questioning effectively to help the patient examine evidence and generate homework ideas, but introduced some key insights directly rather than guiding the patient to discover them independently.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 3/6**
+
+**Explanation:**
+
+The therapist identified a relevant automatic thought ("Why bother even showing up if no one cares?") and explored it through cognitive restructuring. This thought is certainly connected to the patient's presenting distress and mood rating of 4/10.
+
+However, this represents a significant clinical gap for this patient's actual diagnosis and presentation. The therapist focused on a surface-level cognition (a specific thought about being ignored) rather than the core maladaptive patterns that define HPD and maintain her distress. The patient's key behavioral and cognitive patterns include:
+
+1. **Excessive attention-seeking** ("I just want to make sure people are paying attention to me")
+2. **Self-dramatization** ("this back pain has been such a drama, it's like it's stealing all my spotlight")
+3. **Inappropriate seductiveness** ("Maybe if I looked nicer or said something sexy, he'd notice me")
+4. **Shallow, rapidly shifting emotions** (the patient describes wanting to "laugh and flirt" while simultaneously feeling "gloomy and blah")
+5. **Discomfort when not the center of attention** (explicit statement: "I really hate feeling like I'm fading into the background")
+6. **Relationship distortions** (perceiving her husband as unsupportive, using suicidal threats to manipulate attention)
+
+The therapist's focus on the single thought "Why bother even showing up?" misses the broader personality-level pattern. A clinically sophisticated approach would identify that the core issue is not a distorted thought about being ignored, but rather a maladaptive interpersonal strategy (attention-seeking through drama, seduction, and self-harm threats) that maintains her distress and damages relationships. The therapist should have focused on behavioral patterns like: "I notice you describe using drama, your appearance, and even threats to get attention. What happens when you try connecting with people in other ways?"
+
+**Summary:**
+
+The therapist identified a relevant automatic thought but failed to focus on the core maladaptive behavioral and cognitive patterns that define the patient's personality disorder and maintain her distress.
+
+---
+
+### 9. Strategy for Change
+### **Score: 3/6**
+
+**Explanation:**
+
+The therapist's strategy for change is: (1) help the patient develop a more balanced thought about being noticed, and (2) assign behavioral homework to track moments of being noticed and express gratitude. The logic is straightforward: if the patient can recognize that she is sometimes noticed and valued, her mood will improve and her distress will decrease.
+
+This strategy has some coherence and is grounded in CBT principles (cognitive restructuring + behavioral activation/reinforcement). However, it is fundamentally mismatched to the patient's actual diagnosis and clinical presentation.
+
+**Critical Problem:** The strategy assumes the patient's distress stems from a cognitive distortion (believing she is never noticed when evidence suggests otherwise). However, the patient's actual problem is a **personality-level pattern** in which she has organized her identity, relationships, and coping strategies around obtaining attention through drama, seduction, and emotional volatility. The balanced thought "Sometimes people don't notice me, but sometimes they do" does not address the core issue: the patient's maladaptive reliance on external validation and her use of self-harm threats and seductive behavior to regulate relationships.
+
+**Why This Strategy Will Likely Fail:**
+
+1. **It reinforces the problem:** Asking the patient to track moments when she feels noticed and to express gratitude may actually reinforce her belief that external validation is the solution to her distress. This does not address the underlying need for self-validation and healthier interpersonal patterns.
+
+2. **It ignores personality disorder dynamics:** HPD is maintained by reinforcement from others' attention. Standard CBT cognitive restructuring is insufficient because the patient's thoughts are not primarily distorted—they reflect her actual interpersonal reality (people do sometimes ignore her). The problem is her maladaptive response to this normal human experience.
+
+3. **It lacks a coherent model of change:** The therapist has not articulated why changing this one thought would lead to sustained mood improvement or reduced attention-seeking behavior. There is no clear theory of how the homework connects to the broader pattern.
+
+**What Should Have Been Done:**
+
+A more appropriate strategy would involve:
+- **Behavioral analysis:** Understanding the function of attention-seeking (What does it accomplish? What emotions does it regulate?)
+- **Exposure to discomfort:** Gradually tolerating being unnoticed without resorting to drama or seduction
+- **Values clarification:** Exploring what kind of relationships and life the patient actually wants, independent of attention
+- **Interpersonal effectiveness training:** Teaching alternative ways to connect with others and meet needs
+- **Addressing the suicidal threats:** Recognizing these as manipulative attention-seeking and developing alternative coping strategies
+
+**Summary:**
+
+The therapist's strategy is logically coherent but fundamentally mismatched to the patient's diagnosis. It applies standard CBT for mood/anxiety to a personality disorder that requires different intervention targets and strategies.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 4/6**
+
+**Explanation:**
+
+The therapist applied several CBT techniques with moderate skill:
+
+1. **Cognitive Restructuring:** The therapist guided the patient through examining evidence for and against the automatic thought ("Why bother even showing up if no one cares?"), identified counterevidence, and introduced a more balanced alternative thought. This is a core CBT technique and was executed reasonably well. The therapist asked open-ended questions ("What would you say was the evidence that supported this thought?") rather than lecturing, which is appropriate.
+
+2. **Behavioral Experiment/Homework:** The therapist assigned homework to track moments of being noticed and express gratitude, which is a behavioral activation technique designed to test the balanced thought in real life. The homework was concrete and specific.
+
+3. **Mood Rating Scale:** The therapist used a 0-10 scale to quantify mood, which provides a baseline for tracking change.
+
+4. **Socratic Questioning:** Throughout, the therapist used questions to guide discovery rather than providing direct advice.
+
+However, there are significant limitations in technique application:
+
+1. **Shallow Application:** The cognitive restructuring was relatively brief and surface-level. The therapist did not explore the thought's origins, its connection to core beliefs, or its function in the patient's life. For example, the therapist did not ask: "Where did you learn that you need to be the center of attention to have value?" or "What would it mean about you if people didn't notice you?"
+
+2. **No Behavioral Analysis:** The therapist did not conduct a functional analysis of the attention-seeking behavior—understanding what triggers it, what it accomplishes, and what maintains it. This is essential for personality disorder work.
+
+3. **No Exposure or Values Work:** Given the patient's discomfort with being unnoticed, an exposure-based approach (gradually tolerating being in the background) might be more effective than cognitive restructuring alone. The therapist did not consider this.
+
+4. **Limited Technique Variety:** The session relied almost entirely on cognitive restructuring and basic behavioral homework. No other CBT techniques were employed (e.g., behavioral experiments to test predictions, thought records, activity scheduling, assertiveness training, etc.).
+
+5. **Technique-Diagnosis Mismatch:** The techniques applied are appropriate for mood disorders and anxiety but insufficient for personality disorder pathology, which typically requires longer-term, more intensive intervention targeting interpersonal patterns and identity.
+
+**Summary:**
+
+The therapist applied standard CBT techniques (cognitive restructuring, behavioral homework) with adequate but not sophisticated skill. Application was shallow and did not address the complexity of personality disorder pathology.
+
+---
+
+### 11. Homework
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated strong homework assignment skills. The homework was:
+
+1. **Specific:** Track moments of being noticed or cared for; express thanks once or twice in the next few days
+2. **Concrete:** Use specific cues (after phone calls, when arriving home from work) to remind oneself
+3. **Rationale-Based:** The therapist explained the purpose—to bring positive interactions into clearer focus and test the balanced thought
+4. **Collaborative:** The patient generated the initial ideas (journaling, expressing thanks), and the therapist refined them together
+5. **Feasibility-Checked:** The therapist assessed confidence (6/10) and explored potential obstacles ("What might get in the way?")
+6. **Clear Instructions:** The therapist summarized the homework at the end to ensure understanding
+
+The patient demonstrated comprehension and commitment, stating: "I'll try to keep my journal going and see how it feels to say thanks more."
+
+However, there are minor gaps:
+
+1. **Limited Rationale Depth:** While the therapist explained the homework's purpose, the connection to the broader treatment strategy was not explicitly articulated. The therapist did not explain: "This homework will help us test whether your balanced thought is actually true in your daily life, and it will also help you practice connecting with people in a different way."
+
+2. **No Contingency Planning:** The therapist did not develop a detailed plan for what to do if the homework is not completed or if obstacles arise. The therapist asked "What might get in the way?" but did not develop specific solutions.
+
+3. **No Follow-Up Protocol:** The therapist did not explicitly state how the homework will be reviewed next session or what data will be collected (e.g., "Bring your journal so we can look at the moments you noticed together").
+
+4. **Questionable Therapeutic Value:** While the homework is well-structured, its therapeutic value for this patient is questionable. Tracking moments of being noticed may reinforce the patient's belief that external validation is the solution, rather than addressing the core maladaptive pattern.
+
+**Summary:**
+
+The therapist assigned clear, specific, collaborative homework with good feasibility-checking. However, the rationale was somewhat shallow, and the homework's therapeutic appropriateness for this patient's diagnosis is questionable.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- **Strong agenda-setting:** Therapist explicitly invited patient input and confirmed priorities
+- **Consistent feedback-seeking:** Therapist checked understanding throughout and solicited session feedback
+- **Warm, non-judgmental interpersonal style:** Patient felt heard and safe
+- **Effective Socratic questioning:** Therapist guided patient to examine evidence rather than lecturing
+- **Collaborative approach:** Patient actively participated in goal-setting and homework design
+- **Clear, specific homework:** Concrete assignments with cues and feasibility assessment
+- **Good empathic reflection:** Therapist accurately mirrored patient's emotional experience
+
+### Critical Deficiencies:
+- **Failure to recognize and address personality disorder pathology:** Therapist treated HPD as a mood/thought problem rather than a personality-level pattern requiring different intervention
+- **Mismatched treatment strategy:** Standard cognitive restructuring is insufficient for personality disorder; strategy does not address core maladaptive patterns (attention-seeking, self-dramatization, manipulative suicidal threats)
+- **Inadequate diagnostic formulation:** No evidence therapist understands HPD etiology, maintenance factors, or evidence-based treatment approaches
+- **Shallow cognitive work:** Cognitive restructuring did not explore core beliefs, origins of thoughts, or functional analysis
+- **Abandoned agenda item:** Back pain was identified as priority but never addressed
+- **Limited technique application:** Session relied on single technique (cognitive restructuring) without exploring behavioral analysis, exposure, values work, or other relevant CBT methods
+- **No personality disorder-specific interventions:** No work on interpersonal patterns, identity, or maladaptive coping strategies
+- **Potential iatrogenic effect:** Homework (tracking moments of being noticed) may reinforce the very attention-seeking pattern that maintains the disorder
+
+---
+
+## Summary of Feedback
+
+### Strengths
+
+This therapist demonstrates solid foundational CBT skills. The session was warm, collaborative, and well-structured. The therapist successfully established an agenda, maintained a non-judgmental stance, used Socratic questioning effectively, and assigned clear homework. The patient felt heard and engaged, which is essential for therapeutic alliance. The therapist's interpersonal effectiveness was evident in the patient's positive response ("Thanks for helping me figure this out—it feels good to have a plan"). These are genuine strengths that form a solid foundation for clinical work.
+
+### Critical Deficiencies
+
+However, this session reveals a **fundamental diagnostic and conceptual gap** that significantly undermines its clinical utility. The therapist failed to recognize or address the patient's Histrionic Personality Disorder, instead treating her as if she has a primary mood disorder with distorted thoughts about being ignored. This is a critical error because:
+
+1. **The patient's thoughts are not primarily distorted.** She *is* sometimes ignored—this is normal human experience. The problem is not her cognition but her maladaptive behavioral response (attention-seeking through drama, seduction, and threats).
+
+2. **Standard cognitive restructuring is insufficient for personality disorder.** HPD is maintained by reinforcement from others' attention and by the patient's identity organization around external validation. Changing one thought will not address these deeper patterns.
+
+3. **The homework may be counterproductive.** Asking the patient to track moments when she feels noticed reinforces her belief that external validation is the solution, potentially strengthening the very pattern that maintains her disorder.
+
+4. **The therapist abandoned a stated agenda item** (back pain) without explanation, suggesting either poor time management or implicit prioritization based on the therapist's interests rather than collaborative decision-making.
+
+5. **No personality disorder-specific work occurred.** There was no exploration of the function of attention-seeking, no exposure to discomfort with being unnoticed, no values clarification, and no work on healthier interpersonal patterns.
+
+### Impact on Patient Care
+
+This session is unlikely to produce meaningful, sustained improvement. While the patient may experience temporary mood elevation from feeling heard and having a "plan," the homework is unlikely to address her core difficulties. More concerning, the approach may inadvertently reinforce maladaptive patterns. The patient has already failed multiple antidepressant trials, suggesting that a standard mood-focused approach is insufficient. Without addressing the personality-level patterns, the patient will likely continue cycling through crisis (suicidal threats), temporary relief (attention from others), and renewed distress (when attention fades). The therapist's well-intentioned but diagnostically mismatched intervention may delay more appropriate treatment and reinforce the patient's belief that external validation is the solution to her distress.
+
+---
+
+## Recommendations
+
+### 1. **Develop Diagnostic Competence in Personality Disorders (HIGHEST PRIORITY)**
+- **Action:** Obtain specialized training in personality disorder assessment and treatment. Read Linehan's work on Dialectical Behavior Therapy (DBT) for emotion dysregulation and interpersonal patterns; review Kernberg's work on personality organization; study evidence-based approaches to HPD specifically.
+- **Example:** Recognize that when a patient states "I hate feeling invisible" combined with "Maybe if I looked nicer or said something sexy, he'd notice me" and uses suicidal threats to manipulate attention, this is HPD, not depression. The treatment target is not the thought "Why bother showing up?" but the maladaptive pattern of seeking validation through drama and seduction.
+- **Practice:** Before your next session with this patient, write a detailed case formulation that includes: (1) HPD diagnostic criteria met, (2) function of attention-seeking behavior, (3) maintaining factors, (4) how standard CBT is insufficient, (5) what personality disorder-specific interventions are needed.
+
+### 2. **Conduct Functional Analysis of Attention-Seeking Behavior**
+- **Action:** In the next session, explore the function of the patient's attention-seeking: "I'm noticing that you describe using drama, your appearance, and even threats to get attention. What happens inside you when you feel invisible? What does the attention do for you? What emotions does it help you manage?"
+- **Example:** "When you said 'Maybe if I looked nicer or said something sexy, he'd notice me,' I'm wondering—what would happen if you tried connecting with your husband in a different way, without the drama or seduction? What are you afraid might happen?"
+- **Practice:** Develop a functional analysis worksheet for this patient that maps: Trigger (feeling unnoticed) → Emotion (anxiety, emptiness) → Maladaptive Response (drama, seduction, threats) → Short-term Relief (attention) → Long-term Consequence (damaged relationships, continued distress). Use this to guide treatment planning.
+
+### 3. **Shift from Cognitive Restructuring to Behavioral Analysis and Exposure**
+- **Action:** Recognize that cognitive restructuring alone is insufficient. Instead, use behavioral experiments and exposure to help the patient tolerate being unnoticed without resorting to drama. For example: "This week, I'd like you to try having a conversation with your husband where you simply share something about your day without dramatizing it or seeking his attention. Notice what happens—what emotions come up? Does he respond differently?"
+- **Example:** "I know feeling invisible is very uncomfortable for you. But I'm wondering if part of the problem is that you've learned to manage that discomfort by creating drama. What if we gradually practiced being in the background without doing anything to grab attention? It will feel uncomfortable at first, but it might help you discover that you're okay even when people aren't focused on you."
+- **Practice:** Design a graded exposure hierarchy for this patient: Level 1 (wear neutral clothing to work without drawing attention), Level 2 (have a conversation without mentioning appearance or using seductive language), Level 3 (spend an evening with husband without initiating drama or seeking reassurance), etc.
+
+### 4. **Address the Suicidal Threats Directly and Appropriately**
+- **Action:** Recognize that the patient's suicidal statements ("thoughts of overdosing on Advil") are attention-seeking gestures, not genuine suicide risk. However, this does not mean ignoring them. Instead, address them as part of the maladaptive pattern: "I understand you've used these statements to get your husband's attention when you feel unsupported. But this strategy is hurting your relationship and keeping you stuck. Let's work on other ways to communicate your needs."
+- **Example:** "When you feel ignored by your husband, instead of threatening to overdose, what if you said directly: 'I'm feeling lonely and I need your attention'? That's more honest and more likely to get you what you actually want."
+- **Practice:** Develop a safety plan that includes: (1) recognition that these are attention-seeking gestures, not genuine suicide risk, (2) alternative ways to communicate needs, (3) consequences if threats continue (e.g., hospitalization, which removes the attention-seeking payoff).
+
+### 5. **Implement Values Clarification Work**
+- **Action:** Help the patient explore what kind of life and relationships she actually wants, independent of attention. "Beyond getting people to notice you, what matters to you? What kind of person do you want to be? What kind of relationship do you want with your husband?"
+- **Example:** "I'm noticing that a lot of your energy goes into making sure people notice you. But I'm wondering—if you weren't worried about that, what would you want to do? What brings you joy? What would make you feel proud of yourself?"
+- **Practice:** Use a values worksheet to help the patient identify her core values (e.g., family, health, authenticity, contribution) and then explore how her current attention-seeking pattern either supports or undermines these values.
+
+### 6. **Develop Interpersonal Effectiveness Skills**
+- **Action:** Teach the patient alternative ways to connect with others and meet her needs without relying on drama, seduction, or threats. This might include assertiveness training, emotion regulation skills, and healthy communication.
+- **Example:** "Instead of using drama to get your husband's attention, let's practice saying: 'I've been feeling disconnected from you. I'd like to spend some time together this weekend. What would work for you?' This is direct, honest, and more likely to get you what you want."
+- **Practice:** Role-play with the patient: Have her practice asking for attention directly, expressing needs without dramatizing, and tolerating her husband's response (even if it's not what she wants).
+
+### 7. **Establish Clear Treatment Goals Aligned with Personality Disorder Work**
+- **Action:** Revise treatment goals to address the core pattern, not just mood. Goals should include: (1) Reduce reliance on external validation for self-worth, (2) Develop tolerance for being unnoticed without resorting to drama, (3) Improve relationship quality through healthier communication, (4) Reduce attention-seeking behaviors (including suicidal threats), (5) Develop internal sources of self-esteem.
+- **Example:** Instead of "Patient will develop more balanced thoughts about being noticed," the goal should be "Patient will tolerate feeling unnoticed for 30 minutes without engaging in attention-seeking behavior, and will practice direct communication of needs."
+- **Practice:** Write SMART goals (Specific, Measurable, Achievable, Relevant, Time-bound) for personality disorder treatment. Share these with the patient and ensure she understands why they differ from standard mood-focused goals.
+
+### 8. **Reconsider the Homework Assignment**
+- **Action:** The current homework (tracking moments of being noticed) may reinforce the problem. Instead, assign homework that builds tolerance and alternative skills: "This week, I'd like you to notice moments when you feel invisible but don't do anything to grab attention. Just observe what happens. Also, practice one direct communication with your husband about a need you have."
+- **Example:** "Instead of journaling about times people notice you, let's try something different. Notice times when you feel invisible, and instead of dramatizing or using seduction, just sit with that feeling for a few minutes. What do you notice? Does it get worse, or does it pass?"
+- **Practice:** Develop homework assignments that build distress tolerance, values-aligned behavior, and interpersonal effectiveness rather than reinforcing the attention-seeking pattern.
+
+### 9. **Increase Session Frequency and Duration**
+- **Action:** Personality disorder work typically requires more intensive treatment than standard CBT. Consider increasing to twice-weekly sessions or longer sessions (60-90 minutes) to allow adequate time for functional analysis, exposure work, and skill-building.
+- **Example:** "Given the complexity of what we're working on, I think it would be helpful to meet twice a week for the next few months so we have enough time to really understand these patterns and practice new ways of relating."
+- **Practice:** Discuss with your supervisor or a personality disorder specialist about appropriate treatment intensity and duration for HPD.
+
+### 10. **Collaborate with Psychiatry on Medication Management**
+- **Action:** The patient has failed multiple antidepressant trials, which is consistent with HPD (where the primary problem is not neurochemical but interpersonal/behavioral). Discuss with the prescribing psychiatrist whether medication changes are warranted or whether psychotherapy alone is more appropriate. Consider whether the patient might benefit from mood stabilizers or anti-anxiety medication to support the psychotherapy work.
+- **Example:** "The fact that antidepressants haven't helped suggests that the primary issue isn't depression but rather how you're relating to yourself and others. Psychotherapy targeting these patterns is likely to be more helpful than additional medication trials. However, if anxiety is getting in the way of the work, we might consider anti-anxiety medication as a temporary support."
+- **Practice:** Request a consultation with the prescribing psychiatrist to discuss the personality disorder diagnosis and its implications for medication management.
+
+### 11. **Obtain Supervision on Personality Disorder Cases**
+- **Action:** Seek regular supervision from a clinician experienced in personality disorder treatment. Bring session recordings or detailed notes to supervision to get feedback on your conceptualization and interventions.
+- **Example:** "I'm working with a patient with Histrionic Personality Disorder, and I want to make sure I'm using the most effective approach. Can we review my session and discuss whether my interventions are appropriate for personality disorder work?"
+- **Practice:** Schedule monthly supervision focused on personality disorder cases. Use this time to develop your diagnostic and treatment skills.
+
+---
+
+## Overall Session Score: 4.1/6
+
+**Summary:**
+
+This session demonstrates **adequate foundational CBT skills but significant diagnostic and conceptual gaps** that undermine its clinical utility. The therapist successfully established rapport, used Socratic questioning, and assigned clear homework—all important elements of good therapy. However, the therapist failed to recognize Histrionic Personality Disorder and instead applied standard cognitive restructuring for mood disorders, which is fundamentally mismatched to this patient's actual pathology.
+
+**Current Competency Assessment:** The therapist is competent in basic CBT techniques (cognitive restructuring, behavioral homework, Socratic questioning) but lacks competence in personality disorder assessment and treatment. This is a critical gap because personality disorders require different conceptualization, treatment targets, and intervention strategies than mood and anxiety disorders. The therapist's well-intentioned approach may inadvertently reinforce maladaptive patterns and delay more appropriate treatment.
+
+**Most Critical Changes Needed Immediately:**
+
+1. **Develop diagnostic formulation recognizing HPD** and its implications for treatment
+2. **Shift from cognitive restructuring to functional analysis** of attention-seeking behavior
+3. **Implement exposure and behavioral change** rather than thought-challenging alone
+4. **Address the suicidal threats** as attention-seeking gestures within the personality disorder framework
+5. **Revise homework** to build distress tolerance and alternative skills rather than reinforce the attention-seeking pattern
+
+**Whether Session Qualifies as Evidence-Based CBT:** This session partially qualifies as evidence-based CBT for mood disorders but does **not** qualify as evidence-based treatment for Histrionic Personality Disorder. The interventions applied (cognitive restructuring, behavioral homework) are evidence-based for depression and anxiety but insufficient for personality pathology. The likelihood of producing meaningful, sustained therapeutic change is **low** without significant modifications to the treatment approach. The patient will likely experience temporary relief from feeling heard but will continue cycling through the maladaptive pattern of attention-seeking, crisis, and renewed distress.
+
+**Prognosis with Current Approach:** Without intervention, this patient will likely continue using suicidal threats, drama, and seduction to manage her distress and regulate relationships. The therapist's current approach, while warm and collaborative, does not address these core patterns and may inadvertently reinforce them. Urgent consultation with a personality disorder specialist is recommended to redirect treatment toward more appropriate and effective interventions.

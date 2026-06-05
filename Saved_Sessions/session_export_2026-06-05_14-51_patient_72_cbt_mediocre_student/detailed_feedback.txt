@@ -1,0 +1,808 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Other Specified Dissociative Disorder (Acute Dissociative Reactions to Stressful Events)
+
+--- CASE STUDY ---
+
+Lourdes Zayas, a 33-year-old Puerto Rican woman born in the United States, was brought to the emergency room after attempting to swallow bleach in response to the sudden murder of her fiancé in Puerto Rico. She initially appeared unusually calm, then engaged in repetitive, unnecessary behaviors (folding and unfolding clothes) and later attempted self-harm. She experienced shaking, crying, screaming, and a brief period of apparent stupor, followed by partial unresponsiveness.
+
+In the ER, she described feeling numb, disconnected from her body, emotions, and surroundings, and reported amnesia for the period surrounding the bleach incident. She continued to experience transient dissociative symptoms, depersonalization, derealization, nightmares, and intrusive memories over the following days. Physical, neurological, and laboratory evaluations were normal. She was oriented, without psychotic symptoms, and denied ongoing suicidal ideation.
+
+Ms. Zayas was hospitalized for 10 days, during which her symptoms improved significantly. She required no medications and was discharged with outpatient follow-up. One month later, she had largely returned to baseline functioning. The acute dissociative reaction was brief, stress-related, and resolved with minimal sequelae, consistent with ataque de nervios, culturally recognized in Puerto Rican populations.
+
+Discussion: Ms. Zayas’s acute dissociative episode included constriction of consciousness, depersonalization, derealization, transient stupor, micro-amnesia, and autonomic arousal. These acute dissociative reactions are typically self-limiting but may indicate vulnerability to future stress-induced psychiatric sequelae.
+
+--- BEHAVIOUR ---
+
+Initially calm and unresponsive to questions
+
+Engaged in repetitive, unnecessary tasks (folding/unfolding clothes)
+
+Episodes of agitation, crying, and screaming
+
+Brief stupor (“lay as if dead”)
+
+Gradually became responsive during observation
+
+Cooperative after initial acute episode
+
+Emotionally labile but oriented
+
+--- SYMPTOMS from DSM-5 ---
+
+Depersonalization (disconnected from body and emotions)
+
+Derealization (environment feels unreal)
+
+Transient stupor
+
+Micro-amnesia for acute episode
+
+Emotional numbness / constriction of consciousness
+
+Repetitive, purposeless behaviors
+
+Acute stress-related functional impairment
+
+--- PATIENT PROFILE ---
+Name: Lourdes Zayas
+Sex: Female
+Age: 33 years
+DOB: March 22, 1990
+Place of Birth: New York, NY
+Address: 117 Willow Avenue, Brooklyn, NY
+Contact: (555) 753-9182
+Marital Status: Engaged (fiancé deceased)
+Children: None
+Occupation: Administrative assistant
+Education: Bachelor’s degree
+Religion: Catholic
+Legal Guardian: N/A
+Presenting Complaint: Attempted suicide after learning of fiancé’s murder
+Psychiatric History: None prior
+Psychotherapy: None prior
+Medications: None
+Substance Use: None
+Medical History: None significant
+Neurology: Normal
+Family History: No psychiatric history reported
+Mental Status: Sad mood, tearful, amnesia for acute event, transient depersonalization/derealization, episodic stupor, oriented, no psychosis
+
+--- DIAGNOSIS ---
+Other Specified Dissociative Disorder (Acute Dissociative Reactions to Stressful Events)
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Lourdes Zayas, a 33-year-old woman, presents to the emergency room following an ingestion of bleach after learning of her fiancé’s sudden death. She is brought in by emergency responders due to concerns about self-harm and acute distress.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hello! Nice to see you today. I was thinking we could just chat a bit about how things have been going for you lately and maybe look at some stuff that’s been bothering you. Does that sound okay? 
+ PATIENT: Hi. Um, yeah, that sounds okay. I’ve been... it’s been hard. I don’t really know where to start. Some days I feel okay, but then other times it just hits me, you know? Like I’m not really here, or I can’t really feel anything at all. It’s confusing and a little scary. 
+ PSYCHIATRIST: Yeah, I get that. So maybe we can start by talking about one of those times when it felt really confusing or scary. Can you tell me about a recent moment like that? Like, what was happening around you? 
+ PATIENT: Sure. Just last week, I was at home, sitting in the living room. It was quiet, kind of late in the afternoon. Suddenly, I felt... like I was watching myself from outside my body. Like I was there but not really there, if that makes sense. Everything around me felt distant, kind of unreal. Like I was in a dream or a movie, but not living it. My heart started racing, and I couldn’t focus on anything. It was really hard to even speak or move. I felt frozen, like I was stuck. It lasted for maybe ten minutes, and then slowly I started to come back to myself. But during that time, it was really confusing and scary because I didn’t know what was happening. 
+ PSYCHIATRIST: Okay, thanks for sharing that. So, when you were feeling like you were outside your body and things were unreal, what kind of thoughts were going through your mind? Was there anything you were telling yourself about what was happening? Maybe you thought something like "I’m losing control" or "This is never going to end"? Or something else? Sometimes those thoughts can make the feelings worse. But you could try thinking about it differently, like reminding yourself that it’s temporary and it will pass. Does that make sense? 
+ PATIENT: Yeah, I think I get what you mean. During those moments, the thoughts that come up are mostly like, “What’s wrong with me?” or “Am I going crazy?” Sometimes I tell myself, “This is never going to stop,” and then I feel even more trapped in it. It’s like this voice in my head that won’t quiet down. I know, when you say it’s temporary, I want to believe that, but in the moment it just feels so real and permanent. It’s hard to remind myself it will pass when it’s happening. But maybe if I try to focus on that thought more, it could help. I’d like that. 
+ PSYCHIATRIST: Yeah, that sounds really tough. So, when you have those thoughts like “What’s wrong with me?” or “Am I going crazy?”, do you notice any changes in how you act? Like, do you avoid certain places or activities because of those feelings? Sometimes trying to do something small, like going for a walk or doing a hobby, can distract you and make the feelings less intense. You could try that next time it happens. What do you think about that idea? 
+ PATIENT: I do try to avoid certain things sometimes, like going out to crowded places or even talking on the phone because I worry I might have another episode or feel that way again. I don’t want to be around people if I start feeling like I’m not real or like I’m losing control. It’s easier to just stay home and be alone. But I know that’s not really helping me. I haven’t tried going for walks or doing hobbies when I feel like this, but maybe it could help. Sometimes I’m just too tired or scared to even try. But I want to work on that. Maybe next time, I can try going outside for a little bit. It seems like a small step, but I guess that’s what I need. 
+ PSYCHIATRIST: That sounds like a good idea, trying a small step like going for a walk. It might help take your mind off those scary feelings. So, if you had to think about it, what do you think would be a good time or place to try that? Maybe somewhere quiet and safe? You could try to notice how you feel before and after. It’s not a big thing, just something to practice. Also, maybe it would help to remind yourself that the feelings are temporary and that you’re okay. Does that sound doable? 
+ PATIENT: Yeah, that sounds doable. I think maybe in the mornings when it’s quiet outside, I could try going to the park near my apartment. It’s usually not busy then, and there are benches where I can sit if I need to. I like the idea of paying attention to how I feel before and after. Maybe writing it down or just thinking about it would help me see if it’s making a difference. And reminding myself it’s temporary… I’ll try to say that to myself when it feels overwhelming. It won’t be easy, but I want to try. 
+ PSYCHIATRIST: Okay, great. So, besides going for a walk, is there anything else that you think might help when you start feeling like you’re not really there or like you’re losing control? Maybe something you do now that helps a little bit? Sometimes having a plan for those moments can make them less scary. You could try thinking about what small things you can do to feel more grounded or safe. What do you think? 
+ PATIENT: Hmm, right now when I start feeling like that, I sometimes try to hold onto something familiar, like my rosary or a photo of my fiancé. It’s like something real I can touch to remind me I’m still here. But other times, I just freeze and don’t know what to do. Having a plan sounds good because those moments feel so sudden and I don’t want to just panic or shut down. Maybe I could also try deep breathing or focusing on the sounds around me to help me feel more connected. It feels hard to do in the moment, but I think if I had a few things in mind to try, it might help me feel less lost. 
+ PSYCHIATRIST: Yeah, those sound like good ideas. Holding onto something familiar or focusing on sounds could help you feel more grounded. Maybe you could practice deep breathing a little bit when you’re feeling calm, so it’s easier to use when you’re feeling overwhelmed. You should practice those grounding techniques this week and just notice how they feel. It’s okay if it’s not perfect or if it doesn’t work every time. Does that sound like something you could try? 
+ PATIENT: Yeah, I think I can try that. Practicing deep breathing when I’m calm makes sense. Maybe if I get used to it, I can do it better when things get tough. I’ll try to notice how it feels too, like you said. I know it won’t fix everything right away, but maybe it’ll help a little bit. I want to feel more in control and less scared when this happens. Thank you for saying that it’s okay if it’s not perfect. That makes it feel less scary to try. 
+ PSYCHIATRIST: Alright, so to sum up, you’re going to try going for a walk in the mornings at the park and practice some grounding techniques like deep breathing when you’re feeling calm. You’ll notice how these things feel and maybe remind yourself that the feelings are temporary. That sounds like a good start. Keep in mind, it’s okay if it doesn’t work perfectly every time. Just keep practicing. If you want, we can check in next time about how it’s going. Take care, and I’m glad you shared all this today. 
+ PATIENT: Thank you. I feel a little hopeful having a plan to try. I’ll do my best with the walks and the breathing. It helps to know I can talk about this with you and that I’m not alone in it. I’m grateful for that. I’ll see you next time. 
+ PSYCHIATRIST: Hello! It's good to see you today. I thought maybe we could just talk a bit about how things have been going for you lately and look at some stuff that might be bothering you. How does that sound? 
+ PATIENT: Hi. Yeah, thanks for asking. It’s been kind of up and down. Some days feel okay, but then other times I just feel really numb or like I’m not really there. It’s hard to explain, but it’s like my mind just shuts down for a bit. I guess I worry it’ll get worse or that I won’t be able to handle it. 
+ PSYCHIATRIST: Hi there! Yeah, that sounds like a good plan. So, maybe we can start by talking about a recent time when you felt numb or like your mind shut down. Can you tell me a bit about what was happening then? Like, where were you, and what was going on around you? 
+ PATIENT: Okay. A few days ago, I was at home alone in the afternoon. I was just sitting in the living room trying to watch TV, but suddenly everything felt weird. It was like I wasn’t really there, like I was watching myself from far away. The room looked different, and I couldn’t really feel my body. My heart started beating fast, and I felt frozen, like I couldn’t move or say anything. It lasted for maybe ten minutes before it started to fade. It was confusing and kind of scary. I didn’t understand what was happening to me. 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist opened with extremely vague language: "I was thinking we could just chat a bit about how things have been going for you lately and maybe look at some stuff that's been bothering you." This is not agenda-setting in the CBT sense. There is no explicit identification of target problems, no prioritization, no time allocation, and no collaborative establishment of session goals. The therapist never asked what Lourdes most wanted to work on today, never clarified whether this session should focus on managing dissociative episodes, processing grief, building coping skills, or addressing avoidance behaviors. 
+
+In the second session (which appears to be a repeat of the first), the therapist again uses identical vague language ("I thought maybe we could just talk a bit about how things have been going for you lately and look at some stuff that might be bothering you"), demonstrating no learning or structure across sessions. A proper CBT agenda would have sounded like: "Lourdes, I know you've been experiencing these dissociative episodes where you feel disconnected from your body and surroundings. Today I'd like to focus on [specific problem]. We have about 45 minutes. Does that work for you, or is there something else you'd like to prioritize?" The therapist never established priorities, never checked if the patient agreed on focus areas, and never managed time explicitly.
+
+**Summary:**
+
+Agenda-setting was essentially absent. The therapist used generic, non-specific opening language without collaboratively identifying, prioritizing, or structuring session goals. This is a fundamental CBT failure that undermines the entire session structure.
+
+---
+
+### 2. Feedback
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist elicited virtually no feedback throughout either session. There is no evidence of the therapist asking: "Does this make sense to you?", "How are you feeling about what we've discussed?", "Is this helpful?", "Do you have questions about what I'm suggesting?", or "What are your thoughts on this approach?" 
+
+The only moment approaching feedback-seeking occurs when the therapist asks, "Does that sound doable?" regarding the walk homework—but this is a yes/no question about task feasibility, not genuine feedback elicitation about the therapist's understanding, the patient's experience, or session helpfulness. The therapist never checked whether the patient understood the rationale for interventions, never asked for reactions to suggestions, never solicited the patient's perspective on what might actually help, and never summarized key points and asked for the patient's agreement.
+
+At the end of the first session, the therapist provides a summary ("So to sum up, you're going to try going for a walk...") but does not ask the patient to confirm understanding, add anything, or provide feedback on the plan. The patient's response ("Thank you. I feel a little hopeful...") is spontaneous, not elicited. In the second session, there is no closing feedback whatsoever. This represents a critical gap in collaborative CBT practice.
+
+**Summary:**
+
+Feedback elicitation was essentially absent. The therapist did not systematically check for understanding, patient reactions, or session helpfulness. This violates a core CBT principle of collaborative empiricism and leaves the therapist unaware of whether interventions are landing or whether the patient has concerns.
+
+---
+
+### 3. Understanding
+### **Score: 3/6**
+
+**Explanation:**
+
+The therapist demonstrates basic comprehension of the patient's explicit symptoms. When Lourdes describes depersonalization ("like I was watching myself from outside my body"), derealization ("Everything around me felt distant, kind of unreal"), and physical symptoms (racing heart, freezing), the therapist acknowledges these and reflects them back: "So, when you were feeling like you were outside your body and things were unreal..." This shows surface-level listening.
+
+However, the therapist misses critical nuances of Lourdes's internal experience and fails to demonstrate deeper understanding of her phenomenology. Most significantly, the therapist does not acknowledge or explore the profound grief context—Lourdes's fiancé was murdered, she attempted suicide by ingesting bleach, and she is experiencing acute dissociative reactions to catastrophic trauma. The therapist never explores: What does the dissociation feel like in relation to the loss? Is she dissociating as a protective mechanism from unbearable grief? What is her relationship to the trauma? The therapist treats the dissociation as an isolated symptom to be managed rather than as a stress-response embedded in devastating loss.
+
+Additionally, the therapist misses Lourdes's expressed fear ("I worry I might have another episode") and her avoidance pattern (avoiding crowds, phone calls, leaving home) without exploring the function of this avoidance or its relationship to her trauma. The therapist also does not pick up on Lourdes's spiritual/cultural coping ("I sometimes try to hold onto something familiar, like my rosary or a photo of my fiancé") with any cultural sensitivity or deeper exploration. The therapist's empathy is present but surface-level; the understanding is incomplete and misses the patient's deeper emotional reality.
+
+**Summary:**
+
+The therapist demonstrated adequate surface-level listening but missed critical contextual factors (grief, trauma, cultural/spiritual resources) and failed to demonstrate deeper understanding of the patient's internal experience. Empathy was present but not thorough.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 4/6**
+
+**Explanation:**
+
+The therapist displays appropriate warmth and professionalism throughout. The tone is gentle, non-judgmental, and reassuring. Phrases like "Yeah, I get that," "That sounds really tough," "That sounds like a good idea," and "I'm glad you shared all this today" convey genuine concern and validation. The therapist does not appear hostile, dismissive, or impatient. The therapist normalizes the patient's experience ("Sometimes those thoughts can make the feelings worse") and offers encouragement ("That sounds like a good start").
+
+However, there are subtle interpersonal limitations. The therapist's responses are somewhat formulaic and lack the tailored warmth that would be optimal for a patient in acute grief and dissociative distress. The therapist does not demonstrate deep emotional attunement to the magnitude of Lourdes's loss or the terror of her dissociative episodes. Phrases like "It might help take your mind off those scary feelings" feel somewhat dismissive of the severity of her experience. The therapist also does not establish genuine rapport around Lourdes's identity, culture, or values—there is no personalization or demonstration that the therapist sees Lourdes as a unique individual beyond her symptoms.
+
+The therapist maintains appropriate professional boundaries and does not overstep, which is positive. However, the interpersonal connection, while adequate, lacks the depth and genuine attunement that would be optimal for building a strong therapeutic alliance with a traumatized patient.
+
+**Summary:**
+
+The therapist displayed satisfactory warmth, concern, and professionalism without significant interpersonal problems. However, the connection lacked depth and tailored attunement to the patient's profound grief and trauma.
+
+---
+
+### 5. Collaboration
+### **Score: 2/6**
+
+**Explanation:**
+
+Collaboration is minimal and largely one-directional. The therapist makes suggestions and recommendations without genuinely inviting the patient into a collaborative problem-solving process. Examples of non-collaborative language include:
+
+- "You could try thinking about it differently, like reminding yourself that it's temporary and it will pass."
+- "Sometimes trying to do something small, like going for a walk or doing a hobby, can distract you and make the feelings less intense."
+- "You should practice those grounding techniques this week and just notice how they feel."
+
+These are directive statements, not collaborative invitations. The therapist tells the patient what to do rather than asking, "What do you think might help?" or "What have you tried before that's worked?" or "What feels manageable to you right now?"
+
+There is one moment of mild collaboration when the therapist asks, "What do you think would be a good time or place to try that?" and Lourdes responds with the park idea. However, this is a narrow window of collaboration within an otherwise therapist-directed session. The therapist does not invite Lourdes to generate her own coping strategies before offering suggestions. When Lourdes spontaneously mentions holding her rosary and focusing on sounds, the therapist validates these but does not explore them deeply or position Lourdes as the expert on her own recovery.
+
+The therapist never explicitly frames the work as a partnership ("We're going to work together on this") or positions Lourdes as an active agent in her own treatment. Instead, the therapist functions as an expert dispensing advice. This violates the CBT principle of collaborative empiricism and reduces the patient's sense of agency and ownership over her recovery.
+
+**Summary:**
+
+Collaboration was minimal. The therapist was directive rather than collaborative, offering suggestions without genuinely inviting the patient into shared decision-making or positioning her as an active partner in treatment.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 3/6**
+
+**Explanation:**
+
+The session demonstrates mixed pacing. On one hand, the therapist moves through topics without excessive tangents—the session flows from symptom description to thought identification to behavioral planning to homework assignment. The therapist does not get lost in irrelevant details or allow the patient to ramble unproductively.
+
+However, there are significant pacing problems. First, the therapist spends considerable time on psychoeducation and suggestion-giving without establishing whether these interventions are appropriate or aligned with the patient's needs. The therapist suggests cognitive restructuring ("reminding yourself that it's temporary and it will pass"), behavioral activation (going for walks), and grounding techniques (deep breathing, holding objects, focusing on sounds) without first assessing what Lourdes has already tried, what her barriers are, or what her priorities are.
+
+Second, the therapist does not allocate time efficiently to the most critical issues. Given that Lourdes is a recent suicide attempt survivor experiencing acute dissociative episodes in the context of her fiancé's murder, the session should have devoted more time to: (1) safety assessment and planning, (2) grief processing, (3) understanding the trauma context, and (4) building a comprehensive coping plan. Instead, the therapist quickly moves to generic homework assignments without adequate depth.
+
+Third, the session structure is repetitive—the second session appears to be nearly identical to the first, suggesting the therapist did not review prior session notes or adjust pacing based on what was already covered. This is inefficient use of time and suggests lack of continuity of care.
+
+**Summary:**
+
+Pacing was adequate in avoiding tangents but inefficient in prioritizing critical issues (safety, grief, trauma context) and in avoiding repetition across sessions. The therapist moved quickly through topics without adequate depth on the most important matters.
+
+---
+
+### 7. Guided Discovery
+### **Score: 2/6**
+
+**Explanation:**
+
+Guided discovery—the use of Socratic questioning to help the patient reach insights independently—is largely absent. Instead, the therapist relies heavily on direct suggestion and advice-giving. Examples of non-Socratic, directive language:
+
+- "Sometimes those thoughts can make the feelings worse. But you could try thinking about it differently, like reminding yourself that it's temporary and it will pass."
+- "Sometimes trying to do something small, like going for a walk or doing a hobby, can distract you and make the feelings less intense."
+- "Maybe you could practice deep breathing a little bit when you're feeling calm, so it's easier to use when you're feeling overwhelmed."
+
+These are statements, not questions. A Socratic approach would sound like:
+
+- "When you have the thought 'This is never going to stop,' what evidence do you have for that? What evidence do you have against it? What happened the last time you felt this way—did it actually last forever?"
+- "You mentioned avoiding crowds and phone calls. What do you think happens when you avoid these situations? What might happen if you gradually faced them?"
+- "You mentioned holding your rosary helps you feel grounded. What is it about that that helps? Can we build on that?"
+
+The therapist does ask one open-ended question: "Maybe you could try thinking about what small things you can do to feel more grounded or safe. What do you think?" This invites some discovery, and Lourdes responds with her own ideas (holding rosary, deep breathing, focusing on sounds). However, this is a single instance in an otherwise directive session.
+
+The therapist does not use Socratic questioning to help Lourdes examine her automatic thoughts ("What's wrong with me?" "Am I going crazy?"), test her beliefs, or discover her own insights. The therapist tells her what to think and do rather than guiding her to discover it herself.
+
+**Summary:**
+
+Guided discovery was minimal. The therapist relied on direct advice and suggestion rather than Socratic questioning. The patient was not guided to reach insights independently but rather told what to think and do.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist identifies some relevant cognitions and behaviors but fails to focus on the most central ones for this patient's presentation and treatment.
+
+**Cognitions identified:**
+- "What's wrong with me?"
+- "Am I going crazy?"
+- "This is never going to stop"
+
+These are important automatic thoughts related to the dissociative episodes. However, the therapist does not deeply explore these thoughts or their relationship to the trauma. Critically missing are explorations of:
+
+- Thoughts related to grief and loss ("I can't live without him," "This is unbearable," "I should have died instead")
+- Thoughts related to the suicide attempt ("I deserve to die," "There's no point in living")
+- Thoughts related to safety and control ("I'm not safe," "I can't protect myself," "The world is dangerous")
+- Core beliefs about self, world, and future that may underlie the dissociation
+
+**Behaviors identified:**
+- Avoidance (avoiding crowds, phone calls, leaving home)
+- Repetitive behaviors (the patient mentioned folding/unfolding clothes in the case history, but this is not explored in the session)
+
+The therapist identifies avoidance but does not explore its function deeply. The therapist does not ask: "What are you afraid will happen if you go out?" or "What would it mean about you if you had an episode in public?" These questions would reveal the underlying beliefs driving the avoidance.
+
+Most critically, the therapist does not focus on the most central issue: **grief and trauma processing**. Lourdes's fiancé was murdered. She attempted suicide. She is experiencing acute dissociative reactions to catastrophic loss. Yet the therapist treats the dissociation as an isolated symptom to manage rather than as a trauma response embedded in profound grief. The therapist never explores:
+
+- Her relationship to her fiancé and the loss
+- Her feelings about his death
+- Her suicidal ideation and what led to the suicide attempt
+- Her sense of safety and meaning in the world post-trauma
+- Her guilt, anger, or other grief-related emotions
+
+This represents a fundamental failure to focus on the key cognitions and behaviors most relevant to this patient's presenting problem and most likely to drive meaningful change.
+
+**Summary:**
+
+The therapist identified some relevant automatic thoughts and avoidance behaviors but failed to focus on the most central cognitions (grief-related thoughts, trauma-related beliefs, suicidal ideation) and did not explore the function of key behaviors. The focus was on symptom management rather than trauma processing.
+
+---
+
+### 9. Strategy for Change
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist's strategy for change is vague, fragmented, and not grounded in a coherent conceptualization of the patient's disorder or a clear theory of change.
+
+**What the therapist attempted:**
+
+1. **Cognitive restructuring** (reframing thoughts as temporary)
+2. **Behavioral activation** (going for walks)
+3. **Grounding techniques** (deep breathing, holding familiar objects, focusing on sounds)
+
+These are all legitimate CBT techniques, but they are presented without a clear rationale or integrated strategy. The therapist does not explain: "Here's how I understand your dissociation: when you have scary thoughts about losing control, your anxiety increases, which triggers dissociative symptoms. To break this cycle, we're going to: (1) examine and challenge those thoughts, (2) gradually face situations you're avoiding to build confidence, and (3) use grounding techniques to stay present when dissociation begins."
+
+**Missing from the strategy:**
+
+- **Trauma-focused conceptualization**: The strategy does not address the fact that Lourdes is experiencing acute dissociative reactions to catastrophic trauma (her fiancé's murder and her own suicide attempt). A coherent strategy would include trauma processing, grief work, and meaning-making.
+- **Safety planning**: Given the recent suicide attempt, a comprehensive safety plan should be a cornerstone of the treatment strategy. This is entirely absent.
+- **Exposure/habituation**: For dissociative symptoms and avoidance, a systematic exposure hierarchy would be appropriate, but this is not developed.
+- **Grief processing**: No strategy for processing the loss, exploring the relationship, or rebuilding meaning and identity post-loss.
+- **Cultural/spiritual integration**: The patient mentioned her rosary and Catholic faith; a coherent strategy would integrate these resources.
+
+The strategy appears to be: "Try these coping techniques and see if they help." This is not a coherent, theory-driven change strategy. It is a collection of suggestions without a unifying logic or clear pathway to recovery.
+
+**Summary:**
+
+The strategy for change was vague and fragmented. The therapist offered multiple techniques without a coherent conceptualization of the patient's disorder or a clear theory of how these interventions would lead to meaningful change. Critical elements (trauma processing, safety planning, grief work) were absent.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist attempted to apply CBT techniques but did so with significant flaws and limited skill.
+
+**Cognitive restructuring attempt:**
+
+The therapist suggested: "You could try thinking about it differently, like reminding yourself that it's temporary and it will pass."
+
+**Flaws:**
+- This is simplistic and potentially invalidating. Telling someone in acute dissociation to "just remind yourself it's temporary" is not evidence-based cognitive restructuring.
+- No systematic examination of the thought ("This is never going to stop") was conducted. The therapist did not ask for evidence for/against, alternative explanations, or realistic predictions.
+- No behavioral experiment was proposed to test the thought.
+- The suggestion assumes the patient can easily shift her thinking in the moment, which is unrealistic during acute dissociation.
+
+**Behavioral activation attempt:**
+
+The therapist suggested: "Sometimes trying to do something small, like going for a walk or doing a hobby, can distract you and make the feelings less intense."
+
+**Flaws:**
+- The rationale is framed as "distraction" rather than exposure/habituation or behavioral activation for depression/avoidance.
+- No systematic activity scheduling was developed.
+- No hierarchy of activities was created.
+- The therapist did not assess barriers to activation (fatigue, motivation, fear).
+- The homework is vague ("try going for a walk") without specific parameters (duration, frequency, what to monitor).
+
+**Grounding techniques:**
+
+The therapist validated the patient's existing grounding strategies (holding rosary, focusing on sounds) and suggested deep breathing practice.
+
+**Strengths:**
+- Validation of existing coping strategies is appropriate.
+- Suggesting practice during calm states is sound.
+
+**Flaws:**
+- No systematic grounding protocol was taught (e.g., 5-4-3-2-1 technique, body scan, etc.).
+- No clear instruction on how to practice or how to use grounding during dissociative episodes.
+- The therapist did not explain the mechanism (why grounding works for dissociation).
+
+**Overall assessment:**
+
+The techniques are applied with moderate skill but significant flaws. The therapist demonstrates basic familiarity with CBT methods but lacks the sophistication and precision needed for effective application. The techniques are presented as suggestions rather than as part of a systematic, evidence-based protocol.
+
+**Summary:**
+
+CBT techniques were applied with significant flaws. Cognitive restructuring was oversimplified and not systematic. Behavioral activation lacked structure and clear rationale. Grounding techniques were validated but not systematically taught. Overall application skill was below adequate.
+
+---
+
+### 11. Homework
+### **Score: 3/6**
+
+**Explanation:**
+
+The therapist assigned homework, which is positive, but the assignment has significant deficiencies.
+
+**Homework assigned:**
+
+1. Go for a walk in the mornings at the park near your apartment
+2. Practice deep breathing when feeling calm
+3. Notice how you feel before and after the walk
+4. Remind yourself that feelings are temporary
+5. Use grounding techniques (holding rosary, focusing on sounds)
+
+**Strengths:**
+- Homework was assigned (not skipped)
+- The therapist provided some rationale ("It might help take your mind off those scary feelings")
+- The patient agreed to the homework
+- The therapist acknowledged that "it's okay if it's not perfect"
+
+**Significant deficiencies:**
+
+1. **Lack of specificity**: The homework is vague. "Go for a walk in the mornings" does not specify: How long? How many times per week? What if you have an episode during the walk—what do you do? What should you monitor?
+
+2. **Unclear rationale**: The therapist frames the walk as "distraction" but does not explain the CBT rationale (e.g., "Avoidance maintains anxiety. By gradually facing situations you're avoiding, you'll learn that you can handle them and that dissociation is not dangerous").
+
+3. **No written record**: The therapist did not provide written homework instructions or a monitoring form. The patient is expected to remember and execute based on verbal instructions alone.
+
+4. **No review of prior homework**: In the second session, the therapist does not ask about the homework from the first session. This is a critical failure—homework review is essential to CBT. The therapist should have asked: "How did the walks go? Did you practice the breathing? What did you notice?"
+
+5. **No assessment of barriers**: The therapist did not ask: "What might get in the way of doing this? How will you remember? What if you feel too scared?" Anticipating and problem-solving barriers increases homework completion.
+
+6. **No commitment check**: While the therapist asked "Does that sound doable?", there was no explicit commitment from the patient or problem-solving if the patient had concerns.
+
+7. **Multiple simultaneous tasks**: The patient is asked to do walks, practice breathing, use grounding techniques, remind herself of thoughts, and monitor feelings—all at once. This is overwhelming and likely to result in non-compliance.
+
+**Summary:**
+
+Homework was assigned but with significant deficiencies in specificity, rationale clarity, written documentation, prior homework review, barrier assessment, and commitment checking. The homework is likely to result in partial compliance or confusion about expectations.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- **Basic empathy and warmth**: The therapist demonstrated genuine concern and non-judgmental acceptance.
+- **Symptom identification**: The therapist accurately identified key symptoms (depersonalization, derealization, avoidance, intrusive thoughts).
+- **Attempt at multiple interventions**: The therapist attempted cognitive, behavioral, and somatic interventions rather than relying on a single approach.
+- **Homework assignment**: The therapist did not skip homework; some between-session work was assigned.
+- **Patient engagement**: The patient remained engaged and expressed willingness to try suggestions.
+
+### Critical Deficiencies:
+- **No coherent CBT conceptualization**: The therapist did not develop a clear understanding of how the patient's trauma, grief, dissociation, and avoidance are interconnected or how treatment will address these connections.
+- **Trauma and grief ignored**: The most critical clinical issue—acute dissociative reactions to the murder of the patient's fiancé and her own suicide attempt—was not addressed. The therapist treated dissociation as an isolated symptom rather than a trauma response.
+- **No safety assessment or planning**: Given the recent suicide attempt, comprehensive safety assessment and planning should be foundational. This is entirely absent.
+- **Directive rather than collaborative**: The therapist told the patient what to do rather than inviting her into shared decision-making or positioning her as an expert on her own recovery.
+- **Minimal guided discovery**: The therapist relied on advice-giving rather than Socratic questioning to help the patient reach insights.
+- **Vague agenda and no feedback**: The session lacked explicit agenda-setting and systematic feedback elicitation, violating core CBT structure.
+- **Oversimplified technique application**: CBT techniques were applied with significant flaws and without the precision and systematic approach required for effectiveness.
+- **Repetition across sessions**: The second session was nearly identical to the first, suggesting no learning, no review of prior work, and no progression in treatment.
+
+---
+
+## Impact on Patient Care
+
+**Likelihood of therapeutic benefit: LOW**
+
+While the therapist's warmth and the patient's willingness to engage are positive factors, the session is unlikely to produce meaningful therapeutic change for several reasons:
+
+1. **Unaddressed trauma**: The patient's acute dissociative reactions are embedded in catastrophic trauma (fiancé's murder, suicide attempt). Without trauma-focused treatment, symptom management alone is insufficient and may even be counterproductive (avoidance and distraction can maintain trauma symptoms).
+
+2. **Inadequate safety planning**: A patient with a recent suicide attempt requires comprehensive safety assessment and planning. The absence of this is a serious clinical gap that puts the patient at risk.
+
+3. **Oversimplified interventions**: Suggesting that the patient "remind herself that feelings are temporary" or "go for a walk" in response to acute dissociation is unlikely to be effective and may feel invalidating to a patient in severe distress.
+
+4. **Lack of coherence**: Without a clear conceptualization and strategy, the patient is likely to feel confused about why she's doing these tasks and whether they're actually helping. This reduces motivation and compliance.
+
+5. **No trauma processing**: The patient has not had the opportunity to process her loss, explore her trauma, or rebuild meaning and identity. Without this, she remains stuck in acute grief and dissociation.
+
+6. **Repetition without progression**: The identical second session suggests the therapist is not tracking progress, adjusting interventions, or moving the treatment forward. This is stagnation, not therapy.
+
+**Prognosis**: While the case study indicates that Lourdes's acute dissociative symptoms improved significantly during hospitalization and largely resolved within one month, this appears to be natural recovery rather than a result of the therapy shown in this transcript. The therapy as delivered is unlikely to accelerate or deepen this recovery and may miss critical opportunities for trauma processing and grief work that could prevent future psychiatric sequelae.
+
+---
+
+## Recommendations
+
+### 1. **Conduct Comprehensive Safety Assessment and Planning (URGENT)**
+- **Action**: In the next session, conduct a detailed suicide risk assessment including: current suicidal ideation, intent, plan, access to means, protective factors, and previous attempts. Develop a written safety plan with crisis contacts, coping strategies, and means restriction.
+- **Example**: "Lourdes, I want to make sure you're safe. Since your fiancé's death, have you had any thoughts about harming yourself? If so, how often? Do you have a plan? What would help you stay safe if those thoughts come back?"
+- **Practice**: Review suicide risk assessment protocols and safety planning frameworks (e.g., Stanley & Brown's Safety Planning Intervention). Practice with supervisors or peers.
+
+### 2. **Develop a Trauma-Focused Conceptualization and Treatment Plan**
+- **Action**: Explicitly conceptualize Lourdes's dissociation as an acute stress response to trauma (fiancé's murder, suicide attempt). Develop a clear treatment plan that includes: (1) psychoeducation about trauma and dissociation, (2) trauma processing (narrative exposure, imaginal reliving, or trauma-focused CBT), (3) grief work, and (4) meaning-making. Share this conceptualization with the patient.
+- **Example**: "Lourdes, what you're experiencing—feeling disconnected from your body and surroundings—is a common response to trauma. Your mind is protecting you from overwhelming pain by creating distance. Over time, we're going to help you process what happened so you can integrate this experience and move forward. Here's how we'll do that..."
+- **Practice**: Complete training in trauma-focused CBT (TF-CBT) or Prolonged Exposure (PE). Consult with a trauma specialist. Review case conceptualization frameworks for trauma.
+
+### 3. **Establish Explicit, Collaborative Agenda-Setting**
+- **Action**: At the beginning of each session, collaboratively establish a specific agenda with prioritized topics and time allocation. Ask the patient: "What would be most helpful to focus on today?" and "How much time should we spend on each topic?"
+- **Example**: "Lourdes, today we have about 45 minutes. I'd like to check in on how you've been since we last met, talk about your experience with the grief around your fiancé's death, and practice a technique to help you process what happened. Does that sound good, or is there something else you'd like to prioritize?"
+- **Practice**: Role-play agenda-setting with supervisors. Review session recordings to identify missed opportunities for collaborative agenda-setting.
+
+### 4. **Systematically Elicit and Respond to Feedback**
+- **Action**: Throughout each session, regularly ask for feedback: "Does this make sense?" "How are you feeling about what we've discussed?" "Is this helpful?" "Do you have questions?" At the end of the session, ask: "What was most helpful today?" "What would you like to do differently next time?" Adjust your approach based on feedback.
+- **Example**: After explaining a concept, pause and ask: "I want to make sure I'm explaining this in a way that makes sense to you. What questions do you have?" After suggesting an intervention: "What are your thoughts on this approach? Does it feel doable?"
+- **Practice**: Record sessions and review for missed feedback opportunities. Ask supervisors to role-play as patients and practice feedback elicitation.
+
+### 5. **Use Socratic Questioning Instead of Advice-Giving**
+- **Action**: Replace directive statements with open-ended Socratic questions that guide the patient to discover insights. Ask about evidence, alternatives, predictions, and past experiences rather than telling the patient what to think.
+- **Example**: Instead of "You should remind yourself that the feelings are temporary," ask: "When you have the thought 'This is never going to stop,' what happened the last time you felt this way? Did it actually last forever? What changed? What evidence do you have that it might pass this time?"
+- **Practice**: Review Socratic questioning techniques. Record sessions and identify instances of advice-giving; rewrite these as Socratic questions. Practice with supervisors.
+
+### 6. **Explore and Process Grief and Loss**
+- **Action**: Dedicate session time to exploring Lourdes's relationship with her fiancé, her experience of his death, her feelings (grief, anger, guilt, despair), and her sense of meaning and identity post-loss. Use techniques such as: writing letters to her fiancé, exploring her values and how to honor his memory, and gradually rebuilding a life that includes his absence.
+- **Example**: "Tell me about your fiancé. What was he like? What did you love about him? What do you miss most? How has his death changed your sense of who you are and what your life means?"
+- **Practice**: Consult grief counseling literature and trauma-focused CBT manuals. Seek supervision from a grief specialist. Practice with role-plays.
+
+### 7. **Develop Systematic Exposure Hierarchy for Avoidance**
+- **Action**: Rather than suggesting vague "walks," develop a systematic hierarchy of avoided situations (crowds, phone calls, leaving home, etc.). Collaboratively prioritize and gradually expose the patient to these situations, starting with the least anxiety-provoking. Monitor anxiety and habituation.
+- **Example**: "Let's make a list of situations you've been avoiding since your fiancé's death. We'll rank them from least to most anxiety-provoking. Then we'll gradually face them together, starting with the easiest one. This will help you learn that you can handle these situations and that dissociation is not dangerous."
+- **Practice**: Review exposure therapy protocols. Create sample hierarchies. Practice with supervisors.
+
+### 8. **Teach Grounding Techniques Systematically**
+- **Action**: Rather than mentioning grounding casually, teach a systematic grounding protocol (e.g., 5-4-3-2-1 technique: name 5 things you see, 4 you can touch, 3 you hear, 2 you smell, 1 you taste). Explain the mechanism (grounding brings attention to the present and the body, counteracting dissociation). Have the patient practice during the session and assign practice homework.
+- **Example**: "When you're dissociating, your mind is focused on the past or on internal sensations. Grounding brings your attention back to the present moment and your body. Let's practice this technique now. Name 5 things you can see in this room..."
+- **Practice**: Learn multiple grounding techniques. Practice teaching them to supervisors and peers. Create handouts for patients.
+
+### 9. **Integrate Cultural and Spiritual Resources**
+- **Action**: Explicitly explore and integrate Lourdes's Catholic faith and spiritual practices (rosary, prayer, church community) into treatment. Ask about her spiritual beliefs about loss, suffering, and meaning. Consider referrals to spiritual counseling or grief support groups within her faith community.
+- **Example**: "You mentioned your rosary helps you feel grounded. Tell me about your faith and how it's helping you through this loss. Are there spiritual practices or community resources that might support you?"
+- **Practice**: Develop cultural competence in working with Puerto Rican and Catholic populations. Learn about ataque de nervios and cultural expressions of grief and trauma.
+
+### 10. **Assign Specific, Monitored Homework with Clear Rationale**
+- **Action**: Assign homework that is specific, monitored, and clearly linked to treatment goals. Provide written instructions. Review prior homework at the beginning of each session. Anticipate and problem-solve barriers. Ensure patient commitment.
+- **Example**: "This week, I'd like you to practice the grounding technique we just learned for 5 minutes each day when you're feeling calm. Use this form to track when you practice and how it feels. We'll review this next session. What might get in the way of doing this? How can we problem-solve?"
+- **Practice**: Create homework templates and monitoring forms. Review homework compliance in supervision. Practice homework review and troubleshooting.
+
+### 11. **Ensure Session-to-Session Continuity and Progression**
+- **Action**: Review prior session notes before each session. Ask about homework completion and progress on goals. Adjust interventions based on what's working and what's not. Ensure each session builds on the previous one rather than repeating the same content.
+- **Example**: "Last session, we talked about your avoidance of crowds and phone calls. You were going to try going to the park. How did that go? What did you notice? Let's build on that this week by..."
+- **Practice**: Develop a system for session notes and review. Discuss session progression in supervision. Record sessions to identify repetition and lack of progression.
+
+---
+
+## Overall Session Score: 2.4/6
+
+**Summary:**
+
+This session demonstrates basic therapeutic warmth and empathy but falls significantly short of evidence-based CBT standards. The therapist failed to establish a coherent trauma-focused conceptualization, did not conduct safety assessment or planning, relied on directive advice-giving rather than collaborative empiricism, and applied CBT techniques with significant flaws and limited precision. Most critically, the therapist treated acute dissociative reactions to catastrophic trauma as an isolated symptom to manage rather than as a trauma response embedded in profound grief requiring trauma-focused treatment.
+
+**Current competency assessment**: The therapist demonstrates foundational therapeutic skills (empathy, non-judgment, basic symptom identification) but lacks competence in evidence-based CBT delivery. The therapist would benefit from intensive training in: (1) trauma-focused CBT, (2) collaborative agenda-setting and feedback elicitation, (3) Socratic questioning, (4) systematic application of CBT techniques, and (5) grief and loss work.
+
+**Most critical changes needed immediately**: 
+1. Conduct comprehensive safety assessment and planning
+2. Develop a trauma-focused conceptualization and treatment plan
+3. Shift from directive advice-giving to collaborative, Socratic inquiry
+4. Establish explicit agenda-setting and feedback elicitation in every session
+5. Ensure session-to-session continuity and progression
+
+**Likelihood of producing therapeutic change**: LOW. While the patient's natural recovery trajectory (as noted in the case study) may result in symptom improvement regardless of therapy, this particular therapeutic approach is unlikely to accelerate recovery, facilitate trauma processing, or prevent future psychiatric sequelae. The therapy as delivered misses critical opportunities for meaningful intervention and may inadvertently reinforce avoidance and dissociation through oversimplified coping suggestions.
+
+**Recommendation**: This therapist requires close supervision, additional training in trauma-focused CBT, and review of session recordings with feedback before continuing to see trauma survivors. Consider pairing with a trauma specialist for consultation on this case.

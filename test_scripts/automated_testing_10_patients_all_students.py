@@ -59,7 +59,6 @@ VIRTUAL_STUDENT_MODES = {
 GOOD_STUDENT_NUM = 11
 BAD_STUDENT_NUM = 10
 MEDIOCRE_STUDENT_NUM = 12
-DEFAULT_PATIENT_COUNT = 20
 DEFAULT_SEED = 42
 DEFAULT_WORKERS = 20
 API_KEY = load_openai_api_key()
@@ -75,13 +74,16 @@ def format_duration(seconds):
     return f"{secs:.1f}s"
 
 
-def get_patient_files(mode, patient_count, seed=None, random_sample=False):
+def get_patient_files(mode, patient_count=None, seed=None, random_sample=False):
     patient_dir = PATIENT_DIRS[mode]
     all_files = sorted(
         os.path.join(patient_dir, name)
         for name in os.listdir(patient_dir)
         if os.path.isfile(os.path.join(patient_dir, name))
     )
+    if patient_count is None:
+        return all_files
+
     if len(all_files) < patient_count:
         raise ValueError(f"Only found {len(all_files)} {mode} patients, need {patient_count}.")
     if random_sample:
@@ -492,6 +494,7 @@ def run_mode(mode, parent_folder, patient_count, seed, random_sample):
     os.makedirs(save_folder, exist_ok=True)
 
     patient_files = get_patient_files(mode, patient_count, seed=seed, random_sample=random_sample)
+    actual_patient_count = len(patient_files)
     student_df = pd.read_csv(STUDENT_CSV_PATHS[mode], quotechar='"', skipinitialspace=True)
     student_names = {
         "good_student": student_df.iloc[GOOD_STUDENT_NUM]["Name"],
@@ -502,7 +505,8 @@ def run_mode(mode, parent_folder, patient_count, seed, random_sample):
 
     metadata = {
         "mode": mode,
-        "patient_count": patient_count,
+        "requested_patient_count": patient_count,
+        "actual_patient_count": actual_patient_count,
         "seed": seed,
         "random_sample": random_sample,
         "selected_patients": [os.path.basename(path) for path in patient_files],
@@ -526,7 +530,7 @@ def run_mode(mode, parent_folder, patient_count, seed, random_sample):
     }
 
     print(f"\n{'=' * 72}")
-    print(f"Starting {mode}: {len(patient_files)} patients x 4 student conditions")
+    print(f"Starting {mode}: {actual_patient_count} patients x 4 student conditions")
     print(f"Saving to: {save_folder}")
     print(f"{'=' * 72}")
 
@@ -599,6 +603,7 @@ def run_mode(mode, parent_folder, patient_count, seed, random_sample):
     return {
         "mode": mode,
         "save_folder": save_folder,
+        "patient_count": actual_patient_count,
         "elapsed_seconds": round(elapsed, 2),
         "elapsed_time": format_duration(elapsed),
         "sessions": output_summary["rows"],
@@ -609,11 +614,14 @@ def run_mode(mode, parent_folder, patient_count, seed, random_sample):
 def run_all(args):
     overall_start = time.time()
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    parent_folder = os.path.join("saved_tests", f"MI_CBT_10_patients_all_students_{timestamp}")
+    parent_folder = os.path.join("saved_tests", f"MI_CBT_all_patients_all_students_{timestamp}")
     os.makedirs(parent_folder, exist_ok=True)
 
     print("Running MI and CBT automated testing")
-    print(f"Patient count per mode: {args.patient_count}")
+    if args.patient_count is None:
+        print("Patient count per mode: all available patients in each mode")
+    else:
+        print(f"Patient count per mode: {args.patient_count}")
     print("Student conditions: bad, mediocre, good, bad + feedback")
     print(f"Saving combined run to: {parent_folder}")
     print("Logprob capture: enabled via LearningBuddy patient_turn_logprobs and patient_logprobs.json")
@@ -626,7 +634,10 @@ def run_all(args):
 
     total_elapsed = time.time() - overall_start
     run_summary = {
-        "patient_count_per_mode": args.patient_count,
+        "requested_patient_count_per_mode": args.patient_count,
+        "actual_patient_counts": {
+            summary["mode"]: summary["patient_count"] for summary in mode_summaries
+        },
         "student_conditions": ["bad_student_1st", "mediocre_student", "good_student", "bad_student_feedback"],
         "total_sessions": sum(summary["sessions"] for summary in mode_summaries),
         "total_logprob_sessions": sum(summary["logprob_sessions"] for summary in mode_summaries),
@@ -654,7 +665,12 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description="Run MI and CBT patients across bad, mediocre, good, and bad+feedback students."
     )
-    parser.add_argument("--patient-count", type=int, default=DEFAULT_PATIENT_COUNT)
+    parser.add_argument(
+        "--patient-count",
+        type=int,
+        default=None,
+        help="Optional smoke-test limit per mode. Omit to run every MI and CBT patient.",
+    )
     parser.add_argument("--seed", type=int, default=DEFAULT_SEED)
     parser.add_argument(
         "--random-sample",

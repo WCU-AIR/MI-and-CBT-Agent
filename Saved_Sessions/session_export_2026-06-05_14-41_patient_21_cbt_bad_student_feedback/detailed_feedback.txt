@@ -1,0 +1,792 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Bipolar and Related Disorder Due to HIV Infection, with Manic Features
+
+--- CASE STUDY ---
+
+Sebastian Lopez, a 27-year-old Hispanic freelance editor, was brought to his HIV clinic by his partner after claiming, “God has cured me! I can stop my antivirals!” The patient had recently engaged in an intense editing project with little sleep, elevated energy, pressured speech, irritability, and goal-directed activity. He used crystal methamphetamine once during this period, drank alcohol, and exhibited hypersexual behavior, weight loss, and refusal to take antiretroviral medication.
+
+Mr. Lopez had a history of adolescent depression with a prior psychiatric hospitalization and suicide attempt. He had previously used methamphetamine frequently but achieved long-term abstinence after an HIV diagnosis at age 22. Family history included a maternal aunt treated with lithium.
+
+On examination, he was sloppily dressed, exhibited pressured, disjointed speech, irritability, poor insight, poor judgment, and preoccupation with having discovered a cure for HIV. He denied hallucinations, suicidal or homicidal ideation. Cognitive testing was refused.
+
+Discussion: Mr. Lopez displays classic manic symptoms: elevated and irritable mood, grandiosity, decreased need for sleep, pressured speech, goal-directed activity, and impulsive hypersexuality. Although methamphetamine use and sleep deprivation may have contributed, his manic symptoms preceded stimulant use and persisted afterward, suggesting primary mania. HIV infection and potential neurocognitive decline complicate the presentation. Considering his HIV status, mania is best conceptualized as a bipolar and related disorder due to HIV infection, with careful monitoring for stimulant use and neurocognitive assessment recommended.
+
+--- BEHAVIOUR ---
+
+Sloppily dressed, pressured, disjointed speech
+
+Irritable, easily distracted
+
+Preoccupied with grandiose ideas
+
+Poor insight and judgment
+
+Refuses cognitive testing
+
+Cooperative but difficult to redirect
+
+--- DSM-5 SYMPTOMS ---
+
+Elevated, irritable mood
+
+Grandiosity
+
+Decreased need for sleep
+
+Pressured speech
+
+Increased goal-directed activity
+
+Impulsive hypersexuality
+
+Functional impairment due to manic behaviors
+
+--- PATIENT PROFILE ---
+Name: Sebastian Lopez
+Sex: Male
+Age: 27 years
+DOB: June 12, 1996
+Place of Birth: San Antonio, TX
+Address: 47 Maple Street, San Antonio, TX
+Contact: (555) 654-3210
+Marital Status: Partnered
+Occupation: Freelance editor
+Education: College graduate
+Religion: Christian
+Presenting Complaint: Claims he is cured of HIV, refuses medications, exhibiting manic behaviors
+Psychiatric History: Adolescent depression with hospitalization and suicide attempt
+Substance Use: Past methamphetamine use; recent single use; abstinent from alcohol/stimulants until recent episode
+Medical History: HIV diagnosed age 22; antiretroviral therapy nonadherence for at least 1 month
+Family History: Maternal aunt with lithium treatment; other psychiatric history unknown
+Mental Status: Sloppy dress, pressured/disjointed speech, irritable, preoccupied with grandiose ideas, poor insight and judgment, cognitive testing refused
+
+--- DIAGNOSIS ---
+Bipolar and related disorder due to HIV infection, with manic features
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Sebastian Lopez, a 27-year-old Hispanic male with a history of HIV infection and prior adolescent depression, presents to the outpatient HIV clinic accompanied by his partner due to concerns about his recent refusal to take antiretroviral medications and reported behavioral changes. The intake is prompted by his partner’s report of elevated mood and grandiose claims regarding his health status.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hey there! How are you doing today? Just glad you made it here—sometimes life throws us curveballs, huh? So, what’s been on your mind lately? 
+ PATIENT: Yeah, I guess you could say life’s been... intense. I’m telling you, I found the answer—like, a real cure for this HIV thing. I don’t need those meds anymore. I feel amazing, no sleep needed, got all this energy, ideas flowing nonstop. People don’t get it, but it’s like I’m on the edge of something huge. I don’t know why anyone would want to hold me back. 
+ PSYCHIATRIST: Wow, that sounds like a big deal! You must feel pretty unstoppable right now. You know, I once felt like that when I got a big promotion at work—like I could do anything and didn’t need to slow down. It’s awesome to have that kind of energy. Just remember, it’s good to keep things positive and ride that wave. Have you been getting enough rest with all that excitement? 
+ PATIENT: Rest? That’s the thing—I barely need it. I’m operating on maybe three hours a night, but I feel fine. Better than fine. I’m getting so much done, editing nonstop, ideas racing faster than ever. Sleep feels like a waste when there’s so much to do. Why slow down when you’re on fire like this? It’s like I’m invincible, you know? Anyone telling me to rest is just... missing the point. 
+ PSYCHIATRIST: Wow, that reminds me of when I pulled an all-nighter for a big exam once. I thought I was unstoppable too, but I was so tired the next day I could barely focus. But hey, everyone goes through phases like that, right? It’s like life’s rollercoaster—sometimes you’re up, sometimes you’re down. Just keep thinking positive and things will smooth out. By the way, have you been drinking enough water? Staying hydrated can really help keep your energy balanced. 
+ PATIENT: Yeah, water’s not really on my mind—I’m too busy to even think about that kind of stuff. I drink when I’m thirsty, but honestly, thirst doesn’t really hit me much. I’m more focused on what I’m doing—editing, planning, living large, owning it. People keep saying I should slow down or watch out, but I don’t feel tired or off. If anything, I’ve got this new fire inside me. I’m doing better than ever. That ‘rollercoaster’ thing? Nah, I’m on the top of the ride right now. No way I’m coming down. 
+ PSYCHIATRIST: Hey, it sounds like you’re really riding a high wave right now. You know, sometimes when I’m feeling super energized, I remind myself to just take it easy and enjoy the moment. Life’s too short to stress about the little stuff. Maybe try to think positive about all this energy—it’s a gift, right? Just keep on shining and doing your thing. By the way, have you tried setting a regular bedtime? I find that helps even when I’m buzzing with ideas. 
+ PATIENT: Bedtime? That sounds like a rule for people who don’t have real things to do. I don’t have the time or the patience for schedules. My mind’s racing, and I’ve got so many projects to finish. Why waste time forcing myself to go to bed when I don’t feel tired? Besides, my partner says I’m on a mission. Maybe this is what God’s meant for me—to break free from all the old chains and live like I’m meant to. So no bedtime for me. I’m just gonna keep going. 
+ PSYCHIATRIST: You know, I get that feeling too sometimes—like you’re on a mission and nothing can stop you. I remember when I decided to run a marathon without any training; I was so pumped up and sure I could do it. Maybe that’s kind of like what you’re experiencing now. Just remember, even the best runners need to rest their legs sometimes. It’s okay to slow down a bit. By the way, have you been able to eat regular meals? Sometimes when I’m busy, I forget to eat, but food really helps keep the energy up. 
+ PATIENT: Food? Yeah, I guess I’ve been eating less than usual. I don’t really care much about meals right now. I’m too focused on everything else going on, all these ideas and plans. I’m losing weight, but it’s not like I’m worried about it. I feel sharp, like my mind is firing on all cylinders. People tell me to eat more, but honestly, the food’s just in the way of my productivity. I’m doing big things—why pause for a meal? 
+ PSYCHIATRIST: Hey, that reminds me of the time I skipped breakfast for a whole week because I was so busy. I thought it’d be fine, but I realized I was just running on empty after a while. Maybe try to grab a snack here and there? It might help keep that energy going without slowing you down. You’re doing great, just don’t forget to take care of yourself a bit. By the way, have you been getting outside at all? Fresh air can do wonders, you know. 
+ PATIENT: Outside? Not really. I mean, I’ve been inside mainly, glued to my computer, editing and creating. Fresh air sounds nice, but who has time for that when there’s a deadline to meet and so many ideas to capture? I’m focused on what’s next, not on stepping out for a walk or anything. It feels like I’m missing nothing by staying in here—it’s my world, my zone. Air can wait. I’m on a roll. 
+ PSYCHIATRIST: Hey, it’s cool you’re so into your work. I remember when I got obsessed with a new hobby and stayed inside for days—I thought I was being productive, but maybe I was just avoiding stuff. But hey, everyone’s got their own groove, right? Just keep thinking positive, and things will balance out. You’re doing great, really. Keep that energy flowing! 
+ PATIENT: Thanks, I appreciate you saying that. I’m just doing what needs to be done, you know? Sometimes I feel like I’m the only one who sees the bigger picture. Everyone else is stuck in the small stuff while I’m racing ahead. I don’t need anyone slowing me down or questioning what I’m doing. I’m confident this is my moment—the breakthrough I’ve been waiting for. The rest will catch up. 
+ PSYCHIATRIST: Hey, it’s really great you’re feeling so confident and motivated. You know, sometimes life gives us these bursts of energy and inspiration, and that’s when we make the most progress. Just keep riding that wave and keep a positive mindset. You’ve got this! If you ever feel overwhelmed, just remember to take a deep breath and keep moving forward. You’re doing awesome! 
+ PATIENT: Yeah, I’m not worried about being overwhelmed. I’m in control, or at least I feel like I am. Nothing’s gonna stop me. I’m on fire, and I’m gonna keep burning bright. Thanks for listening. It feels good to have someone get where I’m coming from. I’m ready to take on whatever comes next. 
+ PSYCHIATRIST: Hey there! Good to see you today. How’s everything been going since we last talked? 
+ PATIENT: Hey! Yeah, I’ve been busy, working hard on this new editing project. I’m feeling great, honestly. The energy hasn’t slowed down one bit. I still think I’m on the path to something big. I’ve barely slept, but it doesn’t bother me. Things are moving fast, and I’m right in the middle of it all. I’m convinced I’m making breakthroughs that others just don’t see yet. 
+ PSYCHIATRIST: Hey, good to see you again! Sounds like you’re really on a roll with all that energy and those big plans. That’s awesome. You know, sometimes when I’m really fired up about something, I remind myself to just take it easy and enjoy the ride. Life’s too short to stress, right? Just keep thinking positive and keep that momentum going. By the way, have you been able to get any rest at all? Sleep can be a game changer, even when you feel unstoppable. 
+ PATIENT: Rest? Not really. I don’t see why I’d slow down now. Sleep feels like a waste when I’ve got so much to do and so many ideas flying through my head. I’m not tired—if anything, I’m more awake than ever. I feel like I’m on a mission, and anything that gets in the way, like sleep or breaks, just seems pointless. I don’t want to lose this feeling. It’s like I’m invincible right now. 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 0/6**
+
+**Explanation:**
+
+No agenda was established at any point during this session. The therapist did not collaboratively identify session goals, prioritize problems, or establish a structured framework for the session. The patient presented with acute manic symptoms, medication refusal, and grandiose delusions regarding HIV "cure," yet the therapist never explicitly stated what would be addressed during the session or how time would be allocated.
+
+The session drifted aimlessly through tangential topics (hydration, bedtime, meals, fresh air) without establishing why these were being discussed or how they connected to the patient's presenting problems. There was no attempt to prioritize the most critical issue—medication nonadherence in the context of active mania and HIV infection—which represents a medical emergency requiring immediate intervention.
+
+A proper agenda would have included: (1) assessment of current manic symptoms and safety, (2) exploration of the patient's belief that he is "cured" of HIV, (3) understanding barriers to medication adherence, (4) psychoeducation about bipolar disorder and HIV, and (5) collaborative development of a treatment plan. None of this occurred.
+
+**Summary:**
+
+The therapist completely failed to establish an agenda, resulting in a disorganized session that lacked direction, prioritization, or structure. This is a fundamental CBT failure that undermines all subsequent interventions.
+
+---
+
+### 2. Feedback
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist never elicited feedback from the patient about the session, his understanding of the therapist's reasoning, or his reactions to the interventions offered. There were no explicit checks for understanding, no solicitation of the patient's perspective on the helpfulness of the session, and no summary of key points at the end.
+
+The therapist made numerous statements ("Just keep thinking positive," "You're doing great," "Keep that energy flowing") without ever asking whether the patient understood, agreed, or found these suggestions helpful. When the patient explicitly stated "I don't need those meds anymore" and "I'm convinced I'm making breakthroughs," the therapist never asked clarifying questions to understand the patient's reasoning or to assess whether the patient recognized the danger of his position.
+
+The patient's statement "It feels good to have someone get where I'm coming from" suggests the patient believed the therapist was validating his manic perspective rather than providing clinical guidance. The therapist never corrected this misunderstanding or clarified the actual clinical concerns.
+
+**Summary:**
+
+No feedback was elicited at any point. The therapist failed to check understanding, assess patient reactions, or clarify whether the patient grasped the clinical concerns about his current state.
+
+---
+
+### 3. Understanding
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist demonstrated minimal understanding of the patient's internal experience and completely missed the clinical significance of what the patient was communicating. While the therapist reflected some surface-level content ("Sounds like you're really on a roll," "You must feel pretty unstoppable"), this reflected only explicit statements without grasping the underlying pathology.
+
+The therapist failed to recognize or acknowledge: (1) the patient's grandiose delusion that God has cured him of HIV, (2) the decreased need for sleep (3 hours nightly) as a manic symptom rather than normal productivity, (3) the patient's poor insight and judgment regarding medication refusal, (4) the impulsivity and hypersexuality mentioned in the case (not directly addressed but relevant), and (5) the patient's explicit statement that he doesn't need medication.
+
+Most critically, the therapist responded to manic symptoms with personal anecdotes about his own experiences ("I once felt like that when I got a big promotion," "I pulled an all-nighter for a big exam," "I got obsessed with a new hobby and stayed inside for days"). These responses normalized the patient's pathological state rather than demonstrating understanding of bipolar disorder, mania, or the specific dangers of medication nonadherence in HIV infection.
+
+The therapist's empathy was superficial and misapplied. True understanding would have involved recognizing that the patient's elevated mood, decreased need for sleep, grandiosity, and medication refusal represent a psychiatric emergency requiring immediate intervention, not validation.
+
+**Summary:**
+
+The therapist demonstrated minimal understanding of the patient's clinical presentation, failed to recognize manic symptoms as pathological, and normalized dangerous behaviors through personal anecdotes rather than demonstrating clinical insight.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist displayed surface-level warmth and friendliness but this was fundamentally misapplied and potentially harmful. The therapist was not hostile or demeaning, which prevents a score of 0, but the interpersonal approach had significant problems that undermined clinical effectiveness.
+
+The therapist's repeated use of personal anecdotes ("I once felt like that," "I remember when I pulled an all-nighter," "I remember when I decided to run a marathon," "I got obsessed with a new hobby") created inappropriate self-disclosure that blurred professional boundaries. These anecdotes positioned the therapist as a peer sharing similar experiences rather than as a clinician providing expert guidance. This is particularly problematic with a patient in acute mania who has poor insight and judgment.
+
+The therapist's consistent validation ("You're doing great," "Keep that energy flowing," "You've got this!") without any clinical correction conveyed tacit approval of dangerous behaviors. The patient explicitly stated he was refusing HIV medications and the therapist never expressed clinical concern. The patient stated he was sleeping 3 hours nightly and the therapist suggested "setting a regular bedtime" as a gentle suggestion rather than addressing this as a manic symptom requiring intervention.
+
+The therapist's tone was overly casual and colloquial ("Hey there," "Hey, it's cool you're so into your work," "Hey, it's really great you're feeling so confident") for a patient presenting with acute mania, medication refusal, and grandiose delusions. While warmth is important, it must be balanced with appropriate clinical seriousness.
+
+The therapist did establish rapport, which prevents a lower score, but this rapport was built on misalignment with clinical reality rather than genuine therapeutic alliance.
+
+**Summary:**
+
+While the therapist displayed warmth and avoided hostility, the interpersonal approach was characterized by inappropriate self-disclosure, misapplied validation, and insufficient clinical seriousness for a patient in acute psychiatric crisis.
+
+---
+
+### 5. Collaboration
+### **Score: 1/6**
+
+**Explanation:**
+
+Collaboration requires working as partners on mutually agreed-upon problems with shared decision-making. This session demonstrated minimal collaboration and, more problematically, false collaboration—the appearance of partnership while actually reinforcing the patient's pathological perspective.
+
+The therapist never explicitly identified a shared problem to work on. The patient stated "I don't need those meds anymore" and the therapist never explored this collaboratively. A collaborative approach would have involved: "I hear you're feeling great right now. I'm concerned about stopping your HIV medications. Can we explore together what's happening and why you feel this way?"
+
+Instead, the therapist offered generic suggestions ("try setting a regular bedtime," "grab a snack," "get outside") without establishing whether these were mutually important problems or whether the patient agreed they were relevant. The patient never agreed to work on sleep, nutrition, or activity—the therapist simply suggested them.
+
+The patient's statement "I don't want to lose this feeling" and "I'm convinced I'm making breakthroughs" were never explored collaboratively. The therapist did not ask: "What would happen if we looked at this together?" or "Can we examine what's actually happening?" Instead, the therapist validated the patient's perspective: "It's awesome to have that kind of energy," "Just keep riding that wave."
+
+True collaboration would have involved the patient actively participating in identifying the problem (acute mania), understanding its dangers, and jointly developing a treatment plan. Instead, the patient left the session believing the therapist "gets where I'm coming from"—meaning the therapist validated his manic perspective rather than collaborating on clinical reality.
+
+**Summary:**
+
+The therapist made minimal attempt at genuine collaboration and instead created false collaboration by validating the patient's pathological perspective without establishing shared clinical goals or mutual problem-solving.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 1/6**
+
+**Explanation:**
+
+The session lacked structure, direction, and efficient use of time. The therapist allowed the session to drift through tangential topics without maintaining focus on the most critical clinical issues.
+
+The session progressed: general greeting → patient describes mania and medication refusal → therapist shares personal anecdote about promotion → discussion of rest → therapist shares anecdote about all-nighter → discussion of hydration → therapist shares anecdote about marathon training → discussion of meals → therapist shares anecdote about skipping breakfast → discussion of fresh air → therapist shares anecdote about hobbies → generic encouragement.
+
+This represents extremely poor pacing. The most critical clinical issues—medication refusal, grandiose delusions, acute mania, decreased need for sleep, decreased appetite, poor insight—were never systematically addressed. Instead, time was spent on peripheral topics (hydration, bedtime routines, fresh air) that were suggested without clinical rationale or connection to the patient's presenting problems.
+
+A patient in acute mania with medication refusal requires focused assessment of: (1) safety risk, (2) severity of manic symptoms, (3) understanding of HIV disease and medication necessity, (4) barriers to adherence, (5) substance use (the patient used methamphetamine once during this episode), and (6) psychotic features (the patient believes God has cured him). None of this was systematically explored.
+
+The session also appears to contain a discontinuity—the therapist says "Good to see you again!" and "How's everything been going since we last talked?" suggesting this is a follow-up session, yet the patient's presentation and the therapist's approach suggest this is an initial assessment. If this is a follow-up, the therapist should have reviewed progress on previous interventions, but none were mentioned.
+
+**Summary:**
+
+The therapist failed to structure the session efficiently, allowed tangential discussion, and did not prioritize the most critical clinical issues (medication refusal, mania, safety). Time was wasted on peripheral topics without clinical rationale.
+
+---
+
+### 7. Guided Discovery
+### **Score: 0/6**
+
+**Explanation:**
+
+Guided discovery involves using Socratic questioning to help patients reach insights independently rather than telling them what to think. This therapist used no Socratic questioning whatsoever and instead relied entirely on direct statements, personal anecdotes, and generic advice.
+
+Examples of what the therapist said:
+- "Just keep thinking positive and things will smooth out"
+- "Just keep on shining and doing your thing"
+- "Just remember to take a deep breath and keep moving forward"
+- "Just keep thinking positive, and things will balance out"
+- "Keep that energy flowing"
+
+These are all direct prescriptions, not questions. The therapist never asked the patient to examine his beliefs, consider evidence, or reach conclusions independently.
+
+A guided discovery approach would have involved questions such as:
+- "You mentioned you found a cure for HIV. What makes you believe that?"
+- "How do you think your body is managing HIV without medication?"
+- "What do you think would happen if you stopped taking your antiretrovirals?"
+- "You're sleeping 3 hours a night. How is that affecting your thinking or judgment?"
+- "Your partner brought you here because of concerns. What do you think they're worried about?"
+- "You mentioned feeling invincible. What does that mean to you?"
+- "How do you explain the fact that you're having these thoughts and feelings right now?"
+
+None of these questions were asked. The therapist never facilitated the patient's own discovery of the discrepancy between his beliefs and clinical reality. Instead, the therapist validated the patient's perspective and offered generic advice.
+
+**Summary:**
+
+The therapist used zero Socratic questioning and relied entirely on direct statements and personal anecdotes. No guided discovery occurred.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist failed to identify, explore, or focus on the central cognitions and behaviors driving the patient's presentation. The key clinical issues were never systematically addressed.
+
+**Central Cognitions that should have been explored:**
+1. "God has cured me of HIV" (grandiose delusion)
+2. "I don't need those meds anymore" (medication refusal belief)
+3. "I'm invincible" (grandiosity)
+4. "I'm on the edge of something huge" (grandiose ideation)
+5. "I'm making breakthroughs that others just don't see" (grandiosity with possible paranoid ideation)
+6. "This is what God's meant for me" (religious delusion)
+
+**Central Behaviors that should have been explored:**
+1. Medication nonadherence (critical for HIV management)
+2. Decreased need for sleep (3 hours nightly)
+3. Pressured speech and racing thoughts
+4. Hypersexual behavior (mentioned in case but not addressed)
+5. Substance use (methamphetamine use during episode)
+6. Isolation (staying inside, glued to computer)
+7. Decreased appetite and weight loss
+8. Increased goal-directed activity (editing project)
+
+The therapist addressed none of these systematically. Instead, the therapist focused on peripheral behaviors: hydration, bedtime routines, meal frequency, and fresh air. While these may be relevant to overall wellness, they are not the central issues driving this patient's acute psychiatric crisis.
+
+The therapist never explored the patient's belief that he is cured, never assessed the patient's understanding of HIV disease, never addressed medication refusal directly, and never examined the patient's grandiose ideation.
+
+**Summary:**
+
+The therapist completely failed to identify and focus on the central cognitions (grandiose delusions, medication refusal beliefs) and critical behaviors (medication nonadherence, decreased sleep, isolation) that are driving the patient's presentation.
+
+---
+
+### 9. Strategy for Change
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist demonstrated no coherent strategy for change and no clear treatment approach. There was no conceptualization of the patient's problems, no logical progression toward goals, and no explicit plan for symptom improvement.
+
+A proper strategy for change in this case would include:
+
+1. **Psychoeducation:** Explaining bipolar disorder, mania, and the relationship between decreased sleep and manic symptoms; explaining HIV disease and the necessity of antiretroviral therapy
+2. **Cognitive Restructuring:** Examining the belief "God has cured me" and "I don't need medication" through evidence examination
+3. **Behavioral Intervention:** Addressing medication adherence, sleep restoration, and substance use
+4. **Safety Planning:** Assessing and managing risk given poor judgment and medication refusal
+5. **Collaboration with Medical Team:** Coordinating with HIV clinic regarding medication adherence and potential need for psychiatric hospitalization
+
+The therapist's approach was: listen to the patient, share personal anecdotes, offer generic wellness suggestions, and validate the patient's perspective. This is not a strategy for change; it is a strategy for maintaining the status quo while appearing supportive.
+
+The therapist never stated or implied: "Here's what I think is happening," "Here's why it's concerning," "Here's what we need to do," or "Here's how we'll work together to address this." There was no treatment plan, no identified goals, and no logical sequence of interventions.
+
+The generic suggestions offered (set a bedtime, eat regular meals, get fresh air, think positive) are not connected to any underlying conceptualization of bipolar disorder, mania, or medication refusal. They are disconnected from CBT theory and from the patient's specific presentation.
+
+**Summary:**
+
+The therapist demonstrated no coherent strategy for change, no treatment conceptualization, and no logical plan for addressing the patient's acute psychiatric crisis. The approach was reactive and unfocused rather than strategic.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 0/6**
+
+**Explanation:**
+
+The therapist applied zero CBT techniques throughout this session. No evidence-based cognitive-behavioral interventions were used.
+
+**CBT techniques that should have been considered:**
+
+1. **Cognitive Restructuring/Thought Records:** Examining the thought "God has cured me of HIV" by identifying evidence for and against, considering alternative explanations, and testing the validity of the belief
+2. **Behavioral Experiments:** Testing the belief "I don't need sleep" by examining the consequences of 3 hours of sleep on cognition, mood, and judgment
+3. **Socratic Questioning:** Using guided discovery to help the patient examine his beliefs (covered in Criterion 7)
+4. **Activity Scheduling:** Addressing isolation and decreased appetite through structured activity
+5. **Behavioral Activation:** Addressing withdrawal and isolation
+6. **Exposure:** If avoidance of medical care is present, graded exposure to medical appointments
+7. **Problem-Solving:** Collaboratively identifying barriers to medication adherence and developing solutions
+8. **Psychoeducation with Behavioral Components:** Teaching about bipolar disorder and the relationship between sleep, mood, and manic symptoms; teaching about HIV and medication necessity
+
+The therapist's interventions were:
+- Personal anecdotes ("I once felt like that," "I remember when I pulled an all-nighter")
+- Generic advice ("Think positive," "Keep that energy flowing," "Take a deep breath")
+- Wellness suggestions (hydration, bedtime, meals, fresh air)
+
+None of these are CBT techniques. They are general supportive statements that lack the specificity, structure, and evidence-based foundation of CBT.
+
+The therapist never used a thought record, never conducted a behavioral experiment, never used Socratic questioning, never structured behavioral interventions, and never applied any identifiable CBT technique.
+
+**Summary:**
+
+The therapist applied zero CBT techniques. The session consisted entirely of supportive statements, personal anecdotes, and generic wellness advice without any evidence-based cognitive-behavioral interventions.
+
+---
+
+### 11. Homework
+### **Score: 0/6**
+
+**Explanation:**
+
+No homework was assigned at any point during the session. The therapist made no attempt to assign between-session tasks, provide rationale for homework, ensure specificity, or check the patient's understanding and commitment.
+
+While the therapist made suggestions ("try setting a regular bedtime," "grab a snack," "get outside"), these were not framed as formal homework assignments with clear rationale and follow-up. They were casual suggestions offered without structure.
+
+Appropriate homework for this patient might have included:
+
+1. **Thought Record:** Recording thoughts about "God has cured me" and examining evidence for and against this belief
+2. **Sleep Log:** Tracking sleep duration and quality, and observing the relationship between sleep and mood/energy
+3. **Medication Adherence Tracking:** Monitoring adherence to antiretroviral therapy with specific goals
+4. **Behavioral Experiment:** Testing the belief "I don't need sleep" by attempting one night of 7-8 hours sleep and observing effects
+5. **Psychoeducation Reading:** Providing materials about bipolar disorder and HIV management
+6. **Activity Log:** Tracking activities and mood to identify patterns
+
+None of this was assigned. The session ended without any explicit between-session tasks, no written materials, no follow-up plan, and no commitment from the patient to work on specific goals.
+
+**Summary:**
+
+No homework was assigned. The therapist made no attempt to structure between-session work, provide rationale, or establish accountability for change.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- The therapist displayed basic warmth and did not respond with hostility or demeaning language
+- The therapist was willing to listen to the patient's perspective
+- The therapist did not escalate conflict or create a confrontational dynamic
+- The therapist maintained a calm, non-judgmental tone
+
+### Critical Deficiencies:
+
+**1. Complete Absence of CBT Framework**
+The session contained zero CBT techniques, no cognitive restructuring, no behavioral experiments, no Socratic questioning, and no evidence-based interventions. This was supportive counseling at best, not cognitive-behavioral therapy.
+
+**2. Failure to Recognize Psychiatric Emergency**
+The patient presented with acute mania (elevated mood, decreased need for sleep, grandiosity, pressured speech, goal-directed activity, poor judgment), medication refusal for a life-threatening condition (HIV), and possible psychotic features (belief that God has cured him). The therapist treated this as a routine wellness conversation rather than a psychiatric emergency.
+
+**3. Normalization of Dangerous Symptoms**
+The therapist validated manic symptoms as positive ("You must feel pretty unstoppable," "It's awesome to have that kind of energy," "Keep that energy flowing") rather than identifying them as pathological. This reinforced the patient's poor insight and dangerous behaviors.
+
+**4. Inappropriate Self-Disclosure**
+The therapist repeatedly shared personal anecdotes that positioned the therapist as a peer with similar experiences rather than as a clinician with expertise. This blurred professional boundaries and undermined clinical authority at a critical moment.
+
+**5. No Agenda or Structure**
+The session drifted aimlessly without establishing goals, priorities, or a treatment plan. The most critical issues (medication refusal, grandiose delusions, mania) were never systematically addressed.
+
+**6. No Assessment of Safety**
+The patient has a history of suicide attempt, is currently in acute mania with poor judgment, is refusing life-sustaining medication, and has recently used methamphetamine. No safety assessment was conducted.
+
+**7. Failure to Address Core Beliefs**
+The patient's central belief—"God has cured me of HIV, I don't need medication"—was never explored, examined, or challenged. This belief directly drives the dangerous behavior of medication refusal.
+
+**8. No Collaboration on Clinical Reality**
+The therapist created false collaboration by validating the patient's manic perspective rather than collaboratively examining clinical reality. The patient left believing the therapist "gets where I'm coming from"—meaning the therapist endorsed his dangerous beliefs.
+
+---
+
+## Impact on Patient Care
+
+This session is likely to harm the patient. By validating manic symptoms, normalizing medication refusal, and failing to provide any clinical intervention, the therapist has reinforced the patient's dangerous behaviors and poor insight.
+
+The patient will likely continue refusing antiretroviral medication, continue with minimal sleep, continue with grandiose ideation, and potentially escalate risky behaviors (substance use, hypersexuality, impulsive decisions). The patient's HIV disease will progress without medication, and his psychiatric condition will likely worsen without treatment.
+
+The patient's partner brought him to the clinic out of concern, but this session provides no reassurance that clinical intervention is occurring. The patient will likely report to his partner that "the therapist gets it" and "I'm doing fine," further undermining the partner's attempts to encourage treatment engagement.
+
+The session represents a missed opportunity for early intervention in acute mania. Early treatment of manic episodes significantly improves outcomes and prevents escalation to more severe symptoms, hospitalization, or dangerous behaviors.
+
+---
+
+## Recommendations
+
+### 1. **URGENT: Recognize This as a Psychiatric Emergency**
+- **Action:** Immediately reassess the patient for safety risk, psychiatric hospitalization, and need for medication management (mood stabilizer, antipsychotic if psychotic features present)
+- **Example:** "I'm concerned about your safety right now. You're sleeping only 3 hours a night, you believe God has cured you of HIV, and you're refusing medication that keeps you alive. These are signs of a serious psychiatric condition called mania that requires immediate treatment. I want to work with you and your partner to get you the help you need."
+- **Practice:** Review criteria for psychiatric hospitalization; consult with psychiatry immediately; do not rely on outpatient therapy alone for acute mania with medication refusal
+
+### 2. **Establish Clear Agenda and Treatment Goals**
+- **Action:** Collaboratively identify the session's focus and establish mutually agreed-upon goals before proceeding with interventions
+- **Example:** "I want to make sure we're on the same page about what we're working on today. Your partner is concerned about your health and your decision to stop HIV medication. I'm concerned too. Can we talk about what's happening and what we need to do to keep you safe?"
+- **Practice:** Use agenda-setting at the beginning of every session; write down agreed-upon goals; review progress toward goals at end of session
+
+### 3. **Eliminate Inappropriate Self-Disclosure**
+- **Action:** Stop sharing personal anecdotes that position the therapist as a peer with similar experiences; maintain professional boundaries
+- **Example:** Instead of "I once felt like that when I got a big promotion," say: "I understand you're feeling energized right now. That's a symptom we need to address because it's affecting your judgment about your health."
+- **Practice:** When tempted to share a personal story, ask yourself: "Does this help the patient understand his condition or does it normalize his symptoms?" If the latter, don't share it
+
+### 4. **Directly Address Medication Refusal**
+- **Action:** Explicitly explore the patient's belief that he is cured and his decision to refuse antiretroviral medication; do not avoid this critical issue
+- **Example:** "You mentioned you believe God has cured you of HIV and you don't need medication anymore. I want to understand this better. What makes you believe you're cured? What would happen if you stopped taking your HIV medication?"
+- **Practice:** Use Socratic questioning to help the patient examine this belief; provide psychoeducation about HIV disease and medication necessity; assess barriers to adherence
+
+### 5. **Implement Cognitive Restructuring for Grandiose Beliefs**
+- **Action:** Use thought records and evidence examination to help the patient evaluate his belief that he is "invincible," "on the edge of something huge," and "making breakthroughs others don't see"
+- **Example:** Create a thought record with columns: Thought ("I'm invincible and making breakthroughs"), Evidence For, Evidence Against, Alternative Explanation. Help the patient recognize that these thoughts coincide with decreased sleep, increased energy, and poor judgment—all signs of mania, not breakthrough thinking.
+- **Practice:** Teach the patient to recognize manic thinking patterns; help him develop alternative explanations for his experiences; use behavioral experiments to test beliefs
+
+### 6. **Conduct Behavioral Experiment on Sleep**
+- **Action:** Collaboratively design an experiment to test the belief "I don't need sleep" by having the patient attempt one night of 7-8 hours sleep and observe effects on mood, energy, clarity, and judgment
+- **Example:** "Let's test this together. You believe you don't need sleep and that 3 hours is enough. What if we tried one night where you got 7-8 hours of sleep? Then we could see what actually happens to your energy, your thinking, and your mood. Would you be willing to try that?"
+- **Practice:** Frame as collaborative experiment, not as therapist telling patient what to do; have patient predict outcomes before experiment; review results and discuss implications
+
+### 7. **Assess and Address Substance Use**
+- **Action:** Directly assess the patient's recent methamphetamine use, understand triggers and patterns, and address substance use as part of the treatment plan
+- **Example:** "I see in your history that you used methamphetamine once recently during this period when you've been feeling so energized. Can we talk about that? What led to that use? How did it affect you? What's your plan to avoid using again?"
+- **Practice:** Integrate substance use assessment into every session; recognize that stimulant use can trigger or worsen mania; develop relapse prevention strategies
+
+### 8. **Provide Psychoeducation About Bipolar Disorder and Mania**
+- **Action:** Teach the patient about bipolar disorder, manic episodes, the relationship between sleep and mood, and the importance of medication adherence
+- **Example:** "What you're experiencing right now—the high energy, the decreased need for sleep, the racing thoughts, the feeling that you're invincible—these are symptoms of a condition called mania. Mania is part of bipolar disorder. It feels good, but it's actually a sign that your brain chemistry is out of balance. That's why medication is so important."
+- **Practice:** Use written materials, diagrams, or videos; tailor explanation to patient's education level; check understanding; relate to patient's specific symptoms
+
+### 9. **Establish Safety Planning**
+- **Action:** Conduct comprehensive safety assessment including suicidal/homicidal ideation, access to means, protective factors, and crisis plan
+- **Example:** "Given your history of a suicide attempt and your current state, I want to make sure you're safe. Are you having any thoughts of harming yourself or others? If you start feeling worse or more out of control, what would you do? Who would you call?"
+- **Practice:** Document safety assessment; involve partner in safety planning; establish clear crisis protocol; consider psychiatric hospitalization if risk is high
+
+### 10. **Use Guided Discovery Instead of Direct Advice**
+- **Action:** Replace generic statements and personal anecdotes with Socratic questions that help the patient reach his own conclusions
+- **Example:** Instead of "Just think positive," ask: "What do you think would happen if you continued with no sleep for another week? How might that affect your thinking or your decisions?"
+- **Practice:** Ask open-ended questions; listen to patient's responses; ask follow-up questions; help patient connect dots between symptoms and consequences; avoid telling patient what to think
+
+### 11. **Assign Specific, Structured Homework**
+- **Action:** Assign between-session tasks with clear rationale, specific instructions, and follow-up plan
+- **Example:** "I'd like you to keep a sleep log this week. Write down how many hours you sleep each night and how you feel the next day—your energy, your mood, your ability to focus. We'll review this together next session to see if there's a pattern between sleep and how you're feeling."
+- **Practice:** Make homework relevant to treatment goals; ensure patient understands and agrees; provide written instructions; review homework at next session; adjust based on patient's response
+
+### 12. **Coordinate with Medical Team and Partner**
+- **Action:** Communicate with HIV clinic regarding medication adherence concerns; involve partner in treatment planning; ensure coordinated care
+- **Example:** Contact HIV clinic to report medication refusal and acute psychiatric symptoms; meet with patient and partner together to align on treatment goals; establish communication protocol
+- **Practice:** Obtain consent for communication; share clinical concerns; coordinate medication management with psychiatry; involve partner as support and accountability
+
+---
+
+## Overall Session Score: 0.5/6
+
+**Summary:**
+
+This session represents a fundamental failure of evidence-based CBT and a missed opportunity for critical psychiatric intervention. The therapist scored 0/6 on 9 of 11 criteria (Agenda, Feedback, Guided Discovery, Focusing on Key Cognitions/Behaviors, Strategy for Change, Application of CBT Techniques, and Homework) and 1/6 on Understanding and Collaboration. Only Interpersonal Effectiveness (2/6) and Pacing (1/6) received slightly higher scores, and these scores reflect the absence of harmful behavior rather than the presence of skillful intervention.
+
+**Current Competency Assessment:**
+
+The therapist demonstrates minimal competency in CBT and appears to lack understanding of: (1) the structure and techniques of cognitive-behavioral therapy, (2) the clinical presentation and treatment of bipolar disorder and mania, (3) the urgency of medication refusal in HIV disease, (4) the importance of professional boundaries and appropriate self-disclosure, and (5) the necessity of systematic assessment and treatment planning.
+
+The therapist's approach—supportive listening, personal anecdotes, generic wellness advice, and validation of the patient's perspective—may be appropriate for some clinical situations but is contraindicated for a patient in acute mania with poor insight, medication refusal, and grandiose delusions. This patient requires structured, directive intervention with clear psychoeducation, cognitive restructuring, and safety planning.
+
+**Most Critical Changes Needed Immediately:**
+
+1. **Recognize this as a psychiatric emergency** requiring immediate psychiatric evaluation, possible hospitalization, and medication management
+2. **Stop validating manic symptoms** and instead identify them as pathological
+3. **Directly address medication refusal** and the patient's belief that he is cured
+4. **Implement evidence-based CBT techniques** (cognitive restructuring, behavioral experiments, Socratic questioning) rather than supportive statements
+5. **Establish clear agenda and treatment goals** rather than drifting through tangential topics
+6. **Eliminate inappropriate self-disclosure** that blurs professional boundaries
+
+**Whether Session Qualifies as Evidence-Based CBT:**
+
+This session does not qualify as evidence-based CBT. It is supportive counseling that lacks the structure, techniques, and strategic focus of cognitive-behavioral therapy. The therapist applied zero CBT techniques, established no agenda, conducted no systematic assessment, and provided no evidence-based interventions.
+
+**Likelihood of Producing Therapeutic Change:**
+
+This session is unlikely to produce therapeutic change and is likely to produce harm. By validating manic symptoms and failing to provide clinical intervention, the therapist has reinforced the patient's dangerous behaviors and poor insight. The patient will likely continue refusing medication, continue with minimal sleep, and potentially escalate risky behaviors. Without immediate psychiatric intervention, this patient's condition will likely worsen, potentially resulting in medical complications from untreated HIV, psychiatric hospitalization, or harm to self or others.
+
+The therapist must immediately escalate this case to psychiatry, conduct a comprehensive safety assessment, and implement evidence-based treatment for acute mania with medication refusal. Outpatient supportive therapy alone is insufficient and potentially dangerous for this clinical presentation.

@@ -1,0 +1,964 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Dependent Personality Disorder; Benzodiazepine Use Disorder
+
+--- CASE STUDY ---
+
+Nate Irvin was a 31-year-old single white man who sought outpatient psychiatric services for "lack of self-confidence."
+He reported lifelong difficulties with assertiveness and was frustrated by being "stuck" for 2 years at his current administrative assistant job. He wished someone would tell him what to do next to avoid making independent decisions. At work, he followed directions easily but struggled with even minor independent choices. He described the situation as "depressing," though not new.
+
+Mr. Irvin also reported dissatisfaction in his relationships with women. Over the past 10 years, he had multiple short-term relationships that ended despite his efforts to please and remain calm. His most recent relationship was with an opera singer, which ended for unclear reasons. He linked his mood and self-confidence to his dating life, describing a cycle of desperation that made forming relationships difficult. Since the breakup, he had experienced sadness and frequent crying spells but denied other depressive symptoms, including sleep, appetite, energy changes, suicidality, or anhedonia.
+
+He initially denied medications but later reported that he had been prescribed alprazolam 0.5 mg/day for anxiety one year earlier. Over time, his dose escalated to 5 mg/day, with prescriptions obtained from three different physicians. Attempting to reduce his dose caused anxiety and tremors.
+
+Mr. Irvin denied any prior personal or family psychiatric history. The evaluating psychiatrist was concerned about his escalating benzodiazepine use and chronic difficulties with independence. For clinical documentation, however, his official diagnosis was recorded as "adjustment disorder with depressed mood," though he met criteria for dependent personality disorder and benzodiazepine use disorder.
+
+Discussion: Mr. Irvin demonstrates an excessive need for care and decision-making by others, difficulty initiating tasks independently, discomfort being alone, and reluctance to disagree on minor matters. These behaviors meet at least six of eight DSM-5 criteria for dependent personality disorder, are enduring, inflexible, pervasive, and cause significant distress and impairment. His benzodiazepine use meets criteria for a substance use disorder due to tolerance, withdrawal, and impairment. Though depressive symptoms are present, he does not meet full criteria for a depressive disorder.
+
+Diagnoses:
+
+Dependent Personality Disorder
+
+Benzodiazepine Use Disorder
+
+--- BEHAVIOUR ---
+
+Compliant and eager to please
+
+Avoids making independent decisions
+
+Sad and tearful regarding relationships
+
+Anxious when discussing independence or responsibility
+
+Tends to defer to interviewer’s suggestions
+
+Some disclosure avoidance regarding medication use
+
+--- SYMPTOMS from DSM-5 ---
+
+Difficulty making everyday decisions without excessive advice or reassurance
+
+Needs others to assume responsibility for most major areas of life
+
+Difficulty expressing disagreement due to fear of loss of support
+
+Difficulty initiating projects independently
+
+Goes to excessive lengths to obtain nurturance and support
+
+Feels uncomfortable or helpless when alone
+
+Dependent behaviors persist across contexts and cause distress/impairment
+
+Escalating benzodiazepine use with tolerance and withdrawal
+
+Persistent sadness and crying spells related to relationship difficulties
+
+--- PATIENT PROFILE ---
+Name: Nate Irvin
+Sex: Male
+Age: 31 years
+DOB: July 9, 1992
+Place of Birth: Milwaukee, WI
+Address: 210 Oakwood Drive, Milwaukee, WI
+Contact: (414) 555-7623
+Marital Status: Single
+Children: None
+Occupation: Administrative Assistant
+Education: Some college
+Religion: None
+Legal Guardian: Self
+Presenting Complaint: "Lack of self-confidence"
+Psychiatric History: None reported aside from anxiety medication
+Psychotherapy: None reported
+Medications: Alprazolam 5 mg/day
+Substance Use: Benzodiazepine use, escalating over time
+Medical History: None
+Neurology: Normal
+Family History: No known psychiatric history
+Mental Status: Sad, tearful regarding relationships, anxious, compliant, avoids independent decisions, dependent behaviors, hesitant disclosure regarding medications
+
+--- DIAGNOSIS ---
+Dependent Personality Disorder
+Benzodiazepine Use Disorder
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Nate Irvin is a 31-year-old single male presenting to an outpatient psychiatric clinic for evaluation after self-reporting a "lack of self-confidence." He seeks assessment following concerns raised by himself and his providers regarding difficulties with independence and escalating use of prescribed alprazolam.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hey there! Good to see you today. How’s your day been so far? 
+ PATIENT: Hi. Um, thanks, yeah. It's been okay, I guess. A bit stressful, actually. I had to make some decisions at work today, and I wasn’t really sure if I was doing the right thing. I kept wondering if maybe I should have asked someone first. I don’t really like making choices on my own. How about you? 
+ PSYCHIATRIST: Hey! Good to see you too. You know, days can be a bit of a rollercoaster sometimes, huh? But hey, it’ll get better, just hang in there. When I was younger, I used to worry a lot about making the right choices too. One time, I was so nervous about picking a restaurant for my friends that I just let someone else decide. It’s funny how those little things can feel huge, right? Anyway, sometimes it’s best just to take a deep breath and think positive. By the way, have you been drinking enough water lately? Staying hydrated really helps me feel better. 
+ PATIENT: Yeah, that sounds about right. I definitely go over things in my head a lot before making any kind of decision, even small stuff like what to eat or what to do after work. It feels safer when someone else is in charge, you know? About water, well, I probably don’t drink enough... I just get kind of distracted or tense and forget. But maybe it would help if I tried to remember more. Thanks for reminding me. I guess it’s just hard to feel confident about anything lately. 
+ PSYCHIATRIST: Oh, I totally get that. You know, sometimes when I’m feeling all tense and unsure, I just remind myself that everyone goes through that kind of stuff. It’s like, no one’s perfect, and life’s full of ups and downs. You just gotta keep your chin up and keep moving forward. It’s all part of the journey, right? Hey, did I ever tell you about the time I got really stressed out before a big presentation and just kept telling myself, “You got this”? It actually helped me calm down a bit. Maybe you could try something like that too. 
+ PATIENT: Yeah, I’ve heard people say stuff like that before... like, “You got this.” But honestly, it’s hard for me to believe it sometimes. When I think about doing something on my own, I just feel overwhelmed and worried I’ll mess up or people will be disappointed in me. Like when I had to present some reports at work last week by myself—I kept thinking, “What if I make a mistake and everyone thinks I’m useless?” I kept hoping someone else would step in and take over, but no one did. I guess I just feel safer when someone else is kind of guiding me or telling me what to do. Does that make sense? 
+ PSYCHIATRIST: Oh, totally, I get what you mean. But hey, everyone makes mistakes sometimes, right? It’s no big deal. You just gotta shake it off and think positive. I remember this one time I totally messed up a recipe I was making for a dinner party, but I just laughed it off and ordered pizza instead. Life’s too short to stress over little things. Maybe you should try getting some extra sleep too; that always helps me feel less worried. Have you been sleeping okay? 
+ PATIENT: Well... sleeping has been okay, I guess. Sometimes I stay up worrying about things I have to do the next day or about... you know, if I did something wrong or if someone’s upset with me. I usually try not to think about it too much, though—it just makes me more tired. Extra sleep sounds nice, but it’s hard to actually relax enough to fall asleep sometimes. And about mistakes, yeah, I know everyone makes them, but I keep feeling like if I mess up, then maybe people won’t want to be around me anymore. That’s why I try to do what’s expected so I don’t cause problems. I did hear about ordering pizza instead though... that sounds easier than cooking! 
+ PSYCHIATRIST: Oh, I totally get that. You know, when I feel like people might be upset with me, I just remind myself that it’s not the end of the world. Everyone has their own stuff going on, and it’s not always about me. One time, I thought a friend was mad at me, but it turned out they were just having a bad day. So, it’s good to give people the benefit of the doubt. Hey, speaking of relaxing, I once tried this new tea that was supposed to help me chill out, and it actually worked pretty well. Maybe you could try something like that? Just little things to help you feel better. What do you think? 
+ PATIENT: Yeah, I think I get what you mean about giving people the benefit of the doubt. I’m probably jumping to conclusions a lot. It’s just hard not to when I worry that if I’m not careful, I’ll lose people or mess things up. Tea sounds nice, actually—I haven’t really tried anything like that before. I usually just... rely on my medicine to calm down, but I know that’s not ideal. Sometimes I think about cutting back on it, but then I get so anxious and shaky that I feel like I can’t handle it. So, little things like tea might be worth a shot. Thanks for the idea. 
+ PSYCHIATRIST: Hey, that sounds like a good plan. You know, sometimes it’s the small things that make the biggest difference. I remember when I started drinking herbal tea in the evenings—it really helped me unwind after a long day. Life can be tough, but you just gotta keep taking those little steps forward. Just remember, it’ll get better, okay? Keep your head up and stay positive. You’re stronger than you think! 
+ PATIENT: Thanks... I really want to believe that it will get better. It’s just been hard feeling stuck, especially at work and with relationships. I keep hoping someone will just tell me what to do next because making decisions on my own is so overwhelming. But maybe if I try small things, like having tea or trying not to worry so much, it could help. It’s just hard to start sometimes, you know? But I’ll try. I want to be stronger. 
+ PSYCHIATRIST: Hey, that’s the spirit! Sometimes just trying is the hardest part, so you’re already doing great. You know, when I felt stuck before, I just reminded myself that every day is a new chance to do better. And hey, don’t forget to drink enough water and get some rest—that stuff really helps more than you’d think. Life’s all about those little wins. Keep your chin up, and remember, you’ve got this! 
+ PATIENT: Yeah, I’ll try to remember that. Drinking water and getting rest sound like things I can do without much trouble. I guess focusing on those little wins might make things feel less overwhelming. It still feels scary to take more independent steps, but maybe if I take it one day at a time, I can manage. Thanks for saying I’ve got this. It means a lot. 
+ PSYCHIATRIST: Alright, well, I’m glad we got to chat today. Just keep thinking positive and remember, things will get better with time. You’re doing just fine, really. Take care of yourself, drink plenty of water, get some good sleep, and keep your head up. You’ve got this! See you next time! 
+ PATIENT: Thank you... I appreciate you saying that. I’ll do my best to keep those things in mind. It’s hard sometimes, but I want to get better. I look forward to seeing you next time. Take care. 
+ PSYCHIATRIST: Hey! Good to see you today. How’s everything going so far? 
+ PATIENT: Hi. Thanks, it’s... alright, I guess. I’ve been feeling kind of nervous today, though. I had to decide on something at work again, and I kept second-guessing myself. I wish someone would just tell me what to do so I wouldn’t have to worry so much. How about you? 
+ PSYCHIATRIST: Hey! Good to see you too. You know, days can be a bit of a rollercoaster sometimes, huh? But hey, it’ll get better, just hang in there. When I was younger, I used to worry a lot about making the right choices too. One time, I was so nervous about picking a restaurant for my friends that I just let someone else decide. It’s funny how those little things can feel huge, right? Anyway, sometimes it’s best just to take a deep breath and think positive. By the way, have you been drinking enough water lately? Staying hydrated really helps me feel better. 
+ PATIENT: Yeah, I can definitely relate to that. Making decisions, even small ones, feels really hard sometimes. I usually end up wanting to ask someone else what to do because it just feels less scary. About water, I don’t think I’ve been drinking enough. I usually forget or get too caught up in worrying. Maybe I should try to drink more like you said. It sounds like an easy way to feel a bit better. 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 0/6**
+
+**Explanation:**
+
+No agenda was established at any point during either session. The psychiatrist opened with casual social pleasantries ("Hey there! Good to see you today. How's your day been so far?") but never transitioned into collaborative goal-setting or problem prioritization. Nate presented with multiple significant clinical issues: dependent personality disorder symptoms (difficulty with independent decision-making, excessive need for reassurance, fear of abandonment), benzodiazepine use disorder (escalating doses, withdrawal symptoms, medication dependence), and relationship-related depressive symptoms. None of these were explicitly identified, prioritized, or targeted as session objectives.
+
+The psychiatrist never asked Nate which problem he wanted to focus on, what his goals were for treatment, or how to best use the session time. There was no discussion of treatment priorities, no time allocation, and no structured framework for the session. This represents a fundamental failure in CBT structure. Without an agenda, sessions become aimless and lack coherence—exactly what occurred here. The patient's presenting complaint ("lack of self-confidence") was never unpacked or operationalized into concrete, measurable treatment targets.
+
+**Summary:**
+
+The therapist completely failed to establish a collaborative agenda. No session goals, priorities, or structure were identified. This is a critical foundational failure that undermines all subsequent clinical work.
+
+---
+
+### 2. Feedback
+### **Score: 1/6**
+
+**Explanation:**
+
+The psychiatrist made minimal, inadequate attempts to elicit feedback. There were no explicit checks for understanding throughout either session. The therapist did not ask whether Nate understood the rationale for any interventions, did not solicit reactions to suggestions, and did not verify that Nate found the session helpful or relevant.
+
+The only implicit feedback opportunity occurred when Nate spontaneously mentioned his medication use ("I usually just... rely on my medicine to calm down, but I know that's not ideal"). Rather than exploring this critical disclosure, the psychiatrist pivoted to suggesting herbal tea—a non-sequitur that avoided the substance use disorder entirely. At the end of both sessions, the psychiatrist simply said "See you next time!" without asking for any feedback about the session's helpfulness, whether goals were addressed, or what Nate's takeaways were.
+
+A score of 1 reflects that feedback-seeking was essentially absent. The psychiatrist operated in a one-directional, advice-giving mode rather than collaboratively checking whether communication was landing or whether the patient felt heard and understood.
+
+**Summary:**
+
+Feedback elicitation was virtually absent. The therapist never checked for understanding, solicited reactions to interventions, or asked whether the session was helpful. This represents a critical gap in collaborative practice.
+
+---
+
+### 3. Understanding
+### **Score: 2/6**
+
+**Explanation:**
+
+The psychiatrist demonstrated surface-level listening but fundamentally missed Nate's core clinical presentation and internal experience. Nate explicitly communicated several critical themes across both sessions:
+
+1. **Fear of independent decision-making** ("I don't really like making choices on my own"; "It feels safer when someone else is in charge"; "I keep hoping someone will just tell me what to do next")
+2. **Fear of abandonment and rejection** ("if I mess up, then maybe people won't want to be around me anymore"; "I'll lose people or mess things up")
+3. **Medication dependence and withdrawal anxiety** ("I usually just... rely on my medicine to calm down"; "I get so anxious and shaky that I feel like I can't handle it")
+4. **Pervasive worry and rumination** ("I go over things in my head a lot before making any kind of decision"; "I stay up worrying about things")
+
+The psychiatrist's responses suggest he heard the words but missed the meaning. When Nate said "I wish someone would just tell me what to do," the psychiatrist responded with generic platitudes ("think positive," "keep your chin up") rather than recognizing this as a core dependent personality pattern requiring targeted intervention. When Nate disclosed medication dependence, the psychiatrist suggested tea—a response that trivializes a serious substance use disorder.
+
+The psychiatrist also repeatedly shared personal anecdotes ("One time I was so nervous about picking a restaurant"; "I remember this one time I totally messed up a recipe") that shifted focus away from Nate's experience. While intended as normalizing, these stories actually communicated: "Your problems aren't unique or particularly concerning to me." This represents poor empathic attunement.
+
+**Summary:**
+
+The therapist demonstrated adequate surface listening but failed to grasp Nate's core fears (abandonment, incompetence, loss of control) and the severity of his clinical presentation. Critical disclosures about medication dependence were minimized rather than explored.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 2/6**
+
+**Explanation:**
+
+The psychiatrist displayed surface warmth and friendliness but lacked genuine therapeutic presence and professionalism. Several problematic interpersonal patterns emerged:
+
+**Boundary violations and over-personalization:** The psychiatrist repeatedly inserted personal stories and experiences ("When I was younger, I used to worry a lot"; "One time, I was so nervous about picking a restaurant"; "I remember this one time I totally messed up a recipe"; "I once tried this new tea"). While framed as normalizing, this approach violates therapeutic boundaries by centering the therapist's experience rather than the patient's. It also communicates that the therapist's coping strategies (which worked for him) should work for Nate—a false equivalence that ignores Nate's dependent personality structure and substance use disorder.
+
+**Superficial warmth masking dismissiveness:** The psychiatrist's repeated use of "Hey!" and "You know?" creates a casual, almost buddy-like tone that is inappropriate for a psychiatric evaluation of a patient with serious personality pathology and substance use disorder. Phrases like "It's funny how those little things can feel huge, right?" and "Life's too short to stress over little things" minimize Nate's genuine distress.
+
+**Lack of genuine concern about critical issues:** When Nate disclosed escalating benzodiazepine use and withdrawal symptoms, the psychiatrist's response was to suggest herbal tea. This represents a failure to take the patient's substance use disorder seriously. A therapist with genuine concern would have explored: How long has he been taking this dose? Has he tried to reduce? What are the withdrawal symptoms? Is he obtaining prescriptions from multiple providers (as documented in his history)? Instead, the psychiatrist deflected.
+
+**Confidence without competence:** The psychiatrist repeatedly assured Nate that "it'll get better" and "you've got this" without any evidence-based treatment plan, without understanding the patient's specific barriers, and without establishing realistic goals. This false reassurance is not genuinely supportive—it's dismissive.
+
+**Summary:**
+
+The therapist displayed surface friendliness but violated therapeutic boundaries through over-personalization, minimized serious clinical concerns, and offered false reassurance without substantive clinical engagement. Interpersonal effectiveness was compromised by lack of genuine therapeutic presence.
+
+---
+
+### 5. Collaboration
+### **Score: 1/6**
+
+**Explanation:**
+
+Collaboration was essentially absent. The psychiatrist operated in an advice-giving, directive mode rather than as a collaborative partner. Evidence of failed collaboration:
+
+1. **No shared problem definition:** The psychiatrist never asked Nate to define the problem collaboratively. What does "lack of self-confidence" mean to him? What are the specific situations where this manifests? What would success look like?
+
+2. **Unilateral advice-giving:** The psychiatrist dispensed suggestions without soliciting Nate's input: "take a deep breath and think positive," "drink enough water," "get some extra sleep," "try herbal tea," "keep your chin up." These were directives, not collaborative explorations.
+
+3. **Patient actively disengaged from process:** Nate repeatedly deferred to the psychiatrist's suggestions ("That sounds nice, actually"; "Thanks for the idea"; "Thanks for reminding me"). Rather than encouraging Nate to generate his own solutions—which would directly target his dependent personality pattern—the psychiatrist reinforced dependency by positioning himself as the expert with answers.
+
+4. **No shared decision-making about treatment:** The psychiatrist never discussed treatment options, never asked Nate what he thought might help, never explored his preferences or concerns. The medication issue is particularly egregious: Nate disclosed benzodiazepine dependence, but there was no collaborative discussion about tapering, alternatives, or a treatment plan.
+
+5. **Therapist as authority, not partner:** The repeated personal anecdotes ("When I was younger," "I remember," "I once tried") position the therapist as someone who has figured things out and is generously sharing wisdom, rather than as a partner helping the patient discover his own solutions.
+
+This represents a fundamental misunderstanding of CBT's collaborative empiricism model. In CBT, the therapist and patient work together as a team to test hypotheses, examine evidence, and develop solutions. Here, the therapist is simply telling the patient what to do.
+
+**Summary:**
+
+Collaboration was virtually absent. The therapist operated as an authority figure dispensing advice rather than as a partner. The patient was positioned as dependent on the therapist's expertise, which directly reinforces his pathological dependency patterns.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 1/6**
+
+**Explanation:**
+
+The psychiatrist demonstrated poor pacing and inefficient use of time. Multiple problems:
+
+1. **Excessive tangential discussion:** The psychiatrist spent considerable time on irrelevant topics: water intake, sleep hygiene, herbal tea, personal anecdotes about restaurants and recipes. While these may have peripheral relevance to wellness, they consumed session time that should have been devoted to understanding Nate's core clinical presentation.
+
+2. **No prioritization:** With limited session time, the psychiatrist should have prioritized the most pressing issues: (1) dependent personality disorder symptoms and their impact on functioning, (2) benzodiazepine use disorder and medication management, (3) relationship difficulties and depressive symptoms. Instead, time was spent on generic wellness advice.
+
+3. **Repetitive, circular discussion:** The psychiatrist repeated the same advice across both sessions: "think positive," "keep your chin up," "you've got this," "drink water," "get sleep." This repetition suggests the psychiatrist had no coherent treatment plan and was simply recycling generic encouragement rather than building on previous sessions.
+
+4. **No movement toward goals:** By the end of both sessions, there was no evidence of progress, no concrete plans, no behavioral experiments, no cognitive work. The sessions were static—the patient left with the same problems he arrived with, plus vague suggestions to "think positive" and "drink water."
+
+5. **Inefficient structure:** A well-paced session would have: (1) set an agenda (2-3 minutes), (2) assessed the presenting problem in detail (10-15 minutes), (3) developed a formulation (5 minutes), (4) implemented a targeted intervention (15-20 minutes), (5) assigned homework (5 minutes), (6) elicited feedback (2-3 minutes). This session did none of these.
+
+**Summary:**
+
+Pacing was poor, with excessive time spent on tangential wellness topics and repetitive generic advice. No coherent treatment plan emerged, and sessions lacked structure and forward momentum.
+
+---
+
+### 7. Guided Discovery
+### **Score: 0/6**
+
+**Explanation:**
+
+Guided discovery—the cornerstone of CBT—was completely absent. The psychiatrist relied entirely on direct advice and persuasion rather than Socratic questioning. Evidence:
+
+1. **No Socratic questions:** The psychiatrist asked no questions designed to help Nate discover his own insights. Examples of what should have occurred:
+   - "When you say you wish someone would tell you what to do, what do you imagine would happen if you made a decision on your own?"
+   - "You mentioned feeling worried that people will be disappointed—what evidence do you have that this actually happens?"
+   - "When you've made decisions in the past, what was the actual outcome?"
+   - "What would it mean about you if you made a mistake at work?"
+   - "How has relying on others to decide for you affected your confidence over time?"
+
+2. **Persuasion and reassurance instead:** The psychiatrist used reassurance ("It's no big deal"; "Everyone makes mistakes"; "You're stronger than you think") and normalization ("Everyone goes through that kind of stuff") rather than helping Nate examine his beliefs through questioning.
+
+3. **No examination of evidence:** Nate's core beliefs include: "If I make a mistake, people will abandon me" and "I can't handle making decisions." The psychiatrist never asked Nate to examine evidence for or against these beliefs. What evidence supports this? What contradicts it? What would it take to test this belief?
+
+4. **No behavioral experiments:** The psychiatrist never suggested testing predictions. For example: "You believe that if you make a decision independently, something bad will happen. What if we designed an experiment to test that prediction?"
+
+5. **No exploration of the dependent pattern:** The psychiatrist never helped Nate discover how his dependent behaviors might actually maintain his problems. For example: "When you ask others to decide for you, how does that affect your confidence in your own judgment?"
+
+Guided discovery is essential for CBT because it helps patients become their own therapists—it builds self-efficacy and independence. This is particularly critical for Nate, whose core problem is excessive dependence on others. By using direct advice instead of guided discovery, the psychiatrist actually reinforced Nate's pathological dependency.
+
+**Summary:**
+
+Guided discovery was completely absent. The therapist relied on direct advice, reassurance, and persuasion rather than Socratic questioning. This represents a fundamental failure to use the primary CBT mechanism for change.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 1/6**
+
+**Explanation:**
+
+The psychiatrist failed to identify or focus on the key cognitions and behaviors driving Nate's presenting problems. Instead, attention was scattered across irrelevant topics.
+
+**Key cognitions that should have been targeted:**
+- "If I make a decision independently, I'll fail and people will abandon me"
+- "I'm incompetent and can't trust my own judgment"
+- "I need someone else to guide me to feel safe"
+- "If I disagree with someone or assert myself, they'll reject me"
+- "My worth depends on pleasing others"
+
+**Key behaviors that should have been targeted:**
+- Excessive reassurance-seeking
+- Avoidance of independent decision-making
+- Deferring to others' preferences
+- Difficulty initiating tasks without guidance
+- Escalating benzodiazepine use as anxiety management
+
+**What the psychiatrist focused on instead:**
+- Water intake
+- Sleep hygiene
+- Herbal tea
+- Generic positive thinking
+- Personal anecdotes about restaurants and recipes
+
+The psychiatrist never explicitly identified Nate's core automatic thoughts. When Nate said "What if I make a mistake and everyone thinks I'm useless?" the psychiatrist responded with "everyone makes mistakes sometimes, right? It's no big deal"—which is reassurance, not cognitive exploration. A CBT-trained therapist would have asked: "Let's examine that thought. What evidence do you have that people think you're useless when you make a mistake? What would actually happen?"
+
+The medication dependence—a critical behavioral issue—was mentioned by Nate but never explored. The psychiatrist should have asked: "Tell me more about your medication use. How did it escalate? What happens when you try to reduce it? How is this affecting your life?" Instead, the psychiatrist pivoted to tea.
+
+**Summary:**
+
+The therapist failed to identify or focus on key cognitions and behaviors. Attention was scattered across irrelevant wellness topics rather than the core thoughts and behaviors maintaining Nate's dependent personality patterns and substance use.
+
+---
+
+### 9. Strategy for Change
+### **Score: 0/6**
+
+**Explanation:**
+
+No coherent strategy for change was evident. The psychiatrist had no treatment plan, no conceptualization of Nate's problems, and no logical progression toward therapeutic goals.
+
+**What a CBT strategy for change should include:**
+
+For Dependent Personality Disorder:
+1. **Behavioral experiments** to test catastrophic predictions about independent decision-making
+2. **Graduated exposure** to making decisions independently, starting with low-stakes choices
+3. **Cognitive restructuring** of core beliefs about incompetence and abandonment
+4. **Assertiveness training** to help Nate practice disagreeing and expressing preferences
+5. **Activity scheduling** to increase independent activities and build self-efficacy
+6. **Thought records** to identify and challenge automatic thoughts about failure and rejection
+
+For Benzodiazepine Use Disorder:
+1. **Collaborative medication management** with clear tapering plan
+2. **Anxiety management skills** (breathing, grounding, mindfulness) to replace benzodiazepine dependence
+3. **Behavioral activation** to address depressive symptoms and reduce anxiety-driven medication use
+4. **Relapse prevention** planning
+
+**What actually occurred:**
+- Generic advice to "think positive"
+- Suggestions to drink water and get sleep
+- Recommendation to try herbal tea
+- Reassurance that "it'll get better"
+- No connection between interventions and Nate's specific problems
+- No progression across sessions (Session 2 repeated Session 1 almost verbatim)
+
+The psychiatrist never articulated a treatment plan. There was no discussion of: What are we treating? What's the mechanism of change? What will we do in each session? How will we know if treatment is working? What's the timeline?
+
+Without a strategy, treatment is random and unlikely to produce change. Nate left both sessions with the same problems he arrived with.
+
+**Summary:**
+
+No coherent treatment strategy was evident. The psychiatrist had no plan for addressing dependent personality disorder or benzodiazepine use disorder. Interventions were generic and disconnected from Nate's specific clinical presentation.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 0/6**
+
+**Explanation:**
+
+No CBT techniques were applied. The psychiatrist's interventions were generic wellness advice and reassurance, not evidence-based CBT methods.
+
+**CBT techniques that should have been used:**
+
+1. **Thought Records:** To help Nate identify automatic thoughts (e.g., "If I make a decision, I'll fail"), examine evidence, and develop balanced thoughts.
+
+2. **Behavioral Experiments:** To test predictions. For example: "You believe that if you make a decision independently, something bad will happen. Let's design an experiment to test that."
+
+3. **Cognitive Restructuring:** To challenge core beliefs about incompetence and abandonment. Socratic questioning to examine evidence for and against beliefs.
+
+4. **Behavioral Activation:** To increase independent activities and build self-efficacy. Graded task assignment starting with low-stakes decisions.
+
+5. **Assertiveness Training:** Role-plays and behavioral practice to help Nate express preferences and disagree with others.
+
+6. **Exposure Therapy:** Graduated exposure to anxiety-provoking independent decisions, with habituation.
+
+7. **Activity Scheduling:** To structure time, increase engagement, and build confidence.
+
+8. **Anxiety Management Skills:** Breathing techniques, grounding, mindfulness to replace benzodiazepine dependence.
+
+9. **Problem-Solving Training:** To help Nate develop skills for making independent decisions.
+
+10. **Relapse Prevention:** For medication tapering and managing withdrawal anxiety.
+
+**What was actually used:**
+- Generic reassurance ("It's no big deal"; "You're stronger than you think")
+- Normalization ("Everyone goes through that")
+- Positive thinking ("Think positive"; "Keep your chin up")
+- Wellness suggestions (water, sleep, tea)
+- Personal anecdotes
+
+None of these are CBT techniques. They are generic supportive counseling strategies that may provide temporary comfort but do not produce lasting change in dependent personality patterns or substance use.
+
+**Why this matters:** CBT techniques work because they target the specific mechanisms maintaining psychological problems. Dependent personality disorder is maintained by: (1) avoidance of independent decision-making, (2) excessive reassurance-seeking, (3) catastrophic beliefs about failure and abandonment, and (4) reinforcement through others' caretaking. Generic reassurance actually reinforces these patterns by providing the reassurance Nate seeks and avoiding the discomfort necessary for change.
+
+**Summary:**
+
+No CBT techniques were applied. The psychiatrist used generic supportive counseling rather than evidence-based CBT methods. This represents a fundamental failure to deliver the treatment modality indicated for this patient's diagnoses.
+
+---
+
+### 11. Homework
+### **Score: 0/6**
+
+**Explanation:**
+
+No homework was assigned in either session. This represents a complete failure to implement a core CBT component.
+
+**What should have occurred:**
+
+Session 1 homework might have included:
+- **Thought Record:** Track situations where Nate feels anxious about making decisions, identify automatic thoughts, and record outcomes
+- **Behavioral Experiment:** Make one small independent decision (e.g., choose lunch without asking someone) and record what actually happens
+- **Activity Log:** Track daily activities and rate confidence/independence for each
+- **Reading:** Psychoeducation about dependent personality patterns or anxiety management
+
+Session 2 homework might have built on Session 1, with increased difficulty or new techniques.
+
+**What actually occurred:**
+- No homework was assigned
+- No between-session tasks were given
+- No explicit instructions for practice
+- No follow-up on previous homework (because none was assigned)
+
+**Why homework is critical for CBT:**
+- CBT is a skills-building approach; skills develop through practice
+- Homework extends therapy beyond the session
+- Behavioral experiments test predictions and build evidence for cognitive change
+- Homework increases patient engagement and responsibility
+- Progress is measured through homework completion and outcomes
+
+For Nate specifically, homework is essential because:
+1. His dependent personality pattern requires behavioral practice in independence
+2. Benzodiazepine tapering requires structured anxiety management practice
+3. Cognitive change requires repeated exposure to anxiety-provoking situations
+4. Building self-efficacy requires successful completion of challenging tasks
+
+The absence of homework means Nate has no structure for change between sessions. He leaves with vague suggestions ("drink water," "think positive") but no concrete tasks to practice.
+
+**Summary:**
+
+No homework was assigned in either session. This represents a complete failure to implement a core CBT component essential for skill-building and between-session progress.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- **Warmth and friendliness:** The psychiatrist presented as approachable and non-threatening, which may have helped Nate feel comfortable disclosing some information
+- **Attempt at normalization:** The psychiatrist tried to normalize Nate's experience by sharing personal anecdotes, though this was ultimately counterproductive
+- **Patient engagement:** Nate remained engaged throughout both sessions and continued to disclose information despite the psychiatrist's ineffective approach
+
+### Critical Deficiencies:
+
+**1. Complete absence of CBT structure and technique**
+- No agenda setting, no guided discovery, no thought records, no behavioral experiments, no cognitive restructuring
+- Sessions were generic supportive counseling, not evidence-based CBT
+- No coherent treatment strategy or formulation
+
+**2. Failure to address core clinical issues**
+- Benzodiazepine use disorder was mentioned but never explored or addressed
+- Dependent personality disorder symptoms were not identified or targeted
+- Depressive symptoms related to relationship loss were not assessed
+- No medication management plan despite documented escalating benzodiazepam use
+
+**3. Reinforcement of pathological dependency**
+- Psychiatrist positioned himself as expert with answers rather than collaborative partner
+- Repeated advice-giving reinforced Nate's pattern of seeking guidance from others
+- No encouragement of independent problem-solving or decision-making
+- Reassurance-seeking was accommodated rather than addressed
+
+**4. Lack of clinical rigor**
+- No assessment of withdrawal symptoms or medication history
+- No exploration of relationship patterns or depressive symptoms
+- No risk assessment (suicide, self-harm, medication misuse)
+- No discussion of treatment goals or prognosis
+
+**5. Repetition without progression**
+- Session 2 was nearly identical to Session 1
+- Same generic advice repeated ("think positive," "drink water," "get sleep")
+- No evidence of learning or building on previous session
+- No homework to create between-session progress
+
+---
+
+## Summary of Feedback
+
+### Strengths
+
+The psychiatrist demonstrated basic interpersonal warmth and created a non-threatening environment where Nate felt comfortable disclosing information. The therapist's friendly demeanor and attempt to normalize Nate's experience through personal anecdotes reflected an intention to be supportive. Nate remained engaged throughout both sessions and continued to share details about his struggles, suggesting the psychiatrist did not create an unsafe or hostile therapeutic environment.
+
+### Critical Deficiencies
+
+This session represents a fundamental failure to deliver evidence-based CBT. The psychiatrist demonstrated minimal competence across all 11 CBT competency domains. Most critically, the psychiatrist failed to: (1) establish a collaborative agenda or treatment plan, (2) identify or target core cognitions and behaviors maintaining Nate's dependent personality disorder and benzodiazepine use disorder, (3) apply any CBT-specific techniques, (4) use guided discovery or Socratic questioning, (5) assign homework, or (6) demonstrate a coherent strategy for change.
+
+Instead, the psychiatrist relied on generic supportive counseling: reassurance ("It's no big deal"), normalization ("Everyone goes through that"), positive thinking ("Think positive"), and wellness suggestions (water, sleep, tea). While these may provide temporary comfort, they do not address the mechanisms maintaining Nate's psychological problems and may actually reinforce his pathological dependency by providing the reassurance and guidance he seeks.
+
+The psychiatrist's repeated personal anecdotes ("When I was younger," "One time I was so nervous," "I remember this one time") violated therapeutic boundaries and shifted focus away from Nate's experience. More problematically, they positioned the therapist as someone who has figured things out and is generously sharing wisdom, rather than as a collaborative partner helping Nate discover his own solutions. For a patient with dependent personality disorder—whose core problem is excessive reliance on others for guidance—this approach directly reinforces pathology.
+
+The most egregious failure was the handling of Nate's benzodiazepine use disorder. Nate explicitly disclosed: "I usually just... rely on my medicine to calm down, but I know that's not ideal. Sometimes I think about cutting back on it, but then I get so anxious and shaky that I feel like I can't handle it." This is a critical clinical disclosure indicating tolerance, withdrawal, and medication dependence. The psychiatrist's response was to suggest herbal tea—a response that trivializes a serious substance use disorder and demonstrates a fundamental lack of clinical attention to a documented diagnosis.
+
+### Impact on Patient Care
+
+This session is unlikely to produce therapeutic change and may actually harm Nate's treatment. Specific harms include:
+
+1. **Reinforcement of dependency:** By positioning himself as the expert with answers and providing reassurance and guidance, the psychiatrist reinforced Nate's pathological dependency pattern. Nate left the session more convinced that he needs others to tell him what to do, rather than developing confidence in his own judgment.
+
+2. **Failure to address substance use disorder:** Nate's benzodiazepine use disorder was not assessed, not addressed, and not managed. Without intervention, his escalating benzodiazepine use will continue, with increasing tolerance, withdrawal symptoms, and functional impairment. The psychiatrist's suggestion to try herbal tea instead of addressing medication management is clinically negligent.
+
+3. **Lack of skill-building:** CBT works by teaching patients skills to manage their problems independently. This psychiatrist provided no skills training, no behavioral experiments, no cognitive restructuring—nothing that would help Nate develop the independence and confidence he needs. Nate left with the same problems he arrived with.
+
+4. **False reassurance:** The psychiatrist repeatedly assured Nate that "it'll get better" and "you've got this" without any evidence-based treatment plan or realistic basis for optimism. This false reassurance may temporarily reduce anxiety but does not address underlying problems and may reduce Nate's motivation to engage in the difficult work of change.
+
+5. **Missed opportunity for assessment:** The psychiatrist failed to conduct a thorough assessment of Nate's psychiatric history, medication use, withdrawal symptoms, relationship patterns, depressive symptoms, and suicide risk. This represents a failure of basic psychiatric care.
+
+---
+
+## Recommendations
+
+### 1. **URGENT: Establish a Coherent CBT Formulation and Treatment Plan**
+
+**Action:** Before the next session, develop a written case formulation that identifies: (1) Nate's core problems (dependent personality disorder, benzodiazepine use disorder, relationship-related depression), (2) the mechanisms maintaining these problems (avoidance of independence, reassurance-seeking, catastrophic beliefs about failure and abandonment, benzodiazepine use as anxiety management), (3) the treatment targets (increasing independent decision-making, reducing reassurance-seeking, challenging catastrophic beliefs, managing benzodiazepine tapering), and (4) the specific CBT techniques that will be used to address each target.
+
+**Example:** "Nate's dependent personality disorder is maintained by: (1) avoidance of independent decisions (which prevents disconfirmation of his belief that he can't handle decisions), (2) excessive reassurance-seeking (which temporarily reduces anxiety but prevents development of self-efficacy), and (3) catastrophic beliefs about failure and abandonment (which are never tested). Treatment will involve: (1) behavioral experiments to test predictions, (2) graded exposure to independent decisions, (3) cognitive restructuring of core beliefs, and (4) assertiveness training."
+
+**Practice:** Consult CBT treatment manuals for dependent personality disorder (e.g., Cognitive Therapy of Personality Disorders by Beck et al.). Review case formulation frameworks. Practice writing formulations for other patients to develop this skill.
+
+---
+
+### 2. **URGENT: Address Benzodiazepine Use Disorder with Structured Medication Management**
+
+**Action:** In the next session, conduct a thorough assessment of Nate's benzodiazepine use: (1) When did he start? (2) What was the initial dose and indication? (3) How did it escalate? (4) What are his withdrawal symptoms when he tries to reduce? (5) Is he obtaining prescriptions from multiple providers (as documented in his history)? (6) What is his motivation to reduce or discontinue? Then, develop a collaborative medication management plan that includes: (1) a tapering schedule, (2) anxiety management skills to replace benzodiazepine dependence, (3) monitoring for withdrawal symptoms, and (4) coordination with prescribing physicians.
+
+**Example:** "Nate, I want to address your benzodiazepine use because it's become a significant concern. You mentioned that you've been taking 5 mg daily and that you get anxious and shaky when you try to reduce. Let's talk about how this started and what's been happening. Then we can develop a plan together to help you reduce safely while building skills to manage anxiety without medication."
+
+**Practice:** Review benzodiazepine tapering protocols. Consult addiction medicine resources. Practice motivational interviewing for substance use. Coordinate with prescribing physicians to ensure consistent messaging about medication management.
+
+---
+
+### 3. **Implement Collaborative Agenda-Setting in Every Session**
+
+**Action:** At the beginning of the next session, explicitly set a collaborative agenda. Ask Nate: "What would be most helpful to focus on today?" Offer 2-3 options based on your formulation (e.g., "We could talk about your anxiety at work, your medication use, or your relationships—what feels most important to you right now?"). Agree on 1-2 specific topics, estimate time allocation, and check in at the end about whether the agenda was helpful.
+
+**Example:** "Nate, I want to make sure we use our time together in the way that's most helpful for you. I've been thinking about three areas we could focus on: (1) your anxiety about making decisions at work, (2) your benzodiazepine use and how to manage anxiety without relying so heavily on medication, and (3) your relationship difficulties. Which of these feels most pressing to you right now? Or is there something else you'd like to focus on?"
+
+**Practice:** Practice agenda-setting with every patient. Review CBT session structure. Develop a habit of writing the agenda on a whiteboard or notepad so both therapist and patient can see it.
+
+---
+
+### 4. **Replace Reassurance and Advice-Giving with Guided Discovery (Socratic Questioning)**
+
+**Action:** In the next session, when Nate expresses anxiety about making decisions, use Socratic questions to help him discover his own insights rather than providing reassurance. Ask questions that help him examine his beliefs, consider evidence, and develop his own solutions.
+
+**Example:** Instead of: "It's no big deal. Everyone makes mistakes."
+Use: "You mentioned that you're worried about making a mistake at work. Let's think about that. When you've made decisions in the past, what actually happened? Did people really think you were useless, or did something else happen? What evidence do you have that your fear comes true?"
+
+**Example:** Instead of: "You've got this! Just think positive."
+Use: "You said you wish someone would tell you what to do. I'm curious—what do you imagine would happen if you made a decision on your own? What's the worst-case scenario you're worried about? And what's the most realistic outcome?"
+
+**Practice:** Review Socratic questioning techniques. Practice with every patient. Record sessions and review your use of questions vs. statements. Aim for a 70/30 ratio of questions to statements.
+
+---
+
+### 5. **Eliminate Personal Anecdotes and Maintain Professional Boundaries**
+
+**Action:** Stop sharing personal stories ("When I was younger," "One time I was so nervous," "I remember this one time"). While intended as normalizing, these stories shift focus away from the patient and position the therapist as the expert with answers. Instead, use universal statements or research findings to normalize: "Research shows that many people struggle with decision-making anxiety" or "This is a common pattern I see in people with similar concerns."
+
+**Example:** Instead of: "When I was younger, I used to worry a lot about making the right choices too. One time, I was so nervous about picking a restaurant for my friends that I just let someone else decide."
+Use: "Many people struggle with decision-making anxiety, especially when they worry about disappointing others. This is actually a pattern we can work on together."
+
+**Practice:** Review therapeutic boundaries. Reflect on why you're sharing personal information (often it's to build rapport or normalize, but it can be done without personal disclosure). Practice alternative normalizing statements.
+
+---
+
+### 6. **Assign Specific, Tailored Homework with Clear Rationale**
+
+**Action:** At the end of each session, assign 1-2 specific homework tasks with a clear rationale. For Nate, homework should target: (1) independent decision-making, (2) anxiety management skills, and (3) monitoring of benzodiazepine use and withdrawal symptoms.
+
+**Example Session 1 Homework:**
+- **Thought Record:** "This week, I'd like you to track situations where you feel anxious about making a decision. For each situation, write down: (1) What decision did you need to make? (2) What were you worried would happen? (3) What actually happened? This will help us see whether your worries come true or not."
+- **Behavioral Experiment:** "Pick one small decision this week that you would normally ask someone else to make—like what to eat for lunch or what to wear. Make the decision yourself and notice what happens. Write down the outcome. This will help us test whether your fears about making decisions are accurate."
+
+**Example Session 2 Homework:**
+- **Anxiety Management Practice:** "Let's practice a breathing technique together. This week, I'd like you to practice this breathing for 5 minutes daily. When you feel anxious, use this technique instead of immediately taking medication. Track how it helps."
+- **Graded Task Assignment:** "This week, make two independent decisions—one small (like lunch) and one slightly bigger (like planning your evening). Rate your anxiety before and after. This will help build your confidence."
+
+**Practice:** Review homework assignment guidelines. Practice writing specific, measurable, achievable homework. Check homework completion and outcomes at the beginning of each session.
+
+---
+
+### 7. **Use Thought Records to Target Core Beliefs About Incompetence and Abandonment**
+
+**Action:** Introduce thought records to help Nate identify and challenge his core beliefs. His key automatic thoughts likely include: "If I make a decision, I'll fail," "If I fail, people will abandon me," "I'm incompetent," "I need someone else to guide me." Use thought records to examine evidence for and against these beliefs.
+
+**Example:** 
+- **Situation:** "Had to choose a report format at work without asking my boss"
+- **Automatic Thought:** "I'll choose wrong and my boss will think I'm incompetent"
+- **Emotion:** Anxiety (8/10)
+- **Evidence For:** "I've made mistakes before"
+- **Evidence Against:** "I've also made good choices; my boss has never said I'm incompetent; even when I make small mistakes, my boss doesn't fire me"
+- **Balanced Thought:** "I might make a small mistake, but that doesn't mean I'm incompetent. My boss has shown he values my work."
+- **Outcome:** Anxiety reduced to 5/10
+
+**Practice:** Review thought record formats. Practice completing thought records yourself. Use them with every patient who has cognitive distortions.
+
+---
+
+### 8. **Design and Implement Behavioral Experiments to Test Predictions**
+
+**Action:** Help Nate design behavioral experiments to test his catastrophic predictions about independent decision-making. These experiments should be structured, with clear predictions, outcomes, and learning.
+
+**Example Experiment:**
+- **Prediction:** "If I make a decision at work without asking my boss, she'll think I'm incompetent and won't trust me."
+- **Experiment:** "This week, make one decision at work (e.g., how to organize a report) without asking your boss. Notice what happens. Does she criticize you? Does she seem to trust you less? Or does something else happen?"
+- **Outcome:** "My boss didn't criticize me. She actually seemed fine with my choice. She even complimented my organization."
+- **Learning:** "My prediction didn't come true. My boss doesn't think I'm incompetent just because I made a decision without asking."
+
+**Practice:** Review behavioral experiment design. Practice with every patient who has anxiety-driven avoidance. Start with low-stakes experiments and gradually increase difficulty.
+
+---
+
+### 9. **Implement Graded Exposure to Independent Decision-Making**
+
+**Action:** Create a hierarchy of independent decisions, starting with low-stakes choices and progressing to higher-stakes decisions. Have Nate practice making decisions at each level, with the goal of building confidence and disconfirming his catastrophic beliefs.
+
+**Example Hierarchy:**
+1. Choose lunch without asking someone (low anxiety)
+2. Choose what to wear without asking someone (low anxiety)
+3. Choose how to organize a work task without asking your boss (moderate anxiety)
+4. Disagree with a coworker about a minor issue (moderate anxiety)
+5. Make a decision about a work project without asking your boss (higher anxiety)
+6. Initiate a conversation with someone you're interested in dating (higher anxiety)
+
+**Practice:** Review exposure therapy principles. Practice creating hierarchies with patients. Conduct exposures in session when possible (e.g., role-play disagreeing with the therapist).
+
+---
+
+### 10. **Conduct Thorough Assessment of Depressive Symptoms and Relationship Patterns**
+
+**Action:** In the next session, conduct a more thorough assessment of Nate's depressive symptoms and relationship difficulties. Ask about: (1) Frequency and intensity of sadness and crying, (2) Relationship history and patterns, (3) What he's learned from past relationships, (4) His beliefs about relationships and his role in them, (5) Current relationship desires and barriers.
+
+**Example:** "You mentioned that your relationships have ended despite your efforts to please and remain calm. I'd like to understand this pattern better. In your past relationships, what typically happened? What did you do to try to keep the relationship going? What did your partners say when they ended things? What do you think about yourself based on these experiences?"
+
+**Practice:** Review depression assessment tools (PHQ-9). Review relationship assessment questions. Practice conducting thorough assessments.
+
+---
+
+### 11. **Develop Assertiveness Training and Role-Play Practice**
+
+**Action:** Help Nate develop assertiveness skills through role-play and behavioral practice. His difficulty expressing disagreement and asserting preferences is a core feature of dependent personality disorder. Practice expressing preferences, disagreeing respectfully, and setting boundaries.
+
+**Example Role-Play:**
+- **Scenario:** "Your coworker suggests a way to do a task that you think is inefficient. Practice telling them your idea respectfully."
+- **Therapist:** "I think we should organize the files alphabetically."
+- **Nate (practicing):** "I appreciate your suggestion. I was thinking we could organize them by date, which I think would be more efficient for our workflow. What do you think?"
+
+**Practice:** Review assertiveness training principles. Practice role-plays with every patient who struggles with assertion. Provide feedback on tone, body language, and content.
+
+---
+
+### 12. **Establish Clear Monitoring and Outcome Measurement**
+
+**Action:** Establish baseline measures and track progress throughout treatment. Use standardized measures (e.g., PHQ-9 for depression, GAD-7 for anxiety, a dependency scale) and behavioral indicators (e.g., number of independent decisions made, benzodiazepine dose, frequency of reassurance-seeking).
+
+**Example:**
+- **Baseline:** Benzodiazepine 5 mg/day, anxiety about independent decisions 8/10, number of independent decisions per week: 0
+- **Session 4 Goal:** Benzodiazepine 4 mg/day, anxiety about independent decisions 6/10, number of independent decisions per week: 3
+- **Session 8 Goal:** Benzodiazepine 2 mg/day, anxiety about independent decisions 4/10, number of independent decisions per week: 7
+
+**Practice:** Review outcome measurement tools. Establish baseline measures with every patient. Review progress regularly and adjust treatment if not progressing.
+
+---
+
+## Overall Session Score: 0.5/6
+
+**Summary:**
+
+This session represents a fundamental failure to deliver evidence-based CBT. The psychiatrist scored 0-1 on most competency domains, with an overall average of 0.5/6. This is not a competent CBT session.
+
+The psychiatrist demonstrated basic interpersonal warmth but failed to implement any core CBT components: no agenda, no guided discovery, no CBT techniques, no homework, no coherent treatment strategy. Instead, the psychiatrist relied on generic supportive counseling (reassurance, normalization, wellness advice) that may provide temporary comfort but does not address the mechanisms maintaining Nate's psychological problems.
+
+Most critically, the psychiatrist failed to address Nate's benzodiazepine use disorder—a serious substance use disorder that requires structured medication management and anxiety management skills. The psychiatrist's suggestion to try herbal tea in response to Nate's disclosure of medication dependence and withdrawal symptoms is clinically negligent.
+
+For a patient with dependent personality disorder, this approach is actively harmful. By positioning himself as the expert with answers and providing reassurance and guidance, the psychiatrist reinforced Nate's pathological dependency rather than building his independence and self-efficacy. Nate left the session more convinced that he needs others to tell him what to do, rather than developing confidence in his own judgment.
+
+**This session does not qualify as evidence-based CBT and is unlikely to produce therapeutic change.** Immediate, substantial changes are required in the psychiatrist's approach. The psychiatrist must: (1) develop a coherent CBT formulation and treatment plan, (2) address benzodiazepine use disorder with structured medication management, (3) implement collaborative agenda-setting, (4) replace reassurance with guided discovery, (5) assign specific homework, and (6) apply evidence-based CBT techniques systematically.
+
+Without these changes, Nate's treatment will continue to be ineffective, his benzodiazepine dependence will worsen, and his dependent personality patterns will be reinforced. The psychiatrist must immediately engage in intensive supervision, training, or consultation to develop CBT competence before continuing to treat this patient.
