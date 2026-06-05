@@ -1,0 +1,816 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Enuresis, Nocturnal Only
+
+--- CASE STUDY ---
+
+Zack was an 8-year-old boy brought to the outpatient child psychiatry clinic by his mother because of increasing tantrums and somatic complaints without an apparent cause. Symptoms appeared related to nights spent at his aunt's home, which began recently when his mother worked night shifts.
+
+For 2 months prior to consultation, Zack reported nausea and headaches on Fridays and complained that his aunt's house was "creepy." He continued to visit reluctantly, once calling his mother at work demanding to be picked up. Recently, Zack screamed and hid when it was time to go to his aunt's home.
+
+Zack had no prior behavioral or emotional issues, achieved all developmental milestones on time, and had only routine medical visits. He had not yet achieved consistent overnight continence, wetting the bed approximately twice weekly. There were no daytime voiding symptoms or constipation. Family history was negative for psychiatric illness on the mother’s side; little is known about the father.
+
+Mental status examination: Zack was cooperative, well-nourished, and well cared for. He separated easily from his mother initially. Speech was spontaneous and age-appropriate. Eye contact was appropriate. Affect was mildly anxious, calming quickly except when discussing sleepovers, where he demonstrated fidgeting, decreased eye contact, and mild irritability. He appeared embarrassed when discussing bed-wetting, reporting teasing by his cousin and his aunt’s boyfriend, which caused him to feel scared.
+
+Discussion: Zack presents with temper tantrums, somatic complaints, and refusal to spend the night at his aunt’s home. Clinical concern shifted to enuresis, which appears to be primary and nocturnal. His distress seems secondary to teasing. No other psychiatric disorders are indicated; separation anxiety, oppositional defiant disorder, conduct disorder, or mood dysregulation disorder are unlikely given context-specific symptoms.
+
+--- BEHAVIOUR ---
+- Cooperative
+- Mild anxiety initially, calming quickly
+- Fidgeting and decreased eye contact when discussing sleepovers
+- Mild irritability toward mother when discussing sleepovers
+- Embarrassment discussing bed-wetting
+- Spontaneous, age-appropriate speech
+- Maintains age-appropriate eye contact
+
+--- SYMPTOMS from DSM-5 ---
+- Primary nocturnal enuresis (bed-wetting at night, twice weekly)
+- Embarrassment/shame related to enuresis
+- Context-specific anxiety (related to sleepovers)
+
+--- PATIENT PROFILE ---
+Name: Zack Thompson
+Sex: Male
+Age: 8 years
+DOB: March 14, 2017
+Place of Birth: Toronto, ON, Canada
+Address: 45 Elm Street, Toronto, ON, M5A 2B6
+Contact: (416) 555-9821
+Marital Status: N/A (child)
+Children: N/A
+Occupation: Student
+Education: Elementary school, Grade 3
+Religion: None specified
+Legal Guardian: Laura Thompson (mother)
+Presenting Complaint: Temper tantrums, somatic complaints, refusal to sleep at aunt's house
+Psychiatric History: None
+Psychotherapy: None
+Medications: None
+Substance Use: None
+Medical History: Normal childhood development; occasional colds
+Neurology: Normal
+Family History: No known psychiatric illness on mother’s side
+Mental Status: Mild anxiety, cooperative, fidgeting and embarrassment regarding enuresis, mild irritability in specific context, spontaneous speech, age-appropriate eye contact
+
+--- DIAGNOSIS ---
+Enuresis, nocturnal only, primary
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Zack Thompson, an 8-year-old boy, is evaluated in an outpatient child psychiatry clinic after being brought by his mother due to recent temper tantrums, somatic complaints, and refusal to spend nights at his aunt’s home. The intake focuses on these concerns in the context of his recent changes in sleeping arrangements.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hello, it’s good to see you today. To start, I’d like to set an agenda for our session together. Are there one or two main things you’d like to focus on today? Also, on a scale from 0 to 10, how would you rate your mood right now, with 0 being very low and 10 being very good? 
+ PATIENT: Hi. Umm, I guess... I’d like to talk about the nights at my aunt’s house. I really don’t like going there anymore. And maybe... the bed-wetting too, because it’s embarrassing and my cousin teased me about it. 
+
+Right now, I’d say my mood is like a 5. Not too bad, but not great either. Just kinda... okay. 
+ PSYCHIATRIST: Thank you for sharing that. So, two main things: feeling uncomfortable at your aunt’s house and the bed-wetting that’s causing embarrassment. Does that sound right? Would you like to focus on both today, or prioritize one? 
+
+Before we dive in, can you tell me a bit more about a recent time at your aunt’s house when you felt upset? What was happening, and what thoughts went through your mind at that moment? 
+ PATIENT: Yeah, that’s right. I think... maybe we can start with the nights at my aunt’s house. That’s the hardest.
+
+Last Friday, I had to go there again. I felt really bad all day, like my tummy hurt and my head too. When it was time to get ready, I just didn’t want to go. I thought, "What if something scary happens? What if I have to wet the bed again?" I felt really scared and wanted my mom to come get me. I even called her at work, but she said she couldn’t. Then I just kinda screamed and hid under my bed... I didn’t want my aunt or cousin to see. I hate that house. 
+ PSYCHIATRIST: Thank you for describing that moment—it sounds really tough and scary for you. So, the situation was being at your aunt’s house on Friday night, and your thoughts were worries about something scary happening and wetting the bed again. Those thoughts made you feel scared, and your behavior was to call your mom and then hide under the bed.
+
+If I’m understanding correctly, the thought "What if something scary happens?" and "What if I wet the bed again?" links directly to those feelings and behaviors. Does that sound right?
+
+How did your body feel during that time? And what did you do after hiding under the bed? 
+ PATIENT: Yeah, that’s right. I was really worried about both things... the scary stuff and wetting the bed again. 
+
+My tummy felt all twisted and kinda yucky, and my head hurt a bit too. I was really tense and my hands were shaking, I think. After hiding under the bed for a long time, my aunt eventually came and got me out. She seemed mad and said I was being a baby. That made me feel even worse, and then I just stayed quiet and didn’t say anything for the rest of the night. I tried not to cry, but I felt really sad inside. 
+ PSYCHIATRIST: Thank you for sharing that—it sounds like a very distressing experience, especially with your aunt’s reaction adding to your feelings. To summarize: the situation was being at your aunt’s house, the automatic thoughts were worries about scary things happening and wetting the bed, which led to feelings of fear and sadness, physical tension, and behaviors like calling your mom, hiding, and then withdrawing after your aunt’s response.
+
+Does this summary match your experience? Is there anything important I missed?
+
+Now, I’d like to explore the thought "What if I wet the bed again?" What evidence do you have that this will definitely happen? And is there any evidence that it might not happen? 
+ PATIENT: Yeah, that’s pretty much what happened. You didn’t miss anything important.
+
+About the bed-wetting thought... I guess I’ve wet the bed a few times before while at my aunt’s place. Like a couple of times in the last month. So, it feels like it will happen again for sure. But sometimes I don't, like when I sleep at home with my mom. So maybe it’s not always going to happen? I just worry people will notice and tease me again like my cousin and my aunt’s boyfriend did last time. That’s the worst part. 
+ PSYCHIATRIST: It sounds like you have some experience that the bed-wetting has happened a few times at your aunt’s house, which understandably makes you worried it will happen again. At the same time, you notice it doesn’t happen when you sleep at home, which suggests it’s not certain to happen every time. 
+
+If you were to consider these points, what might be a more balanced thought about the likelihood of wetting the bed at your aunt’s house? How does thinking that way make you feel compared to your original thought? 
+ PATIENT: Maybe a more balanced thought is that, yeah, sometimes I do wet the bed at my aunt’s but sometimes I don’t. It’s not for sure that it will happen every single time. And maybe if I try really hard, I can stop it more.
+
+Thinking that way makes me feel a little less scared. Like I have a tiny bit of hope that I won’t have an accident. But I still worry a lot because it’s hard to believe I won’t get embarrassed or teased. It’s kind of a mix—hope and fear. 
+ PSYCHIATRIST: That’s a really thoughtful reflection. So, your balanced thought acknowledges both the possibility of wetting the bed and the possibility of not wetting it, which brings some hope alongside the fear. It’s quite natural to feel both at once.
+
+Given this, what small step or experiment could you try next time you stay at your aunt’s to test this balanced thought or to help reduce your worry? For example, something you feel comfortable doing that might give you more confidence or control in the situation. 
+ PATIENT: Maybe next time I stay there, I could try going to the bathroom right before I go to sleep. I haven’t really done that before. Maybe that will help me not wet the bed.
+
+I think I could try telling my aunt to keep the teasing stuff away if she hears it from my cousin or her boyfriend. I don’t want to be teased again because it makes me feel awful.
+
+I’m a little scared to try these things, but maybe if I do them, I won’t feel so worried next time. 
+ PSYCHIATRIST: Those sound like very practical and thoughtful steps—going to the bathroom before bed and asking your aunt to help with the teasing. Both could help you feel more in control and less worried.
+
+What obstacles do you think might come up when you try these steps? And on a scale from 0 to 10, how confident do you feel about trying them? 
+ PATIENT: I think the hardest part might be telling my aunt about the teasing again. She got mad last time and said I was being a baby. I’m scared she might get mad again or not listen to me.
+
+Going to the bathroom before bed feels easier; I think I can remember to do that.
+
+On a confidence scale, I’d say maybe a 5. I want to try, but I’m pretty nervous about it too. 
+ PSYCHIATRIST: Thank you for being honest about what feels hard and what feels more doable. It’s completely understandable to feel nervous about talking to your aunt again given how she reacted before. 
+
+Let’s make a clear, specific plan for your homework: 
+
+1. Before bed at your aunt’s house, make sure to use the bathroom.  
+2. When you feel ready, try to tell your aunt calmly that the teasing bothers you and ask her to help stop it. You could even write down what you want to say beforehand.
+
+Does this sound like a plan you can try? When do you think you might do these steps? And how long do you expect to spend on them? 
+ PATIENT: Yeah, that sounds like a plan. I think I can definitely try the bathroom part next time. And I’ll try writing down what I want to say to my aunt to help me remember.
+
+I have to go to my aunt’s house next Friday, so I’ll do the bathroom thing that night. I might try to tell my aunt maybe the next time I see her, if I feel brave enough. I’m not sure how long it will take, maybe just a few minutes.
+
+I’m a little scared, but I want to get better at this. 
+ PSYCHIATRIST: That sounds like a very clear and doable plan for next Friday. Using the bathroom before bed is a concrete step you can definitely take, and writing down what you want to say to your aunt can help you feel more prepared and confident.
+
+To summarize today’s session: we focused on your experience at your aunt’s house, identified the automatic thoughts around bed-wetting and scary things, explored evidence for and against those thoughts, and developed a balanced thought that brought some hope. You then came up with two practical steps to try next time, with a clear plan for your homework.
+
+Before we finish, what part of today’s session stood out to you as most helpful? And was there anything that felt less useful or that you’d like to do differently next time? 
+ PATIENT: The part that helped me the most was figuring out that maybe I don’t always have to wet the bed. That gave me some hope, and I liked thinking about how to try stopping it.
+
+I also liked coming up with the plan for next time. It made me feel like I have something to do, not just worry.
+
+I don’t think there was anything that felt less useful. Maybe next time, I’d like to talk more about what to do if I do wet the bed, because I’m still scared about that part.
+
+Thanks for helping me today. 
+ PSYCHIATRIST: Thank you for sharing that. It’s great to hear that the balanced thinking and planning felt helpful to you. We can definitely explore strategies for managing what to do if bed-wetting happens next time.
+
+To wrap up, remember your homework: use the bathroom before bed at your aunt’s next Friday and write down what you want to say to your aunt about the teasing. Feel free to reach out if you want to talk before then.
+
+Do you have any final questions or thoughts before we end today? 
+ PATIENT: No, I don’t think I have any questions for now. I’ll try my best with the homework. Thanks for listening and helping me. See you next time! 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated strong agenda-setting skills by explicitly asking Zack to identify one or two main things he wanted to focus on, then clarifying and confirming priorities collaboratively. The therapist stated: "So, two main things: feeling uncomfortable at your aunt's house and the bed-wetting that's causing embarrassment. Does that sound right? Would you like to focus on both today, or prioritize one?" This is exemplary collaborative agenda-setting that respects the patient's autonomy while maintaining structure.
+
+The therapist successfully prioritized the session around the most distressing issue (nights at aunt's house) while acknowledging the secondary concern (bed-wetting embarrassment). The session remained focused on these agreed-upon targets throughout, with appropriate depth and pacing. The therapist also opened with a mood rating (0-10 scale), which provides a baseline for measuring session impact and demonstrates attention to the patient's current state.
+
+However, there is a minor gap: the therapist did not explicitly allocate time or discuss how much time would be spent on each topic, nor did the therapist establish concrete session goals (e.g., "By the end of today, we'll have a specific plan for..."). A score of 6 would require explicit time management discussion and measurable session objectives stated upfront.
+
+**Summary:**
+The therapist set a clear, collaborative agenda with appropriate prioritization and maintained focus throughout the session. Minor gap: no explicit time allocation or concrete session goals were established.
+
+---
+
+### 2. Feedback
+### **Score: 4/6**
+
+**Explanation:**
+
+The therapist demonstrated adequate feedback-seeking behavior, particularly at the end of the session. The therapist asked: "Before we finish, what part of today's session stood out to you as most helpful? And was there anything that felt less useful or that you'd like to do differently next time?" This is a strong closing feedback question that elicits the patient's subjective experience and invites input on session quality.
+
+Additionally, the therapist checked understanding multiple times throughout the session with reflective summaries: "So, the situation was being at your aunt's house on Friday night, and your thoughts were worries about something scary happening and wetting the bed again... Does that sound right?" and later, "To summarize today's session: we focused on your experience at your aunt's house..." These demonstrate consistent checking for comprehension and accuracy.
+
+However, the therapist could have elicited more frequent feedback during the session, not just at the end. There is no evidence of the therapist asking mid-session questions like "Does this make sense so far?" or "How are you feeling about the direction we're going?" The therapist also did not explicitly check whether the patient understood the rationale for specific interventions (e.g., why exploring evidence for/against thoughts is helpful, or why the behavioral experiment is important). For a score of 5-6, the therapist would need to demonstrate more proactive, mid-session feedback elicitation and explicit rationale-checking.
+
+**Summary:**
+The therapist elicited feedback at session end and checked understanding through summaries, but missed opportunities for more frequent mid-session feedback and explicit rationale-checking.
+
+---
+
+### 3. Understanding
+### **Score: 6/6**
+
+**Explanation:**
+
+The therapist demonstrated excellent understanding of Zack's internal experience throughout the session. The therapist accurately identified and reflected the cognitive-emotional-behavioral chain: "So, the situation was being at your aunt's house on Friday night, and your thoughts were worries about something scary happening and wetting the bed again. Those thoughts made you feel scared, and your behavior was to call your mom and then hide under the bed."
+
+The therapist also demonstrated sophisticated understanding of the layered nature of Zack's distress. When Zack mentioned his aunt's negative reaction ("She seemed mad and said I was being a baby"), the therapist immediately recognized this as compounding the original fear: "it sounds like a very distressing experience, especially with your aunt's reaction adding to your feelings." This shows grasp of how secondary reinforcement (shame from authority figures) amplifies primary anxiety.
+
+The therapist demonstrated empathic attunement to Zack's mixed emotional state: "It's quite natural to feel both [hope and fear] at once," validating the complexity of his experience rather than oversimplifying. The therapist also recognized Zack's fear about disclosing to his aunt: "It's completely understandable to feel nervous about talking to your aunt again given how she reacted before."
+
+Throughout, the therapist's reflections were accurate, specific, and demonstrated genuine comprehension of Zack's perspective. Non-verbal cues (fidgeting, decreased eye contact when discussing sleepovers) were implicitly understood through the therapist's focused questioning on those specific contexts. There are no instances of misunderstanding, missed subtle communication, or poor empathy.
+
+**Summary:**
+The therapist demonstrated exemplary understanding of Zack's internal reality, accurately reflecting complex emotional states, recognizing layered sources of distress, and validating his experience with genuine empathy throughout.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 6/6**
+
+**Explanation:**
+
+The therapist displayed optimal warmth, genuineness, confidence, and professionalism throughout the session. The opening ("Hello, it's good to see you today") establishes a welcoming tone. The therapist consistently validated Zack's experiences with phrases like "Thank you for sharing that," "Thank you for describing that moment—it sounds really tough and scary for you," and "Thank you for being honest about what feels hard."
+
+The therapist demonstrated appropriate professional boundaries while maintaining warmth. The therapist did not minimize Zack's concerns, did not become overly casual, and maintained a collaborative stance without being authoritarian. When Zack expressed fear about trying the behavioral steps, the therapist normalized this ("It's completely understandable to feel nervous") rather than dismissing it or pushing too hard.
+
+The therapist's tone remained consistently patient and encouraging, even when Zack expressed low confidence (5/10). The therapist responded with: "That sounds like a very clear and doable plan for next Friday," reinforcing self-efficacy without false reassurance. The therapist also explicitly praised Zack's insight: "That's a really thoughtful reflection."
+
+The closing interaction demonstrates genuine care: "Feel free to reach out if you want to talk before then," offering accessibility and support. Zack's response ("Thanks for listening and helping me") suggests the therapeutic relationship was experienced as safe and supportive. There are no instances of aloofness, insincerity, impatience, or interpersonal friction.
+
+**Summary:**
+The therapist demonstrated exemplary warmth, genuineness, confidence, and professionalism, creating a safe, supportive therapeutic environment tailored to an 8-year-old's developmental level.
+
+---
+
+### 5. Collaboration
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated strong collaborative practice throughout most of the session. The opening explicitly invites Zack's input: "Are there one or two main things you'd like to focus on today?" The therapist then confirms priorities collaboratively: "Does that sound right? Would you like to focus on both today, or prioritize one?" This establishes a genuine partnership rather than therapist-directed agenda.
+
+When developing the behavioral experiment, the therapist invited Zack's ideas: "what small step or experiment could you try next time you stay at your aunt's to test this balanced thought?" Zack generated his own solutions (bathroom before bed, asking aunt about teasing), demonstrating active participation in problem-solving. The therapist then asked: "What obstacles do you think might come up?" and "on a scale from 0 to 10, how confident do you feel about trying them?" This invites Zack to assess feasibility and readiness, maintaining his agency.
+
+However, there is a minor gap in true collaborative empiricism. The therapist could have invited Zack to help design the behavioral experiment more explicitly (e.g., "What do you think would be a good way to test whether you always wet the bed at your aunt's?") rather than suggesting specific steps. Additionally, when the therapist introduced cognitive restructuring (examining evidence for/against thoughts), the therapist could have explained the rationale collaboratively: "I'm wondering if we could look at the evidence for and against that thought together—does that sound helpful to you?" Instead, the therapist moved into the technique more directly.
+
+The homework assignment was collaboratively refined ("Does this sound like a plan you can try? When do you think you might do these steps?"), but the therapist could have asked Zack to generate potential obstacles before suggesting them, further empowering his problem-solving.
+
+**Summary:**
+The therapist established strong collaboration through agenda-setting, invited patient input on solutions, and maintained Zack's active role. Minor gap: could have invited more explicit input on intervention rationale and design.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated generally efficient use of time with appropriate pacing. The session moved logically from agenda-setting → detailed exploration of a specific incident → cognitive restructuring → behavioral planning → homework assignment → feedback and closure. This represents a coherent, well-structured flow without significant tangents.
+
+The therapist avoided excessive tangential discussion. When Zack mentioned somatic symptoms (stomach pain, headaches), the therapist acknowledged these but appropriately focused on the cognitive-emotional-behavioral chain rather than pursuing medical investigation. The therapist also did not get sidetracked by the father's absence or family history, staying focused on the presenting problem.
+
+The depth of exploration was appropriate for an 8-year-old's attention span and the session's apparent length. The therapist spent adequate time on the key incident (Friday at aunt's house) to establish a clear cognitive-behavioral formulation, then moved efficiently to intervention planning.
+
+However, there is a minor pacing issue: the therapist could have been slightly more efficient in the cognitive restructuring section. The therapist asked Zack to generate a "balanced thought," which Zack did ("maybe it's not for sure that it will happen every single time"), but then the therapist could have moved more quickly to the behavioral experiment rather than exploring the feeling change in detail ("How does thinking that way make you feel compared to your original thought?"). While this exploration is valuable, a tighter pace might have allowed time to discuss contingency planning (what to do if bed-wetting does occur, which Zack identified as a remaining concern).
+
+**Summary:**
+The therapist maintained good session structure and pacing with logical flow and minimal tangents. Minor gap: could have been slightly more efficient in cognitive work to allow time for additional concerns Zack raised.
+
+---
+
+### 7. Guided Discovery
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated strong use of Socratic questioning to facilitate Zack's self-discovery. When exploring the automatic thought "What if I wet the bed again?", the therapist asked: "What evidence do you have that this will definitely happen? And is there any evidence that it might not happen?" Rather than telling Zack the thought was irrational, the therapist guided him to examine the evidence himself. Zack independently concluded: "Maybe a more balanced thought is that, yeah, sometimes I do wet the bed at my aunt's but sometimes I don't."
+
+The therapist also used guided discovery when exploring obstacles: "What obstacles do you think might come up when you try these steps?" This invited Zack to problem-solve rather than the therapist imposing solutions. Zack identified his own barrier: "The hardest part might be telling my aunt about the teasing again. She got mad last time."
+
+When developing the behavioral experiment, the therapist asked: "what small step or experiment could you try next time you stay at your aunt's to test this balanced thought?" Zack generated his own ideas (bathroom before bed, asking aunt about teasing), demonstrating active discovery rather than therapist prescription.
+
+However, there is a minor gap: the therapist could have used more Socratic questioning earlier in the session. When Zack first described the incident, the therapist could have asked more discovery questions (e.g., "What made you think something scary might happen?" or "Have scary things actually happened at your aunt's house?") rather than moving quickly to summarization. Additionally, when Zack expressed concern about "what to do if I do wet the bed," the therapist acknowledged this but did not explore it further through guided discovery, instead closing the session. A more thorough Socratic exploration of this concern would have been valuable.
+
+**Summary:**
+The therapist skillfully used Socratic questioning to help Zack examine evidence, identify obstacles, and generate solutions. Minor gap: could have used more guided discovery earlier in the session and when addressing Zack's remaining concerns.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 5/6**
+
+**Explanation:**
+
+The therapist demonstrated strong focus on the most relevant cognitions and behaviors. The key automatic thoughts were clearly identified: "What if something scary happens?" and "What if I wet the bed again?" These are the central cognitions driving Zack's anxiety and avoidance behavior. The therapist appropriately prioritized these over peripheral concerns.
+
+The therapist also identified critical behaviors: calling mother, hiding under bed, and withdrawal/silence after aunt's negative response. These behaviors were appropriately linked to the underlying cognitions and emotions, demonstrating understanding of the behavioral maintenance cycle.
+
+The therapist recognized the secondary but important issue: teasing from cousin and aunt's boyfriend, which amplifies shame and avoidance. This was appropriately incorporated into the behavioral plan (asking aunt to stop teasing).
+
+However, there is a notable gap: the therapist did not explicitly address the primary nocturnal enuresis itself as a clinical target. While the session focused on Zack's anxiety about bed-wetting and the social consequences, the therapist did not discuss evidence-based interventions for primary nocturnal enuresis (e.g., fluid restriction, bedwetting alarms, desmopressin medication). The behavioral plan (bathroom before bed) is reasonable but limited. A more comprehensive approach would have included:
+
+1. Assessment of fluid intake timing and volume
+2. Discussion of bedwetting alarms (gold standard for primary nocturnal enuresis)
+3. Consideration of medical evaluation (urinalysis, assessment for sleep apnea, etc.)
+4. Realistic expectations about timeline (primary nocturnal enuresis often resolves spontaneously but can take years)
+
+The therapist focused appropriately on the anxiety and social consequences but missed the opportunity to address the underlying physiological issue that is driving much of Zack's distress. This is a significant clinical gap for a child psychiatry session.
+
+**Summary:**
+The therapist appropriately focused on key anxiety-related cognitions and behaviors but did not address the primary nocturnal enuresis itself or evidence-based medical/behavioral interventions for this condition.
+
+---
+
+### 9. Strategy for Change
+### **Score: 4/6**
+
+**Explanation:**
+
+The therapist demonstrated a coherent, reasonable strategy for change grounded in CBT principles. The overall approach was:
+
+1. **Identify the cognitive-behavioral chain** (situation → thoughts → feelings → behaviors)
+2. **Examine evidence for/against anxious thoughts** (cognitive restructuring)
+3. **Develop a balanced thought** with more realistic appraisal
+4. **Design behavioral experiments** to test the balanced thought and build mastery
+
+This is a logical, evidence-based CBT strategy appropriate for childhood anxiety. The therapist explicitly stated the formulation: "the situation was being at your aunt's house, the automatic thoughts were worries about scary things happening and wetting the bed, which led to feelings of fear and sadness, physical tension, and behaviors like calling your mom, hiding, and then withdrawing."
+
+The strategy shows promise for reducing anxiety-driven avoidance and building Zack's confidence through behavioral success. The homework (bathroom before bed, writing down what to say to aunt) is designed to increase mastery and reduce avoidance.
+
+However, there are significant limitations:
+
+1. **Incomplete formulation**: The strategy does not address the primary nocturnal enuresis as a separate clinical target. The therapist treats bed-wetting primarily as an anxiety trigger rather than as a condition requiring its own intervention. This is a conceptual gap.
+
+2. **Limited scope**: The strategy focuses narrowly on anxiety management but does not address:
+   - Sleep hygiene and fluid management
+   - Medical evaluation for enuresis
+   - Parental involvement and coordination (mother's role in supporting the plan)
+   - Realistic timeline and expectations
+
+3. **Incomplete exposure hierarchy**: While the therapist identified behavioral steps, there is no explicit exposure hierarchy or graded approach to facing feared situations. The plan jumps to asking the aunt about teasing without building confidence through smaller steps first.
+
+4. **No contingency planning**: When Zack expressed concern about "what to do if I do wet the bed," the therapist acknowledged this but did not develop a concrete plan. This is a critical gap—Zack needs coping strategies for the likely scenario that bed-wetting will occur despite his efforts.
+
+**Summary:**
+The therapist demonstrated a coherent CBT strategy for anxiety reduction but with significant gaps: incomplete clinical formulation (missing primary enuresis intervention), limited scope (no medical/sleep hygiene components), and no contingency planning for likely bed-wetting episodes.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 4/6**
+
+**Explanation:**
+
+The therapist demonstrated moderate skill in applying CBT techniques. The primary technique used was **cognitive restructuring** (examining evidence for/against automatic thoughts). The therapist asked Zack: "What evidence do you have that this will definitely happen? And is there any evidence that it might not happen?" This is a standard, appropriately applied CBT technique. Zack was able to generate a more balanced thought, and the therapist validated this: "your balanced thought acknowledges both the possibility of wetting the bed and the possibility of not wetting it, which brings some hope alongside the fear."
+
+The therapist also used **behavioral experimentation** as a technique. The therapist asked: "what small step or experiment could you try next time you stay at your aunt's to test this balanced thought?" This is appropriate application of behavioral activation and hypothesis-testing, core CBT techniques.
+
+The therapist used **thought records implicitly** by having Zack identify situations, thoughts, feelings, and behaviors, though not in a formal written format. The therapist also used **psychoeducation** about the cognitive-emotional-behavioral connection.
+
+However, there are significant gaps in technique application:
+
+1. **No formal thought record**: While the therapist elicited the cognitive-behavioral chain verbally, a written thought record would have been more concrete and useful for an 8-year-old to reference during homework.
+
+2. **Limited behavioral techniques**: The therapist did not use:
+   - **Behavioral activation/scheduling** (planning specific activities to build confidence)
+   - **Exposure hierarchy** (graded approach to feared situations)
+   - **Relaxation/coping skills** (breathing exercises, progressive muscle relaxation for anxiety management)
+   - **Sleep hygiene interventions** (fluid restriction, bedtime routine optimization)
+   - **Bedwetting alarm** (gold standard behavioral intervention for primary nocturnal enuresis)
+
+3. **No problem-solving training**: The therapist could have taught Zack explicit problem-solving steps to apply to obstacles (e.g., "If your aunt gets mad, what could you do?").
+
+4. **Limited use of behavioral experiments**: Only two behavioral steps were identified; a more comprehensive plan would include multiple, sequenced experiments.
+
+5. **No skills training**: The therapist did not teach Zack specific coping skills (e.g., self-talk, anxiety management techniques) to use during sleepovers.
+
+**Summary:**
+The therapist applied cognitive restructuring and basic behavioral experimentation appropriately but with moderate skill. Significant gaps: no formal thought records, limited behavioral techniques, no exposure hierarchy, no coping skills training, and missing evidence-based interventions for primary nocturnal enuresis.
+
+---
+
+### 11. Homework
+### **Score: 4/6**
+
+**Explanation:**
+
+The therapist assigned specific, relevant homework with clear rationale and timing. The homework consisted of:
+
+1. **Use the bathroom before bed** at aunt's house next Friday
+2. **Write down what to say to aunt** about the teasing before attempting to discuss it
+
+The therapist provided adequate explanation: "Using the bathroom before bed is a concrete step you can definitely take, and writing down what you want to say to your aunt can help you feel more prepared and confident." This demonstrates clear rationale-linking to the session's work.
+
+The timing was specific: "next Friday" provides a concrete deadline. The therapist also checked Zack's understanding and commitment: "Does this sound like a plan you can try? When do you think you might do these steps?" Zack confirmed his willingness and provided realistic timing estimates.
+
+The homework is appropriately tailored to Zack's identified concerns and the behavioral experiments discussed in session. The tasks are concrete, achievable, and designed to test the balanced thought about bed-wetting likelihood.
+
+However, there are notable gaps:
+
+1. **No review of prior homework**: This is the first session, so there is no prior homework to review. However, the therapist should have established this as a routine expectation for future sessions.
+
+2. **Limited specificity on the writing task**: The therapist said "write down what you want to say to your aunt" but did not provide specific guidance on:
+   - How long the written statement should be
+   - What specific points to include
+   - Whether to show it to the therapist or mother first
+   - When/how to present it to the aunt
+
+3. **No contingency planning**: The therapist did not assign homework for "what to do if bed-wetting occurs," which Zack identified as a remaining concern. This is a critical gap.
+
+4. **No parental involvement**: The therapist did not explicitly involve the mother in the homework plan or assign her any tasks (e.g., "Help Zack practice what he'll say to his aunt" or "Ensure Zack uses the bathroom before bed"). For an 8-year-old, parental support is essential.
+
+5. **No tracking/monitoring**: The therapist did not assign any monitoring task (e.g., "Keep track of whether you wet the bed each night" or "Rate your anxiety each morning"). This would provide objective data for the next session.
+
+6. **Limited scope**: The homework focuses only on anxiety management, not on the primary nocturnal enuresis itself. No fluid restriction, sleep hygiene, or bedwetting alarm discussion.
+
+**Summary:**
+The therapist assigned specific, relevant homework with clear rationale and timing. Gaps: no contingency planning for bed-wetting, limited specificity on writing task, no parental involvement, no monitoring/tracking, and no interventions for primary enuresis itself.
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- Excellent understanding of patient's internal experience and accurate empathic reflection
+- Exemplary interpersonal effectiveness with warmth, genuineness, and appropriate professionalism
+- Strong collaborative agenda-setting and maintenance of patient agency throughout
+- Appropriate use of Socratic questioning for cognitive restructuring
+- Clear, coherent CBT formulation of anxiety-driven avoidance
+- Specific, relevant homework with clear rationale and timing
+- Good pacing and session structure without significant tangents
+- Consistent checking for understanding through reflective summaries
+- Appropriate focus on key anxiety cognitions and behaviors
+
+**Critical Deficiencies:**
+- **Missing primary clinical target**: No assessment or intervention for primary nocturnal enuresis itself (the presenting diagnosis). No discussion of evidence-based interventions (bedwetting alarms, desmopressin, fluid restriction, sleep hygiene).
+- **Incomplete formulation**: Treats bed-wetting primarily as anxiety trigger rather than as a separate physiological condition requiring medical/behavioral intervention.
+- **No contingency planning**: Zack explicitly stated concern about "what to do if I do wet the bed," but therapist did not develop coping strategies for this likely scenario.
+- **Limited behavioral techniques**: No exposure hierarchy, relaxation/coping skills training, behavioral activation, or sleep hygiene interventions.
+- **No parental involvement**: Mother not engaged in homework planning or support strategy despite child's age (8 years old).
+- **No monitoring/tracking**: No assignment to track bed-wetting frequency, anxiety levels, or homework completion.
+- **Limited specificity on homework**: Writing task lacks concrete guidance on content, length, or presentation strategy.
+- **Incomplete feedback elicitation**: Mid-session feedback opportunities missed; feedback only sought at session end.
+- **No explicit rationale for interventions**: Therapist did not explain why cognitive restructuring or behavioral experiments are helpful.
+
+---
+
+## Summary of Feedback
+
+### Strengths
+
+This session demonstrates several exemplary therapeutic skills. The therapist established a warm, collaborative therapeutic relationship with excellent empathic attunement to Zack's experience. The agenda-setting was collaborative and appropriately prioritized, and the therapist maintained clear focus throughout. The cognitive restructuring work was skillfully executed using Socratic questioning, allowing Zack to independently examine evidence and develop a more balanced thought. The therapist's reflections were accurate and demonstrated genuine understanding of the layered nature of Zack's distress (primary anxiety about sleepovers, secondary shame about bed-wetting, tertiary humiliation from teasing). The homework assignment was specific, relevant, and appropriately timed. Overall, the session demonstrates solid foundational CBT skills and excellent therapeutic relationship-building.
+
+### Critical Deficiencies
+
+However, this session has a fundamental clinical gap: **it does not adequately address the primary presenting diagnosis of nocturnal enuresis**. The therapist focused narrowly on anxiety management and avoidance reduction but did not assess or intervene on the bed-wetting itself. This is a significant oversight in a child psychiatry context. Primary nocturnal enuresis is a physiological condition with evidence-based interventions (bedwetting alarms, desmopressin medication, fluid restriction, sleep hygiene optimization) that should be part of the treatment plan. The therapist's approach treats bed-wetting only as an anxiety trigger rather than as a clinical problem requiring its own intervention.
+
+Additionally, the therapist did not develop contingency planning for the likely scenario that Zack will wet the bed despite his efforts. Zack explicitly stated: "Maybe next time I'd like to talk more about what to do if I do wet the bed, because I'm still scared about that part." The therapist acknowledged this concern but did not address it, leaving Zack without coping strategies for a probable event. This is a critical clinical gap that will likely undermine treatment success and increase Zack's distress.
+
+The session also lacks parental involvement. At age 8, Zack requires parental support for homework implementation and coordination of care. The therapist did not engage the mother in the treatment plan, assign her any tasks, or discuss how she can support Zack's progress. This is a significant omission for child-focused CBT.
+
+### Impact on Patient Care
+
+These deficiencies will likely limit treatment effectiveness. While the anxiety-focused intervention may reduce Zack's worry about sleepovers, it does not address the underlying bed-wetting that is driving much of his distress. If Zack continues to wet the bed despite his efforts (which is likely, given the physiological nature of primary nocturnal enuresis), he may experience increased hopelessness and shame, potentially worsening his anxiety and avoidance. The lack of contingency planning means Zack will be unprepared for this likely scenario, which could damage the therapeutic relationship and his confidence in treatment.
+
+Furthermore, without parental involvement, the homework plan may not be consistently implemented. An 8-year-old is unlikely to independently remember to use the bathroom before bed or to write down his thoughts without parental reminders and support. The therapist's failure to engage the mother represents a missed opportunity to strengthen the treatment plan.
+
+Most critically, the therapist's narrow focus on anxiety management, while appropriate for a component of treatment, does not constitute adequate treatment for primary nocturnal enuresis. A comprehensive child psychiatry approach would include medical evaluation, evidence-based behavioral interventions (bedwetting alarms), and realistic discussion of timeline and prognosis. The current plan may inadvertently reinforce the idea that bed-wetting is primarily a psychological problem (anxiety-driven) rather than a physiological condition, which could increase Zack's shame and self-blame.
+
+---
+
+## Recommendations
+
+### 1. **Assess and Intervene on Primary Nocturnal Enuresis (HIGHEST PRIORITY)**
+- **Action:** In the next session, conduct a comprehensive assessment of the bed-wetting itself: frequency, timing (early/late night), volume, family history of enuresis, daytime continence, constipation, sleep quality, and fluid intake patterns. Discuss evidence-based interventions including bedwetting alarms (most effective), desmopressin medication, and sleep hygiene optimization.
+- **Example:** "Zack, I want to understand more about the bed-wetting itself. How many nights a week does it happen? Is it usually early in the night or later? Does it happen every time you sleep, or sometimes you stay dry? This will help us figure out the best way to help you stay dry at night."
+- **Practice:** Review literature on primary nocturnal enuresis management (American Academy of Pediatrics guidelines). Consider consultation with pediatrics or urology if indicated. Develop a separate treatment plan for enuresis that runs parallel to anxiety management.
+
+### 2. **Develop Contingency Planning for Bed-Wetting Episodes (CRITICAL)**
+- **Action:** Explicitly address Zack's stated concern: "what to do if I do wet the bed." Develop concrete coping strategies for managing bed-wetting when it occurs, including: what to do immediately (change clothes, clean up), how to manage shame/embarrassment, what to tell his aunt, and how to maintain confidence despite the accident.
+- **Example:** "Zack, you said you're worried about what to do if you wet the bed. That's a really smart thing to think about. Let's make a plan. If you do wet the bed, here's what you can do: First, you can get up and change your clothes. Second, you can tell your aunt, 'I had an accident, but I'm going to clean up.' Third, you can remind yourself that this happens to lots of kids and it doesn't mean anything is wrong with you. Does that help?"
+- **Practice:** Role-play the scenario with Zack. Have him practice what he'll say and do. Develop a written "plan for if it happens" that he can reference. Discuss with mother how she can support Zack if an accident occurs.
+
+### 3. **Engage Mother as Active Treatment Partner (CRITICAL)**
+- **Action:** Schedule a session with mother (with Zack's assent) to explain the treatment plan, assign her specific tasks, and coordinate care. Discuss: homework support, bedtime routine optimization, fluid management, monitoring, and how to respond supportively if bed-wetting occurs.
+- **Example:** "Mrs. Thompson, I'd like to work with you to support Zack's progress. Here are some things that would really help: (1) Remind Zack to use the bathroom before bed at your house and at his aunt's, (2) Help him practice what he wants to say to his aunt, (3) Keep track of how many nights he wets the bed so we can see if things are improving, (4) If he does have an accident, help him clean up without shame or punishment. Can you help with these?"
+- **Practice:** Provide mother with written homework instructions. Discuss realistic expectations (bed-wetting may continue for weeks/months despite treatment). Establish a communication plan (phone check-ins, brief updates).
+
+### 4. **Create a Formal Thought Record for Zack to Use at Home**
+- **Action:** Develop a simple, visual thought record (age-appropriate, with pictures/icons if helpful) that Zack can fill out when anxious about sleepovers. Include: Situation → Automatic Thought → Evidence For/Against → Balanced Thought → Feeling.
+- **Example:** A one-page worksheet with boxes for each step, using simple language: "What happened? What did I think? Is that thought 100% true? What's a more balanced thought? How do I feel now?"
+- **Practice:** Complete one thought record together in session as a model. Have Zack practice filling one out. Assign him to complete one before each sleepover and bring it to the next session.
+
+### 5. **Develop an Exposure Hierarchy for Sleepover Anxiety**
+- **Action:** Create a graded, step-by-step approach to facing sleepover situations, starting with easier steps and progressing to more challenging ones. This provides structure and builds confidence through mastery.
+- **Example:** 
+  - Step 1: Talk about going to aunt's house without anxiety (in safe environment)
+  - Step 2: Pack a bag for sleepover
+  - Step 3: Arrive at aunt's house and stay for 1 hour
+  - Step 4: Stay for dinner and evening
+  - Step 5: Stay overnight
+  - Step 6: Stay overnight and manage bed-wetting if it occurs
+- **Practice:** Review hierarchy with Zack and mother. Assign one step at a time. Celebrate completion of each step.
+
+### 6. **Teach Zack Anxiety Management Coping Skills**
+- **Action:** Teach specific, age-appropriate coping strategies for managing anxiety during sleepovers: deep breathing, progressive muscle relaxation, positive self-talk, grounding techniques, or distraction strategies.
+- **Example:** "Zack, when you feel scared at your aunt's house, you can try this: Take a slow breath in through your nose for 4 counts, hold it for 4 counts, and breathe out through your mouth for 4 counts. Do this 5 times. This helps your body calm down. Let's practice it together."
+- **Practice:** Teach and practice one coping skill in session. Have Zack demonstrate it back to you. Assign him to practice it daily and use it before bed at aunt's house.
+
+### 7. **Assess and Address Sleep Quality and Sleep Hygiene**
+- **Action:** Conduct a sleep assessment: bedtime, wake time, sleep duration, sleep environment (noise, light, temperature), caffeine/sugar intake, screen time before bed, and any sleep disturbances. Optimize sleep hygiene as part of enuresis management.
+- **Example:** "Zack, let's talk about sleep. What time do you go to bed? How long do you sleep? Do you drink a lot of water or juice before bed? Is your aunt's bedroom quiet and dark? These things can affect bed-wetting."
+- **Practice:** Develop a sleep hygiene plan with specific recommendations (e.g., no fluids after 6 PM, consistent bedtime, dark/quiet bedroom). Provide written guidelines to mother.
+
+### 8. **Establish Monitoring and Tracking System**
+- **Action:** Assign Zack and mother to track: (1) nights spent at aunt's house, (2) bed-wetting frequency/nights stayed dry, (3) anxiety level (0-10 scale), (4) homework completion. Use simple tracking sheet or calendar.
+- **Example:** "Zack, I'd like you and your mom to keep track of how many nights you stay dry at your aunt's house. You can put a sticker on a calendar for each dry night. This helps us see if things are getting better."
+- **Practice:** Create a simple tracking sheet together. Explain how data will be reviewed in next session to measure progress.
+
+### 9. **Clarify and Expand Homework Specificity**
+- **Action:** Revise homework to include: (1) Specific bathroom routine (time, location, how many times), (2) Detailed writing task (what to say to aunt, practice saying it to mother first), (3) Thought record completion, (4) Coping skill practice, (5) Tracking sheet completion, (6) Contingency plan review.
+- **Example:** "Here's your homework: (1) Every night at your aunt's, use the bathroom right before bed—set a phone alarm if you need to remember. (2) Write down 3 things you want to tell your aunt about the teasing—practice saying them to your mom first. (3) Fill out one thought record if you feel worried. (4) Practice your breathing exercise 5 times this week. (5) Mark on the calendar each morning whether you stayed dry. (6) Read the 'What to Do If It Happens' plan we made together."
+- **Practice:** Review each homework item with Zack and mother. Ensure understanding. Discuss potential obstacles and problem-solve solutions.
+
+### 10. **Prepare for Likely Bed-Wetting and Manage Expectations**
+- **Action:** Have an explicit conversation with Zack and mother about realistic expectations: bed-wetting may continue despite treatment efforts, this is normal and not Zack's fault, and improvement typically takes weeks to months. Normalize the experience and reduce shame.
+- **Example:** "Zack, I want to be honest with you. Even though we're working on this, you might still wet the bed sometimes. That's okay. Lots of kids your age do this, and it doesn't mean anything is wrong with you. Our job is to help you feel less scared about it and to help your body learn to stay dry over time. This takes patience."
+- **Practice:** Discuss with mother how to respond supportively if bed-wetting occurs (no punishment, matter-of-fact cleanup, reassurance). Provide written guidance on managing accidents.
+
+### 11. **Plan for Medical Evaluation and Medication Consideration**
+- **Action:** Coordinate with pediatrician for medical evaluation if not already completed. Discuss potential role of desmopressin (DDAVP) medication, which is effective for primary nocturnal enuresis, especially for sleepovers. Ensure comprehensive medical workup (urinalysis, assessment for sleep apnea, etc.).
+- **Example:** "I'd like to make sure your pediatrician has checked you out to make sure everything is okay with your body. They might do a simple urine test. There's also a medicine called desmopressin that can help some kids stay dry at night, especially for sleepovers. Let's talk to your doctor about whether that might help you."
+- **Practice:** Provide mother with written information about desmopressin and primary nocturnal enuresis. Facilitate communication with pediatrician. Discuss pros/cons of medication vs. behavioral interventions.
+
+---
+
+## Overall Session Score: 4.5/6
+
+**Summary:**
+
+This session demonstrates solid foundational CBT skills with excellent therapeutic relationship-building and appropriate anxiety-focused intervention. The therapist demonstrated exemplary understanding, interpersonal effectiveness, and collaboration, with competent application of cognitive restructuring and basic behavioral techniques. However, the session has a critical clinical gap: **it does not adequately address the primary presenting diagnosis of nocturnal enuresis or engage the parent as a treatment partner**. 
+
+The therapist's narrow focus on anxiety management, while appropriate as one component of treatment, does not constitute comprehensive care for an 8-year-old with primary nocturnal enuresis. The failure to assess the bed-wetting itself, discuss evidence-based interventions (bedwetting alarms, desmopressin, sleep hygiene), develop contingency planning for likely bed-wetting episodes, or involve the mother in treatment planning represents significant clinical deficiencies that will likely limit treatment effectiveness and may inadvertently increase Zack's shame and self-blame.
+
+**Current Competency Assessment:** The therapist demonstrates competent general CBT skills (4-5/6 range) but inadequate child psychiatry competency for this specific case. The session would be appropriate for an adult with pure anxiety disorder but is incomplete for a child with a physiological condition (enuresis) complicated by secondary anxiety.
+
+**Most Critical Changes Needed Immediately:**
+1. Comprehensive assessment and intervention for primary nocturnal enuresis itself
+2. Contingency planning for bed-wetting episodes (addressing Zack's stated concern)
+3. Active engagement of mother as treatment partner
+4. Realistic expectation-setting about timeline and prognosis
+
+**Likelihood of Producing Therapeutic Change:** Moderate. The anxiety-focused intervention may reduce Zack's worry about sleepovers, but without addressing the underlying bed-wetting and without parental support, treatment success is limited. If bed-wetting continues (likely), Zack may experience increased hopelessness and shame, potentially worsening outcomes. A revised treatment plan addressing all 11 recommendations above would significantly improve prognosis.

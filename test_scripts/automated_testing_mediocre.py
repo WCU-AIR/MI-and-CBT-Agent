@@ -1,5 +1,6 @@
 import csv
 import json
+import math
 import os
 import random
 import sys
@@ -119,6 +120,12 @@ def run_mediocre_sample(mode, patient_files, save_folder, max_workers=DEFAULT_WO
         row = {"Student": mediocre_name, "Patient": patient_name}
         for key, values in scores.items():
             row[key] = values[0] if values else None
+        plp = results.get("patient_session_avg_logprob")
+        slp = results.get("student_session_avg_logprob")
+        row["patient_avg_logprob"] = round(plp, 4) if plp is not None else None
+        row["patient_avg_prob_pct"] = round(math.exp(plp) * 100, 2) if plp is not None else None
+        row["student_avg_logprob"] = round(slp, 4) if slp is not None else None
+        row["student_avg_prob_pct"] = round(math.exp(slp) * 100, 2) if slp is not None else None
         return row, feedback_path
 
     rows = [None] * total
@@ -173,6 +180,7 @@ def load_existing_samples(aggregate_folder, sample_size, seed):
 NON_SCORE_COLS = {
     "Student", "Patient", "Condition", "session_folder", "feedback_file",
     "patient_avg_logprob", "patient_avg_prob_pct", "logprob_turns", "logprob_recorded",
+    "student_avg_logprob", "student_avg_prob_pct",
 }
 
 
@@ -341,9 +349,16 @@ def run_all():
     print(f"Sample size per mode: {SAMPLE_SIZE}")
     print(f"Saving combined run to: {parent_folder}")
 
-    summaries = []
-    for offset, mode in enumerate(MODES_TO_RUN):
-        summaries.append(run_mode(mode, DEFAULT_SEED + offset, parent_folder))
+    # Run MI and CBT modes in parallel — they are fully independent
+    summaries = [None] * len(MODES_TO_RUN)
+    with ThreadPoolExecutor(max_workers=len(MODES_TO_RUN)) as executor:
+        futures = {
+            executor.submit(run_mode, mode, DEFAULT_SEED + offset, parent_folder): offset
+            for offset, mode in enumerate(MODES_TO_RUN)
+        }
+        for future in as_completed(futures):
+            offset = futures[future]
+            summaries[offset] = future.result()
 
     total_elapsed = time.time() - overall_start
     run_summary = {

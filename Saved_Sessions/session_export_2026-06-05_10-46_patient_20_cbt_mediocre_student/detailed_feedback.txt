@@ -1,0 +1,835 @@
+
+# CBT Session Evaluation Prompt
+
+## Role
+You are evaluating a Cognitive Behavioral Therapy (CBT) session. Your goal is to provide rigorous, evidence-based feedback to help trainees become excellent CBT therapists. Be strict and thorough—lenient feedback harms future patients.
+
+## Input
+You will receive a conversation transcript with:
+- **Therapist:** [response]
+- **Patient:** [response]
+
+Base evaluation ONLY on transcript content. Ignore typos.
+
+## Scoring Scale (0-6)
+- **0:** Not addressed
+- **1:** Minimal/inadequate
+- **2:** Poor with significant gaps
+- **3:** Below average; inconsistent
+- **4:** Adequate; basic requirements met
+- **5:** Good; consistent with minor gaps
+- **6:** Excellent; exemplary throughout
+
+**Key Standards:**
+- Score based on evidence-based CBT, not general counseling
+- Scores 5-6 reserved for truly excellent technique
+- Basic empathy alone doesn't warrant high scores
+- Always cite specific transcript examples
+- Identify what was NOT done that should have been
+- Be rigorous—this prevents patient harm
+
+## Evaluation Criteria (11 Categories)
+
+### 1. Agenda
+Setting agenda for session, establishing goals, prioritizing topics collaboratively, maintaining session structure
+
+### 2. Feedback
+Eliciting patient feedback about session, checking understanding, asking for patient's takeaways, soliciting input on helpfulness
+
+### 3. Understanding
+Therapist's comprehension of patient's concerns, accurate reflection, demonstrating grasp of patient's experience and perspective
+
+### 4. Interpersonal Effectiveness
+Warmth, empathy, genuineness, appropriate professional boundaries, creating safe therapeutic environment, rapport building
+
+### 5. Collaboration
+Working as partners, shared decision-making, soliciting patient input, collaborative empiricism, patient actively engaged in process
+
+### 6. Pacing and Efficient Use of Time
+Session flow, time management, appropriate depth on topics, avoiding tangents, covering important material without rushing or dragging
+
+### 7. Guided Discovery
+Using Socratic questions, facilitating self-discovery, asking rather than telling, helping patient reach insights independently
+
+### 8. Focusing on Key Cognitions or Behaviors
+Identifying and exploring central automatic thoughts, core beliefs, or critical behavioral patterns relevant to presenting problems
+
+### 9. Strategy for Change
+Clear plan for symptom improvement, explicit treatment approach, logical progression toward goals, conceptualization guiding interventions
+
+### 10. Application of CBT Techniques
+Using specific CBT methods (cognitive restructuring, behavioral experiments, thought records, exposure, activity scheduling, etc.)
+
+### 11. Homework
+Assigning between-session tasks, providing clear rationale, ensuring specificity, checking patient understanding and commitment
+
+## Score Requirements Examples
+
+**For 6/6:** Explicit collaborative agenda with time allocation, 3+ instances of feedback elicitation, systematic application of CBT techniques, specific homework with clear rationale
+
+**For 4/6:** Some collaborative language, 1-2 instances of technique use, basic implementation with room for improvement
+
+**For 2/6:** Technique touched on but not systematically applied, significant gaps in execution
+
+**For 0/6:** Technique completely absent from session
+
+## Required Output Format
+
+```
+## DETAILED CLINICAL EVALUATION
+# Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+### 1. Agenda
+### **Score: X/6**
+
+**Explanation:**
+[2-3 paragraphs covering: (1) What was done with specific examples, (2) What was missing, (3) Why it matters for outcomes, (4) Frequency of demonstration]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+### 2. Feedback
+### **Score: X/6**
+
+**Explanation:**
+[Same format]
+
+**Summary:**
+[1-2 sentences]
+
+---
+
+[Repeat for all 11 criteria]
+
+---
+
+## Overall Summary
+
+**Strengths:**
+- [Bullet points of genuine strengths observed]
+
+**Critical Deficiencies:**
+- [Bullet points of significant gaps organized by theme]
+
+**Overall Session Score:** X.X/6 (average of all 11 scores)
+
+---
+
+## Summary of Feedback
+
+### Strengths
+[Paragraph describing what was done well]
+
+### Critical Deficiencies
+[Detailed paragraph about major gaps in CBT delivery]
+
+### Impact on Patient Care
+[Paragraph analyzing how deficiencies affect treatment outcomes]
+
+---
+
+## Recommendations
+
+### 1. [Highest Priority Issue]
+- **Action:** [Specific technique or behavior to implement]
+- **Example:** [Exact phrases therapist could use]
+- **Practice:** [How to develop this skill]
+
+### 2. [Second Priority]
+- **Action:** [Specific change needed]
+- **Example:** [Concrete example]
+- **Practice:** [Development approach]
+
+[Continue for 8-10 prioritized, specific, actionable recommendations addressing all major deficiencies]
+
+---
+
+## Overall Session Score: X.X/6
+
+**Summary:**
+[2-3 paragraphs providing: (1) Current competency assessment, (2) Most critical changes needed immediately, (3) Whether session qualifies as evidence-based CBT and likelihood of producing therapeutic change]
+```
+
+## Before Scoring - Ask Yourself:
+1. What CBT-specific techniques were used (not just general therapy)?
+2. What critical CBT components are missing?
+3. Would this lead to measurable symptom improvement?
+4. Can the patient apply learnings independently?
+
+## For Each Criterion - Identify:
+1. What was done (with specific transcript examples)
+2. What was missing (specific techniques that should have been used)
+3. Why missing elements matter for patient outcomes
+4. How frequently the skill was demonstrated (or not)
+
+## Consistency Check
+After generating all scores, verify:
+- Overall score equals the average of all 11 criterion scores
+- Low scores (0-2) have serious, detailed critiques with urgent recommendations
+- Explanations clearly support the scores assigned
+- Recommendations directly address all identified deficiencies
+- Severity of language matches score severity
+
+---
+
+**Remember:** This must be rigorous CBT evaluation, not general counseling assessment. Be critical and thorough. The goal is preventing patient harm through excellent training.
+
+Cognitive Therapy Rating Scale (CTRS)
+This document outlines a structured framework for assessing therapist competence in Cognitive Behavior Therapy (CBT). 
+It is used for training, supervision, and evaluation. Each item is scored on a 0–6 scale:
+
+0 = Poor
+2 = Barely Adequate
+4 = Good
+6 = Excellent
+
+Odd numbers (1, 3, 5) represent intermediate ratings between descriptors. Ratings are based on the therapist’s skill level while accounting for patient difficulty.
+
+Category 1: General Therapeutic Skills
+
+Agenda
+Score    Description
+6    Therapist worked with patient to set an appropriate agenda with target problems, suitable for the available time. Established priorities and then followed agenda.
+4    Therapist worked with patient to set a mutually satisfactory agenda that included specific target problems (e.g., anxiety at work, dissatisfaction with marriage).
+2    Therapist set agenda that was vague or incomplete.
+0    Therapist did not set agenda.
+
+Feedback
+Score    Description
+6    Therapist was especially adept at eliciting and responding to verbal and non-verbal feedback throughout the session (e.g., elicited reactions to session, regularly checked for understanding, helped summarize main points at end of session).
+4    Therapist asked enough questions to be sure that the patient understood the therapist’s line of reasoning throughout the session and to determine the patient’s reactions. Adjusted behavior when appropriate.
+2    Therapist elicited some feedback, but not enough to ensure understanding or satisfaction.
+0    Therapist did not ask for feedback.
+
+Understanding
+Score    Description
+6    Therapist thoroughly understood patient’s “internal reality” and communicated this through verbal and non-verbal empathy. Excellent listening and empathic skills.
+4    Therapist generally grasped the patient’s “internal reality” with good listening and empathy.
+2    Therapist usually reflected or rephrased explicit statements but missed subtle communication. Limited empathy.
+0    Therapist repeatedly failed to understand explicit statements; consistently missed the point. Poor empathy.
+
+Interpersonal Effectiveness
+Score    Description
+6    Therapist displayed optimal warmth, concern, confidence, genuineness, and professionalism, tailored to patient and session.
+4    Therapist displayed satisfactory warmth, concern, confidence, genuineness, and professionalism, with no significant problems.
+2    Therapist was not destructive but had noticeable interpersonal problems (e.g., aloof, insincere, impatient).
+0    Therapist had poor interpersonal skills (e.g., hostile, demeaning, destructive).
+
+Collaboration
+Score    Description
+6    Collaboration was excellent; therapist encouraged patient to take active role and function as a “team.”
+4    Therapist collaborated, focused on mutually important problem, and established rapport.
+2    Therapist attempted collaboration but struggled to define a problem or establish rapport.
+0    Therapist did not attempt to collaborate.
+
+Pacing and Efficient Use of Time
+Score    Description
+6    Therapist used time efficiently, tactfully limiting peripheral discussion and pacing appropriately.
+4    Therapist was reasonably successful at using time efficiently, maintaining control over discussion flow and pacing.
+2    Therapist had significant problems with pacing (too little structure, too rigid, too slow/fast).
+0    Therapist made no attempt to structure time; session seemed aimless.
+
+Category 2: Conceptualization, Strategy, and Technique
+
+Guided Discovery
+Score    Description
+6    Therapist was especially adept at guided discovery, helping patient generate conclusions through skillful questioning.
+4    Therapist generally used guided discovery (evidence examination, considering alternatives, weighing pros/cons).
+2    Therapist relied too much on persuasion/debate but remained supportive.
+0    Therapist primarily lectured, debated, or cross-examined, putting patient on the defensive.
+
+Focusing on Key Cognitions or Behaviors
+Score    Description
+6    Therapist skillfully focused on the most relevant cognitions/behaviors, offering strong potential for progress.
+4    Therapist focused on relevant cognitions/behaviors but could have chosen more central ones.
+2    Therapist attempted focus but targeted irrelevant or secondary issues.
+0    Therapist did not attempt to elicit cognitions or behaviors.
+
+Strategy for Change (Evaluate quality of strategy, not outcome)
+Score    Description
+6    Therapist followed a consistent, promising change strategy using the most appropriate CBT techniques.
+4    Therapist used a coherent strategy for change with reasonable promise, incorporating CBT techniques.
+2    Therapist selected CBT techniques but overall strategy was vague or unpromising.
+0    Therapist did not select CBT techniques.
+
+Application of Cognitive-Behavioral Techniques (Evaluate skill of application)
+Score    Description
+6    Therapist very skillfully and resourcefully applied CBT techniques.
+4    Therapist applied CBT techniques with moderate skill.
+2    Therapist applied CBT techniques with significant flaws.
+0    Therapist did not apply CBT techniques.
+
+Homework
+Score    Description
+6    Therapist reviewed prior homework and assigned carefully tailored, detailed new homework relevant to session (e.g., testing hypotheses, experimenting with new behaviors).
+4    Therapist reviewed prior homework and assigned standard CBT homework relevant to session, explained sufficiently.
+2    Therapist had significant difficulty (e.g., skipped review, unclear instructions, inappropriate homework).
+0    Therapist did not attempt to assign homework.
+
+Scoring Summary
+Total Score = Sum of all items (0–66 possible).
+
+- Part I: General Therapeutic Skills → Items 1–6
+- Part II: Conceptualization, Strategy, and Technique → Items 7–11
+
+Therapists are evaluated on both foundational skills and their ability to apply CBT methods effectively.
+
+Patient Profile for Reference:
+--- DISORDER ---
+Bipolar II Disorder
+
+--- CASE STUDY ---
+
+Pamela Kershaw was a 43-year-old married librarian who presented to an outpatient mental health clinic with a long history of episodic depressions.
+Most recently, she reported depressed mood since starting a new job one month earlier, with preoccupation about her work performance and social interactions. She had no energy or enthusiasm at home, preferring to watch television, overeat, and oversleep, leading to a 6-pound weight gain. She began crying several times per week and thought often of death, though she had never attempted suicide.
+
+Her depressive history began in her teens, with at least five adult depressive episodes characterized by depressed mood, low energy, hypersomnia, hyperphagia, guilt, decreased libido, and mild to moderate suicidal ideation without plan. These episodes were punctuated by brief periods of elevated energy, irritability, pressured speech, and flight of ideas, lasting hours to days, sometimes up to a week. During these periods, she appeared unusually happy, talkative, self-confident, productive, and needed little sleep—consistent with hypomania.
+
+Ms. Kershaw denied alcohol or substance misuse. Family history included a maternal aunt and grandfather with recurrent mania. Previous psychotherapy provided short-term relief but was interrupted by depressive episodes.
+
+On examination, she was well-groomed, overweight, soft-spoken, often averting her eyes. Movements were constrained, affect was sad and constricted, thought processes fluid but possibly slowed, thought content depressive with passive suicidal ideation, no hallucinations, delusions, or paranoia. Insight and judgment intact.
+
+Discussion: Ms. Kershaw’s recurrent depressive episodes and history of hypomanic periods support a bipolar II disorder diagnosis. Her hypomanic episodes are often brief but, with a prior 6-day episode, meet criteria for bipolar II. Accurate diagnosis is essential for effective management, including monitoring suicide risk and functional impairment.
+
+--- BEHAVIOUR ---
+
+Soft-spoken, often averts eyes
+
+Sad and constricted affect
+
+Constrained movements, no hand gestures
+
+Fluid thought processes, slightly slowed
+
+Cooperative, attentive with husband present
+
+Tearful occasionally
+
+--- DSM-5 SYMPTOMS ---
+
+Depressed mood
+
+Low energy (anergia)
+
+Hypersomnia
+
+Hyperphagia / weight gain
+
+Excessive guilt
+
+Mild to moderate suicidal ideation without plan
+
+Constricted affect
+
+Hypomanic episodes: elevated mood, increased energy, pressured speech, flight of ideas, decreased need for sleep
+
+Occasional irritability
+
+--- PATIENT PROFILE ---
+Name: Pamela Kershaw
+Sex: Female
+Age: 43 years
+DOB: July 8, 1980
+Place of Birth: Denver, CO
+Address: 78 Oak Lane, Denver, CO
+Contact: (555) 246-8100
+Marital Status: Married
+Children: Two school-aged children
+Occupation: Librarian
+Education: Bachelor’s degree in Library Science
+Religion: None specified
+Legal Guardian: N/A
+Presenting Complaint: Depressed mood, low energy, excessive sleep and eating
+Psychiatric History: Recurrent depressive episodes since teens; hypomanic episodes
+Psychotherapy: Previous intermittent therapy
+Medications: Not specified
+Substance Use: None
+Medical History: None significant
+Neurology: Normal
+Family History: Maternal aunt and grandfather with mania
+Mental Status: Depressed mood, constricted affect, low energy, hypersomnia, hyperphagia, mild suicidal ideation, cooperative, soft-spoken, thought processes fluid but slowed
+
+--- DIAGNOSIS ---
+Bipolar II disorder, current episode depressed, moderate severity
+
+--- END CASE STUDY ---
+
+Clinical Summary:
+Pamela Kershaw, a 43-year-old married librarian, presents to an outpatient mental health clinic accompanied by her husband for evaluation of a recent episode of depressed mood and related concerns following a job change. She has a longstanding history of recurrent mood episodes and prior psychotherapy.
+ 
+ Here is the therapy session transcript to evaluate: 
+ PSYCHIATRIST: Hi there! It’s good to see you today. I was thinking maybe we could talk a bit about what’s been on your mind lately and see if we can figure out some things to work on. How does that sound? 
+ PATIENT: Hello. Um, yeah, that sounds okay. I've just been feeling really tired all the time lately, like I can't get motivated to do much. At work, I keep worrying that I’m not doing things right or that someone will notice and think less of me. It’s been hard to stop those thoughts. 
+ PSYCHIATRIST: I see, so feeling tired and worried about work is bothering you. Maybe we can start by looking at one of those moments when you felt worried. Like, what was going through your mind at that time? Were you thinking something like, "I'm not good enough" or "They will judge me"? Sometimes just noticing those thoughts can help. What do you think? 
+ PATIENT: Yes, that's exactly it. I kept thinking, "I'm not good enough" and "What if they think I'm slow or stupid because I messed up that report?" I know it might sound silly, but those thoughts just keep coming back, and it feels like I can’t shake them. Even though I try to tell myself that maybe I’m overthinking, it just doesn’t help much. 
+ PSYCHIATRIST: Yeah, those kinds of thoughts can be really tough to deal with. It sounds like you’re feeling pretty down about yourself when those thoughts come up. Maybe it would help to try thinking about it differently—like, what if instead of "I'm not good enough," you told yourself, "I’m doing the best I can"? Sometimes just switching the thought can make a difference. What do you think about that? 
+ PATIENT: I guess that makes sense. It’s just hard to believe sometimes, though. I want to think that I’m doing okay, but part of me always doubts it. Like, what if "doing the best I can" isn’t good enough for the job? I worry that no matter what I do, it won’t be enough. It just feels safer to expect the worst, I suppose. 
+ PSYCHIATRIST: Yeah, I get that. It’s kind of like you’re protecting yourself by expecting the worst, right? Maybe you could try to notice when those doubts come up and then remind yourself that it’s okay to not be perfect. Like, maybe you could practice saying, "I’m doing what I can, and that’s okay." It might help you feel a bit less stressed. Do you think that might be useful? 
+ PATIENT: Yes, I think I could try that. It feels strange at first because I’m so used to worrying and feeling like I need to be perfect or else I’ve failed. I worry that if I slack off even a little, everything will fall apart. But maybe if I remind myself that it's okay to not be perfect, I could feel less tense. I’ll try to notice when I start those doubts and say that to myself. 
+ PSYCHIATRIST: Great, that sounds like a good start. Also, sometimes when we feel stressed, doing something relaxing like going for a walk or listening to music could help take your mind off things. You could try that when you notice the worries coming up. Do you think you might try something like that? 
+ PATIENT: I think I could try going for a walk. Sometimes when I’m at home, I just end up watching TV for hours and eating too much, which doesn’t really make me feel better. Maybe getting outside could help me clear my head a bit. It feels a little hard to get started, but I’ll try. 
+ PSYCHIATRIST: Okay, so we’ve talked about your worries at work and feeling tired, and you want to try reminding yourself you’re doing your best and maybe go for a walk to relax. That sounds like a good plan to me. For homework, maybe just try to notice your thoughts during the week and see if you can catch those worries when they come up. Does that sound alright? 
+ PATIENT: Yes, that sounds okay. I’ll try to pay attention to when my worries start and see if I can remind myself that I’m doing what I can. It might be hard to remember sometimes, but I want to try. Thank you. 
+ PSYCHIATRIST: Alright, thanks for sharing that. Before we finish, is there anything else on your mind that you want to talk about today? Maybe something different from work or feeling tired? 
+ PATIENT: Um, I guess I’ve been feeling kind of alone sometimes, even though my husband is around. It’s like I don’t want to bother anyone with my problems, and I don’t really know how to ask for help. It feels easier to just keep everything inside. But then I feel sad and a little stuck. 
+ PSYCHIATRIST: I’m sorry to hear you’ve been feeling alone and stuck. It’s understandable to feel that way when you don’t want to bother others. Maybe it would help to think about what you might say if you did try to ask for help, like practicing it a bit in your mind. You could try telling yourself that people might want to support you, even if it feels hard to reach out. What do you think about that idea? 
+ PATIENT: I think that might help a little. I often worry that if I ask for help, people will think I’m weak or that I’m just being dramatic. But maybe if I remind myself that my husband and close friends care about me, it could feel less scary. I want to feel like I’m not carrying all of this alone. 
+ PSYCHIATRIST: Yeah, it’s good that you recognize that worry. Maybe you could try practicing small steps, like sharing a little bit with someone you trust, just to see how it feels. It doesn’t have to be all at once. You should practice reminding yourself that asking for help is okay and doesn’t mean you’re weak. It might make you feel less stuck over time. How does that sound? 
+ PATIENT: That sounds like something I could try. Maybe just telling my husband a little bit when I feel ready could be a good first step. It’s scary to think about, but I want to try not to stay so alone with my feelings. I appreciate you saying that it’s okay to ask for help. It means a lot. 
+ PSYCHIATRIST: Alright, so to wrap up, we talked about your worries at work and feeling tired, and also about feeling alone sometimes. You’re going to try reminding yourself that you’re doing your best, maybe go for walks to relax, and practice sharing a bit with your husband when you feel ready. Just try to notice your thoughts this week and see how it goes. Keep in mind, it’s okay to take small steps. Thanks for sharing today, and I hope these ideas help you a bit. See you next time! 
+ PATIENT: Thank you. I feel a little better having talked about these things. I’ll try to remember the small steps and not expect too much too quickly. I appreciate your help. See you next time. 
+ 
+Now provide your comprehensive, strict evaluation of this diagnostic session. 
+Be thorough, critical, and specific in identifying areas for improvement.
+Structure your feedback using all the sections mentioned.
+ 
+ # DETAILED CLINICAL EVALUATION
+## Cognitive Behavioral Therapy Feedback: Therapist Evaluation
+
+---
+
+### 1. Agenda
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist opened with a vague, non-specific agenda statement: "I was thinking maybe we could talk a bit about what's been on your mind lately and see if we can figure out some things to work on." This is collaborative in tone but lacks the structure and specificity required for effective CBT. The therapist never established concrete session priorities, time allocation, or measurable goals. When the patient introduced multiple concerns (work worry, fatigue, isolation, suicidal ideation), the therapist did not prioritize or establish which issues would be addressed in this session versus future sessions.
+
+Critically, the therapist failed to address the patient's mild-to-moderate suicidal ideation mentioned in the case formulation. The patient stated, "I worry that no matter what I do, it won't be enough," and later expressed feeling "sad and a little stuck" and "alone," yet the therapist never explicitly assessed suicide risk, safety planning, or whether this was an appropriate outpatient intervention. For a patient with Bipolar II disorder and documented suicidal ideation, this is a serious omission. The agenda drifted reactively through whatever the patient mentioned rather than being strategically set by the therapist based on clinical priorities.
+
+By session end, the therapist summarized topics discussed but never confirmed whether these were the most important issues to address or whether the patient felt the session met their needs. There was no explicit agreement on session structure or time management.
+
+**Summary:**
+The therapist failed to establish a specific, prioritized agenda with measurable goals. Critical safety assessment was omitted entirely, and the session lacked strategic direction based on clinical formulation.
+
+---
+
+### 2. Feedback
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist made minimal effort to elicit or respond to patient feedback throughout the session. There were no explicit check-ins for understanding (e.g., "Does that make sense?" or "How are you feeling about what we've discussed?"). The therapist asked one open-ended question near the end: "Before we finish, is there anything else on your mind that you want to talk about today?" This is a closing question, not genuine feedback elicitation.
+
+The therapist never asked whether the patient understood the rationale for suggested interventions, whether the suggestions felt realistic or helpful, or whether the patient had concerns about the homework. When the patient expressed doubt ("It's just hard to believe sometimes, though"), the therapist acknowledged this but did not explore whether the cognitive restructuring approach was resonating or whether alternative strategies might be more effective.
+
+At session conclusion, the therapist provided a summary but did not ask: "How did this session feel for you?" "Did we address what you most needed?" "Do you have any concerns about the homework?" or "What was most helpful today?" These are fundamental feedback mechanisms in CBT that ensure collaborative empiricism and treatment adherence.
+
+**Summary:**
+Feedback elicitation was essentially absent. The therapist did not systematically check for understanding, validate patient concerns, or assess session helpfulness.
+
+---
+
+### 3. Understanding
+### **Score: 3/6**
+
+**Explanation:**
+
+The therapist demonstrated basic comprehension of explicit patient statements. When the patient described fatigue and work worry, the therapist reflected: "So feeling tired and worried about work is bothering you." When the patient articulated the thought "I'm not good enough," the therapist acknowledged this and offered alternatives.
+
+However, the therapist missed critical nuances in the patient's internal experience. The patient stated: "It feels safer to expect the worst, I suppose." This reveals a protective function of negative thinking—a core belief that catastrophizing prevents harm. The therapist did not explore this protective mechanism or understand why simple cognitive restructuring might feel threatening to the patient. Instead, the therapist offered surface-level reframing without addressing the underlying safety belief.
+
+More significantly, the therapist failed to grasp the patient's isolation and relational withdrawal: "I don't want to bother anyone with my problems." This reflects shame, low self-worth, and possible depressive withdrawal—not simply a communication skill deficit. The therapist treated this as a behavioral problem ("practice sharing") rather than exploring the cognitions driving avoidance (e.g., "I'm a burden," "People will reject me if they know the real me").
+
+The therapist also did not recognize or address the patient's ambivalence about change. The patient repeatedly expressed doubt ("It's just hard to believe," "It might be hard to remember sometimes," "It's scary to think about"), yet the therapist did not explore this resistance or collaboratively problem-solve barriers to change.
+
+**Summary:**
+The therapist grasped surface-level content but missed deeper emotional meanings, protective functions of symptoms, and patient ambivalence about change.
+
+---
+
+### 4. Interpersonal Effectiveness
+### **Score: 4/6**
+
+**Explanation:**
+
+The therapist demonstrated adequate warmth and professionalism. The opening was friendly ("Hi there! It's good to see you today"), and the therapist used validating language ("Yeah, those kinds of thoughts can be really tough to deal with," "I'm sorry to hear you've been feeling alone and stuck"). The therapist maintained a supportive tone throughout and did not display hostility, dismissiveness, or impatience.
+
+However, interpersonal effectiveness was limited by the therapist's reliance on suggestion and advice-giving rather than genuine collaborative exploration. Phrases like "Maybe it would help to try thinking about it differently" and "Maybe you could try to notice when those doubts come up" are directive rather than collaborative. While not harmful, they position the therapist as expert dispensing solutions rather than as a partner in discovery.
+
+The therapist's responses were somewhat generic and could apply to many patients. There was limited evidence of tailoring interventions to Pamela's specific context (new job, perfectionism, family responsibilities, bipolar disorder history). The therapist did not demonstrate deep understanding of her particular fears or strengths.
+
+Additionally, the therapist did not address the patient's nonverbal presentation described in the case: "soft-spoken, often averts eyes," "sad and constricted affect," "constrained movements." A more interpersonally effective therapist would have noticed and gently addressed these signs of distress or withdrawal, perhaps saying, "I notice you seem a bit withdrawn right now. How are you feeling in this moment?"
+
+**Summary:**
+The therapist was warm and supportive but relied on directive advice-giving rather than collaborative exploration. Responses lacked personalization and did not address nonverbal distress cues.
+
+---
+
+### 5. Collaboration
+### **Score: 2/6**
+
+**Explanation:**
+
+Collaboration was superficial and inconsistent with CBT principles of collaborative empiricism. The therapist used collaborative language ("we could talk," "we've talked about") but made unilateral clinical decisions without genuine partnership.
+
+The therapist suggested cognitive restructuring ("Maybe it would help to try thinking about it differently—like, what if instead of 'I'm not good enough,' you told yourself, 'I'm doing the best I can'?") without exploring whether the patient agreed this was the best approach or whether alternative strategies might be more acceptable. The patient's response—"I guess that makes sense. It's just hard to believe sometimes"—signals doubt, yet the therapist did not pause to collaboratively problem-solve this resistance.
+
+Similarly, when suggesting behavioral activation ("maybe going for a walk or listening to music could help"), the therapist did not ask: "What activities have helped you feel better in the past?" or "What feels realistic for you right now?" The therapist assumed a walk would be helpful without collaborative exploration.
+
+Most critically, the therapist did not involve the patient in treatment planning. The homework was assigned unilaterally: "For homework, maybe just try to notice your thoughts during the week." There was no discussion of: "What feels like a manageable first step?" "What barriers might get in the way?" "How will you remember to do this?" or "Would you prefer a different approach?"
+
+The patient's husband was present (per case description: "Cooperative, attentive with husband present") but was never engaged in the session. In CBT for depression with marital/family context, involving the spouse collaboratively is important, yet the therapist did not do this.
+
+**Summary:**
+The therapist used collaborative language but made unilateral clinical decisions. Patient input was not genuinely solicited on treatment approach, and the spouse was not engaged despite being present.
+
+---
+
+### 6. Pacing and Efficient Use of Time
+### **Score: 3/6**
+
+**Explanation:**
+
+The session lacked clear structure and strategic pacing. The therapist allowed the conversation to drift reactively through multiple topics without prioritization: work worry → fatigue → perfectionism → isolation → asking for help. While covering multiple concerns might seem comprehensive, it resulted in superficial treatment of each issue rather than deep, focused work on the most impactful problem.
+
+The therapist spent considerable time on cognitive restructuring (multiple exchanges about "I'm not good enough" vs. "I'm doing my best") without achieving meaningful cognitive change. The patient remained unconvinced ("It's just hard to believe sometimes"), yet the therapist did not recognize this impasse and adjust strategy. Instead, the therapist moved forward with the same approach, suggesting the patient "practice saying" the alternative thought.
+
+Time was used inefficiently on peripheral discussion. For example, when the patient mentioned watching TV and overeating, the therapist did not explore this as a behavioral pattern or potential target for behavioral activation. Instead, the therapist vaguely suggested "going for a walk" without connecting it to the patient's actual daily patterns or barriers.
+
+Critically, the therapist spent no time on suicide risk assessment despite the patient's documented mild-to-moderate suicidal ideation. This is not a peripheral issue—it is a clinical priority that should have consumed significant session time.
+
+The session ended abruptly with a summary and goodbye, without adequate time for the patient to ask questions, express concerns, or solidify commitment to homework.
+
+**Summary:**
+The session lacked strategic focus and efficient time use. Multiple topics were covered superficially, and critical safety assessment was omitted entirely.
+
+---
+
+### 7. Guided Discovery
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist relied heavily on direct suggestion and advice-giving rather than Socratic questioning to facilitate patient self-discovery. This is a fundamental departure from CBT methodology.
+
+Examples of directive advice (not guided discovery):
+- "Maybe it would help to try thinking about it differently—like, what if instead of 'I'm not good enough,' you told yourself, 'I'm doing the best I can'?"
+- "Maybe you could try to notice when those doubts come up and then remind yourself that it's okay to not be perfect."
+- "Sometimes when we feel stressed, doing something relaxing like going for a walk or listening to music could help."
+- "Maybe you could try practicing small steps, like sharing a little bit with someone you trust."
+
+In each case, the therapist told the patient what to do rather than asking questions that would help the patient discover insights independently.
+
+Contrast with what guided discovery would look like:
+- "When you have the thought 'I'm not good enough,' what evidence do you have for that thought? What evidence contradicts it?"
+- "You mentioned it feels safer to expect the worst. What do you think would happen if you didn't expect the worst?"
+- "You said watching TV and overeating don't make you feel better. What activities have made you feel better in the past?"
+- "What do you think might happen if you shared a little with your husband about how you're feeling?"
+
+The therapist did ask one open-ended question early on ("Like, what was going through your mind at that time?"), but this was followed immediately by leading suggestions ("Were you thinking something like, 'I'm not good enough'?"), which contaminated the discovery process.
+
+**Summary:**
+The therapist relied on direct advice and suggestion rather than Socratic questioning. Guided discovery was minimal, preventing the patient from developing independent problem-solving skills.
+
+---
+
+### 8. Focusing on Key Cognitions or Behaviors
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist identified some relevant cognitions but failed to focus on the most central and impactful ones for this patient's presentation and diagnosis.
+
+**Cognitions addressed:**
+- "I'm not good enough"
+- "What if they think I'm slow or stupid?"
+- "I'm doing the best I can"
+
+**Critical cognitions NOT addressed:**
+- "It's safer to expect the worst" (protective function of negative thinking—core belief)
+- "I'm a burden" (driving social withdrawal and isolation)
+- "People will think I'm weak if I ask for help" (shame-based belief blocking support-seeking)
+- "If I slack off even a little, everything will fall apart" (perfectionism and catastrophizing)
+- Implicit beliefs about self-worth tied to job performance (new job as trigger)
+
+The therapist focused on surface-level automatic thoughts ("I'm not good enough") without exploring the deeper core beliefs and schemas maintaining the depression. For a patient with Bipolar II disorder and a history of recurrent depression, understanding the cognitive patterns that trigger and maintain episodes is essential.
+
+Additionally, the therapist did not focus on the most behaviorally relevant patterns:
+- Hypersomnia and hyperphagia (eating and sleeping excessively)
+- Social withdrawal and isolation
+- Avoidance of help-seeking
+- Inactivity and TV watching
+
+These behavioral patterns are central to the depressive episode and should have been prioritized for behavioral activation and activity scheduling. Instead, the therapist vaguely suggested "going for a walk" without systematic behavioral analysis.
+
+**Summary:**
+The therapist identified peripheral automatic thoughts but missed core beliefs and schemas. Behavioral patterns central to the depression were not systematically targeted.
+
+---
+
+### 9. Strategy for Change
+### **Score: 1/6**
+
+**Explanation:**
+
+The therapist did not articulate a coherent, evidence-based strategy for change. Instead, the session consisted of disconnected suggestions without a unifying treatment plan.
+
+**What was attempted:**
+- Cognitive restructuring (thought replacement)
+- Behavioral activation (walking, music)
+- Social support-seeking (talking to husband)
+- Thought monitoring (noticing thoughts)
+
+**What was missing:**
+- Clear conceptualization linking the patient's cognitions, behaviors, and mood
+- Rationale for why these specific interventions address the patient's core problems
+- Sequencing of interventions (what comes first, what builds on what)
+- Connection to the patient's diagnosis (Bipolar II disorder) and specific vulnerabilities
+- Measurement of progress toward goals
+
+For a patient with Bipolar II disorder, the strategy should include:
+1. Mood monitoring (to detect hypomanic or depressive shifts)
+2. Sleep and activity regulation (critical for mood stability in bipolar disorder)
+3. Behavioral activation targeting the specific depressive symptoms (hypersomnia, hyperphagia, social withdrawal)
+4. Cognitive work on perfectionism and self-worth (maintaining factors)
+5. Relapse prevention and early warning signs
+6. Medication adherence (not discussed, but essential)
+
+The therapist's approach was generic depression treatment without consideration of bipolar-specific factors. There was no discussion of mood episodes, sleep patterns, or the need for psychiatric medication management.
+
+**Summary:**
+No coherent treatment strategy was articulated. Interventions were disconnected suggestions rather than a systematic plan addressing the patient's diagnosis and maintaining factors.
+
+---
+
+### 10. Application of CBT Techniques
+### **Score: 2/6**
+
+**Explanation:**
+
+The therapist attempted to apply CBT techniques but did so with significant flaws in execution and depth.
+
+**Techniques attempted:**
+1. **Cognitive Restructuring** (thought replacement): "Maybe it would help to try thinking about it differently—like, what if instead of 'I'm not good enough,' you told yourself, 'I'm doing the best I can'?"
+   - *Flaw:* Simplistic thought replacement without examining evidence, identifying cognitive distortions, or exploring why the alternative thought feels unbelievable. The patient stated, "It's just hard to believe sometimes," indicating the intervention was not effective, yet the therapist did not adjust.
+
+2. **Behavioral Activation** (walking, music): "Maybe you could try going for a walk or listening to music could help take your mind off things."
+   - *Flaw:* Vague suggestion without systematic activity scheduling, baseline assessment of current activities, or connection to specific depressive symptoms. No discussion of frequency, duration, or how to overcome barriers (the patient noted, "It feels a little hard to get started").
+
+3. **Thought Monitoring** (noticing thoughts): "For homework, maybe just try to notice your thoughts during the week and see if you can catch those worries when they come up."
+   - *Flaw:* No structured thought record, no guidance on what to do after noticing thoughts, no written tool provided. This is thought monitoring without the full cognitive technique.
+
+4. **Social Support-Seeking** (talking to husband): "Maybe you could try practicing small steps, like sharing a little bit with someone you trust."
+   - *Flaw:* No behavioral rehearsal, no discussion of what specifically to say, no problem-solving of barriers (patient fears being seen as weak or dramatic). This is a suggestion, not a structured CBT technique.
+
+**Techniques NOT applied:**
+- Behavioral experiments to test beliefs
+- Thought records (structured cognitive work)
+- Activity scheduling (systematic behavioral activation)
+- Exposure (for social anxiety/avoidance)
+- Problem-solving
+- Mood monitoring (critical for bipolar disorder)
+- Sleep hygiene (patient has hypersomnia)
+
+**Summary:**
+CBT techniques were attempted but applied superficially with significant flaws. Interventions lacked structure, depth, and follow-through.
+
+---
+
+### 11. Homework
+### **Score: 1/6**
+
+**Explanation:**
+
+Homework assignment was inadequate and failed to meet CBT standards for specificity, rationale, and commitment.
+
+**Homework assigned:**
+1. "Try to notice your thoughts during the week and see if you can catch those worries when they come up."
+2. "Remind yourself that you're doing what you can."
+3. "Go for a walk to relax."
+4. "Practice sharing a bit with your husband when you feel ready."
+
+**Critical deficiencies:**
+
+1. **Lack of specificity:** "Notice your thoughts" is vague. How will the patient record them? When? How often? What will they do with the information? There is no structured thought record or worksheet provided.
+
+2. **No clear rationale:** The therapist did not explain WHY noticing thoughts matters or how it connects to feeling better. The patient does not understand the mechanism of change.
+
+3. **Unrealistic expectations:** The patient stated, "It might be hard to remember sometimes," signaling doubt about feasibility. The therapist did not problem-solve barriers or make the homework more manageable (e.g., "Set a phone reminder," "Write it down immediately").
+
+4. **No measurement:** There is no way to track whether homework was completed or whether it was helpful. No baseline established (e.g., "How many times per day do you currently notice these worries?").
+
+5. **Insufficient commitment:** The therapist did not ask, "Do you commit to doing this?" or "What might get in the way?" The patient's responses were tentative ("I'll try," "I think I could try"), indicating low confidence, yet the therapist did not address this.
+
+6. **No review plan:** The therapist did not establish how homework would be reviewed at the next session or what would happen if the patient did not complete it.
+
+7. **Multiple, unfocused tasks:** Four separate homework items without prioritization. The patient is already struggling with motivation and energy; this diffuse assignment may overwhelm rather than help.
+
+**What should have been done:**
+- Assign ONE primary homework task (e.g., structured thought record for work worries)
+- Provide a written worksheet or tool
+- Explain the rationale: "By writing down your thoughts and what happened, we can see patterns and test whether your predictions come true."
+- Problem-solve barriers: "You mentioned it's hard to get started on things. What would help you remember to do this? Could your husband help remind you?"
+- Establish a specific plan: "I'd like you to complete this thought record three times this week—maybe Monday, Wednesday, and Friday. Does that feel doable?"
+- Confirm commitment: "Are you willing to try this?"
+- Plan review: "Next session, we'll look at what you wrote and see what we learn."
+
+**Summary:**
+Homework was vague, lacked rationale, and had no mechanism for tracking or review. Multiple unfocused tasks were assigned without addressing patient barriers or commitment.
+
+---
+
+## Overall Summary
+
+### Strengths:
+- **Warm, supportive tone:** The therapist was friendly and non-judgmental, creating a safe environment for the patient to share.
+- **Basic empathic responses:** The therapist acknowledged the patient's distress ("Yeah, those kinds of thoughts can be really tough to deal with").
+- **Attempt at cognitive work:** The therapist recognized the role of thoughts in mood and attempted cognitive restructuring.
+- **Openness to multiple concerns:** The therapist allowed the patient to raise multiple issues (work, fatigue, isolation) rather than rigidly restricting discussion.
+
+### Critical Deficiencies:
+
+**1. Failure to Assess and Address Suicide Risk**
+The patient has documented mild-to-moderate suicidal ideation ("thought often of death") and presented with depressed mood, hopelessness ("I worry that no matter what I do, it won't be enough"), and social isolation. The therapist did not conduct suicide risk assessment, safety planning, or determine whether outpatient treatment was appropriate. This is a serious clinical and ethical failure.
+
+**2. No Coherent Treatment Strategy**
+The session lacked a unifying conceptualization or treatment plan. Interventions were disconnected suggestions rather than a systematic approach to addressing the patient's Bipolar II disorder and current depressive episode.
+
+**3. Superficial Application of CBT Techniques**
+Cognitive restructuring, behavioral activation, and thought monitoring were attempted but executed poorly—without structure, depth, or follow-through. The patient remained unconvinced and uncertain about how to apply interventions.
+
+**4. Reliance on Advice-Giving Rather Than Guided Discovery**
+The therapist told the patient what to do rather than asking Socratic questions to facilitate self-discovery. This undermines the collaborative empiricism central to CBT and reduces the patient's development of independent problem-solving skills.
+
+**5. Inadequate Homework**
+Homework was vague, lacked rationale, and had no mechanism for tracking or review. Multiple unfocused tasks were assigned without addressing barriers or confirming commitment.
+
+**6. Failure to Address Bipolar-Specific Factors**
+The treatment approach was generic depression treatment without consideration of mood episodes, sleep regulation, or the need for psychiatric medication management—all critical for Bipolar II disorder.
+
+**7. Minimal Feedback Elicitation**
+The therapist did not systematically check for understanding, validate concerns, or assess session helpfulness. This undermines collaboration and treatment adherence.
+
+**8. Missed Core Cognitions and Behaviors**
+The therapist focused on peripheral automatic thoughts ("I'm not good enough") rather than core beliefs ("I'm a burden," "It's safer to expect the worst") and central behavioral patterns (hypersomnia, social withdrawal, avoidance).
+
+---
+
+## Impact on Patient Care
+
+**Likelihood of therapeutic benefit:** LOW
+
+This session is unlikely to produce meaningful symptom improvement for several reasons:
+
+1. **Safety concerns unaddressed:** The patient's suicidal ideation was not assessed or managed. If risk escalates, the therapist has no safety plan in place.
+
+2. **Weak cognitive change:** The patient remains unconvinced that cognitive restructuring will help ("It's just hard to believe sometimes"). Forcing this approach without addressing underlying protective beliefs will likely fail.
+
+3. **Insufficient behavioral activation:** Vague suggestions to "go for a walk" without systematic activity scheduling are unlikely to overcome the patient's hypersomnia, low motivation, and social withdrawal.
+
+4. **Unclear rationale:** The patient does not understand why these interventions matter or how they connect to feeling better. This reduces motivation and adherence.
+
+5. **Unaddressed maintaining factors:** Core beliefs about self-worth, perfectionism, and shame are not targeted. These maintain the depression and will likely perpetuate the episode.
+
+6. **Bipolar-specific factors ignored:** Without mood monitoring, sleep regulation, and medication management, the patient remains vulnerable to mood cycling.
+
+**Prognosis:** Without significant changes to the treatment approach, this patient is at risk for:
+- Continued or worsening depression
+- Escalation of suicidal ideation
+- Reduced treatment engagement due to unclear rationale and ineffective interventions
+- Potential hypomanic episode (given bipolar II history) if mood destabilizes
+
+---
+
+## Recommendations
+
+### 1. **URGENT: Conduct Comprehensive Suicide Risk Assessment**
+- **Action:** In the next session (or immediately if possible), conduct a detailed suicide risk assessment including: frequency and intensity of suicidal thoughts, presence of plan or intent, access to means, protective factors, and previous attempts. Use a structured tool (e.g., Columbia-Suicide Severity Rating Scale).
+- **Example:** "You mentioned thinking about death. I want to understand this better. How often do you have these thoughts? Do you have any thoughts about harming yourself? Do you have a plan? What's kept you safe so far?"
+- **Practice:** Review suicide assessment protocols and practice with a supervisor. Develop a safety planning template to use with all patients presenting with suicidal ideation.
+
+### 2. **Establish a Coherent, Bipolar-Specific Treatment Strategy**
+- **Action:** Develop a clear conceptualization linking the patient's cognitions, behaviors, mood, and diagnosis. Create a written treatment plan with specific goals, interventions, and timeline.
+- **Example:** "Based on our assessment, I see that your perfectionism and self-criticism are maintaining your depression. We'll work on three things: (1) monitoring your mood and sleep to catch early warning signs of mood episodes, (2) gradually increasing activities to improve your energy and mood, and (3) examining the belief that you need to be perfect to be worthy. Here's how we'll do each..."
+- **Practice:** Study bipolar-specific CBT protocols (e.g., Lam et al.'s Cognitive Therapy for Bipolar Disorder). Develop treatment plans for bipolar patients with a supervisor.
+
+### 3. **Implement Structured Thought Records Instead of Simple Thought Replacement**
+- **Action:** Replace vague "think differently" suggestions with structured cognitive work. Introduce a thought record that includes: situation, automatic thought, evidence for/against, alternative thought, and outcome. Use this to collaboratively examine beliefs rather than imposing alternatives.
+- **Example:** "Let's create a thought record together. When you had the thought 'I'm not good enough,' what happened right before? What evidence do you have for that thought? What evidence contradicts it? What's a more balanced way to think about it?" (Patient generates alternatives, not therapist.)
+- **Practice:** Complete thought records with patients in session. Have patients practice between sessions with written worksheets. Review and refine in subsequent sessions.
+
+### 4. **Use Socratic Questioning to Facilitate Guided Discovery**
+- **Action:** Replace directive advice with open-ended questions that help the patient discover insights independently. Practice asking rather than telling.
+- **Example:** Instead of "Maybe it would help to try thinking about it differently," ask: "When you have that thought, what evidence do you have for it? What evidence contradicts it? What would a friend say about this situation? What's another way to look at this?"
+- **Practice:** Record sessions and review your use of questions vs. advice. For each suggestion you make, ask yourself: "Could I ask a question instead?" Practice with a supervisor.
+
+### 5. **Implement Systematic Behavioral Activation with Activity Scheduling**
+- **Action:** Assess current activities and mood. Create a structured activity schedule targeting specific depressive symptoms (hypersomnia, hyperphagia, social withdrawal). Start with small, achievable steps.
+- **Example:** "Let's look at your typical day. I notice you're sleeping a lot and watching TV. What activities used to help you feel better? Let's schedule three activities this week—maybe a 15-minute walk on Monday, coffee with a friend on Wednesday, and 30 minutes of a hobby on Friday. We'll track your mood before and after each activity."
+- **Practice:** Learn activity scheduling protocols. Practice with patients in session. Use mood-activity logs to track outcomes.
+
+### 6. **Address Core Beliefs and Protective Functions of Symptoms**
+- **Action:** Move beyond surface-level automatic thoughts to explore core beliefs. When the patient says "It feels safer to expect the worst," explore this protective function: "What do you think would happen if you didn't expect the worst? How has expecting the worst protected you?"
+- **Example:** "You mentioned that perfectionism feels necessary—that if you slack off, everything will fall apart. Let's examine that. Has there been a time when you didn't do things perfectly and things didn't fall apart? What actually happened?"
+- **Practice:** Study schema therapy and core belief work. Practice identifying protective functions of symptoms with a supervisor.
+
+### 7. **Incorporate Mood Monitoring and Sleep Regulation (Bipolar-Specific)**
+- **Action:** Teach the patient to monitor mood, sleep, and energy daily. Establish sleep hygiene and consistent sleep schedule (critical for bipolar disorder). Discuss medication adherence and psychiatric management.
+- **Example:** "Because you have bipolar disorder, tracking your sleep and mood is really important. Changes in sleep often come before mood episodes. Let's use this mood chart to track your mood, sleep, and energy each day. If you notice your sleep dropping or mood shifting, we'll address it right away."
+- **Practice:** Learn bipolar-specific CBT protocols. Coordinate with psychiatry on medication management. Develop mood monitoring tools.
+
+### 8. **Elicit and Address Patient Feedback Systematically**
+- **Action:** Build feedback elicitation into every session. Check for understanding, validate concerns, and assess helpfulness. Adjust interventions based on patient response.
+- **Example:** "How does this approach feel to you? Does it make sense? Do you have concerns? What would be more helpful? Let's make sure we're on the same page."
+- **Practice:** At the end of each session, ask: "How was this session for you? What was helpful? What wasn't? What would you like to focus on next time?"
+
+### 9. **Assign Specific, Structured Homework with Clear Rationale and Tracking**
+- **Action:** Assign ONE primary homework task per session. Provide a written tool or worksheet. Explain the rationale. Problem-solve barriers. Confirm commitment. Plan review.
+- **Example:** "I'd like you to complete this thought record three times this week when you notice the worry 'I'm not good enough.' Here's why: by writing down what happened and what you were thinking, we can see patterns and test whether your predictions come true. This helps us understand your thoughts better. Can you commit to this? What might get in the way? How will you remember?"
+- **Practice:** Develop a homework protocol. Use worksheets and tracking tools. Review homework at the start of each session.
+
+### 10. **Engage the Spouse in Treatment**
+- **Action:** The patient's husband was present but not engaged. Involve him collaboratively in treatment planning, behavioral activation, and support-seeking.
+- **Example:** "I notice your husband is here. It sounds like you've been feeling alone even though he's around. Would it be helpful to include him in our work? We could talk together about how he can support you and how you can ask for help."
+- **Practice:** Develop skills for involving family members in CBT. Practice with a supervisor.
+
+### 11. **Develop Relapse Prevention and Early Warning Signs**
+- **Action:** Help the patient identify early warning signs of depressive and hypomanic episodes. Create a relapse prevention plan.
+- **Example:** "Based on your history, what are the first signs that a depressive episode is starting? (e.g., sleeping more, withdrawing from people, increased self-criticism) What can you do at the first sign? Who can you reach out to?"
+- **Practice:** Study relapse prevention protocols. Develop early warning sign lists with patients.
+
+### 12. **Seek Supervision and Training in Evidence-Based CBT**
+- **Action:** Engage in regular clinical supervision with an experienced CBT therapist. Pursue formal CBT training (e.g., certification programs). Review recordings of sessions with a supervisor.
+- **Example:** "I will attend weekly supervision, record my sessions for review, and complete a CBT certification program within the next year."
+- **Practice:** Identify a qualified CBT supervisor. Commit to ongoing training and skill development.
+
+---
+
+## Overall Session Score: 2.1/6
+
+**Calculation:** (2 + 1 + 3 + 4 + 2 + 3 + 2 + 2 + 1 + 2 + 1) ÷ 11 = 23 ÷ 11 = 2.09/6
+
+---
+
+## Summary
+
+### Current Competency Assessment
+
+This therapist demonstrates **below-average competency in evidence-based CBT**. While the therapist is warm, supportive, and well-intentioned, the session does not meet the standards for effective CBT delivery. The therapist relies on generic advice-giving and surface-level cognitive work rather than systematic, structured CBT techniques. Most critically, the therapist failed to conduct suicide risk assessment for a patient with documented suicidal ideation—a serious clinical and ethical failure.
+
+The therapist appears to have basic counseling skills but lacks training in or understanding of:
+- Structured CBT protocols and techniques
+- Socratic questioning and guided discovery
+- Bipolar-specific treatment considerations
+- Suicide risk assessment and safety planning
+- Systematic behavioral activation and activity scheduling
+- Collaborative empiricism and shared decision-making
+
+### Most Critical Changes Needed Immediately
+
+1. **Conduct suicide risk assessment and safety planning** for this patient. This is non-negotiable and urgent.
+2. **Develop a coherent, bipolar-specific treatment strategy** rather than generic depression interventions.
+3. **Replace advice-giving with Socratic questioning** to facilitate patient self-discovery.
+4. **Implement structured CBT techniques** (thought records, behavioral activation, mood monitoring) rather than vague suggestions.
+5. **Seek clinical supervision and formal CBT training** to develop competency in evidence-based practice.
+
+### Likelihood of Producing Therapeutic Change
+
+**Current likelihood: LOW**
+
+This session is unlikely to produce meaningful symptom improvement. The patient remains unconvinced about cognitive restructuring, has no clear understanding of the treatment rationale, and has received vague, unfocused homework. More importantly, safety concerns have not been addressed. Without significant changes to the therapist's approach—particularly the addition of structured CBT techniques, suicide risk assessment, and bipolar-specific interventions—this patient is at risk for continued or worsening depression and potential escalation of suicidal ideation.
+
+**This session does NOT qualify as evidence-based CBT.** It is generic supportive counseling with superficial CBT elements. The therapist must pursue formal training and supervision to develop competency in delivering evidence-based CBT.
