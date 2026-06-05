@@ -411,11 +411,11 @@ def save_mode_outputs(mode, save_folder, condition_rows):
 
     plot_specs = [
         (
-            "plot1_good_vs_bad1",
-            [condition_dfs["good_student"], condition_dfs["bad_student_1st"]],
-            ["Expert Student", "Novice Student"],
-            ["skyblue", "orange"],
-            "Plot 1: Expert Student vs Bad Student (1st Attempt)",
+            "plot1_bad_vs_good",
+            [condition_dfs["bad_student_1st"], condition_dfs["good_student"]],
+            ["Bad Student", "Good Student"],
+            ["orange", "skyblue"],
+            "Plot 1: Bad vs Good Students",
         ),
         (
             "plot2_learning_effect",
@@ -435,6 +435,17 @@ def save_mode_outputs(mode, save_folder, condition_rows):
             ["Novice Student", "Novice Student + Feedback", "Mediocre Student", "Expert Student"],
             ["orange", "green", "gold", "skyblue"],
             "Plot 3: Complete Comparison - All Conditions",
+        ),
+        (
+            "plot4_bad_mediocre_good",
+            [
+                condition_dfs["bad_student_1st"],
+                condition_dfs["mediocre_student"],
+                condition_dfs["good_student"],
+            ],
+            ["Novice Student", "Mediocre Student", "Expert Student"],
+            ["orange", "gold", "skyblue"],
+            "Plot 4: Bad vs Mediocre vs Good Students",
         ),
     ]
 
