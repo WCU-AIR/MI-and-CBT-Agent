@@ -24,12 +24,12 @@ from utils.api_key_loader import load_openai_api_key
 # === Experiment Constants ====
 # =============================
 
-STUDENT_CSV_PATH = "Student_Profiles/AK_StudentAgent_10Profiles - Prompts for CBT Students.csv"
+STUDENT_CSV_PATH = "Student_Profiles/StudentAgent_Profiles - Prompts for CBT Students.csv"
 PATIENT_DIR_MI = "Patient_Profiles/MI/"
 PATIENT_DIR_CBT = "Patient_Profiles/CBT/"
 
-GOOD_STUDENT_NUM = 11
-BAD_STUDENT_NUM = 10
+BAD_STUDENT_NUM = 0
+GOOD_STUDENT_NUM = 1
 
 API_KEY = load_openai_api_key()
 
@@ -297,7 +297,7 @@ def run_experiment(student_num, patient_files, student_csv_path, mode, label, sa
 
 
 def run_parallel_experiments(args):
-    STUDENT_CSV_PATH = "Student_Profiles/AK_StudentAgent_10Profiles - Prompts for CBT Students.csv" if args.mode == "CBT" else "Student_Profiles/AK_StudentAgent_10Profiles - Prompts for MI Students.csv"
+    STUDENT_CSV_PATH = "Student_Profiles/StudentAgent_Profiles - Prompts for CBT Students.csv" if args.mode == "CBT" else "Student_Profiles/StudentAgent_Profiles - Prompts for MI Students.csv"
     """Main function for parallel execution mode."""
     start_time = time.time()
 

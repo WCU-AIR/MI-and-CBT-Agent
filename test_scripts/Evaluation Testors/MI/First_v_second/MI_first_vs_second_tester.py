@@ -212,7 +212,7 @@ def run_tests(num_tests):
     os.makedirs("saved_tests/first_vs_second", exist_ok=True)
 
     # Select Bad Student Second Try
-    student_profile = 14
+    student_profile = 0
 
     # Walk through the directory tree and collect subdirectories from the first run
     base_directory = "Saved_Sessions_good_v_bad/Bad"

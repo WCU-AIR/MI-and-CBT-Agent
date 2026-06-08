@@ -30,7 +30,7 @@ from automated_testing import (
 )
 
 
-MEDIOCRE_STUDENT_NUM = 12
+MEDIOCRE_STUDENT_NUM = 2
 SAMPLE_SIZE = 20
 DEFAULT_SEED = 42
 DEFAULT_WORKERS = 20
@@ -49,8 +49,8 @@ def format_duration(seconds):
 
 def student_csv_path(mode):
     if mode == "MI":
-        return "Student_Profiles/AK_StudentAgent_10Profiles - Prompts for MI Students.csv"
-    return "Student_Profiles/AK_StudentAgent_10Profiles - Prompts for CBT Students.csv"
+        return "Student_Profiles/StudentAgent_Profiles - Prompts for MI Students.csv"
+    return "Student_Profiles/StudentAgent_Profiles - Prompts for CBT Students.csv"
 
 
 def latest_aggregate_folder(mode):

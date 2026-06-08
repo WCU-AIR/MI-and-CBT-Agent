@@ -163,7 +163,7 @@ def run_all_tests(num_patients, student_profiles):
 
     mode = MI_MODE
     all_results = []
-    path = 'Student_Profiles/AK_StudentAgent_10Profiles - Prompts for MI Students.csv'
+    path = 'Student_Profiles/StudentAgent_Profiles - Prompts for MI Students.csv'
     df = pd.read_csv(path, quotechar='"', skipinitialspace=True)
 
     # Create save folder
@@ -245,7 +245,7 @@ def run_all_tests(num_patients, student_profiles):
 num_patients = count_files("Patient_Profiles/MI/")
 print(num_patients)
 
-run_all_tests(num_patients, [13,12])
+run_all_tests(num_patients, [1, 0])
 
 
 

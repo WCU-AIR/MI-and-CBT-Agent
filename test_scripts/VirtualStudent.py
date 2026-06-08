@@ -57,8 +57,8 @@ class StudentProfileLoader:
     """Handles loading student profiles from CSV files."""
 
     PROFILE_PATHS = {
-        "MI": "Student_Profiles/AK_StudentAgent_10Profiles - Prompts for MI Students.csv",
-        "CBT": "Student_Profiles/AK_StudentAgent_10Profiles - Prompts for CBT Students.csv",
+        "MI": "Student_Profiles/StudentAgent_Profiles - Prompts for MI Students.csv",
+        "CBT": "Student_Profiles/StudentAgent_Profiles - Prompts for CBT Students.csv",
     }
 
     PROMPT_PATHS = {

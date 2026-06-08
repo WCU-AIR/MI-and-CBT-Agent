@@ -44,8 +44,8 @@ PATIENT_DIRS = {
     "CBT": "Patient_Profiles/CBT",
 }
 STUDENT_CSV_PATHS = {
-    "MI": "Student_Profiles/AK_StudentAgent_10Profiles - Prompts for MI Students.csv",
-    "CBT": "Student_Profiles/AK_StudentAgent_10Profiles - Prompts for CBT Students.csv",
+    "MI": "Student_Profiles/StudentAgent_Profiles - Prompts for MI Students.csv",
+    "CBT": "Student_Profiles/StudentAgent_Profiles - Prompts for CBT Students.csv",
 }
 MODE_CONSTANTS = {
     "MI": MI_MODE,
@@ -56,9 +56,9 @@ VIRTUAL_STUDENT_MODES = {
     "CBT": VirtualStudent.VirtualStudent.CBT,
 }
 
-GOOD_STUDENT_NUM = 11
-BAD_STUDENT_NUM = 10
-MEDIOCRE_STUDENT_NUM = 12
+BAD_STUDENT_NUM = 0
+GOOD_STUDENT_NUM = 1
+MEDIOCRE_STUDENT_NUM = 2
 DEFAULT_SEED = 42
 DEFAULT_WORKERS = 20
 API_KEY = load_openai_api_key()

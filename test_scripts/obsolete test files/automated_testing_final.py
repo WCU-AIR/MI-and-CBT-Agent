@@ -27,12 +27,12 @@ from utils.api_key_loader import load_openai_api_key
 # === Experiment Constants ====
 # =============================
 
-STUDENT_CSV_PATH = "Student_Profiles/AK_StudentAgent_10Profiles - Prompts for MI Students.csv"
+STUDENT_CSV_PATH = "Student_Profiles/StudentAgent_Profiles - Prompts for MI Students.csv"
 PATIENT_DIR = "Patient_Profiles/MI/"
 NUM_PATIENTS = 10
 
-GOOD_STUDENT_NUM = 11
-BAD_STUDENT_NUM = 10
+BAD_STUDENT_NUM = 0
+GOOD_STUDENT_NUM = 1
 
 API_KEY = load_openai_api_key()
 
