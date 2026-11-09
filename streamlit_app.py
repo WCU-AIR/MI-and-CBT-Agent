@@ -21,8 +21,46 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+
+@st.cache_resource
+def get_server_instance_id():
+    """Return an ID that changes only when the Streamlit server restarts."""
+    return uuid.uuid4().hex
+
+
+def reset_sidebar_after_server_restart():
+    """Clear Streamlit's persisted collapsed state once per server restart."""
+    server_instance_id = get_server_instance_id()
+    components.html(
+        f"""
+        <script>
+            const parentWindow = window.parent;
+            const storage = parentWindow.localStorage;
+            const markerKey =
+                "mi-cbt-sidebar-server:" + parentWindow.location.pathname;
+            const serverInstanceId = "{server_instance_id}";
+
+            if (storage.getItem(markerKey) !== serverInstanceId) {{
+                for (let index = storage.length - 1; index >= 0; index--) {{
+                    const key = storage.key(index);
+                    if (key && key.startsWith("stSidebarCollapsed-")) {{
+                        storage.removeItem(key);
+                    }}
+                }}
+                storage.setItem(markerKey, serverInstanceId);
+                parentWindow.location.reload();
+            }}
+        </script>
+        """,
+        height=0,
+        scrolling=False,
+    )
+
+
+reset_sidebar_after_server_restart()
+
 selected_mode = None
-PASSWORD = "AI@Psychiatry2025"
+PASSWORD = "" #"AI@Psychiatry2025"
 ############################################################
 # CSS for enhanced chat interface
 ############################################################
@@ -967,10 +1005,10 @@ if True:
             #################################################
             if st.session_state.get('_trigger_audio_playback') and not st.session_state.get("muted", False):
                 try:
-                    audio_bytes = st.session_state.learning_buddy.voice.text_to_speech(
+                    audio_bytes, mime_type = st.session_state.learning_buddy.voice.text_to_speech(
                         st.session_state._pending_audio_text, speaker="patient"
                     )
-                    st.session_state.latest_audio = audio_bytes
+                    st.session_state.latest_audio = audio_bytes, mime_type
                 except Exception as e:
                     st.warning(f"⚠️ Audio generation error: {e}")
                 finally:
@@ -978,7 +1016,15 @@ if True:
                     del st.session_state['_pending_audio_text']
 
             if "latest_audio" in st.session_state:
-                autoplay_audio(st.session_state.latest_audio)
+                audio_bytes, mime_type = (
+                    st.session_state.latest_audio
+                )
+                st.audio(
+                    audio_bytes,
+                    format=mime_type,
+                    autoplay=True
+                )
+                #autoplay_audio(st.session_state.latest_audio)
                 del st.session_state["latest_audio"]
 
         ############################################################
@@ -1048,9 +1094,12 @@ if True:
 
                                     if not st.session_state.evaluator_muted:
                                         try:
-                                            audio_bytes = st.session_state.learning_buddy.voice.text_to_speech(
+                                            audio_bytes, mime_type = st.session_state.learning_buddy.voice.text_to_speech(
                                                 ai_response, speaker="evaluator")
-                                            st.session_state.latest_evaluator_audio = audio_bytes
+                                            st.session_state.latest_evaluator_audio = audio_bytes, mime_type
+                                            #audio_bytes = st.session_state.learning_buddy.voice.text_to_speech(
+                                            #      ai_response, speaker="evaluator")
+                                            #st.session_state.latest_evaluator_audio = audio_bytes
                                         except Exception as e:
                                             st.warning(f"⚠️ Audio playback error: {e}")
 
@@ -1125,9 +1174,12 @@ if True:
                                         save_evaluator_transcript()
                                         if not st.session_state.evaluator_muted:
                                             try:
-                                                audio_bytes = st.session_state.learning_buddy.voice.text_to_speech(
+                                                audio_bytes, mime_type = st.session_state.learning_buddy.voice.text_to_speech(
                                                     ai_response, speaker="evaluator")
-                                                st.session_state.latest_evaluator_audio = audio_bytes
+                                                st.session_state.latest_evaluator_audio = audio_bytes, mime_type
+                                                #audio_bytes = st.session_state.learning_buddy.voice.text_to_speech(
+                                                #    ai_response, speaker="evaluator")
+                                                #st.session_state.latest_evaluator_audio = audio_bytes
                                             except Exception as e:
                                                 st.warning(f"⚠️ Audio playback error: {e}")
                             except Exception as e:
@@ -1148,13 +1200,21 @@ if True:
 
                     # Audio Playback
                     if 'latest_evaluator_audio' in st.session_state:
-                        audio_base64 = base64.b64encode(st.session_state.latest_evaluator_audio).decode('utf-8')
-                        audio_html = f'''
-                                <audio autoplay>
-                                  <source src="data:audio/mp3;base64,{audio_base64}" type="audio/mpeg">
-                                </audio>
-                                '''
-                        st.markdown(audio_html, unsafe_allow_html=True)
+                        #audio_base64 = base64.b64encode(st.session_state.latest_evaluator_audio).decode('utf-8')
+                        #audio_html = f'''
+                        #        <audio autoplay>
+                        #          <source src="data:audio/mp3;base64,{audio_base64}" type="audio/mpeg">
+                        #        </audio>
+                        #        '''
+                        #st.markdown(audio_html, unsafe_allow_html=True)
+
+                        audio_bytes, mime_type = st.session_state.latest_evaluator_audio
+
+                        st.audio(
+                            audio_bytes,
+                            format=mime_type,
+                            autoplay=True
+                        )
 
                         del st.session_state['latest_evaluator_audio']
 

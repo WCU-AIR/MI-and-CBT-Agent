@@ -1,7 +1,89 @@
 # A Multi Agent Large Language Model Framework to Simulate and Assess Counselling Skills: A Proof of Concept in Motivational Interviewing and Cognitive Behavioural Therapy
 
+
 This repository provides the code and prompts used in our study evaluating a rubric-guided, multi-agent LLM system for MI and CBT training. 
 It includes simulation workflows, evaluator rubrics, patient profiles, and sample results corresponding to the analyses reported in the manuscript.
+
+# Updates
+
+## 2026-11-09
+
+Attempts to provide a complete local option for both agents and tts. 
+
+For the back-end local agent, we are using `llama.cpp` and `Qwen3.5-27B-GGUF:Q5_K_M`
+
+```bash
+llama-server \
+  -hf bartowski/Qwen_Qwen3.5-27B-GGUF:Q5_K_M \
+  --alias qwen \
+  --jinja \
+  -ngl 99 \
+  -c 16384 \
+  --port 8080
+```
+
+27B is too slow for M5 Pro 48GB. Down to 9B:
+
+```bash
+llama-server \
+  -hf bartowski/Qwen_Qwen3.5-9B-GGUF:Q6_K \
+  --alias qwen \
+  --jinja \
+  --reasoning off \
+  -ngl 99 \
+  -fa on \
+  -c 8192 \
+  -np 1 \
+  --port 8080
+```
+
+Convert `requirements.txt` to conda's `environment.yml`. I simply like conda better!
+
+```bash
+conda env create -f environment.yml
+conda activate cbt-lab
+```
+
+Also update text-to-speech and speech-to-text to use a local interface, `local-tts`, so that we can switch between online/local providers. I am cloning this inside `utils`, but I will modify its `.gitignore` to prevent this being included with the main content. 
+
+```bash
+git clone https://github.com/saghul/local-tts.git
+cd local-tts
+
+uv sync --extra mlx
+
+# spaCy invokes pip internally, which uv environments
+# do not necessarily include by default.
+uv pip install --python .venv/bin/python pip
+
+# Download and install the English language model
+uv run python -m spacy download en_core_web_sm
+
+uv run local-tts server \
+  --host 127.0.0.1 \
+  --port 8880 \
+  --disable-pocket \
+  --disable-kitten
+```
+
+Test
+
+```bash
+uv run local-tts client \
+  --model kokoro \
+  --voice af_heart \
+  -t "I have been feeling anxious lately."
+```
+
+```bash
+uv run local-tts client \
+  --model qwen \
+  --voice ryan \
+  -t "I have been feeling anxious lately."
+```
+
+Update `Voice.py` in `utils` to support this new interface. 
+
 
 # User Diagram
 ![User_Dagram_Final.jpg](assets/User_Dagram_Final.jpg)

@@ -131,7 +131,8 @@ class InitializationWorkflow:
             try:
                 instruction_prompt = self.prompt_loader.load_prompt('Verification')
                 messages = [
-                    SystemMessage(content=instruction_prompt + case_study),
+                    SystemMessage(content=instruction_prompt),
+                    HumanMessage(content=f"Patient case study:\n\n{case_study}"),
                 ]
                 response = self.llm_verification.invoke(messages)
                 response_content = response.content
@@ -175,7 +176,8 @@ class InitializationWorkflow:
             instruction_prompt = self.prompt_loader.load_prompt('Clinical Summary')
 
             messages = [
-                SystemMessage(content=instruction_prompt + case_study),
+                SystemMessage(content=instruction_prompt),
+                HumanMessage(content=f"Patient case study:\n\n{case_study}"),
             ]
 
             response = self.llm_summary.invoke(messages)

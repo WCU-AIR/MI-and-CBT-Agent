@@ -109,6 +109,7 @@ class LearningBuddy:
         self.elevenlabs_api_key = elevenlabs_api_key
         self.mode = mode
         self.voice = ""
+        self.local_agent = True
         self.current_state = None
 
         # Initialize utilities
@@ -126,50 +127,70 @@ class LearningBuddy:
     def _initialize_llm_clients(self) -> Dict:
         """
         Initialize all LLM clients with appropriate configurations.
+        2026-11-09: Adding the option to return the local agent for the verification and summary LLMs.
 
         Returns:
             Dictionary of LLM client instances
         """
-        return {
-            'verification': ChatOpenAI(
-                model="gpt-4.1-mini",
-                temperature=0,
-                api_key=self.api_key,
-                max_retries=5,  # Retry up to 3 times
-                timeout=30
-            ),
-            'summary': ChatOpenAI(
-                model="gpt-4.1-mini",
-                temperature=0.2,
-                api_key=self.api_key,
-                max_retries=5,  # Retry up to 3 times
-                timeout=30
-            ),
-            'virtual_patient': ChatOpenAI(
-                model="gpt-4.1-mini",
-                temperature=1.0,
-                api_key=self.api_key,
-                max_retries=5,  # Retry up to 3 times
-                timeout=30,
-                logprobs=True
-            ),
-            'feedback': ChatOpenAI(
-                model="anthropic/claude-haiku-4.5",
-                temperature=0.2,
-                base_url="https://openrouter.ai/api/v1",
-                api_key=load_openrouter_api_key(),
-                max_retries=5,  # Retry up to 3 times
-                timeout=30
-            ),
-            'virtual_evaluator': ChatOpenAI(
-                model="google/gemini-2.5-flash-lite-preview-09-2025",
-                temperature=0.2,
-                base_url="https://openrouter.ai/api/v1",
-                api_key=load_openrouter_api_key(),
-                max_retries=5,  # Retry up to 3 times
-                timeout=30
-            )
-        }
+
+        if self.local_agent:
+            def local_llm(temperature=0.2):
+                return ChatOpenAI(
+                    model="qwen",
+                    base_url="http://127.0.0.1:8080/v1",
+                    api_key="not-needed",
+                    temperature=temperature,
+                    max_retries=2,
+                    timeout=180
+                )
+            return {
+                "verification": local_llm(0.0),
+                "summary": local_llm(0.2),
+                "virtual_patient": local_llm(0.7),
+                "feedback": local_llm(0.2),
+                "virtual_evaluator": local_llm(0.2)
+            }
+        else:
+            return {
+                'verification': ChatOpenAI(
+                    model="gpt-4.1-mini",
+                    temperature=0,
+                    api_key=self.api_key,
+                    max_retries=5,  # Retry up to 3 times
+                    timeout=30
+                ),
+                'summary': ChatOpenAI(
+                    model="gpt-4.1-mini",
+                    temperature=0.2,
+                    api_key=self.api_key,
+                    max_retries=5,  # Retry up to 3 times
+                    timeout=30
+                ),
+                'virtual_patient': ChatOpenAI(
+                    model="gpt-4.1-mini",
+                    temperature=1.0,
+                    api_key=self.api_key,
+                    max_retries=5,  # Retry up to 3 times
+                    timeout=30,
+                    logprobs=True
+                ),
+                'feedback': ChatOpenAI(
+                    model="anthropic/claude-haiku-4.5",
+                    temperature=0.2,
+                    base_url="https://openrouter.ai/api/v1",
+                    api_key=load_openrouter_api_key(),
+                    max_retries=5,  # Retry up to 3 times
+                    timeout=30
+                ),
+                'virtual_evaluator': ChatOpenAI(
+                    model="google/gemini-2.5-flash-lite-preview-09-2025",
+                    temperature=0.2,
+                    base_url="https://openrouter.ai/api/v1",
+                    api_key=load_openrouter_api_key(),
+                    max_retries=5,  # Retry up to 3 times
+                    timeout=30
+                )
+            }
 
     def _initialize_workflows(self) -> Dict:
         """
